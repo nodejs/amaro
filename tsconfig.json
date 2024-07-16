@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"noEmit": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["ES2023"],
+		"module": "commonjs",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"verbatimModuleSyntax": true,
+		"allowImportingTsExtensions": true,
+		"strict": true,
+		"target": "ES2022"
+	}
+}
