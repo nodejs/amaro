@@ -1,0 +1,65 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 197,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 197,
+        "ctxt": 0
+      },
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 197,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 14,
+              "ctxt": 0
+            },
+            "value": "content",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TemplateLiteral",
+            "span": {
+              "start": 17,
+              "end": 197,
+              "ctxt": 0
+            },
+            "expressions": [],
+            "quasis": [
+              {
+                "type": "TemplateElement",
+                "span": {
+                  "start": 18,
+                  "end": 196,
+                  "ctxt": 0
+                },
+                "tail": true,
+                "cooked": "--------------------------366796e1c748a2fb\r\nContent-Disposition: form-data; name=\"payload\"\r\nContent-Type: text/plain\r\n\r\nCONTENT\r\n--------------------------366796e1c748a2fb--",
+                "raw": "--------------------------366796e1c748a2fb\\r\nContent-Disposition: form-data; name=\"payload\"\\r\nContent-Type: text/plain\\r\n\\r\nCONTENT\\r\n--------------------------366796e1c748a2fb--"
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

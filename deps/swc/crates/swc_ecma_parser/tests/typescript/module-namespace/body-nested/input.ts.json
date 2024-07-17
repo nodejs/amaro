@@ -1,0 +1,70 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 40,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsModuleDeclaration",
+      "span": {
+        "start": 1,
+        "end": 40,
+        "ctxt": 0
+      },
+      "declare": false,
+      "global": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 11,
+          "end": 12,
+          "ctxt": 0
+        },
+        "value": "A",
+        "optional": false
+      },
+      "body": {
+        "type": "TsModuleBlock",
+        "span": {
+          "start": 13,
+          "end": 40,
+          "ctxt": 0
+        },
+        "body": [
+          {
+            "type": "TsModuleDeclaration",
+            "span": {
+              "start": 19,
+              "end": 38,
+              "ctxt": 0
+            },
+            "declare": false,
+            "global": false,
+            "id": {
+              "type": "Identifier",
+              "span": {
+                "start": 29,
+                "end": 30,
+                "ctxt": 0
+              },
+              "value": "B",
+              "optional": false
+            },
+            "body": {
+              "type": "TsModuleBlock",
+              "span": {
+                "start": 31,
+                "end": 38,
+                "ctxt": 0
+              },
+              "body": []
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

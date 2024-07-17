@@ -1,0 +1,47 @@
+.class {
+    color: blue;
+
+    &.foo {
+        ident
+        color: green;
+    }
+
+    @supports not (display: grid) {
+        float: right;
+
+        & .class { 
+            ident
+            color: red 
+        }
+    }
+}
+
+.class {
+    color: blue;
+
+    &.foo {
+        ident;
+        color: green;
+    }
+
+    @supports not (display: grid) {
+        float: right;
+
+        & .class {
+            ident;
+            color: red
+        }
+    }
+}
+
+.class {
+    color: red;
+    & test;
+}
+
+
+.class {
+    &.foo {
+        __ident__
+    }
+}

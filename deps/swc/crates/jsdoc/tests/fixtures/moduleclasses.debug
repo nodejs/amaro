@@ -1,0 +1,79 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..4#0,
+                            value: "foo",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 21..21#0,
+        description: Text {
+            span: 21..31#0,
+            value: "Bar class.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 55..55#0,
+        description: Text {
+            span: 55..71#0,
+            value: "Construct a Bar.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 107..107#0,
+        description: Text {
+            span: 107..119#0,
+            value: "bar property",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 158..158#0,
+        description: Text {
+            span: 158..168#0,
+            value: "Baz class.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 199..199#0,
+        description: Text {
+            span: 199..215#0,
+            value: "Construct a Baz.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 251..251#0,
+        description: Text {
+            span: 251..263#0,
+            value: "baz property",
+        },
+        tags: [],
+    },
+]

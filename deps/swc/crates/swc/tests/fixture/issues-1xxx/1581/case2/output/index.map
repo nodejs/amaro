@@ -1,0 +1,13 @@
+{
+  "mappings": "AAAA,OAAO,IAAMA,MAAM;IACf,OAAO;AACX,EAAE",
+  "names": [
+    "foo"
+  ],
+  "sources": [
+    "../../input/index.js"
+  ],
+  "sourcesContent": [
+    "export const foo = () => {\n    return 2;\n};\n"
+  ],
+  "version": 3
+}

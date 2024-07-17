@@ -1,0 +1,41 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..6#0,
+                tag_name: Text {
+                    span: 1..6#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..6#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 47..47#0,
+        description: Text {
+            span: 47..58#0,
+            value: "document me",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 88..88#0,
+        description: Text {
+            span: 88..99#0,
+            value: "document me",
+        },
+        tags: [],
+    },
+]

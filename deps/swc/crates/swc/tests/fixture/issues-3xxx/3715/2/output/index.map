@@ -1,0 +1,13 @@
+{
+  "mappings": "AAAAA,IAAI,2BAA2B",
+  "names": [
+    "a"
+  ],
+  "sources": [
+    "../../input/index.js"
+  ],
+  "sourcesContent": [
+    "a() /* IMPORTANT_DO_NOT_REMOVE */;\n"
+  ],
+  "version": 3
+}

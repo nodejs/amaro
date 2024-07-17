@@ -1,0 +1,462 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 167,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 166,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7,
+                      "ctxt": 0
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7,
+                        "ctxt": 0
+                      },
+                      "value": "style",
+                      "raw": "style"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 166,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 8,
+            "end": 9,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 11,
+              "end": 23,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "DashedIdent",
+              "span": {
+                "start": 11,
+                "end": 18,
+                "ctxt": 0
+              },
+              "value": "fancy",
+              "raw": "--fancy"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 20,
+                  "end": 23,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Dimension": {
+                    "value": 2.0,
+                    "raw_value": "2",
+                    "unit": "px",
+                    "type": "integer",
+                    "raw_unit": "px"
+                  }
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 26,
+              "end": 46,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 26,
+                "end": 32,
+                "ctxt": 0
+              },
+              "value": "border",
+              "raw": "border"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 34,
+                  "end": 46,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 34,
+                    "end": 37,
+                    "ctxt": 0
+                  },
+                  "value": "var",
+                  "raw": "var"
+                },
+                "value": [
+                  {
+                    "type": "DashedIdent",
+                    "span": {
+                      "start": 38,
+                      "end": 45,
+                      "ctxt": 0
+                    },
+                    "value": "fancy",
+                    "raw": "--fancy"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 49,
+              "end": 77,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 49,
+                "end": 58,
+                "ctxt": 0
+              },
+              "value": "font-size",
+              "raw": "font-size"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 60,
+                  "end": 77,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 60,
+                    "end": 64,
+                    "ctxt": 0
+                  },
+                  "value": "calc",
+                  "raw": "calc"
+                },
+                "value": [
+                  {
+                    "type": "CalcSum",
+                    "span": {
+                      "start": 65,
+                      "end": 76,
+                      "ctxt": 0
+                    },
+                    "expressions": [
+                      {
+                        "type": "CalcProduct",
+                        "span": {
+                          "start": 65,
+                          "end": 69,
+                          "ctxt": 0
+                        },
+                        "expressions": [
+                          {
+                            "type": "Length",
+                            "span": {
+                              "start": 65,
+                              "end": 69,
+                              "ctxt": 0
+                            },
+                            "value": {
+                              "type": "Number",
+                              "span": {
+                                "start": 65,
+                                "end": 67,
+                                "ctxt": 0
+                              },
+                              "value": 10.0,
+                              "raw": "10"
+                            },
+                            "unit": {
+                              "type": "Ident",
+                              "span": {
+                                "start": 67,
+                                "end": 69,
+                                "ctxt": 0
+                              },
+                              "value": "px",
+                              "raw": "px"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "CalcOperator",
+                        "span": {
+                          "start": 70,
+                          "end": 71,
+                          "ctxt": 0
+                        },
+                        "value": "+"
+                      },
+                      {
+                        "type": "CalcProduct",
+                        "span": {
+                          "start": 72,
+                          "end": 76,
+                          "ctxt": 0
+                        },
+                        "expressions": [
+                          {
+                            "type": "Length",
+                            "span": {
+                              "start": 72,
+                              "end": 76,
+                              "ctxt": 0
+                            },
+                            "value": {
+                              "type": "Number",
+                              "span": {
+                                "start": 72,
+                                "end": 73,
+                                "ctxt": 0
+                              },
+                              "value": 5.0,
+                              "raw": "5"
+                            },
+                            "unit": {
+                              "type": "Ident",
+                              "span": {
+                                "start": 73,
+                                "end": 76,
+                                "ctxt": 0
+                              },
+                              "value": "rem",
+                              "raw": "rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 80,
+              "end": 99,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 80,
+                "end": 90,
+                "ctxt": 0
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Url",
+                "span": {
+                  "start": 92,
+                  "end": 99,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 92,
+                    "end": 95,
+                    "ctxt": 0
+                  },
+                  "value": "url",
+                  "raw": "url"
+                },
+                "value": {
+                  "type": "String",
+                  "span": {
+                    "start": 96,
+                    "end": 98,
+                    "ctxt": 0
+                  },
+                  "value": "",
+                  "raw": "\"\""
+                },
+                "modifiers": []
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 102,
+              "end": 130,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 102,
+                "end": 112,
+                "ctxt": 0
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Url",
+                "span": {
+                  "start": 114,
+                  "end": 130,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 114,
+                    "end": 117,
+                    "ctxt": 0
+                  },
+                  "value": "url",
+                  "raw": "url"
+                },
+                "value": {
+                  "type": "String",
+                  "span": {
+                    "start": 118,
+                    "end": 129,
+                    "ctxt": 0
+                  },
+                  "value": "something",
+                  "raw": "\"something\""
+                },
+                "modifiers": []
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 133,
+              "end": 163,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 133,
+                "end": 143,
+                "ctxt": 0
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Url",
+                "span": {
+                  "start": 145,
+                  "end": 163,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 145,
+                    "end": 148,
+                    "ctxt": 0
+                  },
+                  "value": "url",
+                  "raw": "url"
+                },
+                "value": {
+                  "type": "String",
+                  "span": {
+                    "start": 149,
+                    "end": 162,
+                    "ctxt": 0
+                  },
+                  "value": "./something",
+                  "raw": "\"./something\""
+                },
+                "modifiers": []
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

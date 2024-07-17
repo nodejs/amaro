@@ -1,0 +1,52 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..11#0,
+                tag_name: Text {
+                    span: 1..11#0,
+                    value: "deprecated",
+                },
+                tag: Deprecated(
+                    DeprecatedTag {
+                        span: 1..11#0,
+                        text: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 41..41#0,
+        description: Text {
+            span: 41..41#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 41..51#0,
+                tag_name: Text {
+                    span: 41..51#0,
+                    value: "deprecated",
+                },
+                tag: Deprecated(
+                    DeprecatedTag {
+                        span: 41..51#0,
+                        text: Text {
+                            span: 41..58#0,
+                            value: "since version 2.0",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

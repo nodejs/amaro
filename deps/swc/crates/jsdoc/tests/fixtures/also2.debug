@@ -1,0 +1,73 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..6#0,
+                tag_name: Text {
+                    span: 1..6#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..6#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 65..65#0,
+        description: Text {
+            span: 65..100#0,
+            value: "Add a lane to the bowling alley.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 65..69#0,
+                tag_name: Text {
+                    span: 65..69#0,
+                    value: "also",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 65..69#0,
+                        extras: Text {
+                            span: 65..122#0,
+                            value: "* Add the specified number of lanes to the bowling alley.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 65..70#0,
+                tag_name: Text {
+                    span: 65..70#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 65..70#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 65..73#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 65..104#0,
+                            value: "[lanes=1] - The number of lanes to add.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

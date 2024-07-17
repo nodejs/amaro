@@ -1,0 +1,19 @@
+[package]
+authors     = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "Visitor generator for stable rustc"
+edition     = "2021"
+license     = "Apache-2.0"
+name        = "swc_visit"
+repository  = "https://github.com/swc-project/swc.git"
+version     = "0.5.14"
+
+[lib]
+bench = false
+
+[features]
+path = []
+
+[dependencies]
+either = { workspace = true }
+
+swc_visit_macros = { version = "0.5.12", path = "../swc_visit_macros" }

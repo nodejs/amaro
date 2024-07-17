@@ -1,0 +1,2 @@
+//// [doWhileBreakStatements.ts]
+for(;;);

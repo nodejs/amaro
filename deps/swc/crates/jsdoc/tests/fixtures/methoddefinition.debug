@@ -1,0 +1,18 @@
+[
+    JsDoc {
+        span: 18..18#0,
+        description: Text {
+            span: 18..30#0,
+            value: "Document me.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 61..61#0,
+        description: Text {
+            span: 61..80#0,
+            value: "Static document me.",
+        },
+        tags: [],
+    },
+]

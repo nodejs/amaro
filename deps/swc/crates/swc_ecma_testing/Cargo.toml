@@ -1,0 +1,20 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Testing utilities for ecmascript"
+documentation = "https://rustdoc.swc.rs/swc_ecma_testing/"
+edition       = "2021"
+license       = "Apache-2.0"
+name          = "swc_ecma_testing"
+repository    = "https://github.com/swc-project/swc.git"
+version       = "0.23.0"
+
+[lib]
+bench = false
+
+[dependencies]
+anyhow  = { workspace = true }
+hex     = { workspace = true }
+sha2    = { workspace = true }
+tracing = { workspace = true }
+
+testing = { version = "0.36.0", path = "../testing" }

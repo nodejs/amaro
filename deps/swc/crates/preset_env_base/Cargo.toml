@@ -1,0 +1,25 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Common logic for targetting vairous browsers"
+documentation = "https://rustdoc.swc.rs/preset_env_base/"
+edition       = "2021"
+license       = "Apache-2.0"
+name          = "preset_env_base"
+repository    = "https://github.com/swc-project/swc.git"
+version       = "0.5.1"
+
+[lib]
+bench = false
+
+[dependencies]
+ahash           = { workspace = true }
+anyhow          = { workspace = true }
+browserslist-rs = { workspace = true }
+dashmap         = { workspace = true }
+once_cell       = { workspace = true }
+semver          = { workspace = true, features = ["serde"] }
+serde           = { workspace = true, features = ["derive"] }
+st-map          = { workspace = true }
+tracing         = { workspace = true }
+
+from_variant = { version = "0.1.8", path = "../from_variant" }

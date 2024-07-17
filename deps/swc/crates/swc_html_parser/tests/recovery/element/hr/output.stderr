@@ -1,0 +1,7 @@
+  x Stray end tag "hr"
+    ,-[$DIR/tests/recovery/element/hr/input.html:11:1]
+ 10 | />
+ 11 | <hr></hr>
+    :     ^^^^^
+ 12 | </body>
+    `----

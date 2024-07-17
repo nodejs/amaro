@@ -1,0 +1,1 @@
+//// [conditionalOperatorConditionIsNumberType.ts]

@@ -1,0 +1,52 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "global",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 1..7#0,
+                        extras: Text {
+                            span: 1..13#0,
+                            value: "@constructor",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 98..98#0,
+        description: Text {
+            span: 98..98#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 98..104#0,
+                tag_name: Text {
+                    span: 98..104#0,
+                    value: "global",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 98..104#0,
+                        extras: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

@@ -1,0 +1,97 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 36,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 36,
+        "ctxt": 0
+      },
+      "kind": "const",
+      "declare": true,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 15,
+            "end": 24,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 15,
+              "end": 16,
+              "ctxt": 0
+            },
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 16,
+                "end": 24,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 18,
+                  "end": 24,
+                  "ctxt": 0
+                },
+                "kind": "number"
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        },
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 26,
+            "end": 35,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 26,
+              "end": 27,
+              "ctxt": 0
+            },
+            "value": "y",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 27,
+                "end": 35,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 29,
+                  "end": 35,
+                  "ctxt": 0
+                },
+                "kind": "string"
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

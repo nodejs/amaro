@@ -1,0 +1,118 @@
+[
+    JsDoc {
+        span: 0..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "member",
+                },
+                tag: Member(
+                    MemberTag {
+                        span: 1..7#0,
+                        ty: Text {
+                            span: 1..1#0,
+                            value: "",
+                        },
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 0..24#0,
+        description: Text {
+            span: 24..24#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 24..27#0,
+                tag_name: Text {
+                    span: 24..27#0,
+                    value: "var",
+                },
+                tag: Member(
+                    MemberTag {
+                        span: 24..27#0,
+                        ty: Text {
+                            span: 24..30#0,
+                            value: "foobar",
+                        },
+                        name: Text {
+                            span: 24..24#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 43..47#0,
+        description: Text {
+            span: 43..43#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 43..46#0,
+                tag_name: Text {
+                    span: 43..46#0,
+                    value: "var",
+                },
+                tag: Member(
+                    MemberTag {
+                        span: 43..46#0,
+                        ty: Text {
+                            span: 43..43#0,
+                            value: "",
+                        },
+                        name: Text {
+                            span: 43..49#0,
+                            value: "string",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 69..69#0,
+        description: Text {
+            span: 69..69#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 69..75#0,
+                tag_name: Text {
+                    span: 69..75#0,
+                    value: "member",
+                },
+                tag: Member(
+                    MemberTag {
+                        span: 69..75#0,
+                        ty: Text {
+                            span: 69..69#0,
+                            value: "",
+                        },
+                        name: Text {
+                            span: 69..75#0,
+                            value: "Object",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

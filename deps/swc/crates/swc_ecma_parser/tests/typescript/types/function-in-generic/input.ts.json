@@ -1,0 +1,106 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 26,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 26,
+        "ctxt": 0
+      },
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 25,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 6,
+                "end": 25,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsTypeReference",
+                "span": {
+                  "start": 8,
+                  "end": 25,
+                  "ctxt": 0
+                },
+                "typeName": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 8,
+                    "end": 13,
+                    "ctxt": 0
+                  },
+                  "value": "Array",
+                  "optional": false
+                },
+                "typeParams": {
+                  "type": "TsTypeParameterInstantiation",
+                  "span": {
+                    "start": 13,
+                    "end": 25,
+                    "ctxt": 0
+                  },
+                  "params": [
+                    {
+                      "type": "TsFunctionType",
+                      "span": {
+                        "start": 14,
+                        "end": 24,
+                        "ctxt": 0
+                      },
+                      "params": [],
+                      "typeParams": null,
+                      "typeAnnotation": {
+                        "type": "TsTypeAnnotation",
+                        "span": {
+                          "start": 17,
+                          "end": 24,
+                          "ctxt": 0
+                        },
+                        "typeAnnotation": {
+                          "type": "TsKeywordType",
+                          "span": {
+                            "start": 20,
+                            "end": 24,
+                            "ctxt": 0
+                          },
+                          "kind": "void"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,100 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 54,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 54,
+        "ctxt": 0
+      },
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 53,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 14,
+              "ctxt": 0
+            },
+            "value": "testing",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ArrowFunctionExpression",
+            "span": {
+              "start": 17,
+              "end": 53,
+              "ctxt": 0
+            },
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 35,
+                "end": 53,
+                "ctxt": 0
+              },
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 41,
+                    "end": 51,
+                    "ctxt": 0
+                  },
+                  "argument": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 48,
+                      "end": 50,
+                      "ctxt": 0
+                    },
+                    "value": "",
+                    "raw": "\"\""
+                  }
+                }
+              ]
+            },
+            "async": false,
+            "generator": false,
+            "typeParameters": null,
+            "returnType": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 19,
+                "end": 31,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 25,
+                  "end": 31,
+                  "ctxt": 0
+                },
+                "kind": "string"
+              }
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

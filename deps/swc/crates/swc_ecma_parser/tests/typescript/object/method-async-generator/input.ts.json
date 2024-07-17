@@ -1,0 +1,140 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 77,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 77,
+        "ctxt": 0
+      },
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 76,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 10,
+              "ctxt": 0
+            },
+            "value": "obj",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 13,
+              "end": 76,
+              "ctxt": 0
+            },
+            "properties": [
+              {
+                "type": "MethodProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 26,
+                    "end": 30,
+                    "ctxt": 0
+                  },
+                  "value": "test",
+                  "optional": false
+                },
+                "params": [],
+                "decorators": [],
+                "span": {
+                  "start": 19,
+                  "end": 73,
+                  "ctxt": 0
+                },
+                "body": {
+                  "type": "BlockStatement",
+                  "span": {
+                    "start": 66,
+                    "end": 73,
+                    "ctxt": 0
+                  },
+                  "stmts": []
+                },
+                "generator": true,
+                "async": true,
+                "typeParameters": null,
+                "returnType": {
+                  "type": "TsTypeAnnotation",
+                  "span": {
+                    "start": 32,
+                    "end": 65,
+                    "ctxt": 0
+                  },
+                  "typeAnnotation": {
+                    "type": "TsTypeReference",
+                    "span": {
+                      "start": 34,
+                      "end": 65,
+                      "ctxt": 0
+                    },
+                    "typeName": {
+                      "type": "Identifier",
+                      "span": {
+                        "start": 34,
+                        "end": 55,
+                        "ctxt": 0
+                      },
+                      "value": "AsyncIterableIterator",
+                      "optional": false
+                    },
+                    "typeParams": {
+                      "type": "TsTypeParameterInstantiation",
+                      "span": {
+                        "start": 55,
+                        "end": 65,
+                        "ctxt": 0
+                      },
+                      "params": [
+                        {
+                          "type": "TsTypeReference",
+                          "span": {
+                            "start": 56,
+                            "end": 64,
+                            "ctxt": 0
+                          },
+                          "typeName": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 56,
+                              "end": 64,
+                              "ctxt": 0
+                            },
+                            "value": "DirEntry",
+                            "optional": false
+                          },
+                          "typeParams": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

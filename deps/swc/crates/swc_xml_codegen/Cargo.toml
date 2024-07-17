@@ -1,0 +1,34 @@
+[package]
+authors = [
+  "강동윤 <kdy1997.dev@gmail.com>",
+  "Alexander Akait <sheo13666q@gmail.com>",
+]
+description = "XML code generator for the swc project"
+documentation = "https://rustdoc.swc.rs/swc_xml_codegen/"
+edition = "2021"
+include = ["Cargo.toml", "src/**/*.rs"]
+license = "Apache-2.0"
+name = "swc_xml_codegen"
+repository = "https://github.com/swc-project/swc.git"
+version = "0.14.0"
+
+[lib]
+bench = false
+
+[dependencies]
+auto_impl  = { workspace = true }
+bitflags   = { workspace = true }
+rustc-hash = { workspace = true }
+
+swc_atoms              = { version = "0.6.5", path = "../swc_atoms" }
+swc_common             = { version = "0.34.0", path = "../swc_common" }
+swc_xml_ast            = { version = "0.13.0", path = "../swc_xml_ast" }
+swc_xml_codegen_macros = { version = "0.1.4", path = "../swc_xml_codegen_macros" }
+
+[dev-dependencies]
+swc_common = { version = "0.34.0", path = "../swc_common", features = [
+  "sourcemap",
+] }
+swc_xml_parser = { version = "0.14.0", path = "../swc_xml_parser" }
+swc_xml_visit = { version = "0.13.0", path = "../swc_xml_visit" }
+testing = { version = "0.36.0", path = "../testing" }

@@ -1,0 +1,30 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 12,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 12,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 11,
+          "ctxt": 0
+        },
+        "value": "unknown",
+        "raw": "u\\6eknown"
+      },
+      "prelude": null,
+      "block": null
+    }
+  ]
+}

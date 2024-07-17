@@ -1,0 +1,39 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 19,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 18,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 9,
+          "ctxt": 0
+        },
+        "value": "charset",
+        "raw": "charset"
+      },
+      "prelude": {
+        "type": "String",
+        "span": {
+          "start": 10,
+          "end": 17,
+          "ctxt": 0
+        },
+        "value": "utf-8",
+        "raw": "\"utf-8\""
+      },
+      "block": null
+    }
+  ]
+}

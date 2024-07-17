@@ -1,0 +1,90 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 13,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 13,
+        "ctxt": 0
+      },
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 13,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "value": "v",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TsInstantiation",
+            "span": {
+              "start": 9,
+              "end": 13,
+              "ctxt": 0
+            },
+            "expression": {
+              "type": "Identifier",
+              "span": {
+                "start": 9,
+                "end": 10,
+                "ctxt": 0
+              },
+              "value": "f",
+              "optional": false
+            },
+            "typeArguments": {
+              "type": "TsTypeParameterInstantiation",
+              "span": {
+                "start": 10,
+                "end": 13,
+                "ctxt": 0
+              },
+              "params": [
+                {
+                  "type": "TsTypeReference",
+                  "span": {
+                    "start": 11,
+                    "end": 12,
+                    "ctxt": 0
+                  },
+                  "typeName": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 11,
+                      "end": 12,
+                      "ctxt": 0
+                    },
+                    "value": "x",
+                    "optional": false
+                  },
+                  "typeParams": null
+                }
+              ]
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

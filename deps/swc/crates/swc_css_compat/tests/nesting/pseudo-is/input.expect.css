@@ -1,0 +1,8 @@
+.foo {}
+.foo:is(.bar, .foo.baz) {
+  color: red;
+}
+.foo {}
+.foo :is(.bar, &.baz) {
+  color: red;
+}

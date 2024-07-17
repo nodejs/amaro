@@ -1,0 +1,52 @@
+[
+    JsDoc {
+        span: 30..39#0,
+        description: Text {
+            span: 30..30#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 30..34#0,
+                tag_name: Text {
+                    span: 30..34#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 30..34#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 62..71#0,
+        description: Text {
+            span: 62..62#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 62..66#0,
+                tag_name: Text {
+                    span: 62..66#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 62..66#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

@@ -1,0 +1,41 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 72,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 72,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "BigIntLiteral",
+        "span": {
+          "start": 1,
+          "end": 72,
+          "ctxt": 0
+        },
+        "value": [
+          1,
+          [
+            0,
+            0,
+            1301210784,
+            2637945491,
+            4197624399,
+            1053244963,
+            395401161,
+            37
+          ]
+        ],
+        "raw": "1000000000000000000000000000000000000000000000000000000000000000000000n"
+      }
+    }
+  ],
+  "interpreter": null
+}

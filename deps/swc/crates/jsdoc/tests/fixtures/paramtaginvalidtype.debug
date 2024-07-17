@@ -1,0 +1,57 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..12#0,
+                tag_name: Text {
+                    span: 1..12#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..12#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 53..53#0,
+        description: Text {
+            span: 53..53#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 53..58#0,
+                tag_name: Text {
+                    span: 53..58#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 53..58#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 53..69#0,
+                                value: "{string, number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 53..54#0,
+                            value: "a",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

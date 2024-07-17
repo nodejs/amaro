@@ -1,0 +1,106 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 10,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 9,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 1,
+          "end": 6,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 1,
+              "end": 2,
+              "ctxt": 0
+            },
+            "token": {
+              "Ident": {
+                "value": "a",
+                "raw": "a"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 2,
+              "end": 3,
+              "ctxt": 0
+            },
+            "token": "Colon"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 3,
+              "end": 4,
+              "ctxt": 0
+            },
+            "token": "Colon"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 4,
+              "end": 5,
+              "ctxt": 0
+            },
+            "token": {
+              "Number": {
+                "value": 1.0,
+                "raw": "1",
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 6,
+          "end": 9,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 6,
+            "end": 7,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 80,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 79,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 7,
+          "ctxt": 0
+        },
+        "value": "layer",
+        "raw": "layer"
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 7,
+          "end": 41,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 7,
+              "end": 8,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 8,
+              "end": 17,
+              "ctxt": 0
+            },
+            "token": {
+              "Ident": {
+                "value": "framework",
+                "raw": "framework"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 17,
+              "end": 18,
+              "ctxt": 0
+            },
+            "token": "Comma"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 18,
+              "end": 19,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 19,
+              "end": 27,
+              "ctxt": 0
+            },
+            "token": {
+              "Ident": {
+                "value": "override",
+                "raw": "override"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 27,
+              "end": 30,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": "   "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 30,
+              "end": 31,
+              "ctxt": 0
+            },
+            "token": "Comma"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 31,
+              "end": 35,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": "    "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 35,
+              "end": 38,
+              "ctxt": 0
+            },
+            "token": {
+              "Ident": {
+                "value": "foo",
+                "raw": "foo"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 38,
+              "end": 41,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": "   "
+              }
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 41,
+          "end": 79,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 41,
+            "end": 42,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "QualifiedRule",
+            "span": {
+              "start": 47,
+              "end": 77,
+              "ctxt": 0
+            },
+            "prelude": {
+              "type": "SelectorList",
+              "span": {
+                "start": 47,
+                "end": 49,
+                "ctxt": 0
+              },
+              "children": [
+                {
+                  "type": "ComplexSelector",
+                  "span": {
+                    "start": 47,
+                    "end": 49,
+                    "ctxt": 0
+                  },
+                  "children": [
+                    {
+                      "type": "CompoundSelector",
+                      "span": {
+                        "start": 47,
+                        "end": 49,
+                        "ctxt": 0
+                      },
+                      "nestingSelector": null,
+                      "typeSelector": null,
+                      "subclassSelectors": [
+                        {
+                          "type": "ClassSelector",
+                          "span": {
+                            "start": 47,
+                            "end": 49,
+                            "ctxt": 0
+                          },
+                          "text": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 48,
+                              "end": 49,
+                              "ctxt": 0
+                            },
+                            "value": "a",
+                            "raw": "a"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 50,
+                "end": 77,
+                "ctxt": 0
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 50,
+                  "end": 51,
+                  "ctxt": 0
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 60,
+                    "end": 70,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 60,
+                      "end": 65,
+                      "ctxt": 0
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 67,
+                        "end": 70,
+                        "ctxt": 0
+                      },
+                      "value": "red",
+                      "raw": "red"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

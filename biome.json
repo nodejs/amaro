@@ -8,10 +8,10 @@
 		"rules": {
 			"recommended": true
 		},
-		"ignore": ["dist/**"]
+		"ignore": ["dist/**", "deps/**", "lib/**"]
 	},
 	"formatter": {
 		"enabled": true,
-		"ignore": ["dist/**"]
+		"ignore": ["dist/**", "deps/**", "lib/**"]
 	}
 }

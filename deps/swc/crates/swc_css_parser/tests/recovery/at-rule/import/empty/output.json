@@ -1,0 +1,52 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 11,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 10,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 8,
+          "ctxt": 0
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 8,
+          "end": 9,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 8,
+              "end": 9,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          }
+        ]
+      },
+      "block": null
+    }
+  ]
+}

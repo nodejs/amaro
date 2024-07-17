@@ -1,0 +1,35 @@
+[
+    JsDoc {
+        span: 74..74#0,
+        description: Text {
+            span: 74..99#0,
+            value: "My example module.\n     *",
+        },
+        tags: [
+            TagItem {
+                span: 74..81#0,
+                tag_name: Text {
+                    span: 74..81#0,
+                    value: "exports",
+                },
+                tag: Exports(
+                    ExportsTag {
+                        span: 74..81#0,
+                        module_name: Text {
+                            span: 74..87#0,
+                            value: "exampleModule",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 171..171#0,
+        description: Text {
+            span: 171..189#0,
+            value: "My example method.",
+        },
+        tags: [],
+    },
+]

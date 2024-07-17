@@ -1,0 +1,33 @@
+[workspace]
+
+[package]
+edition = "2021"
+name    = "stub_wasm"
+publish = false
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["swc_v1"]
+plugin  = []
+swc_v1  = []
+
+[dependencies]
+anyhow = "1.0.66"
+browserslist-rs = { version = "0.16.0", features = ["wasm_bindgen"] }
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.4.5"
+swc_core = { path = "../../../../swc_core", features = [
+  "ecma_ast_serde",
+  "ecma_codegen",
+  "binding_macro_wasm",
+  "ecma_transforms",
+  "ecma_visit",
+  # Disabled for now, until resolve type mismatches. Refer bindings/binding_core_wasm/Cargo.toml
+  # for the detail.
+  # "plugin_transform_host_js",
+] }
+tracing = { version = "0.1.37", features = ["max_level_off"] }
+wasm-bindgen = { version = "0.2.82", features = ["enable-interning"] }

@@ -1,0 +1,95 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 29,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 29,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 11,
+          "ctxt": 0
+        },
+        "value": "keyframes",
+        "raw": "keyframes"
+      },
+      "prelude": {
+        "type": "CustomIdent",
+        "span": {
+          "start": 12,
+          "end": 15,
+          "ctxt": 0
+        },
+        "value": "abc",
+        "raw": "abc"
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 16,
+          "end": 29,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 16,
+            "end": 17,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "KeyframeBlock",
+            "span": {
+              "start": 18,
+              "end": 27,
+              "ctxt": 0
+            },
+            "prelude": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 18,
+                  "end": 24,
+                  "ctxt": 0
+                },
+                "value": "from",
+                "raw": "\\66rom"
+              }
+            ],
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 25,
+                "end": 27,
+                "ctxt": 0
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 25,
+                  "end": 26,
+                  "ctxt": 0
+                },
+                "token": "LBrace"
+              },
+              "value": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

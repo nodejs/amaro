@@ -1,0 +1,5 @@
+  x Invalid string escape
+   ,-[$DIR/tests/errors/unterminated_string_constant/input.js:1:1]
+ 1 | const string = "\
+   :                 ^
+   `----

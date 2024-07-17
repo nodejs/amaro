@@ -1,0 +1,85 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 65,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExportNamedDeclaration",
+      "span": {
+        "start": 1,
+        "end": 65,
+        "ctxt": 0
+      },
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "span": {
+            "start": 10,
+            "end": 13,
+            "ctxt": 0
+          },
+          "orig": {
+            "type": "Identifier",
+            "span": {
+              "start": 10,
+              "end": 13,
+              "ctxt": 0
+            },
+            "value": "val",
+            "optional": false
+          },
+          "exported": null,
+          "isTypeOnly": false
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 21,
+          "end": 34,
+          "ctxt": 0
+        },
+        "value": "./foo.js.js",
+        "raw": "'./foo.js.js'"
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 42,
+          "end": 64,
+          "ctxt": 0
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 44,
+                "end": 48,
+                "ctxt": 0
+              },
+              "value": "type",
+              "optional": false
+            },
+            "value": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 50,
+                "end": 62,
+                "ctxt": 0
+              },
+              "value": "javascript",
+              "raw": "\"javascript\""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

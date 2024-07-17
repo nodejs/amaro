@@ -1,0 +1,307 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..10#0,
+                tag_name: Text {
+                    span: 1..10#0,
+                    value: "namespace",
+                },
+                tag: Namespace(
+                    NamespaceTag {
+                        span: 1..10#0,
+                        ty: Some(
+                            Text {
+                                span: 1..5#0,
+                                value: "anim",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 29..29#0,
+        description: Text {
+            span: 29..29#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 29..35#0,
+                tag_name: Text {
+                    span: 29..35#0,
+                    value: "method",
+                },
+                tag: Function(
+                    FunctionTag {
+                        span: 29..35#0,
+                        name: Some(
+                            Text {
+                                span: 29..43#0,
+                                value: "anim.fadein(1)",
+                            },
+                        ),
+                    },
+                ),
+            },
+            TagItem {
+                span: 29..33#0,
+                tag_name: Text {
+                    span: 29..33#0,
+                    value: "desc",
+                },
+                tag: Description(
+                    DescriptionTag {
+                        span: 29..33#0,
+                        text: Text {
+                            span: 29..81#0,
+                            value: "Show the nodelist elements by fading them to opaque.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 29..34#0,
+                tag_name: Text {
+                    span: 29..34#0,
+                    value: "since",
+                },
+                tag: Since(
+                    SinceTag {
+                        span: 29..34#0,
+                        version: Text {
+                            span: 29..32#0,
+                            value: "1.0",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 29..34#0,
+                tag_name: Text {
+                    span: 29..34#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 29..34#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 29..37#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 29..76#0,
+                            value: "[duration=400] How long the animation will run.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 29..34#0,
+                tag_name: Text {
+                    span: 29..34#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 29..34#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 29..39#0,
+                                value: "{function}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 29..82#0,
+                            value: "[callback]     Called once the animation is complete.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 29..36#0,
+                tag_name: Text {
+                    span: 29..36#0,
+                    value: "returns",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 29..36#0,
+                        ty: Some(
+                            Text {
+                                span: 29..35#0,
+                                value: "{this}",
+                            },
+                        ),
+                        description: Text {
+                            span: 29..29#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 309..309#0,
+        description: Text {
+            span: 309..309#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 309..315#0,
+                tag_name: Text {
+                    span: 309..315#0,
+                    value: "method",
+                },
+                tag: Function(
+                    FunctionTag {
+                        span: 309..315#0,
+                        name: Some(
+                            Text {
+                                span: 309..323#0,
+                                value: "anim.fadein(2)",
+                            },
+                        ),
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..313#0,
+                tag_name: Text {
+                    span: 309..313#0,
+                    value: "desc",
+                },
+                tag: Description(
+                    DescriptionTag {
+                        span: 309..313#0,
+                        text: Text {
+                            span: 309..361#0,
+                            value: "Show the nodelist elements by fading them to opaque.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..314#0,
+                tag_name: Text {
+                    span: 309..314#0,
+                    value: "since",
+                },
+                tag: Since(
+                    SinceTag {
+                        span: 309..314#0,
+                        version: Text {
+                            span: 309..314#0,
+                            value: "1.4.3",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..314#0,
+                tag_name: Text {
+                    span: 309..314#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 309..314#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 309..317#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 309..356#0,
+                            value: "[duration=400] How long the animation will run.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..314#0,
+                tag_name: Text {
+                    span: 309..314#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 309..314#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 309..317#0,
+                                value: "{string}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 309..363#0,
+                            value: "[easing=swing] The easing function for the transition.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..314#0,
+                tag_name: Text {
+                    span: 309..314#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 309..314#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 309..319#0,
+                                value: "{function}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 309..362#0,
+                            value: "[callback]     Called once the animation is complete.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 309..316#0,
+                tag_name: Text {
+                    span: 309..316#0,
+                    value: "returns",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 309..316#0,
+                        ty: Some(
+                            Text {
+                                span: 309..315#0,
+                                value: "{this}",
+                            },
+                        ),
+                        description: Text {
+                            span: 309..309#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

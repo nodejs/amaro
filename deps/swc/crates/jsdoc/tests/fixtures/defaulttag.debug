@@ -1,0 +1,277 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..8#0,
+                tag_name: Text {
+                    span: 1..8#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 1..8#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 43..43#0,
+        description: Text {
+            span: 43..43#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 43..50#0,
+                tag_name: Text {
+                    span: 43..50#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 43..50#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 86..86#0,
+        description: Text {
+            span: 86..86#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 86..93#0,
+                tag_name: Text {
+                    span: 86..93#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 86..93#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 125..125#0,
+        description: Text {
+            span: 125..125#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 125..132#0,
+                tag_name: Text {
+                    span: 125..132#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 125..132#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 166..166#0,
+        description: Text {
+            span: 166..166#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 166..173#0,
+                tag_name: Text {
+                    span: 166..173#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 166..173#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 210..210#0,
+        description: Text {
+            span: 210..210#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 210..217#0,
+                tag_name: Text {
+                    span: 210..217#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 210..217#0,
+                        value: Text {
+                            span: 210..227#0,
+                            value: "the parent window",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 279..279#0,
+        description: Text {
+            span: 279..279#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 279..286#0,
+                tag_name: Text {
+                    span: 279..286#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 279..286#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 335..335#0,
+        description: Text {
+            span: 335..335#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 335..342#0,
+                tag_name: Text {
+                    span: 335..342#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 335..342#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 408..408#0,
+        description: Text {
+            span: 408..408#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 408..415#0,
+                tag_name: Text {
+                    span: 408..415#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 408..415#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 509..509#0,
+        description: Text {
+            span: 509..509#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 509..516#0,
+                tag_name: Text {
+                    span: 509..516#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 509..516#0,
+                        value: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 555..555#0,
+        description: Text {
+            span: 555..555#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 555..562#0,
+                tag_name: Text {
+                    span: 555..562#0,
+                    value: "default",
+                },
+                tag: Default(
+                    DefaultTag {
+                        span: 555..562#0,
+                        value: Text {
+                            span: 555..571#0,
+                            value: "* @type {string}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

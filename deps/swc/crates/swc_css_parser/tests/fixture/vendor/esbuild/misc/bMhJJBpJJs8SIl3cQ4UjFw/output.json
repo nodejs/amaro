@@ -1,0 +1,116 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 35,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 35,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 6,
+          "ctxt": 0
+        },
+        "value": "page",
+        "raw": "page"
+      },
+      "prelude": null,
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 7,
+          "end": 35,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 7,
+            "end": 8,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 9,
+              "end": 19,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 9,
+                "end": 14,
+                "ctxt": 0
+              },
+              "value": "color",
+              "raw": "color"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 16,
+                  "end": 19,
+                  "ctxt": 0
+                },
+                "value": "red",
+                "raw": "red"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 21,
+              "end": 33,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 22,
+                "end": 30,
+                "ctxt": 0
+              },
+              "value": "top-left",
+              "raw": "top-left"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 31,
+                "end": 33,
+                "ctxt": 0
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 31,
+                  "end": 32,
+                  "ctxt": 0
+                },
+                "token": "LBrace"
+              },
+              "value": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

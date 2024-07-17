@@ -1,0 +1,19 @@
+[package]
+authors     = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "Faster version of petgraph"
+edition     = "2021"
+include     = ["Cargo.toml", "src/**/*.rs"]
+license     = "Apache-2.0"
+name        = "swc_fast_graph"
+repository  = "https://github.com/swc-project/swc.git"
+version     = "0.22.0"
+
+[lib]
+bench = false
+
+[dependencies]
+indexmap   = { workspace = true }
+petgraph   = { workspace = true }
+rustc-hash = { workspace = true }
+
+swc_common = { version = "0.34.0", path = "../swc_common" }

@@ -1,0 +1,167 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 29,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 14,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "OptionalChainingExpression",
+        "span": {
+          "start": 1,
+          "end": 13,
+          "ctxt": 0
+        },
+        "optional": false,
+        "base": {
+          "type": "CallExpression",
+          "span": {
+            "start": 1,
+            "end": 13,
+            "ctxt": 0
+          },
+          "callee": {
+            "type": "OptionalChainingExpression",
+            "span": {
+              "start": 1,
+              "end": 11,
+              "ctxt": 0
+            },
+            "optional": true,
+            "base": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 1,
+                "end": 11,
+                "ctxt": 0
+              },
+              "object": {
+                "type": "NewExpression",
+                "span": {
+                  "start": 1,
+                  "end": 8,
+                  "ctxt": 0
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 5,
+                    "end": 6,
+                    "ctxt": 0
+                  },
+                  "value": "A",
+                  "optional": false
+                },
+                "arguments": [],
+                "typeArguments": null
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 10,
+                  "end": 11,
+                  "ctxt": 0
+                },
+                "value": "b",
+                "optional": false
+              }
+            }
+          },
+          "arguments": [],
+          "typeArguments": null
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 16,
+        "end": 29,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "OptionalChainingExpression",
+        "span": {
+          "start": 16,
+          "end": 28,
+          "ctxt": 0
+        },
+        "optional": false,
+        "base": {
+          "type": "CallExpression",
+          "span": {
+            "start": 16,
+            "end": 28,
+            "ctxt": 0
+          },
+          "callee": {
+            "type": "OptionalChainingExpression",
+            "span": {
+              "start": 16,
+              "end": 26,
+              "ctxt": 0
+            },
+            "optional": true,
+            "base": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 16,
+                "end": 26,
+                "ctxt": 0
+              },
+              "object": {
+                "type": "ParenthesisExpression",
+                "span": {
+                  "start": 16,
+                  "end": 23,
+                  "ctxt": 0
+                },
+                "expression": {
+                  "type": "NewExpression",
+                  "span": {
+                    "start": 17,
+                    "end": 22,
+                    "ctxt": 0
+                  },
+                  "callee": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 21,
+                      "end": 22,
+                      "ctxt": 0
+                    },
+                    "value": "A",
+                    "optional": false
+                  },
+                  "arguments": null,
+                  "typeArguments": null
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 25,
+                  "end": 26,
+                  "ctxt": 0
+                },
+                "value": "b",
+                "optional": false
+              }
+            }
+          },
+          "arguments": [],
+          "typeArguments": null
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

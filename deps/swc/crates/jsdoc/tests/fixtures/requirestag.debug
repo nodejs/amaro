@@ -1,0 +1,203 @@
+[
+    JsDoc {
+        span: 1..13#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..9#0,
+                tag_name: Text {
+                    span: 1..9#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 1..9#0,
+                        name_path: NamePath {
+                            span: 1..13#0,
+                            components: [
+                                Text {
+                                    span: 1..7#0,
+                                    value: "module",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 60..87#0,
+        description: Text {
+            span: 60..60#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 60..68#0,
+                tag_name: Text {
+                    span: 60..68#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 60..68#0,
+                        name_path: NamePath {
+                            span: 60..104#0,
+                            components: [
+                                Text {
+                                    span: 60..63#0,
+                                    value: "foo",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 60..68#0,
+                tag_name: Text {
+                    span: 60..68#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 60..68#0,
+                        name_path: NamePath {
+                            span: 60..87#0,
+                            components: [
+                                Text {
+                                    span: 60..63#0,
+                                    value: "Pez",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 148..148#0,
+        description: Text {
+            span: 148..148#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 148..156#0,
+                tag_name: Text {
+                    span: 148..156#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 148..156#0,
+                        name_path: NamePath {
+                            span: 148..248#0,
+                            components: [
+                                Text {
+                                    span: 148..148#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 148..152#0,
+                tag_name: Text {
+                    span: 148..152#0,
+                    value: "link",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 148..152#0,
+                        extras: Text {
+                            span: 148..160#0,
+                            value: "module:zest}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 148..156#0,
+                tag_name: Text {
+                    span: 148..156#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 148..156#0,
+                        name_path: NamePath {
+                            span: 148..215#0,
+                            components: [
+                                Text {
+                                    span: 148..148#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 148..157#0,
+                tag_name: Text {
+                    span: 148..157#0,
+                    value: "linkplain",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 148..157#0,
+                        extras: Text {
+                            span: 148..160#0,
+                            value: "module:zing}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 148..156#0,
+                tag_name: Text {
+                    span: 148..156#0,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 148..156#0,
+                        name_path: NamePath {
+                            span: 148..177#0,
+                            components: [
+                                Text {
+                                    span: 148..148#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 148..158#0,
+                tag_name: Text {
+                    span: 148..158#0,
+                    value: "linkstupid",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 148..158#0,
+                        extras: Text {
+                            span: 148..163#0,
+                            value: "module:pizzazz}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

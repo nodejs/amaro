@@ -1,0 +1,154 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..31#0,
+            value: "The built in string object.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 1..9#0,
+                tag_name: Text {
+                    span: 1..9#0,
+                    value: "external",
+                },
+                tag: External(
+                    ExternalTag {
+                        span: 1..9#0,
+                        name: Text {
+                            span: 1..7#0,
+                            value: "String",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 1..4#0,
+                tag_name: Text {
+                    span: 1..4#0,
+                    value: "see",
+                },
+                tag: See(
+                    SeeTag {
+                        span: 1..4#0,
+                        text: Text {
+                            span: 1..91#0,
+                            value: "{@link https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String String}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 160..160#0,
+        description: Text {
+            span: 160..204#0,
+            value: "Adds a new method to the built-in string.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 160..168#0,
+                tag_name: Text {
+                    span: 160..168#0,
+                    value: "function",
+                },
+                tag: Function(
+                    FunctionTag {
+                        span: 160..168#0,
+                        name: Some(
+                            Text {
+                                span: 160..181#0,
+                                value: "external:String#rot13",
+                            },
+                        ),
+                    },
+                ),
+            },
+            TagItem {
+                span: 160..167#0,
+                tag_name: Text {
+                    span: 160..167#0,
+                    value: "example",
+                },
+                tag: Example(
+                    ExampleTag {
+                        span: 160..167#0,
+                        text: Text {
+                            span: 160..256#0,
+                            value: "* var greeting = new String('hello world');\n * console.log( greeting.rot13() ); // uryyb jbeyq\n ",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 357..357#0,
+        description: Text {
+            span: 357..388#0,
+            value: "The jQuery plugin namespace.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 357..365#0,
+                tag_name: Text {
+                    span: 357..365#0,
+                    value: "external",
+                },
+                tag: External(
+                    ExternalTag {
+                        span: 357..365#0,
+                        name: Text {
+                            span: 357..368#0,
+                            value: "\"jQuery.fn\"",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 357..360#0,
+                tag_name: Text {
+                    span: 357..360#0,
+                    value: "see",
+                },
+                tag: See(
+                    SeeTag {
+                        span: 357..360#0,
+                        text: Text {
+                            span: 357..429#0,
+                            value: "{@link http://docs.jquery.com/Plugins/Authoring The jQuery Plugin Guide}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 504..504#0,
+        description: Text {
+            span: 504..563#0,
+            value: "A jQuery plugin to make stars fly around your home page.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 504..512#0,
+                tag_name: Text {
+                    span: 504..512#0,
+                    value: "function",
+                },
+                tag: Function(
+                    FunctionTag {
+                        span: 504..512#0,
+                        name: Some(
+                            Text {
+                                span: 504..534#0,
+                                value: "external:\"jQuery.fn\".starfairy",
+                            },
+                        ),
+                    },
+                ),
+            },
+        ],
+    },
+]

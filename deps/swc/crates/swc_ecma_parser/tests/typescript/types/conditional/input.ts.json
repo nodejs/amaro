@@ -1,0 +1,95 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 47,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 47,
+        "ctxt": 0
+      },
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 46,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 6,
+                "end": 46,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsConditionalType",
+                "span": {
+                  "start": 8,
+                  "end": 46,
+                  "ctxt": 0
+                },
+                "checkType": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 8,
+                    "end": 14,
+                    "ctxt": 0
+                  },
+                  "kind": "number"
+                },
+                "extendsType": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 23,
+                    "end": 29,
+                    "ctxt": 0
+                  },
+                  "kind": "string"
+                },
+                "trueType": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 32,
+                    "end": 39,
+                    "ctxt": 0
+                  },
+                  "kind": "boolean"
+                },
+                "falseType": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 42,
+                    "end": 46,
+                    "ctxt": 0
+                  },
+                  "kind": "null"
+                }
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

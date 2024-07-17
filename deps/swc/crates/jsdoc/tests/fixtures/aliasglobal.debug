@@ -1,0 +1,32 @@
+[
+    JsDoc {
+        span: 20..24#0,
+        description: Text {
+            span: 20..20#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 20..25#0,
+                tag_name: Text {
+                    span: 20..25#0,
+                    value: "alias",
+                },
+                tag: Alias(
+                    AliasTag {
+                        span: 20..25#0,
+                        name_path: NamePath {
+                            span: 20..24#0,
+                            components: [
+                                Text {
+                                    span: 20..28#0,
+                                    value: "<global>",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

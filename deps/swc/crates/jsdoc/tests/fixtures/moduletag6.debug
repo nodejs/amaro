@@ -1,0 +1,56 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..8#0,
+                            value: "appname",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 25..25#0,
+        description: Text {
+            span: 25..56#0,
+            value: "The name of the application.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 25..29#0,
+                tag_name: Text {
+                    span: 25..29#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 25..29#0,
+                        name: Text {
+                            span: 25..33#0,
+                            value: "{string}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

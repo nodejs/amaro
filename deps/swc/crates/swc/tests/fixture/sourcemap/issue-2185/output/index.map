@@ -1,0 +1,17 @@
+{
+  "mappings": "AAAAA,SAAS,OAAO;IACZC,GAAG,SAAS;QACRC,OAAO,OAAOC,IAAI,CAAC;IACvB;IAEAF,GAAG,SAAS;QACR,MAAMG,MAAM,CAAC;;MAEf,CAAC;QAECF,OAAO,OAAOC,IAAI,CAAC;IACvB;IAEAF,GAAG,SAAS;QACRC,OAAO,OAAOC,IAAI,CAAC;IACvB;AACJ",
+  "names": [
+    "describe",
+    "it",
+    "expect",
+    "toBe",
+    "str"
+  ],
+  "sources": [
+    "../../input/index.js"
+  ],
+  "sourcesContent": [
+    "describe(\"foo\", () => {\n    it(\"test1\", () => {\n        expect(false).toBe(true);\n    });\n\n    it(\"test2\", () => {\n        const str = `\n        bar\n      `;\n\n        expect(false).toBe(true);\n    });\n\n    it(\"test3\", () => {\n        expect(false).toBe(true);\n    });\n});\n"
+  ],
+  "version": 3
+}

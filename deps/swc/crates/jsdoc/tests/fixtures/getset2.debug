@@ -1,0 +1,60 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..16#0,
+            value: "Employee class.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 45..45#0,
+        description: Text {
+            span: 45..61#0,
+            value: "Location.\n     *",
+        },
+        tags: [
+            TagItem {
+                span: 45..49#0,
+                tag_name: Text {
+                    span: 45..49#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 45..49#0,
+                        name: Text {
+                            span: 45..53#0,
+                            value: "{string}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 159..168#0,
+        description: Text {
+            span: 159..159#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 159..163#0,
+                tag_name: Text {
+                    span: 159..163#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 159..163#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

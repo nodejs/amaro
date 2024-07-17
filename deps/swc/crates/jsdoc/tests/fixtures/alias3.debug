@@ -1,0 +1,43 @@
+[
+    JsDoc {
+        span: 36..36#0,
+        description: Text {
+            span: 36..36#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 36..41#0,
+                tag_name: Text {
+                    span: 36..41#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 36..41#0,
+                        ty: Some(
+                            Text {
+                                span: 36..63#0,
+                                value: "@alias trackr.CookieManager",
+                            },
+                        ),
+                        name: Some(
+                            Text {
+                                span: 36..54#0,
+                                value: "@param {object} kv",
+                            },
+                        ),
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 144..144#0,
+        description: Text {
+            span: 144..155#0,
+            value: "document me",
+        },
+        tags: [],
+    },
+]

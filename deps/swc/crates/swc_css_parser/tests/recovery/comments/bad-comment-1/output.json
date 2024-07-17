@@ -1,0 +1,73 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 11,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "ListOfComponentValues",
+      "span": {
+        "start": 1,
+        "end": 11,
+        "ctxt": 0
+      },
+      "children": [
+        {
+          "type": "PreservedToken",
+          "span": {
+            "start": 1,
+            "end": 2,
+            "ctxt": 0
+          },
+          "token": {
+            "Delim": {
+              "value": "/"
+            }
+          }
+        },
+        {
+          "type": "PreservedToken",
+          "span": {
+            "start": 2,
+            "end": 3,
+            "ctxt": 0
+          },
+          "token": {
+            "Delim": {
+              "value": "/"
+            }
+          }
+        },
+        {
+          "type": "PreservedToken",
+          "span": {
+            "start": 3,
+            "end": 4,
+            "ctxt": 0
+          },
+          "token": {
+            "WhiteSpace": {
+              "value": " "
+            }
+          }
+        },
+        {
+          "type": "PreservedToken",
+          "span": {
+            "start": 4,
+            "end": 11,
+            "ctxt": 0
+          },
+          "token": {
+            "Ident": {
+              "value": "comment",
+              "raw": "comment"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

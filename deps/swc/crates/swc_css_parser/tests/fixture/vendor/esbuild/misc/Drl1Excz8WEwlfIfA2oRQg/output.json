@@ -1,0 +1,132 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 15,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 15,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 12,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 12,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 12,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "AttributeSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 12,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "WqName",
+                      "span": {
+                        "start": 2,
+                        "end": 3,
+                        "ctxt": 0
+                      },
+                      "prefix": null,
+                      "value": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 2,
+                          "end": 3,
+                          "ctxt": 0
+                        },
+                        "value": "b",
+                        "raw": "b"
+                      }
+                    },
+                    "matcher": {
+                      "type": "AttributeSelectorMatcher",
+                      "span": {
+                        "start": 4,
+                        "end": 5,
+                        "ctxt": 0
+                      },
+                      "value": "="
+                    },
+                    "value": {
+                      "type": "String",
+                      "span": {
+                        "start": 6,
+                        "end": 9,
+                        "ctxt": 0
+                      },
+                      "value": "c",
+                      "raw": "\"c\""
+                    },
+                    "modifier": {
+                      "type": "AttributeSelectorModifier",
+                      "span": {
+                        "start": 10,
+                        "end": 11,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 10,
+                          "end": 11,
+                          "ctxt": 0
+                        },
+                        "value": "i",
+                        "raw": "i"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 13,
+          "end": 15,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 13,
+            "end": 14,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

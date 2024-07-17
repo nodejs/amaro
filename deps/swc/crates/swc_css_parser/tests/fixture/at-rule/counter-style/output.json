@@ -1,0 +1,265 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 119,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 86,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 15,
+          "ctxt": 0
+        },
+        "value": "counter-style",
+        "raw": "counter-style"
+      },
+      "prelude": {
+        "type": "CustomIdent",
+        "span": {
+          "start": 16,
+          "end": 22,
+          "ctxt": 0
+        },
+        "value": "thumbs",
+        "raw": "thumbs"
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 23,
+          "end": 86,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 23,
+            "end": 24,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 29,
+              "end": 43,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 29,
+                "end": 35,
+                "ctxt": 0
+              },
+              "value": "system",
+              "raw": "system"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 37,
+                  "end": 43,
+                  "ctxt": 0
+                },
+                "value": "cyclic",
+                "raw": "cyclic"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 49,
+              "end": 66,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 49,
+                "end": 56,
+                "ctxt": 0
+              },
+              "value": "symbols",
+              "raw": "symbols"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 58,
+                  "end": 66,
+                  "ctxt": 0
+                },
+                "value": "👍",
+                "raw": "\"\\1F44D\""
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 72,
+              "end": 83,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 72,
+                "end": 78,
+                "ctxt": 0
+              },
+              "value": "suffix",
+              "raw": "suffix"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 80,
+                  "end": 83,
+                  "ctxt": 0
+                },
+                "value": " ",
+                "raw": "\" \""
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 88,
+        "end": 118,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 88,
+          "end": 90,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 88,
+              "end": 90,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 88,
+                  "end": 90,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 88,
+                    "end": 90,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 88,
+                      "end": 90,
+                      "ctxt": 0
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 88,
+                        "end": 90,
+                        "ctxt": 0
+                      },
+                      "value": "ul",
+                      "raw": "ul"
+                    }
+                  }
+                },
+                "subclassSelectors": []
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 91,
+          "end": 118,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 91,
+            "end": 92,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 97,
+              "end": 115,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 97,
+                "end": 107,
+                "ctxt": 0
+              },
+              "value": "list-style",
+              "raw": "list-style"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 109,
+                  "end": 115,
+                  "ctxt": 0
+                },
+                "value": "thumbs",
+                "raw": "thumbs"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

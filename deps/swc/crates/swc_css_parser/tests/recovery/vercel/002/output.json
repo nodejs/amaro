@@ -1,0 +1,814 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 389,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 388,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7,
+                      "ctxt": 0
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7,
+                        "ctxt": 0
+                      },
+                      "value": "slide",
+                      "raw": "slide"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 388,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 8,
+            "end": 9,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 14,
+              "end": 50,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 14,
+                "end": 19,
+                "ctxt": 0
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 21,
+                  "end": 50,
+                  "ctxt": 0
+                },
+                "value": "__styled-jsx-placeholder__7px",
+                "raw": "__styled-jsx-placeholder__7px"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 56,
+              "end": 93,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 56,
+                "end": 62,
+                "ctxt": 0
+              },
+              "value": "height",
+              "raw": "height"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 64,
+                  "end": 93,
+                  "ctxt": 0
+                },
+                "value": "__styled-jsx-placeholder__7px",
+                "raw": "__styled-jsx-placeholder__7px"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 99,
+              "end": 176,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 99,
+                "end": 105,
+                "ctxt": 0
+              },
+              "value": "margin",
+              "raw": "margin"
+            },
+            "value": [
+              {
+                "type": "Integer",
+                "span": {
+                  "start": 107,
+                  "end": 108,
+                  "ctxt": 0
+                },
+                "value": 0,
+                "raw": "0"
+              },
+              {
+                "type": "Function",
+                "span": {
+                  "start": 109,
+                  "end": 176,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 109,
+                    "end": 113,
+                    "ctxt": 0
+                  },
+                  "value": "calc",
+                  "raw": "calc"
+                },
+                "value": [
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 114,
+                      "end": 143,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "Ident": {
+                        "value": "__styled-jsx-placeholder__7vw",
+                        "raw": "__styled-jsx-placeholder__7vw"
+                      }
+                    }
+                  },
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 143,
+                      "end": 144,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "WhiteSpace": {
+                        "value": " "
+                      }
+                    }
+                  },
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 144,
+                      "end": 145,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "Delim": {
+                        "value": "-"
+                      }
+                    }
+                  },
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 145,
+                      "end": 146,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "WhiteSpace": {
+                        "value": " "
+                      }
+                    }
+                  },
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 146,
+                      "end": 175,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "Ident": {
+                        "value": "__styled-jsx-placeholder__7px",
+                        "raw": "__styled-jsx-placeholder__7px"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 182,
+              "end": 200,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 182,
+                "end": 195,
+                "ctxt": 0
+              },
+              "value": "border-radius",
+              "raw": "border-radius"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 197,
+                  "end": 200,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 197,
+                    "end": 198,
+                    "ctxt": 0
+                  },
+                  "value": 7.0,
+                  "raw": "7"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 198,
+                    "end": 200,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 206,
+              "end": 288,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 206,
+                "end": 216,
+                "ctxt": 0
+              },
+              "value": "box-shadow",
+              "raw": "box-shadow"
+            },
+            "value": [
+              {
+                "type": "Integer",
+                "span": {
+                  "start": 218,
+                  "end": 219,
+                  "ctxt": 0
+                },
+                "value": 0,
+                "raw": "0"
+              },
+              {
+                "type": "Length",
+                "span": {
+                  "start": 220,
+                  "end": 224,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 220,
+                    "end": 222,
+                    "ctxt": 0
+                  },
+                  "value": 10.0,
+                  "raw": "10"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 222,
+                    "end": 224,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              },
+              {
+                "type": "Length",
+                "span": {
+                  "start": 225,
+                  "end": 229,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 225,
+                    "end": 227,
+                    "ctxt": 0
+                  },
+                  "value": 20.0,
+                  "raw": "20"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 227,
+                    "end": 229,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              },
+              {
+                "type": "Function",
+                "span": {
+                  "start": 230,
+                  "end": 249,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 230,
+                    "end": 234,
+                    "ctxt": 0
+                  },
+                  "value": "rgba",
+                  "raw": "rgba"
+                },
+                "value": [
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 235,
+                      "end": 236,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 236,
+                      "end": 237,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 238,
+                      "end": 239,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 239,
+                      "end": 240,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 241,
+                      "end": 242,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 242,
+                      "end": 243,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 244,
+                      "end": 248,
+                      "ctxt": 0
+                    },
+                    "value": 0.08,
+                    "raw": "0.08"
+                  }
+                ]
+              },
+              {
+                "type": "Delimiter",
+                "span": {
+                  "start": 249,
+                  "end": 250,
+                  "ctxt": 0
+                },
+                "value": ","
+              },
+              {
+                "type": "Integer",
+                "span": {
+                  "start": 259,
+                  "end": 260,
+                  "ctxt": 0
+                },
+                "value": 0,
+                "raw": "0"
+              },
+              {
+                "type": "Length",
+                "span": {
+                  "start": 261,
+                  "end": 264,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 261,
+                    "end": 262,
+                    "ctxt": 0
+                  },
+                  "value": 5.0,
+                  "raw": "5"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 262,
+                    "end": 264,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              },
+              {
+                "type": "Length",
+                "span": {
+                  "start": 265,
+                  "end": 269,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 265,
+                    "end": 267,
+                    "ctxt": 0
+                  },
+                  "value": 12.0,
+                  "raw": "12"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 267,
+                    "end": 269,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              },
+              {
+                "type": "Function",
+                "span": {
+                  "start": 270,
+                  "end": 288,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 270,
+                    "end": 274,
+                    "ctxt": 0
+                  },
+                  "value": "rgba",
+                  "raw": "rgba"
+                },
+                "value": [
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 275,
+                      "end": 276,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 276,
+                      "end": 277,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 278,
+                      "end": 279,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 279,
+                      "end": 280,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 281,
+                      "end": 282,
+                      "ctxt": 0
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 282,
+                      "end": 283,
+                      "ctxt": 0
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Number",
+                    "span": {
+                      "start": 284,
+                      "end": 287,
+                      "ctxt": 0
+                    },
+                    "value": 0.1,
+                    "raw": "0.1"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 294,
+              "end": 319,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 294,
+                "end": 304,
+                "ctxt": 0
+              },
+              "value": "transition",
+              "raw": "transition"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 306,
+                  "end": 309,
+                  "ctxt": 0
+                },
+                "value": "all",
+                "raw": "all"
+              },
+              {
+                "type": "Time",
+                "span": {
+                  "start": 310,
+                  "end": 314,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 310,
+                    "end": 313,
+                    "ctxt": 0
+                  },
+                  "value": 0.5,
+                  "raw": "0.5"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 313,
+                    "end": 314,
+                    "ctxt": 0
+                  },
+                  "value": "s",
+                  "raw": "s"
+                }
+              },
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 315,
+                  "end": 319,
+                  "ctxt": 0
+                },
+                "value": "ease",
+                "raw": "ease"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 325,
+              "end": 340,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 325,
+                "end": 331,
+                "ctxt": 0
+              },
+              "value": "cursor",
+              "raw": "cursor"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 333,
+                  "end": 340,
+                  "ctxt": 0
+                },
+                "value": "pointer",
+                "raw": "pointer"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 346,
+              "end": 362,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 346,
+                "end": 354,
+                "ctxt": 0
+              },
+              "value": "overflow",
+              "raw": "overflow"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 356,
+                  "end": 362,
+                  "ctxt": 0
+                },
+                "value": "hidden",
+                "raw": "hidden"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 368,
+              "end": 385,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 368,
+                "end": 378,
+                "ctxt": 0
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 380,
+                  "end": 385,
+                  "ctxt": 0
+                },
+                "value": "white",
+                "raw": "white"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

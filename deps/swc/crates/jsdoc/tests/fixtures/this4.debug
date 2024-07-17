@@ -1,0 +1,33 @@
+[
+    JsDoc {
+        span: 16..16#0,
+        description: Text {
+            span: 16..16#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 16..21#0,
+                tag_name: Text {
+                    span: 16..21#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 16..21#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 94..94#0,
+        description: Text {
+            span: 94..109#0,
+            value: "Render content.",
+        },
+        tags: [],
+    },
+]

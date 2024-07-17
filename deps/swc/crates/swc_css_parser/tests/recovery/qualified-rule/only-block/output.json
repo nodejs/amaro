@@ -1,0 +1,147 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 31,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 5,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 0,
+          "end": 0,
+          "ctxt": 0
+        },
+        "children": []
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 1,
+          "end": 5,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 1,
+            "end": 2,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 7,
+        "end": 9,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 0,
+          "end": 0,
+          "ctxt": 0
+        },
+        "children": []
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 7,
+          "end": 9,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 7,
+            "end": 8,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 11,
+        "end": 30,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 0,
+          "end": 0,
+          "ctxt": 0
+        },
+        "children": []
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 11,
+          "end": 30,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 11,
+            "end": 12,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 17,
+              "end": 27,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 17,
+                "end": 22,
+                "ctxt": 0
+              },
+              "value": "color",
+              "raw": "color"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 24,
+                  "end": 27,
+                  "ctxt": 0
+                },
+                "value": "red",
+                "raw": "red"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

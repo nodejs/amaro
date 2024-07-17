@@ -1,0 +1,126 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..8#0,
+                tag_name: Text {
+                    span: 1..8#0,
+                    value: "returns",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 1..8#0,
+                        ty: Some(
+                            Text {
+                                span: 1..23#0,
+                                value: "{string|Array<string>}",
+                            },
+                        ),
+                        description: Text {
+                            span: 1..32#0,
+                            value: "The names of the found item(s).",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 108..108#0,
+        description: Text {
+            span: 108..108#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 108..115#0,
+                tag_name: Text {
+                    span: 108..115#0,
+                    value: "returns",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 108..115#0,
+                        ty: Some(
+                            Text {
+                                span: 108..117#0,
+                                value: "{!string}",
+                            },
+                        ),
+                        description: Text {
+                            span: 108..129#0,
+                            value: "The name, if defined.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 184..184#0,
+        description: Text {
+            span: 184..184#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 184..190#0,
+                tag_name: Text {
+                    span: 184..190#0,
+                    value: "return",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 184..190#0,
+                        ty: Some(
+                            Text {
+                                span: 184..187#0,
+                                value: "The",
+                            },
+                        ),
+                        description: Text {
+                            span: 184..195#0,
+                            value: "binding id.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 248..248#0,
+        description: Text {
+            span: 248..248#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 248..254#0,
+                tag_name: Text {
+                    span: 248..254#0,
+                    value: "return",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 248..254#0,
+                        ty: Some(
+                            Text {
+                                span: 248..250#0,
+                                value: "An",
+                            },
+                        ),
+                        description: Text {
+                            span: 248..284#0,
+                            value: "object to be passed to {@link find}.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

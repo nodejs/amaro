@@ -1,0 +1,72 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 8,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 7,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 1,
+          "end": 3,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 1,
+              "end": 2,
+              "ctxt": 0
+            },
+            "token": {
+              "Delim": {
+                "value": ">"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 2,
+              "end": 3,
+              "ctxt": 0
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 3,
+          "end": 7,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 3,
+            "end": 4,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

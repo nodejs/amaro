@@ -1,0 +1,77 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 29,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 29,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 7,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 8,
+          "end": 27,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 8,
+              "end": 27,
+              "ctxt": 0
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 8,
+                "end": 27,
+                "ctxt": 0
+              },
+              "value": "�screen,screen\t",
+              "raw": "\\0screen\\,screen\\9 "
+            },
+            "keyword": null,
+            "condition": null
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 27,
+          "end": 29,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 27,
+            "end": 28,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

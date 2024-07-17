@@ -1,0 +1,134 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 74,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 1,
+        "end": 33,
+        "ctxt": 0
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 6,
+          "end": 9,
+          "ctxt": 0
+        },
+        "value": "T21",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsTypeQuery",
+        "span": {
+          "start": 12,
+          "end": 32,
+          "ctxt": 0
+        },
+        "exprName": {
+          "type": "Identifier",
+          "span": {
+            "start": 19,
+            "end": 24,
+            "ctxt": 0
+          },
+          "value": "Array",
+          "optional": false
+        },
+        "typeArguments": {
+          "type": "TsTypeParameterInstantiation",
+          "span": {
+            "start": 24,
+            "end": 32,
+            "ctxt": 0
+          },
+          "params": [
+            {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 25,
+                "end": 31,
+                "ctxt": 0
+              },
+              "kind": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 34,
+        "end": 74,
+        "ctxt": 0
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 39,
+          "end": 42,
+          "ctxt": 0
+        },
+        "value": "T22",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsTypeQuery",
+        "span": {
+          "start": 45,
+          "end": 73,
+          "ctxt": 0
+        },
+        "exprName": {
+          "type": "Identifier",
+          "span": {
+            "start": 52,
+            "end": 57,
+            "ctxt": 0
+          },
+          "value": "Array",
+          "optional": false
+        },
+        "typeArguments": {
+          "type": "TsTypeParameterInstantiation",
+          "span": {
+            "start": 57,
+            "end": 73,
+            "ctxt": 0
+          },
+          "params": [
+            {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 58,
+                "end": 64,
+                "ctxt": 0
+              },
+              "kind": "string"
+            },
+            {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 66,
+                "end": 72,
+                "ctxt": 0
+              },
+              "kind": "number"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

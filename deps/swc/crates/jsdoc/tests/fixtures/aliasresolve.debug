@@ -1,0 +1,84 @@
+[
+    JsDoc {
+        span: 0..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..10#0,
+                tag_name: Text {
+                    span: 1..10#0,
+                    value: "namespace",
+                },
+                tag: Namespace(
+                    NamespaceTag {
+                        span: 1..10#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 56..56#0,
+        description: Text {
+            span: 56..56#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 56..65#0,
+                tag_name: Text {
+                    span: 56..65#0,
+                    value: "namespace",
+                },
+                tag: Namespace(
+                    NamespaceTag {
+                        span: 56..65#0,
+                        ty: None,
+                        name: Some(
+                            Text {
+                                span: 56..66#0,
+                                value: "@alias A.F",
+                            },
+                        ),
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 125..125#0,
+        description: Text {
+            span: 125..125#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 125..131#0,
+                tag_name: Text {
+                    span: 125..131#0,
+                    value: "return",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 125..131#0,
+                        ty: Some(
+                            Text {
+                                span: 125..133#0,
+                                value: "{String}",
+                            },
+                        ),
+                        description: Text {
+                            span: 125..125#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

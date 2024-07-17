@@ -1,0 +1,182 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 37,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 37,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "CallExpression",
+        "span": {
+          "start": 1,
+          "end": 36,
+          "ctxt": 0
+        },
+        "callee": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 1,
+            "end": 8,
+            "ctxt": 0
+          },
+          "object": {
+            "type": "ArrayExpression",
+            "span": {
+              "start": 1,
+              "end": 4,
+              "ctxt": 0
+            },
+            "elements": [
+              {
+                "spread": null,
+                "expression": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 2,
+                    "end": 3,
+                    "ctxt": 0
+                  },
+                  "value": 0.0,
+                  "raw": "0"
+                }
+              }
+            ]
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 8,
+              "ctxt": 0
+            },
+            "value": "map",
+            "optional": false
+          }
+        },
+        "arguments": [
+          {
+            "spread": null,
+            "expression": {
+              "type": "ArrowFunctionExpression",
+              "span": {
+                "start": 9,
+                "end": 35,
+                "ctxt": 0
+              },
+              "params": [
+                {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 10,
+                    "end": 11,
+                    "ctxt": 0
+                  },
+                  "value": "_",
+                  "optional": false,
+                  "typeAnnotation": null
+                }
+              ],
+              "body": {
+                "type": "ArrayExpression",
+                "span": {
+                  "start": 29,
+                  "end": 35,
+                  "ctxt": 0
+                },
+                "elements": [
+                  {
+                    "spread": null,
+                    "expression": {
+                      "type": "BooleanLiteral",
+                      "span": {
+                        "start": 30,
+                        "end": 34,
+                        "ctxt": 0
+                      },
+                      "value": true
+                    }
+                  }
+                ]
+              },
+              "async": false,
+              "generator": false,
+              "typeParameters": null,
+              "returnType": {
+                "type": "TsTypeAnnotation",
+                "span": {
+                  "start": 12,
+                  "end": 25,
+                  "ctxt": 0
+                },
+                "typeAnnotation": {
+                  "type": "TsParenthesizedType",
+                  "span": {
+                    "start": 14,
+                    "end": 25,
+                    "ctxt": 0
+                  },
+                  "typeAnnotation": {
+                    "type": "TsTupleType",
+                    "span": {
+                      "start": 15,
+                      "end": 24,
+                      "ctxt": 0
+                    },
+                    "elemTypes": [
+                      {
+                        "type": "TsTupleElement",
+                        "span": {
+                          "start": 16,
+                          "end": 23,
+                          "ctxt": 0
+                        },
+                        "label": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 16,
+                            "end": 17,
+                            "ctxt": 0
+                          },
+                          "value": "a",
+                          "optional": false,
+                          "typeAnnotation": null
+                        },
+                        "ty": {
+                          "type": "TsLiteralType",
+                          "span": {
+                            "start": 19,
+                            "end": 23,
+                            "ctxt": 0
+                          },
+                          "literal": {
+                            "type": "BooleanLiteral",
+                            "span": {
+                              "start": 19,
+                              "end": 23,
+                              "ctxt": 0
+                            },
+                            "value": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

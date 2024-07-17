@@ -1,0 +1,72 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..16#0,
+            value: "My test module.",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7#0,
+                        name: Text {
+                            span: 1..7#0,
+                            value: "module",
+                        },
+                        ty: Text {
+                            span: 1..3#0,
+                            value: "my",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 76..76#0,
+        description: Text {
+            span: 76..76#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 76..88#0,
+                tag_name: Text {
+                    span: 76..88#0,
+                    value: "undocumented",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 76..88#0,
+                        extras: Text {
+                            span: 76..99#0,
+                            value: "@alias module:my/module",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 167..167#0,
+        description: Text {
+            span: 167..187#0,
+            value: "Document a property.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 231..231#0,
+        description: Text {
+            span: 231..249#0,
+            value: "Document a method.",
+        },
+        tags: [],
+    },
+]

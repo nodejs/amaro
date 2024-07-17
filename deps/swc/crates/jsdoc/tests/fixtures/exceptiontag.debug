@@ -1,0 +1,102 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "throws",
+                },
+                tag: Throw(
+                    ThrowTag {
+                        span: 1..7#0,
+                        text: Text {
+                            span: 1..27#0,
+                            value: "{InvalidArgumentException}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 69..69#0,
+        description: Text {
+            span: 69..69#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 69..78#0,
+                tag_name: Text {
+                    span: 69..78#0,
+                    value: "exception",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 69..78#0,
+                        extras: Text {
+                            span: 69..109#0,
+                            value: "Will throw an error if argument is null.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 154..154#0,
+        description: Text {
+            span: 154..154#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 154..163#0,
+                tag_name: Text {
+                    span: 154..163#0,
+                    value: "exception",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 154..163#0,
+                        extras: Text {
+                            span: 154..197#0,
+                            value: "{DivideByZero} Argument x must be non-zero.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 242..242#0,
+        description: Text {
+            span: 242..278#0,
+            value: "A description of the function.\n *\n *",
+        },
+        tags: [
+            TagItem {
+                span: 242..251#0,
+                tag_name: Text {
+                    span: 242..251#0,
+                    value: "exception",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 242..251#0,
+                        extras: Text {
+                            span: 242..282#0,
+                            value: "{Object} A description of the exception.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

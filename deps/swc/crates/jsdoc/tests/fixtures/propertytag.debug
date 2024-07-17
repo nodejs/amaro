@@ -1,0 +1,123 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..10#0,
+                tag_name: Text {
+                    span: 1..10#0,
+                    value: "namespace",
+                },
+                tag: Namespace(
+                    NamespaceTag {
+                        span: 1..10#0,
+                        ty: None,
+                        name: Some(
+                            Text {
+                                span: 1..45#0,
+                                value: "@property {String} id=abc123 The identifier.",
+                            },
+                        ),
+                    },
+                ),
+            },
+            TagItem {
+                span: 1..9#0,
+                tag_name: Text {
+                    span: 1..9#0,
+                    value: "property",
+                },
+                tag: Property(
+                    PropertyTag {
+                        span: 1..9#0,
+                        name_path: NamePath {
+                            span: 1..163#0,
+                            components: [
+                                Text {
+                                    span: 1..1#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                        ty: Some(
+                            Text {
+                                span: 1..9#0,
+                                value: "{Object}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 1..29#0,
+                            value: "defaults The default values.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 1..9#0,
+                tag_name: Text {
+                    span: 1..9#0,
+                    value: "property",
+                },
+                tag: Property(
+                    PropertyTag {
+                        span: 1..9#0,
+                        name_path: NamePath {
+                            span: 1..112#0,
+                            components: [
+                                Text {
+                                    span: 1..1#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                        ty: Some(
+                            Text {
+                                span: 1..9#0,
+                                value: "{Number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 1..45#0,
+                            value: "defaults.a=1 The a property of the defaults.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 1..9#0,
+                tag_name: Text {
+                    span: 1..9#0,
+                    value: "property",
+                },
+                tag: Property(
+                    PropertyTag {
+                        span: 1..9#0,
+                        name_path: NamePath {
+                            span: 1..45#0,
+                            components: [
+                                Text {
+                                    span: 1..1#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                        ty: Some(
+                            Text {
+                                span: 1..9#0,
+                                value: "{String}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 1..43#0,
+                            value: "defaults.b The b property of the defaults.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

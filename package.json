@@ -21,7 +21,7 @@
 		"postpack": "npm run clean",
 		"build": "rspack build",
 		"typecheck": "tsc --noEmit",
-		"test": "node --test"
+		"test": "node --test test"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
@@ -30,9 +30,6 @@
 		"@types/node": "^20.14.11",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.3"
-	},
-	"dependencies": {
-		"@swc/wasm-typescript": "^1.6.13"
 	},
 	"engines": {
 		"node": "^22.4.0"

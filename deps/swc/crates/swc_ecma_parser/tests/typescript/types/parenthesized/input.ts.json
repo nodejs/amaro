@@ -1,0 +1,48 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 15,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 1,
+        "end": 15,
+        "ctxt": 0
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 6,
+          "end": 7,
+          "ctxt": 0
+        },
+        "value": "T",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsParenthesizedType",
+        "span": {
+          "start": 10,
+          "end": 14,
+          "ctxt": 0
+        },
+        "typeAnnotation": {
+          "type": "TsTypeLiteral",
+          "span": {
+            "start": 11,
+            "end": 13,
+            "ctxt": 0
+          },
+          "members": []
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

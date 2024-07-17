@@ -1,0 +1,114 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 51,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 51,
+        "ctxt": 0
+      },
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 51,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 10,
+              "ctxt": 0
+            },
+            "value": "tty",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TsAsExpression",
+            "span": {
+              "start": 13,
+              "end": 51,
+              "ctxt": 0
+            },
+            "expression": {
+              "type": "CallExpression",
+              "span": {
+                "start": 13,
+                "end": 27,
+                "ctxt": 0
+              },
+              "callee": {
+                "type": "Identifier",
+                "span": {
+                  "start": 13,
+                  "end": 20,
+                  "ctxt": 0
+                },
+                "value": "require",
+                "optional": false
+              },
+              "arguments": [
+                {
+                  "spread": null,
+                  "expression": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 21,
+                      "end": 26,
+                      "ctxt": 0
+                    },
+                    "value": "tty",
+                    "raw": "\"tty\""
+                  }
+                }
+              ],
+              "typeArguments": null
+            },
+            "typeAnnotation": {
+              "type": "TsTypeQuery",
+              "span": {
+                "start": 31,
+                "end": 51,
+                "ctxt": 0
+              },
+              "exprName": {
+                "type": "TsImportType",
+                "span": {
+                  "start": 38,
+                  "end": 51,
+                  "ctxt": 0
+                },
+                "argument": {
+                  "type": "StringLiteral",
+                  "span": {
+                    "start": 45,
+                    "end": 50,
+                    "ctxt": 0
+                  },
+                  "value": "tty",
+                  "raw": "\"tty\""
+                },
+                "qualifier": null,
+                "typeArguments": null
+              },
+              "typeArguments": null
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

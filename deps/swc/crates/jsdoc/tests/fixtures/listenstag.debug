@@ -1,0 +1,182 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..9#0,
+                            value: "myModule",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 26..66#0,
+        description: Text {
+            span: 26..54#0,
+            value: "An event (has listeners).\n *",
+        },
+        tags: [
+            TagItem {
+                span: 26..31#0,
+                tag_name: Text {
+                    span: 26..31#0,
+                    value: "event",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 26..31#0,
+                        extras: Text {
+                            span: 26..33#0,
+                            value: "MyEvent",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 26..34#0,
+                tag_name: Text {
+                    span: 26..34#0,
+                    value: "memberof",
+                },
+                tag: MemberOf(
+                    MemberOfTag {
+                        span: 26..34#0,
+                        parent_name_path: NamePath {
+                            span: 26..66#0,
+                            components: [
+                                Text {
+                                    span: 26..32#0,
+                                    value: "module",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 138..138#0,
+        description: Text {
+            span: 138..151#0,
+            value: "A handler.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 138..145#0,
+                tag_name: Text {
+                    span: 138..145#0,
+                    value: "listens",
+                },
+                tag: Listens(
+                    ListensTag {
+                        span: 138..145#0,
+                        event_name: Text {
+                            span: 138..161#0,
+                            value: "module:myModule.MyEvent",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 138..145#0,
+                tag_name: Text {
+                    span: 138..145#0,
+                    value: "listens",
+                },
+                tag: Listens(
+                    ListensTag {
+                        span: 138..145#0,
+                        event_name: Text {
+                            span: 138..173#0,
+                            value: "module:myModule~Events.event:Event2",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 138..145#0,
+                tag_name: Text {
+                    span: 138..145#0,
+                    value: "listens",
+                },
+                tag: Listens(
+                    ListensTag {
+                        span: 138..145#0,
+                        event_name: Text {
+                            span: 138..147#0,
+                            value: "fakeEvent",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 289..289#0,
+        description: Text {
+            span: 289..308#0,
+            value: "Another handler.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 289..296#0,
+                tag_name: Text {
+                    span: 289..296#0,
+                    value: "listens",
+                },
+                tag: Listens(
+                    ListensTag {
+                        span: 289..296#0,
+                        event_name: Text {
+                            span: 289..312#0,
+                            value: "module:myModule.MyEvent",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 0..381#0,
+        description: Text {
+            span: 381..396#0,
+            value: "a namespace.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 381..390#0,
+                tag_name: Text {
+                    span: 381..390#0,
+                    value: "namespace",
+                },
+                tag: Namespace(
+                    NamespaceTag {
+                        span: 381..390#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+]

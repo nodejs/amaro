@@ -1,0 +1,27 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..33#0,
+            value: "A function that does nothing.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 1..14#0,
+                tag_name: Text {
+                    span: 1..14#0,
+                    value: "nosideeffects",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 1..14#0,
+                        extras: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

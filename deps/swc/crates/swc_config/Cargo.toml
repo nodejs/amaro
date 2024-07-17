@@ -1,0 +1,22 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Types for configuring swc"
+documentation = "https://rustdoc.swc.rs/swc_config/"
+edition       = "2021"
+license       = "Apache-2.0"
+name          = "swc_config"
+repository    = "https://github.com/swc-project/swc.git"
+version       = "0.1.14"
+
+[dependencies]
+anyhow     = { workspace = true }
+indexmap   = { workspace = true }
+serde      = { workspace = true, features = ["derive", "rc"] }
+serde_json = { workspace = true }
+sourcemap  = { workspace = true, optional = true }
+
+swc_cached       = { version = "0.3.19", path = "../swc_cached" }
+swc_config_macro = { version = "0.1.4", path = "../swc_config_macro" }
+
+[lib]
+bench = false

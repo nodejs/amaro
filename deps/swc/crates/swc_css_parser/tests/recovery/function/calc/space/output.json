@@ -1,0 +1,162 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 35,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 34,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7,
+                      "ctxt": 0
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7,
+                        "ctxt": 0
+                      },
+                      "value": "style",
+                      "raw": "style"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 34,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 8,
+            "end": 9,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 11,
+              "end": 31,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 11,
+                "end": 16,
+                "ctxt": 0
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 18,
+                  "end": 31,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 18,
+                    "end": 22,
+                    "ctxt": 0
+                  },
+                  "value": "calc",
+                  "raw": "calc"
+                },
+                "value": [
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 23,
+                      "end": 26,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "Dimension": {
+                        "value": 2.0,
+                        "raw_value": "2",
+                        "unit": "px",
+                        "type": "integer",
+                        "raw_unit": "px"
+                      }
+                    }
+                  },
+                  {
+                    "type": "PreservedToken",
+                    "span": {
+                      "start": 26,
+                      "end": 30,
+                      "ctxt": 0
+                    },
+                    "token": {
+                      "Dimension": {
+                        "value": 1.0,
+                        "raw_value": "+1",
+                        "unit": "px",
+                        "type": "integer",
+                        "raw_unit": "px"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

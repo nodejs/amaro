@@ -1,0 +1,65 @@
+[
+    JsDoc {
+        span: 37..37#0,
+        description: Text {
+            span: 37..37#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 37..42#0,
+                tag_name: Text {
+                    span: 37..42#0,
+                    value: "lends",
+                },
+                tag: Lends(
+                    LendsTag {
+                        span: 37..42#0,
+                        name: NamePath {
+                            span: 37..38#0,
+                            components: [
+                                Text {
+                                    span: 37..41#0,
+                                    value: "Duck",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 71..71#0,
+        description: Text {
+            span: 71..89#0,
+            value: "Constructs a duck.",
+        },
+        tags: [
+            TagItem {
+                span: 71..81#0,
+                tag_name: Text {
+                    span: 71..81#0,
+                    value: "constructs",
+                },
+                tag: Constructs(
+                    ConstructsTag {
+                        span: 71..81#0,
+                        name: Text {
+                            span: 71..81#0,
+                            value: "@param tog",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 245..245#0,
+        description: Text {
+            span: 245..255#0,
+            value: "Say hello.",
+        },
+        tags: [],
+    },
+]

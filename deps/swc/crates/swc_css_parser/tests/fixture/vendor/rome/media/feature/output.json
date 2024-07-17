@@ -1,0 +1,1078 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 368,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 29,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 7,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 8,
+          "end": 26,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 8,
+              "end": 26,
+              "ctxt": 0
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 8,
+                "end": 14,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 15,
+                "end": 18,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 19,
+                "end": 26,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeatureBoolean",
+                  "span": {
+                    "start": 19,
+                    "end": 26,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 20,
+                      "end": 25,
+                      "ctxt": 0
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 27,
+          "end": 29,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 27,
+            "end": 28,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 30,
+        "end": 63,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 31,
+          "end": 36,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 37,
+          "end": 60,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 37,
+              "end": 60,
+              "ctxt": 0
+            },
+            "modifier": {
+              "type": "Ident",
+              "span": {
+                "start": 37,
+                "end": 41,
+                "ctxt": 0
+              },
+              "value": "only",
+              "raw": "only"
+            },
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 42,
+                "end": 48,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 49,
+                "end": 52,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 53,
+                "end": 60,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeatureBoolean",
+                  "span": {
+                    "start": 53,
+                    "end": 60,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 54,
+                      "end": 59,
+                      "ctxt": 0
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 61,
+          "end": 63,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 61,
+            "end": 62,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 64,
+        "end": 108,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 65,
+          "end": 70,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 71,
+          "end": 105,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 71,
+              "end": 105,
+              "ctxt": 0
+            },
+            "modifier": {
+              "type": "Ident",
+              "span": {
+                "start": 71,
+                "end": 75,
+                "ctxt": 0
+              },
+              "value": "only",
+              "raw": "only"
+            },
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 76,
+                "end": 82,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 83,
+                "end": 86,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 87,
+                "end": 105,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeaturePlain",
+                  "span": {
+                    "start": 87,
+                    "end": 105,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 88,
+                      "end": 97,
+                      "ctxt": 0
+                    },
+                    "value": "min-width",
+                    "raw": "min-width"
+                  },
+                  "value": {
+                    "type": "Length",
+                    "span": {
+                      "start": 99,
+                      "end": 104,
+                      "ctxt": 0
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 99,
+                        "end": 102,
+                        "ctxt": 0
+                      },
+                      "value": 800.0,
+                      "raw": "800"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 102,
+                        "end": 104,
+                        "ctxt": 0
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 106,
+          "end": 108,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 106,
+            "end": 107,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 109,
+        "end": 172,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 110,
+          "end": 115,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 116,
+          "end": 169,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 116,
+              "end": 169,
+              "ctxt": 0
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 116,
+                "end": 122,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 123,
+                "end": 126,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 127,
+                "end": 169,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeaturePlain",
+                  "span": {
+                    "start": 127,
+                    "end": 169,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 128,
+                      "end": 137,
+                      "ctxt": 0
+                    },
+                    "value": "min-width",
+                    "raw": "min-width"
+                  },
+                  "value": {
+                    "type": "Length",
+                    "span": {
+                      "start": 155,
+                      "end": 160,
+                      "ctxt": 0
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 155,
+                        "end": 158,
+                        "ctxt": 0
+                      },
+                      "value": 800.0,
+                      "raw": "800"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 158,
+                        "end": 160,
+                        "ctxt": 0
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 170,
+          "end": 172,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 170,
+            "end": 171,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 173,
+        "end": 258,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 174,
+          "end": 179,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 180,
+          "end": 255,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 180,
+              "end": 255,
+              "ctxt": 0
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 180,
+                "end": 186,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 187,
+                "end": 190,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 191,
+                "end": 255,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeaturePlain",
+                  "span": {
+                    "start": 191,
+                    "end": 209,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 192,
+                      "end": 201,
+                      "ctxt": 0
+                    },
+                    "value": "min-width",
+                    "raw": "min-width"
+                  },
+                  "value": {
+                    "type": "Length",
+                    "span": {
+                      "start": 203,
+                      "end": 208,
+                      "ctxt": 0
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 203,
+                        "end": 206,
+                        "ctxt": 0
+                      },
+                      "value": 800.0,
+                      "raw": "800"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 206,
+                        "end": 208,
+                        "ctxt": 0
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  }
+                },
+                {
+                  "type": "MediaAnd",
+                  "span": {
+                    "start": 210,
+                    "end": 232,
+                    "ctxt": 0
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 210,
+                      "end": 213,
+                      "ctxt": 0
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaFeaturePlain",
+                    "span": {
+                      "start": 214,
+                      "end": 232,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 215,
+                        "end": 224,
+                        "ctxt": 0
+                      },
+                      "value": "min-width",
+                      "raw": "min-width"
+                    },
+                    "value": {
+                      "type": "Length",
+                      "span": {
+                        "start": 226,
+                        "end": 231,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Number",
+                        "span": {
+                          "start": 226,
+                          "end": 229,
+                          "ctxt": 0
+                        },
+                        "value": 800.0,
+                        "raw": "800"
+                      },
+                      "unit": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 229,
+                          "end": 231,
+                          "ctxt": 0
+                        },
+                        "value": "px",
+                        "raw": "px"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "MediaAnd",
+                  "span": {
+                    "start": 233,
+                    "end": 255,
+                    "ctxt": 0
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 233,
+                      "end": 236,
+                      "ctxt": 0
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaFeaturePlain",
+                    "span": {
+                      "start": 237,
+                      "end": 255,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 238,
+                        "end": 247,
+                        "ctxt": 0
+                      },
+                      "value": "min-width",
+                      "raw": "min-width"
+                    },
+                    "value": {
+                      "type": "Length",
+                      "span": {
+                        "start": 249,
+                        "end": 254,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Number",
+                        "span": {
+                          "start": 249,
+                          "end": 252,
+                          "ctxt": 0
+                        },
+                        "value": 800.0,
+                        "raw": "800"
+                      },
+                      "unit": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 252,
+                          "end": 254,
+                          "ctxt": 0
+                        },
+                        "value": "px",
+                        "raw": "px"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 256,
+          "end": 258,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 256,
+            "end": 257,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 259,
+        "end": 366,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 260,
+          "end": 265,
+          "ctxt": 0
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 266,
+          "end": 364,
+          "ctxt": 0
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 266,
+              "end": 364,
+              "ctxt": 0
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 266,
+                "end": 272,
+                "ctxt": 0
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 273,
+                "end": 276,
+                "ctxt": 0
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 277,
+                "end": 364,
+                "ctxt": 0
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeaturePlain",
+                  "span": {
+                    "start": 277,
+                    "end": 295,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 278,
+                      "end": 287,
+                      "ctxt": 0
+                    },
+                    "value": "min-width",
+                    "raw": "min-width"
+                  },
+                  "value": {
+                    "type": "Length",
+                    "span": {
+                      "start": 289,
+                      "end": 294,
+                      "ctxt": 0
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 289,
+                        "end": 292,
+                        "ctxt": 0
+                      },
+                      "value": 800.0,
+                      "raw": "800"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 292,
+                        "end": 294,
+                        "ctxt": 0
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  }
+                },
+                {
+                  "type": "MediaAnd",
+                  "span": {
+                    "start": 296,
+                    "end": 318,
+                    "ctxt": 0
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 296,
+                      "end": 299,
+                      "ctxt": 0
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaFeaturePlain",
+                    "span": {
+                      "start": 300,
+                      "end": 318,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 301,
+                        "end": 310,
+                        "ctxt": 0
+                      },
+                      "value": "min-width",
+                      "raw": "min-width"
+                    },
+                    "value": {
+                      "type": "Length",
+                      "span": {
+                        "start": 312,
+                        "end": 317,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Number",
+                        "span": {
+                          "start": 312,
+                          "end": 315,
+                          "ctxt": 0
+                        },
+                        "value": 800.0,
+                        "raw": "800"
+                      },
+                      "unit": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 315,
+                          "end": 317,
+                          "ctxt": 0
+                        },
+                        "value": "px",
+                        "raw": "px"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "MediaAnd",
+                  "span": {
+                    "start": 319,
+                    "end": 341,
+                    "ctxt": 0
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 319,
+                      "end": 322,
+                      "ctxt": 0
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaFeaturePlain",
+                    "span": {
+                      "start": 323,
+                      "end": 341,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 324,
+                        "end": 333,
+                        "ctxt": 0
+                      },
+                      "value": "min-width",
+                      "raw": "min-width"
+                    },
+                    "value": {
+                      "type": "Length",
+                      "span": {
+                        "start": 335,
+                        "end": 340,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Number",
+                        "span": {
+                          "start": 335,
+                          "end": 338,
+                          "ctxt": 0
+                        },
+                        "value": 800.0,
+                        "raw": "800"
+                      },
+                      "unit": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 338,
+                          "end": 340,
+                          "ctxt": 0
+                        },
+                        "value": "px",
+                        "raw": "px"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "MediaAnd",
+                  "span": {
+                    "start": 342,
+                    "end": 364,
+                    "ctxt": 0
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 342,
+                      "end": 345,
+                      "ctxt": 0
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaFeaturePlain",
+                    "span": {
+                      "start": 346,
+                      "end": 364,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 347,
+                        "end": 356,
+                        "ctxt": 0
+                      },
+                      "value": "min-width",
+                      "raw": "min-width"
+                    },
+                    "value": {
+                      "type": "Length",
+                      "span": {
+                        "start": 358,
+                        "end": 363,
+                        "ctxt": 0
+                      },
+                      "value": {
+                        "type": "Number",
+                        "span": {
+                          "start": 358,
+                          "end": 361,
+                          "ctxt": 0
+                        },
+                        "value": 800.0,
+                        "raw": "800"
+                      },
+                      "unit": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 361,
+                          "end": 363,
+                          "ctxt": 0
+                        },
+                        "value": "px",
+                        "raw": "px"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 364,
+          "end": 366,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 364,
+            "end": 365,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

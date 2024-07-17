@@ -1,0 +1,97 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 43,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 1,
+        "end": 43,
+        "ctxt": 0
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 6,
+          "end": 11,
+          "ctxt": 0
+        },
+        "value": "Range",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsTupleType",
+        "span": {
+          "start": 14,
+          "end": 42,
+          "ctxt": 0
+        },
+        "elemTypes": [
+          {
+            "type": "TsTupleElement",
+            "span": {
+              "start": 15,
+              "end": 28,
+              "ctxt": 0
+            },
+            "label": {
+              "type": "Identifier",
+              "span": {
+                "start": 15,
+                "end": 20,
+                "ctxt": 0
+              },
+              "value": "start",
+              "optional": false,
+              "typeAnnotation": null
+            },
+            "ty": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 22,
+                "end": 28,
+                "ctxt": 0
+              },
+              "kind": "number"
+            }
+          },
+          {
+            "type": "TsTupleElement",
+            "span": {
+              "start": 30,
+              "end": 41,
+              "ctxt": 0
+            },
+            "label": {
+              "type": "Identifier",
+              "span": {
+                "start": 30,
+                "end": 33,
+                "ctxt": 0
+              },
+              "value": "end",
+              "optional": false,
+              "typeAnnotation": null
+            },
+            "ty": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 35,
+                "end": 41,
+                "ctxt": 0
+              },
+              "kind": "number"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

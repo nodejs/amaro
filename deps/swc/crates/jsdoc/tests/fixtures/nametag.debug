@@ -1,0 +1,76 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..11#0,
+            value: "A view.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 1..5#0,
+                tag_name: Text {
+                    span: 1..5#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 1..5#0,
+                        name_path: NamePath {
+                            span: 1..2#0,
+                            components: [
+                                Text {
+                                    span: 1..5#0,
+                                    value: "View",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 35..35#0,
+        description: Text {
+            span: 35..51#0,
+            value: "A controller.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 35..39#0,
+                tag_name: Text {
+                    span: 35..39#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 35..39#0,
+                        name_path: NamePath {
+                            span: 35..46#0,
+                            components: [
+                                Text {
+                                    span: 35..45#0,
+                                    value: "Controller",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 35..40#0,
+                tag_name: Text {
+                    span: 35..40#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 35..40#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+]

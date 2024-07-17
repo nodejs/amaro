@@ -1,0 +1,7 @@
+  x Invalid access to super
+   ,-[$DIR/tests/span/js/super/obj1.js:3:1]
+ 2 |     a: function a() {
+ 3 |         super.x;
+   :               ^
+ 4 |     },
+   `----

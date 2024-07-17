@@ -1,0 +1,57 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..5#0,
+                tag_name: Text {
+                    span: 1..5#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 1..5#0,
+                        name_path: NamePath {
+                            span: 1..2#0,
+                            components: [
+                                Text {
+                                    span: 1..8#0,
+                                    value: "virtual",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 45..45#0,
+        description: Text {
+            span: 45..45#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 45..48#0,
+                tag_name: Text {
+                    span: 45..48#0,
+                    value: "foo",
+                },
+                tag: Unknown(
+                    UnknownTag {
+                        span: 45..48#0,
+                        extras: Text {
+                            span: 45..48#0,
+                            value: "bar",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

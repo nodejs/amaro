@@ -1,0 +1,70 @@
+[
+    JsDoc {
+        span: 20..20#0,
+        description: Text {
+            span: 20..53#0,
+            value: "Creates a new test object.\n     *",
+        },
+        tags: [
+            TagItem {
+                span: 20..25#0,
+                tag_name: Text {
+                    span: 20..25#0,
+                    value: "alias",
+                },
+                tag: Alias(
+                    AliasTag {
+                        span: 20..25#0,
+                        name_path: NamePath {
+                            span: 20..45#0,
+                            components: [
+                                Text {
+                                    span: 20..24#0,
+                                    value: "Test",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 20..31#0,
+                tag_name: Text {
+                    span: 20..31#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 20..31#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 149..149#0,
+        description: Text {
+            span: 149..161#0,
+            value: "Document me.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 210..210#0,
+        description: Text {
+            span: 210..222#0,
+            value: "Document me.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 287..287#0,
+        description: Text {
+            span: 287..299#0,
+            value: "Document me.",
+        },
+        tags: [],
+    },
+]

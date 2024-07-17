@@ -1,0 +1,191 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 84,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 83,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7,
+                      "ctxt": 0
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7,
+                        "ctxt": 0
+                      },
+                      "value": "class",
+                      "raw": "class"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 83,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 8,
+            "end": 9,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 14,
+              "end": 44,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 14,
+                "end": 27,
+                "ctxt": 0
+              },
+              "value": "unicode-range",
+              "raw": "unicode-range"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 29,
+                  "end": 30,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Ident": {
+                    "value": "U",
+                    "raw": "U"
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 30,
+                  "end": 44,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Dimension": {
+                    "value": 1.0,
+                    "raw_value": "+1",
+                    "unit": "Z1ee1-FFFFFF",
+                    "type": "integer",
+                    "raw_unit": "Z1ee1-FFFFFF"
+                  }
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 50,
+              "end": 80,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 50,
+                "end": 63,
+                "ctxt": 0
+              },
+              "value": "unicode-range",
+              "raw": "unicode-range"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 65,
+                  "end": 66,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Ident": {
+                    "value": "U",
+                    "raw": "U"
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 66,
+                  "end": 80,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Dimension": {
+                    "value": 10.0,
+                    "raw_value": "+1e1",
+                    "unit": "ee1-FFZFFF",
+                    "type": "number",
+                    "raw_unit": "ee1-FFZFFF"
+                  }
+                }
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

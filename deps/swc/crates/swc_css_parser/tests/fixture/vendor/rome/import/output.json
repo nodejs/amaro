@@ -1,0 +1,107 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 56,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 25,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 8,
+          "ctxt": 0
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ImportPrelude",
+        "span": {
+          "start": 9,
+          "end": 24,
+          "ctxt": 0
+        },
+        "href": {
+          "type": "String",
+          "span": {
+            "start": 9,
+            "end": 24,
+            "ctxt": 0
+          },
+          "value": "something.css",
+          "raw": "\"something.css\""
+        },
+        "layerName": null,
+        "importConditions": null
+      },
+      "block": null
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 26,
+        "end": 55,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 27,
+          "end": 33,
+          "ctxt": 0
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ImportPrelude",
+        "span": {
+          "start": 34,
+          "end": 54,
+          "ctxt": 0
+        },
+        "href": {
+          "type": "Url",
+          "span": {
+            "start": 34,
+            "end": 54,
+            "ctxt": 0
+          },
+          "name": {
+            "type": "Ident",
+            "span": {
+              "start": 34,
+              "end": 37,
+              "ctxt": 0
+            },
+            "value": "url",
+            "raw": "url"
+          },
+          "value": {
+            "type": "String",
+            "span": {
+              "start": 38,
+              "end": 53,
+              "ctxt": 0
+            },
+            "value": "something.css",
+            "raw": "\"something.css\""
+          },
+          "modifiers": []
+        },
+        "layerName": null,
+        "importConditions": null
+      },
+      "block": null
+    }
+  ]
+}

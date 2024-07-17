@@ -1,0 +1,100 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 24,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 24,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 1,
+          "end": 23,
+          "ctxt": 0
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "span": {
+            "start": 2,
+            "end": 22,
+            "ctxt": 0
+          },
+          "operator": "=",
+          "left": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 2,
+              "end": 16,
+              "ctxt": 0
+            },
+            "properties": [
+              {
+                "type": "RestElement",
+                "span": {
+                  "start": 4,
+                  "end": 14,
+                  "ctxt": 0
+                },
+                "rest": {
+                  "start": 4,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "argument": {
+                  "type": "MemberExpression",
+                  "span": {
+                    "start": 7,
+                    "end": 14,
+                    "ctxt": 0
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 7,
+                      "end": 10,
+                      "ctxt": 0
+                    },
+                    "value": "foo",
+                    "optional": false
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 11,
+                      "end": 14,
+                      "ctxt": 0
+                    },
+                    "value": "bar",
+                    "optional": false
+                  }
+                },
+                "typeAnnotation": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "right": {
+            "type": "Identifier",
+            "span": {
+              "start": 19,
+              "end": 22,
+              "ctxt": 0
+            },
+            "value": "baz",
+            "optional": false
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

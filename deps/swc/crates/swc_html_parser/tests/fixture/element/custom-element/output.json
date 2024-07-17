@@ -1,0 +1,780 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 878,
+    "ctxt": 0
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16,
+        "ctxt": 0
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 17,
+        "end": 878,
+        "ctxt": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 23,
+            "end": 32,
+            "ctxt": 0
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "lang",
+          "rawName": "lang",
+          "value": "en",
+          "rawValue": "\"en\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 34,
+            "end": 76,
+            "ctxt": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 40,
+                "end": 45,
+                "ctxt": 0
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 45,
+                "end": 68,
+                "ctxt": 0
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 52,
+                    "end": 60,
+                    "ctxt": 0
+                  },
+                  "data": "Document",
+                  "raw": "Document"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 68,
+                "end": 69,
+                "ctxt": 0
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 76,
+            "end": 77,
+            "ctxt": 0
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 77,
+            "end": 871,
+            "ctxt": 0
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 83,
+                "end": 84,
+                "ctxt": 0
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 84,
+                "end": 264,
+                "ctxt": 0
+              },
+              "tagName": "popup-info",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 96,
+                    "end": 113,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "img",
+                  "rawName": "img",
+                  "value": "img/alt.png",
+                  "rawValue": "\"img/alt.png\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 114,
+                    "end": 250,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "data-text",
+                  "rawName": "data-text",
+                  "value": "Your card validation code (CVC)\n  is an extra security feature — it is the last 3 or 4 numbers on the\n  back of your card.",
+                  "rawValue": "\"Your card validation code (CVC)\n  is an extra security feature — it is the last 3 or 4 numbers on the\n  back of your card.\""
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 264,
+                "end": 266,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 266,
+                "end": 313,
+                "ctxt": 0
+              },
+              "tagName": "custom-square",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 281,
+                    "end": 288,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "l",
+                  "rawName": "l",
+                  "value": "100",
+                  "rawValue": "\"100\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 289,
+                    "end": 296,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "c",
+                  "rawName": "c",
+                  "value": "red",
+                  "rawValue": "\"red\""
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 313,
+                "end": 315,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 315,
+                "end": 354,
+                "ctxt": 0
+              },
+              "tagName": "app-drawer",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 327,
+                    "end": 331,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "open",
+                  "rawName": "open",
+                  "value": null,
+                  "rawValue": null
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 332,
+                    "end": 340,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "disabled",
+                  "rawName": "disabled",
+                  "value": null,
+                  "rawValue": null
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 354,
+                "end": 356,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 356,
+                "end": 604,
+                "ctxt": 0
+              },
+              "tagName": "share-buttons",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 371,
+                    "end": 376,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 376,
+                    "end": 447,
+                    "ctxt": 0
+                  },
+                  "tagName": "social-button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 391,
+                        "end": 405,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "type",
+                      "rawName": "type",
+                      "value": "twitter",
+                      "rawValue": "\"twitter\""
+                    }
+                  ],
+                  "children": [
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 406,
+                        "end": 431,
+                        "ctxt": 0
+                      },
+                      "tagName": "a",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 409,
+                            "end": 419,
+                            "ctxt": 0
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "href",
+                          "rawName": "href",
+                          "value": "...",
+                          "rawValue": "\"...\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 420,
+                            "end": 427,
+                            "ctxt": 0
+                          },
+                          "data": "Twitter",
+                          "raw": "Twitter"
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 447,
+                    "end": 452,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 452,
+                    "end": 519,
+                    "ctxt": 0
+                  },
+                  "tagName": "social-button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 467,
+                        "end": 476,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "type",
+                      "rawName": "type",
+                      "value": "fb",
+                      "rawValue": "\"fb\""
+                    }
+                  ],
+                  "children": [
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 477,
+                        "end": 503,
+                        "ctxt": 0
+                      },
+                      "tagName": "a",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 480,
+                            "end": 490,
+                            "ctxt": 0
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "href",
+                          "rawName": "href",
+                          "value": "...",
+                          "rawValue": "\"...\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 491,
+                            "end": 499,
+                            "ctxt": 0
+                          },
+                          "data": "Facebook",
+                          "raw": "Facebook"
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 519,
+                    "end": 524,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 524,
+                    "end": 587,
+                    "ctxt": 0
+                  },
+                  "tagName": "social-button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 539,
+                        "end": 550,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "type",
+                      "rawName": "type",
+                      "value": "plus",
+                      "rawValue": "\"plus\""
+                    }
+                  ],
+                  "children": [
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 551,
+                        "end": 571,
+                        "ctxt": 0
+                      },
+                      "tagName": "a",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 554,
+                            "end": 564,
+                            "ctxt": 0
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "href",
+                          "rawName": "href",
+                          "value": "...",
+                          "rawValue": "\"...\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 565,
+                            "end": 567,
+                            "ctxt": 0
+                          },
+                          "data": "G+",
+                          "raw": "G+"
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 587,
+                    "end": 588,
+                    "ctxt": 0
+                  },
+                  "data": "\n",
+                  "raw": "\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 604,
+                "end": 606,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 606,
+                "end": 683,
+                "ctxt": 0
+              },
+              "tagName": "x-foo-with-markup",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 625,
+                    "end": 630,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 630,
+                    "end": 662,
+                    "ctxt": 0
+                  },
+                  "tagName": "b",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 633,
+                        "end": 658,
+                        "ctxt": 0
+                      },
+                      "data": "I'm an x-foo-with-markup!",
+                      "raw": "I'm an x-foo-with-markup!"
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 662,
+                    "end": 663,
+                    "ctxt": 0
+                  },
+                  "data": "\n",
+                  "raw": "\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 683,
+                "end": 685,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 685,
+                "end": 862,
+                "ctxt": 0
+              },
+              "tagName": "template",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 695,
+                    "end": 719,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "id",
+                  "rawName": "id",
+                  "value": "x-foo-from-template",
+                  "rawValue": "\"x-foo-from-template\""
+                }
+              ],
+              "children": [],
+              "content": {
+                "type": "DocumentFragment",
+                "span": {
+                  "start": 685,
+                  "end": 862,
+                  "ctxt": 0
+                },
+                "children": [
+                  {
+                    "type": "Text",
+                    "span": {
+                      "start": 720,
+                      "end": 725,
+                      "ctxt": 0
+                    },
+                    "data": "\n    ",
+                    "raw": "\n    "
+                  },
+                  {
+                    "type": "Element",
+                    "span": {
+                      "start": 725,
+                      "end": 773,
+                      "ctxt": 0
+                    },
+                    "tagName": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "attributes": [],
+                    "children": [
+                      {
+                        "type": "Text",
+                        "span": {
+                          "start": 732,
+                          "end": 765,
+                          "ctxt": 0
+                        },
+                        "data": "\n        p { color: green; }\n    ",
+                        "raw": "\n        p { color: green; }\n    "
+                      }
+                    ],
+                    "content": null,
+                    "isSelfClosing": false
+                  },
+                  {
+                    "type": "Text",
+                    "span": {
+                      "start": 773,
+                      "end": 778,
+                      "ctxt": 0
+                    },
+                    "data": "\n    ",
+                    "raw": "\n    "
+                  },
+                  {
+                    "type": "Element",
+                    "span": {
+                      "start": 778,
+                      "end": 850,
+                      "ctxt": 0
+                    },
+                    "tagName": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "attributes": [],
+                    "children": [
+                      {
+                        "type": "Text",
+                        "span": {
+                          "start": 781,
+                          "end": 846,
+                          "ctxt": 0
+                        },
+                        "data": "I'm in Shadow DOM. My markup was stamped from a <template>.",
+                        "raw": "I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;."
+                      }
+                    ],
+                    "content": null,
+                    "isSelfClosing": false
+                  },
+                  {
+                    "type": "Text",
+                    "span": {
+                      "start": 850,
+                      "end": 851,
+                      "ctxt": 0
+                    },
+                    "data": "\n",
+                    "raw": "\n"
+                  }
+                ]
+              },
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 862,
+                "end": 871,
+                "ctxt": 0
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

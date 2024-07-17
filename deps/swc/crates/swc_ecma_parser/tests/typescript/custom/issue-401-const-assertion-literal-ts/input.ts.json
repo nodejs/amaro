@@ -1,0 +1,61 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 24,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 24,
+        "ctxt": 0
+      },
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 23,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TsConstAssertion",
+            "span": {
+              "start": 9,
+              "end": 23,
+              "ctxt": 0
+            },
+            "expression": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 16,
+                "end": 23,
+                "ctxt": 0
+              },
+              "value": "hello",
+              "raw": "\"hello\""
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

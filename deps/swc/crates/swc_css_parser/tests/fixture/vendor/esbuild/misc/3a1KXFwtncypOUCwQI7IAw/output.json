@@ -1,0 +1,135 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 40,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 40,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 11,
+          "ctxt": 0
+        },
+        "value": "keyframes",
+        "raw": "keyframes"
+      },
+      "prelude": {
+        "type": "CustomIdent",
+        "span": {
+          "start": 12,
+          "end": 16,
+          "ctxt": 0
+        },
+        "value": "name",
+        "raw": "name"
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 17,
+          "end": 40,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 17,
+            "end": 18,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "KeyframeBlock",
+            "span": {
+              "start": 19,
+              "end": 38,
+              "ctxt": 0
+            },
+            "prelude": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 19,
+                  "end": 23,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 19,
+                    "end": 22,
+                    "ctxt": 0
+                  },
+                  "value": 100.0,
+                  "raw": "100"
+                }
+              }
+            ],
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 24,
+                "end": 38,
+                "ctxt": 0
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 24,
+                  "end": 25,
+                  "ctxt": 0
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 26,
+                    "end": 37,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 26,
+                      "end": 31,
+                      "ctxt": 0
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 33,
+                        "end": 36,
+                        "ctxt": 0
+                      },
+                      "value": "red",
+                      "raw": "red"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

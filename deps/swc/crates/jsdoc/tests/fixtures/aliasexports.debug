@@ -1,0 +1,69 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7#0,
+                tag_name: Text {
+                    span: 1..7#0,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7#0,
+                        name: Text {
+                            span: 0..0#0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..4#0,
+                            value: "foo",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 21..30#0,
+        description: Text {
+            span: 21..37#0,
+            value: "Bar class.\n *\n *",
+        },
+        tags: [
+            TagItem {
+                span: 21..26#0,
+                tag_name: Text {
+                    span: 21..26#0,
+                    value: "alias",
+                },
+                tag: Alias(
+                    AliasTag {
+                        span: 21..26#0,
+                        name_path: NamePath {
+                            span: 21..30#0,
+                            components: [
+                                Text {
+                                    span: 21..27#0,
+                                    value: "module",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 87..87#0,
+        description: Text {
+            span: 87..100#0,
+            value: "Create a Bar.",
+        },
+        tags: [],
+    },
+]

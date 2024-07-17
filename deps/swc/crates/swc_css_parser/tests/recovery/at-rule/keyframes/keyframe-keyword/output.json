@@ -1,0 +1,178 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 56,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 28,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 11,
+          "ctxt": 0
+        },
+        "value": "keyframes",
+        "raw": "keyframes"
+      },
+      "prelude": {
+        "type": "CustomIdent",
+        "span": {
+          "start": 12,
+          "end": 15,
+          "ctxt": 0
+        },
+        "value": "foo",
+        "raw": "foo"
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 16,
+          "end": 28,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 16,
+            "end": 17,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "ListOfComponentValues",
+            "span": {
+              "start": 19,
+              "end": 24,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 19,
+                  "end": 23,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Ident": {
+                    "value": "form",
+                    "raw": "form"
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 23,
+                  "end": 24,
+                  "ctxt": 0
+                },
+                "token": {
+                  "WhiteSpace": {
+                    "value": " "
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 30,
+        "end": 55,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 31,
+          "end": 40,
+          "ctxt": 0
+        },
+        "value": "keyframes",
+        "raw": "keyframes"
+      },
+      "prelude": {
+        "type": "CustomIdent",
+        "span": {
+          "start": 41,
+          "end": 44,
+          "ctxt": 0
+        },
+        "value": "foo",
+        "raw": "foo"
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 45,
+            "end": 46,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "ListOfComponentValues",
+            "span": {
+              "start": 48,
+              "end": 51,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 48,
+                  "end": 50,
+                  "ctxt": 0
+                },
+                "token": {
+                  "Ident": {
+                    "value": "ot",
+                    "raw": "ot"
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 50,
+                  "end": 51,
+                  "ctxt": 0
+                },
+                "token": {
+                  "WhiteSpace": {
+                    "value": " "
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

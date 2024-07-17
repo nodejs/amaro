@@ -1,0 +1,113 @@
+[
+    JsDoc {
+        span: 74..74#0,
+        description: Text {
+            span: 74..74#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 74..79#0,
+                tag_name: Text {
+                    span: 74..79#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 74..79#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 107..107#0,
+        description: Text {
+            span: 107..116#0,
+            value: "A method.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 165..165#0,
+        description: Text {
+            span: 165..165#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 165..170#0,
+                tag_name: Text {
+                    span: 165..170#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 165..170#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 198..198#0,
+        description: Text {
+            span: 198..213#0,
+            value: "Another method.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 261..261#0,
+        description: Text {
+            span: 261..261#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 261..266#0,
+                tag_name: Text {
+                    span: 261..266#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 261..266#0,
+                        ty: Some(
+                            Text {
+                                span: 261..276#0,
+                                value: "* @augments Foo",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+            TagItem {
+                span: 261..269#0,
+                tag_name: Text {
+                    span: 261..269#0,
+                    value: "augments",
+                },
+                tag: Augments(
+                    AugmentsTag {
+                        span: 261..269#0,
+                        class: NamePath {
+                            span: 261..261#0,
+                            components: [
+                                Text {
+                                    span: 261..264#0,
+                                    value: "Bar",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

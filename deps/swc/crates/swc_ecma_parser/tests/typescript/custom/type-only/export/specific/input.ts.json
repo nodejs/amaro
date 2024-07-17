@@ -1,0 +1,44 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 21,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExportNamedDeclaration",
+      "span": {
+        "start": 1,
+        "end": 21,
+        "ctxt": 0
+      },
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "span": {
+            "start": 15,
+            "end": 18,
+            "ctxt": 0
+          },
+          "orig": {
+            "type": "Identifier",
+            "span": {
+              "start": 15,
+              "end": 18,
+              "ctxt": 0
+            },
+            "value": "Foo",
+            "optional": false
+          },
+          "exported": null,
+          "isTypeOnly": false
+        }
+      ],
+      "source": null,
+      "typeOnly": true,
+      "with": null
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,227 @@
+[
+    JsDoc {
+        span: 2..2#0,
+        description: Text {
+            span: 2..2#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 2..13#0,
+                tag_name: Text {
+                    span: 2..13#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 2..13#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 45..45#0,
+        description: Text {
+            span: 45..66#0,
+            value: "The current position.",
+        },
+        tags: [
+            TagItem {
+                span: 45..49#0,
+                tag_name: Text {
+                    span: 45..49#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 45..49#0,
+                        name: Text {
+                            span: 45..53#0,
+                            value: "{object}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 45..53#0,
+                tag_name: Text {
+                    span: 45..53#0,
+                    value: "property",
+                },
+                tag: Property(
+                    PropertyTag {
+                        span: 45..53#0,
+                        name_path: NamePath {
+                            span: 45..106#0,
+                            components: [
+                                Text {
+                                    span: 45..45#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                        ty: Some(
+                            Text {
+                                span: 45..54#0,
+                                value: "{boolean}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 45..100#0,
+                            value: "needsRevalidate Does this point need to be revalidated?",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 221..261#0,
+        description: Text {
+            span: 221..251#0,
+            value: "The x coordinate of the point.",
+        },
+        tags: [
+            TagItem {
+                span: 221..225#0,
+                tag_name: Text {
+                    span: 221..225#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 221..225#0,
+                        name: Text {
+                            span: 221..229#0,
+                            value: "{number}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 221..225#0,
+                tag_name: Text {
+                    span: 221..225#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 221..225#0,
+                        name_path: NamePath {
+                            span: 221..261#0,
+                            components: [
+                                Text {
+                                    span: 221..226#0,
+                                    value: "point",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 385..463#0,
+        description: Text {
+            span: 385..415#0,
+            value: "The y coordinate of the point.",
+        },
+        tags: [
+            TagItem {
+                span: 385..389#0,
+                tag_name: Text {
+                    span: 385..389#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 385..389#0,
+                        name: Text {
+                            span: 385..393#0,
+                            value: "{number}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 385..389#0,
+                tag_name: Text {
+                    span: 385..389#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 385..389#0,
+                        name_path: NamePath {
+                            span: 385..463#0,
+                            components: [
+                                Text {
+                                    span: 385..390#0,
+                                    value: "point",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 636..713#0,
+        description: Text {
+            span: 636..636#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 636..640#0,
+                tag_name: Text {
+                    span: 636..640#0,
+                    value: "type",
+                },
+                tag: Type(
+                    TypeTag {
+                        span: 636..640#0,
+                        name: Text {
+                            span: 636..643#0,
+                            value: "{Array}",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 636..640#0,
+                tag_name: Text {
+                    span: 636..640#0,
+                    value: "name",
+                },
+                tag: Name(
+                    NameTag {
+                        span: 636..640#0,
+                        name_path: NamePath {
+                            span: 636..713#0,
+                            components: [
+                                Text {
+                                    span: 636..639#0,
+                                    value: "map",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 778..778#0,
+        description: Text {
+            span: 778..797#0,
+            value: "The current cursor.",
+        },
+        tags: [],
+    },
+]

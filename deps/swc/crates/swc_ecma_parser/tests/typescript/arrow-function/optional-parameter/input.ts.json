@@ -1,0 +1,86 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 24,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 24,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "ArrowFunctionExpression",
+        "span": {
+          "start": 1,
+          "end": 23,
+          "ctxt": 0
+        },
+        "params": [
+          {
+            "type": "Identifier",
+            "span": {
+              "start": 2,
+              "end": 12,
+              "ctxt": 0
+            },
+            "value": "x",
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 4,
+                "end": 12,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 6,
+                  "end": 12,
+                  "ctxt": 0
+                },
+                "kind": "number"
+              }
+            }
+          }
+        ],
+        "body": {
+          "type": "Identifier",
+          "span": {
+            "start": 22,
+            "end": 23,
+            "ctxt": 0
+          },
+          "value": "x",
+          "optional": false
+        },
+        "async": false,
+        "generator": false,
+        "typeParameters": null,
+        "returnType": {
+          "type": "TsTypeAnnotation",
+          "span": {
+            "start": 13,
+            "end": 18,
+            "ctxt": 0
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 15,
+              "end": 18,
+              "ctxt": 0
+            },
+            "kind": "any"
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

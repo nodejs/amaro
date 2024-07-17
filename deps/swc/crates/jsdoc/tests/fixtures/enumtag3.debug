@@ -1,0 +1,43 @@
+[
+    JsDoc {
+        span: 26..26#0,
+        description: Text {
+            span: 26..26#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 26..33#0,
+                tag_name: Text {
+                    span: 26..33#0,
+                    value: "exports",
+                },
+                tag: Exports(
+                    ExportsTag {
+                        span: 26..33#0,
+                        module_name: Text {
+                            span: 26..34#0,
+                            value: "mymodule",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 26..30#0,
+                tag_name: Text {
+                    span: 26..30#0,
+                    value: "enum",
+                },
+                tag: Enum(
+                    EnumTag {
+                        span: 26..30#0,
+                        ty: Text {
+                            span: 26..34#0,
+                            value: "{string}",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

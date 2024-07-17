@@ -1,0 +1,46 @@
+.class {
+  &.foo {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    -ms-appearance: auto;
+    appearance: auto;
+  }
+  @media all {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    -ms-appearance: auto;
+    appearance: auto;
+  }
+}
+@media (min-width: 50em) {
+  .foo {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    -ms-appearance: auto;
+    appearance: auto;
+  }
+  @supports ((flex-wrap: wrap) or (-webkit-flex-wrap: wrap) or (-ms-flex-wrap: wrap)) {
+    .foo {
+      -webkit-appearance: auto;
+      -moz-appearance: auto;
+      -ms-appearance: auto;
+      appearance: auto;
+    }
+  }
+}
+@supports ((flex-wrap: wrap) or (-webkit-flex-wrap: wrap) or (-ms-flex-wrap: wrap)) {
+  .foo {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    -ms-appearance: auto;
+    appearance: auto;
+  }
+  @media (min-width: 50em) {
+    .foo {
+      -webkit-appearance: auto;
+      -moz-appearance: auto;
+      -ms-appearance: auto;
+      appearance: auto;
+    }
+  }
+}

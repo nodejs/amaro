@@ -1,0 +1,98 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 12,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 12,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "NewExpression",
+        "span": {
+          "start": 1,
+          "end": 12,
+          "ctxt": 0
+        },
+        "callee": {
+          "type": "TaggedTemplateExpression",
+          "span": {
+            "start": 5,
+            "end": 12,
+            "ctxt": 0
+          },
+          "tag": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6,
+              "ctxt": 0
+            },
+            "value": "C",
+            "optional": false
+          },
+          "typeParameters": {
+            "type": "TsTypeParameterInstantiation",
+            "span": {
+              "start": 6,
+              "end": 9,
+              "ctxt": 0
+            },
+            "params": [
+              {
+                "type": "TsTypeReference",
+                "span": {
+                  "start": 7,
+                  "end": 8,
+                  "ctxt": 0
+                },
+                "typeName": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 7,
+                    "end": 8,
+                    "ctxt": 0
+                  },
+                  "value": "T",
+                  "optional": false
+                },
+                "typeParams": null
+              }
+            ]
+          },
+          "template": {
+            "type": "TemplateLiteral",
+            "span": {
+              "start": 10,
+              "end": 12,
+              "ctxt": 0
+            },
+            "expressions": [],
+            "quasis": [
+              {
+                "type": "TemplateElement",
+                "span": {
+                  "start": 11,
+                  "end": 11,
+                  "ctxt": 0
+                },
+                "tail": true,
+                "cooked": "",
+                "raw": ""
+              }
+            ]
+          }
+        },
+        "arguments": null,
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

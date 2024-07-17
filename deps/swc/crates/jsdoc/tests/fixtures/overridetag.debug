@@ -1,0 +1,240 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..17#0,
+            value: "Parent class.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 1..6#0,
+                tag_name: Text {
+                    span: 1..6#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..6#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 62..62#0,
+        description: Text {
+            span: 62..85#0,
+            value: "Open the connection.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 62..69#0,
+                tag_name: Text {
+                    span: 62..69#0,
+                    value: "virtual",
+                },
+                tag: Abstract(
+                    AbstractTag {
+                        span: 62..69#0,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 150..150#0,
+        description: Text {
+            span: 150..171#0,
+            value: "Close the connection.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 228..228#0,
+        description: Text {
+            span: 228..289#0,
+            value: "Read the specified number of bytes from the connection.\n *\n *",
+        },
+        tags: [
+            TagItem {
+                span: 228..236#0,
+                tag_name: Text {
+                    span: 228..236#0,
+                    value: "function",
+                },
+                tag: Function(
+                    FunctionTag {
+                        span: 228..236#0,
+                        name: Some(
+                            Text {
+                                span: 228..243#0,
+                                value: "Connection#read",
+                            },
+                        ),
+                    },
+                ),
+            },
+            TagItem {
+                span: 228..233#0,
+                tag_name: Text {
+                    span: 228..233#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 228..233#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 228..236#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 228..264#0,
+                            value: "bytes - The number of bytes to read.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 228..234#0,
+                tag_name: Text {
+                    span: 228..234#0,
+                    value: "return",
+                },
+                tag: Return(
+                    ReturnTag {
+                        span: 228..234#0,
+                        ty: Some(
+                            Text {
+                                span: 228..236#0,
+                                value: "{Buffer}",
+                            },
+                        ),
+                        description: Text {
+                            span: 228..253#0,
+                            value: "The bytes that were read.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 478..478#0,
+        description: Text {
+            span: 478..493#0,
+            value: "Child class.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 478..483#0,
+                tag_name: Text {
+                    span: 478..483#0,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 478..483#0,
+                        ty: Some(
+                            Text {
+                                span: 478..499#0,
+                                value: "* @extends Connection",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 557..557#0,
+        description: Text {
+            span: 557..557#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 557..565#0,
+                tag_name: Text {
+                    span: 557..565#0,
+                    value: "override",
+                },
+                tag: Override(
+                    OverrideTag {
+                        span: 557..565#0,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 614..614#0,
+        description: Text {
+            span: 614..634#0,
+            value: "Close the socket.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 614..619#0,
+                tag_name: Text {
+                    span: 614..619#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 614..619#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 614..622#0,
+                                value: "{string}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 614..676#0,
+                            value: "message - A message explaining why the socket is being closed.",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 614..622#0,
+                tag_name: Text {
+                    span: 614..622#0,
+                    value: "override",
+                },
+                tag: Override(
+                    OverrideTag {
+                        span: 614..622#0,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 779..779#0,
+        description: Text {
+            span: 779..779#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 779..787#0,
+                tag_name: Text {
+                    span: 779..787#0,
+                    value: "override",
+                },
+                tag: Override(
+                    OverrideTag {
+                        span: 779..787#0,
+                    },
+                ),
+            },
+        ],
+    },
+]

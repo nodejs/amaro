@@ -1,0 +1,82 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 51,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsModuleDeclaration",
+      "span": {
+        "start": 1,
+        "end": 51,
+        "ctxt": 0
+      },
+      "declare": true,
+      "global": false,
+      "id": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 16,
+          "end": 19,
+          "ctxt": 0
+        },
+        "value": "m",
+        "raw": "\"m\""
+      },
+      "body": {
+        "type": "TsModuleBlock",
+        "span": {
+          "start": 20,
+          "end": 51,
+          "ctxt": 0
+        },
+        "body": [
+          {
+            "type": "ImportDeclaration",
+            "span": {
+              "start": 26,
+              "end": 49,
+              "ctxt": 0
+            },
+            "specifiers": [
+              {
+                "type": "ImportNamespaceSpecifier",
+                "span": {
+                  "start": 33,
+                  "end": 39,
+                  "ctxt": 0
+                },
+                "local": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 38,
+                    "end": 39,
+                    "ctxt": 0
+                  },
+                  "value": "a",
+                  "optional": false
+                }
+              }
+            ],
+            "source": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 45,
+                "end": 48,
+                "ctxt": 0
+              },
+              "value": "a",
+              "raw": "\"a\""
+            },
+            "typeOnly": false,
+            "with": null,
+            "phase": "evaluation"
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

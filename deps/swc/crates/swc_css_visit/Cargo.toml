@@ -1,0 +1,28 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Visitor for css"
+documentation = "https://rustdoc.swc.rs/swc_css_visit/"
+edition       = "2021"
+license       = "Apache-2.0"
+name          = "swc_css_visit"
+repository    = "https://github.com/swc-project/swc.git"
+version       = "0.140.0"
+
+  [package.metadata.docs.rs]
+  all-features = true
+  rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+bench = false
+
+[features]
+default = ["serde"]
+path    = []
+
+[dependencies]
+serde = { workspace = true, optional = true }
+
+swc_atoms   = { version = "0.6.5", path = "../swc_atoms" }
+swc_common  = { version = "0.34.0", path = "../swc_common" }
+swc_css_ast = { version = "0.141.0", path = "../swc_css_ast" }
+swc_visit   = { version = "0.5.14", path = "../swc_visit" }

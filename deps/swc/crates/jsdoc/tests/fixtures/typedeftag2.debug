@@ -1,0 +1,38 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..8#0,
+                tag_name: Text {
+                    span: 1..8#0,
+                    value: "typedef",
+                },
+                tag: TypeDef(
+                    TypeDefTag {
+                        span: 1..8#0,
+                        ty: Some(
+                            Text {
+                                span: 1..18#0,
+                                value: "{(string|number)}",
+                            },
+                        ),
+                        name_path: NamePath {
+                            span: 1..1#0,
+                            components: [
+                                Text {
+                                    span: 1..1#0,
+                                    value: "",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

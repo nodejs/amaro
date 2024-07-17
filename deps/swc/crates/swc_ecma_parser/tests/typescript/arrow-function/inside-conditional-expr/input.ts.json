@@ -1,0 +1,110 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 57,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 57,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "ConditionalExpression",
+        "span": {
+          "start": 1,
+          "end": 56,
+          "ctxt": 0
+        },
+        "test": {
+          "type": "Identifier",
+          "span": {
+            "start": 1,
+            "end": 9,
+            "ctxt": 0
+          },
+          "value": "referrer",
+          "optional": false
+        },
+        "consequent": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 12,
+            "end": 17,
+            "ctxt": 0
+          },
+          "value": false
+        },
+        "alternate": {
+          "type": "ArrowFunctionExpression",
+          "span": {
+            "start": 20,
+            "end": 56,
+            "ctxt": 0
+          },
+          "params": [
+            {
+              "type": "ArrayPattern",
+              "span": {
+                "start": 21,
+                "end": 34,
+                "ctxt": 0
+              },
+              "elements": [
+                null,
+                {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 24,
+                    "end": 33,
+                    "ctxt": 0
+                  },
+                  "value": "specifier",
+                  "optional": false,
+                  "typeAnnotation": null
+                }
+              ],
+              "optional": false,
+              "typeAnnotation": null
+            }
+          ],
+          "body": {
+            "type": "Identifier",
+            "span": {
+              "start": 47,
+              "end": 56,
+              "ctxt": 0
+            },
+            "value": "specifier",
+            "optional": false
+          },
+          "async": false,
+          "generator": false,
+          "typeParameters": null,
+          "returnType": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 35,
+              "end": 43,
+              "ctxt": 0
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 37,
+                "end": 43,
+                "ctxt": 0
+              },
+              "kind": "string"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

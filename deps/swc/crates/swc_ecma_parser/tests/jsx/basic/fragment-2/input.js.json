@@ -1,0 +1,55 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 23,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 23,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "JSXFragment",
+        "span": {
+          "start": 1,
+          "end": 23,
+          "ctxt": 0
+        },
+        "opening": {
+          "type": "JSXOpeningFragment",
+          "span": {
+            "start": 1,
+            "end": 3,
+            "ctxt": 0
+          }
+        },
+        "children": [
+          {
+            "type": "JSXText",
+            "span": {
+              "start": 3,
+              "end": 20,
+              "ctxt": 0
+            },
+            "value": "Hi, I'm a string!",
+            "raw": "Hi, I'm a string!"
+          }
+        ],
+        "closing": {
+          "type": "JSXClosingFragment",
+          "span": {
+            "start": 20,
+            "end": 23,
+            "ctxt": 0
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -23,4 +23,7 @@ module.exports = {
 			type: "commonjs2",
 		},
 	},
+	optimization: {
+		minimize: false,
+	},
 };

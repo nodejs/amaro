@@ -1,0 +1,171 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 82,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 82,
+        "ctxt": 0
+      },
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 82,
+            "ctxt": 0
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 9,
+              "ctxt": 0
+            },
+            "value": "page",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "JSXElement",
+            "span": {
+              "start": 12,
+              "end": 82,
+              "ctxt": 0
+            },
+            "opening": {
+              "type": "JSXOpeningElement",
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 13,
+                  "end": 14,
+                  "ctxt": 0
+                },
+                "value": "p",
+                "optional": false
+              },
+              "span": {
+                "start": 12,
+                "end": 15,
+                "ctxt": 0
+              },
+              "attributes": [],
+              "selfClosing": false,
+              "typeArguments": null
+            },
+            "children": [
+              {
+                "type": "JSXText",
+                "span": {
+                  "start": 15,
+                  "end": 21,
+                  "ctxt": 0
+                },
+                "value": "Click ",
+                "raw": "Click "
+              },
+              {
+                "type": "JSXElement",
+                "span": {
+                  "start": 21,
+                  "end": 40,
+                  "ctxt": 0
+                },
+                "opening": {
+                  "type": "JSXOpeningElement",
+                  "name": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 22,
+                      "end": 24,
+                      "ctxt": 0
+                    },
+                    "value": "em",
+                    "optional": false
+                  },
+                  "span": {
+                    "start": 21,
+                    "end": 25,
+                    "ctxt": 0
+                  },
+                  "attributes": [],
+                  "selfClosing": false,
+                  "typeArguments": null
+                },
+                "children": [
+                  {
+                    "type": "JSXText",
+                    "span": {
+                      "start": 25,
+                      "end": 35,
+                      "ctxt": 0
+                    },
+                    "value": "New melody",
+                    "raw": "New melody"
+                  }
+                ],
+                "closing": {
+                  "type": "JSXClosingElement",
+                  "span": {
+                    "start": 35,
+                    "end": 40,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 37,
+                      "end": 39,
+                      "ctxt": 0
+                    },
+                    "value": "em",
+                    "optional": false
+                  }
+                }
+              },
+              {
+                "type": "JSXText",
+                "span": {
+                  "start": 40,
+                  "end": 78,
+                  "ctxt": 0
+                },
+                "value": " listen to a randomly generated melody",
+                "raw": " listen to a randomly generated melody"
+              }
+            ],
+            "closing": {
+              "type": "JSXClosingElement",
+              "span": {
+                "start": 78,
+                "end": 82,
+                "ctxt": 0
+              },
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 80,
+                  "end": 81,
+                  "ctxt": 0
+                },
+                "value": "p",
+                "optional": false
+              }
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

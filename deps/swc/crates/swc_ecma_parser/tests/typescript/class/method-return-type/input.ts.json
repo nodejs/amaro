@@ -1,0 +1,401 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 144,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 7,
+          "end": 8,
+          "ctxt": 0
+        },
+        "value": "C",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 1,
+        "end": 144,
+        "ctxt": 0
+      },
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 15,
+            "end": 27,
+            "ctxt": 0
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 15,
+              "end": 16,
+              "ctxt": 0
+            },
+            "value": "f",
+            "optional": false
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 15,
+              "end": 27,
+              "ctxt": 0
+            },
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 25,
+                "end": 27,
+                "ctxt": 0
+              },
+              "stmts": []
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 18,
+                "end": 24,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 20,
+                  "end": 24,
+                  "ctxt": 0
+                },
+                "kind": "void"
+              }
+            }
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 32,
+            "end": 64,
+            "ctxt": 0
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 32,
+              "end": 33,
+              "ctxt": 0
+            },
+            "value": "g",
+            "optional": false
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 32,
+              "end": 64,
+              "ctxt": 0
+            },
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 48,
+                "end": 64,
+                "ctxt": 0
+              },
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 50,
+                    "end": 62,
+                    "ctxt": 0
+                  },
+                  "argument": {
+                    "type": "BooleanLiteral",
+                    "span": {
+                      "start": 57,
+                      "end": 61,
+                      "ctxt": 0
+                    },
+                    "value": true
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 35,
+                "end": 47,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsTypePredicate",
+                "span": {
+                  "start": 37,
+                  "end": 47,
+                  "ctxt": 0
+                },
+                "asserts": false,
+                "paramName": {
+                  "type": "TsThisType",
+                  "span": {
+                    "start": 37,
+                    "end": 41,
+                    "ctxt": 0
+                  }
+                },
+                "typeAnnotation": {
+                  "type": "TsTypeAnnotation",
+                  "span": {
+                    "start": 45,
+                    "end": 47,
+                    "ctxt": 0
+                  },
+                  "typeAnnotation": {
+                    "type": "TsTypeLiteral",
+                    "span": {
+                      "start": 45,
+                      "end": 47,
+                      "ctxt": 0
+                    },
+                    "members": []
+                  }
+                }
+              }
+            }
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 69,
+            "end": 106,
+            "ctxt": 0
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 69,
+              "end": 70,
+              "ctxt": 0
+            },
+            "value": "h",
+            "optional": false
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 69,
+              "end": 106,
+              "ctxt": 0
+            },
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 93,
+                "end": 106,
+                "ctxt": 0
+              },
+              "stmts": [
+                {
+                  "type": "ThrowStatement",
+                  "span": {
+                    "start": 95,
+                    "end": 104,
+                    "ctxt": 0
+                  },
+                  "argument": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 101,
+                      "end": 103,
+                      "ctxt": 0
+                    },
+                    "value": "",
+                    "raw": "\"\""
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 72,
+                "end": 92,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsTypePredicate",
+                "span": {
+                  "start": 74,
+                  "end": 92,
+                  "ctxt": 0
+                },
+                "asserts": true,
+                "paramName": {
+                  "type": "TsThisType",
+                  "span": {
+                    "start": 82,
+                    "end": 86,
+                    "ctxt": 0
+                  }
+                },
+                "typeAnnotation": {
+                  "type": "TsTypeAnnotation",
+                  "span": {
+                    "start": 90,
+                    "end": 92,
+                    "ctxt": 0
+                  },
+                  "typeAnnotation": {
+                    "type": "TsTypeLiteral",
+                    "span": {
+                      "start": 90,
+                      "end": 92,
+                      "ctxt": 0
+                    },
+                    "members": []
+                  }
+                }
+              }
+            }
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 111,
+            "end": 142,
+            "ctxt": 0
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 111,
+              "end": 112,
+              "ctxt": 0
+            },
+            "value": "i",
+            "optional": false
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 111,
+              "end": 142,
+              "ctxt": 0
+            },
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 129,
+                "end": 142,
+                "ctxt": 0
+              },
+              "stmts": [
+                {
+                  "type": "ThrowStatement",
+                  "span": {
+                    "start": 131,
+                    "end": 140,
+                    "ctxt": 0
+                  },
+                  "argument": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 137,
+                      "end": 139,
+                      "ctxt": 0
+                    },
+                    "value": "",
+                    "raw": "\"\""
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 114,
+                "end": 128,
+                "ctxt": 0
+              },
+              "typeAnnotation": {
+                "type": "TsTypePredicate",
+                "span": {
+                  "start": 116,
+                  "end": 128,
+                  "ctxt": 0
+                },
+                "asserts": true,
+                "paramName": {
+                  "type": "TsThisType",
+                  "span": {
+                    "start": 124,
+                    "end": 128,
+                    "ctxt": 0
+                  }
+                },
+                "typeAnnotation": null
+              }
+            }
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    }
+  ],
+  "interpreter": null
+}

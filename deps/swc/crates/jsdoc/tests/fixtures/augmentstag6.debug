@@ -1,0 +1,67 @@
+[
+    JsDoc {
+        span: 16..16#0,
+        description: Text {
+            span: 16..16#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 16..25#0,
+                tag_name: Text {
+                    span: 16..25#0,
+                    value: "interface",
+                },
+                tag: Interface(
+                    InterfaceTag {
+                        span: 16..25#0,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 61..61#0,
+        description: Text {
+            span: 61..81#0,
+            value: "Open the connection.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 134..134#0,
+        description: Text {
+            span: 134..134#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 134..143#0,
+                tag_name: Text {
+                    span: 134..143#0,
+                    value: "interface",
+                },
+                tag: Interface(
+                    InterfaceTag {
+                        span: 134..143#0,
+                        name: Some(
+                            Text {
+                                span: 134..158#0,
+                                value: "* @extends {IConnection}",
+                            },
+                        ),
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 217..217#0,
+        description: Text {
+            span: 217..238#0,
+            value: "Close the connection.",
+        },
+        tags: [],
+    },
+]

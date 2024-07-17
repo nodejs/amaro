@@ -1,0 +1,16 @@
+{
+  "mappings": "AAAA,OAAO,cAAc;AAErB,SAASA;IACLC;AACJ;AAEA,SAASA;QAAEC,IAAAA,iEAAI;IACX,IAAIA,GAAG;QACH,MAAM,IAAIC,MAAM;IACpB;IACAF,EAAE,CAAC;AACP;AAEAD",
+  "names": [
+    "a",
+    "t",
+    "x",
+    "Error"
+  ],
+  "sources": [
+    "../../input/index.ts"
+  ],
+  "sourcesContent": [
+    "import \"./errors.ts\";\n\nfunction a() {\n    t();\n}\n\nfunction t(x = false) {\n    if (x) {\n        throw new Error(\"Hello\");\n    }\n    t(!0);\n}\n\na();\n"
+  ],
+  "version": 3
+}

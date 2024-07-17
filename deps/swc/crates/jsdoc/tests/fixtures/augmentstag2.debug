@@ -1,0 +1,30 @@
+[
+    JsDoc {
+        span: 69..69#0,
+        description: Text {
+            span: 69..69#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 69..80#0,
+                tag_name: Text {
+                    span: 69..80#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 69..80#0,
+                        ty: Some(
+                            Text {
+                                span: 69..97#0,
+                                value: "* @extends UndocumentedThing",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+]

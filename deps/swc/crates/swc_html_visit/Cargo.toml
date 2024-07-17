@@ -1,0 +1,31 @@
+[package]
+authors = [
+  "강동윤 <kdy1997.dev@gmail.com>",
+  "Alexander Akait <sheo13666q@gmail.com>",
+]
+description = "Visitor for html"
+documentation = "https://rustdoc.swc.rs/swc_html_visit/"
+edition = "2021"
+license = "Apache-2.0"
+name = "swc_html_visit"
+repository = "https://github.com/swc-project/swc.git"
+version = "0.34.0"
+
+  [package.metadata.docs.rs]
+  all-features = true
+  rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+bench = false
+
+[features]
+default = ["serde"]
+path    = []
+
+[dependencies]
+serde = { workspace = true, optional = true }
+
+swc_atoms    = { version = "0.6.5", path = "../swc_atoms" }
+swc_common   = { version = "0.34.0", path = "../swc_common" }
+swc_html_ast = { version = "0.34.0", path = "../swc_html_ast" }
+swc_visit    = { version = "0.5.14", path = "../swc_visit" }

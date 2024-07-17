@@ -1,0 +1,37 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 4,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 4,
+        "ctxt": 0
+      },
+      "expression": {
+        "type": "TsNonNullExpression",
+        "span": {
+          "start": 1,
+          "end": 3,
+          "ctxt": 0
+        },
+        "expression": {
+          "type": "Identifier",
+          "span": {
+            "start": 1,
+            "end": 2,
+            "ctxt": 0
+          },
+          "value": "x",
+          "optional": false
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

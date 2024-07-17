@@ -1,0 +1,40 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 17,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 1,
+        "end": 17,
+        "ctxt": 0
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 6,
+          "end": 7,
+          "ctxt": 0
+        },
+        "value": "T",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsKeywordType",
+        "span": {
+          "start": 10,
+          "end": 16,
+          "ctxt": 0
+        },
+        "kind": "number"
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,437 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 133,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 132,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 2,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 2,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 2,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 1,
+                    "end": 2,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 1,
+                      "end": 2,
+                      "ctxt": 0
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 1,
+                        "end": 2,
+                        "ctxt": 0
+                      },
+                      "value": "a",
+                      "raw": "a"
+                    }
+                  }
+                },
+                "subclassSelectors": []
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 3,
+          "end": 132,
+          "ctxt": 0
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 3,
+            "end": 4,
+            "ctxt": 0
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 9,
+              "end": 19,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 9,
+                "end": 13,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 15,
+                  "end": 19,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 15,
+                    "end": 17,
+                    "ctxt": 0
+                  },
+                  "value": 10.0,
+                  "raw": "10"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 17,
+                    "end": 19,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 25,
+              "end": 36,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 25,
+                "end": 29,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 31,
+                  "end": 36,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 31,
+                    "end": 34,
+                    "ctxt": 0
+                  },
+                  "value": 0.1,
+                  "raw": ".10"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 34,
+                    "end": 36,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 42,
+              "end": 55,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 42,
+                "end": 46,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 48,
+                  "end": 55,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 48,
+                    "end": 53,
+                    "ctxt": 0
+                  },
+                  "value": 12.34,
+                  "raw": "12.34"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 53,
+                    "end": 55,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 61,
+              "end": 77,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 61,
+                "end": 65,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 67,
+                  "end": 77,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 67,
+                    "end": 75,
+                    "ctxt": 0
+                  },
+                  "value": 0.0,
+                  "raw": "0000.000"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 75,
+                    "end": 77,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 83,
+              "end": 95,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 83,
+                "end": 87,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "UnknownDimension",
+                "span": {
+                  "start": 89,
+                  "end": 95,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 89,
+                    "end": 90,
+                    "ctxt": 0
+                  },
+                  "value": 1.0,
+                  "raw": "1"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 90,
+                    "end": 95,
+                    "ctxt": 0
+                  },
+                  "value": "px\\9",
+                  "raw": "px\\\\9"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 101,
+              "end": 109,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 101,
+                "end": 105,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "UnknownDimension",
+                "span": {
+                  "start": 107,
+                  "end": 109,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 107,
+                    "end": 108,
+                    "ctxt": 0
+                  },
+                  "value": 1.0,
+                  "raw": "1"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 108,
+                    "end": 109,
+                    "ctxt": 0
+                  },
+                  "value": "e",
+                  "raw": "e"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 115,
+              "end": 129,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 115,
+                "end": 119,
+                "ctxt": 0
+              },
+              "value": "prop",
+              "raw": "prop"
+            },
+            "value": [
+              {
+                "type": "UnknownDimension",
+                "span": {
+                  "start": 121,
+                  "end": 129,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 121,
+                    "end": 122,
+                    "ctxt": 0
+                  },
+                  "value": 1.0,
+                  "raw": "1"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 122,
+                    "end": 129,
+                    "ctxt": 0
+                  },
+                  "value": "unknown",
+                  "raw": "unknown"
+                }
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

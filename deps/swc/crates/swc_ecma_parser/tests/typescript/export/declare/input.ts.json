@@ -1,0 +1,301 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 212,
+    "ctxt": 0
+  },
+  "body": [
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 1,
+        "end": 32,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "span": {
+          "start": 8,
+          "end": 32,
+          "ctxt": 0
+        },
+        "kind": "const",
+        "declare": true,
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "span": {
+              "start": 22,
+              "end": 31,
+              "ctxt": 0
+            },
+            "id": {
+              "type": "Identifier",
+              "span": {
+                "start": 22,
+                "end": 23,
+                "ctxt": 0
+              },
+              "value": "x",
+              "optional": false,
+              "typeAnnotation": {
+                "type": "TsTypeAnnotation",
+                "span": {
+                  "start": 23,
+                  "end": 31,
+                  "ctxt": 0
+                },
+                "typeAnnotation": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 25,
+                    "end": 31,
+                    "ctxt": 0
+                  },
+                  "kind": "number"
+                }
+              }
+            },
+            "init": null,
+            "definite": false
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 33,
+        "end": 67,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "identifier": {
+          "type": "Identifier",
+          "span": {
+            "start": 57,
+            "end": 58,
+            "ctxt": 0
+          },
+          "value": "f",
+          "optional": false
+        },
+        "declare": true,
+        "params": [],
+        "decorators": [],
+        "span": {
+          "start": 40,
+          "end": 67,
+          "ctxt": 0
+        },
+        "body": null,
+        "generator": false,
+        "async": false,
+        "typeParameters": null,
+        "returnType": {
+          "type": "TsTypeAnnotation",
+          "span": {
+            "start": 60,
+            "end": 66,
+            "ctxt": 0
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 62,
+              "end": 66,
+              "ctxt": 0
+            },
+            "kind": "void"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 68,
+        "end": 93,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "ClassDeclaration",
+        "identifier": {
+          "type": "Identifier",
+          "span": {
+            "start": 89,
+            "end": 90,
+            "ctxt": 0
+          },
+          "value": "C",
+          "optional": false
+        },
+        "declare": true,
+        "span": {
+          "start": 75,
+          "end": 93,
+          "ctxt": 0
+        },
+        "decorators": [],
+        "body": [],
+        "superClass": null,
+        "isAbstract": false,
+        "typeParams": null,
+        "superTypeParams": null,
+        "implements": []
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 94,
+        "end": 123,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "TsInterfaceDeclaration",
+        "span": {
+          "start": 101,
+          "end": 123,
+          "ctxt": 0
+        },
+        "id": {
+          "type": "Identifier",
+          "span": {
+            "start": 119,
+            "end": 120,
+            "ctxt": 0
+          },
+          "value": "I",
+          "optional": false
+        },
+        "declare": true,
+        "typeParams": null,
+        "extends": [],
+        "body": {
+          "type": "TsInterfaceBody",
+          "span": {
+            "start": 121,
+            "end": 123,
+            "ctxt": 0
+          },
+          "body": []
+        }
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 124,
+        "end": 155,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "TsTypeAliasDeclaration",
+        "span": {
+          "start": 131,
+          "end": 155,
+          "ctxt": 0
+        },
+        "declare": true,
+        "id": {
+          "type": "Identifier",
+          "span": {
+            "start": 144,
+            "end": 145,
+            "ctxt": 0
+          },
+          "value": "T",
+          "optional": false
+        },
+        "typeParams": null,
+        "typeAnnotation": {
+          "type": "TsKeywordType",
+          "span": {
+            "start": 148,
+            "end": 154,
+            "ctxt": 0
+          },
+          "kind": "number"
+        }
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 156,
+        "end": 182,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "TsModuleDeclaration",
+        "span": {
+          "start": 163,
+          "end": 182,
+          "ctxt": 0
+        },
+        "declare": true,
+        "global": false,
+        "id": {
+          "type": "Identifier",
+          "span": {
+            "start": 178,
+            "end": 179,
+            "ctxt": 0
+          },
+          "value": "M",
+          "optional": false
+        },
+        "body": {
+          "type": "TsModuleBlock",
+          "span": {
+            "start": 180,
+            "end": 182,
+            "ctxt": 0
+          },
+          "body": []
+        }
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 183,
+        "end": 212,
+        "ctxt": 0
+      },
+      "declaration": {
+        "type": "TsModuleDeclaration",
+        "span": {
+          "start": 190,
+          "end": 212,
+          "ctxt": 0
+        },
+        "declare": true,
+        "global": false,
+        "id": {
+          "type": "Identifier",
+          "span": {
+            "start": 208,
+            "end": 209,
+            "ctxt": 0
+          },
+          "value": "N",
+          "optional": false
+        },
+        "body": {
+          "type": "TsModuleBlock",
+          "span": {
+            "start": 210,
+            "end": 212,
+            "ctxt": 0
+          },
+          "body": []
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

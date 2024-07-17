@@ -1,0 +1,522 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 977,
+    "ctxt": 0
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "Comment",
+      "span": {
+        "start": 1,
+        "end": 39,
+        "ctxt": 0
+      },
+      "data": "?xml version=\"1.0\" encoding=\"UTF-8\"?",
+      "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 40,
+        "end": 157,
+        "ctxt": 0
+      },
+      "name": "html",
+      "publicId": "-//W3C//DTD XHTML 1.0 Strict//EN",
+      "systemId": "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd",
+      "raw": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 158,
+        "end": 977,
+        "ctxt": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 164,
+            "end": 200,
+            "ctxt": 0
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "xmlns",
+          "rawName": "xmlns",
+          "value": "http://www.w3.org/1999/xhtml",
+          "rawValue": "\"http://www.w3.org/1999/xhtml\""
+        },
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 201,
+            "end": 214,
+            "ctxt": 0
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "xml:lang",
+          "rawName": "xml:lang",
+          "value": "en",
+          "rawValue": "\"en\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 216,
+            "end": 496,
+            "ctxt": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 222,
+                "end": 227,
+                "ctxt": 0
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 227,
+                "end": 266,
+                "ctxt": 0
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 234,
+                    "end": 258,
+                    "ctxt": 0
+                  },
+                  "data": "XHTML 1.0 Strict Example",
+                  "raw": "XHTML 1.0 Strict Example"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 266,
+                "end": 271,
+                "ctxt": 0
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 271,
+                "end": 488,
+                "ctxt": 0
+              },
+              "tagName": "script",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 279,
+                    "end": 308,
+                    "ctxt": 0
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "type",
+                  "rawName": "type",
+                  "value": "application/javascript",
+                  "rawValue": "\"application/javascript\""
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 309,
+                    "end": 479,
+                    "ctxt": 0
+                  },
+                  "data": "\n        <![CDATA[\n        function loadpdf() {\n            document.getElementById(\"pdf-object\").src=\"http://www.w3.org/TR/xhtml1/xhtml1.pdf\";\n        }\n        ]]>\n    ",
+                  "raw": "\n        <![CDATA[\n        function loadpdf() {\n            document.getElementById(\"pdf-object\").src=\"http://www.w3.org/TR/xhtml1/xhtml1.pdf\";\n        }\n        ]]>\n    "
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 488,
+                "end": 489,
+                "ctxt": 0
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 496,
+            "end": 497,
+            "ctxt": 0
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 497,
+            "end": 977,
+            "ctxt": 0
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [
+            {
+              "type": "Attribute",
+              "span": {
+                "start": 503,
+                "end": 521,
+                "ctxt": 0
+              },
+              "namespace": null,
+              "prefix": null,
+              "name": "onload",
+              "rawName": "onload",
+              "value": "loadpdf()",
+              "rawValue": "\"loadpdf()\""
+            }
+          ],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 522,
+                "end": 523,
+                "ctxt": 0
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 523,
+                "end": 960,
+                "ctxt": 0
+              },
+              "tagName": "p",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 526,
+                    "end": 555,
+                    "ctxt": 0
+                  },
+                  "data": "This is an example of an\n    ",
+                  "raw": "This is an example of an\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 555,
+                    "end": 618,
+                    "ctxt": 0
+                  },
+                  "tagName": "abbr",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 561,
+                        "end": 605,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "title",
+                      "rawName": "title",
+                      "value": "Extensible HyperText Markup Language",
+                      "rawValue": "\"Extensible HyperText Markup Language\""
+                    }
+                  ],
+                  "children": [
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 606,
+                        "end": 611,
+                        "ctxt": 0
+                      },
+                      "data": "XHTML",
+                      "raw": "XHTML"
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 618,
+                    "end": 639,
+                    "ctxt": 0
+                  },
+                  "data": " 1.0 Strict document.",
+                  "raw": " 1.0 Strict document."
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 639,
+                    "end": 645,
+                    "ctxt": 0
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 645,
+                    "end": 650,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 650,
+                    "end": 768,
+                    "ctxt": 0
+                  },
+                  "tagName": "img",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 655,
+                        "end": 675,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "id",
+                      "rawName": "id",
+                      "value": "validation-icon",
+                      "rawValue": "\"validation-icon\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 685,
+                        "end": 728,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "src",
+                      "rawName": "src",
+                      "value": "http://www.w3.org/Icons/valid-xhtml10",
+                      "rawValue": "\"http://www.w3.org/Icons/valid-xhtml10\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 738,
+                        "end": 766,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "alt",
+                      "rawName": "alt",
+                      "value": "Valid XHTML 1.0 Strict",
+                      "rawValue": "\"Valid XHTML 1.0 Strict\""
+                    }
+                  ],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 768,
+                    "end": 774,
+                    "ctxt": 0
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 774,
+                    "end": 779,
+                    "ctxt": 0
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 779,
+                    "end": 955,
+                    "ctxt": 0
+                  },
+                  "tagName": "object",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 787,
+                        "end": 802,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "id",
+                      "rawName": "id",
+                      "value": "pdf-object",
+                      "rawValue": "\"pdf-object\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 815,
+                        "end": 837,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "type",
+                      "rawName": "type",
+                      "value": "application/pdf",
+                      "rawValue": "\"application/pdf\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 850,
+                        "end": 895,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "data",
+                      "rawName": "data",
+                      "value": "http://www.w3.org/TR/xhtml1/xhtml1.pdf",
+                      "rawValue": "\"http://www.w3.org/TR/xhtml1/xhtml1.pdf\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 908,
+                        "end": 920,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "width",
+                      "rawName": "width",
+                      "value": "100%",
+                      "rawValue": "\"100%\""
+                    },
+                    {
+                      "type": "Attribute",
+                      "span": {
+                        "start": 933,
+                        "end": 945,
+                        "ctxt": 0
+                      },
+                      "namespace": null,
+                      "prefix": null,
+                      "name": "height",
+                      "rawName": "height",
+                      "value": "500",
+                      "rawValue": "\"500\""
+                    }
+                  ],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 955,
+                    "end": 956,
+                    "ctxt": 0
+                  },
+                  "data": "\n",
+                  "raw": "\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 960,
+                "end": 977,
+                "ctxt": 0
+              },
+              "data": "\n\n\n",
+              "raw": "\n\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

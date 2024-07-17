@@ -1,0 +1,1 @@
+//// [templateStringInIndexExpressionES6.ts]

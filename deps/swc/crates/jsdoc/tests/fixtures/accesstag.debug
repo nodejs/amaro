@@ -1,0 +1,204 @@
+[
+    JsDoc {
+        span: 1..1#0,
+        description: Text {
+            span: 1..1#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..12#0,
+                tag_name: Text {
+                    span: 1..12#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..12#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 46..46#0,
+        description: Text {
+            span: 46..46#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 46..52#0,
+                tag_name: Text {
+                    span: 46..52#0,
+                    value: "access",
+                },
+                tag: Access(
+                    AccessTag {
+                        span: 46..52#0,
+                        access: Text {
+                            span: 46..53#0,
+                            value: "private",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 91..91#0,
+        description: Text {
+            span: 91..91#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 91..97#0,
+                tag_name: Text {
+                    span: 91..97#0,
+                    value: "access",
+                },
+                tag: Access(
+                    AccessTag {
+                        span: 91..97#0,
+                        access: Text {
+                            span: 91..100#0,
+                            value: "protected",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 140..140#0,
+        description: Text {
+            span: 140..140#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 140..146#0,
+                tag_name: Text {
+                    span: 140..146#0,
+                    value: "access",
+                },
+                tag: Access(
+                    AccessTag {
+                        span: 140..146#0,
+                        access: Text {
+                            span: 140..146#0,
+                            value: "public",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 186..186#0,
+        description: Text {
+            span: 186..193#0,
+            value: "nothing",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 238..238#0,
+        description: Text {
+            span: 238..238#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 238..249#0,
+                tag_name: Text {
+                    span: 238..249#0,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 238..249#0,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 0..288#0,
+        description: Text {
+            span: 288..288#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 288..295#0,
+                tag_name: Text {
+                    span: 288..295#0,
+                    value: "private",
+                },
+                tag: Private(
+                    PrivateTag {
+                        span: 288..295#0,
+                        ty: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 0..326#0,
+        description: Text {
+            span: 326..326#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 326..335#0,
+                tag_name: Text {
+                    span: 326..335#0,
+                    value: "protected",
+                },
+                tag: Protected(
+                    ProtectedTag {
+                        span: 326..335#0,
+                        ty: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 368..368#0,
+        description: Text {
+            span: 368..368#0,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 368..374#0,
+                tag_name: Text {
+                    span: 368..374#0,
+                    value: "public",
+                },
+                tag: Public(
+                    PublicTag {
+                        span: 368..374#0,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 407..407#0,
+        description: Text {
+            span: 407..414#0,
+            value: "nothing",
+        },
+        tags: [],
+    },
+]

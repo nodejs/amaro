@@ -1,0 +1,114 @@
+[
+    JsDoc {
+        span: 152..152#0,
+        description: Text {
+            span: 152..168#0,
+            value: "Add a number.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 152..157#0,
+                tag_name: Text {
+                    span: 152..157#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 152..157#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 152..160#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 152..174#0,
+                            value: "x - The number to add.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 356..356#0,
+        description: Text {
+            span: 356..377#0,
+            value: "Subtract a number.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 356..361#0,
+                tag_name: Text {
+                    span: 356..361#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 356..361#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 356..364#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 356..383#0,
+                            value: "x - The number to subtract.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 590..590#0,
+        description: Text {
+            span: 590..602#0,
+            value: "Adder class.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 632..632#0,
+        description: Text {
+            span: 632..660#0,
+            value: "Construct an Adder instance.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 706..706#0,
+        description: Text {
+            span: 706..726#0,
+            value: "Add a number.\n     *",
+        },
+        tags: [
+            TagItem {
+                span: 706..711#0,
+                tag_name: Text {
+                    span: 706..711#0,
+                    value: "param",
+                },
+                tag: Parameter(
+                    ParameterTag {
+                        span: 706..711#0,
+                        name: None,
+                        ty: Some(
+                            Text {
+                                span: 706..714#0,
+                                value: "{number}",
+                            },
+                        ),
+                        desc: Text {
+                            span: 706..728#0,
+                            value: "x - The number to add.",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]
