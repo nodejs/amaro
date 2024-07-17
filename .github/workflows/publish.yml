@@ -16,7 +16,7 @@ jobs:
         with:
           release-type: node
           package-name: amaro
-          bump-minor-pre-major: true # TODO: remove this when releasing v1.0.0.
+          bump-patch-for-minor-pre-major: true
 
   npm-publish:
     needs: release-please
