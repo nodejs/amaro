@@ -9,6 +9,7 @@
 #![allow(clippy::clone_on_copy)]
 #![recursion_limit = "1024"]
 
+pub use num_bigint::BigInt as BigIntValue;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 use swc_common::{ast_node, util::take::Take, EqIgnoreSpan, Span};
@@ -21,7 +22,7 @@ pub use self::{
     decl::{ClassDecl, Decl, FnDecl, UsingDecl, VarDecl, VarDeclKind, VarDeclarator},
     expr::*,
     function::{Function, Param, ParamOrTsParamProp},
-    ident::{BindingIdent, EsReserved, Id, Ident, PrivateName},
+    ident::{BindingIdent, EsReserved, Id, Ident, IdentName, PrivateName},
     jsx::{
         JSXAttr, JSXAttrName, JSXAttrOrSpread, JSXAttrValue, JSXClosingElement, JSXClosingFragment,
         JSXElement, JSXElementChild, JSXElementName, JSXEmptyExpr, JSXExpr, JSXExprContainer,
@@ -171,7 +172,7 @@ pub use self::{
         ArchivedTplElement, ArchivedUnaryExpr, ArchivedUpdateExpr, ArchivedYieldExpr,
     },
     function::{ArchivedFunction, ArchivedParam, ArchivedParamOrTsParamProp},
-    ident::{ArchivedBindingIdent, ArchivedIdent, ArchivedPrivateName},
+    ident::{ArchivedBindingIdent, ArchivedIdent, ArchivedIdentName, ArchivedPrivateName},
     jsx::{
         ArchivedJSXAttr, ArchivedJSXAttrName, ArchivedJSXAttrOrSpread, ArchivedJSXAttrValue,
         ArchivedJSXClosingElement, ArchivedJSXClosingFragment, ArchivedJSXElement,

@@ -2,7 +2,7 @@
 
 extern crate swc_malloc;
 
-use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
+use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{chain, errors::HANDLER, FileName, Mark};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
 use swc_ecma_transforms_base::helpers;
@@ -15,7 +15,7 @@ macro_rules! tr {
     ($b:expr, $tr:expr) => {
         let _ = ::testing::run_test(false, |cm, handler| {
             HANDLER.set(&handler, || {
-                let fm = cm.new_source_file(FileName::Anon, SOURCE.into());
+                let fm = cm.new_source_file(FileName::Anon.into(), SOURCE.into());
 
                 let mut parser = Parser::new(
                     Syntax::Typescript(Default::default()),

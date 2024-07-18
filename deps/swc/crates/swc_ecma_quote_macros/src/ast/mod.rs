@@ -1,4 +1,4 @@
-use swc_common::Span;
+use swc_common::{Span, SyntaxContext};
 use swc_ecma_ast::*;
 use syn::{parse_quote, ExprBlock};
 
@@ -65,10 +65,12 @@ macro_rules! impl_struct {
             fn to_code(&self, cx: &crate::ctxt::Ctx) -> syn::Expr {
                 let mut builder = crate::builder::Builder::new(stringify!($name));
 
+                let Self { $($v,)* } = self;
+
                 $(
                     builder.add(
                         stringify!($v),
-                        crate::ast::ToCode::to_code(&self.$v, cx),
+                        crate::ast::ToCode::to_code($v, cx),
                     );
                 )*
 
@@ -126,6 +128,12 @@ impl_struct!(Invalid, [span]);
 impl ToCode for Span {
     fn to_code(&self, _: &Ctx) -> syn::Expr {
         parse_quote!(swc_core::common::DUMMY_SP)
+    }
+}
+
+impl ToCode for SyntaxContext {
+    fn to_code(&self, _: &Ctx) -> syn::Expr {
+        parse_quote!(swc_core::common::SyntaxContext::empty())
     }
 }
 

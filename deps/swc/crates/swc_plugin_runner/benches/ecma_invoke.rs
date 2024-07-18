@@ -9,7 +9,7 @@ use std::{
     sync::Arc,
 };
 
-use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
+use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 #[cfg(feature = "__rkyv")]
 use swc_common::plugin::serialized::{PluginSerializedBytes, VersionedSerializable};
 use swc_common::{
@@ -67,7 +67,10 @@ fn bench_transform(b: &mut Bencher, plugin_dir: &Path) {
         GLOBALS.set(&Globals::new(), || {
             let cm = Arc::new(SourceMap::new(FilePathMapping::empty()));
 
-            let fm = cm.new_source_file(FileName::Real("src/test.ts".into()), SOURCE.to_string());
+            let fm = cm.new_source_file(
+                FileName::Real("src/test.ts".into()).into(),
+                SOURCE.to_string(),
+            );
 
             let program = parse_file_as_program(
                 &fm,

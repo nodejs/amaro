@@ -2,7 +2,7 @@ use std::{cell::RefCell, rc::Rc, sync::Arc};
 
 use num_bigint::BigInt;
 
-use crate::{BytePos, Span, SyntaxContext};
+use crate::{BytePos, Span};
 
 /// Derive with `#[derive(EqIgnoreSpan)]`.
 pub trait EqIgnoreSpan {
@@ -51,6 +51,19 @@ where
 }
 
 impl<T> EqIgnoreSpan for Vec<T>
+where
+    T: EqIgnoreSpan,
+{
+    fn eq_ignore_span(&self, other: &Self) -> bool {
+        self.len() == other.len()
+            && self
+                .iter()
+                .zip(other.iter())
+                .all(|(a, b)| a.eq_ignore_span(b))
+    }
+}
+
+impl<T> EqIgnoreSpan for swc_allocator::vec::Vec<T>
 where
     T: EqIgnoreSpan,
 {
@@ -128,7 +141,7 @@ macro_rules! eq {
     };
 }
 
-eq!(SyntaxContext, BytePos);
+eq!(BytePos);
 eq!(bool);
 eq!(usize, u8, u16, u32, u64, u128);
 eq!(isize, i8, i16, i32, i64, i128);
@@ -171,6 +184,26 @@ macro_rules! deref {
 }
 
 deref!(Box, Rc, Arc);
+
+impl<N> EqIgnoreSpan for swc_allocator::boxed::Box<N>
+where
+    N: EqIgnoreSpan,
+{
+    #[inline]
+    fn eq_ignore_span(&self, other: &Self) -> bool {
+        (**self).eq_ignore_span(&**other)
+    }
+}
+
+impl<N> TypeEq for swc_allocator::boxed::Box<N>
+where
+    N: TypeEq,
+{
+    #[inline]
+    fn type_eq(&self, other: &Self) -> bool {
+        (**self).type_eq(&**other)
+    }
+}
 
 impl<'a, N> EqIgnoreSpan for &'a N
 where

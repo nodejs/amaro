@@ -2,7 +2,7 @@ extern crate swc_malloc;
 
 use std::{fs::read_to_string, path::Path};
 
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Criterion};
 use swc_common::{errors::HANDLER, FileName};
 use swc_html_ast::{Document, DocumentFragment, DocumentMode, Element, Namespace};
 use swc_html_codegen::{writer::basic::BasicHtmlWriter, Emit};
@@ -74,7 +74,7 @@ criterion_main!(files_document, files_document_fragment);
 fn run_document(src: &str) {
     testing::run_test2(false, |cm, handler| {
         HANDLER.set(&handler, || {
-            let fm = cm.new_source_file(FileName::Anon, src.into());
+            let fm = cm.new_source_file(FileName::Anon.into(), src.into());
 
             let mut errors = vec![];
             let mut document: Document =
@@ -111,7 +111,7 @@ fn run_document(src: &str) {
 fn run_document_fragment(src: &str) {
     testing::run_test2(false, |cm, handler| {
         HANDLER.set(&handler, || {
-            let fm = cm.new_source_file(FileName::Anon, src.into());
+            let fm = cm.new_source_file(FileName::Anon.into(), src.into());
 
             let mut errors = vec![];
             let context_element_namespace = Namespace::HTML;

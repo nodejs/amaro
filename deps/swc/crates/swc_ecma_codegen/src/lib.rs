@@ -703,7 +703,7 @@ where
         self.emit_leading_comments_of_span(num.span(), false)?;
 
         // Handle infinity
-        if num.value.is_infinite() {
+        if num.value.is_infinite() && num.raw.is_none() {
             if num.value.is_sign_negative() {
                 self.wr.write_str_lit(num.span, "-")?;
             }
@@ -718,8 +718,12 @@ where
         srcmap!(self, num, true);
 
         if self.cfg.minify {
-            value = minify_number(num.value);
-            self.wr.write_str_lit(DUMMY_SP, &value)?;
+            if num.value.is_infinite() && num.raw.is_some() {
+                self.wr.write_str_lit(DUMMY_SP, num.raw.as_ref().unwrap())?;
+            } else {
+                value = minify_number(num.value);
+                self.wr.write_str_lit(DUMMY_SP, &value)?;
+            }
         } else {
             match &num.raw {
                 Some(raw) => {
@@ -727,8 +731,12 @@ where
                         let slice = &raw.as_bytes()[..2];
                         slice == b"0b" || slice == b"0o" || slice == b"0B" || slice == b"0O"
                     } {
-                        value = num.value.to_string();
-                        self.wr.write_str_lit(DUMMY_SP, &value)?;
+                        if num.value.is_infinite() && num.raw.is_some() {
+                            self.wr.write_str_lit(DUMMY_SP, num.raw.as_ref().unwrap())?;
+                        } else {
+                            value = num.value.to_string();
+                            self.wr.write_str_lit(DUMMY_SP, &value)?;
+                        }
                     } else if raw.len() > 2
                         && self.cfg.target < EsVersion::Es2021
                         && raw.contains('_')
@@ -1714,9 +1722,7 @@ where
 
         emit!(n.key);
 
-        // emit for a computed property, but not an identifier already marked as
-        // optional
-        if n.is_optional && !n.key.as_ident().map(|i| i.optional).unwrap_or(false) {
+        if n.is_optional {
             punct!("?");
         }
 
@@ -2337,14 +2343,14 @@ where
         srcmap!(n, true);
 
         punct!("#");
-        emit!(n.id);
+        self.emit_ident_like(n.span, &n.name, false)?;
 
         srcmap!(n, false);
     }
 
     #[emitter]
     fn emit_binding_ident(&mut self, ident: &BindingIdent) -> Result {
-        emit!(ident.id);
+        self.emit_ident_like(ident.span, &ident.sym, ident.optional)?;
 
         if let Some(ty) = &ident.type_ann {
             punct!(":");
@@ -2360,46 +2366,51 @@ where
 
     #[emitter]
     fn emit_ident(&mut self, ident: &Ident) -> Result {
+        self.emit_ident_like(ident.span, &ident.sym, ident.optional)?;
+    }
+
+    #[emitter]
+    fn emit_ident_name(&mut self, ident: &IdentName) -> Result {
+        self.emit_ident_like(ident.span, &ident.sym, false)?;
+    }
+
+    fn emit_ident_like(&mut self, span: Span, sym: &Atom, optional: bool) -> Result {
         // TODO: Use write_symbol when ident is a symbol.
-        self.emit_leading_comments_of_span(ident.span, false)?;
+        self.emit_leading_comments_of_span(span, false)?;
 
         // Source map
         self.wr.commit_pending_semi()?;
 
-        srcmap!(ident, true);
+        srcmap!(self, span, true);
         // TODO: span
 
         if self.cfg.ascii_only {
             if self.wr.can_ignore_invalid_unicodes() {
-                self.wr.write_symbol(
-                    DUMMY_SP,
-                    &get_ascii_only_ident(&ident.sym, false, self.cfg.target),
-                )?;
+                self.wr
+                    .write_symbol(DUMMY_SP, &get_ascii_only_ident(sym, false, self.cfg.target))?;
             } else {
                 self.wr.write_symbol(
                     DUMMY_SP,
-                    &get_ascii_only_ident(
-                        &handle_invalid_unicodes(&ident.sym),
-                        false,
-                        self.cfg.target,
-                    ),
+                    &get_ascii_only_ident(&handle_invalid_unicodes(sym), false, self.cfg.target),
                 )?;
             }
         } else if self.wr.can_ignore_invalid_unicodes() {
-            self.wr.write_symbol(DUMMY_SP, &ident.sym)?;
+            self.wr.write_symbol(DUMMY_SP, sym)?;
         } else {
             self.wr
-                .write_symbol(DUMMY_SP, &handle_invalid_unicodes(&ident.sym))?;
+                .write_symbol(DUMMY_SP, &handle_invalid_unicodes(sym))?;
         }
 
-        if ident.optional {
-            punct!("?");
+        if optional {
+            punct!(self, "?");
         }
 
         // Call emitList directly since it could be an array of
         // TypeParameterDeclarations _or_ type arguments
 
         // emitList(node, node.typeArguments, ListFormat::TypeParameters);
+
+        Ok(())
     }
 
     fn emit_list<N: Node>(

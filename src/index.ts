@@ -6,11 +6,11 @@ const DEFAULT_OPTIONS = {
 
 // biome-ignore lint/suspicious/noExplicitAny: Swc types are not available
 function transform(source: string, options?: any): string {
-	const result = transformSync(source, {
+	const { code } = transformSync(source, {
 		...DEFAULT_OPTIONS,
 		...options,
 	});
-	return result;
+	return code;
 }
 
 module.exports = {

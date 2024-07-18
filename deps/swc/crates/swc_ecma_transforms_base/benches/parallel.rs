@@ -2,7 +2,7 @@
 
 extern crate swc_malloc;
 
-use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
+use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use rayon::prelude::*;
 use swc_common::{errors::HANDLER, FileName, Mark, GLOBALS};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
@@ -15,7 +15,7 @@ static SOURCE: &str = include_str!("../../swc_ecma_minifier/benches/full/typescr
 macro_rules! tr {
     ($b:expr, $tr:expr) => {
         let _ = ::testing::run_test(false, |cm, handler| {
-            let fm = cm.new_source_file(FileName::Anon, SOURCE.into());
+            let fm = cm.new_source_file(FileName::Anon.into(), SOURCE.into());
 
             let mut parser = Parser::new(
                 Syntax::Typescript(Default::default()),

@@ -104,7 +104,7 @@ fn run(
 
     let compress_config = config.map(|config| parse_compressor_config(cm.clone(), config).1);
 
-    let fm = cm.new_source_file(FileName::Anon, input.into());
+    let fm = cm.new_source_file(FileName::Anon.into(), input.into());
     let comments = SingleThreadedComments::default();
 
     eprintln!("---- {} -----\n{}", Color::Green.paint("Input"), fm.src);
@@ -11323,5 +11323,25 @@ fn issue_9010() {
         r#"
         console.log(-0 + [])
         "#,
+    );
+}
+
+#[test]
+fn issue_9184() {
+    run_default_exec_test(
+        r#"
+        let pi= Math.random() >1.1 ? "foo": "bar";
+        console.log(`(${`${pi}`} - ${`\\*${pi}`})`)
+"#,
+    );
+}
+
+#[test]
+fn issue_9184_2() {
+    run_default_exec_test(
+        r#"
+        let pi= Math.random() < -1 ? "foo": "bar";
+        console.log(`(${`${pi}`} - ${`\\*${pi}`})`)
+"#,
     );
 }

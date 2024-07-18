@@ -45,12 +45,13 @@ impl Pure<'_> {
             report_change!("evaluate: 'foo' + ('bar' + baz) => 'foobar' + baz");
 
             let s = lls.into_owned() + &*rls;
-            *e = Expr::Bin(BinExpr {
+            *e = BinExpr {
                 span,
                 op: op!(bin, "+"),
                 left: s.into(),
                 right: r_r.take(),
-            });
+            }
+            .into();
         }
     }
 
@@ -82,7 +83,7 @@ impl Pure<'_> {
 
             self.changed = true;
             report_change!("evaluating a template to a string");
-            *e = Expr::Bin(BinExpr {
+            *e = BinExpr {
                 span: tpl.span,
                 op: op!(bin, "+"),
                 left: tpl.quasis[0]
@@ -91,7 +92,8 @@ impl Pure<'_> {
                     .unwrap_or_else(|| tpl.quasis[0].raw.clone())
                     .into(),
                 right: tpl.exprs[0].take(),
-            });
+            }
+            .into();
         }
     }
 
@@ -119,13 +121,15 @@ impl Pure<'_> {
             quasis: Default::default(),
             exprs: Default::default(),
         };
-        let mut cur_str_value = String::new();
+        let mut cur_cooked_str = String::new();
+        let mut cur_raw_str = String::new();
 
         for idx in 0..(tpl.quasis.len() + tpl.exprs.len()) {
             if idx % 2 == 0 {
                 let q = tpl.quasis[idx / 2].take();
 
-                cur_str_value.push_str(q.cooked.as_deref().unwrap_or(&*q.raw));
+                cur_cooked_str.push_str(&Str::from_tpl_raw(&q.raw));
+                cur_raw_str.push_str(&q.raw);
             } else {
                 let mut e = tpl.exprs[idx / 2].take();
                 self.eval_nested_tpl(&mut e);
@@ -139,16 +143,19 @@ impl Pure<'_> {
                             if idx % 2 == 0 {
                                 let q = e.quasis[idx / 2].take();
 
-                                cur_str_value.push_str(q.cooked.as_deref().unwrap_or(&*q.raw));
+                                cur_cooked_str.push_str(Str::from_tpl_raw(&q.raw).as_ref());
+                                cur_raw_str.push_str(&q.raw);
                             } else {
-                                let s = Atom::from(&*cur_str_value);
-                                cur_str_value.clear();
+                                let cooked = Atom::from(&*cur_cooked_str);
+                                let raw = Atom::from(&*cur_raw_str);
+                                cur_cooked_str.clear();
+                                cur_raw_str.clear();
 
                                 new_tpl.quasis.push(TplElement {
                                     span: DUMMY_SP,
                                     tail: false,
-                                    cooked: Some(s.clone()),
-                                    raw: s,
+                                    cooked: Some(cooked),
+                                    raw,
                                 });
 
                                 let e = e.exprs[idx / 2].take();
@@ -158,14 +165,16 @@ impl Pure<'_> {
                         }
                     }
                     _ => {
-                        let s = Atom::from(&*cur_str_value);
-                        cur_str_value.clear();
+                        let cooked = Atom::from(&*cur_cooked_str);
+                        let raw = Atom::from(&*cur_raw_str);
+                        cur_cooked_str.clear();
+                        cur_raw_str.clear();
 
                         new_tpl.quasis.push(TplElement {
                             span: DUMMY_SP,
                             tail: false,
-                            cooked: Some(s.clone()),
-                            raw: s,
+                            cooked: Some(cooked),
+                            raw,
                         });
 
                         new_tpl.exprs.push(e);
@@ -174,15 +183,16 @@ impl Pure<'_> {
             }
         }
 
-        let s = Atom::from(&*cur_str_value);
+        let cooked = Atom::from(&*cur_cooked_str);
+        let raw = Atom::from(&*cur_raw_str);
         new_tpl.quasis.push(TplElement {
             span: DUMMY_SP,
             tail: false,
-            cooked: Some(s.clone()),
-            raw: s,
+            cooked: Some(cooked),
+            raw,
         });
 
-        *e = Expr::Tpl(new_tpl);
+        *e = new_tpl.into();
     }
 
     /// Converts template literals to string if `exprs` of [Tpl] is empty.
@@ -198,11 +208,12 @@ impl Pure<'_> {
                     }) {
                         report_change!("converting a template literal to a string literal");
 
-                        *e = Expr::Lit(Lit::Str(Str {
+                        *e = Lit::Str(Str {
                             span: t.span,
                             raw: None,
                             value: value.clone(),
-                        }));
+                        })
+                        .into();
                         return;
                     }
                 }
@@ -224,11 +235,12 @@ impl Pure<'_> {
 
                     report_change!("converting a template literal to a string literal");
 
-                    *e = Expr::Lit(Lit::Str(Str {
+                    *e = Lit::Str(Str {
                         span: t.span,
                         raw: None,
                         value,
-                    }));
+                    })
+                    .into();
                 }
             }
             _ => {}
@@ -496,16 +508,18 @@ impl Pure<'_> {
                                     new_str
                                 );
 
-                                *e = Expr::Bin(BinExpr {
+                                *e = BinExpr {
                                     span: bin.span,
                                     op: op!(bin, "+"),
                                     left: left.left.take(),
-                                    right: Box::new(Expr::Lit(Lit::Str(Str {
+                                    right: Lit::Str(Str {
                                         span: left_span,
                                         raw: None,
                                         value: new_str.into(),
-                                    }))),
-                                });
+                                    })
+                                    .into(),
+                                }
+                                .into();
                             }
                         }
                     }

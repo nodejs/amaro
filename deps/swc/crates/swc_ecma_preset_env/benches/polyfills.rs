@@ -1,4 +1,4 @@
-use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
+use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{comments::SingleThreadedComments, FileName, Mark};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
 use swc_ecma_preset_env::{preset_env, Config};
@@ -8,7 +8,7 @@ use swc_ecma_visit::FoldWith;
 fn run(b: &mut Bencher, src: &str, config: Config) {
     let _ = ::testing::run_test(false, |cm, handler| {
         HELPERS.set(&Helpers::new(true), || {
-            let fm = cm.new_source_file(FileName::Anon, src.into());
+            let fm = cm.new_source_file(FileName::Anon.into(), src.into());
 
             let mut parser = Parser::new(Syntax::default(), StringInput::from(&*fm), None);
             let module = parser
