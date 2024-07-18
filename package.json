@@ -1,6 +1,6 @@
 {
 	"name": "amaro",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Blessed Node.js TypeScript loader",
 	"license": "MIT",
 	"type": "commonjs",
