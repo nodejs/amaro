@@ -11,6 +11,7 @@ module.exports = {
 						parser: {
 							syntax: "typescript",
 						},
+						target: "es2022",
 					},
 				},
 				type: "javascript/auto",
