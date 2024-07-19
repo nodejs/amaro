@@ -1,17 +1,17 @@
 {
 	"name": "amaro",
 	"version": "0.0.3",
-	"description": "Blessed Node.js TypeScript loader",
+	"description": "Node.js TypeScript wrapper",
 	"license": "MIT",
 	"type": "commonjs",
 	"main": "dist/index.js",
-	"homepage": "https://github.com/marco-ippolito/amaro#readme",
+	"homepage": "https://github.com/nodejs/amaro#readme",
 	"bugs": {
-		"url": "https://github.com/marco-ippolito/amaro/issues"
+		"url": "https://github.com/nodejs/amaro/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/marco-ippolito/amaro.git"
+		"url": "https://github.com/nodejs/amaro.git"
 	},
 	"scripts": {
 		"clean": "rimraf dist",
@@ -30,9 +30,6 @@
 		"@types/node": "^20.14.11",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.3"
-	},
-	"engines": {
-		"node": "^20.15.0"
 	},
 	"exports": {
 		"./package.json": "./package.json"

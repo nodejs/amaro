@@ -11,7 +11,18 @@ The main goal of this package is to provide a stable API for TypeScript parser, 
 To install Amaro, run:
 
 ```shell
-npm install -g amaro
+npm install amaro
+```
+
+## How to Use
+
+By default Amaro exports a `transformSync` function that performs type stripping.
+Stack traces are preserved, by replacing removed types with white spaces.
+
+```javascript
+const amaro = require('amaro');
+const { code } = amaro.transformSync("const foo: string = 'bar';");
+console.log(code); // "const foo         = 'bar';"
 ```
 
 ## License (MIT)

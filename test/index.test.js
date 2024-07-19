@@ -1,11 +1,9 @@
 const { test } = require("node:test");
 const assert = require("node:assert");
-const { transform } = require("../dist/index.js");
+const { transformSync } = require("../dist/index.js");
 
 test("should perform type stripping", () => {
-	assert.strictEqual(typeof transform, "function");
-	assert.strictEqual(
-		transform("const foo: string = 'bar';"),
-		"const foo         = 'bar';",
-	);
+	assert.strictEqual(typeof transformSync, "function");
+	const { code } = transformSync("const foo: string = 'bar';");
+	assert.strictEqual(code, "const foo         = 'bar';");
 });
