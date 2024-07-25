@@ -9,13 +9,13 @@ use swc_ecma_codegen::{text_writer::JsWriter, Emitter};
 use swc_ecma_transforms_base::{fixer::fixer, hygiene::hygiene};
 pub use swc_ecma_transforms_optimization::{debug_assert_valid, AssertValid};
 use swc_ecma_utils::{drop_span, DropSpan};
-use swc_ecma_visit::{standard_only_visit_mut, FoldWith, VisitMut, VisitMutWith};
+use swc_ecma_visit::{noop_visit_mut_type, FoldWith, VisitMut, VisitMutWith};
 use tracing::debug;
 
 pub(crate) struct Debugger {}
 
 impl VisitMut for Debugger {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_ident(&mut self, n: &mut Ident) {
         if !cfg!(feature = "debug") {
@@ -45,7 +45,7 @@ where
     let mut node = node.clone();
     node.visit_mut_with(&mut Debugger {});
     node = drop_span(node);
-    let mut buf = vec![];
+    let mut buf = Vec::new();
     let cm = Lrc::new(SourceMap::default());
 
     {
@@ -85,7 +85,7 @@ pub(crate) fn invoke_module(module: &Module) {
         .fold_with(&mut fixer(None));
     let module = drop_span(module);
 
-    let mut buf = vec![];
+    let mut buf = Vec::new();
     let cm = Lrc::new(SourceMap::default());
 
     {
@@ -177,7 +177,7 @@ pub(crate) fn invoke_script(script: &Script) {
         .fold_with(&mut fixer(None));
     let script = drop_span(script);
 
-    let mut buf = vec![];
+    let mut buf = Vec::new();
     let cm = Lrc::new(SourceMap::default());
 
     {

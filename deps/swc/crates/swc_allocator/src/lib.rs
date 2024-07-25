@@ -27,14 +27,30 @@
 
 #![allow(clippy::needless_doctest_main)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
+#![cfg_attr(
+    feature = "nightly",
+    feature(allocator_api, fundamental, with_negative_coherence, box_into_inner)
+)]
 #![deny(missing_docs)]
 #![allow(clippy::derivable_impls)]
 
 pub use crate::alloc::Allocator;
 
 mod alloc;
+#[cfg(feature = "nightly")]
 pub mod boxed;
+pub mod collections;
+#[cfg(feature = "nightly")]
 pub mod vec;
+
+/// Box<T> and Vec<T> depeding on the feature.
+pub mod maybe {
+    #[cfg(not(feature = "nightly"))]
+    pub use std::{boxed, vec};
+
+    #[cfg(feature = "nightly")]
+    pub use crate::{boxed, vec};
+}
 
 /// Fast allocator, effectively working as a cache.
 ///
@@ -51,9 +67,9 @@ pub mod vec;
 ///
 /// # Misc
 ///
-/// It implements [`allocator_api2::alloc::Allocator`]. So it can be used as the
-/// second argument for [`allocator_api2::boxed::Box`] and
-/// [`allocator_api2::vec::Vec`]. But you should prefer using
+/// It implements [`std::alloc::Allocator`]. So it can be used as the
+/// second argument for [`std::boxed::Box`] and
+/// [`std::vec::Vec`]. But you should prefer using
 /// [`crate::boxed::Box`] and [`crate::vec::Vec`], which is a wrapper around the
 /// original types.
 #[derive(Clone, Copy)]
@@ -72,4 +88,51 @@ impl FastAlloc {
             alloc: None,
         }
     }
+}
+
+/// This expands to the given tokens if the `nightly` feature is enabled.
+#[cfg(feature = "nightly")]
+#[macro_export]
+macro_rules! nightly_only {
+    (
+        $($item:item)*
+    ) => {
+        $(
+            #[cfg_attr(docsrs, doc(cfg(feature = "nightly")))]
+            $item
+        )*
+    };
+}
+
+/// This expands to the given tokens if the `nightly` feature is enabled.
+#[cfg(not(feature = "nightly"))]
+#[macro_export]
+macro_rules! nightly_only {
+    (
+        $($item:item)*
+    ) => {};
+}
+
+/// Usage: `swc_allocator::Type!(Vec<T>)` or `swc_allocator::Type!(Box<T>)`.
+#[macro_export]
+macro_rules! Type {
+    (Box<$($tt:tt)*>) => {
+        #[cfg(feature = "nightly")]
+        $crate::boxed::Box<$crate::Type!($($tt)*)>
+
+        #[cfg(not(feature = "nightly"))]
+        std::boxed::Box<$crate::Type!($($tt)*)>
+    };
+
+    (Vec<$($tt:tt)*>) => {
+        #[cfg(feature = "nightly")]
+        $crate::vec::Vec<$crate::Type!($($tt)*)>
+
+        #[cfg(not(feature = "nightly"))]
+        std::vec::Vec<$crate::Type!($($tt)*)>
+    };
+
+    ($t:ty) => {
+        $t
+    };
 }

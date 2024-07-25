@@ -13,8 +13,7 @@ use swc_ecma_utils::{
     private_ident, quote_ident, ExprFactory, Remapper, StmtLike,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit, standard_only_visit_mut, Fold, Visit, VisitMut, VisitMutWith,
-    VisitWith,
+    as_folder, noop_visit_mut_type, noop_visit_type, Fold, Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use swc_trace_macro::swc_trace;
 
@@ -78,7 +77,7 @@ struct Actual<C: Comments> {
 #[swc_trace]
 #[fast_path(ShouldWork)]
 impl<C: Comments + Clone> VisitMut for AsyncToGenerator<C> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module_items(&mut self, n: &mut Vec<ModuleItem>) {
         self.visit_mut_stmt_like(n);
@@ -103,8 +102,8 @@ impl<C: Comments + Clone> AsyncToGenerator<C> {
                 c: self.c,
                 comments: self.comments.clone(),
                 unresolved_ctxt: self.unresolved_ctxt,
-                extra_stmts: vec![],
-                hoist_stmts: vec![],
+                extra_stmts: Vec::new(),
+                hoist_stmts: Vec::new(),
             };
 
             stmt.visit_mut_with(&mut actual);
@@ -121,7 +120,7 @@ impl<C: Comments + Clone> AsyncToGenerator<C> {
 #[swc_trace]
 #[fast_path(ShouldWork)]
 impl<C: Comments> VisitMut for Actual<C> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_class_method(&mut self, m: &mut ClassMethod) {
         if m.function.body.is_none() {
@@ -161,7 +160,7 @@ impl<C: Comments> VisitMut for Actual<C> {
                                 CallExpr {
                                     span: DUMMY_SP,
                                     callee: expr.as_callee(),
-                                    args: vec![],
+                                    args: Vec::new(),
                                     ..Default::default()
                                 }
                                 .into(),
@@ -264,19 +263,19 @@ impl<C: Comments> VisitMut for Actual<C> {
 
         let fn_ref = make_fn_ref(
             Function {
-                params: vec![],
+                params: Vec::new(),
                 ..*prop.function.take()
             }
             .into(),
         );
 
         let fn_ref = if is_this_used {
-            fn_ref.apply(DUMMY_SP, ThisExpr { span: DUMMY_SP }.into(), vec![])
+            fn_ref.apply(DUMMY_SP, ThisExpr { span: DUMMY_SP }.into(), Vec::new())
         } else {
             CallExpr {
                 span: DUMMY_SP,
                 callee: fn_ref.as_callee(),
-                args: vec![],
+                args: Vec::new(),
                 ..Default::default()
             }
             .into()
@@ -450,7 +449,7 @@ macro_rules! noop {
 
 #[swc_trace]
 impl VisitMut for AsyncFnBodyHandler {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     noop!(visit_mut_fn_expr, FnExpr);
 
@@ -537,7 +536,7 @@ struct ShouldWork {
 
 #[swc_trace]
 impl Visit for ShouldWork {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_function(&mut self, f: &Function) {
         if f.is_async {
@@ -584,7 +583,7 @@ fn handle_await_for(stmt: &mut Stmt, is_async_generator: bool) {
             _ => vec![*s.body],
         };
 
-        let mut for_loop_body = vec![];
+        let mut for_loop_body = Vec::new();
         {
             // let value = _step.value;
             let value_var = VarDeclarator {
@@ -654,7 +653,7 @@ fn handle_await_for(stmt: &mut Stmt, is_async_generator: bool) {
             ..Default::default()
         };
 
-        let mut init_var_decls = vec![];
+        let mut init_var_decls = Vec::new();
         // _iterator = _async_iterator(lol())
         init_var_decls.push(VarDeclarator {
             span: DUMMY_SP,
@@ -829,7 +828,7 @@ fn handle_await_for(stmt: &mut Stmt, is_async_generator: bool) {
                 .clone()
                 .make_member(quote_ident!("return"))
                 .as_callee(),
-            args: vec![],
+            args: Vec::new(),
             ..Default::default()
         }
         .into();

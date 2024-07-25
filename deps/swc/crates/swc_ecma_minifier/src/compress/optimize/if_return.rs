@@ -2,7 +2,7 @@ use swc_common::{util::take::Take, Spanned, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_transforms_optimization::debug_assert_valid;
 use swc_ecma_utils::{StmtExt, StmtLike};
-use swc_ecma_visit::{standard_only_visit, Visit, VisitWith};
+use swc_ecma_visit::{noop_visit_type, Visit, VisitWith};
 
 use super::Optimizer;
 #[cfg(feature = "debug")]
@@ -296,7 +296,7 @@ impl Optimizer<'_> {
                 stmt
             };
             let is_nonconditional_return = matches!(stmt, Stmt::Return(..));
-            let new_expr = self.merge_if_returns_to(stmt, vec![]);
+            let new_expr = self.merge_if_returns_to(stmt, Vec::new());
             match new_expr {
                 Expr::Seq(v) => match &mut cur {
                     Some(cur) => match &mut **cur {
@@ -436,9 +436,9 @@ impl Optimizer<'_> {
                 alt,
                 ..
             }) => {
-                let cons = Box::new(self.merge_if_returns_to(*cons, vec![]));
+                let cons = Box::new(self.merge_if_returns_to(*cons, Vec::new()));
                 let alt = match alt {
-                    Some(alt) => Box::new(self.merge_if_returns_to(*alt, vec![])),
+                    Some(alt) => Box::new(self.merge_if_returns_to(*alt, Vec::new())),
                     None => Expr::undefined(DUMMY_SP),
                 };
 
@@ -529,7 +529,7 @@ pub(super) struct ReturnFinder {
 }
 
 impl Visit for ReturnFinder {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_return_stmt(&mut self, n: &ReturnStmt) {
         n.visit_children_with(self);

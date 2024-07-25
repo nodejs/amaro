@@ -11,8 +11,7 @@ use swc_ecma_utils::{
     prop_name_to_expr, quote_ident, ExprFactory, StmtLike,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit, standard_only_visit_mut, Fold, Visit, VisitMut, VisitMutWith,
-    VisitWith,
+    as_folder, noop_visit_mut_type, noop_visit_type, Fold, Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use swc_trace_macro::swc_trace;
 
@@ -471,7 +470,7 @@ impl AssignFolder {
 #[swc_trace]
 #[fast_path(DestructuringVisitor)]
 impl VisitMut for Destructuring {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     impl_for_for_stmt!(visit_mut_for_in_stmt, ForInStmt);
 
@@ -495,8 +494,8 @@ impl Destructuring {
         ps: &mut Vec<Param>,
         body: &mut BlockStmt,
     ) -> (Vec<Param>, BlockStmt) {
-        let mut params = vec![];
-        let mut decls = vec![];
+        let mut params = Vec::new();
+        let mut decls = Vec::new();
 
         for param in ps.drain(..) {
             let span = param.span();
@@ -598,7 +597,7 @@ impl AssignFolder {
 #[swc_trace]
 #[fast_path(DestructuringVisitor)]
 impl VisitMut for AssignFolder {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_export_decl(&mut self, decl: &mut ExportDecl) {
         let old = self.exporting;
@@ -1078,7 +1077,7 @@ impl Destructuring {
             let mut folder = AssignFolder {
                 c: self.c,
                 exporting: false,
-                vars: vec![],
+                vars: Vec::new(),
                 ignore_return_value: None,
             };
 
@@ -1303,7 +1302,7 @@ struct DestructuringVisitor {
 }
 
 impl Visit for DestructuringVisitor {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_assign_target_pat(&mut self, _: &AssignTargetPat) {
         self.found = true;

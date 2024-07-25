@@ -12,7 +12,7 @@ use std::{
     borrow::Cow,
     cmp::{min, Reverse},
     collections::HashMap,
-    io::{self, prelude::*},
+    io::{self, prelude::*, IsTerminal},
 };
 
 #[cfg(feature = "tty-emitter")]
@@ -116,16 +116,18 @@ pub enum ColorConfig {
 impl ColorConfig {
     #[cfg(feature = "tty-emitter")]
     fn to_color_choice(self) -> ColorChoice {
+        let stderr = io::stderr();
+
         match self {
             ColorConfig::Always => {
-                if atty::is(atty::Stream::Stderr) {
+                if stderr.is_terminal() {
                     ColorChoice::Always
                 } else {
                     ColorChoice::AlwaysAnsi
                 }
             }
             ColorConfig::Never => ColorChoice::Never,
-            ColorConfig::Auto if atty::is(atty::Stream::Stderr) => ColorChoice::Auto,
+            ColorConfig::Auto if stderr.is_terminal() => ColorChoice::Auto,
             ColorConfig::Auto => ColorChoice::Never,
         }
     }
@@ -241,8 +243,8 @@ impl EmitterWriter {
             });
         }
 
-        let mut output = vec![];
-        let mut multiline_annotations = vec![];
+        let mut output = Vec::new();
+        let mut multiline_annotations = Vec::new();
 
         if let Some(ref sm) = self.sm {
             for span_label in msp.span_labels() {
@@ -496,7 +498,7 @@ impl EmitterWriter {
         //      |      x_span
         //      <EMPTY LINE>
         //
-        let mut annotations_position = vec![];
+        let mut annotations_position = Vec::new();
         let mut line_len = 0;
         let mut p = 0;
         for (i, annotation) in annotations.iter().enumerate() {
@@ -562,7 +564,7 @@ impl EmitterWriter {
         // If there are no annotations or the only annotations on this line are
         // MultilineLine, then there's only code being shown, stop processing.
         if line.annotations.iter().all(|a| a.is_line()) {
-            return vec![];
+            return Vec::new();
         }
 
         // Write the column separator.
@@ -792,8 +794,8 @@ impl EmitterWriter {
         let mut spans_updated = false;
 
         if let Some(ref sm) = self.sm {
-            let mut before_after: Vec<(Span, Span)> = vec![];
-            let new_labels: Vec<(Span, String)> = vec![];
+            let mut before_after: Vec<(Span, Span)> = Vec::new();
+            let new_labels: Vec<(Span, String)> = Vec::new();
 
             // First, find all the spans in <*macros> and point instead at their use site
             for sp in span.primary_spans() {

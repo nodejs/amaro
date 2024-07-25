@@ -7,7 +7,7 @@ use swc_common::{
 };
 use swc_ecma_ast::*;
 use swc_ecma_utils::find_pat_ids;
-use swc_ecma_visit::{standard_only_visit_mut, VisitMut, VisitMutWith};
+use swc_ecma_visit::{noop_visit_mut_type, VisitMut, VisitMutWith};
 
 use super::Bundler;
 use crate::{load::Load, resolve::Resolve, util::ExportMetadata};
@@ -239,7 +239,7 @@ where
 
                         let decl = ImportDecl {
                             span,
-                            specifiers: vec![],
+                            specifiers: Vec::new(),
                             src: Box::new(src.clone()),
                             type_only: false,
                             with: None,
@@ -365,7 +365,7 @@ where
     L: Load,
     R: Resolve,
 {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_export_named_specifier(&mut self, s: &mut ExportNamedSpecifier) {
         let orig = match &s.orig {
@@ -544,7 +544,7 @@ where
         });
 
         if self.deglob_phase {
-            let mut wrapping_required = vec![];
+            let mut wrapping_required = Vec::new();
             for import in self.info.imports.iter_mut() {
                 let use_ns = self.info.forced_ns.contains(&import.src.value)
                     || self

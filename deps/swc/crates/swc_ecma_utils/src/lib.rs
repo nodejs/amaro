@@ -22,8 +22,8 @@ use swc_common::{
 };
 use swc_ecma_ast::*;
 use swc_ecma_visit::{
-    noop_visit_mut_type, noop_visit_type, standard_only_visit_mut, visit_mut_obj_and_computed,
-    visit_obj_and_computed, Visit, VisitMut, VisitMutWith, VisitWith,
+    noop_visit_mut_type, noop_visit_type, visit_mut_obj_and_computed, visit_obj_and_computed,
+    Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use tracing::trace;
 
@@ -388,7 +388,7 @@ impl<T> IsEmpty for Vec<T> {
 
 /// Extracts hoisted variables
 pub fn extract_var_ids<T: VisitWith<Hoister>>(node: &T) -> Vec<Ident> {
-    let mut v = Hoister { vars: vec![] };
+    let mut v = Hoister { vars: Vec::new() };
     node.visit_with(&mut v);
     v.vars
 }
@@ -2139,7 +2139,7 @@ pub fn default_constructor(has_super: bool) -> Constructor {
         params: if has_super {
             vec![ParamOrTsParamProp::Param(Param {
                 span,
-                decorators: vec![],
+                decorators: Vec::new(),
                 pat: Pat::Rest(RestPat {
                     span: DUMMY_SP,
                     dot3_token: DUMMY_SP,
@@ -2148,7 +2148,7 @@ pub fn default_constructor(has_super: bool) -> Constructor {
                 }),
             })]
         } else {
-            vec![]
+            Vec::new()
         },
         body: Some(BlockStmt {
             stmts: if has_super {
@@ -2163,7 +2163,7 @@ pub fn default_constructor(has_super: bool) -> Constructor {
                 }
                 .into_stmt()]
             } else {
-                vec![]
+                Vec::new()
             },
             ..Default::default()
         }),
@@ -2445,7 +2445,7 @@ impl ExprCtx {
     where
         I: IntoIterator<Item = Box<Expr>>,
     {
-        let mut exprs = exprs.into_iter().fold(vec![], |mut v, e| {
+        let mut exprs = exprs.into_iter().fold(Vec::new(), |mut v, e| {
             self.extract_side_effects_to(&mut v, *e);
             v
         });
@@ -2678,7 +2678,7 @@ pub struct IdentReplacer<'a> {
 }
 
 impl VisitMut for IdentReplacer<'_> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     visit_mut_obj_and_computed!();
 
@@ -2958,7 +2958,7 @@ impl<'a> Remapper<'a> {
 }
 
 impl VisitMut for Remapper<'_> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_ident(&mut self, i: &mut Ident) {
         if let Some(new_ctxt) = self.vars.get(&i.to_id()).copied() {
@@ -2982,10 +2982,6 @@ impl VisitMut for IdentRenamer<'_> {
     noop_visit_mut_type!();
 
     visit_mut_obj_and_computed!();
-
-    fn visit_mut_jsx_member_expr(&mut self, n: &mut JSXMemberExpr) {
-        n.obj.visit_mut_with(self);
-    }
 
     fn visit_mut_export_named_specifier(&mut self, node: &mut ExportNamedSpecifier) {
         if node.exported.is_some() {

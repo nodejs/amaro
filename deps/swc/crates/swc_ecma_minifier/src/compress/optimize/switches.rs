@@ -1,7 +1,7 @@
 use swc_common::{util::take::Take, EqIgnoreSpan, Spanned, SyntaxContext, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_utils::{prepend_stmt, ExprExt, ExprFactory, StmtExt};
-use swc_ecma_visit::{standard_only_visit, Visit, VisitWith};
+use swc_ecma_visit::{noop_visit_type, Visit, VisitWith};
 
 use super::Optimizer;
 use crate::{compress::util::is_primitive, util::idents_used_by};
@@ -36,7 +36,7 @@ impl Optimizer<'_> {
             return;
         };
 
-        let mut var_ids = vec![];
+        let mut var_ids = Vec::new();
         let mut cases = Vec::new();
         let mut exact = None;
         let mut may_match_other_than_exact = false;
@@ -560,7 +560,7 @@ struct BreakFinder {
 }
 
 impl Visit for BreakFinder {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_break_stmt(&mut self, s: &BreakStmt) {
         if !self.top_level && s.label.is_none() {

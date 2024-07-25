@@ -25,7 +25,7 @@ fn error(first: &BindingIdent, second: &BindingIdent) {
                 ),
             )
             .span_label(first.span, "previous definition here".to_string())
-            .span_label(second.span, &"used as parameter more than once".to_string())
+            .span_label(second.span, "used as parameter more than once".to_string())
             .emit();
     });
 }
@@ -37,7 +37,7 @@ macro_rules! check {
         // This vector allocates only if there are duplicate parameters.
         // This is used to handle the case where the same parameter is used 3 or more
         // times.
-        let mut done = vec![];
+        let mut done = Vec::new();
 
         let mut hash_mode = false;
 

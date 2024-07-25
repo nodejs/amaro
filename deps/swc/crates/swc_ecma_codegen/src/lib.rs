@@ -9,6 +9,7 @@ use std::{borrow::Cow, fmt::Write, io};
 
 use memchr::memmem::Finder;
 use once_cell::sync::Lazy;
+use swc_allocator::maybe::vec::Vec;
 use swc_atoms::Atom;
 use swc_common::{
     comments::{CommentKind, Comments},
@@ -44,7 +45,7 @@ pub fn to_code_default(
     comments: Option<&dyn Comments>,
     node: &impl Node,
 ) -> String {
-    let mut buf = vec![];
+    let mut buf = std::vec::Vec::new();
     {
         let mut emitter = Emitter {
             cfg: Default::default(),
@@ -332,7 +333,7 @@ where
             formatting_space!();
         }
 
-        let mut specifiers = vec![];
+        let mut specifiers = Vec::new();
         let mut emitted_default = false;
         let mut emitted_ns = false;
         for specifier in &n.specifiers {
@@ -497,7 +498,7 @@ where
                 has_namespace_spec: false,
                 namespace_spec: None,
                 has_named_specs: false,
-                named_specs: vec![],
+                named_specs: Vec::new(),
             },
             |mut result, s| match s {
                 ExportSpecifier::Namespace(spec) => {
@@ -1290,7 +1291,7 @@ where
 
         {
             let mut left = Some(node);
-            let mut lefts = vec![];
+            let mut lefts = Vec::new();
             while let Some(l) = left {
                 lefts.push(l);
 
@@ -3907,7 +3908,7 @@ fn get_template_element_from_raw(s: &str, ascii_only: bool) -> String {
 }
 
 fn get_ascii_only_ident(sym: &str, may_need_quote: bool, target: EsVersion) -> Cow<str> {
-    if sym.chars().all(|c| c.is_ascii()) {
+    if sym.is_ascii() {
         return Cow::Borrowed(sym);
     }
 
