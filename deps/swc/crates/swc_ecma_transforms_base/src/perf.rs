@@ -5,6 +5,7 @@ use swc_ecma_ast::*;
 pub use swc_ecma_utils::parallel::*;
 use swc_ecma_visit::{Fold, FoldWith, Visit, VisitMut, VisitMutWith, VisitWith};
 
+use crate::helpers::Helpers;
 #[cfg(feature = "concurrent")]
 use crate::helpers::HELPERS;
 
@@ -52,14 +53,18 @@ where
         if nodes.len() >= threshold {
             GLOBALS.with(|globals| {
                 HELPERS.with(|helpers| {
+                    let helpers = helpers.data();
+
                     HANDLER.with(|handler| {
                         use rayon::prelude::*;
 
                         let visitor = nodes
                             .into_par_iter()
                             .map(|node| {
+                                let helpers = Helpers::from_data(helpers);
+
                                 GLOBALS.set(globals, || {
-                                    HELPERS.set(helpers, || {
+                                    HELPERS.set(&helpers, || {
                                         HANDLER.set(handler, || {
                                             let mut visitor = Parallel::create(&*self);
                                             node.visit_with(&mut visitor);
@@ -110,14 +115,16 @@ where
         if nodes.len() >= threshold {
             GLOBALS.with(|globals| {
                 HELPERS.with(|helpers| {
+                    let helpers = helpers.data();
                     HANDLER.with(|handler| {
                         use rayon::prelude::*;
 
                         let visitor = nodes
                             .into_par_iter()
                             .map(|node| {
+                                let helpers = Helpers::from_data(helpers);
                                 GLOBALS.set(globals, || {
-                                    HELPERS.set(helpers, || {
+                                    HELPERS.set(&helpers, || {
                                         HANDLER.set(handler, || {
                                             let mut visitor = Parallel::create(&*self);
                                             node.visit_mut_with(&mut visitor);
@@ -170,12 +177,14 @@ where
 
             let (visitor, nodes) = GLOBALS.with(|globals| {
                 HELPERS.with(|helpers| {
+                    let helpers = helpers.data();
                     HANDLER.with(|handler| {
                         nodes
                             .into_par_iter()
                             .map(|node| {
+                                let helpers = Helpers::from_data(helpers);
                                 GLOBALS.set(globals, || {
-                                    HELPERS.set(helpers, || {
+                                    HELPERS.set(&helpers, || {
                                         HANDLER.set(handler, || {
                                             let mut visitor = Parallel::create(&*self);
                                             let node = node.fold_with(&mut visitor);
@@ -186,7 +195,7 @@ where
                                 })
                             })
                             .fold(
-                                || (Parallel::create(&*self), vec![]),
+                                || (Parallel::create(&*self), Vec::new()),
                                 |mut a, b| {
                                     Parallel::merge(&mut a.0, b.0);
 
@@ -196,7 +205,7 @@ where
                                 },
                             )
                             .reduce(
-                                || (Parallel::create(&*self), vec![]),
+                                || (Parallel::create(&*self), Vec::new()),
                                 |mut a, b| {
                                     Parallel::merge(&mut a.0, b.0);
 

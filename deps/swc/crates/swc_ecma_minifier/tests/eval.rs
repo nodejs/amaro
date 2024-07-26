@@ -10,7 +10,7 @@ use swc_ecma_minifier::{
 };
 use swc_ecma_parser::{parse_file_as_expr, parse_file_as_module, EsSyntax, Syntax};
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_visit::{standard_only_visit_mut, VisitMut, VisitMutWith};
+use swc_ecma_visit::{noop_visit_mut_type, VisitMut, VisitMutWith};
 use testing::{assert_eq, DebugUsingDisplay};
 
 fn eval(module: &str, expr: &str) -> Option<String> {
@@ -23,7 +23,7 @@ fn eval(module: &str, expr: &str) -> Option<String> {
             Default::default(),
             EsVersion::latest(),
             None,
-            &mut vec![],
+            &mut Vec::new(),
         )
         .unwrap();
 
@@ -34,7 +34,7 @@ fn eval(module: &str, expr: &str) -> Option<String> {
                 Default::default(),
                 EsVersion::latest(),
                 None,
-                &mut vec![],
+                &mut Vec::new(),
             )
             .unwrap()
         };
@@ -94,7 +94,7 @@ impl PartialInliner {
                 }),
                 EsVersion::latest(),
                 None,
-                &mut vec![],
+                &mut Vec::new(),
             )
             .unwrap();
             module.visit_mut_with(&mut resolver(Mark::new(), Mark::new(), false));
@@ -127,12 +127,12 @@ impl PartialInliner {
                     }),
                     EsVersion::latest(),
                     None,
-                    &mut vec![],
+                    &mut Vec::new(),
                 )
                 .unwrap()
             };
             let expected = {
-                let mut buf = vec![];
+                let mut buf = Vec::new();
 
                 {
                     let mut emitter = Emitter {
@@ -148,7 +148,7 @@ impl PartialInliner {
             };
 
             let actual = {
-                let mut buf = vec![];
+                let mut buf = Vec::new();
 
                 {
                     let mut emitter = Emitter {
@@ -169,7 +169,7 @@ impl PartialInliner {
 }
 
 impl VisitMut for PartialInliner {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_expr(&mut self, e: &mut Expr) {
         e.visit_mut_children_with(self);

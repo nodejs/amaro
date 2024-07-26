@@ -357,7 +357,7 @@ impl Optimizer<'_> {
             }
         }
 
-        let mut removed = vec![];
+        let mut removed = Vec::new();
         let params = find_params(callee);
         if let Some(mut params) = params {
             // We check for parameter and argument
@@ -863,7 +863,7 @@ impl Optimizer<'_> {
         args: &mut [ExprOrSpread],
         exprs: &mut Vec<Box<Expr>>,
     ) -> Vec<VarDeclarator> {
-        let mut vars = Vec::new();
+        let mut vars = Vec::with_capacity(params.len());
 
         for (idx, param) in params.iter().enumerate() {
             let arg = args.get_mut(idx).map(|arg| arg.expr.take());

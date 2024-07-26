@@ -12,8 +12,7 @@ use swc_ecma_utils::{
     ModuleItemLike, StmtLike,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit, standard_only_visit_mut, Fold, Visit, VisitMut, VisitMutWith,
-    VisitWith,
+    as_folder, noop_visit_mut_type, noop_visit_type, Fold, Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use swc_trace_macro::swc_trace;
 
@@ -160,7 +159,7 @@ impl Take for ClassExtra {
 #[swc_trace]
 #[fast_path(ShouldWork)]
 impl<C: Comments> VisitMut for ClassProperties<C> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module_items(&mut self, n: &mut Vec<ModuleItem>) {
         self.visit_mut_stmt_like(n);
@@ -182,7 +181,7 @@ impl<C: Comments> VisitMut for ClassProperties<C> {
             BlockStmtOrExpr::Expr(expr) if expr.is_class() => {
                 let ClassExpr { ident, class } = expr.take().class().unwrap();
 
-                let mut stmts = vec![];
+                let mut stmts = Vec::new();
                 let ident = ident.unwrap_or_else(|| private_ident!("_class"));
                 let (decl, extra) = self.visit_mut_class_as_decl(ident.clone(), class);
 
@@ -517,14 +516,14 @@ impl<C: Comments> ClassProperties<C> {
         let has_super = class.super_class.is_some();
 
         let mut constructor_inits = MemberInitRecord::new(self.c);
-        let mut vars = vec![];
-        let mut lets = vec![];
+        let mut vars = Vec::new();
+        let mut lets = Vec::new();
         let mut extra_inits = MemberInitRecord::new(self.c);
-        let mut private_method_fn_decls = vec![];
-        let mut members = vec![];
+        let mut private_method_fn_decls = Vec::new();
+        let mut members = Vec::new();
         let mut constructor = None;
-        let mut used_names = vec![];
-        let mut used_key_names = vec![];
+        let mut used_names = Vec::new();
+        let mut used_key_names = Vec::new();
         let mut super_ident = None;
 
         class.body.visit_mut_with(&mut BrandCheckHandler {
@@ -981,7 +980,7 @@ impl<C: Comments> ClassProperties<C> {
 
         private_method_fn_decls.visit_mut_with(&mut PrivateAccessVisitor {
             private: &self.private,
-            vars: vec![],
+            vars: Vec::new(),
             private_access_type: Default::default(),
             c: self.c,
             unresolved_mark: self.unresolved_mark,
@@ -993,7 +992,7 @@ impl<C: Comments> ClassProperties<C> {
 
         members.visit_mut_with(&mut PrivateAccessVisitor {
             private: &self.private,
-            vars: vec![],
+            vars: Vec::new(),
             private_access_type: Default::default(),
             c: self.c,
             unresolved_mark: self.unresolved_mark,
@@ -1081,7 +1080,7 @@ struct ShouldWork {
 
 #[swc_trace]
 impl Visit for ShouldWork {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_class_method(&mut self, _: &ClassMethod) {
         self.found = true;
@@ -1116,7 +1115,7 @@ struct SuperVisitor {
 }
 
 impl Visit for SuperVisitor {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     /// Don't recurse into constructor
     fn visit_constructor(&mut self, _: &Constructor) {}

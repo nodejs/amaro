@@ -4,7 +4,7 @@ use swc_common::{collections::AHashSet, pass::Repeated, util::take::Take, DUMMY_
 use swc_ecma_ast::*;
 use swc_ecma_usage_analyzer::analyzer::UsageAnalyzer;
 use swc_ecma_utils::{find_pat_ids, StmtLike};
-use swc_ecma_visit::{standard_only_visit_mut, VisitMut, VisitMutWith, VisitWith};
+use swc_ecma_visit::{noop_visit_mut_type, VisitMut, VisitMutWith, VisitWith};
 
 use super::util::drop_invalid_stmts;
 use crate::{
@@ -102,7 +102,7 @@ impl Hoister<'_> {
         }
         self.changed = true;
 
-        let mut var_decls = vec![];
+        let mut var_decls = Vec::new();
         let mut fn_decls = Vec::with_capacity(stmts.len());
         let mut new_stmts = Vec::with_capacity(stmts.len());
         let mut done = AHashSet::default();
@@ -127,7 +127,7 @@ impl Hoister<'_> {
                                 }
                             ) && found_non_var_decl =>
                         {
-                            let mut exprs = vec![];
+                            let mut exprs = Vec::new();
                             for decl in var.decls {
                                 let ids: Vec<Ident> = find_pat_ids(&decl.name);
 
@@ -279,7 +279,7 @@ impl Hoister<'_> {
 }
 
 impl VisitMut for Hoister<'_> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module_items(&mut self, stmts: &mut Vec<ModuleItem>) {
         self.handle_stmt_likes(stmts);

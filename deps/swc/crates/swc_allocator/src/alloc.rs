@@ -1,16 +1,18 @@
-use std::{
-    alloc::Layout,
-    cell::Cell,
-    mem::transmute,
-    ops::{Deref, DerefMut},
-    ptr::NonNull,
-};
+#[cfg(feature = "nightly")]
+use std::alloc::{AllocError, Layout};
+#[cfg(feature = "scoped")]
+use std::cell::Cell;
+#[cfg(feature = "scoped")]
+use std::mem::transmute;
+use std::ops::{Deref, DerefMut};
+#[cfg(feature = "nightly")]
+use std::ptr::NonNull;
 
-use allocator_api2::alloc::Global;
 use bumpalo::Bump;
 
 use crate::FastAlloc;
 
+#[cfg(feature = "scoped")]
 thread_local! {
   static ALLOC: Cell<Option<&'static Allocator>> = const { Cell::new(None) };
 }
@@ -22,11 +24,13 @@ pub struct Allocator {
 }
 
 pub struct AllocGuard {
+    #[cfg(feature = "scoped")]
     orig: Option<&'static Allocator>,
 }
 
 impl Drop for AllocGuard {
     fn drop(&mut self) {
+        #[cfg(feature = "scoped")]
         ALLOC.set(self.orig.take());
     }
 }
@@ -39,15 +43,21 @@ impl Allocator {
     /// [Allocator] must outlive [crate::boxed::Box] and [crate::vec::Vec]
     /// created while the guard is active.
     pub unsafe fn guard(&self) -> AllocGuard {
+        #[cfg(feature = "scoped")]
         let orig = ALLOC.get();
 
+        #[cfg(feature = "scoped")]
         let s = unsafe {
             // Safery: We are using a scoped API
             transmute::<&Allocator, &'static Allocator>(self)
         };
 
+        #[cfg(feature = "scoped")]
         ALLOC.set(Some(s));
-        AllocGuard { orig }
+        AllocGuard {
+            #[cfg(feature = "scoped")]
+            orig,
+        }
     }
 }
 
@@ -66,36 +76,26 @@ impl Default for FastAlloc {
 
 impl FastAlloc {
     /// `true` is passed to `f` if the box is allocated with a custom allocator.
-    #[cfg(feature = "scoped")]
-    fn with_allocator<T>(
-        &self,
-        f: impl FnOnce(&dyn allocator_api2::alloc::Allocator, bool) -> T,
-    ) -> T {
+    #[cfg(feature = "nightly")]
+    fn with_allocator<T>(&self, f: impl FnOnce(&dyn std::alloc::Allocator, bool) -> T) -> T {
+        #[cfg(feature = "scoped")]
         if let Some(arena) = &self.alloc {
-            return f(
-                (&&arena.alloc) as &dyn allocator_api2::alloc::Allocator,
-                true,
-            );
+            return f((&&arena.alloc) as &dyn std::alloc::Allocator, true);
         }
 
-        f(&allocator_api2::alloc::Global, false)
-    }
-
-    /// `true` is passed to `f` if the box is allocated with a custom allocator.
-    #[cfg(not(feature = "scoped"))]
-    #[inline(always)]
-    fn with_allocator<T>(&self, f: impl FnOnce(allocator_api2::alloc::Global, bool) -> T) -> T {
-        f(allocator_api2::alloc::Global, false)
+        f(&std::alloc::Global, false)
     }
 }
 
+#[cfg(feature = "nightly")]
 fn mark_ptr_as_arena_mode(ptr: NonNull<[u8]>) -> NonNull<[u8]> {
     ptr
 }
 
-unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
+#[cfg(feature = "nightly")]
+unsafe impl std::alloc::Allocator for FastAlloc {
     #[inline]
-    fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, allocator_api2::alloc::AllocError> {
+    fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
         self.with_allocator(|a, is_arena_mode| {
             let ptr = a.allocate(layout)?;
 
@@ -108,10 +108,7 @@ unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
     }
 
     #[inline]
-    fn allocate_zeroed(
-        &self,
-        layout: Layout,
-    ) -> Result<NonNull<[u8]>, allocator_api2::alloc::AllocError> {
+    fn allocate_zeroed(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
         self.with_allocator(|a, is_arena_mode| {
             let ptr = a.allocate_zeroed(layout)?;
 
@@ -131,7 +128,7 @@ unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
             return;
         }
 
-        Global.deallocate(ptr, layout)
+        std::alloc::Global.deallocate(ptr, layout)
     }
 
     #[inline]
@@ -140,7 +137,7 @@ unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
         ptr: NonNull<u8>,
         old_layout: Layout,
         new_layout: Layout,
-    ) -> Result<NonNull<[u8]>, allocator_api2::alloc::AllocError> {
+    ) -> Result<NonNull<[u8]>, AllocError> {
         self.with_allocator(|alloc, is_arena_mode| {
             let ptr = alloc.grow(ptr, old_layout, new_layout)?;
 
@@ -158,7 +155,7 @@ unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
         ptr: NonNull<u8>,
         old_layout: Layout,
         new_layout: Layout,
-    ) -> Result<NonNull<[u8]>, allocator_api2::alloc::AllocError> {
+    ) -> Result<NonNull<[u8]>, AllocError> {
         self.with_allocator(|alloc, is_arena_mode| {
             let ptr = alloc.grow_zeroed(ptr, old_layout, new_layout)?;
 
@@ -176,7 +173,7 @@ unsafe impl allocator_api2::alloc::Allocator for FastAlloc {
         ptr: NonNull<u8>,
         old_layout: Layout,
         new_layout: Layout,
-    ) -> Result<NonNull<[u8]>, allocator_api2::alloc::AllocError> {
+    ) -> Result<NonNull<[u8]>, AllocError> {
         self.with_allocator(|alloc, is_arena_mode| {
             let ptr = alloc.shrink(ptr, old_layout, new_layout)?;
 

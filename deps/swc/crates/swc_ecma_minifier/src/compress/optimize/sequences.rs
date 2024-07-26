@@ -1,6 +1,6 @@
-use std::mem::take;
+use std::{iter::once, mem::take};
 
-use swc_common::{util::take::Take, Spanned, DUMMY_SP};
+use swc_common::{pass::Either, util::take::Take, Spanned, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_usage_analyzer::{
     alias::{collect_infects_from, AccessKind, AliasConfig},
@@ -9,7 +9,7 @@ use swc_ecma_usage_analyzer::{
 use swc_ecma_utils::{
     contains_arguments, contains_this_expr, prepend_stmts, ExprExt, IdentUsageFinder, StmtLike,
 };
-use swc_ecma_visit::{standard_only_visit, Visit, VisitWith};
+use swc_ecma_visit::{noop_visit_type, Visit, VisitWith};
 #[cfg(feature = "debug")]
 use tracing::{span, Level};
 
@@ -151,7 +151,7 @@ impl Optimizer<'_> {
         report_change!("sequences: Compressing statements as a sequences");
 
         self.changed = true;
-        let mut exprs = vec![];
+        let mut exprs = Vec::new();
         // This is bigger than required.
         let mut new_stmts = Vec::with_capacity(stmts.len());
 
@@ -395,7 +395,7 @@ impl Optimizer<'_> {
             return;
         }
 
-        let mut new_stmts = vec![];
+        let mut new_stmts = Vec::new();
 
         for stmt in stmts.take() {
             match stmt.try_into_stmt() {
@@ -565,61 +565,59 @@ impl Optimizer<'_> {
         &mut self,
         s: &'a mut Stmt,
         options: &CompressOptions,
-    ) -> Option<Vec<Mergable<'a>>> {
+    ) -> Option<Either<impl Iterator<Item = Mergable<'a>>, std::iter::Once<Mergable<'a>>>> {
         Some(match s {
             Stmt::Expr(e) => {
                 if self.options.sequences()
                     || self.options.collapse_vars
                     || self.options.side_effects
                 {
-                    vec![Mergable::Expr(&mut e.expr)]
+                    Either::Right(once(Mergable::Expr(&mut e.expr)))
                 } else {
                     return None;
                 }
             }
             Stmt::Decl(Decl::Var(v)) => {
                 if options.reduce_vars || options.collapse_vars {
-                    v.decls.iter_mut().map(Mergable::Var).collect()
+                    Either::Left(v.decls.iter_mut().map(Mergable::Var))
                 } else {
                     return None;
                 }
             }
             Stmt::Return(ReturnStmt { arg: Some(arg), .. }) => {
-                vec![Mergable::Expr(arg)]
+                Either::Right(once(Mergable::Expr(arg)))
             }
 
-            Stmt::If(s) if options.sequences() => {
-                vec![Mergable::Expr(&mut s.test)]
-            }
+            Stmt::If(s) if options.sequences() => Either::Right(once(Mergable::Expr(&mut s.test))),
 
             Stmt::Switch(s) if options.sequences() => {
-                vec![Mergable::Expr(&mut s.discriminant)]
+                Either::Right(once(Mergable::Expr(&mut s.discriminant)))
             }
 
             Stmt::For(s) if options.sequences() => {
                 if let Some(VarDeclOrExpr::Expr(e)) = &mut s.init {
-                    vec![Mergable::Expr(e)]
+                    Either::Right(once(Mergable::Expr(e)))
                 } else {
                     return None;
                 }
             }
 
             Stmt::ForOf(s) if options.sequences() => {
-                vec![Mergable::Expr(&mut s.right)]
+                Either::Right(once(Mergable::Expr(&mut s.right)))
             }
 
             Stmt::ForIn(s) if options.sequences() => {
-                vec![Mergable::Expr(&mut s.right)]
+                Either::Right(once(Mergable::Expr(&mut s.right)))
             }
 
             Stmt::Throw(s) if options.sequences() => {
-                vec![Mergable::Expr(&mut s.arg)]
+                Either::Right(once(Mergable::Expr(&mut s.arg)))
             }
 
             Stmt::Decl(Decl::Fn(f)) => {
                 // Check for side effects
 
-                vec![Mergable::FnDecl(f)]
+                Either::Right(once(Mergable::FnDecl(f)))
             }
 
             _ => return None,
@@ -646,12 +644,9 @@ impl Optimizer<'_> {
             return;
         }
 
-        let mut exprs = vec![];
-        let mut buf = vec![];
-
-        for stmt in stmts.iter_mut() {
-            let is_end = matches!(
-                stmt.as_stmt(),
+        fn is_end(s: Option<&Stmt>) -> bool {
+            matches!(
+                s,
                 Some(
                     Stmt::If(..)
                         | Stmt::Throw(..)
@@ -661,7 +656,14 @@ impl Optimizer<'_> {
                         | Stmt::ForIn(..)
                         | Stmt::ForOf(..)
                 ) | None
-            );
+            )
+        }
+
+        let mut exprs = Vec::new();
+        let mut buf = Vec::new();
+
+        for stmt in stmts.iter_mut() {
+            let is_end = is_end(stmt.as_stmt());
             let can_skip = match stmt.as_stmt() {
                 Some(Stmt::Decl(Decl::Fn(..))) => true,
                 _ => false,
@@ -747,7 +749,7 @@ impl Optimizer<'_> {
         }
 
         if seq.exprs.iter().any(|v| v.is_seq()) {
-            let mut new = vec![];
+            let mut new = Vec::new();
 
             for e in seq.exprs.take() {
                 match *e {
@@ -2597,7 +2599,7 @@ struct UsageCounter<'a> {
 }
 
 impl Visit for UsageCounter<'_> {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_ident(&mut self, i: &Ident) {
         if self.target.sym == i.sym && self.target.ctxt == i.ctxt {

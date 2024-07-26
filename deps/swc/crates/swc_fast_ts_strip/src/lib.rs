@@ -2,6 +2,7 @@ use std::{cell::RefCell, rc::Rc};
 
 use anyhow::{Context, Error};
 use serde::{Deserialize, Serialize};
+use swc_allocator::maybe::vec::Vec;
 use swc_common::{
     comments::SingleThreadedComments,
     errors::{Handler, HANDLER},
@@ -19,7 +20,7 @@ use swc_ecma_ast::{
 };
 use swc_ecma_parser::{
     lexer::Lexer,
-    token::{IdentLike, KnownIdent, Token, TokenAndSpan, Word},
+    token::{BinOpToken, IdentLike, KnownIdent, Token, TokenAndSpan, Word},
     Capturing, Parser, StringInput, Syntax, TsSyntax,
 };
 use swc_ecma_transforms_base::{
@@ -30,6 +31,8 @@ use swc_ecma_transforms_base::{
 };
 use swc_ecma_transforms_typescript::typescript;
 use swc_ecma_visit::{Visit, VisitMutWith, VisitWith};
+#[cfg(feature = "wasm-bindgen")]
+use wasm_bindgen::prelude::*;
 
 #[derive(Default, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -52,6 +55,17 @@ pub struct Options {
     pub source_map: bool,
 }
 
+#[cfg(feature = "wasm-bindgen")]
+#[wasm_bindgen(typescript_custom_section)]
+const Type_Options: &'static str = r#"
+interface Options {
+    module?: boolean;
+    filename?: string;
+    mode?: Mode;
+    sourceMap?: boolean;
+}
+"#;
+
 #[derive(Debug, Default, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 pub enum Mode {
@@ -59,6 +73,12 @@ pub enum Mode {
     StripOnly,
     Transform,
 }
+
+#[cfg(feature = "wasm-bindgen")]
+#[wasm_bindgen(typescript_custom_section)]
+const Type_Mode: &'static str = r#"
+type Mode = "strip-only" | "transform";
+"#;
 
 fn default_ts_syntax() -> TsSyntax {
     TsSyntax {
@@ -72,6 +92,15 @@ pub struct TransformOutput {
     pub code: String,
     pub map: Option<String>,
 }
+
+#[cfg(feature = "wasm-bindgen")]
+#[wasm_bindgen(typescript_custom_section)]
+const Type_TransformOutput: &'static str = r#"
+interface TransformOutput {
+    code: string;
+    map?: string;
+}
+"#;
 
 pub fn operate(
     cm: &Lrc<SourceMap>,
@@ -239,9 +268,9 @@ pub fn operate(
                 program.visit_mut_with(&mut fixer(Some(&comments)));
             });
 
-            let mut src = vec![];
+            let mut src = std::vec::Vec::new();
             let mut src_map_buf = if options.source_map {
-                Some(vec![])
+                Some(Vec::new())
             } else {
                 None
             };
@@ -270,7 +299,7 @@ pub fn operate(
                         let map =
                             cm.build_source_map_with_config(&map, None, DefaultSourceMapGenConfig);
 
-                        let mut s = vec![];
+                        let mut s = std::vec::Vec::new();
                         map.to_writer(&mut s)
                             .context("failed to write source map")?;
 
@@ -296,11 +325,11 @@ struct TsStrip {
     // should be string, but we use u8 for only `)` usage.
     overwrites: Vec<(BytePos, u8)>,
 
-    tokens: Vec<TokenAndSpan>,
+    tokens: std::vec::Vec<TokenAndSpan>,
 }
 
 impl TsStrip {
-    fn new(src: Lrc<String>, tokens: Vec<TokenAndSpan>) -> Self {
+    fn new(src: Lrc<String>, tokens: std::vec::Vec<TokenAndSpan>) -> Self {
         TsStrip {
             src,
             replacements: Default::default(),
@@ -345,6 +374,44 @@ impl TsStrip {
 
     fn get_prev_token(&self, pos: BytePos) -> &TokenAndSpan {
         &self.tokens[self.get_prev_token_index(pos)]
+    }
+
+    fn fix_asi(&mut self, span: Span) {
+        let index = self.get_prev_token_index(span.lo);
+        if index == 0 {
+            // Skip if the token is the first token.
+            return;
+        }
+
+        let TokenAndSpan {
+            token: prev_token,
+            span: prev_span,
+            ..
+        } = &self.tokens[index - 1];
+
+        let index = self.get_prev_token_index(span.hi);
+        if index == self.tokens.len() - 1 {
+            // Skip if the token is the last token.
+            return;
+        }
+
+        let TokenAndSpan { token, .. } = &self.tokens[index + 1];
+
+        // Add a semicolon if the next token is `[`, `(`, `/`, `+`, or `-`
+        match token {
+            Token::LParen
+            | Token::LBracket
+            | Token::BinOp(BinOpToken::Add | BinOpToken::Sub | BinOpToken::Div) => {
+                if prev_token == &Token::Semi {
+                    self.add_overwrite(prev_span.lo, b';');
+                    return;
+                }
+
+                self.add_overwrite(span.lo, b';');
+            }
+
+            _ => {}
+        }
     }
 }
 
@@ -411,15 +478,6 @@ impl Visit for TsStrip {
         }
     }
 
-    fn visit_class_decl(&mut self, n: &ClassDecl) {
-        if n.declare {
-            self.add_replacement(n.span());
-            return;
-        }
-
-        n.visit_children_with(self);
-    }
-
     fn visit_class(&mut self, n: &Class) {
         if n.is_abstract {
             let r#abstract = self.get_next_token(n.span_lo());
@@ -441,6 +499,16 @@ impl Visit for TsStrip {
             let last = n.implements.last().unwrap();
             let span = span(implements.span.lo, last.span.hi);
             self.add_replacement(span);
+        }
+
+        n.visit_children_with(self);
+    }
+
+    fn visit_class_decl(&mut self, n: &ClassDecl) {
+        if n.declare {
+            self.add_replacement(n.span());
+            self.fix_asi(n.span());
+            return;
         }
 
         n.visit_children_with(self);
@@ -520,16 +588,19 @@ impl Visit for TsStrip {
             self.add_replacement(definite_mark.span);
         }
 
-        n.visit_children_with(self);
-    }
+        if n.value.is_none() && n.key.as_ident().filter(|k| k.sym == "static").is_some() {
+            if let Some(type_ann) = &n.type_ann {
+                self.add_overwrite(type_ann.span.lo, b';');
+            }
+        }
 
-    fn visit_ts_index_signature(&mut self, n: &TsIndexSignature) {
-        self.add_replacement(n.span);
+        n.visit_children_with(self);
     }
 
     fn visit_export_all(&mut self, n: &ExportAll) {
         if n.type_only {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 
@@ -543,6 +614,7 @@ impl Visit for TsStrip {
             | swc_ecma_ast::Decl::TsEnum(_)
             | swc_ecma_ast::Decl::TsModule(_) => {
                 self.add_replacement(n.span);
+                self.fix_asi(n.span);
             }
 
             _ => {
@@ -562,6 +634,7 @@ impl Visit for TsStrip {
     fn visit_import_decl(&mut self, n: &ImportDecl) {
         if n.type_only {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 
@@ -588,6 +661,7 @@ impl Visit for TsStrip {
     fn visit_named_export(&mut self, n: &NamedExport) {
         if n.type_only {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 
@@ -605,29 +679,6 @@ impl Visit for TsStrip {
                 }
             }
         }
-    }
-
-    fn visit_ts_import_equals_decl(&mut self, n: &TsImportEqualsDecl) {
-        if n.is_type_only {
-            self.add_replacement(n.span);
-            return;
-        }
-
-        HANDLER.with(|handler| {
-            handler.span_err(
-                n.span,
-                "TypeScript import equals declaration is not supported in strip-only mode",
-            );
-        });
-    }
-
-    fn visit_ts_export_assignment(&mut self, n: &TsExportAssignment) {
-        HANDLER.with(|handler| {
-            handler.span_err(
-                n.span,
-                "TypeScript export assignment is not supported in strip-only mode",
-            );
-        });
     }
 
     fn visit_params(&mut self, n: &[Param]) {
@@ -670,6 +721,7 @@ impl Visit for TsStrip {
     fn visit_ts_enum_decl(&mut self, e: &TsEnumDecl) {
         if e.declare {
             self.add_replacement(e.span);
+            self.fix_asi(e.span);
             return;
         }
 
@@ -681,6 +733,34 @@ impl Visit for TsStrip {
         });
     }
 
+    fn visit_ts_export_assignment(&mut self, n: &TsExportAssignment) {
+        HANDLER.with(|handler| {
+            handler.span_err(
+                n.span,
+                "TypeScript export assignment is not supported in strip-only mode",
+            );
+        });
+    }
+
+    fn visit_ts_import_equals_decl(&mut self, n: &TsImportEqualsDecl) {
+        if n.is_type_only {
+            self.add_replacement(n.span);
+            self.fix_asi(n.span);
+            return;
+        }
+
+        HANDLER.with(|handler| {
+            handler.span_err(
+                n.span,
+                "TypeScript import equals declaration is not supported in strip-only mode",
+            );
+        });
+    }
+
+    fn visit_ts_index_signature(&mut self, n: &TsIndexSignature) {
+        self.add_replacement(n.span);
+    }
+
     fn visit_ts_instantiation(&mut self, n: &TsInstantiation) {
         self.add_replacement(span(n.expr.span().hi, n.span.hi));
 
@@ -689,11 +769,13 @@ impl Visit for TsStrip {
 
     fn visit_ts_interface_decl(&mut self, n: &TsInterfaceDecl) {
         self.add_replacement(n.span);
+        self.fix_asi(n.span);
     }
 
     fn visit_ts_module_decl(&mut self, n: &TsModuleDecl) {
         if n.declare || matches!(n.id, TsModuleName::Str(..)) {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 
@@ -708,6 +790,7 @@ impl Visit for TsStrip {
     fn visit_ts_namespace_decl(&mut self, n: &TsNamespaceDecl) {
         if n.declare {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 
@@ -742,14 +825,24 @@ impl Visit for TsStrip {
 
     fn visit_ts_type_alias_decl(&mut self, n: &TsTypeAliasDecl) {
         self.add_replacement(n.span);
+        self.fix_asi(n.span);
     }
 
     fn visit_ts_type_ann(&mut self, n: &TsTypeAnn) {
         self.add_replacement(n.span);
     }
 
+    /// We do not strip type assertion because it's not safe.
+    ///
+    /// See https://github.com/swc-project/swc/issues/9295
     fn visit_ts_type_assertion(&mut self, n: &TsTypeAssertion) {
-        self.add_replacement(span(n.span.lo, n.expr.span().lo));
+        HANDLER.with(|handler| {
+            handler.span_err(
+                n.span,
+                "The angle-bracket syntax for type assertions, `<T>expr`, is not supported in \
+                 type strip mode. Instead, use the 'as' syntax: `expr as T`.",
+            );
+        });
 
         n.expr.visit_children_with(self);
     }
@@ -765,6 +858,7 @@ impl Visit for TsStrip {
     fn visit_var_decl(&mut self, n: &VarDecl) {
         if n.declare {
             self.add_replacement(n.span);
+            self.fix_asi(n.span);
             return;
         }
 

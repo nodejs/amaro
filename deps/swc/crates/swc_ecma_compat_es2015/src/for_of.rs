@@ -11,7 +11,7 @@ use swc_ecma_transforms_macros::parallel;
 use swc_ecma_utils::{
     alias_if_required, member_expr, prepend_stmt, private_ident, quote_ident, ExprFactory,
 };
-use swc_ecma_visit::{as_folder, standard_only_visit_mut, Fold, VisitMut, VisitMutWith};
+use swc_ecma_visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitMutWith};
 use swc_trace_macro::swc_trace;
 
 /// `@babel/plugin-transform-for-of`
@@ -298,7 +298,7 @@ impl ForOf {
                     right: CallExpr {
                         span: DUMMY_SP,
                         callee: iterator.as_callee(),
-                        args: vec![],
+                        args: Vec::new(),
                         ..Default::default()
                     }
                     .into(),
@@ -426,7 +426,7 @@ impl ForOf {
                                         Symbol.iterator
                                     ))
                                     .as_callee(),
-                                args: vec![],
+                                args: Vec::new(),
                                 ..Default::default()
                             }))),
                             definite: false,
@@ -457,7 +457,7 @@ impl ForOf {
                                 span: DUMMY_SP,
                                 // `_iterator.next`
                                 callee: iterator.make_member(quote_ident!("next")).as_callee(),
-                                args: vec![],
+                                args: Vec::new(),
                                 ..Default::default()
                             })),
                         }
@@ -598,7 +598,7 @@ fn make_finally_block(
                         stmts: vec![CallExpr {
                             span: DUMMY_SP,
                             callee: iterator_return.as_callee(),
-                            args: vec![],
+                            args: Vec::new(),
                             ..Default::default()
                         }
                         .into_stmt()],
@@ -687,7 +687,7 @@ impl ParExplode for ForOf {
 #[swc_trace]
 #[parallel(explode)]
 impl VisitMut for ForOf {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_stmt(&mut self, s: &mut Stmt) {
         match s {

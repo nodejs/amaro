@@ -7,7 +7,7 @@ include       = ["Cargo.toml", "src/**/*.rs"]
 license       = "Apache-2.0"
 name          = "swc_ecma_codegen"
 repository    = "https://github.com/swc-project/swc.git"
-version       = "0.154.0"
+version       = "0.154.3"
 
 [features]
 # This does not enable serde for ast nodes.
@@ -20,11 +20,11 @@ bench = false
 memchr     = { workspace = true }
 num-bigint = { workspace = true, features = ["serde"] }
 once_cell  = { workspace = true }
-rustc-hash = { workspace = true }
 serde      = { workspace = true }
 sourcemap  = { workspace = true }
 tracing    = { workspace = true }
 
+swc_allocator           = { version = "0.1.7", path = "../swc_allocator", default-features = false }
 swc_atoms               = { version = "0.6.5", path = "../swc_atoms" }
 swc_common              = { version = "0.36.0", path = "../swc_common" }
 swc_ecma_ast            = { version = "0.117.0", path = "../swc_ecma_ast" }
@@ -36,6 +36,7 @@ codspeed-criterion-compat = { workspace = true }
 criterion                 = { workspace = true }
 serde_json                = { workspace = true }
 
+swc_allocator = { version = "0.1.7", path = "../swc_allocator" }
 swc_common = { version = "0.36.0", path = "../swc_common", features = [
   "sourcemap",
 ] }

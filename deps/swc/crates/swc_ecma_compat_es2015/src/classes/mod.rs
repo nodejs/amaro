@@ -15,8 +15,7 @@ use swc_ecma_utils::{
     quote_str, replace_ident, ExprFactory, ModuleItemLike, StmtLike,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit, standard_only_visit_mut, Fold, Visit, VisitMut, VisitMutWith,
-    VisitWith,
+    as_folder, noop_visit_mut_type, noop_visit_type, Fold, Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use swc_trace_macro::swc_trace;
 use tracing::debug;
@@ -224,7 +223,7 @@ impl<C> VisitMut for Classes<C>
 where
     C: Comments,
 {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module_items(&mut self, items: &mut Vec<ModuleItem>) {
         self.visit_mut_stmt_like(items)
@@ -447,7 +446,7 @@ where
                 (params, vec![super_class.as_arg()], Some(super_param))
             }
         } else {
-            (vec![], vec![], None)
+            (Vec::new(), Vec::new(), None)
         };
 
         let mut stmts = self.class_to_stmts(class_name, super_ident, class);
@@ -533,9 +532,9 @@ where
         class: Box<Class>,
     ) -> Vec<Stmt> {
         let class_name = class_name.unwrap_or_else(|| quote_ident!("_class").into());
-        let mut stmts = vec![];
+        let mut stmts = Vec::new();
 
-        let mut methods = vec![];
+        let mut methods = Vec::new();
         let mut constructor = None;
         for member in class.body {
             match member {
@@ -633,7 +632,7 @@ where
             let is_constructor_default = constructor.span.is_dummy();
             if is_constructor_default {
                 debug!("Dropping constructor parameters because the constructor is injected");
-                constructor.params = vec![];
+                constructor.params = Vec::new();
             }
 
             let mut insert_this = false;
@@ -644,7 +643,7 @@ where
                 insert_this |= inserted_this;
             }
 
-            let mut vars = vec![];
+            let mut vars = Vec::new();
             let mut body = constructor.body.unwrap().stmts;
             // should we insert `var _this`?
 
@@ -836,7 +835,7 @@ where
         mut body: Vec<Stmt>,
         this_mark: Option<Mark>,
     ) -> Vec<Stmt> {
-        let mut vars = vec![];
+        let mut vars = Vec::new();
         let mut folder = SuperFieldAccessFolder {
             class_name,
             vars: &mut vars,
@@ -897,7 +896,7 @@ where
         methods: Vec<ClassMethod>,
     ) -> Vec<Stmt> {
         if methods.is_empty() {
-            return vec![];
+            return Vec::new();
         }
 
         /// { key: "prop" }
@@ -1039,7 +1038,7 @@ where
                 &mut props
             };
 
-            let mut vars = vec![];
+            let mut vars = Vec::new();
             let mut folder = SuperFieldAccessFolder {
                 class_name,
                 vars: &mut vars,
@@ -1262,7 +1261,7 @@ fn is_always_initialized(body: &[Stmt]) -> bool {
     }
 
     impl Visit for SuperFinder {
-        standard_only_visit!();
+        noop_visit_type!(fail);
 
         fn visit_callee(&mut self, node: &Callee) {
             match *node {
@@ -1317,7 +1316,7 @@ struct ClassFinder {
 }
 
 impl Visit for ClassFinder {
-    standard_only_visit!();
+    noop_visit_type!(fail);
 
     fn visit_class(&mut self, _: &Class) {
         self.found = true

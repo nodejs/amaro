@@ -5,7 +5,7 @@ use std::hash::Hash;
 use swc_common::{SyntaxContext, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_utils::ident::IdentLike;
-use swc_ecma_visit::{standard_only_visit_mut, VisitMut};
+use swc_ecma_visit::{noop_visit_mut_type, VisitMut};
 
 #[cfg(feature = "concurrent")]
 pub(crate) type Readonly<T> = std::sync::Arc<T>;
@@ -149,7 +149,7 @@ where
 pub(crate) struct HygieneRemover;
 
 impl VisitMut for HygieneRemover {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_syntax_context(&mut self, n: &mut SyntaxContext) {
         *n = SyntaxContext::empty();
@@ -204,7 +204,7 @@ impl ExportMetadata {
     pub fn into_with(self) -> Box<ObjectLit> {
         let mut obj = Some(Box::new(ObjectLit {
             span: DUMMY_SP,
-            props: vec![],
+            props: Vec::new(),
         }));
 
         self.encode(&mut obj);
@@ -213,7 +213,7 @@ impl ExportMetadata {
     }
 
     pub fn encode(&self, to: &mut Option<Box<ObjectLit>>) {
-        let mut props = vec![];
+        let mut props = Vec::new();
 
         if self.injected {
             props.push(metadata("__swc_bundler__injected__", "1"));

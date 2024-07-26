@@ -6,7 +6,7 @@ use swc_common::{util::take::Take, BytePos, Spanned, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_transforms_base::{helper, perf::Parallel};
 use swc_ecma_utils::{is_literal, prepend_stmts, private_ident, quote_ident, ExprFactory};
-use swc_ecma_visit::{as_folder, standard_only_visit_mut, Fold, VisitMut, VisitMutWith};
+use swc_ecma_visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitMutWith};
 use swc_trace_macro::swc_trace;
 
 pub fn template_literal(c: Config) -> impl Fold + VisitMut {
@@ -43,7 +43,7 @@ impl Parallel for TemplateLiteral {
 
 #[swc_trace]
 impl VisitMut for TemplateLiteral {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_expr(&mut self, e: &mut Expr) {
         e.visit_mut_children_with(self);
@@ -76,7 +76,7 @@ impl VisitMut for TemplateLiteral {
 
                 let len = quasis.len() + exprs.len();
 
-                let mut args = vec![];
+                let mut args = Vec::new();
                 let mut quasis = quasis.iter_mut();
                 let mut exprs = exprs.take().into_iter();
 
@@ -244,7 +244,7 @@ impl VisitMut for TemplateLiteral {
                     span: DUMMY_SP,
                     is_async: false,
                     is_generator: false,
-                    params: vec![],
+                    params: Vec::new(),
                     body: {
                         // const data = _tagged_template_literal(["first", "second"]);
                         let data_decl = VarDecl {
@@ -321,7 +321,7 @@ impl VisitMut for TemplateLiteral {
                                     span: DUMMY_SP,
                                     is_async: false,
                                     is_generator: false,
-                                    params: vec![],
+                                    params: Vec::new(),
                                     body: Some(BlockStmt {
                                         span: DUMMY_SP,
                                         stmts: vec![Stmt::Return(ReturnStmt {
@@ -370,7 +370,7 @@ impl VisitMut for TemplateLiteral {
                         CallExpr {
                             span: DUMMY_SP,
                             callee: fn_ident.as_callee(),
-                            args: vec![],
+                            args: Vec::new(),
                             ..Default::default()
                         }
                         .as_arg(),

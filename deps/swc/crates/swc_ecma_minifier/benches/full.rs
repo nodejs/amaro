@@ -5,6 +5,7 @@ extern crate swc_malloc;
 use std::fs::read_to_string;
 
 use codspeed_criterion_compat::{black_box, criterion_group, criterion_main, Criterion};
+use swc_allocator::Allocator;
 use swc_common::{errors::HANDLER, sync::Lrc, FileName, Mark, SourceMap};
 use swc_ecma_codegen::text_writer::JsWriter;
 use swc_ecma_minifier::{
@@ -22,9 +23,12 @@ pub fn bench_files(c: &mut Criterion) {
     let mut bench_file = |name: &str| {
         let src = read_to_string(format!("benches/full/{}.js", name)).unwrap();
 
-        group.bench_function(&format!("es/minifier/libs/{}", name), |b| {
+        group.bench_function(format!("es/minifier/libs/{}", name), |b| {
             b.iter(|| {
                 // We benchmark full time, including time for creating cm, handler
+                let allocator = Allocator::default();
+                let _guard = unsafe { allocator.guard() };
+
                 run(&src)
             })
         });
@@ -60,7 +64,7 @@ fn run(src: &str) {
                 Default::default(),
                 Default::default(),
                 None,
-                &mut vec![],
+                &mut Vec::new(),
             )
             .map_err(|err| {
                 err.into_diagnostic(&handler).emit();
@@ -107,7 +111,7 @@ fn run(src: &str) {
 }
 
 fn print<N: swc_ecma_codegen::Node>(cm: Lrc<SourceMap>, nodes: &[N], minify: bool) -> String {
-    let mut buf = vec![];
+    let mut buf = Vec::new();
 
     {
         let mut emitter = swc_ecma_codegen::Emitter {

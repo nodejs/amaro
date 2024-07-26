@@ -7,7 +7,7 @@ include       = ["Cargo.toml", "src/**/*.rs"]
 license       = "Apache-2.0"
 name          = "swc_ecma_usage_analyzer"
 repository    = "https://github.com/swc-project/swc.git"
-version       = "0.29.0"
+version       = "0.29.2"
 
   [package.metadata.docs.rs]
   all-features = true
@@ -18,8 +18,9 @@ bench = false
 
 [features]
 # This enables global concurrent mode
-concurrent = ["swc_common/concurrent", "indexmap/rayon"]
-trace-ast  = []
+concurrent    = ["swc_common/concurrent", "indexmap/rayon"]
+trace-ast     = []
+tracing-spans = []
 
 [dependencies]
 indexmap   = { workspace = true }

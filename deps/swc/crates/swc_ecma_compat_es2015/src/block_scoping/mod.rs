@@ -16,7 +16,7 @@ use swc_ecma_utils::{
     ExprFactory, StmtLike,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit_mut, visit_mut_obj_and_computed, Fold, VisitMut, VisitMutWith,
+    as_folder, noop_visit_mut_type, visit_mut_obj_and_computed, Fold, VisitMut, VisitMutWith,
 };
 use swc_trace_macro::swc_trace;
 
@@ -41,7 +41,7 @@ pub fn block_scoping(unresolved_mark: Mark) -> impl VisitMut + Fold {
         BlockScoping {
             unresolved_mark,
             scope: Default::default(),
-            vars: vec![],
+            vars: Vec::new(),
             var_decl_kind: VarDeclKind::Var,
         }
     ))
@@ -143,7 +143,7 @@ impl BlockScoping {
             let mut env_hoister =
                 FnEnvHoister::new(SyntaxContext::empty().apply_mark(self.unresolved_mark));
             body_stmt.visit_mut_with(&mut env_hoister);
-            let mut inits: Vec<Box<Expr>> = vec![];
+            let mut inits: Vec<Box<Expr>> = Vec::new();
 
             for mut var in env_hoister.to_decl() {
                 if let Some(init) = var.init.take() {
@@ -435,7 +435,7 @@ impl BlockScoping {
 
 #[swc_trace]
 impl VisitMut for BlockScoping {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_arrow_expr(&mut self, n: &mut ArrowExpr) {
         n.params.visit_mut_with(self);
@@ -445,7 +445,7 @@ impl VisitMut for BlockScoping {
     fn visit_mut_block_stmt(&mut self, n: &mut BlockStmt) {
         let vars = take(&mut self.vars);
         n.visit_mut_children_with(self);
-        debug_assert_eq!(self.vars, vec![]);
+        debug_assert_eq!(self.vars, Vec::new());
         self.vars = vars;
     }
 
@@ -478,7 +478,7 @@ impl VisitMut for BlockScoping {
         let kind = ScopeKind::Loop {
             lexical_var,
             args,
-            used: vec![],
+            used: Vec::new(),
             mutated: Default::default(),
         };
 
@@ -504,7 +504,7 @@ impl VisitMut for BlockScoping {
         let kind = ScopeKind::Loop {
             lexical_var: vars,
             args,
-            used: vec![],
+            used: Vec::new(),
             mutated: Default::default(),
         };
 
@@ -530,7 +530,7 @@ impl VisitMut for BlockScoping {
         let kind = ScopeKind::Loop {
             lexical_var,
             args,
-            used: vec![],
+            used: Vec::new(),
             mutated: Default::default(),
         };
         self.visit_mut_with_scope(kind, &mut node.body);
@@ -685,7 +685,7 @@ impl<'a> FlowHelper<'a> {
 
 #[swc_trace]
 impl VisitMut for FlowHelper<'_> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     /// noop
     fn visit_mut_arrow_expr(&mut self, _n: &mut ArrowExpr) {}
@@ -910,7 +910,7 @@ impl MutationHandler<'_> {
 
 #[swc_trace]
 impl VisitMut for MutationHandler<'_> {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     visit_mut_obj_and_computed!();
 

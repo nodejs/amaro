@@ -1,7 +1,7 @@
 use swc_atoms::JsWord;
 use swc_ecma_ast::*;
 use swc_ecma_utils::private_ident;
-use swc_ecma_visit::{as_folder, standard_only_visit_mut, Fold, VisitMut};
+use swc_ecma_visit::{as_folder, noop_visit_mut_type, Fold, VisitMut};
 use swc_trace_macro::swc_trace;
 
 pub fn export_namespace_from() -> impl Fold + VisitMut {
@@ -12,7 +12,7 @@ struct ExportNamespaceFrom;
 
 #[swc_trace]
 impl VisitMut for ExportNamespaceFrom {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module_items(&mut self, items: &mut Vec<ModuleItem>) {
         let count = items
@@ -42,10 +42,10 @@ impl VisitMut for ExportNamespaceFrom {
                     type_only: false,
                     with,
                 })) if specifiers.iter().any(|s| s.is_namespace()) => {
-                    let mut origin_specifiers = vec![];
+                    let mut origin_specifiers = Vec::new();
 
-                    let mut import_specifiers = vec![];
-                    let mut export_specifiers = vec![];
+                    let mut import_specifiers = Vec::new();
+                    let mut export_specifiers = Vec::new();
 
                     for s in specifiers.into_iter() {
                         match s {

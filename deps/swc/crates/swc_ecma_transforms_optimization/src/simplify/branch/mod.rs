@@ -15,8 +15,7 @@ use swc_ecma_utils::{
     StmtExt, StmtLike, Value::Known,
 };
 use swc_ecma_visit::{
-    as_folder, standard_only_visit, standard_only_visit_mut, Visit, VisitMut, VisitMutWith,
-    VisitWith,
+    as_folder, noop_visit_mut_type, noop_visit_type, Visit, VisitMut, VisitMutWith, VisitWith,
 };
 use tracing::{debug, trace};
 
@@ -73,7 +72,7 @@ impl Parallel for Remover {
 }
 
 impl VisitMut for Remover {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_expr(&mut self, e: &mut Expr) {
         e.visit_mut_children_with(self);
@@ -389,7 +388,7 @@ impl VisitMut for Remover {
                         .into();
                     }
 
-                    let mut stmts = vec![];
+                    let mut stmts = Vec::new();
                     if let (p, Known(v)) = test.cast_to_bool(&self.expr_ctx) {
                         if cfg!(feature = "debug") {
                             trace!("The condition for if statement is always {}", v);
@@ -731,10 +730,10 @@ impl VisitMut for Remover {
                         .map(|case| case.test.as_deref())
                         .all(|s| matches!(s, Some(Expr::Lit(..)) | None));
 
-                    let mut var_ids = vec![];
+                    let mut var_ids = Vec::new();
                     if let Some(i) = selected {
                         if !has_conditional_stopper(&s.cases[i].cons) {
-                            let mut exprs = vec![];
+                            let mut exprs = Vec::new();
                             exprs.extend(ignore_result(s.discriminant, true, &self.expr_ctx));
 
                             let mut stmts = s.cases[i].cons.take();
@@ -814,7 +813,7 @@ impl VisitMut for Remover {
                             return block;
                         }
                     } else if are_all_tests_known {
-                        let mut vars = vec![];
+                        let mut vars = Vec::new();
 
                         if let Expr::Lit(..) = *s.discriminant {
                             let idx = s.cases.iter().position(|v| v.test.is_none());
@@ -951,7 +950,7 @@ impl VisitMut for Remover {
                             && is_all_case_side_effect_free
                             && !has_conditional_stopper(&s.cases.last().unwrap().cons)
                         {
-                            let mut exprs = vec![];
+                            let mut exprs = Vec::new();
                             exprs.extend(ignore_result(s.discriminant, true, &self.expr_ctx));
 
                             exprs.extend(
@@ -1300,8 +1299,8 @@ impl Remover {
                         | Stmt::Continue { .. }
                         | Stmt::Break { .. } => {
                             // Hoist function and `var` declarations above return.
-                            let mut decls = vec![];
-                            let mut hoisted_fns = vec![];
+                            let mut decls = Vec::new();
+                            let mut hoisted_fns = Vec::new();
                             for t in iter {
                                 match t.try_into_stmt() {
                                     Ok(Stmt::Decl(Decl::Fn(f))) => {
@@ -1906,7 +1905,7 @@ fn check_for_stopper(s: &[Stmt], only_conditional: bool) -> bool {
     }
 
     impl Visit for Visitor {
-        standard_only_visit!();
+        noop_visit_type!(fail);
 
         fn visit_switch_case(&mut self, node: &SwitchCase) {
             let old = self.in_cond;

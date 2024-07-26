@@ -7,7 +7,7 @@ use swc_ecma_transforms_base::{feature::FeatureFlag, helper_expr};
 use swc_ecma_utils::{
     member_expr, private_ident, quote_expr, quote_ident, ExprFactory, FunctionFactory, IsDirective,
 };
-use swc_ecma_visit::{as_folder, standard_only_visit_mut, Fold, VisitMut, VisitMutWith};
+use swc_ecma_visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitMutWith};
 
 pub use super::util::Config;
 use crate::{
@@ -90,7 +90,7 @@ impl<C> VisitMut for Cjs<C>
 where
     C: Comments,
 {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_module(&mut self, n: &mut Module) {
         let mut stmts: Vec<ModuleItem> = Vec::with_capacity(n.body.len() + 6);
@@ -591,7 +591,7 @@ pub(crate) fn cjs_dynamic_import(
     let p = private_ident!("p");
 
     let (resolve_args, callback_params, require_args) = if is_lit_path {
-        (vec![], vec![], args)
+        (Vec::new(), Vec::new(), args)
     } else {
         (args, vec![p.clone().into()], vec![p.as_arg()])
     };

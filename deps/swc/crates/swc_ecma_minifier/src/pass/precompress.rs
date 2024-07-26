@@ -2,13 +2,14 @@ use std::vec::Vec;
 
 use swc_ecma_ast::*;
 use swc_ecma_transforms_base::perf::{Parallel, ParallelExt};
-use swc_ecma_visit::{standard_only_visit_mut, VisitMut, VisitMutWith};
+use swc_ecma_visit::{noop_visit_mut_type, VisitMut, VisitMutWith};
 
 use crate::HEAVY_TASK_PARALLELS;
 
 /// Optimizer invoked before invoking compressor.
 ///
 /// - Remove parens.
+///
 /// TODO: remove completely after #8333
 pub(crate) fn precompress_optimizer<'a>() -> impl 'a + VisitMut {
     PrecompressOptimizer {}
@@ -26,7 +27,7 @@ impl Parallel for PrecompressOptimizer {
 }
 
 impl VisitMut for PrecompressOptimizer {
-    standard_only_visit_mut!();
+    noop_visit_mut_type!(fail);
 
     fn visit_mut_stmts(&mut self, n: &mut Vec<Stmt>) {
         self.maybe_par(*HEAVY_TASK_PARALLELS, n, |v, n| {
