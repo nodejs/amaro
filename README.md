@@ -44,6 +44,10 @@ git add lib
 git commit -m "chore: build wasm from swc vX.Y.Z"
 ```
 
+### TypeScript Version
+
+The supported TypeScript version is 5.5.4.
+
 ## License (MIT)
 
 See [`LICENSE.md`](./LICENSE.md).
