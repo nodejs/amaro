@@ -1,4 +1,4 @@
-const { execSync } = require("node:child_process");
+const { execFileSync } = require("node:child_process");
 const { resolve } = require("node:path");
 
 const ROOT = resolve(__dirname, "../");
@@ -6,17 +6,24 @@ const DOCKERFILE = resolve(__dirname, "./Dockerfile");
 
 const name = "swc_build_wasm";
 
-const build = `docker build -t swc_wasm_typescript -f ${DOCKERFILE} ${ROOT}`;
-execSync(build, { stdio: "inherit" });
+const buildArgs = [
+	"build",
+	"-t",
+	"swc_wasm_typescript",
+	"-f",
+	DOCKERFILE,
+	ROOT,
+];
+execFileSync("docker", buildArgs, { stdio: "inherit" });
 
-const run = `docker run -d --name ${name} swc_wasm_typescript`;
-execSync(run, { stdio: "inherit" });
+const runArgs = ["run", "-d", "--name", name, "swc_wasm_typescript"];
+execFileSync("docker", runArgs, { stdio: "inherit" });
 
 // Copies the new directory inside the Docker image to the host.
-const copy = `docker cp ${name}:/usr/src/amaro/swc ${ROOT}/lib`;
-execSync(copy, { stdio: "inherit" });
+const copyArgs = ["cp", `${name}:/usr/src/amaro/swc`, `${ROOT}/lib`];
+execFileSync("docker", copyArgs, { stdio: "inherit" });
 
 // Removes the Docker image.
-execSync(`docker rm ${name}`, { stdio: "inherit" });
+execFileSync("docker", ["rm", name], { stdio: "inherit" });
 
 process.exit(0);
