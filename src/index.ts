@@ -1,17 +1,16 @@
-const swc = require("../lib/swc/wasm.js");
+import swc from "../lib/swc/wasm.js";
+import type { Options, TransformOutput } from "../lib/swc/wasm.d.ts";
 
-const DEFAULT_OPTIONS = {
+const DEFAULT_OPTIONS: Options = {
 	mode: "strip-only",
 };
 
-// biome-ignore lint/suspicious/noExplicitAny: Swc types are not available
-function transformSync(source: string, options?: any): string {
+export function transformSync(
+	source: string,
+	options: Options,
+): TransformOutput {
 	return swc.transformSync(source, {
 		...DEFAULT_OPTIONS,
 		...options,
 	});
 }
-
-module.exports = {
-	transformSync,
-};
