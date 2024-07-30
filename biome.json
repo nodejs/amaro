@@ -7,11 +7,12 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true
-		},
-		"ignore": ["dist/**", "deps/**", "lib/**"]
+		}
 	},
 	"formatter": {
-		"enabled": true,
-		"ignore": ["dist/**", "deps/**", "lib/**"]
+		"enabled": true
+	},
+	"files": {
+		"ignore": ["dist/**", "deps/**", "lib/**", "node_modules/**"]
 	}
 }
