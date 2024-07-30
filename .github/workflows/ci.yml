@@ -1,4 +1,4 @@
-name: Tests
+name: CI
 
 on:
   push:
@@ -10,7 +10,21 @@ env:
   YARN_ENABLE_GLOBAL_CACHE: false
 
 jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Biome CLI
+        uses: biomejs/setup-biome@v2
+
+      - name: Run Biome
+        run: biome ci
+
   build-and-test:
+    needs: code-quality
     strategy:
       fail-fast: false
       matrix:
@@ -32,7 +46,6 @@ jobs:
         with:
           node-version: ${{matrix.node}}.x
 
-      - run:  npm install
-      - run:  npm run lint
-      - run:  npm run build
-      - run:  npm test
+      - run: npm install
+      - run: npm run build
+      - run: npm test
