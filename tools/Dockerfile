@@ -32,7 +32,9 @@ WORKDIR /usr/src/amaro
 
 COPY deps/swc .
 
-RUN cargo install wasm-pack
+RUN apt-get update && apt-get -y install cmake
+
+RUN cargo install --locked wasm-pack
 
 WORKDIR /usr/src/amaro/bindings/binding_typescript_wasm
 
