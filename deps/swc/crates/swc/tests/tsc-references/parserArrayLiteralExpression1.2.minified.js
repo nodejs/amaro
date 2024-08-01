@@ -1,1 +1,0 @@
-//// [parserArrayLiteralExpression1.ts]

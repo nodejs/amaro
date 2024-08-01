@@ -1,1 +1,0 @@
-//// [nominalSubtypeCheckOfTypeParameter2.ts]

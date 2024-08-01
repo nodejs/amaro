@@ -1,7 +1,0 @@
-.class {
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
-  -webkit-text-orientation: mixed;
-  text-orientation: mixed;
-}

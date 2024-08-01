@@ -1,1 +1,0 @@
-//// [generatorTypeCheck42.ts]

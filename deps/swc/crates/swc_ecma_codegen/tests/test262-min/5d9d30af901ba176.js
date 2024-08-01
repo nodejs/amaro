@@ -1,1 +1,0 @@
-for(;;){with(a){continue}}

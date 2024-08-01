@@ -1,1 +1,0 @@
-//// [parserPropertySignature11.ts]

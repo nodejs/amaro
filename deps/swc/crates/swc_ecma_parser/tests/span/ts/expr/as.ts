@@ -1,1 +1,0 @@
-'WTF' as any as number

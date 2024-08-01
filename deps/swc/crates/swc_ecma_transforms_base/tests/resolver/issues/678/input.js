@@ -1,7 +1,0 @@
-({
-    foo() {
-        function bar() {
-            bar;
-        }
-    },
-});

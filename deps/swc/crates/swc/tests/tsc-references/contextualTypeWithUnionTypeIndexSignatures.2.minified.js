@@ -1,1 +1,0 @@
-//// [contextualTypeWithUnionTypeIndexSignatures.ts]

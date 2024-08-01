@@ -1,1 +1,0 @@
-//// [generatorNoImplicitReturns.ts]

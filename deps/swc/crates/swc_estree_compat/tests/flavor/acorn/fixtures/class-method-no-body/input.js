@@ -1,3 +1,0 @@
-class None {
-    stub() {}
-}

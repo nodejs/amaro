@@ -1,1 +1,0 @@
-//// [templateStringInTypeAssertion.ts]

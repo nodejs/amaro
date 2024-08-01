@@ -1,5 +1,0 @@
-function f() {
-    debugger;
-}
-
-debugger;

@@ -1,1 +1,0 @@
-//// [twoGenericInterfacesDifferingByTypeParameterName.ts]

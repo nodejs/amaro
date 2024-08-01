@@ -1,3 +1,0 @@
-new C();
-
-class C {}

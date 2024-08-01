@@ -1,1 +1,0 @@
-//// [objectTypesIdentityWithGenericCallSignaturesDifferingTypeParameterCounts2.ts]

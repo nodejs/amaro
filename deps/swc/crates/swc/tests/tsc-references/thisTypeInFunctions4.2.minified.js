@@ -1,1 +1,0 @@
-//// [thisTypeInFunctions4.ts]

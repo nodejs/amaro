@@ -1,1 +1,0 @@
-//// [asOperator2.ts]

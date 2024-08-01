@@ -1,1 +1,0 @@
-//// [declarationInAmbientContext.ts]

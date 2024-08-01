@@ -1,1 +1,0 @@
-//// [templateStringInPropertyAssignmentES6.ts]

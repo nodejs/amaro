@@ -1,3 +1,0 @@
-beforeEach(()=>{
-    jest.mock("someNode");
-});

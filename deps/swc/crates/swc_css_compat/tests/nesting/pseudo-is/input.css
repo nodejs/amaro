@@ -1,8 +1,0 @@
-.foo {
-    &:is(.bar, &.baz) { color: red; }
-}
-
-/* TODO FIX ME */
-.foo {
-    & :is(.bar, &.baz) { color: red; }
-}

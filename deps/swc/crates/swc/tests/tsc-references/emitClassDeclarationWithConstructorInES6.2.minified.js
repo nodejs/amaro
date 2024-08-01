@@ -1,1 +1,0 @@
-//// [emitClassDeclarationWithConstructorInES6.ts]

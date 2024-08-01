@@ -1,1 +1,0 @@
-//// [templateStringInTypeAssertionES6.ts]

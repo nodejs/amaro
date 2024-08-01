@@ -1,1 +1,0 @@
-//// [intraExpressionInferencesJsx.tsx]

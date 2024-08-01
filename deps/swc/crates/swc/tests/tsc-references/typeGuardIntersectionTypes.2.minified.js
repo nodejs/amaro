@@ -1,1 +1,0 @@
-//// [typeGuardIntersectionTypes.ts]

@@ -1,1 +1,0 @@
-//// [exponentiationOperatorWithTypeParameter.ts]

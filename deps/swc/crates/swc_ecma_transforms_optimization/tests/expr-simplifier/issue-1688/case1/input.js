@@ -1,1 +1,0 @@
-({ notafunction: null }?.notafunction?.());

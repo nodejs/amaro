@@ -1,2 +1,0 @@
-/** @noalias */
-function Foo() {}

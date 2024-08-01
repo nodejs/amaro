@@ -1,1 +1,0 @@
-//// [typeAssertionsWithIntersectionTypes01.ts]

@@ -1,7 +1,0 @@
-  x Stray start tag "head"
-   ,-[$DIR/tests/recovery/element/head-1/input.html:6:1]
- 5 | </head>
- 6 | <head>
-   : ^^^^^^
- 7 | <body>
-   `----

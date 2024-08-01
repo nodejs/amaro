@@ -1,1 +1,0 @@
-//// [objectLiteralWidened.ts]

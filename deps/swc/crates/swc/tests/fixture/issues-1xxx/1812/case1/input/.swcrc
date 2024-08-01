@@ -1,8 +1,0 @@
-{
-    "env": {
-        "targets": {
-            "firefox": "72"
-        },
-        "shippedProposals": true
-    }
-}

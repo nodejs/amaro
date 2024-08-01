@@ -1,1 +1,0 @@
-//// [switchCaseWithIntersectionTypes01.ts]

@@ -1,1 +1,0 @@
-//// [typesWithOptionalProperty.ts]

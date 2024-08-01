@@ -1,1 +1,0 @@
-//// [typeGuardTypeOfUndefined.ts]

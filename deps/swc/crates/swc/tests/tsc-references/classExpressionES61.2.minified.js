@@ -1,1 +1,0 @@
-//// [classExpressionES61.ts]

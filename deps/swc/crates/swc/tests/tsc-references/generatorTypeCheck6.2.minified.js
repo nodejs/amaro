@@ -1,1 +1,0 @@
-//// [generatorTypeCheck6.ts]

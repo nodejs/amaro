@@ -1,1 +1,0 @@
-//// [genericCallWithGenericSignatureArguments.ts]

@@ -1,1 +1,0 @@
-//// [accessorsOverrideProperty4.ts]

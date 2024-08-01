@@ -1,1 +1,0 @@
-export type { type something }

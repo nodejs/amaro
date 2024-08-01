@@ -1,2 +1,0 @@
-//// [inferThisType.ts]
-f(h);

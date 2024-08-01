@@ -1,1 +1,0 @@
-//// [templateLiteralTypes6.ts]

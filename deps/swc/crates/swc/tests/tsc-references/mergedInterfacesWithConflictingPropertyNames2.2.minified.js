@@ -1,1 +1,0 @@
-//// [mergedInterfacesWithConflictingPropertyNames2.ts]

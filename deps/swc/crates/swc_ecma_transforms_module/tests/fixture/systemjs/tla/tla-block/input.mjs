@@ -1,3 +1,0 @@
-if (maybe) {
-    await test;
-}

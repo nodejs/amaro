@@ -1,1 +1,0 @@
-//// [genericCallWithArrayLiteralArgs.ts]

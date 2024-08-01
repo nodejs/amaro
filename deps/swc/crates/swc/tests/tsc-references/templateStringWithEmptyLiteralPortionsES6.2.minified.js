@@ -1,1 +1,0 @@
-//// [templateStringWithEmptyLiteralPortionsES6.ts]

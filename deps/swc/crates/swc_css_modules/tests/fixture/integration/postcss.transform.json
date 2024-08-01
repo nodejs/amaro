@@ -1,8 +1,0 @@
-{
-  "postcss": [
-    {
-      "type": "local",
-      "name": "__local__postcss"
-    }
-  ]
-}

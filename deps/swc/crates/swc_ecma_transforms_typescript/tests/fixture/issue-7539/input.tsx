@@ -1,3 +1,0 @@
-/* @jsx h */
-/* @jsxFrag null */
-<></>;

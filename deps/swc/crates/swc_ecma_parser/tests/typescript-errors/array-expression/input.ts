@@ -1,1 +1,0 @@
-const arr = [a b]

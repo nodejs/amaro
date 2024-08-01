@@ -1,1 +1,0 @@
-//// [stringLiteralTypesAsTypeParameterConstraint02.ts]

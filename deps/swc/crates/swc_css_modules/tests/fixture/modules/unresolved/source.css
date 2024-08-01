@@ -1,6 +1,0 @@
-@value foo from './unresolved.css';
-
-.className {
-  color: foo;
-}
-

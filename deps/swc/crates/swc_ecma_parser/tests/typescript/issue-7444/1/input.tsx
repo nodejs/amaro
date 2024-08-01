@@ -1,1 +1,0 @@
-() => <Component<any>></Component>

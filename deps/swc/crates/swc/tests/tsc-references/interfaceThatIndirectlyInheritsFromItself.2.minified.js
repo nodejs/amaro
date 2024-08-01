@@ -1,1 +1,0 @@
-//// [interfaceThatIndirectlyInheritsFromItself.ts]

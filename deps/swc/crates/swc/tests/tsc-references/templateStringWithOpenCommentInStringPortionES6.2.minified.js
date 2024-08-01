@@ -1,1 +1,0 @@
-//// [templateStringWithOpenCommentInStringPortionES6.ts]

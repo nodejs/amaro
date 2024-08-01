@@ -1,7 +1,0 @@
-{
-  interface Foo { }
-}
-
-{
-  interface Foo { }
-}

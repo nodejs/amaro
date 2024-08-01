@@ -1,1 +1,0 @@
-//// [mappedTypes5.ts]

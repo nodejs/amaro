@@ -1,3 +1,0 @@
-use((a) => {
-    return a;
-})

@@ -1,1 +1,0 @@
-class x { static y = x = 0; }

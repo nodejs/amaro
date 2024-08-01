@@ -1,6 +1,0 @@
-{
-    "defaults": false,
-    "toplevel": true,
-    "passes": 2,
-    "inline": true
-}

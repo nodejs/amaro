@@ -1,1 +1,0 @@
-//// [stringLiteralTypesOverloadAssignability04.ts]

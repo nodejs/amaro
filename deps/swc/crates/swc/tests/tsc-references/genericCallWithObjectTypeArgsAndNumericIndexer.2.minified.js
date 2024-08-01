@@ -1,1 +1,0 @@
-//// [genericCallWithObjectTypeArgsAndNumericIndexer.ts]

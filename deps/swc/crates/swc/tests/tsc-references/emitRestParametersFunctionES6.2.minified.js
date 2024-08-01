@@ -1,1 +1,0 @@
-//// [emitRestParametersFunctionES6.ts]

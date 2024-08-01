@@ -1,1 +1,0 @@
-//// [twoGenericInterfacesWithDifferentConstraints.ts]

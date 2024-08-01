@@ -1,1 +1,0 @@
-//// [iterableArrayPattern9.ts]

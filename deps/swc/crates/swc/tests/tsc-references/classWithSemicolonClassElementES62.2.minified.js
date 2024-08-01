@@ -1,1 +1,0 @@
-//// [classWithSemicolonClassElementES62.ts]

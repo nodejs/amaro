@@ -1,1 +1,0 @@
-type A = [any, string, boolean]

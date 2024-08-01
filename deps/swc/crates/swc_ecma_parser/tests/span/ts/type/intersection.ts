@@ -1,1 +1,0 @@
-type A = { foo: string } & { bar: boolean }

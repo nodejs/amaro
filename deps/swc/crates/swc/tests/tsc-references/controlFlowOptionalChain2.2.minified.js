@@ -1,1 +1,0 @@
-//// [controlFlowOptionalChain2.ts]

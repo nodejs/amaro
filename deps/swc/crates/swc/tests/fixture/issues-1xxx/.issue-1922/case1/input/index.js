@@ -1,1 +1,0 @@
-globalThis?.hello?.world?.("sup?");

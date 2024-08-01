@@ -1,7 +1,0 @@
-.f:read-write {
-  color: red;
-}
-.f:read-write, 
-.g:read-write {
-  color: red;
-}

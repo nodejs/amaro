@@ -1,3 +1,0 @@
-(function package() {
-    'use strict';
-})();

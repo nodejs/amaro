@@ -1,1 +1,0 @@
-//// [typeArgumentInferenceTransitiveConstraints.ts]

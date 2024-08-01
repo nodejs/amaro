@@ -1,1 +1,0 @@
-//// [assignmentCompatBetweenTupleAndArray.ts]

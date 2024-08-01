@@ -1,3 +1,0 @@
-class Game {
-    private!: boolean;
-}

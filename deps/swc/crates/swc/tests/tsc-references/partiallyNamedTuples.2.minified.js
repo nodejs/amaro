@@ -1,2 +1,0 @@
-//// [partiallyNamedTuples.ts]
-test(input);

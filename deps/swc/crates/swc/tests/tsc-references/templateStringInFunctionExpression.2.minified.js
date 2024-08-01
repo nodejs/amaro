@@ -1,1 +1,0 @@
-//// [templateStringInFunctionExpression.ts]

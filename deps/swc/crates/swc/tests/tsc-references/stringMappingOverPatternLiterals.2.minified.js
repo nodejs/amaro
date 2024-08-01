@@ -1,1 +1,0 @@
-//// [stringMappingOverPatternLiterals.ts]

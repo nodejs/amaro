@@ -1,1 +1,0 @@
-//// [templateStringWithEmbeddedYieldKeywordES6.ts]

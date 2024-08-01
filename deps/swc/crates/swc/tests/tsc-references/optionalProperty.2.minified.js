@@ -1,1 +1,0 @@
-//// [optionalProperty.ts]

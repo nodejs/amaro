@@ -1,1 +1,0 @@
-type satisfies = 0;

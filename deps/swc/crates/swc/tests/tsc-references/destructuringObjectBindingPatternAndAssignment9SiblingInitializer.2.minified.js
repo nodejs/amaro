@@ -1,1 +1,0 @@
-//// [destructuringObjectBindingPatternAndAssignment9SiblingInitializer.ts]

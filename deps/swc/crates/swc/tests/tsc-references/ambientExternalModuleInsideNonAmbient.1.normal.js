@@ -1,1 +1,0 @@
-//// [ambientExternalModuleInsideNonAmbient.ts]

@@ -1,1 +1,0 @@
-//// [constEnumPropertyAccess1.ts]

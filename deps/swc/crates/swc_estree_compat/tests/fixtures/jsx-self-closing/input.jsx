@@ -1,3 +1,0 @@
-const App = () => {
-    return <div />
-};

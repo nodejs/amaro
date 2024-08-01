@@ -1,1 +1,0 @@
-const result = data?.filter(item => Math.random() > 0.5).map(item => JSON.stringify(item));

@@ -1,1 +1,0 @@
-//// [typeFromPropertyAssignment38.ts]

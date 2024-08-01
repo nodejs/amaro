@@ -1,1 +1,0 @@
-//// [classStaticBlock18.ts]

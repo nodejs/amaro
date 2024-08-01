@@ -1,1 +1,0 @@
-//// [parserForOfStatement23.ts]

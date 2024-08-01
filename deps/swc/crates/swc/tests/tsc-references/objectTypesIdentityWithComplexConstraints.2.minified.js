@@ -1,1 +1,0 @@
-//// [objectTypesIdentityWithComplexConstraints.ts]

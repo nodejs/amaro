@@ -1,9 +1,0 @@
-{
-    "jsc": {
-        "minify": {
-            "format": {
-                "comments": true
-            }
-        }
-    }
-}

@@ -1,2 +1,0 @@
-//// [exportAmbientClassNameWithObject.ts]
-export { };

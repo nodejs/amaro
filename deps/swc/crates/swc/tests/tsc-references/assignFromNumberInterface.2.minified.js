@@ -1,1 +1,0 @@
-//// [assignFromNumberInterface.ts]

@@ -1,3 +1,0 @@
-await foo();
-
-export {};

@@ -1,3 +1,0 @@
-//// [uniqueSymbolsDeclarationsInJsErrors.js]
-class C {
-}

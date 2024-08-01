@@ -1,1 +1,0 @@
-//// [templateStringWithEmbeddedArray.ts]

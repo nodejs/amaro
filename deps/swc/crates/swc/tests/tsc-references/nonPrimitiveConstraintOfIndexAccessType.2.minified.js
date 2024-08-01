@@ -1,1 +1,0 @@
-//// [nonPrimitiveConstraintOfIndexAccessType.ts]

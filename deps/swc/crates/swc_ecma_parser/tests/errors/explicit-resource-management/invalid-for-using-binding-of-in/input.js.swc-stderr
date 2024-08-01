@@ -1,5 +1,0 @@
-  x Expression expected
-   ,-[$DIR/tests/errors/explicit-resource-management/invalid-for-using-binding-of-in/input.js:1:1]
- 1 | for (using of in []);
-   :               ^^
-   `----
