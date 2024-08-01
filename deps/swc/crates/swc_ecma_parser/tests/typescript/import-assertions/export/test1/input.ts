@@ -1,1 +1,0 @@
-export { val } from './foo.js' assert { type: "javascript" };

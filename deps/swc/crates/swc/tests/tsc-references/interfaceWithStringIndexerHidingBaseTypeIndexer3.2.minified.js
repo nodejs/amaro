@@ -1,1 +1,0 @@
-//// [interfaceWithStringIndexerHidingBaseTypeIndexer3.ts]

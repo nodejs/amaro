@@ -1,1 +1,0 @@
-//// [superSymbolIndexedAccess2.ts]

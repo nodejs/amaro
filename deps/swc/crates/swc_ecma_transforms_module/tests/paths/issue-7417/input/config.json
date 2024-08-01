@@ -1,7 +1,0 @@
-{
-    "baseUrl": ".",
-    "paths": {
-        "@/*": ["src/*"]
-    },
-    "inputFile": "src/lib/foo.ts"
-}

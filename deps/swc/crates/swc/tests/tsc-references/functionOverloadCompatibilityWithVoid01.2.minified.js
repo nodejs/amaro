@@ -1,1 +1,0 @@
-//// [functionOverloadCompatibilityWithVoid01.ts]

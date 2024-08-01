@@ -1,1 +1,0 @@
-const r = d?.filter(i => Math.random() > 0.5).map(i => JSON.stringify(i));

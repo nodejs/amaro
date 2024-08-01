@@ -1,1 +1,0 @@
-//// [mappedTypeConstraints2.ts]

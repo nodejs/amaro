@@ -1,1 +1,0 @@
-//// [constEnum1.ts]

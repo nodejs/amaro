@@ -1,1 +1,0 @@
-//// [mergedInterfacesWithIndexers2.ts]

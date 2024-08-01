@@ -1,1 +1,0 @@
-//// [parserGenericsInVariableDeclaration1.ts]

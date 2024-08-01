@@ -1,1 +1,0 @@
-//// [constructorParameterShadowsOuterScopes2.ts]

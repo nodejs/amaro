@@ -1,1 +1,0 @@
-//// [functionExpressionContextualTyping2.ts]

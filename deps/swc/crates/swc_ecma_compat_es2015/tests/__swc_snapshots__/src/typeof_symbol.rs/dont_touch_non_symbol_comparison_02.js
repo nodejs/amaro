@@ -1,1 +1,0 @@
-'undefined' !== typeof window;

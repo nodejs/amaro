@@ -1,1 +1,0 @@
-//// [genericAndNonGenericInterfaceWithTheSameName2.ts]

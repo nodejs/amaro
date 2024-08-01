@@ -1,9 +1,0 @@
-.one {
-  color: yellow;
-  composes: imported-relative from 'package/one.css';
-}
-
-.two {
-  color: yellow;
-  composes: imported-relative from 'package/two.css';
-}

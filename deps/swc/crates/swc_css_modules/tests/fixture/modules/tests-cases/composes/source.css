@@ -1,2 +1,0 @@
-:local(.c1) { a: 1; }
-:local(.c2) { composes: c1; b: 1; }

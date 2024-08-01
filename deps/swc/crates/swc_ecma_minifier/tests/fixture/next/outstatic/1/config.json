@@ -1,8 +1,0 @@
-{
-    "defaults": true,
-    "conditionals": false,
-    "collapse_vars": false,
-    "properties": false,
-    "join_vars": false,
-    "passes": 1
-}

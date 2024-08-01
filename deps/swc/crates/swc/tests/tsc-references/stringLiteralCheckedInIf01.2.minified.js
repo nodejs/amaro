@@ -1,1 +1,0 @@
-//// [stringLiteralCheckedInIf01.ts]

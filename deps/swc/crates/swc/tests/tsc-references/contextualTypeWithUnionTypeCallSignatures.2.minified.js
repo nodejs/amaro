@@ -1,1 +1,0 @@
-//// [contextualTypeWithUnionTypeCallSignatures.ts]

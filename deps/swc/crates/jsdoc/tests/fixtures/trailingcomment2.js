@@ -1,3 +1,0 @@
-'use strict';
-
-/** @external foo */

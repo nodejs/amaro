@@ -1,2 +1,0 @@
-
-consoe.log('test')

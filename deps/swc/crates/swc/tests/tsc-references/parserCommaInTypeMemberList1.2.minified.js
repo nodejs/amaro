@@ -1,1 +1,0 @@
-//// [parserCommaInTypeMemberList1.ts]

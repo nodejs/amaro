@@ -1,1 +1,0 @@
-//// [interfaceWithMultipleBaseTypes2.ts]

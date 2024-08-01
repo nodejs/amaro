@@ -1,7 +1,0 @@
-@import url("./import-with-layer.css") layer(form);
-
-@layer form {
-  .bar {
-    color: red;
-  }
-}

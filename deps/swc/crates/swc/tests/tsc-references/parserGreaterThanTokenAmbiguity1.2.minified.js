@@ -1,1 +1,0 @@
-//// [parserGreaterThanTokenAmbiguity1.ts]

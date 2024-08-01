@@ -1,1 +1,0 @@
-//// [keyofIntersection.ts]

@@ -1,1 +1,0 @@
-//// [parserFunctionPropertyAssignment1.ts]

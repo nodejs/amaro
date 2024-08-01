@@ -1,6 +1,0 @@
-{
-    "sourceMaps": true,
-    "jsc": {
-        "target": "es2015"
-    }
-}

@@ -1,1 +1,0 @@
-//// [emitClassDeclarationOverloadInES6.ts]

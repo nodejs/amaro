@@ -1,1 +1,0 @@
-//// [specializedSignatureWithOptional.ts]

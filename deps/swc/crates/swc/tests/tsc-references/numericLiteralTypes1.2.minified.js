@@ -1,1 +1,0 @@
-//// [numericLiteralTypes1.ts]

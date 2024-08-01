@@ -1,1 +1,0 @@
-//// [mappedTypeErrors2.ts]

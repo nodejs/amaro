@@ -1,2 +1,0 @@
-//// [comparisonOperatorWithIntersectionType.ts]
-a, b;

@@ -1,1 +1,0 @@
-//// [parserOptionalTypeMembers1.ts]

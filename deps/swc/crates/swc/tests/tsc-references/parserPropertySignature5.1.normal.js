@@ -1,1 +1,0 @@
-//// [parserPropertySignature5.ts]

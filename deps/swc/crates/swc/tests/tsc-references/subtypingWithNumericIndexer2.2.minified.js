@@ -1,1 +1,0 @@
-//// [subtypingWithNumericIndexer2.ts]

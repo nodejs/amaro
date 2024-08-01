@@ -1,1 +1,0 @@
-//// [emitClassDeclarationWithStaticPropertyAssignmentInES6.ts]

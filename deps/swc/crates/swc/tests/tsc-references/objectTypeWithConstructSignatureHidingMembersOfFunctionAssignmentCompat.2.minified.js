@@ -1,1 +1,0 @@
-//// [objectTypeWithConstructSignatureHidingMembersOfFunctionAssignmentCompat.ts]

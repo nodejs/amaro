@@ -1,1 +1,0 @@
-//// [boolInsteadOfBoolean.ts]

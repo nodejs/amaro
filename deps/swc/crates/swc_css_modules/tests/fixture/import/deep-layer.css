@@ -1,8 +1,0 @@
-@import url(./deep-layer-first-level.css) layer(bootstrap);
-
-/* Adds additional styles to the bootstrap layer: */
-@layer bootstrap {
-    .test {
-        color: red;
-    }
-}

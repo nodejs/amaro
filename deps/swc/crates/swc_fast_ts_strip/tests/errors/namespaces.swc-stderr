@@ -1,5 +1,0 @@
-  x TypeScript namespace declaration is not supported in strip-only mode
-   ,----
- 1 | namespace Foo { }
-   : ^^^^^^^^^^^^^^^^^
-   `----

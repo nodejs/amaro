@@ -1,9 +1,0 @@
-input:-webkit-autofill {
-  border: 3px solid blue;
-}
-input:autofill {
-  border: 3px solid blue;
-}
-input:AUTOFILL {
-  border: 3px solid blue;
-}

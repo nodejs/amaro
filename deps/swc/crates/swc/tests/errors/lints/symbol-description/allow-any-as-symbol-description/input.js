@@ -1,3 +1,0 @@
-Symbol()
-Symbol({})
-Symbol('name')

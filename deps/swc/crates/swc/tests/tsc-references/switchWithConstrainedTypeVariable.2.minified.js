@@ -1,1 +1,0 @@
-//// [switchWithConstrainedTypeVariable.ts]

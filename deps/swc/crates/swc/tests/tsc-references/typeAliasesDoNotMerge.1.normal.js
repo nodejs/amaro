@@ -1,2 +1,0 @@
-//// [typeAliasesDoNotMerge.ts]
-export { };

@@ -1,1 +1,0 @@
-//// [generatorReturnContextualType.ts]

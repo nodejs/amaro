@@ -1,1 +1,0 @@
-//// [parserEmptyStatement1.ts]

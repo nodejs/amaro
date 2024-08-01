@@ -1,1 +1,0 @@
-export * as Foo from "bar";

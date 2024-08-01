@@ -1,9 +1,0 @@
-  x Unexpected bad url in declaration value
-   ,-[$DIR/tests/recovery/function/bad-comment-2/input.css:2:1]
- 1 |     a {
- 2 | ,->     background: url(
- 3 | |           /* test */
- 4 | |           "test.png"
- 5 | `->     );
- 6 |     }
-   `----

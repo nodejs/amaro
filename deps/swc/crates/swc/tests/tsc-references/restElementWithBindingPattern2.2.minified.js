@@ -1,1 +1,0 @@
-//// [restElementWithBindingPattern2.ts]

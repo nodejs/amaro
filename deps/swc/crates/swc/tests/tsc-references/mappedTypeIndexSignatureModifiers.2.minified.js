@@ -1,1 +1,0 @@
-//// [mappedTypeIndexSignatureModifiers.ts]

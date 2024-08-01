@@ -1,1 +1,0 @@
-//// [subtypingWithConstructSignaturesWithSpecializedSignatures.ts]

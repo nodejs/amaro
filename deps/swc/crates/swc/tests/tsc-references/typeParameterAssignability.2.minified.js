@@ -1,1 +1,0 @@
-//// [typeParameterAssignability.ts]

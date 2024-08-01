@@ -1,7 +1,0 @@
-.class {
-  color: blue;
-
-  & :global foo {
-    color: red;
-  }
-}

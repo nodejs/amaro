@@ -1,1 +1,0 @@
-const x = <div onclick={{ foo: 123 }}></div>;

@@ -1,4 +1,0 @@
-const obj = {
-    get firstHiddenTime() {
-    }
-}

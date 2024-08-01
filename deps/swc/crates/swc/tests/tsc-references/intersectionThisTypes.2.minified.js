@@ -1,1 +1,0 @@
-//// [intersectionThisTypes.ts]

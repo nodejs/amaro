@@ -1,5 +1,0 @@
-@value btn from './button.css';
-
-.toolbar > btn {
-  color: red
-}

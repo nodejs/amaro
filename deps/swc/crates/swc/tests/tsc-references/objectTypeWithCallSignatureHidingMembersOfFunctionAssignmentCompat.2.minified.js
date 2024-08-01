@@ -1,1 +1,0 @@
-//// [objectTypeWithCallSignatureHidingMembersOfFunctionAssignmentCompat.ts]

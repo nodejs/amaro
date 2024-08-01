@@ -1,1 +1,0 @@
-//// [emitExponentiationOperator1.ts]

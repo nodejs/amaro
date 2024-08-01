@@ -1,1 +1,0 @@
-//// [templateStringWithEmbeddedObjectLiteral.ts]

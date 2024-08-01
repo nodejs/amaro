@@ -61,8 +61,6 @@ mv bindings "$DEPS_FOLDER/bindings"
 
 mv xtask "$DEPS_FOLDER/xtask"
 
-mv crates "$DEPS_FOLDER/crates"
-
 mv .cargo "$DEPS_FOLDER/.cargo"
 
 mv rust-toolchain "$DEPS_FOLDER/rust-toolchain"

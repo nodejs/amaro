@@ -1,1 +1,0 @@
-//// [accessorsOverrideMethod.ts]

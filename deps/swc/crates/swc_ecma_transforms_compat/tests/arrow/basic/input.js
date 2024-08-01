@@ -1,1 +1,0 @@
-let echo = (bar) => bar

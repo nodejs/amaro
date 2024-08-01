@@ -1,6 +1,0 @@
-/** @jsxRuntime */
-/** @jsxImportSource */
-/** @jsxFrag */
-/** @jsx */
-
-<></>;

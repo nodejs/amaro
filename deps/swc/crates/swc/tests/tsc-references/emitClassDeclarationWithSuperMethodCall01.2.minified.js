@@ -1,1 +1,0 @@
-//// [emitClassDeclarationWithSuperMethodCall01.ts]

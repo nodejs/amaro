@@ -1,7 +1,0 @@
-{
-  "minifyJs": {
-    "codegen": {
-      "asciiOnly": true
-    }
-  }
-}

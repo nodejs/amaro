@@ -1,1 +1,0 @@
-//// [typeParametersAvailableInNestedScope2.ts]

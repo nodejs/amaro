@@ -1,9 +1,0 @@
-.__local__foo {
-  color: red;
-}
-.__local__foo\/bar {
-  color: blue;
-}
-.__local__\[\/\?\<\>\\\\\:\*\|\"\:\] {
-  color: yellow;
-}

@@ -1,1 +1,0 @@
-//// [typeParameterExtendsUnionConstraintDistributed.ts]

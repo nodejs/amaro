@@ -1,1 +1,0 @@
-//// [templateStringInYieldKeyword.ts]

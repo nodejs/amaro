@@ -1,1 +1,0 @@
-(function(){void 1}());

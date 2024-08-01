@@ -1,1 +1,0 @@
-//// [genericCallWithFunctionTypedArguments3.ts]

@@ -1,5 +1,0 @@
-  x TypeScript enum is not supported in strip-only mode
-   ,----
- 1 | enum Foo { }
-   : ^^^^^^^^^^^^
-   `----

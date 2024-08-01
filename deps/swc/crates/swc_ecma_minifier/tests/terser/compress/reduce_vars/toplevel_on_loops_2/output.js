@@ -1,1 +1,0 @@
-for(;;)console.log("bar:");

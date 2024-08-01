@@ -1,2 +1,0 @@
-var _UNCONFIRMED_CALLBACK_MAP_get;
-(_UNCONFIRMED_CALLBACK_MAP_get = UNCONFIRMED_CALLBACK_MAP.get(pid)) === null || _UNCONFIRMED_CALLBACK_MAP_get === void 0 ? void 0 : _UNCONFIRMED_CALLBACK_MAP_get(error, response);

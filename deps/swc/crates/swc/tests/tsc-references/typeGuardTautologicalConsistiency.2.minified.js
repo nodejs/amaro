@@ -1,1 +1,0 @@
-//// [typeGuardTautologicalConsistiency.ts]

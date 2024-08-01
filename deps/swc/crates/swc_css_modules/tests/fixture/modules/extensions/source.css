@@ -1,4 +1,0 @@
-.one {
-  color: yellow;
-  composes: imported-relative from 'imported';
-}

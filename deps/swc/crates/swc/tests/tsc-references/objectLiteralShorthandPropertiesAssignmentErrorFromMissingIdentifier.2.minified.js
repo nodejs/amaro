@@ -1,1 +1,0 @@
-//// [objectLiteralShorthandPropertiesAssignmentErrorFromMissingIdentifier.ts]

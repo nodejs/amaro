@@ -1,1 +1,0 @@
-//// [TupleType1.ts]

@@ -1,1 +1,0 @@
-//// [nonPrimitiveAsProperty.ts]

@@ -1,1 +1,0 @@
-//// [ambientDeclarationsPatterns_tooManyAsterisks.ts]

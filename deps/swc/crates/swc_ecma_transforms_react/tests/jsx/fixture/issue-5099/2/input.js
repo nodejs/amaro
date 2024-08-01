@@ -1,3 +1,0 @@
-/** @jsxRuntime typo */
-
-<></>;

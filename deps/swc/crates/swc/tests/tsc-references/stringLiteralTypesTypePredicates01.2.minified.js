@@ -1,1 +1,0 @@
-//// [stringLiteralTypesTypePredicates01.ts]

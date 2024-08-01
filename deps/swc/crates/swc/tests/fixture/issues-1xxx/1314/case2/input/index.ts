@@ -1,5 +1,0 @@
-const text = `
-
-hello world
-
-`;

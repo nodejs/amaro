@@ -1,1 +1,0 @@
-//// [templateStringBinaryOperationsInvalid.ts]

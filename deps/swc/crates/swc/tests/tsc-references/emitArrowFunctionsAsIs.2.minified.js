@@ -1,1 +1,0 @@
-//// [emitArrowFunctionsAsIs.ts]

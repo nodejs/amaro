@@ -1,1 +1,0 @@
-//// [generatorReturnTypeInferenceNonStrict.ts]

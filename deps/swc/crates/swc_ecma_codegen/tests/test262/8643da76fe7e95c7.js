@@ -1,3 +1,0 @@
-(function eval() {
-    'use strict';
-})();

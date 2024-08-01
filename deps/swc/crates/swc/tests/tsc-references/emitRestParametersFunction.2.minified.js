@@ -1,1 +1,0 @@
-//// [emitRestParametersFunction.ts]

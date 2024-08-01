@@ -1,1 +1,0 @@
-//// [booleanLiteralTypes2.ts]

@@ -1,8 +1,0 @@
-@scope (#inner) {
-    @keyframes --my-anim {
-        to {
-            background-color: rgb(0, 0, 255);
-        }
-    }
-}
-

@@ -1,1 +1,0 @@
-//// [asiPreventsParsingAsNamespace03.ts]

@@ -1,1 +1,0 @@
-//// [intersectionNarrowing.ts]

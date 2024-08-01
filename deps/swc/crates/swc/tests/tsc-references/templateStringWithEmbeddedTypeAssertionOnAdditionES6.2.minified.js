@@ -1,1 +1,0 @@
-//// [templateStringWithEmbeddedTypeAssertionOnAdditionES6.ts]

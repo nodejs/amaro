@@ -1,5 +1,0 @@
-/**
- * @constructor
- * @dict
- */
-function Foo() {}

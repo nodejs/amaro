@@ -1,1 +1,0 @@
-//// [interfaceThatHidesBaseProperty.ts]

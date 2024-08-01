@@ -1,6 +1,0 @@
-@import url(./deep-layer-first-level.css) layer(bootstrap);
-@layer bootstrap {
-  .__local__test {
-    color: red;
-  }
-}

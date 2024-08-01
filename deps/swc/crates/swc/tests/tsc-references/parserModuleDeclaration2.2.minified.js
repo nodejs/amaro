@@ -1,1 +1,0 @@
-//// [parserModuleDeclaration2.ts]

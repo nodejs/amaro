@@ -1,1 +1,0 @@
-//// [nonIterableRestElement1.ts]

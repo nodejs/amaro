@@ -1,1 +1,0 @@
-//// [emitArrowFunctionsAsIsES6.ts]

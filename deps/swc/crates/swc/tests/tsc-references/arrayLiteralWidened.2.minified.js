@@ -1,1 +1,0 @@
-//// [arrayLiteralWidened.ts]

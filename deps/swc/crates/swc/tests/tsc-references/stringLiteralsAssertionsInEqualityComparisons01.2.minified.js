@@ -1,1 +1,0 @@
-//// [stringLiteralsAssertionsInEqualityComparisons01.ts]

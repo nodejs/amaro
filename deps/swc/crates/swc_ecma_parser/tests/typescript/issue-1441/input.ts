@@ -1,5 +1,0 @@
-
-
-await foo()
-
-export { }

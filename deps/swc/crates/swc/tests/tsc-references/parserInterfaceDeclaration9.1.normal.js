@@ -1,1 +1,0 @@
-//// [parserInterfaceDeclaration9.ts]

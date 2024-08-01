@@ -1,1 +1,0 @@
-//// [typeAssertionsWithUnionTypes01.ts]

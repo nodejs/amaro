@@ -1,1 +1,0 @@
-//// [templateStringWithEmbeddedCommentsES6.ts]

@@ -1,1 +1,0 @@
-//// [emptyTuplesTypeAssertion02.ts]

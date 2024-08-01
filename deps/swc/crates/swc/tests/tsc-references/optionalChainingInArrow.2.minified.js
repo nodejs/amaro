@@ -1,1 +1,0 @@
-//// [optionalChainingInArrow.ts]

@@ -1,1 +1,0 @@
-//// [assignmentCompatWithCallSignatures2.ts]

@@ -1,3 +1,0 @@
-const f = () => {
-    new.target;
-};

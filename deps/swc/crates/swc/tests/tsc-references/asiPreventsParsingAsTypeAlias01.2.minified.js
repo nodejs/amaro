@@ -1,1 +1,0 @@
-//// [asiPreventsParsingAsTypeAlias01.ts]

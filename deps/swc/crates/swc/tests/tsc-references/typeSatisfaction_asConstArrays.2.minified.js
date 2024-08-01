@@ -1,1 +1,0 @@
-//// [typeSatisfaction_asConstArrays.ts]

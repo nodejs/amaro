@@ -1,1 +1,0 @@
-//// [contextuallyTypeLogicalAnd02.ts]

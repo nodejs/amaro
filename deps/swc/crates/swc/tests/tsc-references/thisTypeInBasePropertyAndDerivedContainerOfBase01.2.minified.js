@@ -1,1 +1,0 @@
-//// [thisTypeInBasePropertyAndDerivedContainerOfBase01.ts]

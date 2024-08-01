@@ -1,1 +1,0 @@
-//// [assignmentCompatWithConstructSignatures.ts]

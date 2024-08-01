@@ -1,5 +1,0 @@
-({
-    get a () {
-        new.target;
-    }
-});

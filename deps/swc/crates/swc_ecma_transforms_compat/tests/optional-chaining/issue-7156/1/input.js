@@ -1,1 +1,0 @@
-missing?.thing.name ?? 'unknown'

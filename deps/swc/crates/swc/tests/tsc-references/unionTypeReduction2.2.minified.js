@@ -1,1 +1,0 @@
-//// [unionTypeReduction2.ts]

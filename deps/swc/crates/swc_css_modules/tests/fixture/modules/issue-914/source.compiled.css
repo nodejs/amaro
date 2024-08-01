@@ -1,6 +1,0 @@
-@value foo from '~test';
-@value bar from 'test';
-.__local__className {
-  color: foo;
-  background: bar;
-}

@@ -1,2 +1,0 @@
-//// [neverIntersectionNotCallable.ts]
-f();

@@ -1,1 +1,0 @@
-//// [arithmeticOperatorWithAnyAndNumber.ts]

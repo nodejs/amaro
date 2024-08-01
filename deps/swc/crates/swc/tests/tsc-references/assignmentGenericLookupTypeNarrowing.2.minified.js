@@ -1,1 +1,0 @@
-//// [assignmentGenericLookupTypeNarrowing.ts]

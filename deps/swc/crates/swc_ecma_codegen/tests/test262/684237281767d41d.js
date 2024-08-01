@@ -1,5 +1,0 @@
-{
-    do ;
-    while (false);
-    false;
-}

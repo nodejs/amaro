@@ -1,1 +1,0 @@
-//// [augmentedTypeAssignmentCompatIndexSignature.ts]

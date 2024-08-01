@@ -1,7 +1,0 @@
-  x Incorrectly closed comment
-   ,-[$DIR/tests/recovery/comments/bad-1/input.xml:3:1]
- 2 | <root>
- 3 |     <!----!>
-   :            ^
- 4 | </root>
-   `----
