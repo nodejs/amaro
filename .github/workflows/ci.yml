@@ -24,12 +24,13 @@ jobs:
     name: Code Quality
     needs: commit-lint
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Biome CLI
         uses: biomejs/setup-biome@v2
-        
+
       - name: Run Biome
         run: biome ci
 
@@ -55,7 +56,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}.x
-          
+
       - run: npm install
       - run: npm run build
       - run: npm test
