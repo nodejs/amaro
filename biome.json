@@ -13,6 +13,12 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["dist/**", "deps/**", "lib/**", "node_modules/**"]
+		"ignore": [
+			"dist/**",
+			"deps/**",
+			"lib/**",
+			"node_modules/**",
+			"test/snapshot/**"
+		]
 	}
 }
