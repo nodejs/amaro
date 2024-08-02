@@ -38,8 +38,8 @@ jobs:
             fi
       - name: Git config
         run: |
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-bot@iojs.org"
+            git config --global user.name "Node.js GitHub Bot"
 
       - name: Update SWC
         run: |
@@ -57,9 +57,10 @@ jobs:
           git commit -m "chore: build wasm from swc v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: gr2m/create-or-update-pull-request-action@v1.9.4
         with:
-          title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
-          body: "This PR updates SWC to version ${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }} and rebuilds the WASM file."
-          branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
-          base: "main" 
+            author: Node.js GitHub Bot <github-bot@iojs.org>
+            body: "This PR updates SWC to version ${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }} and rebuilds the WASM file."
+            branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+            title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+        
