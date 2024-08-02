@@ -1,0 +1,65 @@
+name: Update SWC and Build WASM
+
+on:
+  workflow_dispatch:
+    inputs:
+      swc_version:
+        description: 'SWC version to update to (e.g., 1.7.5)'
+        required: false
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
+
+env:
+    NODE_VERSION: lts/*
+
+jobs:
+  update-swc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Get latest SWC version
+        id: check-swc-version
+        run: |
+            SWC_VERSION=$(npm view @swc/core version)
+            echo "SWC_VERSION=$SWC_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Get current SWC version
+        run: |
+            SWC_VERSION=$(cat lib/swc/package.json | jq -r '.version')
+            echo "SWC_VERSION=$SWC_VERSION" >> $GITHUB_ENV
+            if [[ $SWC_VERSION == ${{ steps.check-swc-version.outputs.SWC_VERSION }} ]]; then
+              echo "SWC is already up-to-date. Exiting."
+              exit 0
+            fi
+      - name: Git config
+        run: |
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
+
+      - name: Update SWC
+        run: |
+          ./tools/update-swc.sh
+          git add deps
+          git commit -m "chore: update swc to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build WASM
+        run: |
+          node ./tools/build-wasm.js
+          git add lib
+          git commit -m "chore: build wasm from swc v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+          body: "This PR updates SWC to version ${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }} and rebuilds the WASM file."
+          branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+          base: "main" 
