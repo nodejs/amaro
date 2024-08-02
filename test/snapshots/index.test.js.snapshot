@@ -1,0 +1,35 @@
+exports[`should handle User type and isAdult function 1`] = `
+"\\n                 \\n                   \\n                  \\n      \\n\\n    function isAdult(user      )          {\\n      return user.age >= 18;\\n    }\\n  "
+`;
+
+exports[`should perform type stripping 1`] = `
+"const foo         = 'bar';"
+`;
+
+exports[`should strip type annotations from arrow functions 1`] = `
+"\\n    const greet = (name        )       => {\\n      console.log(name);\\n    };\\n  "
+`;
+
+exports[`should strip type annotations from classes 1`] = `
+"\\n    class MyClass {\\n      myMethod(param        )         {\\n        return param.toString();\\n      }\\n    }\\n  "
+`;
+
+exports[`should strip type annotations from functions 1`] = `
+"function greet(name        )       { console.log(name); }"
+`;
+
+exports[`should strip type annotations from generics 1`] = `
+"\\n    function identity   (arg   )    {\\n      return arg;\\n    }\\n  "
+`;
+
+exports[`should strip type annotations from interfaces 1`] = `
+"\\n                           \\n                                      \\n     \\n  "
+`;
+
+exports[`should strip type annotations from type aliases 1`] = `
+"\\n                                  \\n  "
+`;
+
+exports[`should strip type annotations from type assertions 1`] = `
+"\\n    let someValue      = \\"this is a string\\";\\n    let strLength         = (someValue          ).length;\\n  "
+`;
