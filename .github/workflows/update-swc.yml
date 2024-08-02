@@ -18,49 +18,65 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
 
-      - name: Get latest SWC version
-        id: check-swc-version
+      - name: Check if SWC update is required
+        id: version-check
         run: |
-            SWC_VERSION=$(npm view @swc/core version)
-            echo "SWC_VERSION=$SWC_VERSION" >> $GITHUB_OUTPUT
+          CURRENT_SWC_VERSION=$(cat lib/swc/package.json | jq -r '.version')
+          if [[ -n "${{ github.event.inputs.swc_version }}" ]]; then
+            NEW_SWC_VERSION="${{ github.event.inputs.swc_version }}"
+          else
+            NEW_SWC_VERSION=$(npm view @swc/core version)
+          fi
 
-      - name: Get current SWC version
-        run: |
-            SWC_VERSION=$(cat lib/swc/package.json | jq -r '.version')
-            echo "SWC_VERSION=$SWC_VERSION" >> $GITHUB_ENV
-            if [[ $SWC_VERSION == ${{ steps.check-swc-version.outputs.SWC_VERSION }} ]]; then
-              echo "SWC is already up-to-date. Exiting."
-              exit 0
-            fi
-      - name: Git config
-        run: |
-            git config --global user.email "github-bot@iojs.org"
-            git config --global user.name "Node.js GitHub Bot"
+          echo "CURRENT_SWC_VERSION=$CURRENT_SWC_VERSION" >> $GITHUB_OUTPUT
+          echo "NEW_SWC_VERSION=$NEW_SWC_VERSION" >> $GITHUB_OUTPUT
+
+          if [[ "$CURRENT_SWC_VERSION" != "$NEW_SWC_VERSION" ]]; then
+            echo "UPDATE_REQUIRED=true" >> $GITHUB_OUTPUT
+          else
+            echo "UPDATE_REQUIRED=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Update SWC
-        run: |
-          ./tools/update-swc.sh
-          git add deps
-          git commit -m "chore: update swc to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+        if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
+        run: ./tools/update-swc.sh
+
+      - name: Create Pull Request with first commit
+        if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
+        uses: gr2m/create-or-update-pull-request-action@v1.9.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            author: Node.js GitHub Bot <github-bot@iojs.org>
+            title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
+            branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
+            commit-message: "chore: update swc to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
+            path: deps
+            body: |
+                This PR updates SWC to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}.
+                View the [SWC changelog](https://github.com/swc-project/swc/releases/tag/v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}) for more information.
 
       - name: Set up Docker
+        if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
         uses: docker/setup-buildx-action@v3
 
       - name: Build WASM
-        run: |
-          node ./tools/build-wasm.js
-          git add lib
-          git commit -m "chore: build wasm from swc v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
+        if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
+        run: node ./tools/build-wasm.js
 
-      - name: Create Pull Request
+      - name: Create second commit
+        if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
         uses: gr2m/create-or-update-pull-request-action@v1.9.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             author: Node.js GitHub Bot <github-bot@iojs.org>
-            body: "This PR updates SWC to version ${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }} and rebuilds the WASM file."
-            branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
-            title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.check-swc-version.outputs.SWC_VERSION }}"
-        
+            branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
+            commit-message: "chore: build wasm from swc v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
+            path: lib
