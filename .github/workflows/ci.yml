@@ -10,16 +10,26 @@ env:
   YARN_ENABLE_GLOBAL_CACHE: false
 
 jobs:
+  commit-lint:
+    name: Commit Lint
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v6
+
   code-quality:
     name: Code Quality
+    needs: commit-lint
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Biome CLI
         uses: biomejs/setup-biome@v2
-
+        
       - name: Run Biome
         run: biome ci
 
@@ -45,17 +55,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}.x
-
+          
       - run: npm install
       - run: npm run build
       - run: npm test
-
-  commit-lint:
-    name: Commit Lint
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-        - uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-        - uses: wagoid/commitlint-github-action@v6
