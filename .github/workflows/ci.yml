@@ -6,31 +6,25 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  YARN_ENABLE_GLOBAL_CACHE: false
-
 jobs:
   commit-lint:
     name: Commit Lint
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v6
+      - uses: wagoid/commitlint-github-action@7f0a61df502599e1f1f50880aaa7ec1e2c0592f2 # v6.0.1
 
   code-quality:
     name: Code Quality
     needs: commit-lint
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Setup Biome CLI
-        uses: biomejs/setup-biome@v2
-
+        uses: biomejs/setup-biome@1cbe33ead22c7a2fded3b52fa2893611c815c9b5 # v2.2.1
       - name: Run Biome
         run: biome ci
 
@@ -45,18 +39,14 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-
     name: "${{matrix.platform}} w/ Node.js ${{matrix.node}}.x"
     runs-on: ${{matrix.platform}}
-
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: "Use Node.js ${{matrix.node}}.x"
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           node-version: ${{matrix.node}}.x
-
       - run: npm install
       - run: npm run build
       - run: npm test
