@@ -6,8 +6,11 @@ on:
     - cron: '0 0 * * *'
   push:
     paths:
-      - '**/Cargo.toml'
-      - '**/Cargo.lock'
+      - 'deps/swc'
+      - '.github/workflows/audit.yml'
+      - package.json
+      - lib
+      - src
   pull_request:
 
 jobs:
@@ -17,3 +20,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: EmbarkStudios/cargo-deny-action@3f4a782664881cf5725d0ffd23969fcce89fd868 # v1.6.3
+        with:
+          manifest-path: "deps/swc/bindings/Cargo.toml"
+
+  typescript-audit:
+    runs-on: ubuntu-22.04
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    strategy:
+      matrix:
+        include:
+        - language: javascript-typescript
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@afb54ba388a7dca6ecae48f608c4ff05ff4cc77a # v3.25.15
+        with:
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@afb54ba388a7dca6ecae48f608c4ff05ff4cc77a # v3.25.15
+        with:
+          category: "/language:${{matrix.language}}"
