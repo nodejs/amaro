@@ -1,5 +1,4 @@
 const { test, snapshot } = require("node:test");
-const assert = require("node:assert/strict");
 const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
 
