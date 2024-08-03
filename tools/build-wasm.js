@@ -4,7 +4,7 @@ const { resolve } = require("node:path");
 const ROOT = resolve(__dirname, "../");
 const DOCKERFILE = resolve(__dirname, "./Dockerfile");
 
-const name = "swc_build_wasm";
+const name = `swc_build_wasm-${Date.now()}`;
 
 const buildArgs = [
 	"build",
@@ -20,7 +20,7 @@ const runArgs = ["run", "-d", "--name", name, "swc_wasm_typescript"];
 execFileSync("docker", runArgs, { stdio: "inherit" });
 
 // Copies the new directory inside the Docker image to the host.
-const copyArgs = ["cp", `${name}:/usr/src/amaro/swc`, `${ROOT}/lib`];
+const copyArgs = ["cp", `${name}:/usr/src/amaro/swc/.`, `${ROOT}/lib/`];
 execFileSync("docker", copyArgs, { stdio: "inherit" });
 
 // Removes the Docker image.
