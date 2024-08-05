@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: EmbarkStudios/cargo-deny-action@10d8902cf9225c404574ce39c45d5d26c3047464 # v2.0.0
         with:
-          manifest-path: "deps/swc/bindings/Cargo.toml"
+          manifest-path: "deps/swc/bindings/binding_typescript_wasm/Cargo.toml"
 
   typescript-audit:
     runs-on: ubuntu-22.04
