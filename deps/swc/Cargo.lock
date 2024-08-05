@@ -4271,7 +4271,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_codegen"
-version = "0.154.4"
+version = "0.154.5"
 dependencies = [
  "base64",
  "codspeed-criterion-compat",
@@ -4861,7 +4861,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_proposal"
-version = "0.177.1"
+version = "0.177.2"
 dependencies = [
  "either",
  "rustc-hash",
@@ -5094,7 +5094,7 @@ dependencies = [
 
 [[package]]
 name = "swc_fast_ts_strip"
-version = "0.4.6"
+version = "0.4.7"
 dependencies = [
  "anyhow",
  "codspeed-criterion-compat",
