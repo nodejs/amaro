@@ -6,11 +6,11 @@ on:
     - cron: '0 0 * * *'
   pull_request:
     paths:
-      - 'deps'
+      - 'deps/**'
       - '.github/workflows/audit.yml'
       - package.json
-      - lib
-      - src
+      - lib/**
+      - src/**
 
 jobs:
   rust-audit:
