@@ -4,14 +4,13 @@ on:
   schedule:
     # Runs at 00:00 UTC everyday
     - cron: '0 0 * * *'
-  push:
+  pull_request:
     paths:
-      - 'deps/swc'
+      - 'deps'
       - '.github/workflows/audit.yml'
       - package.json
       - lib
       - src
-  pull_request:
 
 jobs:
   rust-audit:
