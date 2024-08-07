@@ -11,7 +11,11 @@ CURRENT_VERSION=$(grep '^version' "$ROOT/deps/swc/bindings/binding_typescript_wa
 # Print the version
 echo "The version installed version is: $CURRENT_VERSION"
 
-NEW_VERSION=$(npm view @swc/wasm-typescript version)
+if [[ -n "${NEW_SWC_VERSION}" ]]; then
+    NEW_VERSION="${NEW_SWC_VERSION}"
+else
+    NEW_VERSION=$(npm view @swc/wasm-typescript version)
+fi
 
 echo "Comparing $CURRENT_VERSION with $NEW_VERSION"
 if [ "$NEW_VERSION" = "$CURRENT_VERSION" ]; then
