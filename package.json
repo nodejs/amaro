@@ -21,18 +21,20 @@
 		"ci:fix": "biome check --write",
 		"prepack": "npm run build",
 		"postpack": "npm run clean",
-		"build": "rspack build",
+		"build": "esbuild --bundle --platform=node --target=node18 --outdir=dist src/index.ts",
 		"typecheck": "tsc --noEmit",
 		"test": "node --test --experimental-test-snapshots \"**/*.test.js\"",
 		"test:regenerate": "node --test --experimental-test-snapshots --test-update-snapshots \"**/*.test.js\""
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"@rspack/cli": "^0.7.5",
-		"@rspack/core": "^0.7.5",
 		"@types/node": "^20.14.11",
+		"esbuild": "^0.23.0",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.3"
 	},
-	"files": ["dist", "LICENSE.md"]
+	"files": [
+		"dist",
+		"LICENSE.md"
+	]
 }
