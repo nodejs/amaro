@@ -21,7 +21,7 @@
 		"ci:fix": "biome check --write",
 		"prepack": "npm run build",
 		"postpack": "npm run clean",
-		"build": "esbuild --bundle --platform=node --target=node18 --outdir=dist src/index.ts",
+		"build": "node esbuild.config.js",
 		"typecheck": "tsc --noEmit",
 		"test": "node --test --experimental-test-snapshots \"**/*.test.js\"",
 		"test:regenerate": "node --test --experimental-test-snapshots --test-update-snapshots \"**/*.test.js\""
@@ -30,11 +30,13 @@
 		"@biomejs/biome": "1.8.3",
 		"@types/node": "^20.14.11",
 		"esbuild": "^0.23.0",
+		"esbuild-plugin-copy": "^2.1.1",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.3"
 	},
-	"files": [
-		"dist",
-		"LICENSE.md"
-	]
+	"exports": {
+		".": "./dist/index.js",
+		"./register": "./dist/register.mjs"
+	},
+	"files": ["dist", "LICENSE.md"]
 }

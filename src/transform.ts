@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS: Options = {
 
 export function transformSync(
 	source: string,
-	options: Options,
+	options?: Options,
 ): TransformOutput {
 	// Ensure that the source code is a string
 	const input = `${source ?? ""}`;

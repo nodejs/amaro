@@ -1,4 +1,4 @@
 enum Foo {
-    A = "Hello, TypeScript!"
+	A = "Hello, TypeScript!",
 }
 console.log(Foo.A);

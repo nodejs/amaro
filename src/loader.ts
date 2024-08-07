@@ -1,14 +1,32 @@
-import swc from "../lib/wasm.js";
-import type { LoadHook } from "node:module";
-import { readFile } from "node:fs/promises";
+import assert from "node:assert";
+import type { LoadFnOutput, LoadHookContext } from "node:module";
+import { transformSync } from "./index.ts";
 
-export const load: LoadHook = async (source, context, nextLoad) => {
-	if (context.format?.includes("typescript")) {
-		const data = await readFile(source, "utf8");
+type NextLoad = (
+	url: string,
+	context?: LoadHookContext,
+) => LoadFnOutput | Promise<LoadFnOutput>;
+
+export async function load(
+	url: string,
+	context: LoadHookContext,
+	nextLoad: NextLoad,
+) {
+	const { format } = context;
+	if (format.endsWith("-typescript")) {
+		// Use format 'module' so it returns the source as-is, without stripping the types.
+		// Format 'commonjs' would not return the source for historical reasons.
+		const { source } = await nextLoad(url, {
+			...context,
+			format: "module",
+		});
+		if (source == null)
+			throw new Error("Source code cannot be null or undefined");
+		const { code } = transformSync(source.toString(), { mode: "strip-only" });
 		return {
-			source: swc.transformSync(data).code,
-			shortCircuit: true, // Skips bundled transpilation
+			format: format.replace("-typescript", ""),
+			source: code,
 		};
 	}
-	return { source: await nextLoad(source, context) };
-};
+	return nextLoad(url, context);
+}
