@@ -35,15 +35,6 @@ git add deps
 git commit -m "chore: update swc to vX.Y.Z"
 ```
 
-Once you have updated the rust source code we must build the wasm.
-To build the wasm it is necessary to have Docker installed.
-
-```shell
-node ./tools/build-wasm.js
-git add lib
-git commit -m "chore: build wasm from swc vX.Y.Z"
-```
-
 ### TypeScript Version
 
 The supported TypeScript version is 5.5.4.
