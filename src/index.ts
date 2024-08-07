@@ -9,7 +9,9 @@ export function transformSync(
 	source: string,
 	options: Options,
 ): TransformOutput {
-	return swc.transformSync(source, {
+	// Ensure that the source code is a string
+	const input = `${source ?? ""}`;
+	return swc.transformSync(input, {
 		...DEFAULT_OPTIONS,
 		...options,
 	});
