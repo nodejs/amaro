@@ -97,6 +97,27 @@ test("should handle User type and isAdult function", (t) => {
 	t.assert.snapshot(code);
 });
 
+test("should handle class modifiers", (t) => {
+	const inputCode = `
+		class PrivateConstructor {
+		  private constructor() {}
+		  public a() {}
+		  protected b() {}
+		  static create() {
+		    return new PrivateConstructor()
+		  }
+		}
+
+		const ins = PrivateConstructor.create()
+		console.log(ins)
+	`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	assert.strictEqual(code.includes("private"), false);
+	assert.strictEqual(code.includes("protected"), false);
+	assert.strictEqual(code.includes("public"), false);
+});
+
 test("should handle empty source code", (t) => {
 	assert.strictEqual(transformSync().code, "");
 	assert.throws(() => transformSync({}).code);
