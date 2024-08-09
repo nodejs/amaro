@@ -105,3 +105,14 @@ test("should handle empty source code", (t) => {
 	assert.strictEqual(transformSync(null).code, "");
 	assert.strictEqual(transformSync("").code, "");
 });
+
+test("should not perform import elision", (t) => {
+	const inputCode = `
+	import { foo } from ".";
+	export { };
+  `;
+	assert.strictEqual(
+		transformSync(inputCode, { mode: "transform" }).code,
+		inputCode,
+	);
+});
