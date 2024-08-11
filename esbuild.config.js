@@ -14,5 +14,11 @@ esbuild.build({
 				to: ["."],
 			},
 		}),
+		copy({
+			assets: {
+				from: ["./lib/LICENSE", "./lib/package.json"],
+				to: ["."],
+			},
+		}),
 	],
 });
