@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       swc_version:
-        description: "SWC version to update to (e.g., 1.7.5)"
+        description: 'SWC version to update to (e.g., 1.7.5)'
         required: false
   schedule:
-    - cron: "0 0 * * 1" # Every Monday at 00:00 UTC
+    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
 
 env:
   NODE_VERSION: lts/*

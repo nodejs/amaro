@@ -3,11 +3,11 @@ name: Security audit
 on:
   schedule:
     # Runs at 00:00 UTC everyday
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
   pull_request:
     paths:
-      - "deps/**"
-      - ".github/workflows/audit.yml"
+      - 'deps/**'
+      - '.github/workflows/audit.yml'
       - package.json
       - lib/**
       - src/**
