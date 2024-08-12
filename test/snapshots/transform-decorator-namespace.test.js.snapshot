@@ -1,7 +1,0 @@
-exports[`should transform TypeScript class decorators with multiple decorators 1`] = `
-"@sealed\\n@log\\nclass BugReport {\\n    type = \\"report\\";\\n    title;\\n    constructor(t){\\n        this.title = t;\\n    }\\n}\\nfunction sealed(constructor) {\\n    Object.seal(constructor);\\n    Object.seal(constructor.prototype);\\n}\\nfunction log(constructor) {\\n    console.log(\\"Creating instance of\\", constructor.name);\\n}\\nconst report = new BugReport(\\"Test\\");\\n"
-`;
-
-exports[`should transform TypeScript namespaces with additional functionality 1`] = `
-"var Validation;\\n(function(Validation) {\\n    const lettersRegexp = /^[A-Za-z]+$/;\\n    class LettersOnlyValidator {\\n        isAcceptable(s) {\\n            return lettersRegexp.test(s);\\n        }\\n        static createValidator() {\\n            return new LettersOnlyValidator();\\n        }\\n    }\\n    Validation.LettersOnlyValidator = LettersOnlyValidator;\\n})(Validation || (Validation = {}));\\nconst validator = Validation.LettersOnlyValidator.createValidator();\\nconst isValid = validator.isAcceptable(\\"test\\");\\n// Exporting these for VM context\\nglobalThis.validator = validator;\\nglobalThis.isValid = isValid;\\n"
-`;
