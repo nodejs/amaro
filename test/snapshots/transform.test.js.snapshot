@@ -1,0 +1,31 @@
+exports[`should perform transformation with error 1`] = `
+"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\nthrow new Error(\\"foo\\");\\n"
+`;
+
+exports[`should perform transformation with error 2`] = `
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAKL;AACA,MAAM,IAAI,MAAM\\"}"
+`;
+
+exports[`should perform transformation with source maps 1`] = `
+"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\n"
+`;
+
+exports[`should perform transformation with source maps 2`] = `
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAKL\\"}"
+`;
+
+exports[`should perform transformation with source maps no filename 1`] = `
+"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\n"
+`;
+
+exports[`should perform transformation with source maps no filename 2`] = `
+"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n\\\\n    x = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAKL\\"}"
+`;
+
+exports[`should perform transformation without source maps 1`] = `
+"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\n"
+`;
+
+exports[`should perform transformation without source maps and filename 1`] = `
+"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\n"
+`;

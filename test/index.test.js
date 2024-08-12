@@ -1,6 +1,7 @@
 const { test, snapshot } = require("node:test");
 const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
+const assert = require("node:assert");
 
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
@@ -11,18 +12,18 @@ snapshot.setResolveSnapshotPath((testPath) => {
 	);
 });
 
-test("should perform type stripping", async (t) => {
+test("should perform type stripping", (t) => {
 	const { code } = transformSync("const foo: string = 'bar';");
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from functions", async (t) => {
+test("should strip type annotations from functions", (t) => {
 	const inputCode = "function greet(name: string): void { console.log(name); }";
 	const { code } = transformSync(inputCode);
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from classes", async (t) => {
+test("should strip type annotations from classes", (t) => {
 	const inputCode = `
     class MyClass {
       myMethod(param: number): string {
@@ -34,7 +35,7 @@ test("should strip type annotations from classes", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from interfaces", async (t) => {
+test("should strip type annotations from interfaces", (t) => {
 	const inputCode = `
     interface MyInterface {
       myMethod(param: number): string;
@@ -44,7 +45,7 @@ test("should strip type annotations from interfaces", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from type aliases", async (t) => {
+test("should strip type annotations from type aliases", (t) => {
 	const inputCode = `
     type MyType = string | number;
   `;
@@ -52,7 +53,7 @@ test("should strip type annotations from type aliases", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from generics", async (t) => {
+test("should strip type annotations from generics", (t) => {
 	const inputCode = `
     function identity<T>(arg: T): T {
       return arg;
@@ -62,7 +63,7 @@ test("should strip type annotations from generics", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from arrow functions", async (t) => {
+test("should strip type annotations from arrow functions", (t) => {
 	const inputCode = `
     const greet = (name: string): void => {
       console.log(name);
@@ -72,7 +73,7 @@ test("should strip type annotations from arrow functions", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should strip type annotations from type assertions", async (t) => {
+test("should strip type annotations from type assertions", (t) => {
 	const inputCode = `
     let someValue: any = "this is a string";
     let strLength: number = (someValue as string).length;
@@ -81,7 +82,7 @@ test("should strip type annotations from type assertions", async (t) => {
 	t.assert.snapshot(code);
 });
 
-test("should handle User type and isAdult function", async (t) => {
+test("should handle User type and isAdult function", (t) => {
 	const inputCode = `
     type User = {
       name: string;
@@ -94,4 +95,34 @@ test("should handle User type and isAdult function", async (t) => {
   `;
 	const { code } = transformSync(inputCode);
 	t.assert.snapshot(code);
+});
+
+test("should handle class modifiers", (t) => {
+	const inputCode = `
+		class PrivateConstructor {
+		  private constructor() {}
+		  public a() {}
+		  protected b() {}
+		  static create() {
+		    return new PrivateConstructor()
+		  }
+		}
+
+		const ins = PrivateConstructor.create()
+		console.log(ins)
+	`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	assert.strictEqual(code.includes("private"), false);
+	assert.strictEqual(code.includes("protected"), false);
+	assert.strictEqual(code.includes("public"), false);
+});
+
+test("should handle empty source code", (t) => {
+	assert.strictEqual(transformSync().code, "");
+	assert.throws(() => transformSync({}).code);
+	assert.strictEqual(transformSync(false).code, "false");
+	assert.strictEqual(transformSync(undefined).code, "");
+	assert.strictEqual(transformSync(null).code, "");
+	assert.strictEqual(transformSync("").code, "");
 });

@@ -2,6 +2,10 @@ exports[`should handle User type and isAdult function 1`] = `
 "\\n                 \\n                   \\n                  \\n      \\n\\n    function isAdult(user      )          {\\n      return user.age >= 18;\\n    }\\n  "
 `;
 
+exports[`should handle class modifiers 1`] = `
+"\\n\\t\\tclass PrivateConstructor {\\n\\t\\t          constructor() {}\\n\\t\\t         a() {}\\n\\t\\t            b() {}\\n\\t\\t  static create() {\\n\\t\\t    return new PrivateConstructor()\\n\\t\\t  }\\n\\t\\t}\\n\\n\\t\\tconst ins = PrivateConstructor.create()\\n\\t\\tconsole.log(ins)\\n\\t"
+`;
+
 exports[`should perform type stripping 1`] = `
 "const foo         = 'bar';"
 `;
