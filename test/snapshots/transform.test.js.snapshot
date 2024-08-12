@@ -29,3 +29,23 @@ exports[`should perform transformation without source maps 1`] = `
 exports[`should perform transformation without source maps and filename 1`] = `
 "var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\nx = 7;\\n"
 `;
+
+exports[`should transform TypeScript class decorators with multiple decorators 1`] = `
+"@sealed\\n@log\\nclass BugReport {\\n    type = \\"report\\";\\n    title;\\n    constructor(t){\\n        this.title = t;\\n    }\\n}\\nfunction sealed(constructor) {\\n    Object.seal(constructor);\\n    Object.seal(constructor.prototype);\\n}\\nfunction log(constructor) {\\n    console.log(\\"Creating instance of\\", constructor.name);\\n}\\nconst report = new BugReport(\\"Test\\");\\n"
+`;
+
+exports[`should transform TypeScript class fields 1`] = `
+"class Counter {\\n    count = 0;\\n    increment() {\\n        this.count++;\\n    }\\n}\\n"
+`;
+
+exports[`should transform TypeScript namespaces with additional functionality 1`] = `
+"var Validation;\\n(function(Validation) {\\n    const lettersRegexp = /^[A-Za-z]+$/;\\n    class LettersOnlyValidator {\\n        isAcceptable(s) {\\n            return lettersRegexp.test(s);\\n        }\\n        static createValidator() {\\n            return new LettersOnlyValidator();\\n        }\\n    }\\n    Validation.LettersOnlyValidator = LettersOnlyValidator;\\n})(Validation || (Validation = {}));\\nconst validator = Validation.LettersOnlyValidator.createValidator();\\nconst isValid = validator.isAcceptable(\\"test\\");\\n// Exporting these for VM context\\nglobalThis.validator = validator;\\nglobalThis.isValid = isValid;\\n"
+`;
+
+exports[`should transform TypeScript private class fields 1`] = `
+"class Counter {\\n    #count = 0;\\n    increment() {\\n        this.#count++;\\n    }\\n    getCount() {\\n        return this.#count;\\n    }\\n}\\n"
+`;
+
+exports[`should transform TypeScript type annotations and type guards 1`] = `
+"function isString(value) {\\n    return typeof value === 'string';\\n}\\n"
+`;
