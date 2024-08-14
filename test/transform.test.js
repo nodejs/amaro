@@ -282,3 +282,22 @@ test("should transform TypeScript namespaces with additional functionality", (t)
 	assert.ok(result.validator);
 	assert.strictEqual(result.isValid, true);
 });
+
+test("test native class properties", (t) => {
+	const inputCode = `
+	class Foo {
+		x = console.log(1)
+		constructor(public y = console.log(2)) {
+			console.log(3)
+		}
+	}`;
+	const { code } = transformSync(inputCode, {
+		mode: "transform",
+		sourceMap: true,
+		transform: {
+			verbatimModuleSyntax: true,
+			nativeClassProperties: true,
+		},
+	});
+	t.assert.snapshot(code);
+});

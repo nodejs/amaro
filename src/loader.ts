@@ -1,5 +1,5 @@
-import assert from "node:assert";
 import type { LoadFnOutput, LoadHookContext } from "node:module";
+import type { Options } from "../lib/wasm";
 import { transformSync } from "./index.ts";
 
 type NextLoad = (
@@ -22,7 +22,9 @@ export async function load(
 		});
 		if (source == null)
 			throw new Error("Source code cannot be null or undefined");
-		const { code } = transformSync(source.toString(), { mode: "strip-only" });
+		const { code } = transformSync(source.toString(), {
+			mode: "strip-only",
+		} as Options);
 		return {
 			format: format.replace("-typescript", ""),
 			source: code,

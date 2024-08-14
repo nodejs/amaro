@@ -1,9 +1,9 @@
 import type { Options, TransformOutput } from "../lib/wasm";
 import swc from "../lib/wasm.js";
 
-const DEFAULT_OPTIONS: Options = {
+const DEFAULT_OPTIONS = {
 	mode: "strip-only",
-};
+} as Options;
 
 export function transformSync(
 	source: string,
