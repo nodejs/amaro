@@ -315,7 +315,7 @@ dependencies = [
 
 [[package]]
 name = "binding_macros"
-version = "0.74.0"
+version = "0.75.0"
 dependencies = [
  "anyhow",
  "console_error_panic_hook",
@@ -1093,7 +1093,7 @@ checksum = "7e962a19be5cfc3f3bf6dd8f61eb50107f356ad6270fbb3ed41476571db78be5"
 
 [[package]]
 name = "dbg-swc"
-version = "0.100.0"
+version = "0.101.0"
 dependencies = [
  "anyhow",
  "clap 3.2.25",
@@ -1977,9 +1977,9 @@ checksum = "49f1f14873335454500d59611f1cf4a4b0f786f9ac11f4312a78e4cf2566695b"
 
 [[package]]
 name = "js-sys"
-version = "0.3.69"
+version = "0.3.70"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29c15563dc2726973df627357ce0c9ddddbea194836909d655df6a75d2cf296d"
+checksum = "1868808506b929d7b0cfa8f75951347aa71bb21144b7791bae35d9bccfcfe37a"
 dependencies = [
  "wasm-bindgen",
 ]
@@ -3747,7 +3747,7 @@ checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
 
 [[package]]
 name = "swc"
-version = "0.283.0"
+version = "0.284.0"
 dependencies = [
  "ansi_term",
  "anyhow",
@@ -3847,7 +3847,7 @@ dependencies = [
 
 [[package]]
 name = "swc_bundler"
-version = "0.234.0"
+version = "0.235.0"
 dependencies = [
  "anyhow",
  "crc",
@@ -3902,7 +3902,7 @@ dependencies = [
 
 [[package]]
 name = "swc_cli_impl"
-version = "0.18.0"
+version = "0.19.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -3961,7 +3961,7 @@ dependencies = [
 
 [[package]]
 name = "swc_compiler_base"
-version = "0.16.0"
+version = "0.17.0"
 dependencies = [
  "anyhow",
  "base64",
@@ -4010,7 +4010,7 @@ dependencies = [
 
 [[package]]
 name = "swc_core"
-version = "0.100.6"
+version = "0.101.0"
 dependencies = [
  "anyhow",
  "binding_macros",
@@ -4241,7 +4241,7 @@ dependencies = [
 
 [[package]]
 name = "swc_css_visit"
-version = "0.143.2"
+version = "0.143.4"
 dependencies = [
  "serde",
  "swc_atoms",
@@ -4252,7 +4252,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_ast"
-version = "0.118.0"
+version = "0.118.1"
 dependencies = [
  "arbitrary",
  "bitflags 2.5.0",
@@ -4550,7 +4550,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_minifier"
-version = "0.201.0"
+version = "0.202.0"
 dependencies = [
  "ansi_term",
  "anyhow",
@@ -4622,7 +4622,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_preset_env"
-version = "0.214.0"
+version = "0.215.0"
 dependencies = [
  "anyhow",
  "codspeed-criterion-compat",
@@ -4688,7 +4688,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms"
-version = "0.236.0"
+version = "0.237.0"
 dependencies = [
  "pretty_assertions",
  "sourcemap",
@@ -4802,7 +4802,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_module"
-version = "0.187.0"
+version = "0.188.0"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -4832,7 +4832,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_optimization"
-version = "0.205.0"
+version = "0.206.0"
 dependencies = [
  "dashmap",
  "indexmap 2.2.6",
@@ -4939,7 +4939,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_typescript"
-version = "0.195.1"
+version = "0.196.0"
 dependencies = [
  "codspeed-criterion-compat",
  "criterion",
@@ -4998,7 +4998,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_visit"
-version = "0.104.3"
+version = "0.104.5"
 dependencies = [
  "new_debug_unreachable",
  "num-bigint",
@@ -5012,7 +5012,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecmascript"
-version = "0.249.0"
+version = "0.250.0"
 dependencies = [
  "swc_ecma_ast",
  "swc_ecma_codegen",
@@ -5058,7 +5058,7 @@ dependencies = [
 
 [[package]]
 name = "swc_estree_compat"
-version = "0.208.0"
+version = "0.209.0"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
@@ -5066,7 +5066,6 @@ dependencies = [
  "copyless",
  "criterion",
  "pretty_assertions",
- "rayon",
  "serde",
  "serde_json",
  "swc",
@@ -5095,7 +5094,7 @@ dependencies = [
 
 [[package]]
 name = "swc_fast_ts_strip"
-version = "0.5.3"
+version = "0.5.4"
 dependencies = [
  "anyhow",
  "codspeed-criterion-compat",
@@ -5127,7 +5126,7 @@ dependencies = [
 
 [[package]]
 name = "swc_html"
-version = "0.146.0"
+version = "0.147.0"
 dependencies = [
  "swc_html_ast",
  "swc_html_codegen",
@@ -5177,7 +5176,7 @@ dependencies = [
 
 [[package]]
 name = "swc_html_minifier"
-version = "0.143.0"
+version = "0.144.0"
 dependencies = [
  "codspeed-criterion-compat",
  "criterion",
@@ -5236,7 +5235,7 @@ dependencies = [
 
 [[package]]
 name = "swc_html_visit"
-version = "0.37.2"
+version = "0.37.4"
 dependencies = [
  "serde",
  "swc_atoms",
@@ -5264,7 +5263,7 @@ dependencies = [
 
 [[package]]
 name = "swc_node_bundler"
-version = "0.72.0"
+version = "0.73.0"
 dependencies = [
  "anyhow",
  "dashmap",
@@ -5420,9 +5419,10 @@ dependencies = [
 
 [[package]]
 name = "swc_visit"
-version = "0.6.1"
+version = "0.6.2"
 dependencies = [
  "either",
+ "new_debug_unreachable",
 ]
 
 [[package]]
@@ -5491,7 +5491,7 @@ dependencies = [
 
 [[package]]
 name = "swc_xml_visit"
-version = "0.16.2"
+version = "0.16.4"
 dependencies = [
  "serde",
  "swc_atoms",
@@ -6370,19 +6370,20 @@ checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
 
 [[package]]
 name = "wasm-bindgen"
-version = "0.2.92"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4be2531df63900aeb2bca0daaaddec08491ee64ceecbee5076636a3b026795a8"
+checksum = "a82edfc16a6c469f5f44dc7b571814045d60404b55a0ee849f9bcfa2e63dd9b5"
 dependencies = [
  "cfg-if",
+ "once_cell",
  "wasm-bindgen-macro",
 ]
 
 [[package]]
 name = "wasm-bindgen-backend"
-version = "0.2.92"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "614d787b966d3989fa7bb98a654e369c762374fd3213d212cfc0251257e747da"
+checksum = "9de396da306523044d3302746f1208fa71d7532227f15e347e2d93e4145dd77b"
 dependencies = [
  "bumpalo",
  "log",
@@ -6395,9 +6396,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-futures"
-version = "0.4.42"
+version = "0.4.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "76bc14366121efc8dbb487ab05bcc9d346b3b5ec0eaa76e46594cabbe51762c0"
+checksum = "61e9300f63a621e96ed275155c108eb6f843b6a26d053f122ab69724559dc8ed"
 dependencies = [
  "cfg-if",
  "js-sys",
@@ -6407,9 +6408,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro"
-version = "0.2.92"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1f8823de937b71b9460c0c34e25f3da88250760bec0ebac694b49997550d726"
+checksum = "585c4c91a46b072c92e908d99cb1dcdf95c5218eeb6f3bf1efa991ee7a68cccf"
 dependencies = [
  "quote",
  "wasm-bindgen-macro-support",
@@ -6417,9 +6418,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro-support"
-version = "0.2.92"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e94f17b526d0a461a191c78ea52bbce64071ed5c04c9ffe424dcb38f74171bb7"
+checksum = "afc340c74d9005395cf9dd098506f7f44e38f2b4a21c6aaacf9a105ea5e1e836"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -6430,9 +6431,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-shared"
-version = "0.2.92"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af190c94f2773fdb3729c55b007a722abb5384da03bc0986df4c289bf5567e96"
+checksum = "c62a0a307cb4a311d3a07867860911ca130c3494e8c2719593806c08bc5d0484"
 
 [[package]]
 name = "wasm-encoder"
