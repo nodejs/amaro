@@ -11,7 +11,11 @@ CURRENT_VERSION=$(grep '^version' "$ROOT/deps/swc/bindings/binding_typescript_wa
 # Print the version
 echo "The version installed version is: $CURRENT_VERSION"
 
-NEW_VERSION=$(npm view @swc/wasm-typescript version)
+if [[ -n "${NEW_SWC_VERSION}" ]]; then
+    NEW_VERSION="${NEW_SWC_VERSION}"
+else
+    NEW_VERSION=$(npm view @swc/wasm-typescript version)
+fi
 
 echo "Comparing $CURRENT_VERSION with $NEW_VERSION"
 if [ "$NEW_VERSION" = "$CURRENT_VERSION" ]; then
@@ -19,51 +23,12 @@ if [ "$NEW_VERSION" = "$CURRENT_VERSION" ]; then
     exit 0
 fi
 
-echo "Making temporary workspace..."
+echo "Updating SWC to $NEW_VERSION"
 
-WORKSPACE=$(mktemp -d 2> /dev/null || mktemp -d -t 'tmp')
+cd "$ROOT/deps/swc"
 
-cleanup () {
-  EXIT_CODE=$?
-  [ -d "$WORKSPACE" ] && rm -rf "$WORKSPACE"
-  exit $EXIT_CODE
-}
-
-trap cleanup INT TERM EXIT
-
-cd "$WORKSPACE"
-
-TARBALL=$(curl -sL "https://api.github.com/repos/swc-project/swc/releases/tags/v$NEW_VERSION" | jq -r '.tarball_url')
-
-TARBALL_NAME="swc-$NEW_VERSION.tar.gz"
-
-curl -sL -o "$TARBALL_NAME" "$TARBALL"
-
-mkdir swc
-
-tar xvfz "$TARBALL_NAME" --strip 1 -C swc
-
-cd swc
-
-DEPS_FOLDER="$ROOT/deps/swc"
-
-rm -rf "$DEPS_FOLDER"
-
-mkdir -p "$DEPS_FOLDER"
-
-mv Cargo.toml "$DEPS_FOLDER"
-
-mv Cargo.lock "$DEPS_FOLDER"
-
-mv LICENSE "$DEPS_FOLDER"
-
-mv bindings "$DEPS_FOLDER/bindings"
-
-mv xtask "$DEPS_FOLDER/xtask"
-
-mv .cargo "$DEPS_FOLDER/.cargo"
-
-mv rust-toolchain "$DEPS_FOLDER/rust-toolchain"
+git fetch origin refs/tags/v${NEW_VERSION}:refs/tags/v${NEW_VERSION} --depth=1
+git checkout v${NEW_VERSION}
 
 echo "All done!"
 echo ""
