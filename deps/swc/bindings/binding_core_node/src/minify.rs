@@ -31,6 +31,16 @@ enum MinifyTarget {
     Map(AHashMap<String, String>),
 }
 
+#[derive(Deserialize)]
+#[serde(rename_all = "lowercase")]
+enum ErrorFormatConfig {
+    Normal,
+    #[serde(rename = "json")]
+    Json,
+    #[serde(rename = "color")]
+    Color,
+}
+
 impl MinifyTarget {
     fn to_file(&self, cm: Lrc<SourceMap>) -> Lrc<SourceFile> {
         match self {
@@ -86,7 +96,7 @@ fn minify(code: Buffer, opts: Buffer, signal: Option<AbortSignal>) -> AsyncTask<
 }
 
 #[napi]
-pub fn minify_sync(code: Buffer, opts: Buffer) -> napi::Result<TransformOutput> {
+pub fn minify_sync(code: Buffer, opts: Buffer, error_format: Option<ErrorFormatConfig>) -> napi::Result<TransformOutput> {
     crate::util::init_default_trace_subscriber();
     let code: MinifyTarget = get_deserialized(code)?;
     let opts = get_deserialized(opts)?;
@@ -95,11 +105,16 @@ pub fn minify_sync(code: Buffer, opts: Buffer) -> napi::Result<TransformOutput> 
 
     let fm = code.to_file(c.cm.clone());
 
+    let error_format = match error_format.unwrap_or(ErrorFormatConfig::Normal) {
+        ErrorFormatConfig::Json => ErrorFormat::Json,
+        ErrorFormatConfig::Color => ErrorFormat::Color,
+        ErrorFormatConfig::Normal => ErrorFormat::Normal,
+    };
+
     try_with(
         c.cm.clone(),
         false,
-        // TODO(kdy1): Maybe make this configurable?
-        ErrorFormat::Normal,
+        error_format,
         |handler| c.minify(fm, handler, &opts),
     )
     .convert_err()
