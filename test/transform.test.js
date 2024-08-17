@@ -195,7 +195,7 @@ test("should transform TypeScript type annotations and type guards", (t) => {
 
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
-		sourceMaps: true,
+		sourceMap: true,
 		transform: {
 			verbatimModuleSyntax: true,
 		},
@@ -295,8 +295,7 @@ test("test native class properties", (t) => {
 		mode: "transform",
 		sourceMap: true,
 		transform: {
-			verbatimModuleSyntax: true,
-			nativeClassProperties: true,
+			verbatimModuleSyntax: true
 		},
 	});
 	t.assert.snapshot(code);
