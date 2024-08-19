@@ -295,8 +295,9 @@ test("test native class properties", (t) => {
 		mode: "transform",
 		sourceMap: true,
 		transform: {
-			verbatimModuleSyntax: true
+			verbatimModuleSyntax: true,
 		},
 	});
+	
 	t.assert.snapshot(code);
 });
