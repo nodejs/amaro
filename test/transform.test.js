@@ -298,6 +298,6 @@ test("test native class properties", (t) => {
 			verbatimModuleSyntax: true,
 		},
 	});
-
+	
 	t.assert.snapshot(code);
 });
