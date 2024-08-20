@@ -1,24 +1,46 @@
 const { copy } = require("esbuild-plugin-copy");
-const esbuild = require("esbuild");
+const { build } = require("esbuild");
 
-esbuild.build({
-	entryPoints: ["src/index.ts"],
-	bundle: true,
-	platform: "node",
-	target: "node20",
-	outdir: "dist",
-	plugins: [
-		copy({
-			assets: {
-				from: ["./src/register/register.mjs"],
-				to: ["."],
-			},
-		}),
-		copy({
-			assets: {
-				from: ["./lib/LICENSE", "./lib/package.json"],
-				to: ["."],
-			},
-		}),
+const copyPlugin = copy({
+	assets: [
+		{
+			from: ["./src/register/register-strip.mjs"],
+			to: ["."],
+		},
+		{
+			from: ["./src/register/register-transform.mjs"],
+			to: ["."],
+		},
+		{
+			from: ["./lib/LICENSE", "./lib/package.json"],
+			to: ["."],
+		},
 	],
 });
+
+(async () => {
+	await build({
+		entryPoints: ["src/index.ts"],
+		bundle: true,
+		platform: "node",
+		target: "node22",
+		outfile: "dist/index.js",
+		plugins: [copyPlugin],
+	});
+
+	await build({
+		entryPoints: ["src/strip-loader.ts"],
+		bundle: false,
+		outfile: "dist/strip-loader.js",
+		platform: "node",
+		target: "node22",
+	});
+
+	await build({
+		entryPoints: ["src/transform-loader.ts"],
+		bundle: false,
+		outfile: "dist/transform-loader.js",
+		platform: "node",
+		target: "node22",
+	});
+})();

@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"@types/node": "^20.14.11",
+		"@types/node": "^22.0.0",
 		"esbuild": "^0.23.0",
 		"esbuild-plugin-copy": "^2.1.1",
 		"rimraf": "^6.0.1",
@@ -36,7 +36,11 @@
 	},
 	"exports": {
 		".": "./dist/index.js",
-		"./register": "./dist/register.mjs"
+		"./strip": "./dist/register-strip.mjs",
+		"./transform": "./dist/register-transform.mjs"
 	},
-	"files": ["dist", "LICENSE.md"]
+	"files": ["dist", "LICENSE.md"],
+	"engines": {
+		"node": ">=22"
+	}
 }
