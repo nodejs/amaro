@@ -31,8 +31,15 @@ It is possible to use Amaro as an external loader to execute TypeScript files.
 This allows the installed Amaro to override the Amaro version used by Node.js.
 
 ```bash
-node --experimental-strip-types --import="amaro/register" script.ts
+node --experimental-strip-types --import="amaro/strip" script.ts
 ```
+
+```bash
+node --experimental-transform-types --import="amaro/transform" script.ts
+```
+
+> Note that the "amaro/transform" loader should be used with `--experimental-transform-types` flag, or
+> at least with `--enable-source-maps` flag, to preserve the original source maps.
 
 ### How to update SWC
 

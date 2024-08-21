@@ -1,6 +1,6 @@
 import type { LoadFnOutput, LoadHookContext } from "node:module";
 import type { Options } from "../lib/wasm";
-import { transformSync } from "./index.ts";
+import { transformSync } from "./index.js";
 
 type NextLoad = (
 	url: string,
@@ -20,14 +20,21 @@ export async function load(
 			...context,
 			format: "module",
 		});
-		if (source == null)
+
+		if (source == null) {
 			throw new Error("Source code cannot be null or undefined");
+		}
+
 		const { code } = transformSync(source.toString(), {
 			mode: "strip-only",
 		} as Options);
+
 		return {
 			format: format.replace("-typescript", ""),
-			source: code,
+			// Source map is not necessary in strip-only mode. However, to map the source
+			// file in debuggers to the original TypeScript source, add a sourceURL magic
+			// comment to hint that it is a generated source.
+			source: `${code}\n\n//# sourceURL=${url}`,
 		};
 	}
 	return nextLoad(url, context);
