@@ -53,3 +53,7 @@ exports[`should transform TypeScript type annotations and type guards 1`] = `
 exports[`test native class properties 1`] = `
 "class Foo {\\n    y;\\n    x = console.log(1);\\n    constructor(y = console.log(2)){\\n        this.y = y;\\n        console.log(3);\\n    }\\n}\\n"
 `;
+
+exports[`test noEmptyExport 1`] = `
+"const fs = require(\\"fs\\");\\n"
+`;

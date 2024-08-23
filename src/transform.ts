@@ -3,6 +3,13 @@ import swc from "../lib/wasm.js";
 
 const DEFAULT_OPTIONS = {
 	mode: "strip-only",
+	// default transform will only work when mode is "transform"
+	transform: {
+		verbatimModuleSyntax: true,
+		nativeClassProperties: true,
+		noEmptyExport: true,
+		importNotUsedAsValues: "preserve",
+	},
 } as Options;
 
 export function transformSync(
