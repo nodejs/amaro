@@ -23,9 +23,6 @@ test("should perform transformation without source maps", (t) => {
 
 	const { code, map } = transformSync(tsCode, {
 		mode: "transform",
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -45,9 +42,6 @@ test("should perform transformation without source maps and filename", (t) => {
 	const { code, map } = transformSync(tsCode, {
 		mode: "transform",
 		filename: "foo.ts",
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -68,9 +62,6 @@ test("should perform transformation with source maps", (t) => {
 		mode: "transform",
 		sourceMap: true,
 		filename: "foo.ts",
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -90,9 +81,6 @@ test("should perform transformation with source maps no filename", (t) => {
 	const { code, map } = transformSync(tsCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -114,9 +102,6 @@ test("should perform transformation with error", (t) => {
 		mode: "transform",
 		sourceMap: true,
 		filename: "foo.ts",
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -146,9 +131,6 @@ test("should transform TypeScript class fields", (t) => {
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -175,9 +157,6 @@ test("should transform TypeScript private class fields", (t) => {
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -196,9 +175,6 @@ test("should transform TypeScript type annotations and type guards", (t) => {
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMaps: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -232,9 +208,6 @@ test("should transform TypeScript class decorators with multiple decorators", (t
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -272,9 +245,6 @@ test("should transform TypeScript namespaces with additional functionality", (t)
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-		},
 	});
 
 	t.assert.snapshot(code);
@@ -294,10 +264,17 @@ test("test native class properties", (t) => {
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
-		transform: {
-			verbatimModuleSyntax: true,
-			nativeClassProperties: true,
-		},
+	});
+	t.assert.snapshot(code);
+});
+
+test("test noEmptyExport", (t) => {
+	const inputCode = `
+	import fs = require("fs");
+	`;
+	const { code } = transformSync(inputCode, {
+		mode: "transform",
+		sourceMap: true,
 	});
 	t.assert.snapshot(code);
 });
