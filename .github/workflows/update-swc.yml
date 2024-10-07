@@ -52,7 +52,7 @@ jobs:
 
       - name: Create Pull Request with first commit
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
-        uses: gr2m/create-or-update-pull-request-action@86ec1766034c8173518f61d2075cc2a173fb8c97 # v1.9.4
+        uses: gr2m/create-or-update-pull-request-action@488876a65a2ca38b7eb05e9086166337087f5323 # v1.10.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -75,7 +75,7 @@ jobs:
 
       - name: Create second commit
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
-        uses: gr2m/create-or-update-pull-request-action@86ec1766034c8173518f61d2075cc2a173fb8c97 # v1.9.4
+        uses: gr2m/create-or-update-pull-request-action@488876a65a2ca38b7eb05e9086166337087f5323 # v1.10.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
