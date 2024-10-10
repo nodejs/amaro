@@ -39,7 +39,7 @@ resolver = "2"
   [workspace.dependencies]
   # bytecheck version should be in sync with rkyv version. Do not bump individually.
   bytecheck = "0.6.10"
-  rkyv      = "=0.7.44"
+  rkyv      = "=0.7.45"
 
 
   Inflector                 = "0.11.4"
@@ -77,7 +77,7 @@ resolver = "2"
   glob                      = "0.3.0"
   hashbrown                 = "0.14.5"
   hex                       = "0.4.3"
-  hstr                      = "0.2.8"
+  hstr                      = "0.2.12"
   indexmap                  = "2.0.0"
   is-macro                  = "0.3.5"
   js-sys                    = "0.3.59"
