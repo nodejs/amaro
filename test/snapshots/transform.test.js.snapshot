@@ -1,33 +1,33 @@
 exports[`should perform transformation with error 1`] = `
-"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\noutput = 7;\\nthrow new Error(\\"foo\\");\\n"
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\nthrow new Error(\\"foo\\");\\n"
 `;
 
 exports[`should perform transformation with error 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAIL;AACA,MAAM,IAAI,MAAM\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAIL;AACA,MAAM,IAAI,MAAM\\"}"
 `;
 
 exports[`should perform transformation with source maps 1`] = `
-"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\noutput = 7;\\n"
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
 `;
 
 exports[`should perform transformation with source maps 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAKL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
 `;
 
 exports[`should perform transformation with source maps no filename 1`] = `
-"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\noutput = 7;\\n"
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
 `;
 
 exports[`should perform transformation with source maps no filename 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\";UACS;;;GAAA,QAAA;AAIL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\"}"
 `;
 
 exports[`should perform transformation without source maps 1`] = `
-"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\noutput = 7;\\n"
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
 `;
 
 exports[`should perform transformation without source maps and filename 1`] = `
-"var Foo;\\n(function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n})(Foo || (Foo = {}));\\noutput = 7;\\n"
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
 `;
 
 exports[`should transform TypeScript class decorators with multiple decorators 1`] = `
@@ -39,7 +39,7 @@ exports[`should transform TypeScript class fields 1`] = `
 `;
 
 exports[`should transform TypeScript namespaces with additional functionality 1`] = `
-"var Validation;\\n(function(Validation) {\\n    const lettersRegexp = /^[A-Za-z]+$/;\\n    class LettersOnlyValidator {\\n        isAcceptable(s) {\\n            return lettersRegexp.test(s);\\n        }\\n        static createValidator() {\\n            return new LettersOnlyValidator();\\n        }\\n    }\\n    Validation.LettersOnlyValidator = LettersOnlyValidator;\\n})(Validation || (Validation = {}));\\nconst validator = Validation.LettersOnlyValidator.createValidator();\\nconst isValid = validator.isAcceptable(\\"test\\");\\noutput = {\\n    validator,\\n    isValid\\n};\\n"
+"(function(Validation) {\\n    const lettersRegexp = /^[A-Za-z]+$/;\\n    class LettersOnlyValidator {\\n        isAcceptable(s) {\\n            return lettersRegexp.test(s);\\n        }\\n        static createValidator() {\\n            return new LettersOnlyValidator();\\n        }\\n    }\\n    Validation.LettersOnlyValidator = LettersOnlyValidator;\\n})(Validation || (Validation = {}));\\nconst validator = Validation.LettersOnlyValidator.createValidator();\\nconst isValid = validator.isAcceptable(\\"test\\");\\noutput = {\\n    validator,\\n    isValid\\n};\\nvar Validation;\\n"
 `;
 
 exports[`should transform TypeScript private class fields 1`] = `
