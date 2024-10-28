@@ -3,7 +3,7 @@ exports[`should perform transformation with error 1`] = `
 `;
 
 exports[`should perform transformation with error 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAIL;AACA,MAAM,IAAI,MAAM\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL;AACA,MAAM,IAAI,MAAM\\"}"
 `;
 
 exports[`should perform transformation with source maps 1`] = `
@@ -11,7 +11,7 @@ exports[`should perform transformation with source maps 1`] = `
 `;
 
 exports[`should perform transformation with source maps 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
 `;
 
 exports[`should perform transformation with source maps no filename 1`] = `
@@ -19,7 +19,7 @@ exports[`should perform transformation with source maps no filename 1`] = `
 `;
 
 exports[`should perform transformation with source maps no filename 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"IACI,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\"}"
 `;
 
 exports[`should perform transformation without source maps 1`] = `
