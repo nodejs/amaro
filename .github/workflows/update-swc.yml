@@ -61,6 +61,7 @@ jobs:
             branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
             commit-message: "chore: update swc to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
             path: deps
+            update-pull-request-title-and-body: true
             body: |
                 This PR updates SWC to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}.
                 View the [SWC changelog](https://github.com/swc-project/swc/releases/tag/v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}) for more information.
