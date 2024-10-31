@@ -75,3 +75,4 @@ The supported TypeScript version is 5.5.4.
 ## License (MIT)
 
 See [`LICENSE.md`](./LICENSE.md).
+This is a minor update for contribution purposes.
