@@ -1,23 +1,29 @@
-const WASM_BUILDER_CONTAINER =
-	"ghcr.io/nodejs/wasm-builder@sha256:975f391d907e42a75b8c72eb77c782181e941608687d4d8694c3e9df415a0970"; // v0.0.9
-
 const { execSync, execFileSync } = require("node:child_process");
 const { resolve } = require("node:path");
 
+const WASM_BUILDER_CONTAINER =
+	"ghcr.io/nodejs/wasm-builder@sha256:975f391d907e42a75b8c72eb77c782181e941608687d4d8694c3e9df415a0970"; // v0.0.9
+
 const ROOT = resolve(__dirname, "../");
 
-let platform = process.env.WASM_PLATFORM;
-if (!platform && process.argv[2]) {
-	platform = execFileSync("docker", [
-		"info",
-		"-f",
-		"{{.OSType}}/{{.Architecture}}",
-	])
-		.toString()
-		.trim();
+function getPlatformFromDocker() {
+	try {
+		return execFileSync("docker", [
+			"info",
+			"-f",
+			"{{.OSType}}/{{.Architecture}}",
+		])
+			.toString()
+			.trim();
+	} catch (error) {
+		console.error(
+			"Error retrieving platform information from Docker:",
+			error.message,
+		);
+	}
 }
 
-if (process.argv[2] === "--docker") {
+function runDockerContainer() {
 	const args = [];
 	args.push("run");
 	args.push("--rm");
@@ -43,14 +49,34 @@ if (process.argv[2] === "--docker") {
 	args.push("./tools/build-wasm.js");
 	console.log(`> docker ${args}\n\n`);
 	execFileSync("docker", args, { stdio: "inherit" });
+}
+
+let platform = process.env.WASM_PLATFORM;
+if (!platform && process.argv[2]) {
+	platform = getPlatformFromDocker();
+}
+
+// If "--docker" is passed, run the Docker container with the specified mounts
+if (process.argv[2] === "--docker") {
+	runDockerContainer();
 	process.exit(0);
 }
 
-execSync(
-	`cd bindings/binding_typescript_wasm && \ 
-         cargo install --locked wasm-pack && \
-         PATH=/home/node/.cargo/bin:$PATH && \
-         ./scripts/build.sh && \
-         cp -r pkg/* ../../lib`,
-	{ stdio: "inherit" },
-);
+const wasmBindingPath = `${ROOT}/bindings/binding_typescript_wasm`;
+
+const commands = [
+	`cd ${wasmBindingPath}`,
+	"cargo install --locked wasm-pack",
+	"export PATH=/home/node/.cargo/bin:$PATH",
+	`sh ${wasmBindingPath}/scripts/build.sh`,
+	`cp -r ${wasmBindingPath}/pkg/* ${ROOT}/lib`,
+];
+
+try {
+	for (const command of commands) {
+		execSync(command, { stdio: "inherit" });
+	}
+} catch (error) {
+	console.error("Error executing build command:", error.message);
+	process.exit(1);
+}

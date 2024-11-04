@@ -10,7 +10,7 @@ on:
     - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
 
 env:
-    NODE_VERSION: lts/*
+    NODE_VERSION: 22
 
 jobs:
   update-swc:
@@ -26,6 +26,8 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Check if SWC update is required
         id: version-check
@@ -48,7 +50,7 @@ jobs:
 
       - name: Update SWC
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
-        run: ./tools/update-swc.sh
+        run: node --run build:wasm
 
       - name: Create Pull Request with first commit
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
