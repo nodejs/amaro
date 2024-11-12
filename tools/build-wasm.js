@@ -65,16 +65,16 @@ if (process.argv[2] === "--docker") {
 const wasmBindingPath = `${ROOT}/bindings/binding_typescript_wasm`;
 
 const commands = [
-	`cd ${wasmBindingPath}`,
-	"cargo install --locked wasm-pack",
-	"export PATH=/home/node/.cargo/bin:$PATH",
-	`sh ${wasmBindingPath}/scripts/build.sh`,
-	`cp -r ${wasmBindingPath}/pkg/* ${ROOT}/lib`,
+	["sh", "-c", `cd ${wasmBindingPath}`],
+	["cargo", "install", "--locked", "wasm-pack"],
+	["sh", "-c", "export PATH=/home/node/.cargo/bin:$PATH"],
+	["sh", `${wasmBindingPath}/scripts/build.sh`],
+	["cp", "-r", `${wasmBindingPath}/pkg/*`, `${ROOT}/lib`],
 ];
 
 try {
-	for (const command of commands) {
-		execSync(command, { stdio: "inherit" });
+	for (const [cmd, ...args] of commands) {
+		execFileSync(cmd, args, { stdio: "inherit" });
 	}
 } catch (error) {
 	console.error("Error executing build command:", error.message);
