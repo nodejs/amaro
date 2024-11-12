@@ -11,7 +11,7 @@ interface Options {
     module?: boolean;
     filename?: string;
     mode?: Mode;
-    transform?; TransformConfig;
+    transform?: TransformConfig;
     sourceMap?: boolean;
 }
 
