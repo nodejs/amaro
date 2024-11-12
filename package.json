@@ -22,7 +22,6 @@
 		"prepack": "npm run build",
 		"postpack": "npm run clean",
 		"build": "node esbuild.config.mjs",
-		"build:wasm": "node tools/build-wasm.js --docker",
 		"typecheck": "tsc --noEmit",
 		"test": "node --test --experimental-test-snapshots \"**/*.test.js\"",
 		"test:regenerate": "node --test --experimental-test-snapshots --test-update-snapshots \"**/*.test.js\""
