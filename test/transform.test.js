@@ -182,7 +182,7 @@ test("should transform TypeScript type annotations and type guards", (t) => {
 	assert.strictEqual(result, true);
 });
 
-test("should transform TypeScript class decorators with multiple decorators", (t) => {
+test("should not transform TypeScript class decorators with multiple decorators", (t) => {
 	const inputCode = `
 	@sealed
 	@log
@@ -272,6 +272,26 @@ test("test noEmptyExport", (t) => {
 	const inputCode = `
 	import fs = require("fs");
 	`;
+	const { code } = transformSync(inputCode, {
+		mode: "transform",
+		sourceMap: true,
+	});
+	t.assert.snapshot(code);
+});
+
+test("should not polyfill using Symbol.Dispose", (t) => {
+	const inputCode = `
+	using r = 0;`;
+	const { code } = transformSync(inputCode, {
+		mode: "transform",
+		sourceMap: true,
+	});
+	t.assert.snapshot(code);
+});
+
+test("should not polyfill using Symbol.asyncDispose", (t) => {
+	const inputCode = `
+	await using r = 0;`;
 	const { code } = transformSync(inputCode, {
 		mode: "transform",
 		sourceMap: true,
