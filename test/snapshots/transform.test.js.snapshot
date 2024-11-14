@@ -1,3 +1,15 @@
+exports[`should not polyfill using Symbol.Dispose 1`] = `
+"using r = 0\\n;\\n"
+`;
+
+exports[`should not polyfill using Symbol.asyncDispose 1`] = `
+"await using r = 0\\n"
+`;
+
+exports[`should not transform TypeScript class decorators with multiple decorators 1`] = `
+"@sealed\\n@log\\nclass BugReport {\\n    type = \\"report\\";\\n    title;\\n    constructor(t){\\n        this.title = t;\\n    }\\n}\\nfunction sealed(constructor) {\\n    Object.seal(constructor);\\n    Object.seal(constructor.prototype);\\n}\\nfunction log(constructor) {\\n    console.log(\\"Creating instance of\\", constructor.name);\\n}\\noutput = new BugReport(\\"Test\\");\\n"
+`;
+
 exports[`should perform transformation with error 1`] = `
 "var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\nthrow new Error(\\"foo\\");\\n"
 `;
@@ -28,10 +40,6 @@ exports[`should perform transformation without source maps 1`] = `
 
 exports[`should perform transformation without source maps and filename 1`] = `
 "var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
-`;
-
-exports[`should transform TypeScript class decorators with multiple decorators 1`] = `
-"@sealed\\n@log\\nclass BugReport {\\n    type = \\"report\\";\\n    title;\\n    constructor(t){\\n        this.title = t;\\n    }\\n}\\nfunction sealed(constructor) {\\n    Object.seal(constructor);\\n    Object.seal(constructor.prototype);\\n}\\nfunction log(constructor) {\\n    console.log(\\"Creating instance of\\", constructor.name);\\n}\\noutput = new BugReport(\\"Test\\");\\n"
 `;
 
 exports[`should transform TypeScript class fields 1`] = `

@@ -126,3 +126,23 @@ test("should handle empty source code", (t) => {
 	assert.strictEqual(transformSync(null).code, "");
 	assert.strictEqual(transformSync("").code, "");
 });
+
+test("should not polyfill using Symbol.Dispose", (t) => {
+	const inputCode = `
+	class Resource {
+		[Symbol.dispose]() { console.log("Disposed"); }
+	}
+	using r = new Resource();`;
+	const { code } = transformSync(inputCode);
+	assert.strictEqual(code, inputCode);
+});
+
+test("should not polyfill using Symbol.asyncDispose", (t) => {
+	const inputCode = `
+	class AsyncResource {
+		async [Symbol.asyncDispose]() { console.log("Async disposed"); }
+	}
+	await using r = new AsyncResource();`;
+	const { code } = transformSync(inputCode);
+	assert.strictEqual(code, inputCode);
+});
