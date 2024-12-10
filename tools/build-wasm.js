@@ -1,5 +1,5 @@
 const WASM_BUILDER_CONTAINER =
-	"ghcr.io/nodejs/wasm-builder@sha256:975f391d907e42a75b8c72eb77c782181e941608687d4d8694c3e9df415a0970"; // v0.0.9
+	"ghcr.io/nodejs/wasm-builder@sha256:542fdbef9fa6eb003cc1eb89a9f3e6b967359471fdb29db4910c54474e70911d"; // v0.0.10
 
 const { execSync, execFileSync } = require("node:child_process");
 const { resolve } = require("node:path");
@@ -61,7 +61,9 @@ if (process.argv[2] !== "--in-container") {
 }
 
 execSync(
-	`HOME=/home/node/home && \
+	`cp -r /home/node/.rustup /home/node/home/.rustup && \
+         HOME=/home/node/home && \
+         rustc --version && \
          cd bindings/binding_typescript_wasm && \ 
          cargo install --locked wasm-pack && \
          PATH=/home/node/home/.cargo/bin:$PATH && \
