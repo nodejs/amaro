@@ -67,3 +67,29 @@ test("should not warn and accurate stracktrace", async () => {
 	match(result.stderr, /stacktrace.ts:4:7/); // accurate
 	strictEqual(result.code, 1);
 });
+
+test("should call nextLoader for non-typescript files for striping", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--experimental-strip-types",
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("hello.js"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello, JavaScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should call nextLoader for non-typescript files for transform", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--experimental-strip-types",
+		"--no-warnings",
+		"--import=./dist/register-transform.mjs",
+		fixturesPath("hello.js"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello, JavaScript!/);
+	strictEqual(result.code, 0);
+});
