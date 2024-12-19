@@ -34,6 +34,14 @@ exports[`should perform transformation with source maps no filename 2`] = `
 "{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\"}"
 `;
 
+exports[`should perform transformation with source maps with uncommon chars 1`] = `
+"var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
+`;
+
+exports[`should perform transformation with source maps with uncommon chars 2`] = `
+"{\\"version\\":3,\\"sources\\":[\\"dir%20with $unusual\\\\\\"chars?'åß∂ƒ©∆¬…\`.cts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
+`;
+
 exports[`should perform transformation without source maps 1`] = `
 "var Foo = /*#__PURE__*/ function(Foo) {\\n    Foo[Foo[\\"Bar\\"] = 7] = \\"Bar\\";\\n    Foo[Foo[\\"Baz\\"] = 2] = \\"Baz\\";\\n    return Foo;\\n}(Foo || {});\\noutput = 7;\\n"
 `;
