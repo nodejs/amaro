@@ -70,6 +70,26 @@ test("should perform transformation with source maps", (t) => {
 	assert.strictEqual(result, 7);
 });
 
+test("should perform transformation with source maps with uncommon chars", (t) => {
+	const tsCode = `
+    enum Foo {
+        Bar = 7,
+        Baz = 2,
+    }
+
+    output = Foo.Bar`;
+	const { code, map } = transformSync(tsCode, {
+		mode: "transform",
+		sourceMap: true,
+		filename: "dir%20with $unusual\"chars?'åß∂ƒ©∆¬…`.cts",
+	});
+
+	t.assert.snapshot(code);
+	t.assert.snapshot(map);
+	const result = vm.runInContext(code, vm.createContext());
+	assert.strictEqual(result, 7);
+});
+
 test("should perform transformation with source maps no filename", (t) => {
 	const tsCode = `
     enum Foo {
