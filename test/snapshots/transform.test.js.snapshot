@@ -1,5 +1,5 @@
 exports[`should not polyfill using Symbol.Dispose 1`] = `
-"using r = 0\\n;\\n"
+"using r = 0\\n"
 `;
 
 exports[`should not polyfill using Symbol.asyncDispose 1`] = `
