@@ -13,7 +13,8 @@ allow = [
     "BSD-3-Clause",
     "BSD-2-Clause",
     "Unicode-DFS-2016",
-    "BSL-1.0"
+    "BSL-1.0",
+    "Unicode-3.0"
 ]
 confidence-threshold = 0.8
 exceptions = []
