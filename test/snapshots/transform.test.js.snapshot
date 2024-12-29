@@ -1,9 +1,9 @@
 exports[`should not polyfill using Symbol.Dispose 1`] = `
-"using r = 0\\n;\\n"
+"using r = 0;\\n"
 `;
 
 exports[`should not polyfill using Symbol.asyncDispose 1`] = `
-"await using r = 0\\n"
+"await using r = 0;\\n"
 `;
 
 exports[`should not transform TypeScript class decorators with multiple decorators 1`] = `
