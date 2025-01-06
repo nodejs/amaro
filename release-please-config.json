@@ -6,7 +6,18 @@
 	"packages": {
 		".": {
 			"include-component-in-tag": false,
-			"changelog-path": "CHANGELOG.md"
+			"changelog-path": "CHANGELOG.md",
+			"changelog-sections": [
+				{ "type": "feat", "section": "Features", "hidden": false },
+				{ "type": "fix", "section": "Bug Fixes", "hidden": false },
+				{ "type": "perf", "section": "Core", "hidden": false },
+				{ "type": "docs", "section": "Core", "hidden": false },
+				{ "type": "refactor", "section": "Core", "hidden": false },
+				{ "type": "test", "section": "Core", "hidden": false },
+				{ "type": "chore", "section": "Miscellaneous", "hidden": false },
+				{ "type": "build", "section": "Miscellaneous", "hidden": false },
+				{ "type": "ci", "section": "Miscellaneous", "hidden": false }
+			]
 		}
 	}
 }
