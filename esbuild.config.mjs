@@ -28,6 +28,13 @@ await build({
 });
 
 await build({
+	entryPoints: ["src/errors.ts"],
+	platform: "node",
+	target: "node22",
+	outfile: "dist/errors.js",
+});
+
+await build({
 	entryPoints: ["src/strip-loader.ts"],
 	bundle: false,
 	outfile: "dist/strip-loader.js",

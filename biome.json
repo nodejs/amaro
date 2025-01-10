@@ -19,7 +19,8 @@
 			"deps/**",
 			"lib/**",
 			"node_modules/**",
-			"test/snapshot/**"
+			"test/snapshot/**",
+			"test/fixtures/**"
 		]
 	}
 }

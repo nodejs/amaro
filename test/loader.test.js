@@ -24,6 +24,7 @@ test("should not work with enums", async () => {
 	]);
 
 	strictEqual(result.stdout, "");
+	match(result.stderr, /UnsupportedSyntaxError/);
 	match(result.stderr, /TypeScript enum is not supported in strip-only mode/);
 	strictEqual(result.code, 1);
 });
@@ -92,4 +93,18 @@ test("should call nextLoader for non-typescript files for transform", async () =
 	strictEqual(result.stderr, "");
 	match(result.stdout, /Hello, JavaScript!/);
 	strictEqual(result.code, 0);
+});
+
+test("should throw syntax error for invalid typescript", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--experimental-strip-types",
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("invalid-syntax.ts"),
+	]);
+
+	strictEqual(result.stdout, "");
+	match(result.stderr, /SyntaxError/);
+	match(result.stderr, /await isn't allowed in non-async function/);
+	strictEqual(result.code, 1);
 });
