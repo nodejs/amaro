@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/nodejs/amaro/compare/v0.2.2...v0.3.0) (2025-01-13)
+
+
+### Features
+
+* wrap and rethrow swc errors ([8764122](https://github.com/nodejs/amaro/commit/87641224c949422f1d1b2734309bc1d907df69de))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.7 ([35efcea](https://github.com/nodejs/amaro/commit/35efceaf8349d0b9c325f059591111c1bf0f2459))
+* **deps:** bump actions/upload-artifact from 4.5.0 to 4.6.0 ([1d8a938](https://github.com/nodejs/amaro/commit/1d8a938ce7d32651c0eca220d62abf045b4202bb))
+* **deps:** bump biomejs/setup-biome from 2.2.1 to 2.3.0 ([10c101c](https://github.com/nodejs/amaro/commit/10c101c03d9203822996c2e4cb22a3d9849cf7ff))
+* **deps:** bump github/codeql-action from 3.28.0 to 3.28.1 ([4b29609](https://github.com/nodejs/amaro/commit/4b296094d713a88c241c6d80df713f505676350a))
+* **deps:** bump step-security/harden-runner from 2.10.2 to 2.10.3 ([e355436](https://github.com/nodejs/amaro/commit/e355436679007ef78f6ca83942ec098269b86b09))
+* exclude fixtures from typecheck ([2a3c016](https://github.com/nodejs/amaro/commit/2a3c016134fc34aad694e92c5cd1a90fc6107fb7))
+* update swc to v1.10.7 ([8051db3](https://github.com/nodejs/amaro/commit/8051db3a2b6e7fa3335da9904ccf85d293c77826))
+
 ## [0.2.2](https://github.com/nodejs/amaro/compare/v0.2.1...v0.2.2) (2025-01-06)
 
 
