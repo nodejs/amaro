@@ -1,4 +1,4 @@
-type SwcError = {
+export type SwcError = {
 	code: "UnsupportedSyntax" | "InvalidSyntax";
 	message: string;
 };

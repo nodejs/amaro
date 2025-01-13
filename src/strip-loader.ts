@@ -1,6 +1,5 @@
 import type { LoadFnOutput, LoadHookContext } from "node:module";
-import { isSwcError, wrapAndReThrowSwcError } from "./errors.js";
-import { transformSync } from "./index.js";
+import { transformSync, isSwcError, wrapAndReThrowSwcError } from "./index.js";
 
 export async function load(
 	url: string,

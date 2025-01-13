@@ -1,5 +1,5 @@
-import type { Options, TransformOutput } from "../lib/wasm";
-import swc from "../lib/wasm.js";
+import type { Options, TransformOutput } from "../../lib/wasm";
+import swc from "../../lib/wasm.js";
 
 const DEFAULT_OPTIONS = {
 	mode: "strip-only",
