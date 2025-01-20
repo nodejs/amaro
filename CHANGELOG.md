@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/nodejs/amaro/compare/v0.3.0...v0.3.1) (2025-01-20)
+
+
+### Miscellaneous
+
+* **deps:** bump step-security/harden-runner from 2.10.3 to 2.10.4 ([9059a36](https://github.com/nodejs/amaro/commit/9059a366d277c2398dca62a91bd5814e9df41fff))
+* **deps:** bump wagoid/commitlint-github-action from 6.2.0 to 6.2.1 ([1a876ff](https://github.com/nodejs/amaro/commit/1a876ffe67816b1f6f60c5631d74861ddaae2fe2))
+
 ## [0.3.0](https://github.com/nodejs/amaro/compare/v0.2.2...v0.3.0) (2025-01-13)
 
 
