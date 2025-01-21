@@ -6,6 +6,18 @@ exports[`should handle class modifiers 1`] = `
 "\\n\\t\\tclass PrivateConstructor {\\n\\t\\t          constructor() {}\\n\\t\\t         a() {}\\n\\t\\t            b() {}\\n\\t\\t  static create() {\\n\\t\\t    return new PrivateConstructor()\\n\\t\\t  }\\n\\t\\t}\\n\\n\\t\\tconst ins = PrivateConstructor.create()\\n\\t\\tconsole.log(ins)\\n\\t"
 `;
 
+exports[`should not break on return new line when stripped (alternative formatting) 1`] = `
+"\\n\\tfunction mkId() {\\n\\t\\treturn (\\n\\t\\t\\t \\n\\t\\t  x   )=>x;\\n\\t}\\n\\tconst id = mkId();\\n\\toutput = id(7);"
+`;
+
+exports[`should not break on return new line when stripped 1`] = `
+"\\n\\tfunction mkId() {\\n\\t\\treturn (  \\n\\t\\t\\t x   )=>x;\\n\\t}\\n\\tconst id = mkId();\\n\\toutput = id(5);"
+`;
+
+exports[`should not throw on return new line when stripped 1`] = `
+"\\n\\tfunction mkId() {\\n\\t\\tthrow  \\n\\t\\t\\t \\n\\t\\t (x   )=>x;\\n\\t}\\n\\n\\ttry {\\n\\t\\tmkId();\\n\\t}\\n\\tcatch(e){\\n\\t\\toutput = e(5);\\n\\t}"
+`;
+
 exports[`should perform type stripping 1`] = `
 "const foo         = 'bar';"
 `;

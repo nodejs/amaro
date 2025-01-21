@@ -2,6 +2,7 @@ const { test, snapshot } = require("node:test");
 const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
 const assert = require("node:assert");
+const vm = require("node:vm");
 
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
@@ -145,4 +146,67 @@ test("should not polyfill using Symbol.asyncDispose", (t) => {
 	await using r = new AsyncResource();`;
 	const { code } = transformSync(inputCode);
 	assert.strictEqual(code, inputCode);
+});
+
+test("should not break on return new line when stripped", (t) => {
+	const inputCode = `
+	function mkId() {
+		return <T>
+			(x: T)=>x;
+	}
+	const id = mkId();
+	output = id(5);`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	const result = vm.runInContext(code, vm.createContext());
+	assert.strictEqual(result, 5);
+});
+
+test("should not break on return new line when stripped (alternative formatting)", (t) => {
+	const inputCode = `
+	function mkId() {
+		return <
+			T
+		>(x: T)=>x;
+	}
+	const id = mkId();
+	output = id(7);`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	const result = vm.runInContext(code, vm.createContext());
+	assert.strictEqual(result, 7);
+});
+
+test("should not throw on return new line when stripped", (t) => {
+	const inputCode = `
+	function mkId() {
+		throw <
+			T
+		>(x: T)=>x;
+	}
+
+	try {
+		mkId();
+	}
+	catch(e){
+		output = e(5);
+	}`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	const result = vm.runInContext(code, vm.createContext());
+	assert.strictEqual(result, 5);
+});
+
+test("should not throw on yield new line when stripped", (t) => {
+	const inputCode = `
+	function* mkId() {
+		yield <
+				T
+		>(x: T)=>x;
+	}
+	output= mkId().next().value(5);`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+	const result = vm.runInContext(code, vm.createContext());
+	assert.strictEqual(result, 5);
 });
