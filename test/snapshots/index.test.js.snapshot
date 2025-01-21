@@ -15,7 +15,11 @@ exports[`should not break on return new line when stripped 1`] = `
 `;
 
 exports[`should not throw on return new line when stripped 1`] = `
-"\\n\\tfunction mkId() {\\n\\t\\tthrow  \\n\\t\\t\\t \\n\\t\\t (x   )=>x;\\n\\t}\\n\\n\\ttry {\\n\\t\\tmkId();\\n\\t}\\n\\tcatch(e){\\n\\t\\toutput = e(5);\\n\\t}"
+"\\n\\tfunction mkId() {\\n\\t\\tthrow (\\n\\t\\t\\t \\n\\t\\t  x   )=>x;\\n\\t}\\n\\n\\ttry {\\n\\t\\tmkId();\\n\\t}\\n\\tcatch(e){\\n\\t\\toutput = e(5);\\n\\t}"
+`;
+
+exports[`should not throw on yield new line when stripped 1`] = `
+"\\n\\tfunction* mkId() {\\n\\t\\tyield (\\n\\t\\t\\t\\t \\n\\t\\t  x   )=>x;\\n\\t}\\n\\toutput= mkId().next().value(5);"
 `;
 
 exports[`should perform type stripping 1`] = `
