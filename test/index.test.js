@@ -210,3 +210,7 @@ test("should not throw on yield new line when stripped", (t) => {
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 5);
 });
+
+test("should throw invalid syntax error", (t) => {
+	assert.throws(() => transformSync("const foo;"));
+});
