@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.3.1](https://github.com/nodejs/amaro/compare/v0.3.0...v0.3.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* check undefined format ([722b484](https://github.com/nodejs/amaro/commit/722b4842ea2414b7f304128bbff9ea9db1cc7c28))
+
+
+### Core
+
+* check if newline on return works ([fe0f570](https://github.com/nodejs/amaro/commit/fe0f5704e9965ae50bb49f0ee7e1e4d6a4ee1d6b))
+* check if yield and throw newline work ([96dba79](https://github.com/nodejs/amaro/commit/96dba7943a83deab3c705227e49fb99aa10d1580))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.11 ([cdea312](https://github.com/nodejs/amaro/commit/cdea31243b1c32380f0dd442575038195f189486))
+* **deps:** bump github/codeql-action from 3.28.1 to 3.28.5 ([ce514fa](https://github.com/nodejs/amaro/commit/ce514fad88b184a0717eec105b29dd99335e7ca2))
+* **deps:** bump step-security/harden-runner from 2.10.3 to 2.10.4 ([9059a36](https://github.com/nodejs/amaro/commit/9059a366d277c2398dca62a91bd5814e9df41fff))
+* **deps:** bump wagoid/commitlint-github-action from 6.2.0 to 6.2.1 ([1a876ff](https://github.com/nodejs/amaro/commit/1a876ffe67816b1f6f60c5631d74861ddaae2fe2))
+* update swc to v1.10.11 ([e9a918c](https://github.com/nodejs/amaro/commit/e9a918ce7ea9969c1d930f69372c7d51e69fb6af))
+
 ## [0.3.0](https://github.com/nodejs/amaro/compare/v0.2.2...v0.3.0) (2025-01-13)
 
 
