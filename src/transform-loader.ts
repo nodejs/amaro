@@ -12,7 +12,7 @@ export async function load(
 	) => LoadFnOutput | Promise<LoadFnOutput>,
 ) {
 	const { format } = context;
-	if (format.endsWith("-typescript")) {
+	if (format?.endsWith("-typescript")) {
 		try {
 			// Use format 'module' so it returns the source as-is, without stripping the types.
 			// Format 'commonjs' would not return the source for historical reasons.
