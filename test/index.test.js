@@ -214,3 +214,49 @@ test("should not throw on yield new line when stripped", (t) => {
 test("should throw invalid syntax error", (t) => {
 	assert.throws(() => transformSync("const foo;"));
 });
+
+test("erasable namespaces and modules should be supported", (t) => {
+	const tests = [
+		"namespace Empty {}",
+		`namespace TypeOnly {
+    		type A = string;
+
+    		export type B = A | number;
+
+   			export interface I {}
+
+			export namespace Inner {
+				export type C = B;
+			}
+		}`,
+		`namespace My.Internal.Types {
+    		export type Foo = number;
+		}`,
+		"declare namespace C { export let x = 1 }",
+		"declare module    D { export let x = 1 }",
+		"module F { export type x = number }",
+	];
+	for (const input of tests) {
+		const { code } = transformSync(input);
+		t.assert.snapshot(code);
+	}
+});
+
+test("should throw on non erasable namespace/module", (t) => {
+	const tests = [
+		"namespace A { export let x = 1 }",
+		`namespace With.Imports {
+    		import Types = My.Internal.Types;
+    		export type Foo = Types.Foo;
+		}`,
+		"namespace B { ; } ",
+		"module E { export let x = 1 }",
+		`namespace A { export let x = 1; }
+         namespace B { import x = A.x; }
+         namespace C { export import x = A.x; }`,
+	];
+
+	for (const input of tests) {
+		assert.throws(() => transformSync(input), { code: "UnsupportedSyntax" });
+	}
+});
