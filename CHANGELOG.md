@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.2](https://github.com/nodejs/amaro/compare/v0.3.1...v0.3.2) (2025-02-04)
+
+
+### Core
+
+* check erasable namespaces are supported ([e489d48](https://github.com/nodejs/amaro/commit/e489d48171d4abeb80a139ef339aa5be36736e31))
+* swc allows invalid js syntax ([2a3fbe8](https://github.com/nodejs/amaro/commit/2a3fbe886215c7d41bc1ffc9a3e4cf745d9e2c59))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.12 ([081dee3](https://github.com/nodejs/amaro/commit/081dee36877b046f6f9a361412adc0fe2c34c57e))
+* build wasm from swc v1.10.14 ([4e6441c](https://github.com/nodejs/amaro/commit/4e6441c843a52e70bef56458799e267151b9cbc4))
+* **deps:** bump actions/setup-node from 4.1.0 to 4.2.0 ([43ee356](https://github.com/nodejs/amaro/commit/43ee356f3e46fb1f980622c2fd8acd40356d87ac))
+* **deps:** bump github/codeql-action from 3.28.5 to 3.28.8 ([85ca75b](https://github.com/nodejs/amaro/commit/85ca75bbcb60b36d60f883294d30d30a24a4a76f))
+* update swc to v1.10.12 ([e2559e7](https://github.com/nodejs/amaro/commit/e2559e772f9d75cac26b52b8218e0cea2da48512))
+* update swc to v1.10.14 ([fa2d3ac](https://github.com/nodejs/amaro/commit/fa2d3ac4daba345f115ab67382791eea055d5bc7))
+
 ## [0.3.1](https://github.com/nodejs/amaro/compare/v0.3.0...v0.3.1) (2025-01-27)
 
 
