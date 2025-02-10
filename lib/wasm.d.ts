@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export declare function transform(src: string, opts?: Options): Promise<TransformOutput>;
-export declare function transformSync(src: string, opts?: Options): TransformOutput;
+export declare function transform(src: string | Uint8Array, opts?: Options): Promise<TransformOutput>;
+export declare function transformSync(src: string | Uint8Array, opts?: Options): TransformOutput;
 export type { Options, TransformOutput };
 
 
