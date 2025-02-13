@@ -9,6 +9,7 @@ const DEFAULT_OPTIONS = {
 		nativeClassProperties: true,
 		noEmptyExport: true,
 		importNotUsedAsValues: "preserve",
+		deprecatedTsModuleAsError: true,
 	},
 } as Options;
 
