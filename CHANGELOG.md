@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.3](https://github.com/nodejs/amaro/compare/v0.3.2...v0.3.3) (2025-02-13)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.15 ([4e993fd](https://github.com/nodejs/amaro/commit/4e993fd61f3636c9a277a94625b8758e47661add))
+* **deps:** bump docker/setup-buildx-action from 3.8.0 to 3.9.0 ([65e736c](https://github.com/nodejs/amaro/commit/65e736cbaa38cbadd09a19e3cf378a02af45653e))
+* **deps:** bump github/codeql-action from 3.28.8 to 3.28.9 ([936abc0](https://github.com/nodejs/amaro/commit/936abc03bf2735c9c9b20effe7a1c7826fc6e3e3))
+* remove manual update docs ([59e35a9](https://github.com/nodejs/amaro/commit/59e35a99ed08af369e2c12c8286cf8a38a02db61))
+* update swc to v1.10.15 ([78391dd](https://github.com/nodejs/amaro/commit/78391dd8f3d8289486a774ddd4f69e6b69a8a9b5))
+
 ## [0.3.2](https://github.com/nodejs/amaro/compare/v0.3.1...v0.3.2) (2025-02-04)
 
 
