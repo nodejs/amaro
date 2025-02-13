@@ -233,8 +233,6 @@ test("erasable namespaces and modules should be supported", (t) => {
     		export type Foo = number;
 		}`,
 		"declare namespace C { export let x = 1 }",
-		"declare module    D { export let x = 1 }",
-		"module F { export type x = number }",
 	];
 	for (const input of tests) {
 		const { code } = transformSync(input);
@@ -254,6 +252,8 @@ test("should throw on non erasable namespace/module", (t) => {
 		`namespace A { export let x = 1; }
          namespace B { import x = A.x; }
          namespace C { export import x = A.x; }`,
+		"declare module    D { export let x = 1 }",
+		"module F { export type x = number }",
 	];
 
 	for (const input of tests) {

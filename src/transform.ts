@@ -3,6 +3,7 @@ import swc from "../lib/wasm.js";
 
 const DEFAULT_OPTIONS = {
 	mode: "strip-only",
+	deprecatedTsModuleAsError: true,
 	// default transform will only work when mode is "transform"
 	transform: {
 		verbatimModuleSyntax: true,
