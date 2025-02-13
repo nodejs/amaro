@@ -12,6 +12,7 @@ interface Options {
     filename?: string;
     mode?: Mode;
     transform?: TransformConfig;
+    deprecatedTsModuleAsError?: boolean;
     sourceMap?: boolean;
 }
 
