@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.0](https://github.com/nodejs/amaro/compare/v0.3.2...v0.4.0) (2025-02-18)
+
+
+### Features
+
+* add option deprecatedTsModuleAsError ([cfc3f00](https://github.com/nodejs/amaro/commit/cfc3f001e92e0fd8b36f21a7ecdc8b41a9b7d040))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.15 ([4e993fd](https://github.com/nodejs/amaro/commit/4e993fd61f3636c9a277a94625b8758e47661add))
+* build wasm from swc v1.10.16 ([b097846](https://github.com/nodejs/amaro/commit/b09784613de6e4b8c72ef2fedda0b140ecbdad47))
+* **deps:** bump docker/setup-buildx-action from 3.8.0 to 3.9.0 ([65e736c](https://github.com/nodejs/amaro/commit/65e736cbaa38cbadd09a19e3cf378a02af45653e))
+* **deps:** bump github/codeql-action from 3.28.8 to 3.28.9 ([936abc0](https://github.com/nodejs/amaro/commit/936abc03bf2735c9c9b20effe7a1c7826fc6e3e3))
+* **deps:** bump step-security/harden-runner from 2.10.4 to 2.11.0 ([9438700](https://github.com/nodejs/amaro/commit/94387007a0ee57781d8e101c423aa2bb7bd33f26))
+* remove manual update docs ([59e35a9](https://github.com/nodejs/amaro/commit/59e35a99ed08af369e2c12c8286cf8a38a02db61))
+* update swc to v1.10.15 ([78391dd](https://github.com/nodejs/amaro/commit/78391dd8f3d8289486a774ddd4f69e6b69a8a9b5))
+* update swc to v1.10.16 ([fd283be](https://github.com/nodejs/amaro/commit/fd283be9b9616ac1e00c6e192ff4eb1ee96f2bc5))
+
 ## [0.3.2](https://github.com/nodejs/amaro/compare/v0.3.1...v0.3.2) (2025-02-04)
 
 
