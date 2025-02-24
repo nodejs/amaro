@@ -318,3 +318,14 @@ test("should not polyfill using Symbol.asyncDispose", (t) => {
 	});
 	t.assert.snapshot(code);
 });
+
+test("should have proper error code", (t) => {
+	const inputCode = "module F { export type x = number }";
+	try {
+		transformSync(inputCode, {
+			mode: "transform",
+		});
+	} catch (error) {
+		assert.strictEqual(error.code, "UnsupportedSyntax");
+	}
+});
