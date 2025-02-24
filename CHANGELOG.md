@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.1](https://github.com/nodejs/amaro/compare/v0.4.0...v0.4.1) (2025-02-24)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.10.18 ([ba898ad](https://github.com/nodejs/amaro/commit/ba898aded7cbede4a2d9801caa455a5e53d86deb))
+* **deps:** bump actions/upload-artifact from 4.6.0 to 4.6.1 ([a37726b](https://github.com/nodejs/amaro/commit/a37726b317fe494e514bb04d358573a1161d1e51))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.4 to 2.0.5 ([c31db0e](https://github.com/nodejs/amaro/commit/c31db0e6f06a666afbe772db99a76973713e3ee8))
+* **deps:** bump github/codeql-action from 3.28.9 to 3.28.10 ([1230254](https://github.com/nodejs/amaro/commit/1230254436bd24f980f644f12d7ce8b10cbf1ca3))
+* **deps:** bump ossf/scorecard-action from 2.4.0 to 2.4.1 ([2855ed6](https://github.com/nodejs/amaro/commit/2855ed6f163bd979dd40844983bdac6403321d6e))
+* update swc to v1.10.18 ([ac490b2](https://github.com/nodejs/amaro/commit/ac490b291f71aedc1edd3b3759c3ecceb1eddf7f))
+
 ## [0.4.0](https://github.com/nodejs/amaro/compare/v0.3.2...v0.4.0) (2025-02-18)
 
 
