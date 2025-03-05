@@ -1,4 +1,4 @@
-import type { Options, TransformOutput } from "../lib/wasm";
+import type { Options, TransformOutput } from "../lib/wasm.js";
 import swc from "../lib/wasm.js";
 
 const DEFAULT_OPTIONS = {

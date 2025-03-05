@@ -1,6 +1,6 @@
-const { spawnPromisified, fixturesPath } = require("./util/util.js");
-const { test } = require("node:test");
-const { match, doesNotMatch, strictEqual } = require("node:assert");
+import { doesNotMatch, match, strictEqual } from "node:assert";
+import { test } from "node:test";
+import { fixturesPath, spawnPromisified } from "./util/util.js";
 
 test("should work as a loader", async () => {
 	const result = await spawnPromisified(process.execPath, [

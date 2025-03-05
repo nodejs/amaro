@@ -1,5 +1,5 @@
-const { basename, dirname, extname, join } = require("node:path");
-const { snapshot } = require("node:test");
+import { basename, dirname, extname, join } from "node:path";
+import { snapshot } from "node:test";
 
 snapshot.setResolveSnapshotPath(generateSnapshotPath);
 

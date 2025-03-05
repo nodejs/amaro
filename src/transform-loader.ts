@@ -1,5 +1,5 @@
 import type { LoadFnOutput, LoadHookContext } from "node:module";
-import type { Options } from "../lib/wasm";
+import type { Options } from "../lib/wasm.js";
 import { isSwcError, wrapAndReThrowSwcError } from "./errors.js";
 import { transformSync } from "./index.js";
 

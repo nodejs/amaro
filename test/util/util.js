@@ -1,7 +1,7 @@
-const { spawn } = require("node:child_process");
-const path = require("node:path");
+import { spawn } from "node:child_process";
+import path from "node:path";
 
-function spawnPromisified(...args) {
+export function spawnPromisified(...args) {
 	let stderr = "";
 	let stdout = "";
 
@@ -35,10 +35,8 @@ function spawnPromisified(...args) {
 	});
 }
 
-const fixturesDir = path.join(__dirname, "..", "fixtures");
+const fixturesDir = path.join(import.meta.dirname, "..", "fixtures");
 
-function fixturesPath(...args) {
+export function fixturesPath(...args) {
 	return path.join(fixturesDir, ...args);
 }
-
-module.exports = { spawnPromisified, fixturesPath };

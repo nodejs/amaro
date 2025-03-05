@@ -1,13 +1,13 @@
-const { test, snapshot } = require("node:test");
-const { transformSync } = require("../dist/index.js");
-const path = require("node:path");
-const assert = require("node:assert");
-const vm = require("node:vm");
+import assert from "node:assert";
+import path from "node:path";
+import { snapshot, test } from "node:test";
+import vm from "node:vm";
+import { transformSync } from "../dist/index.js";
 
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
 	return path.join(
-		__dirname,
+		import.meta.dirname,
 		"snapshots",
 		`${path.basename(testPath)}.snapshot`,
 	);
