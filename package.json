@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nodejs/amaro.git"
+		"url": "git+https://github.com/nodejs/amaro.git"
 	},
 	"scripts": {
 		"clean": "rimraf dist",
@@ -25,13 +25,15 @@
 		"build:wasm": "node tools/build-wasm.js",
 		"typecheck": "tsc --noEmit",
 		"test": "node --test --experimental-test-snapshots \"**/*.test.js\"",
-		"test:regenerate": "node --test --experimental-test-snapshots --test-update-snapshots \"**/*.test.js\""
+		"test:regenerate": "node --test --experimental-test-snapshots --test-update-snapshots \"**/*.test.js\"",
+		"lint:package": "publint"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
 		"@types/node": "^22.0.0",
 		"esbuild": "^0.23.0",
 		"esbuild-plugin-copy": "^2.1.1",
+		"publint": "^0.3.8",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.3"
 	},
