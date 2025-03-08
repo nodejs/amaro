@@ -215,6 +215,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "assume"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5d6f9ca11400f14ef046700eb6401c706c587871303453a5e7586efb82340c3d"
+
+[[package]]
 name = "ast_node"
 version = "3.0.0"
 dependencies = [
@@ -490,6 +496,12 @@ dependencies = [
  "quote",
  "syn 2.0.87",
 ]
+
+[[package]]
+name = "bytemuck"
+version = "1.22.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6b1fc10dbac614ebc03540c9dbd60e83887fda27794998c6528f1782047d540"
 
 [[package]]
 name = "byteorder"
@@ -2872,7 +2884,6 @@ dependencies = [
  "once_cell",
  "serde",
  "serde_json",
- "tokio",
 ]
 
 [[package]]
@@ -3817,15 +3828,14 @@ dependencies = [
 
 [[package]]
 name = "ring"
-version = "0.17.8"
+version = "0.17.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c17fa4cb658e3583423e915b9f3acc01cceaee1860e33d59ebae66adc3a2dc0d"
+checksum = "70ac5d832aa16abd7d1def883a8545280c20a60f523a370aa3a9617c2b8550ee"
 dependencies = [
  "cc",
  "cfg-if",
  "getrandom",
  "libc",
- "spin",
  "untrusted",
  "windows-sys 0.52.0",
 ]
@@ -4005,6 +4015,15 @@ name = "ryu-js"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4950d85bc52415f8432144c97c4791bd0c4f7954de32a7270ee9cccd3c22b12b"
+
+[[package]]
+name = "safe_arch"
+version = "0.7.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96b02de82ddbe1b636e6170c21be622223aea188ef2e139be0a5b219ec215323"
+dependencies = [
+ "bytemuck",
+]
 
 [[package]]
 name = "same-file"
@@ -4774,7 +4793,7 @@ dependencies = [
 
 [[package]]
 name = "swc_core"
-version = "16.3.0"
+version = "16.4.1"
 dependencies = [
  "anyhow",
  "binding_macros",
@@ -5286,6 +5305,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "swc_ecma_fast_parser"
+version = "1.0.0"
+dependencies = [
+ "assume",
+ "codspeed-criterion-compat",
+ "criterion",
+ "num-bigint",
+ "phf",
+ "pretty_assertions",
+ "serde_json",
+ "swc_atoms",
+ "swc_common",
+ "swc_ecma_ast",
+ "swc_ecma_visit",
+ "swc_malloc",
+ "testing",
+ "walkdir",
+ "wide",
+]
+
+[[package]]
 name = "swc_ecma_lints"
 version = "11.0.1"
 dependencies = [
@@ -5339,7 +5379,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_minifier"
-version = "12.0.2"
+version = "12.0.3"
 dependencies = [
  "ansi_term",
  "anyhow",
@@ -5384,7 +5424,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_parser"
-version = "10.0.0"
+version = "10.0.1"
 dependencies = [
  "codspeed-criterion-compat",
  "criterion",
@@ -5735,7 +5775,7 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_typescript"
-version = "12.0.0"
+version = "12.0.1"
 dependencies = [
  "codspeed-criterion-compat",
  "criterion",
@@ -5849,12 +5889,15 @@ dependencies = [
 
 [[package]]
 name = "swc_error_reporters"
-version = "9.0.0"
+version = "9.1.0"
 dependencies = [
  "anyhow",
  "miette",
  "once_cell",
  "parking_lot",
+ "serde",
+ "serde_derive",
+ "serde_json",
  "swc_common",
 ]
 
@@ -5907,7 +5950,7 @@ dependencies = [
 
 [[package]]
 name = "swc_fast_ts_strip"
-version = "12.0.1"
+version = "12.1.0"
 dependencies = [
  "anyhow",
  "codspeed-criterion-compat",
@@ -6060,28 +6103,6 @@ dependencies = [
  "swc_common",
  "swc_html_ast",
  "swc_visit",
-]
-
-[[package]]
-name = "swc_interop_babel"
-version = "0.1.0"
-dependencies = [
- "napi",
- "napi-derive",
- "serde",
- "serde_json",
- "swc_interop_nodejs",
-]
-
-[[package]]
-name = "swc_interop_nodejs"
-version = "0.1.0"
-dependencies = [
- "napi",
- "serde",
- "serde_json",
- "tokio",
- "tracing",
 ]
 
 [[package]]
@@ -6287,10 +6308,6 @@ dependencies = [
  "either",
  "new_debug_unreachable",
 ]
-
-[[package]]
-name = "swc_x_optimizer"
-version = "0.1.0"
 
 [[package]]
 name = "swc_xml"
@@ -7815,6 +7832,16 @@ name = "weezl"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9193164d4de03a926d909d3bc7c30543cecb35400c02114792c2cae20d5e2dbb"
+
+[[package]]
+name = "wide"
+version = "0.7.32"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41b5576b9a81633f3e8df296ce0063042a73507636cbe956c61133dd7034ab22"
+dependencies = [
+ "bytemuck",
+ "safe_arch",
+]
 
 [[package]]
 name = "winapi"
