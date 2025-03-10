@@ -24,6 +24,7 @@ resolver = "2"
   ascii                     = "1.1.0"
   assert_cmd                = "2.0.12"
   assert_fs                 = "1.0.13"
+  assume                    = "0.5.0"
   auto_impl                 = "1.2.0"
   backtrace                 = "0.3.61"
   base64                    = "0.22.1"
@@ -127,6 +128,7 @@ resolver = "2"
   wasm-bindgen-futures      = "0.4.41"
   wasmer                    = { version = "=5.0.5-rc1", default-features = false }
   wasmer-wasix              = { version = "0.35.0", default-features = false }
+  wide                      = "0.7.32"
 
 [profile.release]
 lto = true
