@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.2](https://github.com/nodejs/amaro/compare/v0.4.1...v0.4.2) (2025-03-10)
+
+
+### Miscellaneous
+
+* **deps:** bump docker/setup-buildx-action from 3.9.0 to 3.10.0 ([d44959c](https://github.com/nodejs/amaro/commit/d44959c66950965d91221c86fb69b9e7be14b7e9))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.5 to 2.0.6 ([0d89338](https://github.com/nodejs/amaro/commit/0d893382e2b4791f088d97eeb8016a12151e8fc3))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.6 to 2.0.10 ([c2a1506](https://github.com/nodejs/amaro/commit/c2a150695ea7fa1670a3159336eb8cfc5783d47d))
+* **deps:** bump github/codeql-action from 3.28.10 to 3.28.11 ([05679c1](https://github.com/nodejs/amaro/commit/05679c18ecfc77c9b0b1cb21867a2d71533882d7))
+* **deps:** bump googleapis/release-please-action from 4.1.3 to 4.1.4 ([597a8e1](https://github.com/nodejs/amaro/commit/597a8e11d5080ea3c767347ad825f8518a7e1150))
+* **deps:** bump googleapis/release-please-action from 4.1.4 to 4.2.0 ([61dca14](https://github.com/nodejs/amaro/commit/61dca1481bc56f9a13ab6e0d81e206ffa4b0e7be))
+
 ## [0.4.1](https://github.com/nodejs/amaro/compare/v0.4.0...v0.4.1) (2025-02-28)
 
 
