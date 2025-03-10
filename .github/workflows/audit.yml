@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: EmbarkStudios/cargo-deny-action@0484eedcba649433ebd03d9b7c9c002746bbc4b9 # v2.0.6
+      - uses: EmbarkStudios/cargo-deny-action@4de59db63a066737e557c2c4dd3d1f70206de781 # v2.0.10
         with:
           manifest-path: "deps/swc/bindings/binding_typescript_wasm/Cargo.toml"
 
