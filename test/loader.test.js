@@ -15,7 +15,7 @@ test("should work as a loader", async () => {
 	strictEqual(result.code, 0);
 });
 
-test("should not work with enums", async () => {
+test("should not work with enums", async (t) => {
 	const result = await spawnPromisified(process.execPath, [
 		"--experimental-strip-types",
 		"--no-warnings",
@@ -95,14 +95,13 @@ test("should call nextLoader for non-typescript files for transform", async () =
 	strictEqual(result.code, 0);
 });
 
-test("should throw syntax error for invalid typescript", async () => {
+test("should throw syntax error for invalid typescript", async (t) => {
 	const result = await spawnPromisified(process.execPath, [
 		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("invalid-syntax.ts"),
 	]);
-
 	strictEqual(result.stdout, "");
 	match(result.stderr, /SyntaxError/);
 	match(result.stderr, /await isn't allowed in non-async function/);

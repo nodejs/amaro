@@ -1,3 +1,29 @@
+exports[`should have proper error code 1`] = `
+{
+  "code": "UnsupportedSyntax",
+  "message": "\`module\` keyword is not supported. Use \`namespace\` instead.",
+  "snippet": "   \\n        \\n     module F { export type x = number }\\n     ^^^^^^^^\\n        \\n",
+  "filename": "<anon>",
+  "startLine": 1,
+  "startColumn": 0,
+  "endLine": 1,
+  "endColumn": 8
+}
+`;
+
+exports[`should have proper error code 2`] = `
+{
+  "code": "InvalidSyntax",
+  "message": "'const' declarations must be initialized",
+  "snippet": "   \\n        \\n     const foo;\\n           ^^^\\n        \\n",
+  "filename": "<anon>",
+  "startLine": 1,
+  "startColumn": 6,
+  "endLine": 1,
+  "endColumn": 9
+}
+`;
+
 exports[`should not polyfill using Symbol.Dispose 1`] = `
 "using r = 0;\\n"
 `;
