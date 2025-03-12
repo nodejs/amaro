@@ -260,3 +260,10 @@ test("should throw on non erasable namespace/module", (t) => {
 		assert.throws(() => transformSync(input), { code: "UnsupportedSyntax" });
 	}
 });
+
+test("should perform type stripping on nested generics", (t) => {
+	const { code } = transformSync(
+		"const promiseWrapper = new Wrapper<<T>(x: T) => Promise<T>>(Promise.resolve.bind(Promise));",
+	);
+	t.assert.snapshot(code);
+});
