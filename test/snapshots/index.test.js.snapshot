@@ -14,14 +14,6 @@ exports[`erasable namespaces and modules should be supported 4`] = `
 "                                        "
 `;
 
-exports[`erasable namespaces and modules should be supported 5`] = `
-"                                        "
-`;
-
-exports[`erasable namespaces and modules should be supported 6`] = `
-"                                   "
-`;
-
 exports[`should handle User type and isAdult function 1`] = `
 "\\n                 \\n                   \\n                  \\n      \\n\\n    function isAdult(user      )          {\\n      return user.age >= 18;\\n    }\\n  "
 `;
@@ -48,6 +40,10 @@ exports[`should not throw on yield new line when stripped 1`] = `
 
 exports[`should perform type stripping 1`] = `
 "const foo         = 'bar';"
+`;
+
+exports[`should perform type stripping on nested generics 1`] = `
+"const promiseWrapper = new Wrapper                         (Promise.resolve.bind(Promise));"
 `;
 
 exports[`should strip type annotations from arrow functions 1`] = `
