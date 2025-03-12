@@ -326,6 +326,7 @@ test("should have proper error code", (t) => {
 			mode: "transform",
 		});
 	} catch (error) {
+		t.assert.snapshot(error);
 		assert.strictEqual(error.code, "UnsupportedSyntax");
 	}
 });
@@ -337,6 +338,7 @@ test("should have proper error code", (t) => {
 			mode: "transform",
 		});
 	} catch (error) {
+		t.assert.snapshot(error);
 		assert.strictEqual(error.code, "InvalidSyntax");
 	}
 });
