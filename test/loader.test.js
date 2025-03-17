@@ -102,7 +102,6 @@ test("should throw syntax error for invalid typescript", async () => {
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("invalid-syntax.ts"),
 	]);
-
 	strictEqual(result.stdout, "");
 	match(result.stderr, /SyntaxError/);
 	match(result.stderr, /await isn't allowed in non-async function/);
