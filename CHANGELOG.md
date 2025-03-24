@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.1](https://github.com/nodejs/amaro/compare/v0.5.0...v0.5.1) (2025-03-24)
+
+
+### Miscellaneous
+
+* **deps:** bump actions/upload-artifact from 4.6.1 to 4.6.2 ([fab71f5](https://github.com/nodejs/amaro/commit/fab71f5f936857e39d0aaeb4b917d4435d5fc718))
+* **deps:** bump github/codeql-action from 3.28.11 to 3.28.12 ([06ead41](https://github.com/nodejs/amaro/commit/06ead4152d1d012787fc9279e260029a5294dcb1))
+
 ## [0.5.0](https://github.com/nodejs/amaro/compare/v0.4.1...v0.5.0) (2025-03-23)
 
 
