@@ -2,7 +2,7 @@ exports[`should have proper error code 1`] = `
 {
   "code": "UnsupportedSyntax",
   "message": "\`module\` keyword is not supported. Use \`namespace\` instead.",
-  "snippet": "   \\n        \\n     module F { export type x = number }\\n     ^^^^^^^^\\n        \\n",
+  "snippet": "module F { export type x = number }\\n^^^^^^^^\\n",
   "filename": "<anon>",
   "startLine": 1,
   "startColumn": 0,
@@ -15,7 +15,7 @@ exports[`should have proper error code 2`] = `
 {
   "code": "InvalidSyntax",
   "message": "'const' declarations must be initialized",
-  "snippet": "   \\n        \\n     const foo;\\n           ^^^\\n        \\n",
+  "snippet": "const foo;\\n      ^^^\\n",
   "filename": "<anon>",
   "startLine": 1,
   "startColumn": 6,

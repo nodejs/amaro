@@ -16,7 +16,7 @@ export function isSwcError(error: unknown): error is SwcError {
 
 // Since swc throw an object, we need to wrap it in a proper error
 export function wrapAndReThrowSwcError(error: SwcError): never {
-	const errorHints = `${error.filename}:${error.startLine}${error.snippet}`;
+	const errorHints = `${error.filename}:${error.startLine}\n${error.snippet}\n`;
 	switch (error.code) {
 		case "UnsupportedSyntax": {
 			const unsupportedSyntaxError = new Error(error.message);
