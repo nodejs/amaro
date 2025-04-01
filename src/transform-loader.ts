@@ -1,4 +1,5 @@
 import type { LoadFnOutput, LoadHookContext } from "node:module";
+import { fileURLToPath } from "node:url";
 import type { Options } from "../lib/wasm";
 import { isSwcError, wrapAndReThrowSwcError } from "./errors.js";
 import { transformSync } from "./index.js";
@@ -25,7 +26,7 @@ export async function load(
 			const { code, map } = transformSync(source!.toString(), {
 				mode: "transform",
 				sourceMap: true,
-				filename: url,
+				filename: fileURLToPath(url),
 			} as Options);
 
 			let output = code;
