@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.5.1](https://github.com/nodejs/amaro/compare/v0.5.0...v0.5.1) (2025-04-01)
+
+
+### Bug Fixes
+
+* use correct path in error message ([78f9192](https://github.com/nodejs/amaro/commit/78f9192d10ce2a7015b8348ab685a5a365345d70))
+
+
+### Core
+
+* update test for lateset swc ([722f8ba](https://github.com/nodejs/amaro/commit/722f8ba63caba00d2764420db0d5362a528519e1))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.11.13 ([a483bef](https://github.com/nodejs/amaro/commit/a483befbafe299fcabd61963e19f04ff8f29b1d6))
+* build wasm from swc v1.11.15 ([a1478a5](https://github.com/nodejs/amaro/commit/a1478a5b571ab2ff370477ca5af2aea4565d3277))
+* create CODEOWNERS file ([0fb76e8](https://github.com/nodejs/amaro/commit/0fb76e8e89cf692f0224a5f304be094e1236921f))
+* **deps:** bump actions/upload-artifact from 4.6.1 to 4.6.2 ([fab71f5](https://github.com/nodejs/amaro/commit/fab71f5f936857e39d0aaeb4b917d4435d5fc718))
+* **deps:** bump biomejs/setup-biome from 2.3.0 to 2.5.0 ([b56fa04](https://github.com/nodejs/amaro/commit/b56fa049cf7d6605302ed003860064e1a9c99fa9))
+* **deps:** bump github/codeql-action from 3.28.11 to 3.28.12 ([06ead41](https://github.com/nodejs/amaro/commit/06ead4152d1d012787fc9279e260029a5294dcb1))
+* **deps:** bump github/codeql-action from 3.28.12 to 3.28.13 ([e51cb7f](https://github.com/nodejs/amaro/commit/e51cb7fbe5fec1ada483ad29cbcebe93d3aff6d8))
+* update swc to v1.11.13 ([70b71c3](https://github.com/nodejs/amaro/commit/70b71c3721d76b36b9fff308cd0ec8daa43903bb))
+* update swc to v1.11.15 ([29d4c2d](https://github.com/nodejs/amaro/commit/29d4c2dc63ac9c69f072471a101cf77d823b3677))
+
 ## [0.5.0](https://github.com/nodejs/amaro/compare/v0.4.1...v0.5.0) (2025-03-23)
 
 
