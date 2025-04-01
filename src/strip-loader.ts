@@ -1,4 +1,5 @@
 import type { LoadFnOutput, LoadHookContext } from "node:module";
+import { fileURLToPath } from "node:url";
 import { isSwcError, wrapAndReThrowSwcError } from "./errors.js";
 import { transformSync } from "./index.js";
 
@@ -22,6 +23,7 @@ export async function load(
 			// biome-ignore lint/style/noNonNullAssertion: If module exists, it will have a source
 			const { code } = transformSync(source!.toString(), {
 				mode: "strip-only",
+				filename: fileURLToPath(url),
 			});
 			return {
 				format: format.replace("-typescript", ""),
