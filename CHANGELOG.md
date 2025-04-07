@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.2](https://github.com/nodejs/amaro/compare/v0.5.1...v0.5.2) (2025-04-07)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.11.16 ([8c04615](https://github.com/nodejs/amaro/commit/8c04615b3c4969f82582c628b4392dced8fb37e2))
+* **deps:** bump step-security/harden-runner from 2.11.0 to 2.11.1 ([c880281](https://github.com/nodejs/amaro/commit/c880281bbe98bbae5cfe50bde57a5dd882552e16))
+* update swc to v1.11.16 ([744fd41](https://github.com/nodejs/amaro/commit/744fd41c509448275bfb37a4e7647a8f7c4a102c))
+
 ## [0.5.1](https://github.com/nodejs/amaro/compare/v0.5.0...v0.5.1) (2025-04-01)
 
 
