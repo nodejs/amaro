@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.5.2](https://github.com/nodejs/amaro/compare/v0.5.1...v0.5.2) (2025-04-14)
+
+
+### Core
+
+* check deeply nested expression oob ([317a736](https://github.com/nodejs/amaro/commit/317a736593ec14496744fd279f241316d486b6cf))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.11.16 ([8c04615](https://github.com/nodejs/amaro/commit/8c04615b3c4969f82582c628b4392dced8fb37e2))
+* build wasm from swc v1.11.20 ([d53b148](https://github.com/nodejs/amaro/commit/d53b1480f669a20fe37a1bac36580c2ae7192b39))
+* build wasm from swc v1.11.21 ([e2d86e8](https://github.com/nodejs/amaro/commit/e2d86e83ce2a170ff349081d3a34b7e01ec3b945))
+* **deps:** bump actions/setup-node from 4.3.0 to 4.4.0 ([12e149b](https://github.com/nodejs/amaro/commit/12e149b53385e9f7301acc9d3d68b25cb6f44bc5))
+* **deps:** bump github/codeql-action from 3.28.13 to 3.28.15 ([460fa7e](https://github.com/nodejs/amaro/commit/460fa7e06b1b78c0d231a6e23dc71fe0bf65584d))
+* **deps:** bump step-security/harden-runner from 2.11.0 to 2.11.1 ([c880281](https://github.com/nodejs/amaro/commit/c880281bbe98bbae5cfe50bde57a5dd882552e16))
+* update swc to v1.11.16 ([744fd41](https://github.com/nodejs/amaro/commit/744fd41c509448275bfb37a4e7647a8f7c4a102c))
+* update swc to v1.11.20 ([e9f2c78](https://github.com/nodejs/amaro/commit/e9f2c784836d5d508ab2b979cfdec5bd2eea20bd))
+* update swc to v1.11.21 ([789f5b7](https://github.com/nodejs/amaro/commit/789f5b77627552585bb066bb5e1aa8fabf98866f))
+
 ## [0.5.1](https://github.com/nodejs/amaro/compare/v0.5.0...v0.5.1) (2025-04-01)
 
 
