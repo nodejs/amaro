@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.3](https://github.com/nodejs/amaro/compare/v0.5.2...v0.5.3) (2025-05-05)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.11.22 ([843e731](https://github.com/nodejs/amaro/commit/843e73114e12c2255f0b877cf3e8a1db5fcf6071))
+* build wasm from swc v1.11.24 ([b1a6aba](https://github.com/nodejs/amaro/commit/b1a6aba3cbeeda3de40f62b9db6dae748a83e2eb))
+* **deps:** bump github/codeql-action from 3.28.15 to 3.28.16 ([040c03c](https://github.com/nodejs/amaro/commit/040c03c25b9042d52f6688c22cc74261a940f00b))
+* **deps:** bump github/codeql-action from 3.28.16 to 3.28.17 ([44f47cf](https://github.com/nodejs/amaro/commit/44f47cf0904990ed0f1737f8f4410347ab742545))
+* **deps:** bump step-security/harden-runner from 2.11.1 to 2.12.0 ([11821f8](https://github.com/nodejs/amaro/commit/11821f837bbc7f2d057b3e2e90e483836da812f7))
+* update swc to v1.11.22 ([ba05a1d](https://github.com/nodejs/amaro/commit/ba05a1dbdf3f54fbbcbbc7cc0486557f21a581bf))
+* update swc to v1.11.24 ([67160ae](https://github.com/nodejs/amaro/commit/67160ae3bec164d2c86f2c0fae707dc437f9ce0c))
+
 ## [0.5.2](https://github.com/nodejs/amaro/compare/v0.5.1...v0.5.2) (2025-04-14)
 
 
