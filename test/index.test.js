@@ -275,3 +275,20 @@ if(!((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 }`;
 	assert.doesNotThrow(() => transformSync(source));
 });
+
+test("should handle advanced type-level constructs", (t) => {
+	const inputCode = `
+		type Fn = (x: string) => number;
+
+		type ReturnType<T> = T extends (...args: any) => infer R ? R : never;
+
+		type X = ReturnType<Fn>;
+
+		type Props = { id: string; name: string };
+		type Keys = keyof Props;
+
+		type A = typeof Math;
+	`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+});
