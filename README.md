@@ -51,7 +51,7 @@ node --experimental-transform-types --import="amaro/transform" file.ts
 
 Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a `node_modules` path.
 
-### Monorepo development
+### Monorepo usage
 
 Amaro makes working in monorepos smoother by removing the need to rebuild internal packages during development. When used with the [`--conditions`](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) flag, you can reference TypeScript source files directly in exports:
 
@@ -72,7 +72,7 @@ Then run your app with:
 node --watch --import="amaro/strip" --conditions=typescript ./src/index.ts
 ```
 
-This setup allows Node.js to load TypeScript files from linked packages without a build step. Changes to any package are picked up immediately, speeding up nd simplifying local development in monorepos.
+This setup allows Node.js to load TypeScript files from linked packages without a build step. Changes to any package are picked up immediately, speeding up and simplifying local development in monorepos.
 
 ### TypeScript Version
 
