@@ -1,10 +1,11 @@
 # Amaro
 
 Amaro is a wrapper around `@swc/wasm-typescript`, a WebAssembly port of the SWC TypeScript parser.
-It's currently used as an internal in Node.js for [Type Stripping](https://github.com/nodejs/loaders/issues/208), but in the future it will be possible to be upgraded separately by users.
-The main goal of this package is to provide a stable API for TypeScript parser, which is unstable and subject to change.
+It's used as an internal in Node.js for [Type Stripping](https://nodejs.org/api/typescript.html#type-stripping) but can also be used as a standalone package.
 
 > Amaro means "bitter" in Italian. It's a reference to [Mount Amaro](https://en.wikipedia.org/wiki/Monte_Amaro_(Abruzzo)) on whose slopes this package was conceived.
+
+This package provides a stable API for the TypeScript parser and allows users to upgrade to the latest version of TypeScript transpiler indipendently from the one used internally in Node.js.
 
 ## How to Install
 
@@ -31,20 +32,16 @@ It is possible to use Amaro as an external loader to execute TypeScript files.
 This allows the installed Amaro to override the Amaro version used by Node.js.
 In order to use Amaro as an external loader, type stripping needs to be enabled.
 
-```bash
-node --experimental-strip-types --import="amaro/register" script.ts
-```
-
-Or with the alias:
+In node v23 and later you can omit the `--experimental-strip-types` flag, as it is enabled by default.
 
 ```bash
-node --experimental-strip-types --import="amaro/strip" script.ts
+node --experimental-strip-types --import="amaro/strip" file.ts
 ```
 
 Enabling TypeScript feature transformation:
 
 ```bash
-node --experimental-transform-types --import="amaro/transform" script.ts
+node --experimental-transform-types --import="amaro/transform" file.ts
 ```
 
 > Note that the "amaro/transform" loader should be used with `--experimental-transform-types` flag, or
@@ -52,11 +49,12 @@ node --experimental-transform-types --import="amaro/transform" script.ts
 
 #### Type stripping in dependencies
 
-Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a node_modules path. When used with the [`--conditions`](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) flag, it is very useful in development, specifically in monorepos.
+Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a `node_modules` path.
 
-> This capability addresses a common pain point in monorepo development where changes to internal packages typically require rebuilding before they can be tested in dependent applications. Traditional workflows force developers to either run watch processes for each package or manually rebuild after every change, creating friction and slowing down the development cycle. By enabling direct TypeScript processing in dependencies, Amaro eliminates these intermediate build steps and allows for seamless development across package boundaries.
+### Monorepo development
 
-Adding a reference to TypeScript source files in the exports field of the `package.json` file of an internal package:
+Amaro makes working in monorepos smoother by removing the need to rebuild internal packages during development. When used with the [`--conditions`](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) flag, you can reference TypeScript source files directly in exports:
+
 ```json
 "exports": {
   ".": {
@@ -67,10 +65,14 @@ Adding a reference to TypeScript source files in the exports field of the `packa
  }
 }
 ```
-and running the applications using the Node.js' watch mode with `--conditions` set as in
-`node --watch --import="amaro/register" --conditions=typescript ./src/index.ts`
 
-allows the loader to automatically resolve and process TypeScript files from linked packages without requiring a build step. Whenever a source code change occurs in the app or an internal package, the Node.js process will restart and reload the updated TypeScript code directly, enabling rapid development iterations across the entire monorepo.
+Then run your app with:
+
+```bash
+node --watch --import="amaro/strip" --conditions=typescript ./src/index.ts
+```
+
+This setup allows Node.js to load TypeScript files from linked packages without a build step. Changes to any package are picked up immediately, speeding up nd simplifying local development in monorepos.
 
 ### TypeScript Version
 
