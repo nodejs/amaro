@@ -51,9 +51,12 @@ node --experimental-transform-types --import="amaro/transform" script.ts
 > at least with `--enable-source-maps` flag, to preserve the original source maps.
 
 #### Type stripping in dependencies
-Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest-v24.x/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a node_modules path. When used with the [`--conditions`](https://nodejs.org/docs/latest-v24.x/api/cli.html#-c-condition---conditionscondition) flag, it is very useful in development, specifically in monorepos.
 
-Adding a reference to TypeScript source files in the exports field of a package
+Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a node_modules path. When used with the [`--conditions`](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) flag, it is very useful in development, specifically in monorepos.
+
+> This capability addresses a common pain point in monorepo development where changes to internal packages typically require rebuilding before they can be tested in dependent applications. Traditional workflows force developers to either run watch processes for each package or manually rebuild after every change, creating friction and slowing down the development cycle. By enabling direct TypeScript processing in dependencies, Amaro eliminates these intermediate build steps and allows for seamless development across package boundaries.
+
+Adding a reference to TypeScript source files in the exports field of the `package.json` file of an internal package:
 ```json
 "exports": {
   ".": {
