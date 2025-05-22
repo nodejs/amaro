@@ -50,6 +50,25 @@ node --experimental-transform-types --import="amaro/transform" script.ts
 > Note that the "amaro/transform" loader should be used with `--experimental-transform-types` flag, or
 > at least with `--enable-source-maps` flag, to preserve the original source maps.
 
+#### Type stripping in dependencies
+Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest-v24.x/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a node_modules path. When used with the [`--conditions`](https://nodejs.org/docs/latest-v24.x/api/cli.html#-c-condition---conditionscondition) flag, it is very useful in development, specifically in monorepos.
+
+Adding a reference to TypeScript source files in the exports field of a package
+```json
+"exports": {
+  ".": {
+    "typescript": "./src/index.ts",
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "import": "./dist/index.js"
+ }
+}
+```
+and running the applications using the Node.js' watch mode with `--conditions` set as in
+`node --watch --import="amaro/register" --conditions=typescript ./src/index.ts`
+
+allows the loader to automatically resolve and process TypeScript files from linked packages without requiring a build step. Whenever a source code change occurs in the app or an internal package, the Node.js process will restart and reload the updated TypeScript code directly, enabling rapid development iterations across the entire monorepo.
+
 ### TypeScript Version
 
 The supported TypeScript version is 5.8.
