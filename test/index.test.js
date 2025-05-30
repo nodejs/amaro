@@ -292,3 +292,14 @@ test("should handle advanced type-level constructs", (t) => {
 	const { code } = transformSync(inputCode);
 	t.assert.snapshot(code);
 });
+
+test("should strip 'satisfies' expressions", (t) => {
+	const inputCode = `
+		const user = {
+			name: "Alice",
+			age: 30,
+		} satisfies { name: string, age: number };
+	`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+});
