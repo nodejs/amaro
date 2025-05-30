@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.4](https://github.com/nodejs/amaro/compare/v0.5.3...v0.5.4) (2025-05-30)
+
+
+### Core
+
+* add snapshot for advanced type-level constructs (infer, keyof, typeof) ([21e1cb2](https://github.com/nodejs/amaro/commit/21e1cb248d249eba879ba129e2a2bdcffa4eb389))
+* add snapshot for satisfies expressions ([40a7cc9](https://github.com/nodejs/amaro/commit/40a7cc9137eb6636b6d775d87b1d9cf8a6473e99))
+
+
+### Miscellaneous
+
+* adds a note about monorepo workflows ([45646df](https://github.com/nodejs/amaro/commit/45646df6119ef633a96d587c1757d2b697a219da))
+* **deps:** bump github/codeql-action from 3.28.17 to 3.28.18 ([3f23676](https://github.com/nodejs/amaro/commit/3f236762dbb1063d0d51554003aa7e63d6858762))
+* fix typos in the documentation ([2dbcf48](https://github.com/nodejs/amaro/commit/2dbcf489c56128611e213689e947115ee576050d))
+* improve docs ([7503d5d](https://github.com/nodejs/amaro/commit/7503d5d07c12d05d25b60ec9c54a0d50d3ac1896))
+* update README.md to include a paragraph about type stripping in dependencies ([cd8faad](https://github.com/nodejs/amaro/commit/cd8faad7262bd3f07e0069e496e65e9cec5a8957))
+
 ## [0.5.3](https://github.com/nodejs/amaro/compare/v0.5.2...v0.5.3) (2025-05-05)
 
 
