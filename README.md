@@ -5,7 +5,7 @@ It's used as an internal in Node.js for [Type Stripping](https://nodejs.org/api/
 
 > Amaro means "bitter" in Italian. It's a reference to [Mount Amaro](https://en.wikipedia.org/wiki/Monte_Amaro_(Abruzzo)) on whose slopes this package was conceived.
 
-This package provides a stable API for the TypeScript parser and allows users to upgrade to the latest version of TypeScript transpiler indipendently from the one used internally in Node.js.
+This package provides a stable API for the TypeScript parser and allows users to upgrade to the latest version of TypeScript transpiler independently from the one used internally in Node.js.
 
 ## How to Install
 
