@@ -57,7 +57,7 @@ exports[`should perform transformation with source maps no filename 1`] = `
 `;
 
 exports[`should perform transformation with source maps no filename 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\",\\"ignoreList\\":[0]}"
 `;
 
 exports[`should perform transformation with source maps with uncommon chars 1`] = `
