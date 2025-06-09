@@ -37,7 +37,6 @@
 	},
 	"exports": {
 		".": "./dist/index.js",
-		"./register": "./dist/register-strip.mjs",
 		"./strip": "./dist/register-strip.mjs",
 		"./transform": "./dist/register-transform.mjs"
 	},
