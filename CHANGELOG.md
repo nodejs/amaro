@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.0.0](https://github.com/nodejs/amaro/compare/v0.5.3...v1.0.0) (2025-06-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* The amaro/register loader has been removed.
+
+### Bug Fixes
+
+* update snapshots ([ffd272c](https://github.com/nodejs/amaro/commit/ffd272cb715cbc1bab61de25e1a990797ebd392d))
+
+
+### Core
+
+* add snapshot for advanced type-level constructs (infer, keyof, typeof) ([21e1cb2](https://github.com/nodejs/amaro/commit/21e1cb248d249eba879ba129e2a2bdcffa4eb389))
+* add snapshot for satisfies expressions ([40a7cc9](https://github.com/nodejs/amaro/commit/40a7cc9137eb6636b6d775d87b1d9cf8a6473e99))
+
+
+### Miscellaneous
+
+* adds a note about monorepo workflows ([45646df](https://github.com/nodejs/amaro/commit/45646df6119ef633a96d587c1757d2b697a219da))
+* build wasm from swc v1.11.31 ([743f038](https://github.com/nodejs/amaro/commit/743f0383787d08c0af42466c96bc3b59336e219f))
+* **deps:** bump biomejs/setup-biome from 2.5.0 to 2.5.1 ([9e85b83](https://github.com/nodejs/amaro/commit/9e85b83a1cf961457a4c717f4946cf5427c9b28a))
+* **deps:** bump github/codeql-action from 3.28.17 to 3.28.18 ([3f23676](https://github.com/nodejs/amaro/commit/3f236762dbb1063d0d51554003aa7e63d6858762))
+* **deps:** bump github/codeql-action from 3.28.18 to 3.28.19 ([8a3e2e7](https://github.com/nodejs/amaro/commit/8a3e2e78e51f20f93c96bac93035f750b9191026))
+* **deps:** bump ossf/scorecard-action from 2.4.1 to 2.4.2 ([928172c](https://github.com/nodejs/amaro/commit/928172c7e09314d84af8eeea5ea57c3b23c07fb5))
+* fix spelling ([d74400e](https://github.com/nodejs/amaro/commit/d74400eece93876e6da3ad174e0c3b105b32c72f))
+* fix typos in the documentation ([2dbcf48](https://github.com/nodejs/amaro/commit/2dbcf489c56128611e213689e947115ee576050d))
+* improve docs ([7503d5d](https://github.com/nodejs/amaro/commit/7503d5d07c12d05d25b60ec9c54a0d50d3ac1896))
+* remove amaro/register ([125cf70](https://github.com/nodejs/amaro/commit/125cf70c0f019148c17b36b6fd70b51ef774b558))
+* update README.md to include a paragraph about type stripping in dependencies ([cd8faad](https://github.com/nodejs/amaro/commit/cd8faad7262bd3f07e0069e496e65e9cec5a8957))
+* update swc to v1.11.31 ([7413f85](https://github.com/nodejs/amaro/commit/7413f855247dbb4ff18862cf222d579ba1f02cff))
+* update test range to v24 ([2481905](https://github.com/nodejs/amaro/commit/2481905d55a9ea51b240186389bf74276a041ae0))
+
 ## [0.5.3](https://github.com/nodejs/amaro/compare/v0.5.2...v0.5.3) (2025-05-05)
 
 
