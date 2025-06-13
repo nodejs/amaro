@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/nodejs/amaro/compare/v1.0.0...v1.0.1) (2025-06-13)
+
+
+### Miscellaneous
+
+* add package.json keywords ([be513d3](https://github.com/nodejs/amaro/commit/be513d36fb3eef0f3e6a07446f00753a13d4dfb2))
+
 ## [1.0.0](https://github.com/nodejs/amaro/compare/v0.5.3...v1.0.0) (2025-06-09)
 
 
