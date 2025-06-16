@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0](https://github.com/nodejs/amaro/compare/v1.0.0...v1.1.0) (2025-06-16)
+
+
+### Features
+
+* include types in published package ([afc687c](https://github.com/nodejs/amaro/commit/afc687c2471047a3673e5b3c6efc4e6e56fadbf0))
+
+
+### Miscellaneous
+
+* add package.json keywords ([be513d3](https://github.com/nodejs/amaro/commit/be513d36fb3eef0f3e6a07446f00753a13d4dfb2))
+* build wasm from swc v1.12.1 ([732c564](https://github.com/nodejs/amaro/commit/732c5641ff080cd48792ff04639392cc4fa139e6))
+* **deps:** bump github/codeql-action from 3.28.19 to 3.29.0 ([91b8711](https://github.com/nodejs/amaro/commit/91b8711631ec0acf86bc231878970ebf180b2080))
+* **deps:** bump step-security/harden-runner from 2.12.0 to 2.12.1 ([d4194bc](https://github.com/nodejs/amaro/commit/d4194bc2e0a77c84c2f2dd5a08ed106841a7f481))
+* update swc to v1.12.1 ([a429e15](https://github.com/nodejs/amaro/commit/a429e1558a6be5f3f9ca4a78c3a7fae19d79f97b))
+
 ## [1.0.0](https://github.com/nodejs/amaro/compare/v0.5.3...v1.0.0) (2025-06-09)
 
 
