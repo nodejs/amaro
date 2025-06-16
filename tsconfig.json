@@ -4,7 +4,9 @@
 		"baseUrl": ".",
 		"esModuleInterop": true,
 		"moduleResolution": "NodeNext",
-		"noEmit": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"outDir": "dist",
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["ES2023"],
 		"module": "NodeNext",
@@ -14,5 +16,5 @@
 		"strict": true,
 		"target": "ES2022"
 	},
-	"exclude": ["test/fixtures/**/*"]
+	"exclude": ["test/fixtures/**/*", "dist"]
 }
