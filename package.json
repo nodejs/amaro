@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"type": "commonjs",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"homepage": "https://github.com/nodejs/amaro#readme",
 	"bugs": {
 		"url": "https://github.com/nodejs/amaro/issues"
@@ -27,7 +28,7 @@
 		"ci:fix": "biome check --write",
 		"prepack": "npm run build",
 		"postpack": "npm run clean",
-		"build": "node esbuild.config.mjs",
+		"build": "node esbuild.config.mjs && tsc --noCheck",
 		"build:wasm": "node tools/build-wasm.js",
 		"typecheck": "tsc --noEmit",
 		"test": "node --test \"**/*.test.js\"",
@@ -48,6 +49,7 @@
 	},
 	"files": [
 		"dist",
+		"lib/**/*.d.ts",
 		"LICENSE.md"
 	],
 	"engines": {
