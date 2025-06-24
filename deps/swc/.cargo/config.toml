@@ -48,4 +48,5 @@ rustflags = ["-C", "target-feature=+crt-static", "-Zshare-generics=y"]
 linker = "rust-lld"
 
 [target.wasm32-unknown-unknown]
+
 rustflags = ["-Zshare-generics=y", "--cfg", 'getrandom_backend="wasm_js"']
