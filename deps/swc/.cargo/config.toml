@@ -40,3 +40,6 @@ rustflags = ["-C", "target-feature=+crt-static", "-Zshare-generics=y"]
 
 [target.aarch64-pc-windows-msvc]
 linker = "rust-lld"
+
+[target.wasm32-unknown-unknown]
+rustflags = ["-Zshare-generics=y", "--cfg", 'getrandom_backend="wasm_js"']
