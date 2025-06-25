@@ -1,0 +1,3 @@
+# Override swc's config for alpine linux build image.
+[target.aarch64-unknown-linux-musl]
+linker = "aarch64-alpine-linux-musl-gcc"
