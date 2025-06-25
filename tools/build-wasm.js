@@ -21,11 +21,7 @@ if (!platform && !process.argv[2]) {
 }
 
 if (process.argv[2] !== "--in-container") {
-	// we must map in a home directory since we might not run as a user that
-	// is defined in the container. Create it here.
-	const workdir = fs.mkdtempSync(path.join(os.tmpdir(), "amaro-build"));
-
-	// buile and execute the docker command to run the build
+	// build and execute the docker command to run the build
 	const args = [];
 	args.push("run");
 	args.push("--rm");
@@ -36,38 +32,27 @@ if (process.argv[2] !== "--in-container") {
 		args.push(`${process.getuid()}:${process.getegid()}`);
 	}
 	args.push("--mount");
-	args.push(
-		`type=bind,source=${ROOT}/deps/swc/bindings,target=/home/node/build/bindings`,
-	);
+	args.push(`type=bind,source=${ROOT}/deps,target=/home/node/build/deps`);
 	args.push("--mount");
 	args.push(`type=bind,source=${ROOT}/lib,target=/home/node/build/lib`);
 	args.push("--mount");
 	args.push(`type=bind,source=${ROOT}/tools,target=/home/node/build/tools`);
-	args.push("--mount");
-	args.push(`type=bind,source=${ROOT}/deps,target=/home/node/build/deps`);
-	args.push("--mount");
-	args.push(`type=bind,source=${workdir},target=/home/node/home`);
 	args.push("-t");
 	args.push(`${WASM_BUILDER_CONTAINER}`);
 	args.push("node");
 	args.push("./tools/build-wasm.js");
 	args.push("--in-container");
-	console.log(`> docker ${args}\n\n`);
+	console.log(`> docker ${args.join(" ")}\n\n`);
 	execFileSync("docker", args, { stdio: "inherit" });
 
-	// clean up the temporary working directory and then exit
-	fs.rmSync(workdir, { recursive: true });
 	process.exit(0);
 }
 
 execSync(
-	`cp -r /home/node/.rustup /home/node/home/.rustup && \
-         HOME=/home/node/home && \
-         rustc --version && \
-         cd bindings/binding_typescript_wasm && \ 
-         cargo install --locked wasm-pack && \
-         PATH=/home/node/home/.cargo/bin:$PATH && \
-         ./scripts/build.sh && \
-         cp -r pkg/* ../../lib`,
+	`rustc --version && \
+         cd deps/swc/bindings/binding_typescript_wasm && \
+         cargo install --locked wasm-pack wasm-bindgen-cli && \
+         ./scripts/build.sh -- --config ../../../../tools/config.toml && \
+         cp -r pkg/* ../../../../lib`,
 	{ stdio: "inherit" },
 );
