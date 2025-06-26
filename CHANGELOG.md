@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.1](https://github.com/nodejs/amaro/compare/v1.1.0...v1.1.1) (2025-06-26)
+
+
+### Bug Fixes
+
+* set home env docker image ([bd31e17](https://github.com/nodejs/amaro/commit/bd31e17d2449d09564ef5222b755c355526f0eb0))
+
+
+### Miscellaneous
+
+* add wasm build action ([d6fab7c](https://github.com/nodejs/amaro/commit/d6fab7c64dc6a85b1c47db4bd8bf25b083072fe1))
+* build wasm from swc v1.12.7 ([8265b58](https://github.com/nodejs/amaro/commit/8265b583c80dbd734931041f9a485c4787b0531e))
+* **deps:** bump docker/setup-buildx-action from 3.10.0 to 3.11.1 ([1950cbc](https://github.com/nodejs/amaro/commit/1950cbcfecda40f158755a645e7bb2acd1f21518))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.11 to 2.0.12 ([9f09b4c](https://github.com/nodejs/amaro/commit/9f09b4cf7497ca9657548956f3a561e6b2df26ef))
+* fix docker mount options ([a9e569f](https://github.com/nodejs/amaro/commit/a9e569feba9094949ba7d6d255d3d7b248f70774))
+* fix SWC Wasm build ([61e1114](https://github.com/nodejs/amaro/commit/61e11146a87f342561ca53fffd06764806b2bbfa))
+* update swc to v1.12.7 ([61725bb](https://github.com/nodejs/amaro/commit/61725bb40ca5c4dbc5ea28d63c945f116ef3a6a5))
+
 ## [1.1.0](https://github.com/nodejs/amaro/compare/v1.0.0...v1.1.0) (2025-06-16)
 
 
