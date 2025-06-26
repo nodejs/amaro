@@ -2,6 +2,9 @@ name: Build SWC and WASM
 
 on:
   pull_request:
+    paths:
+      - 'tools/*'
+      - 'deps/*'
 
 env:
     NODE_VERSION: lts/*
