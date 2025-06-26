@@ -22,6 +22,8 @@ if (!platform && !process.argv[2]) {
 
 if (process.argv[2] !== "--in-container") {
 	// build and execute the docker command to run the build
+	const workdir = fs.mkdtempSync(path.join(os.tmpdir(), "amaro-build"));
+
 	const args = [];
 	args.push("run");
 	args.push("--rm");
@@ -37,6 +39,8 @@ if (process.argv[2] !== "--in-container") {
 	args.push(`type=bind,source=${ROOT}/lib,target=/home/node/build/lib`);
 	args.push("--mount");
 	args.push(`type=bind,source=${ROOT}/tools,target=/home/node/build/tools`);
+	args.push("--mount");
+	args.push(`type=bind,source=${workdir},target=/home/node/home`);
 	args.push("-t");
 	args.push(`${WASM_BUILDER_CONTAINER}`);
 	args.push("node");
@@ -45,14 +49,21 @@ if (process.argv[2] !== "--in-container") {
 	console.log(`> docker ${args.join(" ")}\n\n`);
 	execFileSync("docker", args, { stdio: "inherit" });
 
+	// clean up the temporary working directory
+	fs.rmSync(workdir, { recursive: true });
 	process.exit(0);
 }
 
 execSync(
-	`rustc --version && \
-         cd deps/swc/bindings/binding_typescript_wasm && \
-         cargo install --locked wasm-pack wasm-bindgen-cli && \
-         ./scripts/build.sh -- --config ../../../../tools/config.toml && \
-         cp -r pkg/* ../../../../lib`,
-	{ stdio: "inherit" },
+	`cp -r /home/node/.rustup /home/node/home/.rustup && \
+     export HOME=/home/node/home && \
+     export PATH=/home/node/home/.cargo/bin:$PATH && \
+     rustc --version && \
+     cd deps/swc/bindings/binding_typescript_wasm && \
+     cargo install --locked wasm-pack wasm-bindgen-cli && \
+     ./scripts/build.sh -- --config ../../../../tools/config.toml && \
+     cp -r pkg/* ../../../../lib`,
+	{
+		stdio: "inherit",
+	},
 );
