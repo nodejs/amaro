@@ -1,0 +1,23 @@
+name: Build SWC and WASM
+
+on:
+  pull_request:
+
+env:
+    NODE_VERSION: lts/*
+
+jobs:
+  build-swc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
+
+      - name: Build WASM
+        run: node ./tools/build-wasm.js --dry-run

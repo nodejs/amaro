@@ -9,8 +9,11 @@ const path = require("node:path");
 
 const ROOT = resolve(__dirname, "../");
 
+// Either empty, "--dry-run", or "--in-container".
+const mode = process.argv[2];
+
 let platform = process.env.WASM_PLATFORM;
-if (!platform && !process.argv[2]) {
+if (!platform && mode !== "--in-container") {
 	platform = execFileSync("docker", [
 		"info",
 		"-f",
@@ -20,10 +23,12 @@ if (!platform && !process.argv[2]) {
 		.trim();
 }
 
-if (process.argv[2] !== "--in-container") {
-	// build and execute the docker command to run the build
+if (mode !== "--in-container") {
+	// we must map in a home directory since we might not run as a user that
+	// is defined in the container. Create it here.
 	const workdir = fs.mkdtempSync(path.join(os.tmpdir(), "amaro-build"));
 
+	// build and execute the docker command to run the build
 	const args = [];
 	args.push("run");
 	args.push("--rm");
@@ -35,8 +40,14 @@ if (process.argv[2] !== "--in-container") {
 	}
 	args.push("--mount");
 	args.push(`type=bind,source=${ROOT}/deps,target=/home/node/build/deps`);
-	args.push("--mount");
-	args.push(`type=bind,source=${ROOT}/lib,target=/home/node/build/lib`);
+	if (mode !== "--dry-run") {
+		args.push("--mount");
+		args.push(`type=bind,source=${ROOT}/lib,target=/home/node/build/lib`);
+	} else {
+		// In dry-run mode, generate the products in the temporary workdir.
+		args.push("--mount");
+		args.push(`type=bind,source=${workdir},target=/home/node/build/lib`);
+	}
 	args.push("--mount");
 	args.push(`type=bind,source=${ROOT}/tools,target=/home/node/build/tools`);
 	args.push("--mount");
