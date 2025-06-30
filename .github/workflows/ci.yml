@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Setup Biome CLI
-        uses: biomejs/setup-biome@a9763ed3d2388f5746f9dc3e1a55df7f4609bc89 # v2.5.1
+        uses: biomejs/setup-biome@454fa0d884737805f48d7dc236c1761a0ac3cc13 # v2.6.0
       - name: Run Biome
         run: biome ci
 
