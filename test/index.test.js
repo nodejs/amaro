@@ -303,3 +303,12 @@ test("should strip 'satisfies' expressions", (t) => {
 	const { code } = transformSync(inputCode);
 	t.assert.snapshot(code);
 });
+
+test("should preserve import/export type declarations", (t) => {
+	const inputCode = `
+		import type { SomeType } from "./types";
+		export type { SomeType };
+	`;
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+});
