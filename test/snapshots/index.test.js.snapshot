@@ -50,6 +50,10 @@ exports[`should perform type stripping on nested generics 1`] = `
 "const promiseWrapper = new Wrapper                         (Promise.resolve.bind(Promise));"
 `;
 
+exports[`should preserve import/export type declarations 1`] = `
+"\\n\\t\\t                                        \\n\\t\\t                         \\n\\t"
+`;
+
 exports[`should strip 'satisfies' expressions 1`] = `
 "\\n\\t\\tconst user = {\\n\\t\\t\\tname: \\"Alice\\",\\n\\t\\t\\tage: 30,\\n\\t\\t}                                        ;\\n\\t"
 `;
