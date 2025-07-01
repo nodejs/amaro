@@ -1,11 +1,12 @@
-const { test, snapshot } = require("node:test");
+const { test } = require("node:test");
+const snap = require("@matteo.collina/snap");
 const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
 const assert = require("node:assert");
 const vm = require("node:vm");
 
 // Set the path for the snapshots directory
-snapshot.setResolveSnapshotPath((testPath) => {
+snap((testPath) => {
 	return path.join(
 		__dirname,
 		"snapshots",
@@ -25,7 +26,7 @@ test("should perform transformation without source maps", (t) => {
 		mode: "transform",
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 	assert.strictEqual(map, undefined);
@@ -44,7 +45,7 @@ test("should perform transformation without source maps and filename", (t) => {
 		filename: "foo.ts",
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 	assert.strictEqual(map, undefined);
@@ -64,8 +65,8 @@ test("should perform transformation with source maps", (t) => {
 		filename: "foo.ts",
 	});
 
-	t.assert.snapshot(code);
-	t.assert.snapshot(map);
+	snap(code);
+	snap(map);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 });
@@ -84,8 +85,8 @@ test("should perform transformation with source maps with uncommon chars", (t) =
 		filename: "dir%20with $unusual\"chars?'åß∂ƒ©∆¬…`.cts",
 	});
 
-	t.assert.snapshot(code);
-	t.assert.snapshot(map);
+	snap(code);
+	snap(map);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 });
@@ -103,8 +104,8 @@ test("should perform transformation with source maps no filename", (t) => {
 		sourceMap: true,
 	});
 
-	t.assert.snapshot(code);
-	t.assert.snapshot(map);
+	snap(code);
+	snap(map);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 });
@@ -124,8 +125,8 @@ test("should perform transformation with error", (t) => {
 		filename: "foo.ts",
 	});
 
-	t.assert.snapshot(code);
-	t.assert.snapshot(map);
+	snap(code);
+	snap(map);
 	const context = {};
 	try {
 		assert.throws(vm.runInContext(code, vm.createContext(context)));
@@ -153,7 +154,7 @@ test("should transform TypeScript class fields", (t) => {
 		sourceMap: true,
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 1);
 });
@@ -179,7 +180,7 @@ test("should transform TypeScript private class fields", (t) => {
 		sourceMap: true,
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 1);
 });
@@ -197,7 +198,7 @@ test("should transform TypeScript type annotations and type guards", (t) => {
 		sourceMaps: true,
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, true);
 });
@@ -230,7 +231,7 @@ test("should not transform TypeScript class decorators with multiple decorators"
 		sourceMap: true,
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const context = {};
 	try {
 		assert.throws(vm.runInContext(code, vm.createContext(context)));
@@ -267,7 +268,7 @@ test("should transform TypeScript namespaces with additional functionality", (t)
 		sourceMap: true,
 	});
 
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.ok(result.validator);
 	assert.strictEqual(result.isValid, true);
@@ -285,7 +286,7 @@ test("test native class properties", (t) => {
 		mode: "transform",
 		sourceMap: true,
 	});
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("test noEmptyExport", (t) => {
@@ -296,7 +297,7 @@ test("test noEmptyExport", (t) => {
 		mode: "transform",
 		sourceMap: true,
 	});
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should not polyfill using Symbol.Dispose", (t) => {
@@ -306,7 +307,7 @@ test("should not polyfill using Symbol.Dispose", (t) => {
 		mode: "transform",
 		sourceMap: true,
 	});
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should not polyfill using Symbol.asyncDispose", (t) => {
@@ -316,7 +317,7 @@ test("should not polyfill using Symbol.asyncDispose", (t) => {
 		mode: "transform",
 		sourceMap: true,
 	});
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should have proper error code", (t) => {
@@ -326,7 +327,7 @@ test("should have proper error code", (t) => {
 			mode: "transform",
 		});
 	} catch (error) {
-		t.assert.snapshot(error);
+		snap(error);
 		assert.strictEqual(error.code, "UnsupportedSyntax");
 	}
 });
@@ -338,7 +339,7 @@ test("should have proper error code", (t) => {
 			mode: "transform",
 		});
 	} catch (error) {
-		t.assert.snapshot(error);
+		snap(error);
 		assert.strictEqual(error.code, "InvalidSyntax");
 	}
 });

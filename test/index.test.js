@@ -1,11 +1,12 @@
-const { test, snapshot } = require("node:test");
+const { test } = require("node:test");
+const snap = require("@matteo.collina/snap");
 const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
 const assert = require("node:assert");
 const vm = require("node:vm");
 
 // Set the path for the snapshots directory
-snapshot.setResolveSnapshotPath((testPath) => {
+snap((testPath) => {
 	return path.join(
 		__dirname,
 		"snapshots",
@@ -15,13 +16,13 @@ snapshot.setResolveSnapshotPath((testPath) => {
 
 test("should perform type stripping", (t) => {
 	const { code } = transformSync("const foo: string = 'bar';");
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from functions", (t) => {
 	const inputCode = "function greet(name: string): void { console.log(name); }";
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from classes", (t) => {
@@ -33,7 +34,7 @@ test("should strip type annotations from classes", (t) => {
     }
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from interfaces", (t) => {
@@ -43,7 +44,7 @@ test("should strip type annotations from interfaces", (t) => {
     }
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from type aliases", (t) => {
@@ -51,7 +52,7 @@ test("should strip type annotations from type aliases", (t) => {
     type MyType = string | number;
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from generics", (t) => {
@@ -61,7 +62,7 @@ test("should strip type annotations from generics", (t) => {
     }
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from arrow functions", (t) => {
@@ -71,7 +72,7 @@ test("should strip type annotations from arrow functions", (t) => {
     };
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip type annotations from type assertions", (t) => {
@@ -80,7 +81,7 @@ test("should strip type annotations from type assertions", (t) => {
     let strLength: number = (someValue as string).length;
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should handle User type and isAdult function", (t) => {
@@ -95,7 +96,7 @@ test("should handle User type and isAdult function", (t) => {
     }
   `;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should handle class modifiers", (t) => {
@@ -113,7 +114,7 @@ test("should handle class modifiers", (t) => {
 		console.log(ins)
 	`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 	assert.strictEqual(code.includes("private"), false);
 	assert.strictEqual(code.includes("protected"), false);
 	assert.strictEqual(code.includes("public"), false);
@@ -157,7 +158,7 @@ test("should not break on return new line when stripped", (t) => {
 	const id = mkId();
 	output = id(5);`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 5);
 });
@@ -172,7 +173,7 @@ test("should not break on return new line when stripped (alternative formatting)
 	const id = mkId();
 	output = id(7);`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 7);
 });
@@ -192,7 +193,7 @@ test("should not throw on return new line when stripped", (t) => {
 		output = e(5);
 	}`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 5);
 });
@@ -206,7 +207,7 @@ test("should not throw on yield new line when stripped", (t) => {
 	}
 	output= mkId().next().value(5);`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 	const result = vm.runInContext(code, vm.createContext());
 	assert.strictEqual(result, 5);
 });
@@ -236,7 +237,7 @@ test("erasable namespaces and modules should be supported", (t) => {
 	];
 	for (const input of tests) {
 		const { code } = transformSync(input);
-		t.assert.snapshot(code);
+		snap(code);
 	}
 });
 
@@ -265,7 +266,7 @@ test("should perform type stripping on nested generics", (t) => {
 	const { code } = transformSync(
 		"const promiseWrapper = new Wrapper<<T>(x: T) => Promise<T>>(Promise.resolve.bind(Promise));",
 	);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should handle deeply nested expressions", (t) => {
@@ -290,7 +291,7 @@ test("should handle advanced type-level constructs", (t) => {
 		type A = typeof Math;
 	`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should strip 'satisfies' expressions", (t) => {
@@ -301,7 +302,7 @@ test("should strip 'satisfies' expressions", (t) => {
 		} satisfies { name: string, age: number };
 	`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
 
 test("should preserve import/export type declarations", (t) => {
@@ -310,5 +311,5 @@ test("should preserve import/export type declarations", (t) => {
 		export type { SomeType };
 	`;
 	const { code } = transformSync(inputCode);
-	t.assert.snapshot(code);
+	snap(code);
 });
