@@ -49,3 +49,11 @@ await build({
 	platform: "node",
 	target: "node22",
 });
+
+await build({
+	entryPoints: ["src/ts-detect.ts"],
+	bundle: false,
+	outfile: "dist/ts-detect.js",
+	platform: "node",
+	target: "node22",
+});

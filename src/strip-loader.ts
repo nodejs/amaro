@@ -2,6 +2,7 @@ import type { LoadFnOutput, LoadHookContext } from "node:module";
 import { fileURLToPath } from "node:url";
 import { isSwcError, wrapAndReThrowSwcError } from "./errors.js";
 import { transformSync } from "./index.js";
+import { isTypeScript } from "./ts-detect.js";
 
 export async function load(
 	url: string,
@@ -11,8 +12,25 @@ export async function load(
 		context?: LoadHookContext,
 	) => LoadFnOutput | Promise<LoadFnOutput>,
 ) {
-	const { format } = context;
-	if (format?.endsWith("-typescript")) {
+	let format = context.format;
+	let source: string | undefined;
+
+	if (typeof format !== "string") {
+		const result = await nextLoad(url, { ...context, format: "module" });
+		source = result.source?.toString();
+		if (isTypeScript(url, source)) {
+			const { code } = transformSync(source!, {
+				mode: "strip-only",
+				filename: fileURLToPath(url),
+			});
+			return {
+				format: "module",
+				source: `${code}\n\n//# sourceURL=${url}`,
+			};
+		}
+		return result;
+	}
+	if (format.endsWith("-typescript")) {
 		// Use format 'module' so it returns the source as-is, without stripping the types.
 		// Format 'commonjs' would not return the source for historical reasons.
 		try {
