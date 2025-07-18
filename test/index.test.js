@@ -312,3 +312,17 @@ test("should preserve import/export type declarations", (t) => {
 	const { code } = transformSync(inputCode);
 	t.assert.snapshot(code);
 });
+
+test("should strip correctly private properties overload", (t) => {
+	const inputCode = `class Private {
+		#foo(bar: string): string;
+		#foo(bar: number): number;
+		#foo(bar: string | number): string | number;
+		#foo(bar: string | number): string | number {
+			return bar;
+		}
+	}`;
+
+	const { code } = transformSync(inputCode);
+	t.assert.snapshot(code);
+});
