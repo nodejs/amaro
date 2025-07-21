@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.1.1](https://github.com/nodejs/amaro/compare/v1.1.0...v1.1.1) (2025-07-21)
+
+
+### Bug Fixes
+
+* set home env docker image ([bd31e17](https://github.com/nodejs/amaro/commit/bd31e17d2449d09564ef5222b755c355526f0eb0))
+
+
+### Core
+
+* add snapshot for import/export type declarations ([1f6e083](https://github.com/nodejs/amaro/commit/1f6e0839d8262dc959f54832a40695ee4a115992))
+* strip private properties overload ([8b6498d](https://github.com/nodejs/amaro/commit/8b6498dac2ebef1d1103e25a0b86fbb4cfa3145f))
+
+
+### Miscellaneous
+
+* add wasm build action ([d6fab7c](https://github.com/nodejs/amaro/commit/d6fab7c64dc6a85b1c47db4bd8bf25b083072fe1))
+* build wasm from swc v1.12.11 ([f599c29](https://github.com/nodejs/amaro/commit/f599c29cedd6bcd91642d1c28dfe4893230439f9))
+* build wasm from swc v1.12.7 ([8265b58](https://github.com/nodejs/amaro/commit/8265b583c80dbd734931041f9a485c4787b0531e))
+* build wasm from swc v1.13.0 ([a6d74c3](https://github.com/nodejs/amaro/commit/a6d74c371a443faedbf7c4fc9e7e3004d31d29bc))
+* build wasm from swc v1.13.1 ([d5c30df](https://github.com/nodejs/amaro/commit/d5c30df3149e0716ab464f960aab812292503c04))
+* **deps:** bump biomejs/setup-biome from 2.5.1 to 2.6.0 ([1de4a38](https://github.com/nodejs/amaro/commit/1de4a383ce597a0280d80bc3bdfe1a152e939c3d))
+* **deps:** bump docker/setup-buildx-action from 3.10.0 to 3.11.1 ([1950cbc](https://github.com/nodejs/amaro/commit/1950cbcfecda40f158755a645e7bb2acd1f21518))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.11 to 2.0.12 ([9f09b4c](https://github.com/nodejs/amaro/commit/9f09b4cf7497ca9657548956f3a561e6b2df26ef))
+* **deps:** bump github/codeql-action from 3.29.0 to 3.29.2 ([b28f07f](https://github.com/nodejs/amaro/commit/b28f07fac986e2d0aa248bfc1a4abc7673db0383))
+* **deps:** bump step-security/harden-runner from 2.12.1 to 2.12.2 ([6dd256c](https://github.com/nodejs/amaro/commit/6dd256ccc2648c910de231adf6dd8ed08cf7bd62))
+* fix docker mount options ([a9e569f](https://github.com/nodejs/amaro/commit/a9e569feba9094949ba7d6d255d3d7b248f70774))
+* fix SWC Wasm build ([61e1114](https://github.com/nodejs/amaro/commit/61e11146a87f342561ca53fffd06764806b2bbfa))
+* update swc to v1.12.11 ([599170f](https://github.com/nodejs/amaro/commit/599170ffac4718dde22515e6afe95ecc9b213a27))
+* update swc to v1.12.7 ([61725bb](https://github.com/nodejs/amaro/commit/61725bb40ca5c4dbc5ea28d63c945f116ef3a6a5))
+* update swc to v1.13.0 ([1018b36](https://github.com/nodejs/amaro/commit/1018b368e059374a8682c1100ac6a1c55851d65d))
+* update swc to v1.13.1 ([bbe3295](https://github.com/nodejs/amaro/commit/bbe3295924e1a2e2d1673f026323dcfe60731867))
+
 ## [1.1.0](https://github.com/nodejs/amaro/compare/v1.0.0...v1.1.0) (2025-06-16)
 
 
