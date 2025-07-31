@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.2](https://github.com/nodejs/amaro/compare/v1.1.1...v1.1.2) (2025-07-31)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.13.2 ([831c6fa](https://github.com/nodejs/amaro/commit/831c6fa416ba98e1eb3fb261c00233af2b5733a2))
+* **deps:** bump github/codeql-action from 3.29.2 to 3.29.4 ([55bb450](https://github.com/nodejs/amaro/commit/55bb450284cbaa1fa8431ee3643a33143266b16c))
+* update swc to v1.13.2 ([3b656ec](https://github.com/nodejs/amaro/commit/3b656eccde1e345a8d1e0ab7fd9330a6868dc32f))
+
 ## [1.1.1](https://github.com/nodejs/amaro/compare/v1.1.0...v1.1.1) (2025-07-21)
 
 
