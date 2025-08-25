@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.2](https://github.com/nodejs/amaro/compare/v1.1.1...v1.1.2) (2025-08-25)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.13.2 ([831c6fa](https://github.com/nodejs/amaro/commit/831c6fa416ba98e1eb3fb261c00233af2b5733a2))
+* build wasm from swc v1.13.3 ([a1155b5](https://github.com/nodejs/amaro/commit/a1155b5daf043f0aad4e16da35518b1dc53feef0))
+* build wasm from swc v1.13.5 ([980a0be](https://github.com/nodejs/amaro/commit/980a0be549df3934658ad64c10886f320be2dee7))
+* **deps:** bump actions/checkout from 4.2.2 to 5.0.0 ([bcc65c7](https://github.com/nodejs/amaro/commit/bcc65c70fe50e36665d2a1b9d5963424a0e98885))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.12 to 2.0.13 ([4b7e09f](https://github.com/nodejs/amaro/commit/4b7e09ffd1ec7f627e277217c487aa6941709d89))
+* **deps:** bump github/codeql-action from 3.29.2 to 3.29.4 ([55bb450](https://github.com/nodejs/amaro/commit/55bb450284cbaa1fa8431ee3643a33143266b16c))
+* **deps:** bump github/codeql-action from 3.29.4 to 3.29.5 ([594f836](https://github.com/nodejs/amaro/commit/594f836d15900864e4313f48687321ecd41f9130))
+* **deps:** bump github/codeql-action from 3.29.7 to 3.29.9 ([4e21518](https://github.com/nodejs/amaro/commit/4e21518b45b01383d12c39b568b7556f6170dfca))
+* **deps:** bump github/codeql-action from 3.29.9 to 3.29.11 ([91540b3](https://github.com/nodejs/amaro/commit/91540b312931bfa013a760846875792046ce272a))
+* **deps:** bump googleapis/release-please-action from 4.2.0 to 4.3.0 ([b6b7b37](https://github.com/nodejs/amaro/commit/b6b7b37f5bd16de3d8abc61d663a9c1041af3c0c))
+* update swc to v1.13.2 ([3b656ec](https://github.com/nodejs/amaro/commit/3b656eccde1e345a8d1e0ab7fd9330a6868dc32f))
+* update swc to v1.13.3 ([1ea9b80](https://github.com/nodejs/amaro/commit/1ea9b80851058e7eb45912abf377ddb41ea458d3))
+* update swc to v1.13.5 ([a44b97d](https://github.com/nodejs/amaro/commit/a44b97d70c6994893aed6753d22dcba01e2ed328))
+
 ## [1.1.1](https://github.com/nodejs/amaro/compare/v1.1.0...v1.1.1) (2025-07-21)
 
 
