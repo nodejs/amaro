@@ -342,3 +342,28 @@ test("should have proper error code", (t) => {
 		assert.strictEqual(error.code, "InvalidSyntax");
 	}
 });
+
+test("should handle short-circuit assignments (&&=, ||=, ??=)", (t) => {
+	const inputCode = `
+		const a = {}
+
+		a.foo &&= \`\${a.foo}1\`
+		console.log(a.foo)
+
+		const b = {}
+
+		b.foo ||= \`\${b.foo}1\`
+		console.log(b.foo)
+
+		const c = {}
+
+		c.foo ??= \`\${c.foo}1\`
+		console.log(c.foo)
+	`;
+
+	const { code } = transformSync(inputCode, {
+		mode: "transform",
+		sourceMap: true,
+	});
+	t.assert.snapshot(code);
+});
