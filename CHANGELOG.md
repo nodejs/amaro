@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.3](https://github.com/nodejs/amaro/compare/v1.1.2...v1.1.3) (2025-09-26)
+
+
+### Core
+
+* add snapshot for short-circuit assignments ([e8b2a13](https://github.com/nodejs/amaro/commit/e8b2a13326034c549b22671c09dc46fb7d3da6f3))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.13.19 ([57fd6b6](https://github.com/nodejs/amaro/commit/57fd6b6a9c05a9da44855b50fbcfed2e3ce23271))
+* **deps:** bump actions/setup-node from 4.4.0 to 5.0.0 ([ee5beed](https://github.com/nodejs/amaro/commit/ee5beed46957977de1f054973087673dde3fca73))
+* **deps:** bump github/codeql-action from 3.29.11 to 3.30.3 ([cb98cb8](https://github.com/nodejs/amaro/commit/cb98cb8cd00e3b70f3d0ba906d566498fa4e74bd))
+* **deps:** bump step-security/harden-runner from 2.13.0 to 2.13.1 ([37bcf71](https://github.com/nodejs/amaro/commit/37bcf7109dc437f9cb055c8e64d96aa7d591bf29))
+* update swc to v1.13.19 ([02c1709](https://github.com/nodejs/amaro/commit/02c1709ea7a9e89a5799022dba3f03d86d776bfa))
+
 ## [1.1.2](https://github.com/nodejs/amaro/compare/v1.1.1...v1.1.2) (2025-08-25)
 
 
