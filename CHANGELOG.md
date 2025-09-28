@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.4](https://github.com/nodejs/amaro/compare/v1.1.3...v1.1.4) (2025-09-28)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.13.20 ([f382d8a](https://github.com/nodejs/amaro/commit/f382d8a352f4ff463038f6064a662d58a747d5e2))
+* update swc to v1.13.20 ([9a8bc4c](https://github.com/nodejs/amaro/commit/9a8bc4c3abc5cae646d7285de134e391c47c0580))
+
 ## [1.1.3](https://github.com/nodejs/amaro/compare/v1.1.2...v1.1.3) (2025-09-26)
 
 
