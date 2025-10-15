@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.5](https://github.com/nodejs/amaro/compare/v1.1.4...v1.1.5) (2025-10-15)
+
+
+### Miscellaneous
+
+* **deps:** bump github/codeql-action from 3.30.3 to 3.30.6 ([a00453f](https://github.com/nodejs/amaro/commit/a00453f20bc110be7238ff3f2565a2755497322d))
+* **deps:** bump github/codeql-action from 3.30.6 to 4.30.8 ([e142053](https://github.com/nodejs/amaro/commit/e142053f1720f261c9278d374697e771a4cafaa8))
+* **deps:** bump ossf/scorecard-action from 2.4.2 to 2.4.3 ([9177832](https://github.com/nodejs/amaro/commit/9177832f018adeec6ccab6ee56d612826eb98116))
+* enable OIDC for publishing ([13ca0a4](https://github.com/nodejs/amaro/commit/13ca0a480c7a02f6db19c726243340692d33f499))
+
 ## [1.1.4](https://github.com/nodejs/amaro/compare/v1.1.3...v1.1.4) (2025-09-28)
 
 
