@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.5](https://github.com/nodejs/amaro/compare/v1.1.4...v1.1.5) (2025-10-27)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.13.5 ([4254372](https://github.com/nodejs/amaro/commit/4254372169c581c39a7544e3d4a4c4ecd766056b))
+* **deps:** bump actions/setup-node from 5.0.0 to 6.0.0 ([eda770f](https://github.com/nodejs/amaro/commit/eda770f0b64c1000f6a9d13c36a57739b7227f20))
+* **deps:** bump actions/upload-artifact from 4.6.2 to 5.0.0 ([807cf99](https://github.com/nodejs/amaro/commit/807cf99d646617f1f1eba92d885094324c301db9))
+* **deps:** bump github/codeql-action from 3.30.3 to 3.30.6 ([a00453f](https://github.com/nodejs/amaro/commit/a00453f20bc110be7238ff3f2565a2755497322d))
+* **deps:** bump github/codeql-action from 3.30.6 to 4.30.8 ([e142053](https://github.com/nodejs/amaro/commit/e142053f1720f261c9278d374697e771a4cafaa8))
+* **deps:** bump github/codeql-action from 4.30.8 to 4.30.9 ([41d3071](https://github.com/nodejs/amaro/commit/41d3071d92004350ab268baf295841b9b42273c8))
+* **deps:** bump github/codeql-action from 4.30.9 to 4.31.0 ([e495ebe](https://github.com/nodejs/amaro/commit/e495ebe90ab3c49804d67cbc3327a8a93a945ff9))
+* **deps:** bump googleapis/release-please-action from 4.3.0 to 4.4.0 ([29afd53](https://github.com/nodejs/amaro/commit/29afd53858aaabdf7b96ccc3f852544daafac50c))
+* **deps:** bump ossf/scorecard-action from 2.4.2 to 2.4.3 ([9177832](https://github.com/nodejs/amaro/commit/9177832f018adeec6ccab6ee56d612826eb98116))
+* enable OIDC for publishing ([13ca0a4](https://github.com/nodejs/amaro/commit/13ca0a480c7a02f6db19c726243340692d33f499))
+* update swc to v1.13.5 ([37ce8a8](https://github.com/nodejs/amaro/commit/37ce8a8fac6d803cc75f8eaca06d95769e910a28))
+
 ## [1.1.4](https://github.com/nodejs/amaro/compare/v1.1.3...v1.1.4) (2025-09-28)
 
 
