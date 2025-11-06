@@ -70,7 +70,7 @@ function requireNative() {
   } else if (process.platform === 'android') {
     if (process.arch === 'arm64') {
       try {
-        return require('./amaro-binding.android-arm64.node')
+        return require('./amaro_binding.android-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -86,7 +86,7 @@ function requireNative() {
       }
     } else if (process.arch === 'arm') {
       try {
-        return require('./amaro-binding.android-arm-eabi.node')
+        return require('./amaro_binding.android-arm-eabi.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -107,7 +107,7 @@ function requireNative() {
     if (process.arch === 'x64') {
       if (process.config?.variables?.shlib_suffix === 'dll.a' || process.config?.variables?.node_target_type === 'shared_library') {
         try {
-        return require('./amaro-binding.win32-x64-gnu.node')
+        return require('./amaro_binding.win32-x64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -123,7 +123,7 @@ function requireNative() {
       }
       } else {
         try {
-        return require('./amaro-binding.win32-x64-msvc.node')
+        return require('./amaro_binding.win32-x64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -140,7 +140,7 @@ function requireNative() {
       }
     } else if (process.arch === 'ia32') {
       try {
-        return require('./amaro-binding.win32-ia32-msvc.node')
+        return require('./amaro_binding.win32-ia32-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -156,7 +156,7 @@ function requireNative() {
       }
     } else if (process.arch === 'arm64') {
       try {
-        return require('./amaro-binding.win32-arm64-msvc.node')
+        return require('./amaro_binding.win32-arm64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -175,7 +175,7 @@ function requireNative() {
     }
   } else if (process.platform === 'darwin') {
     try {
-      return require('./amaro-binding.darwin-universal.node')
+      return require('./amaro_binding.darwin-universal.node')
     } catch (e) {
       loadErrors.push(e)
     }
@@ -191,7 +191,7 @@ function requireNative() {
     }
     if (process.arch === 'x64') {
       try {
-        return require('./amaro-binding.darwin-x64.node')
+        return require('./amaro_binding.darwin-x64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -207,7 +207,7 @@ function requireNative() {
       }
     } else if (process.arch === 'arm64') {
       try {
-        return require('./amaro-binding.darwin-arm64.node')
+        return require('./amaro_binding.darwin-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -227,7 +227,7 @@ function requireNative() {
   } else if (process.platform === 'freebsd') {
     if (process.arch === 'x64') {
       try {
-        return require('./amaro-binding.freebsd-x64.node')
+        return require('./amaro_binding.freebsd-x64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -243,7 +243,7 @@ function requireNative() {
       }
     } else if (process.arch === 'arm64') {
       try {
-        return require('./amaro-binding.freebsd-arm64.node')
+        return require('./amaro_binding.freebsd-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -264,7 +264,7 @@ function requireNative() {
     if (process.arch === 'x64') {
       if (isMusl()) {
         try {
-          return require('./amaro-binding.linux-x64-musl.node')
+          return require('./amaro_binding.linux-x64-musl.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -280,7 +280,7 @@ function requireNative() {
         }
       } else {
         try {
-          return require('./amaro-binding.linux-x64-gnu.node')
+          return require('./amaro_binding.linux-x64-gnu.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -298,7 +298,7 @@ function requireNative() {
     } else if (process.arch === 'arm64') {
       if (isMusl()) {
         try {
-          return require('./amaro-binding.linux-arm64-musl.node')
+          return require('./amaro_binding.linux-arm64-musl.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -314,7 +314,7 @@ function requireNative() {
         }
       } else {
         try {
-          return require('./amaro-binding.linux-arm64-gnu.node')
+          return require('./amaro_binding.linux-arm64-gnu.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -332,7 +332,7 @@ function requireNative() {
     } else if (process.arch === 'arm') {
       if (isMusl()) {
         try {
-          return require('./amaro-binding.linux-arm-musleabihf.node')
+          return require('./amaro_binding.linux-arm-musleabihf.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -348,7 +348,7 @@ function requireNative() {
         }
       } else {
         try {
-          return require('./amaro-binding.linux-arm-gnueabihf.node')
+          return require('./amaro_binding.linux-arm-gnueabihf.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -366,7 +366,7 @@ function requireNative() {
     } else if (process.arch === 'loong64') {
       if (isMusl()) {
         try {
-          return require('./amaro-binding.linux-loong64-musl.node')
+          return require('./amaro_binding.linux-loong64-musl.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -382,7 +382,7 @@ function requireNative() {
         }
       } else {
         try {
-          return require('./amaro-binding.linux-loong64-gnu.node')
+          return require('./amaro_binding.linux-loong64-gnu.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -400,7 +400,7 @@ function requireNative() {
     } else if (process.arch === 'riscv64') {
       if (isMusl()) {
         try {
-          return require('./amaro-binding.linux-riscv64-musl.node')
+          return require('./amaro_binding.linux-riscv64-musl.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -416,7 +416,7 @@ function requireNative() {
         }
       } else {
         try {
-          return require('./amaro-binding.linux-riscv64-gnu.node')
+          return require('./amaro_binding.linux-riscv64-gnu.node')
         } catch (e) {
           loadErrors.push(e)
         }
@@ -433,7 +433,7 @@ function requireNative() {
       }
     } else if (process.arch === 'ppc64') {
       try {
-        return require('./amaro-binding.linux-ppc64-gnu.node')
+        return require('./amaro_binding.linux-ppc64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -449,7 +449,7 @@ function requireNative() {
       }
     } else if (process.arch === 's390x') {
       try {
-        return require('./amaro-binding.linux-s390x-gnu.node')
+        return require('./amaro_binding.linux-s390x-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -469,7 +469,7 @@ function requireNative() {
   } else if (process.platform === 'openharmony') {
     if (process.arch === 'arm64') {
       try {
-        return require('./amaro-binding.openharmony-arm64.node')
+        return require('./amaro_binding.openharmony-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -485,7 +485,7 @@ function requireNative() {
       }
     } else if (process.arch === 'x64') {
       try {
-        return require('./amaro-binding.openharmony-x64.node')
+        return require('./amaro_binding.openharmony-x64.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -501,7 +501,7 @@ function requireNative() {
       }
     } else if (process.arch === 'arm') {
       try {
-        return require('./amaro-binding.openharmony-arm.node')
+        return require('./amaro_binding.openharmony-arm.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -529,7 +529,7 @@ if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
   let wasiBinding = null
   let wasiBindingError = null
   try {
-    wasiBinding = require('./amaro-binding.wasi.cjs')
+    wasiBinding = require('./amaro_binding.wasi.cjs')
     nativeBinding = wasiBinding
   } catch (err) {
     if (process.env.NAPI_RS_FORCE_WASI) {
@@ -572,4 +572,4 @@ if (!nativeBinding) {
 }
 
 module.exports = nativeBinding
-module.exports.plus100 = nativeBinding.plus100
+module.exports.transform = nativeBinding.transform
