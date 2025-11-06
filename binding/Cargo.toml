@@ -11,6 +11,9 @@ crate-type = ["cdylib"]
 [dependencies]
 napi = "3.0.0"
 napi-derive = "3.0.0"
+serde_json = "1.0.145"
+swc_ts_fast_strip = "36.0.0"
+swc_ts_fast_strip_binding = "0.1.0"
 
 [build-dependencies]
 napi-build = "2"
