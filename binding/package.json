@@ -1,21 +1,20 @@
 {
-  "name": "binding",
-  "version": "1.0.0",
-  "description": "Template project for writing node package with napi-rs",
+  "name": "amaro-binding",
+  "private": true,
+  "version": "1.1.5",
+  "description": "Amaro binding for Node.js",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/napi-rs/package-template.git"
+    "url": "git+ssh://git@github.com/nodejs/amaro.git"
   },
   "license": "MIT",
   "browser": "browser.js",
   "keywords": [
-    "napi-rs",
-    "NAPI",
-    "N-API",
-    "Rust",
-    "node-addon",
-    "node-addon-api"
+    "typescript",
+    "nodejs",
+    "type stripping",
+    "strip-types"
   ],
   "files": [
     "index.d.ts",
@@ -23,7 +22,7 @@
     "browser.js"
   ],
   "napi": {
-    "binaryName": "binding",
+    "binaryName": "amaro-binding",
     "targets": [
       "x86_64-pc-windows-msvc",
       "x86_64-apple-darwin",
