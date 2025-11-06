@@ -1,9 +1,10 @@
 
 [package]
-authors = ["LongYinan <lynweklm@gmail.com>"]
+authors = ["Node.js TypeScript Team"]
 edition = "2021"
-name = "binding"
+name = "amaro_binding"
 version = "0.1.0"
+publish = false
 
 [lib]
 crate-type = ["cdylib"]
