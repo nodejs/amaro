@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.6](https://github.com/nodejs/amaro/compare/v1.1.5...v1.1.6) (2025-11-17)
+
+
+### Bug Fixes
+
+* broken swc update workflow ([5c3028b](https://github.com/nodejs/amaro/commit/5c3028b29b26b285cb57c78aa492a3edefa2a047))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.14.0 ([e40c997](https://github.com/nodejs/amaro/commit/e40c9973e72080e8e21a67f81935e9f82bf1517b))
+* **deps:** bump github/codeql-action from 4.31.0 to 4.31.2 ([9b58426](https://github.com/nodejs/amaro/commit/9b58426d45df80d42499c1b2ad3b59140ce8b532))
+* **deps:** bump step-security/harden-runner from 2.13.1 to 2.13.2 ([bae37cc](https://github.com/nodejs/amaro/commit/bae37cc663c4e2efe040c23e5c98ab4e5c4af65a))
+* update swc to v1.14.0 ([b7dbf1a](https://github.com/nodejs/amaro/commit/b7dbf1a8ef59995b707529ad423fcb9076dc2bd2))
+
 ## [1.1.5](https://github.com/nodejs/amaro/compare/v1.1.4...v1.1.5) (2025-10-27)
 
 
