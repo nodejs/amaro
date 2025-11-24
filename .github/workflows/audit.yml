@@ -14,7 +14,7 @@ on:
 
 jobs:
   rust-audit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
@@ -23,7 +23,7 @@ jobs:
           manifest-path: "deps/swc/bindings/binding_typescript_wasm/Cargo.toml"
 
   typescript-audit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       security-events: write
       packages: read
