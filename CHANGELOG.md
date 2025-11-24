@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.6](https://github.com/nodejs/amaro/compare/v1.1.5...v1.1.6) (2025-11-24)
+
+
+### Bug Fixes
+
+* broken swc update workflow ([5c3028b](https://github.com/nodejs/amaro/commit/5c3028b29b26b285cb57c78aa492a3edefa2a047))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.14.0 ([e40c997](https://github.com/nodejs/amaro/commit/e40c9973e72080e8e21a67f81935e9f82bf1517b))
+* **deps:** bump actions/checkout from 5.0.0 to 6.0.0 ([a5b13c1](https://github.com/nodejs/amaro/commit/a5b13c175405df5c4d0d179b933ff3adb3882f59))
+* **deps:** bump github/codeql-action from 4.31.0 to 4.31.2 ([9b58426](https://github.com/nodejs/amaro/commit/9b58426d45df80d42499c1b2ad3b59140ce8b532))
+* **deps:** bump github/codeql-action from 4.31.2 to 4.31.4 ([f2db15a](https://github.com/nodejs/amaro/commit/f2db15a0a3a0b44b175a901cdfe2f579f6c8aedc))
+* **deps:** bump step-security/harden-runner from 2.13.1 to 2.13.2 ([bae37cc](https://github.com/nodejs/amaro/commit/bae37cc663c4e2efe040c23e5c98ab4e5c4af65a))
+* update documentation to reflect changes in --experimental-strip-types ([29c8323](https://github.com/nodejs/amaro/commit/29c832334f41941b293264329c89ba005a541214))
+* update swc to v1.14.0 ([b7dbf1a](https://github.com/nodejs/amaro/commit/b7dbf1a8ef59995b707529ad423fcb9076dc2bd2))
+* update ubuntu image and use nvmrc ([896bd90](https://github.com/nodejs/amaro/commit/896bd901b4feeb236b8950ec68ac2a6de1e89400))
+
 ## [1.1.5](https://github.com/nodejs/amaro/compare/v1.1.4...v1.1.5) (2025-10-27)
 
 
