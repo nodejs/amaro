@@ -4,7 +4,6 @@ const { match, doesNotMatch, strictEqual } = require("node:assert");
 
 test("should work as a loader", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("hello.ts"),
@@ -17,7 +16,6 @@ test("should work as a loader", async () => {
 
 test("should not work with enums", async (t) => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("enum.ts"),
@@ -31,7 +29,6 @@ test("should not work with enums", async (t) => {
 
 test("should work with enums", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("enum.ts"),
@@ -44,7 +41,6 @@ test("should work with enums", async () => {
 
 test("should warn and inaccurate stracktrace", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("stacktrace.ts"),
 	]);
@@ -57,7 +53,6 @@ test("should warn and inaccurate stracktrace", async () => {
 
 test("should not warn and accurate stracktrace", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--enable-source-maps",
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("stacktrace.ts"),
@@ -71,7 +66,6 @@ test("should not warn and accurate stracktrace", async () => {
 
 test("should call nextLoader for non-typescript files for striping", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("hello.js"),
@@ -84,7 +78,6 @@ test("should call nextLoader for non-typescript files for striping", async () =>
 
 test("should call nextLoader for non-typescript files for transform", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("hello.js"),
@@ -97,7 +90,6 @@ test("should call nextLoader for non-typescript files for transform", async () =
 
 test("should throw syntax error for invalid typescript", async (t) => {
 	const result = await spawnPromisified(process.execPath, [
-		"--experimental-strip-types",
 		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("invalid-syntax.ts"),
