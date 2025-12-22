@@ -47,7 +47,7 @@ test("should warn and inaccurate stracktrace", async () => {
 
 	strictEqual(result.stdout, "");
 	match(result.stderr, /Source maps are disabled/);
-	match(result.stderr, /stacktrace.ts:5:7/); // inaccurate
+	match(result.stderr, /stacktrace.ts:7:11/); // inaccurate
 	strictEqual(result.code, 1);
 });
 
@@ -60,7 +60,7 @@ test("should not warn and accurate stracktrace", async () => {
 
 	doesNotMatch(result.stderr, /Source maps are disabled/);
 	strictEqual(result.stdout, "");
-	match(result.stderr, /stacktrace.ts:4:7/); // accurate
+	match(result.stderr, /stacktrace.ts:7:9/); // accurate
 	strictEqual(result.code, 1);
 });
 
