@@ -111,6 +111,9 @@ test("should throw WebAssemblyObjectNotAvailable when WebAssembly global is not 
 	strictEqual(result.stdout, "");
 	match(result.stderr, /WebAssemblyObjectNotAvailable/);
 	match(result.stderr, /AMARO_ERR_WEB_ASSEMBLY_OBJ_NOT_AVAILABLE/);
-	match(result.stderr, /WebAssembly global object is not available, but it is required to run Amaro \(Node.js TypeScript library\). This can happen, for example, when running V8 in JIT-less mode./);
+	match(
+		result.stderr,
+		/WebAssembly global object is not available, but it is required to run Amaro \(Node.js TypeScript library\). This can happen, for example, when running V8 in JIT-less mode./,
+	);
 	strictEqual(result.code, 1);
 });
