@@ -99,3 +99,18 @@ test("should throw syntax error for invalid typescript", async (t) => {
 	match(result.stderr, /await isn't allowed in non-async function/);
 	strictEqual(result.code, 1);
 });
+
+test("should throw WebAssemblyObjectNotAvailable when WebAssembly global is not available", async (t) => {
+	const result = await spawnPromisified(process.execPath, [
+		"--jitless",
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("hello.ts"),
+	]);
+
+	strictEqual(result.stdout, "");
+	match(result.stderr, /WebAssemblyObjectNotAvailable/);
+	match(result.stderr, /AMARO_ERR_WEB_ASSEMBLY_OBJ_NOT_AVAILABLE/);
+	match(result.stderr, /WebAssembly global object is not available, but it is required to run Amaro \(Node.js TypeScript library\). This can happen, for example, when running V8 in JIT-less mode./);
+	strictEqual(result.code, 1);
+});
