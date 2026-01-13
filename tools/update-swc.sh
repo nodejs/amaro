@@ -65,6 +65,11 @@ mv .cargo "$DEPS_FOLDER/.cargo"
 
 mv rust-toolchain "$DEPS_FOLDER/rust-toolchain"
 
+mv crates "$DEPS_FOLDER/crates"
+
+# Keep workspace tools (needed by Cargo workspace members like tools/generate-code)
+mv tools "$DEPS_FOLDER/tools"
+
 echo "All done!"
 echo ""
 echo "Please git add swc and commit the new version:"
