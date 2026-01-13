@@ -53,7 +53,7 @@ jobs:
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
         uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PLEASE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             author: Node.js GitHub Bot <github-bot@iojs.org>
             title: "chore(deps): update SWC to v${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
@@ -67,7 +67,7 @@ jobs:
 
       - name: Set up Docker
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
-        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
+        uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
 
       - name: Build WASM
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
@@ -77,7 +77,7 @@ jobs:
         if: steps.version-check.outputs.UPDATE_REQUIRED == 'true'
         uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PLEASE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             author: Node.js GitHub Bot <github-bot@iojs.org>
             branch: "chore/update-swc-${{ github.event.inputs.swc_version || steps.version-check.outputs.NEW_SWC_VERSION }}"
