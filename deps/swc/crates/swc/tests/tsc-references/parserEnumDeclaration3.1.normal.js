@@ -1,0 +1,1 @@
+//// [parserEnumDeclaration3.ts]

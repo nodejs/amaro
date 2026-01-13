@@ -1,0 +1,1 @@
+//// [typeArgumentInference.ts]

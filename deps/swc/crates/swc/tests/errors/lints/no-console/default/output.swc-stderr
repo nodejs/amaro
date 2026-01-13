@@ -1,0 +1,8 @@
+  x Unexpected console statement
+   ,-[7:1]
+ 4 |     console.log("message");
+ 5 | };
+ 6 | 
+ 7 | console.log("message");
+   : ^^^^^^^^^^^
+   `----

@@ -1,0 +1,54 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Runner for swc plugins. This crate is INTERNAL crate and used by swc itself."
+documentation = "https://rustdoc.swc.rs/swc_plugin_runner/"
+edition       = { workspace = true }
+license       = { workspace = true }
+name          = "swc_plugin_runner"
+repository    = { workspace = true }
+version       = "23.0.0"
+
+[lib]
+bench   = false
+doctest = false
+
+[features]
+default = ["filesystem_cache"]
+
+# Supports a cache allow to store compiled bytecode into filesystem location.
+# This feature implies in-memory cache support. This is not supported on wasm32 target.
+filesystem_cache              = ["blake3"]
+plugin_transform_schema_v1    = ["swc_common/plugin_transform_schema_v1"]
+plugin_transform_schema_vtest = ["swc_common/plugin_transform_schema_vtest"]
+
+# Enable ECMASCript support
+ecma = ["swc_ecma_ast/encoding-impl"]
+
+encoding-impl = ["swc_common/plugin-rt", "swc_plugin_proxy/plugin-rt"]
+
+[build-dependencies]
+vergen = { workspace = true, features = ["build", "cargo"] }
+
+
+[dependencies]
+anyhow      = { workspace = true }
+parking_lot = { workspace = true }
+rustc-hash  = { workspace = true }
+serde       = { workspace = true, features = ["derive"] }
+serde_json  = { workspace = true }
+tracing     = { workspace = true }
+
+swc_atoms = { version = "9.0.0", path = '../swc_atoms' }
+swc_common = { version = "18.0.1", path = "../swc_common", features = [
+  "concurrent",
+] }
+swc_ecma_ast = { version = "19.0.0", path = "../swc_ecma_ast", optional = true }
+swc_plugin_proxy = { version = "19.0.0", path = "../swc_plugin_proxy" }
+swc_transform_common = { version = "12.0.0", path = "../swc_transform_common" }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+blake3 = { workspace = true, optional = true }
+
+[package.metadata.cargo-shear]
+# ignored, as they are only used to enable features
+ignored = ["swc_ecma_ast", "swc_css_ast"]

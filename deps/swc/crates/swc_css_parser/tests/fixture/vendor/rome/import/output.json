@@ -1,0 +1,96 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 56
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 25
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 8
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ImportPrelude",
+        "span": {
+          "start": 9,
+          "end": 24
+        },
+        "href": {
+          "type": "String",
+          "span": {
+            "start": 9,
+            "end": 24
+          },
+          "value": "something.css",
+          "raw": "\"something.css\""
+        },
+        "layerName": null,
+        "importConditions": null
+      },
+      "block": null
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 26,
+        "end": 55
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 27,
+          "end": 33
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ImportPrelude",
+        "span": {
+          "start": 34,
+          "end": 54
+        },
+        "href": {
+          "type": "Url",
+          "span": {
+            "start": 34,
+            "end": 54
+          },
+          "name": {
+            "type": "Ident",
+            "span": {
+              "start": 34,
+              "end": 37
+            },
+            "value": "url",
+            "raw": "url"
+          },
+          "value": {
+            "type": "String",
+            "span": {
+              "start": 38,
+              "end": 53
+            },
+            "value": "something.css",
+            "raw": "\"something.css\""
+          },
+          "modifiers": []
+        },
+        "layerName": null,
+        "importConditions": null
+      },
+      "block": null
+    }
+  ]
+}

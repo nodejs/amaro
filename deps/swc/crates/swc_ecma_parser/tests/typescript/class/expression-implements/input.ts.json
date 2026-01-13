@@ -1,0 +1,199 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 62
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 30
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 1,
+          "end": 29
+        },
+        "expression": {
+          "type": "ClassExpression",
+          "identifier": null,
+          "span": {
+            "start": 2,
+            "end": 28
+          },
+          "ctxt": 0,
+          "decorators": [],
+          "body": [],
+          "superClass": null,
+          "isAbstract": false,
+          "typeParams": null,
+          "superTypeParams": null,
+          "implements": [
+            {
+              "type": "TsExpressionWithTypeArguments",
+              "span": {
+                "start": 19,
+                "end": 25
+              },
+              "expression": {
+                "type": "MemberExpression",
+                "span": {
+                  "start": 19,
+                  "end": 22
+                },
+                "object": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 19,
+                    "end": 20
+                  },
+                  "ctxt": 0,
+                  "value": "X",
+                  "optional": false
+                },
+                "property": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 21,
+                    "end": 22
+                  },
+                  "value": "Y"
+                }
+              },
+              "typeArguments": {
+                "type": "TsTypeParameterInstantiation",
+                "span": {
+                  "start": 22,
+                  "end": 25
+                },
+                "params": [
+                  {
+                    "type": "TsTypeReference",
+                    "span": {
+                      "start": 23,
+                      "end": 24
+                    },
+                    "typeName": {
+                      "type": "Identifier",
+                      "span": {
+                        "start": 23,
+                        "end": 24
+                      },
+                      "ctxt": 0,
+                      "value": "T",
+                      "optional": false
+                    },
+                    "typeParams": null
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 31,
+        "end": 62
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 31,
+          "end": 61
+        },
+        "expression": {
+          "type": "ClassExpression",
+          "identifier": {
+            "type": "Identifier",
+            "span": {
+              "start": 38,
+              "end": 39
+            },
+            "ctxt": 0,
+            "value": "C",
+            "optional": false
+          },
+          "span": {
+            "start": 32,
+            "end": 60
+          },
+          "ctxt": 0,
+          "decorators": [],
+          "body": [],
+          "superClass": null,
+          "isAbstract": false,
+          "typeParams": null,
+          "superTypeParams": null,
+          "implements": [
+            {
+              "type": "TsExpressionWithTypeArguments",
+              "span": {
+                "start": 51,
+                "end": 57
+              },
+              "expression": {
+                "type": "MemberExpression",
+                "span": {
+                  "start": 51,
+                  "end": 54
+                },
+                "object": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 51,
+                    "end": 52
+                  },
+                  "ctxt": 0,
+                  "value": "X",
+                  "optional": false
+                },
+                "property": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 53,
+                    "end": 54
+                  },
+                  "value": "Y"
+                }
+              },
+              "typeArguments": {
+                "type": "TsTypeParameterInstantiation",
+                "span": {
+                  "start": 54,
+                  "end": 57
+                },
+                "params": [
+                  {
+                    "type": "TsTypeReference",
+                    "span": {
+                      "start": 55,
+                      "end": 56
+                    },
+                    "typeName": {
+                      "type": "Identifier",
+                      "span": {
+                        "start": 55,
+                        "end": 56
+                      },
+                      "ctxt": 0,
+                      "value": "T",
+                      "optional": false
+                    },
+                    "typeParams": null
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

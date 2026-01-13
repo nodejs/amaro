@@ -1,0 +1,14 @@
+  x Double hyper within comment
+   ,-[$DIR/tests/recovery/comments/bad-39/input.xml:3:1]
+ 2 | <root>
+ 3 |     <!------>
+   :           ^
+ 4 | </root>
+   `----
+  x Double hyper within comment
+   ,-[$DIR/tests/recovery/comments/bad-39/input.xml:3:1]
+ 2 | <root>
+ 3 |     <!------>
+   :            ^
+ 4 | </root>
+   `----

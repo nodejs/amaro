@@ -1,0 +1,18 @@
+{
+    "jsc": {
+        "parser": {
+            "syntax": "typescript"
+        },
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./*"
+            ]
+        }
+    },
+    "module": {
+        "type": "es6",
+        "resolveFully": true,
+        "outFileExtension": "mjs"
+    }
+}

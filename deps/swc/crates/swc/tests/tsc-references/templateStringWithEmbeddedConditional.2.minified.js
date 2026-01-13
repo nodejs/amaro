@@ -1,0 +1,1 @@
+//// [templateStringWithEmbeddedConditional.ts]

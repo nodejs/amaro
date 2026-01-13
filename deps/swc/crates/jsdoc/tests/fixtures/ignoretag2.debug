@@ -1,0 +1,23 @@
+[
+    JsDoc {
+        span: 1..30,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7,
+                tag_name: Text {
+                    span: 1..7,
+                    value: "ignore",
+                },
+                tag: Ignore(
+                    IgnoreTag {
+                        span: 1..7,
+                    },
+                ),
+            },
+        ],
+    },
+]

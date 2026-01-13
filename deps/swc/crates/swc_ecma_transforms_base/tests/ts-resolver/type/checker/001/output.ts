@@ -1,0 +1,1 @@
+const assign__2 = <T__3, K1__3 extends keyof T__3, K2__3 extends keyof T__3[K1__3]>(object__3: T__3, key1__3: K1__3, key2__3: K2__3)=>(value__4: T__3[K1__3][K2__3])=>object__3[key1__3][key2__3] = value__4;

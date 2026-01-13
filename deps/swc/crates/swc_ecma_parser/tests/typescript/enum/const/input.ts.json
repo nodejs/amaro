@@ -1,0 +1,30 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 16
+  },
+  "body": [
+    {
+      "type": "TsEnumDeclaration",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "declare": false,
+      "isConst": true,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 12,
+          "end": 13
+        },
+        "ctxt": 0,
+        "value": "E",
+        "optional": false
+      },
+      "members": []
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,4 @@
+  x Unterminated block comment
+   ,-[$DIR/tests/test262-parser/fail/025560435ed0b9a6.js:3:2]
+ 3 | 
+   `----

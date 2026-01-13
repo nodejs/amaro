@@ -1,0 +1,2 @@
+//// [independentPropertyVariance.ts]
+x, y;

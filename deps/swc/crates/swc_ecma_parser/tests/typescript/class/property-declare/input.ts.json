@@ -1,0 +1,192 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 124
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 7,
+          "end": 14
+        },
+        "ctxt": 0,
+        "value": "MyClass",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 1,
+        "end": 124
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 21,
+            "end": 42
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 29,
+              "end": 33
+            },
+            "value": "hoge"
+          },
+          "value": null,
+          "typeAnnotation": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 33,
+              "end": 41
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 35,
+                "end": 41
+              },
+              "kind": "string"
+            }
+          },
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": true,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 47,
+            "end": 67
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 55,
+              "end": 58
+            },
+            "value": "foo"
+          },
+          "value": null,
+          "typeAnnotation": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 58,
+              "end": 66
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 60,
+                "end": 66
+              },
+              "kind": "number"
+            }
+          },
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": true,
+          "definite": false
+        },
+        {
+          "type": "Constructor",
+          "span": {
+            "start": 73,
+            "end": 122
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 73,
+              "end": 84
+            },
+            "value": "constructor"
+          },
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "span": {
+              "start": 87,
+              "end": 122
+            },
+            "ctxt": 0,
+            "stmts": [
+              {
+                "type": "ExpressionStatement",
+                "span": {
+                  "start": 97,
+                  "end": 116
+                },
+                "expression": {
+                  "type": "AssignmentExpression",
+                  "span": {
+                    "start": 97,
+                    "end": 115
+                  },
+                  "operator": "=",
+                  "left": {
+                    "type": "MemberExpression",
+                    "span": {
+                      "start": 97,
+                      "end": 106
+                    },
+                    "object": {
+                      "type": "ThisExpression",
+                      "span": {
+                        "start": 97,
+                        "end": 101
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "span": {
+                        "start": 102,
+                        "end": 106
+                      },
+                      "value": "hoge"
+                    }
+                  },
+                  "right": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 109,
+                      "end": 115
+                    },
+                    "value": "test",
+                    "raw": "\"test\""
+                  }
+                }
+              }
+            ]
+          },
+          "accessibility": null,
+          "isOptional": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    }
+  ],
+  "interpreter": null
+}
