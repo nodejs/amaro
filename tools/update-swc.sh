@@ -65,6 +65,8 @@ mv .cargo "$DEPS_FOLDER/.cargo"
 
 mv rust-toolchain "$DEPS_FOLDER/rust-toolchain"
 
+mv crates "$DEPS_FOLDER/crates"
+
 echo "All done!"
 echo ""
 echo "Please git add swc and commit the new version:"
