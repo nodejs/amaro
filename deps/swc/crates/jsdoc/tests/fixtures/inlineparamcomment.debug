@@ -1,0 +1,18 @@
+[
+    JsDoc {
+        span: 30..30,
+        description: Text {
+            span: 30..36,
+            value: "Number",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 47..47,
+        description: Text {
+            span: 47..53,
+            value: "Number",
+        },
+        tags: [],
+    },
+]

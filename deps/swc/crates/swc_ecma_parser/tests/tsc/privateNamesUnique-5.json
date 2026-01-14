@@ -1,0 +1,264 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 131,
+    "end": 242
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 137,
+          "end": 138
+        },
+        "ctxt": 0,
+        "value": "A",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 131,
+        "end": 160
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "PrivateProperty",
+          "span": {
+            "start": 145,
+            "end": 158
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 145,
+              "end": 149
+            },
+            "value": "foo"
+          },
+          "value": null,
+          "typeAnnotation": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 149,
+              "end": 157
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 151,
+                "end": 157
+              },
+              "kind": "number"
+            }
+          },
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "definite": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    },
+    {
+      "type": "TsInterfaceDeclaration",
+      "span": {
+        "start": 161,
+        "end": 187
+      },
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 171,
+          "end": 173
+        },
+        "ctxt": 0,
+        "value": "A2",
+        "optional": false
+      },
+      "declare": false,
+      "typeParams": null,
+      "extends": [
+        {
+          "type": "TsExpressionWithTypeArguments",
+          "span": {
+            "start": 182,
+            "end": 183
+          },
+          "expression": {
+            "type": "Identifier",
+            "span": {
+              "start": 182,
+              "end": 183
+            },
+            "ctxt": 0,
+            "value": "A",
+            "optional": false
+          },
+          "typeArguments": null
+        }
+      ],
+      "body": {
+        "type": "TsInterfaceBody",
+        "span": {
+          "start": 184,
+          "end": 187
+        },
+        "body": []
+      }
+    },
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 195,
+          "end": 196
+        },
+        "ctxt": 0,
+        "value": "B",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 189,
+        "end": 218
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "PrivateProperty",
+          "span": {
+            "start": 203,
+            "end": 216
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 203,
+              "end": 207
+            },
+            "value": "foo"
+          },
+          "value": null,
+          "typeAnnotation": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 207,
+              "end": 215
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 209,
+                "end": 215
+              },
+              "kind": "number"
+            }
+          },
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "definite": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    },
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 220,
+        "end": 242
+      },
+      "ctxt": 0,
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 226,
+            "end": 241
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 226,
+              "end": 227
+            },
+            "ctxt": 0,
+            "value": "b",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 227,
+                "end": 231
+              },
+              "typeAnnotation": {
+                "type": "TsTypeReference",
+                "span": {
+                  "start": 229,
+                  "end": 231
+                },
+                "typeName": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 229,
+                    "end": 231
+                  },
+                  "ctxt": 0,
+                  "value": "A2",
+                  "optional": false
+                },
+                "typeParams": null
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "span": {
+              "start": 234,
+              "end": 241
+            },
+            "ctxt": 0,
+            "callee": {
+              "type": "Identifier",
+              "span": {
+                "start": 238,
+                "end": 239
+              },
+              "ctxt": 0,
+              "value": "B",
+              "optional": false
+            },
+            "arguments": [],
+            "typeArguments": null
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

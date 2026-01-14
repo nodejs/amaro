@@ -1,0 +1,277 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 116
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 115
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7
+                      },
+                      "value": "style",
+                      "raw": "style"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 115
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 8,
+            "end": 9
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 11,
+              "end": 112
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 11,
+                "end": 32
+              },
+              "value": "grid-template-columns",
+              "raw": "grid-template-columns"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 34,
+                  "end": 60
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 34,
+                    "end": 40
+                  },
+                  "value": "minmax",
+                  "raw": "minmax"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 41,
+                      "end": 52
+                    },
+                    "value": "min-content",
+                    "raw": "min-content"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 52,
+                      "end": 53
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Length",
+                    "span": {
+                      "start": 54,
+                      "end": 59
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 54,
+                        "end": 57
+                      },
+                      "value": 300.0,
+                      "raw": "300"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 57,
+                        "end": 59
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Function",
+                "span": {
+                  "start": 61,
+                  "end": 79
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 61,
+                    "end": 67
+                  },
+                  "value": "minmax",
+                  "raw": "minmax"
+                },
+                "value": [
+                  {
+                    "type": "Length",
+                    "span": {
+                      "start": 68,
+                      "end": 73
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 68,
+                        "end": 71
+                      },
+                      "value": 200.0,
+                      "raw": "200"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 71,
+                        "end": 73
+                      },
+                      "value": "px",
+                      "raw": "px"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 73,
+                      "end": 74
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Flex",
+                    "span": {
+                      "start": 75,
+                      "end": 78
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 75,
+                        "end": 76
+                      },
+                      "value": 1.0,
+                      "raw": "1"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 76,
+                        "end": 78
+                      },
+                      "value": "fr",
+                      "raw": "fr"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Function",
+                "span": {
+                  "start": 80,
+                  "end": 112
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 80,
+                    "end": 86
+                  },
+                  "value": "minmax",
+                  "raw": "minmax"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 87,
+                      "end": 98
+                    },
+                    "value": "max-content",
+                    "raw": "max-content"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 98,
+                      "end": 99
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 100,
+                      "end": 111
+                    },
+                    "value": "max-content",
+                    "raw": "max-content"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

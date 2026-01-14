@@ -1,0 +1,1 @@
+//// [objectLiteralShorthandProperties.ts]

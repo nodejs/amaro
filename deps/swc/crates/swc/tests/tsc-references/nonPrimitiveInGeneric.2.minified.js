@@ -1,0 +1,1 @@
+//// [nonPrimitiveInGeneric.ts]

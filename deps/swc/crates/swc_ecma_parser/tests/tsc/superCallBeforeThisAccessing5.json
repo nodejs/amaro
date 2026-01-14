@@ -1,0 +1,127 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 97
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 7,
+          "end": 8
+        },
+        "ctxt": 0,
+        "value": "D",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 1,
+        "end": 97
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 28,
+            "end": 39
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 36,
+              "end": 38
+            },
+            "value": "_t"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": "private",
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "Constructor",
+          "span": {
+            "start": 44,
+            "end": 95
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 44,
+              "end": 55
+            },
+            "value": "constructor"
+          },
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "span": {
+              "start": 58,
+              "end": 95
+            },
+            "ctxt": 0,
+            "stmts": [
+              {
+                "type": "ExpressionStatement",
+                "span": {
+                  "start": 68,
+                  "end": 76
+                },
+                "expression": {
+                  "type": "MemberExpression",
+                  "span": {
+                    "start": 68,
+                    "end": 75
+                  },
+                  "object": {
+                    "type": "ThisExpression",
+                    "span": {
+                      "start": 68,
+                      "end": 72
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 73,
+                      "end": 75
+                    },
+                    "value": "_t"
+                  }
+                }
+              }
+            ]
+          },
+          "accessibility": null,
+          "isOptional": false
+        }
+      ],
+      "superClass": {
+        "type": "NullLiteral",
+        "span": {
+          "start": 17,
+          "end": 21
+        }
+      },
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    }
+  ],
+  "interpreter": null
+}

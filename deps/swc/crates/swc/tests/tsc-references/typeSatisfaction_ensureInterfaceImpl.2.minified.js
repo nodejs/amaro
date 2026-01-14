@@ -1,0 +1,1 @@
+//// [typeSatisfaction_ensureInterfaceImpl.ts]

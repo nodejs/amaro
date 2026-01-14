@@ -1,0 +1,43 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 33,
+    "end": 55
+  },
+  "body": [
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 33,
+        "end": 55
+      },
+      "declaration": {
+        "type": "ClassDeclaration",
+        "identifier": {
+          "type": "Identifier",
+          "span": {
+            "start": 46,
+            "end": 52
+          },
+          "ctxt": 0,
+          "value": "Object",
+          "optional": false
+        },
+        "declare": false,
+        "span": {
+          "start": 40,
+          "end": 55
+        },
+        "ctxt": 0,
+        "decorators": [],
+        "body": [],
+        "superClass": null,
+        "isAbstract": false,
+        "typeParams": null,
+        "superTypeParams": null,
+        "implements": []
+      }
+    }
+  ],
+  "interpreter": null
+}

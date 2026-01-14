@@ -1,0 +1,166 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 94,
+    "end": 252
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 94,
+        "end": 133
+      },
+      "expression": {
+        "type": "ConditionalExpression",
+        "span": {
+          "start": 94,
+          "end": 133
+        },
+        "test": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 94,
+            "end": 99
+          },
+          "value": false
+        },
+        "consequent": {
+          "type": "ArrowFunctionExpression",
+          "span": {
+            "start": 102,
+            "end": 126
+          },
+          "ctxt": 0,
+          "params": [
+            {
+              "type": "Identifier",
+              "span": {
+                "start": 103,
+                "end": 108
+              },
+              "ctxt": 0,
+              "value": "param",
+              "optional": false,
+              "typeAnnotation": null
+            }
+          ],
+          "body": {
+            "type": "Identifier",
+            "span": {
+              "start": 121,
+              "end": 126
+            },
+            "ctxt": 0,
+            "value": "param",
+            "optional": false
+          },
+          "async": false,
+          "generator": false,
+          "typeParameters": null,
+          "returnType": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 109,
+              "end": 117
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 111,
+                "end": 117
+              },
+              "kind": "string"
+            }
+          }
+        },
+        "alternate": {
+          "type": "NullLiteral",
+          "span": {
+            "start": 129,
+            "end": 133
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 213,
+        "end": 252
+      },
+      "expression": {
+        "type": "ConditionalExpression",
+        "span": {
+          "start": 213,
+          "end": 252
+        },
+        "test": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 213,
+            "end": 218
+          },
+          "value": false
+        },
+        "consequent": {
+          "type": "ArrowFunctionExpression",
+          "span": {
+            "start": 221,
+            "end": 245
+          },
+          "ctxt": 0,
+          "params": [
+            {
+              "type": "Identifier",
+              "span": {
+                "start": 222,
+                "end": 227
+              },
+              "ctxt": 0,
+              "value": "param",
+              "optional": false,
+              "typeAnnotation": null
+            }
+          ],
+          "body": {
+            "type": "Identifier",
+            "span": {
+              "start": 240,
+              "end": 245
+            },
+            "ctxt": 0,
+            "value": "param",
+            "optional": false
+          },
+          "async": false,
+          "generator": false,
+          "typeParameters": null,
+          "returnType": {
+            "type": "TsTypeAnnotation",
+            "span": {
+              "start": 228,
+              "end": 236
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 230,
+                "end": 236
+              },
+              "kind": "string"
+            }
+          }
+        },
+        "alternate": {
+          "type": "NullLiteral",
+          "span": {
+            "start": 248,
+            "end": 252
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

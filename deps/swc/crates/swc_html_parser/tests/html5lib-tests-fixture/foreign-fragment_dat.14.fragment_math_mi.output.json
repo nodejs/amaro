@@ -1,0 +1,18 @@
+{
+  "type": "DocumentFragment",
+  "span": {
+    "start": 1,
+    "end": 7
+  },
+  "children": [
+    {
+      "type": "Text",
+      "span": {
+        "start": 6,
+        "end": 7
+      },
+      "data": "X",
+      "raw": "X"
+    }
+  ]
+}

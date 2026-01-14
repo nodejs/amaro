@@ -1,0 +1,120 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 47
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 47
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 47
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6
+            },
+            "ctxt": 0,
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 9,
+              "end": 47
+            },
+            "properties": [
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 15,
+                    "end": 16
+                  },
+                  "value": "a"
+                },
+                "value": {
+                  "type": "TemplateLiteral",
+                  "span": {
+                    "start": 18,
+                    "end": 45
+                  },
+                  "expressions": [
+                    {
+                      "type": "NumericLiteral",
+                      "span": {
+                        "start": 25,
+                        "end": 28
+                      },
+                      "value": 123.0,
+                      "raw": "123"
+                    },
+                    {
+                      "type": "NumericLiteral",
+                      "span": {
+                        "start": 36,
+                        "end": 39
+                      },
+                      "value": 456.0,
+                      "raw": "456"
+                    }
+                  ],
+                  "quasis": [
+                    {
+                      "type": "TemplateElement",
+                      "span": {
+                        "start": 19,
+                        "end": 22
+                      },
+                      "tail": false,
+                      "cooked": "abc",
+                      "raw": "abc"
+                    },
+                    {
+                      "type": "TemplateElement",
+                      "span": {
+                        "start": 30,
+                        "end": 33
+                      },
+                      "tail": false,
+                      "cooked": "def",
+                      "raw": "def"
+                    },
+                    {
+                      "type": "TemplateElement",
+                      "span": {
+                        "start": 41,
+                        "end": 44
+                      },
+                      "tail": true,
+                      "cooked": "ghi",
+                      "raw": "ghi"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

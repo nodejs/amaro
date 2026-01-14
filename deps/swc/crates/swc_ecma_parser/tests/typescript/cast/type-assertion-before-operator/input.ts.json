@@ -1,0 +1,58 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 16
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 1,
+          "end": 15
+        },
+        "operator": "+",
+        "left": {
+          "type": "TsTypeAssertion",
+          "span": {
+            "start": 1,
+            "end": 11
+          },
+          "expression": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 10,
+              "end": 11
+            },
+            "value": 1.0,
+            "raw": "1"
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 2,
+              "end": 8
+            },
+            "kind": "number"
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 14,
+            "end": 15
+          },
+          "value": 1.0,
+          "raw": "1"
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

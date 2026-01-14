@@ -1,0 +1,65 @@
+[
+    JsDoc {
+        span: 72..76,
+        description: Text {
+            span: 72..72,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 72..79,
+                tag_name: Text {
+                    span: 72..79,
+                    value: "exports",
+                },
+                tag: Exports(
+                    ExportsTag {
+                        span: 72..79,
+                        module_name: Text {
+                            span: 0..0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 129..143,
+        description: Text {
+            span: 129..129,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 129..134,
+                tag_name: Text {
+                    span: 129..134,
+                    value: "lends",
+                },
+                tag: Lends(
+                    LendsTag {
+                        span: 129..134,
+                        name: NamePath {
+                            span: 129..143,
+                            components: [
+                                Text {
+                                    span: 129..135,
+                                    value: "module",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 186..186,
+        description: Text {
+            span: 186..223,
+            value: "This should be in the Foo module doc.",
+        },
+        tags: [],
+    },
+]
