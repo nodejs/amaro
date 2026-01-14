@@ -1,0 +1,44 @@
+<!-- 123 -->
+
+div {
+    color: red;
+<!--
+
+test
+
+-->
+}
+
+div {
+    color: red;
+<!--
+
+test
+
+-->
+
+    color: blue;
+}
+
+div {
+    color: red;
+<!--
+
+test
+
+-->;
+
+    color: blue;
+}
+
+a {
+    <!-- .class {
+         color: red;
+     }
+}
+
+@keyframes box {
+    <!-- -->
+    50% { left: 0; }
+    90% { left: 300px; }
+}

@@ -1,0 +1,14 @@
+  x 'arguments' is only allowed in functions and class methods
+   ,-[$DIR/tests/errors/arguments/input.js:4:1]
+ 3 |         class B {
+ 4 |             [arguments]
+   :              ^^^^^^^^^
+ 5 |         }
+   `----
+  x 'arguments' is only allowed in functions and class methods
+   ,-[$DIR/tests/errors/arguments/input.js:8:1]
+ 7 | 
+ 8 |     foo = arguments
+   :           ^^^^^^^^^
+ 9 | }
+   `----

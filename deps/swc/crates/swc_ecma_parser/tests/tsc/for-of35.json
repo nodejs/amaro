@@ -1,0 +1,288 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 39,
+    "end": 247
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 45,
+          "end": 59
+        },
+        "ctxt": 0,
+        "value": "StringIterator",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 39,
+        "end": 208
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 66,
+            "end": 152
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 66,
+              "end": 70
+            },
+            "value": "next"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 66,
+              "end": 152
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 73,
+                "end": 152
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 83,
+                    "end": 146
+                  },
+                  "argument": {
+                    "type": "ObjectExpression",
+                    "span": {
+                      "start": 90,
+                      "end": 146
+                    },
+                    "properties": [
+                      {
+                        "type": "KeyValueProperty",
+                        "key": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 104,
+                            "end": 108
+                          },
+                          "value": "done"
+                        },
+                        "value": {
+                          "type": "BooleanLiteral",
+                          "span": {
+                            "start": 110,
+                            "end": 114
+                          },
+                          "value": true
+                        }
+                      },
+                      {
+                        "type": "KeyValueProperty",
+                        "key": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 128,
+                            "end": 133
+                          },
+                          "value": "value"
+                        },
+                        "value": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 135,
+                            "end": 136
+                          },
+                          "ctxt": 0,
+                          "value": "v",
+                          "optional": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 158,
+            "end": 206
+          },
+          "key": {
+            "type": "Computed",
+            "span": {
+              "start": 158,
+              "end": 175
+            },
+            "expression": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 159,
+                "end": 174
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 159,
+                  "end": 165
+                },
+                "ctxt": 0,
+                "value": "Symbol",
+                "optional": false
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 166,
+                  "end": 174
+                },
+                "value": "iterator"
+              }
+            }
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 158,
+              "end": 206
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 178,
+                "end": 206
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 188,
+                    "end": 200
+                  },
+                  "argument": {
+                    "type": "ThisExpression",
+                    "span": {
+                      "start": 195,
+                      "end": 199
+                    }
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    },
+    {
+      "type": "ForOfStatement",
+      "span": {
+        "start": 210,
+        "end": 247
+      },
+      "await": false,
+      "left": {
+        "type": "VariableDeclaration",
+        "span": {
+          "start": 215,
+          "end": 220
+        },
+        "ctxt": 0,
+        "kind": "var",
+        "declare": false,
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "span": {
+              "start": 219,
+              "end": 220
+            },
+            "id": {
+              "type": "Identifier",
+              "span": {
+                "start": 219,
+                "end": 220
+              },
+              "ctxt": 0,
+              "value": "v",
+              "optional": false,
+              "typeAnnotation": null
+            },
+            "init": null,
+            "definite": false
+          }
+        ]
+      },
+      "right": {
+        "type": "NewExpression",
+        "span": {
+          "start": 224,
+          "end": 242
+        },
+        "ctxt": 0,
+        "callee": {
+          "type": "Identifier",
+          "span": {
+            "start": 228,
+            "end": 242
+          },
+          "ctxt": 0,
+          "value": "StringIterator",
+          "optional": false
+        },
+        "arguments": null,
+        "typeArguments": null
+      },
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 244,
+          "end": 247
+        },
+        "ctxt": 0,
+        "stmts": []
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,1 @@
+//// [genericCallWithConstraintsTypeArgumentInference2.ts]

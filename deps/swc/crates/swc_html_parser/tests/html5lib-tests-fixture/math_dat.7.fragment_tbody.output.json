@@ -1,0 +1,50 @@
+{
+  "type": "DocumentFragment",
+  "span": {
+    "start": 1,
+    "end": 26
+  },
+  "children": [
+    {
+      "type": "Element",
+      "span": {
+        "start": 1,
+        "end": 26
+      },
+      "tagName": "math",
+      "namespace": "http://www.w3.org/1998/Math/MathML",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 7,
+            "end": 26
+          },
+          "tagName": "tfoot",
+          "namespace": "http://www.w3.org/1998/Math/MathML",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Element",
+              "span": {
+                "start": 14,
+                "end": 26
+              },
+              "tagName": "mo",
+              "namespace": "http://www.w3.org/1998/Math/MathML",
+              "attributes": [],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

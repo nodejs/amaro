@@ -1,0 +1,110 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 17
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 17
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 14
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 14
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 14
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "AttributeSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 14
+                    },
+                    "name": {
+                      "type": "WqName",
+                      "span": {
+                        "start": 2,
+                        "end": 13
+                      },
+                      "prefix": {
+                        "type": "NamespacePrefix",
+                        "span": {
+                          "start": 2,
+                          "end": 5
+                        },
+                        "namespace": {
+                          "type": "NamedNamespace",
+                          "span": {
+                            "start": 2,
+                            "end": 4
+                          },
+                          "name": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 2,
+                              "end": 4
+                            },
+                            "value": "ns",
+                            "raw": "ns"
+                          }
+                        }
+                      },
+                      "value": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 5,
+                          "end": 13
+                        },
+                        "value": ",attr",
+                        "raw": "\\2c attr"
+                      }
+                    },
+                    "matcher": null,
+                    "value": null,
+                    "modifier": null
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 15,
+          "end": 17
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 15,
+            "end": 16
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

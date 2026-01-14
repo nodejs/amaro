@@ -1,0 +1,1 @@
+//// [assignFromStringInterface2.ts]

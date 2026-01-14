@@ -1,0 +1,51 @@
+import { _ as _async_to_generator } from "@swc/helpers/_/_async_to_generator";
+import { _ as _ts_generator } from "@swc/helpers/_/_ts_generator";
+var source = Math.random() < 2 ? "matilda" : "fred";
+var details = {
+    _id: "1"
+};
+function request(path) {
+    return _async_to_generator(function() {
+        return _ts_generator(this, function(_state) {
+            return [
+                2,
+                "success:".concat(path)
+            ];
+        });
+    })();
+}
+(function() {
+    return _async_to_generator(function() {
+        var obj, _tmp;
+        return _ts_generator(this, function(_state) {
+            switch(_state.label){
+                case 0:
+                    if (!(source === "matilda")) return [
+                        3,
+                        1
+                    ];
+                    _tmp = details;
+                    return [
+                        3,
+                        3
+                    ];
+                case 1:
+                    return [
+                        4,
+                        request("/".concat(details._id, "?source=").concat(source))
+                    ];
+                case 2:
+                    _tmp = _state.sent();
+                    _state.label = 3;
+                case 3:
+                    obj = _tmp;
+                    console.log({
+                        obj: obj
+                    });
+                    return [
+                        2
+                    ];
+            }
+        });
+    })();
+})();

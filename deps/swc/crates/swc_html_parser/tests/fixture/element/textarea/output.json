@@ -1,0 +1,267 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 258
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 17,
+        "end": 258
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 23,
+            "end": 32
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "lang",
+          "rawName": "lang",
+          "value": "en",
+          "rawValue": "\"en\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 34,
+            "end": 76
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 40,
+                "end": 45
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 45,
+                "end": 68
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 52,
+                    "end": 60
+                  },
+                  "data": "Document",
+                  "raw": "Document"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 68,
+                "end": 69
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 76,
+            "end": 77
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 77,
+            "end": 251
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 83,
+                "end": 85
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 85,
+                "end": 131
+              },
+              "tagName": "label",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 92,
+                    "end": 103
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "for",
+                  "rawName": "for",
+                  "value": "story",
+                  "rawValue": "\"story\""
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 104,
+                    "end": 123
+                  },
+                  "data": "Tell us your story:",
+                  "raw": "Tell us your story:"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 131,
+                "end": 133
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 133,
+                "end": 241
+              },
+              "tagName": "textarea",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 143,
+                    "end": 153
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "id",
+                  "rawName": "id",
+                  "value": "story",
+                  "rawValue": "\"story\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 154,
+                    "end": 166
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "name",
+                  "rawName": "name",
+                  "value": "story",
+                  "rawValue": "\"story\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 177,
+                    "end": 185
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "rows",
+                  "rawName": "rows",
+                  "value": "5",
+                  "rawValue": "\"5\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 186,
+                    "end": 195
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "cols",
+                  "rawName": "cols",
+                  "value": "33",
+                  "rawValue": "\"33\""
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 197,
+                    "end": 230
+                  },
+                  "data": "\n\n\n    test\n    test\n    test\n\n\n\n",
+                  "raw": "\n\n\n    test\n    test\n    test\n\n\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 241,
+                "end": 251
+              },
+              "data": "\n\n\n",
+              "raw": "\n\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

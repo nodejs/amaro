@@ -1,0 +1,171 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 52
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 52
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 15
+        },
+        "value": "-moz-document",
+        "raw": "-moz-document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 16,
+          "end": 29
+        },
+        "matchingFunctions": [
+          {
+            "type": "Function",
+            "span": {
+              "start": 16,
+              "end": 28
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 16,
+                "end": 26
+              },
+              "value": "url-prefix",
+              "raw": "url-prefix"
+            },
+            "value": []
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 29,
+          "end": 52
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 29,
+            "end": 30
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "QualifiedRule",
+            "span": {
+              "start": 31,
+              "end": 50
+            },
+            "prelude": {
+              "type": "SelectorList",
+              "span": {
+                "start": 31,
+                "end": 33
+              },
+              "children": [
+                {
+                  "type": "ComplexSelector",
+                  "span": {
+                    "start": 31,
+                    "end": 33
+                  },
+                  "children": [
+                    {
+                      "type": "CompoundSelector",
+                      "span": {
+                        "start": 31,
+                        "end": 33
+                      },
+                      "nestingSelector": null,
+                      "typeSelector": {
+                        "type": "TagNameSelector",
+                        "span": {
+                          "start": 31,
+                          "end": 33
+                        },
+                        "name": {
+                          "type": "WqName",
+                          "span": {
+                            "start": 31,
+                            "end": 33
+                          },
+                          "prefix": null,
+                          "value": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 31,
+                              "end": 33
+                            },
+                            "value": "h1",
+                            "raw": "h1"
+                          }
+                        }
+                      },
+                      "subclassSelectors": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 34,
+                "end": 50
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 34,
+                  "end": 35
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 36,
+                    "end": 49
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 36,
+                      "end": 41
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 43,
+                        "end": 48
+                      },
+                      "value": "green",
+                      "raw": "green"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

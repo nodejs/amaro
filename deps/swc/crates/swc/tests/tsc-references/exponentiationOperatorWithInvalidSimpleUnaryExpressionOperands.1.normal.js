@@ -1,0 +1,32 @@
+//// [exponentiationOperatorWithInvalidSimpleUnaryExpressionOperands.ts]
+import { _ as _type_of } from "@swc/helpers/_/_type_of";
+var temp;
+Math.pow(// Error: incorrect type on left-hand side 
+!--temp, 3);
+Math.pow(!temp--, 3);
+Math.pow(!3, 4);
+Math.pow(!temp++, 4);
+Math.pow(!temp--, 4);
+Math.pow(!--temp, Math.pow(3, 1));
+Math.pow(!temp--, Math.pow(3, 1));
+Math.pow(!3, Math.pow(4, 1));
+Math.pow(!temp++, Math.pow(4, 1));
+Math.pow(!temp--, Math.pow(4, 1));
+Math.pow(_type_of(--temp), 3);
+Math.pow(_type_of(temp--), 3);
+Math.pow(_type_of(3), 4);
+Math.pow(_type_of(temp++), 4);
+Math.pow(_type_of(temp--), 4);
+Math.pow(1, Math.pow(_type_of(--temp), 3));
+Math.pow(1, Math.pow(_type_of(temp--), 3));
+Math.pow(1, Math.pow(_type_of(3), 4));
+Math.pow(1, Math.pow(_type_of(temp++), 4));
+Math.pow(1, Math.pow(_type_of(temp--), 4));
+Math.pow(delete --temp, 3);
+Math.pow(delete ++temp, 3);
+Math.pow(delete temp--, 3);
+Math.pow(delete temp++, 3);
+Math.pow(1, Math.pow(delete --temp, 3));
+Math.pow(1, Math.pow(delete ++temp, 3));
+Math.pow(1, Math.pow(delete temp--, 3));
+Math.pow(1, Math.pow(delete temp++, 3));

@@ -1,0 +1,27 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 13
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 13
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 12
+        },
+        "value": ",unknown",
+        "raw": "\\2cunknown"
+      },
+      "prelude": null,
+      "block": null
+    }
+  ]
+}

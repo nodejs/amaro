@@ -1,0 +1,172 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 76
+  },
+  "body": [
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 1,
+        "end": 38
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "identifier": {
+          "type": "Identifier",
+          "span": {
+            "start": 17,
+            "end": 18
+          },
+          "ctxt": 0,
+          "value": "f",
+          "optional": false
+        },
+        "declare": false,
+        "params": [
+          {
+            "type": "Parameter",
+            "span": {
+              "start": 19,
+              "end": 28
+            },
+            "decorators": [],
+            "pat": {
+              "type": "Identifier",
+              "span": {
+                "start": 19,
+                "end": 20
+              },
+              "ctxt": 0,
+              "value": "x",
+              "optional": false,
+              "typeAnnotation": {
+                "type": "TsTypeAnnotation",
+                "span": {
+                  "start": 20,
+                  "end": 28
+                },
+                "typeAnnotation": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 22,
+                    "end": 28
+                  },
+                  "kind": "number"
+                }
+              }
+            }
+          }
+        ],
+        "decorators": [],
+        "span": {
+          "start": 8,
+          "end": 38
+        },
+        "ctxt": 0,
+        "body": null,
+        "generator": false,
+        "async": false,
+        "typeParameters": null,
+        "returnType": {
+          "type": "TsTypeAnnotation",
+          "span": {
+            "start": 29,
+            "end": 37
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 31,
+              "end": 37
+            },
+            "kind": "number"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExportDeclaration",
+      "span": {
+        "start": 39,
+        "end": 76
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "identifier": {
+          "type": "Identifier",
+          "span": {
+            "start": 55,
+            "end": 56
+          },
+          "ctxt": 0,
+          "value": "f",
+          "optional": false
+        },
+        "declare": false,
+        "params": [
+          {
+            "type": "Parameter",
+            "span": {
+              "start": 57,
+              "end": 66
+            },
+            "decorators": [],
+            "pat": {
+              "type": "Identifier",
+              "span": {
+                "start": 57,
+                "end": 58
+              },
+              "ctxt": 0,
+              "value": "x",
+              "optional": false,
+              "typeAnnotation": {
+                "type": "TsTypeAnnotation",
+                "span": {
+                  "start": 58,
+                  "end": 66
+                },
+                "typeAnnotation": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 60,
+                    "end": 66
+                  },
+                  "kind": "string"
+                }
+              }
+            }
+          }
+        ],
+        "decorators": [],
+        "span": {
+          "start": 46,
+          "end": 76
+        },
+        "ctxt": 0,
+        "body": null,
+        "generator": false,
+        "async": false,
+        "typeParameters": null,
+        "returnType": {
+          "type": "TsTypeAnnotation",
+          "span": {
+            "start": 67,
+            "end": 75
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 69,
+              "end": 75
+            },
+            "kind": "string"
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

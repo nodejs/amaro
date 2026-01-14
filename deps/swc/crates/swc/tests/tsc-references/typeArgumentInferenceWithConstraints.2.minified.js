@@ -1,0 +1,2 @@
+//// [typeArgumentInferenceWithConstraints.ts]
+window, window;

@@ -1,0 +1,996 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 564
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 86
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 21
+        },
+        "value": "font-feature-values",
+        "raw": "font-feature-values"
+      },
+      "prelude": {
+        "type": "FontFeatureValuesPrelude",
+        "span": {
+          "start": 22,
+          "end": 35
+        },
+        "fontFamily": [
+          {
+            "type": "String",
+            "span": {
+              "start": 22,
+              "end": 34
+            },
+            "value": "Otaru Kisa",
+            "raw": "\"Otaru Kisa\""
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 35,
+          "end": 86
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 35,
+            "end": 36
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 41,
+              "end": 84
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 42,
+                "end": 52
+              },
+              "value": "annotation",
+              "raw": "annotation"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 53,
+                "end": 84
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 53,
+                  "end": 54
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 55,
+                    "end": 65
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 55,
+                      "end": 62
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 64,
+                        "end": 65
+                      },
+                      "value": 1,
+                      "raw": "1"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 67,
+                    "end": 81
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 67,
+                      "end": 78
+                    },
+                    "value": "black-boxed",
+                    "raw": "black-boxed"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 80,
+                        "end": 81
+                      },
+                      "value": 3,
+                      "raw": "3"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 88,
+        "end": 166
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 89,
+          "end": 108
+        },
+        "value": "font-feature-values",
+        "raw": "font-feature-values"
+      },
+      "prelude": {
+        "type": "FontFeatureValuesPrelude",
+        "span": {
+          "start": 109,
+          "end": 115
+        },
+        "fontFamily": [
+          {
+            "type": "SequenceOfCustomIdents",
+            "span": {
+              "start": 109,
+              "end": 115
+            },
+            "value": [
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 109,
+                  "end": 114
+                },
+                "value": "Otaru",
+                "raw": "Otaru"
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 115,
+          "end": 166
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 115,
+            "end": 116
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 121,
+              "end": 164
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 122,
+                "end": 132
+              },
+              "value": "annotation",
+              "raw": "annotation"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 133,
+                "end": 164
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 133,
+                  "end": 134
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 135,
+                    "end": 145
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 135,
+                      "end": 142
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 144,
+                        "end": 145
+                      },
+                      "value": 1,
+                      "raw": "1"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 147,
+                    "end": 161
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 147,
+                      "end": 158
+                    },
+                    "value": "black-boxed",
+                    "raw": "black-boxed"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 160,
+                        "end": 161
+                      },
+                      "value": 3,
+                      "raw": "3"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 168,
+        "end": 251
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 169,
+          "end": 188
+        },
+        "value": "font-feature-values",
+        "raw": "font-feature-values"
+      },
+      "prelude": {
+        "type": "FontFeatureValuesPrelude",
+        "span": {
+          "start": 189,
+          "end": 200
+        },
+        "fontFamily": [
+          {
+            "type": "SequenceOfCustomIdents",
+            "span": {
+              "start": 189,
+              "end": 200
+            },
+            "value": [
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 189,
+                  "end": 194
+                },
+                "value": "Otaru",
+                "raw": "Otaru"
+              },
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 195,
+                  "end": 199
+                },
+                "value": "Kisa",
+                "raw": "Kisa"
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 200,
+          "end": 251
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 200,
+            "end": 201
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 206,
+              "end": 249
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 207,
+                "end": 217
+              },
+              "value": "annotation",
+              "raw": "annotation"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 218,
+                "end": 249
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 218,
+                  "end": 219
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 220,
+                    "end": 230
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 220,
+                      "end": 227
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 229,
+                        "end": 230
+                      },
+                      "value": 1,
+                      "raw": "1"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 232,
+                    "end": 246
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 232,
+                      "end": 243
+                    },
+                    "value": "black-boxed",
+                    "raw": "black-boxed"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 245,
+                        "end": 246
+                      },
+                      "value": 3,
+                      "raw": "3"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 253,
+        "end": 333
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 254,
+          "end": 273
+        },
+        "value": "font-feature-values",
+        "raw": "font-feature-values"
+      },
+      "prelude": {
+        "type": "FontFeatureValuesPrelude",
+        "span": {
+          "start": 274,
+          "end": 288
+        },
+        "fontFamily": [
+          {
+            "type": "SequenceOfCustomIdents",
+            "span": {
+              "start": 274,
+              "end": 288
+            },
+            "value": [
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 274,
+                  "end": 280
+                },
+                "value": "Taisho",
+                "raw": "Taisho"
+              },
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 281,
+                  "end": 287
+                },
+                "value": "Gothic",
+                "raw": "Gothic"
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 288,
+          "end": 333
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 288,
+            "end": 289
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 294,
+              "end": 331
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 295,
+                "end": 305
+              },
+              "value": "annotation",
+              "raw": "annotation"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 306,
+                "end": 331
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 306,
+                  "end": 307
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 308,
+                    "end": 316
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 308,
+                      "end": 313
+                    },
+                    "value": "boxed",
+                    "raw": "boxed"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 315,
+                        "end": 316
+                      },
+                      "value": 1,
+                      "raw": "1"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 318,
+                    "end": 328
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 318,
+                      "end": 325
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 327,
+                        "end": 328
+                      },
+                      "value": 4,
+                      "raw": "4"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 335,
+        "end": 420
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 336,
+          "end": 355
+        },
+        "value": "font-feature-values",
+        "raw": "font-feature-values"
+      },
+      "prelude": {
+        "type": "FontFeatureValuesPrelude",
+        "span": {
+          "start": 356,
+          "end": 375
+        },
+        "fontFamily": [
+          {
+            "type": "SequenceOfCustomIdents",
+            "span": {
+              "start": 356,
+              "end": 369
+            },
+            "value": [
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 356,
+                  "end": 362
+                },
+                "value": "Taisho",
+                "raw": "Taisho"
+              },
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 363,
+                  "end": 369
+                },
+                "value": "Gothic",
+                "raw": "Gothic"
+              }
+            ]
+          },
+          {
+            "type": "SequenceOfCustomIdents",
+            "span": {
+              "start": 371,
+              "end": 375
+            },
+            "value": [
+              {
+                "type": "CustomIdent",
+                "span": {
+                  "start": 371,
+                  "end": 374
+                },
+                "value": "Bar",
+                "raw": "Bar"
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 375,
+          "end": 420
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 375,
+            "end": 376
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 381,
+              "end": 418
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 382,
+                "end": 392
+              },
+              "value": "annotation",
+              "raw": "annotation"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 393,
+                "end": 418
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 393,
+                  "end": 394
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 395,
+                    "end": 403
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 395,
+                      "end": 400
+                    },
+                    "value": "boxed",
+                    "raw": "boxed"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 402,
+                        "end": 403
+                      },
+                      "value": 1,
+                      "raw": "1"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 405,
+                    "end": 415
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 405,
+                      "end": 412
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  },
+                  "value": [
+                    {
+                      "type": "Integer",
+                      "span": {
+                        "start": 414,
+                        "end": 415
+                      },
+                      "value": 4,
+                      "raw": "4"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 422,
+        "end": 563
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 422,
+          "end": 430
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 422,
+              "end": 430
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 422,
+                  "end": 430
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 422,
+                    "end": 424
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 422,
+                      "end": 424
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 422,
+                        "end": 424
+                      },
+                      "value": "h3",
+                      "raw": "h3"
+                    }
+                  }
+                },
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 424,
+                      "end": 430
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 425,
+                        "end": 430
+                      },
+                      "value": "title",
+                      "raw": "title"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 431,
+          "end": 563
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 431,
+            "end": 432
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 483,
+              "end": 521
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 483,
+                "end": 494
+              },
+              "value": "font-family",
+              "raw": "font-family"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 496,
+                  "end": 501
+                },
+                "value": "Otaru",
+                "raw": "Otaru"
+              },
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 502,
+                  "end": 506
+                },
+                "value": "Kisa",
+                "raw": "Kisa"
+              },
+              {
+                "type": "Delimiter",
+                "span": {
+                  "start": 506,
+                  "end": 507
+                },
+                "value": ","
+              },
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 508,
+                  "end": 514
+                },
+                "value": "Taisho",
+                "raw": "Taisho"
+              },
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 515,
+                  "end": 521
+                },
+                "value": "Gothic",
+                "raw": "Gothic"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 527,
+              "end": 560
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 527,
+                "end": 539
+              },
+              "value": "font-variant",
+              "raw": "font-variant"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 541,
+                  "end": 560
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 541,
+                    "end": 551
+                  },
+                  "value": "annotation",
+                  "raw": "annotation"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 552,
+                      "end": 559
+                    },
+                    "value": "circled",
+                    "raw": "circled"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "jsc": {
+        "baseUrl": ".",
+        "paths": {
+            "server/*": [
+                "./*"
+            ]
+        }
+    },
+    "module": {
+        "type": "commonjs"
+    }
+}

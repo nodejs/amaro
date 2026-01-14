@@ -1,0 +1,1 @@
+//// [tsxReactEmit8.tsx]

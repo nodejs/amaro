@@ -1,0 +1,45 @@
+{
+  "type": "DocumentFragment",
+  "span": {
+    "start": 1,
+    "end": 21
+  },
+  "children": [
+    {
+      "type": "Element",
+      "span": {
+        "start": 1,
+        "end": 20
+      },
+      "tagName": "font",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 7,
+            "end": 12
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "color",
+          "rawName": "color",
+          "value": null,
+          "rawValue": null
+        }
+      ],
+      "children": [],
+      "content": null,
+      "isSelfClosing": false
+    },
+    {
+      "type": "Text",
+      "span": {
+        "start": 20,
+        "end": 21
+      },
+      "data": "X",
+      "raw": "X"
+    }
+  ]
+}

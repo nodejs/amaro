@@ -1,0 +1,18 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..17,
+            value: "Inline Comment 1",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 50..50,
+        description: Text {
+            span: 50..66,
+            value: "Inline Comment 2",
+        },
+        tags: [],
+    },
+]

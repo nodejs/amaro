@@ -1,0 +1,82 @@
+[
+    JsDoc {
+        span: 18..18,
+        description: Text {
+            span: 18..51,
+            value: "A module representing a shirt.\n *",
+        },
+        tags: [
+            TagItem {
+                span: 18..25,
+                tag_name: Text {
+                    span: 18..25,
+                    value: "exports",
+                },
+                tag: Exports(
+                    ExportsTag {
+                        span: 18..25,
+                        module_name: Text {
+                            span: 18..26,
+                            value: "my/shirt",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 18..25,
+                tag_name: Text {
+                    span: 18..25,
+                    value: "version",
+                },
+                tag: Version(
+                    VersionTag {
+                        span: 18..25,
+                        value: Text {
+                            span: 18..21,
+                            value: "1.0",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 116..116,
+        description: Text {
+            span: 116..141,
+            value: "A property of the module.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 187..187,
+        description: Text {
+            span: 187..187,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 187..198,
+                tag_name: Text {
+                    span: 187..198,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 187..198,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 261..261,
+        description: Text {
+            span: 261..285,
+            value: "A property of the class.",
+        },
+        tags: [],
+    },
+]

@@ -1,0 +1,1 @@
+//// [templateStringWithOpenCommentInStringPortion.ts]

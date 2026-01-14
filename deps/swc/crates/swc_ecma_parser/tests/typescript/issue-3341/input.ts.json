@@ -1,0 +1,150 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 78
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 78
+      },
+      "ctxt": 0,
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 77
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 11
+            },
+            "ctxt": 0,
+            "value": "test",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 14,
+              "end": 77
+            },
+            "properties": [
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 20,
+                    "end": 23
+                  },
+                  "value": "อ"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 25,
+                    "end": 26
+                  },
+                  "value": 9.0,
+                  "raw": "9"
+                }
+              },
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 32,
+                    "end": 35
+                  },
+                  "value": "ฮ"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 37,
+                    "end": 38
+                  },
+                  "value": 9.0,
+                  "raw": "9"
+                }
+              },
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 44,
+                    "end": 47
+                  },
+                  "value": "ะ"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 49,
+                    "end": 50
+                  },
+                  "value": 9.0,
+                  "raw": "9"
+                }
+              },
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 56,
+                    "end": 59
+                  },
+                  "value": "า"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 61,
+                    "end": 62
+                  },
+                  "value": 9.0,
+                  "raw": "9"
+                }
+              },
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 68,
+                    "end": 71
+                  },
+                  "value": "ำ"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 73,
+                    "end": 74
+                  },
+                  "value": 9.0,
+                  "raw": "9"
+                }
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

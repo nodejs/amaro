@@ -1,0 +1,173 @@
+@\media screen {}
+@\media \screen {}
+
+@media all {}
+@media screen {}
+@media print {}
+@media screen and (color) {}
+@media screen and (color), projection and (color) {}
+@media    screen    and    (   color   )   ,   projection    and   (   color   )   {}
+@media print and (min-resolution: 118dpcm) {}
+@media    all    {}
+@media screen and (color) {}
+@media   screen   and    (   color   )   {}
+
+@media not all and (monochrome) {}
+@media not screen and (color), print and (color) {}
+@media not (device-aspect-ratio: 16/9) {}
+@media not (device-aspect-ratio: 16 / 9) {}
+@media not all {}
+@media    not   all   {}
+
+@media only screen and (color) {}
+@media   only   screen   and   (   color   )   {}
+
+@media (min-width: 20px) {}
+@media(min-width: 20px){}
+@media   (   min-width   :   20px   )   {}
+@media (device-aspect-ratio: 16/9) {}
+@media    (   device-aspect-ratio   :    16   /   9   )   {}
+@media (grid) and (max-width: 15em) {}
+@media (monochrome) {}
+
+@media (min-width: 20em) and (min-width: 20em) {}
+@media   (min-width   :   20em   )   and   (   min-width   :   20em   )   {}
+@media (min-width: 1024px) and (min-width: 1024px) and (min-width: 1024px) {}
+@media(min-width:20em)and (min-width: 20em){}
+@media(min-width:20em)and (min-width:20em){}
+
+@media (update: slow) or (hover: none) {}
+@media   (   update   :   slow   )    or   (   hover   :   none   )    {}
+@media(update: slow)or (hover: none){}
+
+@media (height < 600px) {}
+@media (height <= 600px) {}
+@media (height > 600px) {}
+@media (height >= 600px) {}
+@media (height = 600px) {}
+@media   (   height   <   600px   )   {}
+@media   (   height   <=   600px   )   {}
+@media   (   height   >   600px   )   {}
+@media   (   height   >=   600px   )   {}
+@media   (   height   =   600px   )   {}
+@media(height=600px){}
+@media(height>=600px) {}
+
+@media (600px < height) {}
+@media (600px <= height) {}
+@media (600px > height) {}
+@media (600px >= height) {}
+@media (600px = height) {}
+@media   (   600px   <   height   )   {}
+@media   (   600px   <=   height   )   {}
+@media   (   600px   >   height   )   {}
+@media   (   600px   >=   height   )   {}
+@media   (   600px   =   height   )   {}
+@media(600px=height) {}
+@media(600px>=height) {}
+
+@media (400px < width < 700px) {}
+@media (400px <= width < 700px) {}
+@media (400px < width <= 700px) {}
+@media (400px <= width <= 700px) {}
+@media(400px<width<700px){}
+@media(400px<=width<=700px){}
+@media   (   400px   <   width   <   700px   )   {}
+@media   (   400px   <=   width   <   700px   )   {}
+@media   (   400px   <   width   <=   700px   )   {}
+@media   (   400px   <=   width   <=   700px   )   {}
+@media(400px<width<700px){}
+@media(400px<=width<=700px){}
+
+@media (400px > width > 700px) {}
+@media (400px >= width > 700px) {}
+@media (400px > width >= 700px) {}
+@media (400px >= width >= 700px) {}
+@media(400px>width>700px){}
+@media(400px>=width>=700px) {}
+@media   (   400px   >   width   >   700px   )   {}
+@media   (   400px   >=   width   >   700px   )   {}
+@media   (   400px   >   width   >=   700px   )   {}
+@media   (   400px   >=   width   >=   700px   )   {}
+@media(400px>width>700px){}
+@media(400px>=width>=700px){}
+
+@media (--modern) and (min-width: 1024px) {}
+
+@media (not (color)) or (hover) {}
+@media   (   not    (   color   )   )   or   (   hover   )   {}
+@media ((color) or (hover)) and (width > 1024px) {}
+@media (((color)) or ((hover))) and (width > 1024px) {}
+@media (((((color)) or ((hover))))) and (width > 1024px) {}
+@media   (   (   (   (   (   color   )   )   or   (   (   hover   )   )   )   )   )   and   (   width   >   1024px   )   {}
+
+@media ((min-width: 800px) and (min-width: 800px)) or (min-width: 800px) {}
+@media (min-width: 800px) and ((min-width: 800px) or (min-width: 800px)) {}
+
+@media    NOT   all   {}
+@media ONLY screen AND (color) {}
+@media ((min-width: 800px) AND (min-width: 800px)) OR (min-width: 800px) {}
+@media (min-width: 800px) AND ((min-width: 800px) OR (min-width: 800px)) {}
+
+@media {}
+@media    {}
+
+@media tty {}
+
+@media print {
+    html
+    main {
+        color: orange;
+    }
+}
+
+@media print {
+    html,
+    main {
+        color: orange;
+    }
+}
+
+@media (NOT (color)) OR (hover) {}
+
+@media (width > calc(5px + 1rem)) {}
+@media (width < calc(Infinity * 1px)) {}
+@media (max-width: calc(5px + 1rem)) {}
+@media (width: calc(5px + 1rem)) {}
+@media (calc(100px + 10px) < width <= calc(1000px + 10px)) {}
+@media (-webkit-calc(10px + 100px) < width <= calc(1000px + 10px)) {}
+
+/* General Enclosed */
+
+@media (height << 600px) {}
+@media (height foo bar) {}
+@media (height foo("bar")) {}
+@media (height + 600px) {}
+@media screen and (min-width: ) {}
+@media (aspect-ratio: 12/) {}
+@media func(100px) {}
+@media screen and func(100px) {}
+@media(min-width:calc(10px + 10px)) {}
+@media (width > calc(220px + 100px)) {}
+
+@m\65 dia {
+    .color {
+        color: red;
+    }
+}
+
+@media SCREEN AND (UPDATE: SLOW) AND (WIDTH > 1500px) {}
+
+@media (--modern) and (width > 1024px) {
+    .a { color: green; }
+}
+@media (--) and (width > 1024px) {
+    .a { color: green; }
+}
+
+@MEDIA ALL {}
+@MEDIA (PREFERS-reduced-motion: no-preference) {
+    :ROOT {
+        scroll-behavior: smooth;
+    }
+}

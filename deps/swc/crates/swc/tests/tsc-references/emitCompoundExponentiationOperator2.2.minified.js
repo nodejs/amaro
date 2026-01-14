@@ -1,0 +1,1 @@
+//// [emitCompoundExponentiationOperator2.ts]

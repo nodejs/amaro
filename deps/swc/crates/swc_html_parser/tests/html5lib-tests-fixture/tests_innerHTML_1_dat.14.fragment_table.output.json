@@ -1,0 +1,49 @@
+{
+  "type": "DocumentFragment",
+  "span": {
+    "start": 1,
+    "end": 15
+  },
+  "children": [
+    {
+      "type": "Element",
+      "span": {
+        "start": 1,
+        "end": 4
+      },
+      "tagName": "a",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [],
+      "content": null,
+      "isSelfClosing": false
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 4,
+        "end": 15
+      },
+      "tagName": "tbody",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 11,
+            "end": 15
+          },
+          "tagName": "tr",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

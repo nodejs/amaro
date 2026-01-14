@@ -1,0 +1,74 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 42
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 9
+      },
+      "expression": {
+        "type": "NumericLiteral",
+        "span": {
+          "start": 1,
+          "end": 8
+        },
+        "value": 3.0,
+        "raw": "0b00_11"
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 10,
+        "end": 16
+      },
+      "expression": {
+        "type": "NumericLiteral",
+        "span": {
+          "start": 10,
+          "end": 15
+        },
+        "value": 1.0,
+        "raw": "0B0_1"
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 17,
+        "end": 29
+      },
+      "expression": {
+        "type": "NumericLiteral",
+        "span": {
+          "start": 17,
+          "end": 28
+        },
+        "value": 195.0,
+        "raw": "0b1100_0011"
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 30,
+        "end": 42
+      },
+      "expression": {
+        "type": "NumericLiteral",
+        "span": {
+          "start": 30,
+          "end": 41
+        },
+        "value": 53.0,
+        "raw": "0B0_11_0101"
+      }
+    }
+  ],
+  "interpreter": null
+}

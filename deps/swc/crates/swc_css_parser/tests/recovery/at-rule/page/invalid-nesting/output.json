@@ -1,0 +1,372 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 231,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 230,
+        "ctxt": 0
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 6,
+          "ctxt": 0
+        },
+        "value": "page",
+        "raw": "page"
+      },
+      "prelude": {
+        "type": "PageSelectorList",
+        "span": {
+          "start": 7,
+          "end": 13,
+          "ctxt": 0
+        },
+        "selectors": [
+          {
+            "type": "PageSelector",
+            "span": {
+              "start": 7,
+              "end": 13,
+              "ctxt": 0
+            },
+            "pageType": null,
+            "pseudos": [
+              {
+                "type": "PageSelectorPseudo",
+                "span": {
+                  "start": 7,
+                  "end": 13,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 8,
+                    "end": 13,
+                    "ctxt": 0
+                  },
+                  "value": "first",
+                  "raw": "first"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 14,
+          "end": 230,
+          "ctxt": 0
+        },
+        "name": "{",
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 20,
+              "end": 32,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 20,
+                "end": 25,
+                "ctxt": 0
+              },
+              "value": "color",
+              "raw": "color"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 27,
+                  "end": 32,
+                  "ctxt": 0
+                },
+                "value": "green",
+                "raw": "green"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 39,
+              "end": 101,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 40,
+                "end": 48,
+                "ctxt": 0
+              },
+              "value": "top-left",
+              "raw": "top-left"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 49,
+                "end": 101,
+                "ctxt": 0
+              },
+              "name": "{",
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 59,
+                    "end": 73,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 59,
+                      "end": 66,
+                      "ctxt": 0
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 68,
+                        "end": 73,
+                        "ctxt": 0
+                      },
+                      "value": "foo",
+                      "raw": "\"foo\""
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 83,
+                    "end": 94,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 83,
+                      "end": 88,
+                      "ctxt": 0
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 90,
+                        "end": 94,
+                        "ctxt": 0
+                      },
+                      "value": "blue",
+                      "raw": "blue"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 107,
+              "end": 209,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 108,
+                "end": 117,
+                "ctxt": 0
+              },
+              "value": "top-right",
+              "raw": "top-right"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 118,
+                "end": 209,
+                "ctxt": 0
+              },
+              "name": "{",
+              "value": [
+                {
+                  "type": "AtRule",
+                  "span": {
+                    "start": 128,
+                    "end": 178,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 129,
+                      "end": 138,
+                      "ctxt": 0
+                    },
+                    "value": "top-right",
+                    "raw": "top-right"
+                  },
+                  "prelude": null,
+                  "block": {
+                    "type": "SimpleBlock",
+                    "span": {
+                      "start": 139,
+                      "end": 178,
+                      "ctxt": 0
+                    },
+                    "name": "{",
+                    "value": [
+                      {
+                        "type": "Declaration",
+                        "span": {
+                          "start": 153,
+                          "end": 167,
+                          "ctxt": 0
+                        },
+                        "name": {
+                          "type": "Ident",
+                          "span": {
+                            "start": 153,
+                            "end": 160,
+                            "ctxt": 0
+                          },
+                          "value": "content",
+                          "raw": "content"
+                        },
+                        "value": [
+                          {
+                            "type": "String",
+                            "span": {
+                              "start": 162,
+                              "end": 167,
+                              "ctxt": 0
+                            },
+                            "value": "zzz",
+                            "raw": "\"zzz\""
+                          }
+                        ],
+                        "important": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 188,
+                    "end": 202,
+                    "ctxt": 0
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 188,
+                      "end": 195,
+                      "ctxt": 0
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 197,
+                        "end": 202,
+                        "ctxt": 0
+                      },
+                      "value": "bar",
+                      "raw": "\"bar\""
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 215,
+              "end": 227,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 215,
+                "end": 221,
+                "ctxt": 0
+              },
+              "value": "margin",
+              "raw": "margin"
+            },
+            "value": [
+              {
+                "type": "Length",
+                "span": {
+                  "start": 223,
+                  "end": 227,
+                  "ctxt": 0
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 223,
+                    "end": 225,
+                    "ctxt": 0
+                  },
+                  "value": 20.0,
+                  "raw": "20"
+                },
+                "unit": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 225,
+                    "end": 227,
+                    "ctxt": 0
+                  },
+                  "value": "px",
+                  "raw": "px"
+                }
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

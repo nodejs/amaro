@@ -1,0 +1,71 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..12,
+                tag_name: Text {
+                    span: 1..12,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..12,
+                        ty: Some(
+                            Text {
+                                span: 1..44,
+                                value: "@author Michael Mathews <micmath@gmail.com>",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 92..122,
+        description: Text {
+            span: 92..92,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 92..98,
+                tag_name: Text {
+                    span: 92..98,
+                    value: "author",
+                },
+                tag: Author(
+                    AuthorTag {
+                        span: 92..98,
+                        author: Text {
+                            span: 92..121,
+                            value: "John Doe <john.doe@gmail.com>",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 92..98,
+                tag_name: Text {
+                    span: 92..98,
+                    value: "author",
+                },
+                tag: Author(
+                    AuthorTag {
+                        span: 92..98,
+                        author: Text {
+                            span: 0..0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

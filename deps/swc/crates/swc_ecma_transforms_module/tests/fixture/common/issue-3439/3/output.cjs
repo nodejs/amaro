@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: Object.getOwnPropertyDescriptor(all, name).get
+    });
+}
+_export(exports, {
+    get bar () {
+        return bar;
+    },
+    get bar2 () {
+        return bar;
+    },
+    get default () {
+        return bar;
+    },
+    get foo () {
+        return foo;
+    },
+    get foo1 () {
+        return foo;
+    }
+});
+const foo = 1;
+let bar = 2;
+bar = 3;

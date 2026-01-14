@@ -1,0 +1,1 @@
+//// [ambientEnumDeclaration1.ts]

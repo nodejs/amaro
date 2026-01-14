@@ -1,0 +1,96 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 38
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 38
+      },
+      "ctxt": 0,
+      "kind": "const",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 7,
+            "end": 37
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 7,
+              "end": 11
+            },
+            "ctxt": 0,
+            "value": "Span",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "JSXElement",
+            "span": {
+              "start": 14,
+              "end": 37
+            },
+            "opening": {
+              "type": "JSXOpeningElement",
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 15,
+                  "end": 19
+                },
+                "ctxt": 0,
+                "value": "span",
+                "optional": false
+              },
+              "span": {
+                "start": 14,
+                "end": 20
+              },
+              "attributes": [],
+              "selfClosing": false,
+              "typeArguments": null
+            },
+            "children": [
+              {
+                "type": "JSXText",
+                "span": {
+                  "start": 20,
+                  "end": 30
+                },
+                "value": "with ",
+                "raw": "with&nbsp;"
+              }
+            ],
+            "closing": {
+              "type": "JSXClosingElement",
+              "span": {
+                "start": 30,
+                "end": 37
+              },
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 32,
+                  "end": 36
+                },
+                "ctxt": 0,
+                "value": "span",
+                "optional": false
+              }
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

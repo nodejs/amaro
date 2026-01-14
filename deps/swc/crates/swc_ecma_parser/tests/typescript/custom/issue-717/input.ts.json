@@ -1,0 +1,128 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 70
+  },
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 10,
+          "end": 23
+        },
+        "ctxt": 0,
+        "value": "functionFlags",
+        "optional": false
+      },
+      "declare": false,
+      "params": [
+        {
+          "type": "Parameter",
+          "span": {
+            "start": 24,
+            "end": 38
+          },
+          "decorators": [],
+          "pat": {
+            "type": "Identifier",
+            "span": {
+              "start": 24,
+              "end": 29
+            },
+            "ctxt": 0,
+            "value": "async",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 29,
+                "end": 38
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 31,
+                  "end": 38
+                },
+                "kind": "boolean"
+              }
+            }
+          }
+        }
+      ],
+      "decorators": [],
+      "span": {
+        "start": 1,
+        "end": 70
+      },
+      "ctxt": 0,
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 40,
+          "end": 70
+        },
+        "ctxt": 0,
+        "stmts": [
+          {
+            "type": "ReturnStatement",
+            "span": {
+              "start": 46,
+              "end": 68
+            },
+            "argument": {
+              "type": "ParenthesisExpression",
+              "span": {
+                "start": 53,
+                "end": 68
+              },
+              "expression": {
+                "type": "ConditionalExpression",
+                "span": {
+                  "start": 54,
+                  "end": 67
+                },
+                "test": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 54,
+                    "end": 59
+                  },
+                  "ctxt": 0,
+                  "value": "async",
+                  "optional": false
+                },
+                "consequent": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 62,
+                    "end": 63
+                  },
+                  "value": 1.0,
+                  "raw": "1"
+                },
+                "alternate": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 66,
+                    "end": 67
+                  },
+                  "value": 0.0,
+                  "raw": "0"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "async": false,
+      "typeParameters": null,
+      "returnType": null
+    }
+  ],
+  "interpreter": null
+}

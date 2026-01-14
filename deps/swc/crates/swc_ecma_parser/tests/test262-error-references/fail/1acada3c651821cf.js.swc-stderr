@@ -1,0 +1,5 @@
+  x Unexpected token `;`. Expected `}`
+   ,-[$DIR/tests/test262-parser/fail/1acada3c651821cf.js:1:1]
+ 1 | `hello ${10;test`
+   :            ^
+   `----

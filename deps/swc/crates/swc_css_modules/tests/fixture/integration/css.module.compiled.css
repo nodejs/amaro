@@ -1,0 +1,13 @@
+.__local__local {
+  overflow: hidden auto;
+  color: red;
+}
+.global {
+  color: blue;
+}
+.__local__local.global {
+  color: green;
+}
+.__local__local.__local__local {
+  color: yellow;
+}

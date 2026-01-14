@@ -1,0 +1,1131 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 612
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 4,
+        "end": 30
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 5,
+          "end": 9
+        },
+        "value": "page",
+        "raw": "page"
+      },
+      "prelude": {
+        "type": "PageSelectorList",
+        "span": {
+          "start": 10,
+          "end": 16
+        },
+        "selectors": [
+          {
+            "type": "PageSelector",
+            "span": {
+              "start": 10,
+              "end": 16
+            },
+            "pageType": null,
+            "pseudos": [
+              {
+                "type": "PageSelectorPseudo",
+                "span": {
+                  "start": 10,
+                  "end": 16
+                },
+                "value": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 11,
+                    "end": 16
+                  },
+                  "value": "first",
+                  "raw": "first"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 17,
+          "end": 30
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 17,
+            "end": 18
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 19,
+              "end": 29
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 19,
+                "end": 25
+              },
+              "value": "margin",
+              "raw": "margin"
+            },
+            "value": [
+              {
+                "type": "Integer",
+                "span": {
+                  "start": 27,
+                  "end": 28
+                },
+                "value": 0,
+                "raw": "0"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 33,
+        "end": 610
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 34,
+          "end": 38
+        },
+        "value": "page",
+        "raw": "page"
+      },
+      "prelude": null,
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 39,
+          "end": 610
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 39,
+            "end": 40
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 44,
+              "end": 79
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 45,
+                "end": 60
+              },
+              "value": "top-left-corner",
+              "raw": "top-left-corner"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 61,
+                "end": 79
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 61,
+                  "end": 62
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 63,
+                    "end": 78
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 63,
+                      "end": 70
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 72,
+                        "end": 77
+                      },
+                      "value": "tlc",
+                      "raw": "'tlc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 83,
+              "end": 110
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 84,
+                "end": 92
+              },
+              "value": "top-left",
+              "raw": "top-left"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 93,
+                "end": 110
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 93,
+                  "end": 94
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 95,
+                    "end": 109
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 95,
+                      "end": 102
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 104,
+                        "end": 108
+                      },
+                      "value": "tl",
+                      "raw": "'tl'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 114,
+              "end": 143
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 115,
+                "end": 125
+              },
+              "value": "top-center",
+              "raw": "top-center"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 126,
+                "end": 143
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 126,
+                  "end": 127
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 128,
+                    "end": 142
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 128,
+                      "end": 135
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 137,
+                        "end": 141
+                      },
+                      "value": "tc",
+                      "raw": "'tc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 147,
+              "end": 175
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 148,
+                "end": 157
+              },
+              "value": "top-right",
+              "raw": "top-right"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 158,
+                "end": 175
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 158,
+                  "end": 159
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 160,
+                    "end": 174
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 160,
+                      "end": 167
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 169,
+                        "end": 173
+                      },
+                      "value": "tr",
+                      "raw": "'tr'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 179,
+              "end": 215
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 180,
+                "end": 196
+              },
+              "value": "top-right-corner",
+              "raw": "top-right-corner"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 197,
+                "end": 215
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 197,
+                  "end": 198
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 199,
+                    "end": 214
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 199,
+                      "end": 206
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 208,
+                        "end": 213
+                      },
+                      "value": "trc",
+                      "raw": "'trc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 219,
+              "end": 257
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 220,
+                "end": 238
+              },
+              "value": "bottom-left-corner",
+              "raw": "bottom-left-corner"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 239,
+                "end": 257
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 239,
+                  "end": 240
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 241,
+                    "end": 256
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 241,
+                      "end": 248
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 250,
+                        "end": 255
+                      },
+                      "value": "blc",
+                      "raw": "'blc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 261,
+              "end": 291
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 262,
+                "end": 273
+              },
+              "value": "bottom-left",
+              "raw": "bottom-left"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 274,
+                "end": 291
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 274,
+                  "end": 275
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 276,
+                    "end": 290
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 276,
+                      "end": 283
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 285,
+                        "end": 289
+                      },
+                      "value": "bl",
+                      "raw": "'bl'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 295,
+              "end": 327
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 296,
+                "end": 309
+              },
+              "value": "bottom-center",
+              "raw": "bottom-center"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 310,
+                "end": 327
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 310,
+                  "end": 311
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 312,
+                    "end": 326
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 312,
+                      "end": 319
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 321,
+                        "end": 325
+                      },
+                      "value": "bc",
+                      "raw": "'bc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 331,
+              "end": 362
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 332,
+                "end": 344
+              },
+              "value": "bottom-right",
+              "raw": "bottom-right"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 345,
+                "end": 362
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 345,
+                  "end": 346
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 347,
+                    "end": 361
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 347,
+                      "end": 354
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 356,
+                        "end": 360
+                      },
+                      "value": "br",
+                      "raw": "'br'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 366,
+              "end": 405
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 367,
+                "end": 386
+              },
+              "value": "bottom-right-corner",
+              "raw": "bottom-right-corner"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 387,
+                "end": 405
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 387,
+                  "end": 388
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 389,
+                    "end": 404
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 389,
+                      "end": 396
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 398,
+                        "end": 403
+                      },
+                      "value": "brc",
+                      "raw": "'brc'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 409,
+              "end": 436
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 410,
+                "end": 418
+              },
+              "value": "left-top",
+              "raw": "left-top"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 419,
+                "end": 436
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 419,
+                  "end": 420
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 421,
+                    "end": 435
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 421,
+                      "end": 428
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 430,
+                        "end": 434
+                      },
+                      "value": "lt",
+                      "raw": "'lt'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 440,
+              "end": 470
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 441,
+                "end": 452
+              },
+              "value": "left-middle",
+              "raw": "left-middle"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 453,
+                "end": 470
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 453,
+                  "end": 454
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 455,
+                    "end": 469
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 455,
+                      "end": 462
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 464,
+                        "end": 468
+                      },
+                      "value": "lm",
+                      "raw": "'lm'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 474,
+              "end": 504
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 475,
+                "end": 486
+              },
+              "value": "left-bottom",
+              "raw": "left-bottom"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 487,
+                "end": 504
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 487,
+                  "end": 488
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 489,
+                    "end": 503
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 489,
+                      "end": 496
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 498,
+                        "end": 502
+                      },
+                      "value": "lb",
+                      "raw": "'lb'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 508,
+              "end": 536
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 509,
+                "end": 518
+              },
+              "value": "right-top",
+              "raw": "right-top"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 519,
+                "end": 536
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 519,
+                  "end": 520
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 521,
+                    "end": 535
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 521,
+                      "end": 528
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 530,
+                        "end": 534
+                      },
+                      "value": "rt",
+                      "raw": "'rt'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 540,
+              "end": 571
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 541,
+                "end": 553
+              },
+              "value": "right-middle",
+              "raw": "right-middle"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 554,
+                "end": 571
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 554,
+                  "end": 555
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 556,
+                    "end": 570
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 556,
+                      "end": 563
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 565,
+                        "end": 569
+                      },
+                      "value": "rm",
+                      "raw": "'rm'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          },
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 575,
+              "end": 606
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 576,
+                "end": 588
+              },
+              "value": "right-bottom",
+              "raw": "right-bottom"
+            },
+            "prelude": null,
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 589,
+                "end": 606
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 589,
+                  "end": 590
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 591,
+                    "end": 605
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 591,
+                      "end": 598
+                    },
+                    "value": "content",
+                    "raw": "content"
+                  },
+                  "value": [
+                    {
+                      "type": "String",
+                      "span": {
+                        "start": 600,
+                        "end": 604
+                      },
+                      "value": "rb",
+                      "raw": "'rb'"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+  x no 'for-of' expression
+   ,----
+ 1 | for (var x of {}) {}
+   : ^^^^^^^^^^^^^^^^^^^^
+   `----

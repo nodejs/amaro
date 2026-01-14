@@ -1,0 +1,95 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 17,
+    "end": 46
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 17,
+        "end": 46
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 21,
+            "end": 45
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 21,
+              "end": 22
+            },
+            "ctxt": 0,
+            "value": "o",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 25,
+              "end": 45
+            },
+            "properties": [
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Computed",
+                  "span": {
+                    "start": 31,
+                    "end": 40
+                  },
+                  "expression": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 32,
+                      "end": 39
+                    },
+                    "operator": "||",
+                    "left": {
+                      "type": "StringLiteral",
+                      "span": {
+                        "start": 32,
+                        "end": 34
+                      },
+                      "value": "",
+                      "raw": "\"\""
+                    },
+                    "right": {
+                      "type": "NumericLiteral",
+                      "span": {
+                        "start": 38,
+                        "end": 39
+                      },
+                      "value": 0.0,
+                      "raw": "0"
+                    }
+                  }
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 42,
+                    "end": 43
+                  },
+                  "value": 0.0,
+                  "raw": "0"
+                }
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

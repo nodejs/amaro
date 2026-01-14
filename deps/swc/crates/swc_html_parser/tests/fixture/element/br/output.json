@@ -1,0 +1,344 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 335
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 17,
+        "end": 335
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 23,
+            "end": 32
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "lang",
+          "rawName": "lang",
+          "value": "en",
+          "rawValue": "\"en\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 34,
+            "end": 76
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 40,
+                "end": 45
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 45,
+                "end": 68
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 52,
+                    "end": 60
+                  },
+                  "data": "Document",
+                  "raw": "Document"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 68,
+                "end": 69
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 76,
+            "end": 77
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 77,
+            "end": 328
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 83,
+                "end": 85
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 85,
+                "end": 318
+              },
+              "tagName": "p",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 88,
+                    "end": 110
+                  },
+                  "data": " O'er all the hilltops",
+                  "raw": " O'er all the hilltops"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 110,
+                    "end": 114
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 114,
+                    "end": 132
+                  },
+                  "data": "\n    Is quiet now,",
+                  "raw": "\n    Is quiet now,"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 132,
+                    "end": 136
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 136,
+                    "end": 160
+                  },
+                  "data": "\n    In all the treetops",
+                  "raw": "\n    In all the treetops"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 160,
+                    "end": 164
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 164,
+                    "end": 181
+                  },
+                  "data": "\n    Hearest thou",
+                  "raw": "\n    Hearest thou"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 181,
+                    "end": 185
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 185,
+                    "end": 206
+                  },
+                  "data": "\n    Hardly a breath;",
+                  "raw": "\n    Hardly a breath;"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 206,
+                    "end": 210
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 210,
+                    "end": 249
+                  },
+                  "data": "\n    The birds are asleep in the trees:",
+                  "raw": "\n    The birds are asleep in the trees:"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 249,
+                    "end": 253
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 253,
+                    "end": 279
+                  },
+                  "data": "\n    Wait, soon like these",
+                  "raw": "\n    Wait, soon like these"
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 279,
+                    "end": 283
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 283,
+                    "end": 308
+                  },
+                  "data": "\n    Thou too shalt rest.",
+                  "raw": "\n    Thou too shalt rest."
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 308,
+                    "end": 313
+                  },
+                  "tagName": "br",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 313,
+                    "end": 314
+                  },
+                  "data": "\n",
+                  "raw": "\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 318,
+                "end": 328
+              },
+              "data": "\n\n\n",
+              "raw": "\n\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

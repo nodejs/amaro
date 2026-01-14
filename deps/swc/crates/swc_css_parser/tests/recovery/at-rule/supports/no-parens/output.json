@@ -1,0 +1,120 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 28
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 27
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 10
+        },
+        "value": "supports",
+        "raw": "supports"
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 10,
+          "end": 25
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 10,
+              "end": 11
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 11,
+              "end": 18
+            },
+            "token": {
+              "Ident": {
+                "value": "display",
+                "raw": "display"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 18,
+              "end": 19
+            },
+            "token": "Colon"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 19,
+              "end": 20
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 20,
+              "end": 24
+            },
+            "token": {
+              "Ident": {
+                "value": "flex",
+                "raw": "flex"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 24,
+              "end": 25
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 25,
+          "end": 27
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 25,
+            "end": 26
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

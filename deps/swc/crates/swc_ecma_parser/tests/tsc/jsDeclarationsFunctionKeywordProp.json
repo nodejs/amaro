@@ -1,0 +1,352 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 117,
+    "end": 265
+  },
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 126,
+          "end": 129
+        },
+        "ctxt": 0,
+        "value": "foo",
+        "optional": false
+      },
+      "declare": false,
+      "params": [],
+      "decorators": [],
+      "span": {
+        "start": 117,
+        "end": 134
+      },
+      "ctxt": 0,
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 132,
+          "end": 134
+        },
+        "ctxt": 0,
+        "stmts": []
+      },
+      "generator": false,
+      "async": false,
+      "typeParameters": null,
+      "returnType": null
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 135,
+        "end": 151
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 135,
+          "end": 150
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 135,
+            "end": 143
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 135,
+              "end": 138
+            },
+            "ctxt": 0,
+            "value": "foo",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 139,
+              "end": 143
+            },
+            "value": "null"
+          }
+        },
+        "right": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 146,
+            "end": 150
+          },
+          "value": true
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 162,
+          "end": 165
+        },
+        "ctxt": 0,
+        "value": "bar",
+        "optional": false
+      },
+      "declare": false,
+      "params": [],
+      "decorators": [],
+      "span": {
+        "start": 153,
+        "end": 170
+      },
+      "ctxt": 0,
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 168,
+          "end": 170
+        },
+        "ctxt": 0,
+        "stmts": []
+      },
+      "generator": false,
+      "async": false,
+      "typeParameters": null,
+      "returnType": null
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 171,
+        "end": 188
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 171,
+          "end": 187
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 171,
+            "end": 180
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 171,
+              "end": 174
+            },
+            "ctxt": 0,
+            "value": "bar",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 175,
+              "end": 180
+            },
+            "value": "async"
+          }
+        },
+        "right": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 183,
+            "end": 187
+          },
+          "value": true
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 189,
+        "end": 208
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 189,
+          "end": 207
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 189,
+            "end": 199
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 189,
+              "end": 192
+            },
+            "ctxt": 0,
+            "value": "bar",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 193,
+              "end": 199
+            },
+            "value": "normal"
+          }
+        },
+        "right": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 202,
+            "end": 207
+          },
+          "value": false
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 219,
+          "end": 222
+        },
+        "ctxt": 0,
+        "value": "baz",
+        "optional": false
+      },
+      "declare": false,
+      "params": [],
+      "decorators": [],
+      "span": {
+        "start": 210,
+        "end": 227
+      },
+      "ctxt": 0,
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 225,
+          "end": 227
+        },
+        "ctxt": 0,
+        "stmts": []
+      },
+      "generator": false,
+      "async": false,
+      "typeParameters": null,
+      "returnType": null
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 228,
+        "end": 245
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 228,
+          "end": 244
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 228,
+            "end": 237
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 228,
+              "end": 231
+            },
+            "ctxt": 0,
+            "value": "baz",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 232,
+              "end": 237
+            },
+            "value": "class"
+          }
+        },
+        "right": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 240,
+            "end": 244
+          },
+          "value": true
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 246,
+        "end": 265
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 246,
+          "end": 264
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 246,
+            "end": 256
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 246,
+              "end": 249
+            },
+            "ctxt": 0,
+            "value": "baz",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 250,
+              "end": 256
+            },
+            "value": "normal"
+          }
+        },
+        "right": {
+          "type": "BooleanLiteral",
+          "span": {
+            "start": 259,
+            "end": 264
+          },
+          "value": false
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

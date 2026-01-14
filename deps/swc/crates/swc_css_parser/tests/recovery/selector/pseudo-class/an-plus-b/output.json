@@ -1,0 +1,92 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 24
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 23
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 20
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 20
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 20
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "PseudoClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 20
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 11
+                      },
+                      "value": "nth-child",
+                      "raw": "nth-child"
+                    },
+                    "children": [
+                      {
+                        "type": "PreservedToken",
+                        "span": {
+                          "start": 12,
+                          "end": 19
+                        },
+                        "token": {
+                          "Ident": {
+                            "value": "unknown",
+                            "raw": "unknown"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 21,
+          "end": 23
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 21,
+            "end": 22
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

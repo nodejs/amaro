@@ -1,0 +1,86 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 23
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 23
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 1,
+          "end": 15
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 1,
+              "end": 2
+            },
+            "token": "Colon"
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 2,
+              "end": 3
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 3,
+              "end": 14
+            },
+            "token": {
+              "Ident": {
+                "value": "first-child",
+                "raw": "first-child"
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 14,
+              "end": 15
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 15,
+          "end": 23
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 15,
+            "end": 16
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

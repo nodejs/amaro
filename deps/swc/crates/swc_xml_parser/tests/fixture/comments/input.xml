@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- My Comment -->
+<root>
+    <!--comment-->
+    <!--<head>-->
+    <!--<!-x-->
+    <!--<!x-->
+    <!--<<!x-->
+    <!--<<!-x-->
+    <!--<x-->
+    <!--<>-->
+    <!--<-->
+    <!--<!-->
+    <!---->
+    <!---a->-a-->
+    <!---<!-test->-->
+    <DocumentElement myAttribute="myAttributeValue">
+        <!-- My Comment -->
+        <ChildElement>Element Value</ChildElement>
+    </DocumentElement>
+    <DocumentElement myAttribute="my Attribute Value">
+        <ChildElement>
+        Element <!-- My Comment --> Value
+        </ChildElement>
+    </DocumentElement>
+</root>
+

@@ -1,0 +1,1 @@
+//// [contextuallyTypedStringLiteralsInJsxAttributes01.tsx]

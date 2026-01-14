@@ -1,0 +1,102 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 35
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 35
+      },
+      "expression": {
+        "type": "CallExpression",
+        "span": {
+          "start": 1,
+          "end": 34
+        },
+        "ctxt": 0,
+        "callee": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 1,
+            "end": 12
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 1,
+              "end": 8
+            },
+            "ctxt": 0,
+            "value": "console",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 9,
+              "end": 12
+            },
+            "value": "log"
+          }
+        },
+        "arguments": [
+          {
+            "spread": null,
+            "expression": {
+              "type": "BinaryExpression",
+              "span": {
+                "start": 13,
+                "end": 33
+              },
+              "operator": "in",
+              "left": {
+                "type": "StringLiteral",
+                "span": {
+                  "start": 13,
+                  "end": 16
+                },
+                "value": "a",
+                "raw": "\"a\""
+              },
+              "right": {
+                "type": "ObjectExpression",
+                "span": {
+                  "start": 20,
+                  "end": 33
+                },
+                "properties": [
+                  {
+                    "type": "KeyValueProperty",
+                    "key": {
+                      "type": "StringLiteral",
+                      "span": {
+                        "start": 22,
+                        "end": 25
+                      },
+                      "value": "a",
+                      "raw": "\"a\""
+                    },
+                    "value": {
+                      "type": "BooleanLiteral",
+                      "span": {
+                        "start": 27,
+                        "end": 31
+                      },
+                      "value": true
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

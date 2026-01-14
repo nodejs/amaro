@@ -1,0 +1,37 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 17,
+    "end": 30
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 17,
+        "end": 30
+      },
+      "expression": {
+        "type": "TemplateLiteral",
+        "span": {
+          "start": 17,
+          "end": 29
+        },
+        "expressions": [],
+        "quasis": [
+          {
+            "type": "TemplateElement",
+            "span": {
+              "start": 18,
+              "end": 28
+            },
+            "tail": true,
+            "cooked": "\t\n\u000b\f\r",
+            "raw": "\\t\\n\\v\\f\\r"
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

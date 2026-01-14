@@ -1,0 +1,1 @@
+//// [templateStringInModulo.ts]

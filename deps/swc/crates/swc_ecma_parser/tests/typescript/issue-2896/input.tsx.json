@@ -1,0 +1,88 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 35
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 21
+      },
+      "expression": {
+        "type": "JSXElement",
+        "span": {
+          "start": 1,
+          "end": 20
+        },
+        "opening": {
+          "type": "JSXOpeningElement",
+          "name": {
+            "type": "Identifier",
+            "span": {
+              "start": 2,
+              "end": 5
+            },
+            "ctxt": 0,
+            "value": "div",
+            "optional": false
+          },
+          "span": {
+            "start": 1,
+            "end": 6
+          },
+          "attributes": [],
+          "selfClosing": false,
+          "typeArguments": null
+        },
+        "children": [
+          {
+            "type": "JSXText",
+            "span": {
+              "start": 6,
+              "end": 14
+            },
+            "value": "children",
+            "raw": "children"
+          }
+        ],
+        "closing": {
+          "type": "JSXClosingElement",
+          "span": {
+            "start": 14,
+            "end": 20
+          },
+          "name": {
+            "type": "Identifier",
+            "span": {
+              "start": 16,
+              "end": 19
+            },
+            "ctxt": 0,
+            "value": "div",
+            "optional": false
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 22,
+        "end": 35
+      },
+      "expression": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 22,
+          "end": 34
+        },
+        "value": "<>hello</>",
+        "raw": "'<>hello</>'"
+      }
+    }
+  ],
+  "interpreter": null
+}

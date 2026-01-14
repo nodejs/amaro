@@ -1,0 +1,15 @@
+.c::-moz-selection {
+  color: red;
+}
+.c::selection {
+  color: red;
+}
+::-moz-selection {
+  color: red;
+}
+::selection {
+  color: red;
+}
+::SeLeCtIoN {
+  color: red;
+}

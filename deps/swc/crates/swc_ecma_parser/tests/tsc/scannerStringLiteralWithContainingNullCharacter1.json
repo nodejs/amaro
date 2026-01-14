@@ -1,0 +1,26 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 7
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 7
+      },
+      "expression": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 1,
+          "end": 6
+        },
+        "value": " \u0000 ",
+        "raw": "\" \u0000 \""
+      }
+    }
+  ],
+  "interpreter": null
+}

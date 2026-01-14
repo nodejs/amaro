@@ -1,0 +1,174 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 149
+  },
+  "mode": "quirks",
+  "children": [
+    {
+      "type": "Element",
+      "span": {
+        "start": 1,
+        "end": 149
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 7,
+            "end": 66
+          },
+          "tagName": "frameset",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Comment",
+              "span": {
+                "start": 17,
+                "end": 25
+              },
+              "data": "1",
+              "raw": "<!--1-->"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 25,
+                "end": 47
+              },
+              "tagName": "noframes",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 35,
+                    "end": 36
+                  },
+                  "data": "A",
+                  "raw": "A"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Comment",
+              "span": {
+                "start": 47,
+                "end": 55
+              },
+              "data": "2",
+              "raw": "<!--2-->"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Comment",
+          "span": {
+            "start": 66,
+            "end": 74
+          },
+          "data": "3",
+          "raw": "<!--3-->"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 74,
+            "end": 96
+          },
+          "tagName": "noframes",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 84,
+                "end": 85
+              },
+              "data": "B",
+              "raw": "B"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Comment",
+          "span": {
+            "start": 96,
+            "end": 104
+          },
+          "data": "4",
+          "raw": "<!--4-->"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 119,
+            "end": 141
+          },
+          "tagName": "noframes",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 129,
+                "end": 130
+              },
+              "data": "C",
+              "raw": "C"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    },
+    {
+      "type": "Comment",
+      "span": {
+        "start": 111,
+        "end": 119
+      },
+      "data": "5",
+      "raw": "<!--5-->"
+    },
+    {
+      "type": "Comment",
+      "span": {
+        "start": 141,
+        "end": 149
+      },
+      "data": "6",
+      "raw": "<!--6-->"
+    }
+  ]
+}

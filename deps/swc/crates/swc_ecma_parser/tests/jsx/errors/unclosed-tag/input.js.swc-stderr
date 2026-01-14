@@ -1,0 +1,4 @@
+  x Expected '</', got '<eof>'
+   ,-[$DIR/tests/jsx/errors/unclosed-tag/input.js:1:10]
+ 1 | <foo>yes
+   `----

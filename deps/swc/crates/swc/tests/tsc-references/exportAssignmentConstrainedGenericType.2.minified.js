@@ -1,0 +1,14 @@
+//// [foo_0.ts]
+var _class_call_check = require("@swc/helpers/_/_class_call_check");
+module.exports = function Foo(x) {
+    _class_call_check._(this, Foo);
+};
+//// [foo_1.ts]
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+});
+var foo = require("./foo_0");
+new foo(!0), new foo({
+    a: "test",
+    b: 42
+}).test.b;

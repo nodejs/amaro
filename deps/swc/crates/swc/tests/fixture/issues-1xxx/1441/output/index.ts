@@ -1,0 +1,2 @@
+await foo();
+export { };

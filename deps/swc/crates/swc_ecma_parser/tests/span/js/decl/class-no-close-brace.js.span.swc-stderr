@@ -1,0 +1,5 @@
+  x Unexpected token `<eof>`. Expected identifier, string literal, numeric literal or [ for the computed key
+   ,-[$DIR/tests/span/js/decl/class-no-close-brace.js:3:1]
+ 2 | 
+ 3 |   method() {}
+   `----

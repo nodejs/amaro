@@ -1,0 +1,155 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 46
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!DOCTYPE html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 0,
+        "end": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Element",
+              "span": {
+                "start": 16,
+                "end": 46
+              },
+              "tagName": "table",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 0,
+                    "end": 0
+                  },
+                  "tagName": "tbody",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 23,
+                        "end": 46
+                      },
+                      "tagName": "tr",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "attributes": [],
+                      "children": [
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 27,
+                            "end": 46
+                          },
+                          "tagName": "td",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 31,
+                                "end": 46
+                              },
+                              "tagName": "math",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [
+                                {
+                                  "type": "Element",
+                                  "span": {
+                                    "start": 37,
+                                    "end": 46
+                                  },
+                                  "tagName": "mtext",
+                                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                                  "attributes": [],
+                                  "children": [
+                                    {
+                                      "type": "Text",
+                                      "span": {
+                                        "start": 45,
+                                        "end": 46
+                                      },
+                                      "data": "a",
+                                      "raw": "a"
+                                    }
+                                  ],
+                                  "content": null,
+                                  "isSelfClosing": false
+                                }
+                              ],
+                              "content": null,
+                              "isSelfClosing": false
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

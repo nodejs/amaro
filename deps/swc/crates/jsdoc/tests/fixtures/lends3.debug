@@ -1,0 +1,79 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..6,
+                tag_name: Text {
+                    span: 1..6,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..6,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 43..43,
+        description: Text {
+            span: 43..43,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 43..48,
+                tag_name: Text {
+                    span: 43..48,
+                    value: "lends",
+                },
+                tag: Lends(
+                    LendsTag {
+                        span: 43..48,
+                        name: NamePath {
+                            span: 43..49,
+                            components: [
+                                Text {
+                                    span: 43..49,
+                                    value: "Person",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 91..91,
+        description: Text {
+            span: 91..113,
+            value: "Set up initial values.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 170..170,
+        description: Text {
+            span: 170..193,
+            value: "The name of the person.",
+        },
+        tags: [],
+    },
+    JsDoc {
+        span: 251..251,
+        description: Text {
+            span: 251..267,
+            value: "Speak a message.",
+        },
+        tags: [],
+    },
+]

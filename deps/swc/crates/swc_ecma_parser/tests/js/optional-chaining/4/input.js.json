@@ -1,0 +1,73 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 9
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 9
+      },
+      "expression": {
+        "type": "OptionalChainingExpression",
+        "span": {
+          "start": 1,
+          "end": 9
+        },
+        "optional": false,
+        "base": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 1,
+            "end": 9
+          },
+          "object": {
+            "type": "OptionalChainingExpression",
+            "span": {
+              "start": 1,
+              "end": 7
+            },
+            "optional": true,
+            "base": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 1,
+                "end": 7
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 1,
+                  "end": 4
+                },
+                "ctxt": 0,
+                "value": "obj",
+                "optional": false
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 6,
+                  "end": 7
+                },
+                "value": "b"
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 8,
+              "end": 9
+            },
+            "value": "b"
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

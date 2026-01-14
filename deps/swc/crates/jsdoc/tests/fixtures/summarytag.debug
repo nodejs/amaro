@@ -1,0 +1,27 @@
+[
+    JsDoc {
+        span: 1..35,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..8,
+                tag_name: Text {
+                    span: 1..8,
+                    value: "summary",
+                },
+                tag: Summary(
+                    SummaryTag {
+                        span: 1..8,
+                        text: Text {
+                            span: 0..0,
+                            value: "",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

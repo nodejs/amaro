@@ -1,0 +1,388 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>", "OJ Kwon <kwon.ohjoong@gmail.com>"]
+description   = "TBD"
+documentation = "https://rustdoc.swc.rs/swc_core/"
+edition       = { workspace = true }
+license       = { workspace = true }
+name          = "swc_core"
+repository    = { workspace = true }
+version       = "54.0.0"
+[package.metadata.docs.rs]
+features = [
+  "allocator_node",
+  "base",
+  "base_node",
+  "common",
+  "ecma_visit",
+  "quote",
+  "utils",
+  "ecma_transforms",
+  "bundler",
+  "ecma_loader",
+  "ecma_ast",
+  "trace_macro",
+  "transform_common",
+  "plugin_transform",
+]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+bench   = false
+doctest = false
+
+[features]
+### Public features
+### Users should opt in necessary features explicitly
+
+## Flags to opt into certain optimizations. In most cases this won't expose new interfaces,
+## but changes internal logics to perform differently. These flag should be turned on in combination with
+## actual features. Refer build.rs for more details.
+
+nightly = ["swc_allocator/nightly"]
+
+transform_common = ["dep:swc_transform_common"]
+
+# swc_ecma_loader/cache*
+ecma_loader_lru         = ["swc_ecma_loader/lru"]
+ecma_loader_parking_lot = ["swc_ecma_loader/parking_lot"]
+
+# swc_ecma_minifier/concurrent
+ecma_minifier_concurrent = ["swc_ecma_minifier/concurrent"]
+
+# swc_bundler/concurrent
+bundler_concurrent = ["swc_bundler/concurrent"]
+
+# configures specific memory allocator.
+# node.js binding should depend on this.
+allocator_node = ["swc_malloc"]
+
+## General
+# Enable swc reexports. To avoid confusion between swc_core namespace,
+# it is named as 'base' instead.
+base            = ["__base"]
+base_concurrent = ["__base", "swc/concurrent"]
+# Enables n-api related features.
+base_node = [
+  "__base",
+  "swc/node",          # Assume if anyone enables n-api related codes, they may would like to use  # some utility functions as well.
+  "swc_nodejs_common",
+]
+
+# Enable swc_common reexports.
+#
+# In most cases, top-level features (i.e plugin, or plugin_host) will include this, so no need to
+# explicitly opt in. However, if top-level feature should be controlled by feature as opt-in
+# and some other dependent feature need this, can be manually selected.
+# refer binding_core_wasm for example: it has plugin_transform_host feature, but
+# it has to be a feature to be enabled by compile time flag to avoid cargo's feature collision,
+# while it also need to access 'common' exports by default for cargo check / or clippy.
+common           = ["__common"]
+common_sourcemap = ["__common", "swc_common/sourcemap"]
+# TODO: internally concurrent / perf refers to the same feature (`parking_lot`)
+# - can we consolidate them?
+common_concurrent = ["__common", "swc_common/concurrent"]
+
+common_tty = ["__common", "swc_common/tty-emitter"]
+
+# Enable swc_ecma_visit
+ecma_visit       = ["__visit"]
+ecma_visit_path  = ["__visit", "swc_ecma_visit/path"]
+ecma_visit_serde = ["__visit", "swc_ecma_visit/serde-impl"]
+
+# Enable `quote!` macro support.
+ecma_quote = [
+  # Dependent features
+  "__common",
+  "ecma_ast",              # Enable optional package
+  "swc_ecma_quote_macros",
+]
+
+# Enable swc_ecma_utils
+ecma_utils = ["__utils", "__common"]
+
+ecma_lints = ["__ecma_lints", "__common"]
+
+# Enable swc_ecma_transforms base features
+ecma_transforms = ["__ecma_transforms"]
+ecma_transforms_compat = ["__ecma_transforms", "swc_ecma_transforms_compat"]
+ecma_transforms_module = ["__ecma_transforms", "swc_ecma_transforms_module"]
+ecma_transforms_optimization = [
+  "__ecma_transforms",
+  "swc_ecma_transforms_optimization",
+]
+ecma_transforms_proposal = ["__ecma_transforms", "swc_ecma_transforms_proposal"]
+ecma_transforms_react = ["__ecma_transforms", "swc_ecma_transforms_react"]
+ecma_transforms_typescript = [
+  "__ecma_transforms",
+  "swc_ecma_transforms_typescript",
+]
+
+ecma_react_compiler = ["swc_ecma_react_compiler"]
+
+
+# Enable swc_bundler
+bundler         = ["__bundler"]
+bundler_node_v1 = ["__bundler", "swc_node_bundler/swc_v1"]
+bundler_node_v2 = ["__bundler", "swc_node_bundler/swc_v2"]
+
+# Enable swc_ecma_loader
+ecma_loader      = ["__ecma_loader"]
+ecma_loader_node = ["__ecma_loader", "swc_ecma_loader/node"]
+ecma_loader_tsc  = ["__ecma_loader", "swc_ecma_loader/tsc"]
+
+# Enable swc_ecma_transforms_testing
+testing_transform = ["__ecma", "__testing_transform"]
+
+# Enable swc_ecma_ast / swc_atoms support.
+# TODO: currently both are enabled at once, we may want to separate them.
+ecma_ast        = ["__ecma", "swc_ecma_ast", "swc_atoms"]
+ecma_ast_serde  = ["ecma_ast", "swc_ecma_ast/serde-impl"]
+ecma_ast_shrink = ["ecma_ast", "swc_ecma_ast/shrink-to-fit"]
+
+# Enable swc_ecma_parser support.
+ecma_parser            = ["__parser"]
+ecma_parser_typescript = ["__parser", "swc_ecma_parser/typescript"]
+ecma_parser_unstable   = ["__parser", "swc_ecma_parser/unstable"]
+
+# Enable swc_ecma_codegen
+ecma_codegen = ["__ecma", "swc_ecma_codegen"]
+
+# Enable swc_ecma_minifier
+ecma_minifier = ["__ecma", "swc_ecma_minifier"]
+
+# Enable swc_ecma_preset_env
+ecma_preset_env = ["__ecma", "swc_ecma_preset_env"]
+
+# Enable swc_ecma_usage_analyzer
+ecma_usage_analyzer = ["__ecma", "swc_ecma_usage_analyzer"]
+
+ecma_helpers_inline = ["__ecma", "swc_ecma_transforms_base/inline-helpers"]
+
+# Enable swc_css
+css_ast        = ["__css", "swc_css_ast"]
+css_ast_serde  = ["css_ast", "swc_css_ast/serde-impl"]
+css_codegen    = ["__css", "swc_css_codegen"]
+css_compat     = ["__css", "swc_css_compat"]
+css_minifier   = ["__css", "swc_css_minifier"]
+css_modules    = ["__css", "swc_css_modules"]
+css_parser     = ["__css", "swc_css_parser"]
+css_prefixer   = ["__css", "swc_css_prefixer"]
+css_utils      = ["__css", "swc_css_utils"]
+css_visit      = ["__css", "swc_css_visit"]
+css_visit_path = ["__css", "swc_css_visit/path"]
+
+# Utilities for testing.
+testing = ["dep:testing"]
+
+# Enable trace macro support.
+# TODO: Once all top-level package (node, wasm, cli..) imports swc_core,
+# we may encapsulate `tracing` package into swc_core.
+trace_macro = ["swc_trace_macro"]
+
+binding_macro_native = ["__binding_macros", "binding_macros/binding_native"]
+binding_macro_wasm   = ["__binding_macros", "binding_macros/binding_wasm"]
+
+## Plugins
+# Top level features should be enabled to write plugins for the custom transform.
+common_plugin_transform = [
+  "__common_plugin_transform",
+  "__plugin_transform_schema_v1",
+  "__testing_transform",
+]
+
+ecma_plugin_transform = [
+  "common_plugin_transform",
+  "transform_common",
+  "swc_transform_common/plugin-mode",
+  "__ecma_plugin_transform",
+]
+
+# Use `stacker` to avoid stack overflow.
+stacker = ["swc_ecma_utils/stacker"]
+
+
+typescript = ["swc_typescript"]
+
+# Host features to enable plugin `runner` runtime.
+# native feature is for the host environment does not have, or cannot access
+# to the wasm runtime (i.e cli, or @swc/core node bindings).
+# js feature is for the environment can access wasm runtime (i.e @swc/wasm)
+plugin_transform_host_js = [
+  # Dependent features
+  "__plugin_transform_host",
+  "__plugin_transform_host_schema_v1",
+  "__plugin_transform_env_js",
+]
+plugin_transform_host_native = [
+  # Dependent features
+  "__plugin_transform_host",
+  "__plugin_transform_host_schema_v1",
+  "__plugin_transform_env_native",
+]
+# Enables FileSystemCache support for the plugin runner.
+plugin_transform_host_native_filesystem_cache = [
+  "swc_plugin_runner/filesystem_cache",
+]
+
+# not implemented
+plugin_transform_host_native_shared_runtime = []
+
+# Enable wasmer plugin runtime implement
+plugin_backend_wasmer = ["swc/plugin_backend_wasmer"]
+
+# Enable parallel execution of various modules, including minifier using chili
+parallel_chili = ["par-core/chili"]
+# Enable parallel execution of various modules, including minifier using rayon
+parallel_rayon = ["par-core/rayon"]
+
+### Internal features that public features are relying on.
+### This is not supposed to be used directly, and does not gaurantee
+### stability across each versions.
+
+# Specify version of AST schema will be used.
+# This'll be automatically selected via transform_plugin features,
+# SWC upstream decides which version to be used for specific version of
+# swc_core.
+__plugin_transform_host_schema_v1 = [
+  # Dependent features
+  "__plugin_transform_schema_v1",                 # Enable optional features
+  "swc/plugin_transform_schema_v1",
+  "swc_plugin_runner/plugin_transform_schema_v1",
+]
+__plugin_transform_schema_v1 = ["swc_common/plugin_transform_schema_v1"]
+
+# Do not use: testing purpose only
+__plugin_transform_host_schema_vtest = [
+  # Dependent features
+  "__plugin_transform_schema_vtest",                 # Enable optional features
+  "swc/plugin_transform_schema_vtest",
+  "swc_plugin_runner/plugin_transform_schema_vtest",
+]
+__plugin_transform_schema_vtest = ["swc_common/plugin_transform_schema_vtest"]
+
+## Plugins
+
+# Internal flags for any transform plugin feature
+__common_plugin_transform = [
+  # Dependent features
+  "ecma_visit",
+  "__common",
+  "swc_atoms/encoding-impl",
+  "swc_plugin_macro",
+  "swc_plugin",
+]
+
+__ecma_plugin_transform = [
+  "swc_common/plugin-mode",
+  "swc_plugin_proxy/plugin-mode",
+
+  # Dependent features
+  "__common_plugin_transform",
+  "ecma_visit",
+  "ecma_ast",                  # Enable optional packages
+  "swc_ecma_ast/encoding-impl",
+]
+
+# Internal flags for any transform plugin host feature
+__plugin_transform_host = [
+  # Dependent features
+  "__common",                    # Enable optional packages
+  "swc_ecma_ast/encoding-impl",
+  "swc_atoms/encoding-impl",
+  "swc_common/plugin-rt",
+  "swc_plugin_runner/encoding-impl", # TODO: we may simply flag around downlevel plugin feature
+  "swc_plugin_proxy/plugin-rt",
+  "swc/plugin",
+]
+
+# Internal flags to control plugin environment
+__plugin_transform_env_js     = ["swc/plugin_transform_host_js"]
+__plugin_transform_env_native = ["swc/plugin_transform_host_native"]
+
+# Do not use: testing purpose only
+# Force enable different version of AST schema
+__plugin_transform_schema_test = [
+  "__common_plugin_transform",
+  "__plugin_transform_schema_vtest",
+]
+
+## Common
+__base = ["swc"]
+__binding_macros = [
+  "__ecma",
+  "common",
+  "__base",
+  "__ecma_transforms",
+  "ecma_ast",
+  "binding_macros",
+]
+__bundler = ["swc_bundler"]
+__common = ["swc_common"]
+__css = []
+__ecma = ["swc_ecma_transforms_base"]
+__ecma_lints = ["swc_ecma_lints"]
+__ecma_loader = ["__ecma", "swc_ecma_loader"]
+__ecma_transforms = ["__ecma"]
+__parser = ["__ecma", "swc_ecma_parser"]
+__testing_transform = ["__ecma", "swc_ecma_transforms_testing"]
+__utils = ["__ecma", "swc_ecma_utils"]
+__visit = ["__ecma", "swc_ecma_visit"]
+
+[dependencies]
+par-core = { workspace = true, optional = true }
+
+# swc_* dependencies
+binding_macros                   = { optional = true, version = "52.0.0", path = "../binding_macros" }
+swc                              = { optional = true, version = "52.0.0", path = "../swc", default-features = false }
+swc_allocator                    = { version = "4.0.1", path = "../swc_allocator", default-features = false }
+swc_atoms                        = { optional = true, version = "9.0.0", path = "../swc_atoms" }
+swc_bundler                      = { optional = true, version = "40.0.0", path = "../swc_bundler" }
+swc_common                       = { optional = true, version = "18.0.1", path = "../swc_common" }
+swc_config                       = { optional = true, version = "3.1.2", path = "../swc_config" }
+swc_css_ast                      = { optional = true, version = "18.0.0", path = "../swc_css_ast" }
+swc_css_codegen                  = { optional = true, version = "18.0.0", path = "../swc_css_codegen" }
+swc_css_compat                   = { optional = true, version = "18.0.0", path = "../swc_css_compat" }
+swc_css_minifier                 = { optional = true, version = "18.0.0", path = "../swc_css_minifier" }
+swc_css_modules                  = { optional = true, version = "18.0.0", path = "../swc_css_modules" }
+swc_css_parser                   = { optional = true, version = "18.0.0", path = "../swc_css_parser" }
+swc_css_prefixer                 = { optional = true, version = "21.0.0", path = "../swc_css_prefixer" }
+swc_css_utils                    = { optional = true, version = "18.0.0", path = "../swc_css_utils/" }
+swc_css_visit                    = { optional = true, version = "18.0.0", path = "../swc_css_visit" }
+swc_ecma_ast                     = { optional = true, version = "19.0.0", path = "../swc_ecma_ast" }
+swc_ecma_codegen                 = { optional = true, version = "21.0.0", path = "../swc_ecma_codegen" }
+swc_ecma_lints                   = { optional = true, version = "26.0.0", path = "../swc_ecma_lints" }
+swc_ecma_loader                  = { optional = true, version = "18.0.0", path = "../swc_ecma_loader" }
+swc_ecma_minifier                = { optional = true, version = "42.0.0", path = "../swc_ecma_minifier" }
+swc_ecma_parser                  = { optional = true, version = "32.0.0", path = "../swc_ecma_parser", default-features = false }
+swc_ecma_preset_env              = { optional = true, version = "45.0.0", path = "../swc_ecma_preset_env" }
+swc_ecma_quote_macros            = { optional = true, version = "32.0.0", path = "../swc_ecma_quote_macros" }
+swc_ecma_react_compiler          = { optional = true, version = "12.0.0", path = "../swc_ecma_react_compiler" }
+swc_ecma_transforms_base         = { optional = true, version = "35.0.0", path = "../swc_ecma_transforms_base" }
+swc_ecma_transforms_compat       = { optional = true, version = "40.0.0", path = "../swc_ecma_transforms_compat" }
+swc_ecma_transforms_module       = { optional = true, version = "38.0.0", path = "../swc_ecma_transforms_module" }
+swc_ecma_transforms_optimization = { optional = true, version = "37.0.0", path = "../swc_ecma_transforms_optimization" }
+swc_ecma_transforms_proposal     = { optional = true, version = "35.0.0", path = "../swc_ecma_transforms_proposal" }
+swc_ecma_transforms_react        = { optional = true, version = "38.0.0", path = "../swc_ecma_transforms_react" }
+swc_ecma_transforms_testing      = { optional = true, version = "38.0.0", path = "../swc_ecma_transforms_testing" }
+swc_ecma_transforms_typescript   = { optional = true, version = "38.0.0", path = "../swc_ecma_transforms_typescript" }
+swc_ecma_usage_analyzer          = { optional = true, version = "27.0.0", path = "../swc_ecma_usage_analyzer" }
+swc_ecma_utils                   = { optional = true, version = "25.0.0", path = "../swc_ecma_utils" }
+swc_ecma_visit                   = { optional = true, version = "19.0.0", path = "../swc_ecma_visit" }
+swc_malloc                       = { optional = true, version = "1.2.4", path = "../swc_malloc" }
+swc_node_bundler                 = { optional = true, version = "53.0.0", path = "../swc_node_bundler" }
+swc_nodejs_common                = { optional = true, version = "1.0.3", path = "../swc_nodejs_common" }
+swc_plugin                       = { optional = true, version = "1.0.1", path = "../swc_plugin" }
+swc_plugin_macro                 = { optional = true, version = "1.1.0", path = "../swc_plugin_macro" }
+swc_plugin_proxy                 = { optional = true, version = "19.0.0", path = "../swc_plugin_proxy" }
+swc_plugin_runner                = { optional = true, version = "23.0.0", path = "../swc_plugin_runner", default-features = false }
+swc_trace_macro                  = { optional = true, version = "2.0.2", path = "../swc_trace_macro" }
+swc_transform_common             = { optional = true, version = "12.0.0", path = "../swc_transform_common" }
+swc_typescript                   = { optional = true, version = "24.0.0", path = "../swc_typescript" }
+testing                          = { optional = true, version = "19.0.0", path = "../testing" }
+
+[build-dependencies]
+vergen = { workspace = true, features = ["cargo"] }
+
+[dev-dependencies]
+anyhow  = { workspace = true }
+testing = { version = "19.0.0", path = "../testing" }

@@ -1,0 +1,81 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 25
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 25
+      },
+      "ctxt": 0,
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 24
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6
+            },
+            "ctxt": 0,
+            "value": "y",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TsConstAssertion",
+            "span": {
+              "start": 9,
+              "end": 24
+            },
+            "expression": {
+              "type": "ArrayExpression",
+              "span": {
+                "start": 16,
+                "end": 24
+              },
+              "elements": [
+                {
+                  "spread": null,
+                  "expression": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 17,
+                      "end": 19
+                    },
+                    "value": 10.0,
+                    "raw": "10"
+                  }
+                },
+                {
+                  "spread": null,
+                  "expression": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 21,
+                      "end": 23
+                    },
+                    "value": 20.0,
+                    "raw": "20"
+                  }
+                }
+              ]
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

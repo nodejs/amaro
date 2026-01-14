@@ -1,0 +1,1 @@
+//// [exponentiationOperatorWithTemplateStringInvalid.ts]

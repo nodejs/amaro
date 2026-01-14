@@ -1,0 +1,259 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 124
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 124
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 7
+        },
+        "value": "media",
+        "raw": "media"
+      },
+      "prelude": {
+        "type": "MediaQueryList",
+        "span": {
+          "start": 8,
+          "end": 53
+        },
+        "queries": [
+          {
+            "type": "MediaQuery",
+            "span": {
+              "start": 8,
+              "end": 53
+            },
+            "modifier": null,
+            "mediaType": {
+              "type": "Ident",
+              "span": {
+                "start": 8,
+                "end": 14
+              },
+              "value": "screen",
+              "raw": "screen"
+            },
+            "keyword": {
+              "type": "Ident",
+              "span": {
+                "start": 15,
+                "end": 18
+              },
+              "value": "and",
+              "raw": "and"
+            },
+            "condition": {
+              "type": "MediaConditionWithoutOr",
+              "span": {
+                "start": 19,
+                "end": 53
+              },
+              "conditions": [
+                {
+                  "type": "MediaFeaturePlain",
+                  "span": {
+                    "start": 19,
+                    "end": 53
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 20,
+                      "end": 50
+                    },
+                    "value": "-webkit-min-device-pixel-ratio",
+                    "raw": "-webkit-min-device-pixel-ratio"
+                  },
+                  "value": {
+                    "type": "Number",
+                    "span": {
+                      "start": 51,
+                      "end": 52
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 54,
+          "end": 124
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 54,
+            "end": 55
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "QualifiedRule",
+            "span": {
+              "start": 60,
+              "end": 122
+            },
+            "prelude": {
+              "type": "SelectorList",
+              "span": {
+                "start": 60,
+                "end": 76
+              },
+              "children": [
+                {
+                  "type": "ComplexSelector",
+                  "span": {
+                    "start": 60,
+                    "end": 76
+                  },
+                  "children": [
+                    {
+                      "type": "CompoundSelector",
+                      "span": {
+                        "start": 60,
+                        "end": 76
+                      },
+                      "nestingSelector": null,
+                      "typeSelector": null,
+                      "subclassSelectors": [
+                        {
+                          "type": "ClassSelector",
+                          "span": {
+                            "start": 60,
+                            "end": 76
+                          },
+                          "text": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 61,
+                              "end": 76
+                            },
+                            "value": "gradientWrapper",
+                            "raw": "gradientWrapper"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 77,
+                "end": 122
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 77,
+                  "end": 78
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 85,
+                    "end": 115
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 85,
+                      "end": 93
+                    },
+                    "value": "-chrome-",
+                    "raw": "-chrome-"
+                  },
+                  "value": [
+                    {
+                      "type": "Function",
+                      "span": {
+                        "start": 95,
+                        "end": 115
+                      },
+                      "name": {
+                        "type": "Ident",
+                        "span": {
+                          "start": 95,
+                          "end": 99
+                        },
+                        "value": "only",
+                        "raw": "only"
+                      },
+                      "value": [
+                        {
+                          "type": "Delimiter",
+                          "span": {
+                            "start": 100,
+                            "end": 101
+                          },
+                          "value": ";"
+                        },
+                        {
+                          "type": "Ident",
+                          "span": {
+                            "start": 102,
+                            "end": 109
+                          },
+                          "value": "z-index",
+                          "raw": "z-index"
+                        },
+                        {
+                          "type": "PreservedToken",
+                          "span": {
+                            "start": 109,
+                            "end": 110
+                          },
+                          "token": "Colon"
+                        },
+                        {
+                          "type": "Integer",
+                          "span": {
+                            "start": 111,
+                            "end": 113
+                          },
+                          "value": 10,
+                          "raw": "10"
+                        },
+                        {
+                          "type": "Delimiter",
+                          "span": {
+                            "start": 113,
+                            "end": 114
+                          },
+                          "value": ";"
+                        }
+                      ]
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,951 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 1310
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!DOCTYPE html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 17,
+        "end": 1310
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 777,
+            "end": 813
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "xmlns",
+          "rawName": "xmlns",
+          "value": "http://www.w3.org/1999/xhtml",
+          "rawValue": "\"http://www.w3.org/1999/xhtml\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 24,
+            "end": 73
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 30,
+                "end": 35
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 35,
+                "end": 65
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 42,
+                    "end": 57
+                  },
+                  "data": "MathML in HTML5",
+                  "raw": "MathML in HTML5"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 65,
+                "end": 66
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 73,
+            "end": 74
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 74,
+            "end": 1310
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 80,
+                "end": 82
+              },
+              "data": "\n\n",
+              "raw": "\n\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 82,
+                "end": 1292
+              },
+              "tagName": "math",
+              "namespace": "http://www.w3.org/1998/Math/MathML",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 88,
+                    "end": 93
+                  },
+                  "data": "\n    ",
+                  "raw": "\n    "
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 93,
+                    "end": 1284
+                  },
+                  "tagName": "semantics",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 104,
+                        "end": 114
+                      },
+                      "data": "\n\n        ",
+                      "raw": "\n\n        "
+                    },
+                    {
+                      "type": "Comment",
+                      "span": {
+                        "start": 114,
+                        "end": 142
+                      },
+                      "data": " Presentation MathML ",
+                      "raw": "<!-- Presentation MathML -->"
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 142,
+                        "end": 151
+                      },
+                      "data": "\n        ",
+                      "raw": "\n        "
+                    },
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 151,
+                        "end": 312
+                      },
+                      "tagName": "mrow",
+                      "namespace": "http://www.w3.org/1998/Math/MathML",
+                      "attributes": [],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 157,
+                            "end": 170
+                          },
+                          "data": "\n            ",
+                          "raw": "\n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 170,
+                            "end": 250
+                          },
+                          "tagName": "msup",
+                          "namespace": "http://www.w3.org/1998/Math/MathML",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 176,
+                                "end": 193
+                              },
+                              "data": "\n                ",
+                              "raw": "\n                "
+                            },
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 193,
+                                "end": 203
+                              },
+                              "tagName": "mi",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 197,
+                                    "end": 198
+                                  },
+                                  "data": "x",
+                                  "raw": "x"
+                                }
+                              ],
+                              "content": null,
+                              "isSelfClosing": false
+                            },
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 203,
+                                "end": 220
+                              },
+                              "data": "\n                ",
+                              "raw": "\n                "
+                            },
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 220,
+                                "end": 230
+                              },
+                              "tagName": "mn",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 224,
+                                    "end": 225
+                                  },
+                                  "data": "2",
+                                  "raw": "2"
+                                }
+                              ],
+                              "content": null,
+                              "isSelfClosing": false
+                            },
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 230,
+                                "end": 243
+                              },
+                              "data": "\n            ",
+                              "raw": "\n            "
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 250,
+                            "end": 263
+                          },
+                          "data": "\n            ",
+                          "raw": "\n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 263,
+                            "end": 273
+                          },
+                          "tagName": "mo",
+                          "namespace": "http://www.w3.org/1998/Math/MathML",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 267,
+                                "end": 268
+                              },
+                              "data": "+",
+                              "raw": "+"
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 273,
+                            "end": 286
+                          },
+                          "data": "\n            ",
+                          "raw": "\n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 286,
+                            "end": 296
+                          },
+                          "tagName": "mi",
+                          "namespace": "http://www.w3.org/1998/Math/MathML",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 290,
+                                "end": 291
+                              },
+                              "data": "y",
+                              "raw": "y"
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 296,
+                            "end": 305
+                          },
+                          "data": "\n        ",
+                          "raw": "\n        "
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 312,
+                        "end": 322
+                      },
+                      "data": "\n\n        ",
+                      "raw": "\n\n        "
+                    },
+                    {
+                      "type": "Comment",
+                      "span": {
+                        "start": 322,
+                        "end": 345
+                      },
+                      "data": " Content MathML ",
+                      "raw": "<!-- Content MathML -->"
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 345,
+                        "end": 354
+                      },
+                      "data": "\n        ",
+                      "raw": "\n        "
+                    },
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 354,
+                        "end": 669
+                      },
+                      "tagName": "annotation-xml",
+                      "namespace": "http://www.w3.org/1998/Math/MathML",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 370,
+                            "end": 395
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "encoding",
+                          "rawName": "encoding",
+                          "value": "MathML-Content",
+                          "rawValue": "\"MathML-Content\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 396,
+                            "end": 409
+                          },
+                          "data": "\n            ",
+                          "raw": "\n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 409,
+                            "end": 643
+                          },
+                          "tagName": "apply",
+                          "namespace": "http://www.w3.org/1998/Math/MathML",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 416,
+                                "end": 433
+                              },
+                              "data": "\n                ",
+                              "raw": "\n                "
+                            },
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 433,
+                                "end": 440
+                              },
+                              "tagName": "plus",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [],
+                              "content": null,
+                              "isSelfClosing": true
+                            },
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 440,
+                                "end": 457
+                              },
+                              "data": "\n                ",
+                              "raw": "\n                "
+                            },
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 457,
+                                "end": 595
+                              },
+                              "tagName": "apply",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 464,
+                                    "end": 485
+                                  },
+                                  "data": "\n                    ",
+                                  "raw": "\n                    "
+                                },
+                                {
+                                  "type": "Element",
+                                  "span": {
+                                    "start": 485,
+                                    "end": 493
+                                  },
+                                  "tagName": "power",
+                                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                                  "attributes": [],
+                                  "children": [],
+                                  "content": null,
+                                  "isSelfClosing": true
+                                },
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 493,
+                                    "end": 514
+                                  },
+                                  "data": "\n                    ",
+                                  "raw": "\n                    "
+                                },
+                                {
+                                  "type": "Element",
+                                  "span": {
+                                    "start": 514,
+                                    "end": 524
+                                  },
+                                  "tagName": "ci",
+                                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                                  "attributes": [],
+                                  "children": [
+                                    {
+                                      "type": "Text",
+                                      "span": {
+                                        "start": 518,
+                                        "end": 519
+                                      },
+                                      "data": "x",
+                                      "raw": "x"
+                                    }
+                                  ],
+                                  "content": null,
+                                  "isSelfClosing": false
+                                },
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 524,
+                                    "end": 545
+                                  },
+                                  "data": "\n                    ",
+                                  "raw": "\n                    "
+                                },
+                                {
+                                  "type": "Element",
+                                  "span": {
+                                    "start": 545,
+                                    "end": 570
+                                  },
+                                  "tagName": "cn",
+                                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                                  "attributes": [
+                                    {
+                                      "type": "Attribute",
+                                      "span": {
+                                        "start": 549,
+                                        "end": 563
+                                      },
+                                      "namespace": null,
+                                      "prefix": null,
+                                      "name": "type",
+                                      "rawName": "type",
+                                      "value": "integer",
+                                      "rawValue": "\"integer\""
+                                    }
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "Text",
+                                      "span": {
+                                        "start": 564,
+                                        "end": 565
+                                      },
+                                      "data": "2",
+                                      "raw": "2"
+                                    }
+                                  ],
+                                  "content": null,
+                                  "isSelfClosing": false
+                                },
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 570,
+                                    "end": 587
+                                  },
+                                  "data": "\n                ",
+                                  "raw": "\n                "
+                                }
+                              ],
+                              "content": null,
+                              "isSelfClosing": false
+                            },
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 595,
+                                "end": 612
+                              },
+                              "data": "\n                ",
+                              "raw": "\n                "
+                            },
+                            {
+                              "type": "Element",
+                              "span": {
+                                "start": 612,
+                                "end": 622
+                              },
+                              "tagName": "ci",
+                              "namespace": "http://www.w3.org/1998/Math/MathML",
+                              "attributes": [],
+                              "children": [
+                                {
+                                  "type": "Text",
+                                  "span": {
+                                    "start": 616,
+                                    "end": 617
+                                  },
+                                  "data": "y",
+                                  "raw": "y"
+                                }
+                              ],
+                              "content": null,
+                              "isSelfClosing": false
+                            },
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 622,
+                                "end": 635
+                              },
+                              "data": "\n            ",
+                              "raw": "\n            "
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 643,
+                            "end": 652
+                          },
+                          "data": "\n        ",
+                          "raw": "\n        "
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 669,
+                        "end": 679
+                      },
+                      "data": "\n\n        ",
+                      "raw": "\n\n        "
+                    },
+                    {
+                      "type": "Comment",
+                      "span": {
+                        "start": 679,
+                        "end": 700
+                      },
+                      "data": " Content HTML ",
+                      "raw": "<!-- Content HTML -->"
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 700,
+                        "end": 709
+                      },
+                      "data": "\n        ",
+                      "raw": "\n        "
+                    },
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 709,
+                        "end": 1034
+                      },
+                      "tagName": "annotation-xml",
+                      "namespace": "http://www.w3.org/1998/Math/MathML",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 725,
+                            "end": 757
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "encoding",
+                          "rawName": "encoding",
+                          "value": "application/xhtml+xml",
+                          "rawValue": "\"application/xhtml+xml\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 758,
+                            "end": 827
+                          },
+                          "data": "\n            \n            ",
+                          "raw": "\n            \n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 833,
+                            "end": 864
+                          },
+                          "tagName": "title",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 840,
+                                "end": 856
+                              },
+                              "data": "INNER HTML TITLE",
+                              "raw": "INNER HTML TITLE"
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 871,
+                            "end": 903
+                          },
+                          "data": "\n            \n            ",
+                          "raw": "\n            \n            "
+                        },
+                        {
+                          "type": "Element",
+                          "span": {
+                            "start": 903,
+                            "end": 968
+                          },
+                          "tagName": "p",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "attributes": [],
+                          "children": [
+                            {
+                              "type": "Text",
+                              "span": {
+                                "start": 906,
+                                "end": 964
+                              },
+                              "data": "The base of the natural logarithms, approximately 2.71828.",
+                              "raw": "The base of the natural logarithms, approximately 2.71828."
+                            }
+                          ],
+                          "content": null,
+                          "isSelfClosing": false
+                        },
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 968,
+                            "end": 1017
+                          },
+                          "data": "\n            \n            \n        ",
+                          "raw": "\n            \n            \n        "
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 1034,
+                        "end": 1044
+                      },
+                      "data": "\n\n        ",
+                      "raw": "\n\n        "
+                    },
+                    {
+                      "type": "Comment",
+                      "span": {
+                        "start": 1044,
+                        "end": 1070
+                      },
+                      "data": " annotate an image ",
+                      "raw": "<!-- annotate an image -->"
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 1070,
+                        "end": 1079
+                      },
+                      "data": "\n        ",
+                      "raw": "\n        "
+                    },
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 1079,
+                        "end": 1141
+                      },
+                      "tagName": "annotation",
+                      "namespace": "http://www.w3.org/1998/Math/MathML",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 1091,
+                            "end": 1111
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "encoding",
+                          "rawName": "encoding",
+                          "value": "image/png",
+                          "rawValue": "\"image/png\""
+                        },
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 1112,
+                            "end": 1139
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "src",
+                          "rawName": "src",
+                          "value": "some/path/formula.png",
+                          "rawValue": "\"some/path/formula.png\""
+                        }
+                      ],
+                      "children": [],
+                      "content": null,
+                      "isSelfClosing": true
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 1141,
+                        "end": 1151
+                      },
+                      "data": "\n\n        ",
+                      "raw": "\n\n        "
+                    },
+                    {
+                      "type": "Comment",
+                      "span": {
+                        "start": 1151,
+                        "end": 1172
+                      },
+                      "data": " annotate TeX ",
+                      "raw": "<!-- annotate TeX -->"
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 1172,
+                        "end": 1181
+                      },
+                      "data": "\n        ",
+                      "raw": "\n        "
+                    },
+                    {
+                      "type": "Element",
+                      "span": {
+                        "start": 1181,
+                        "end": 1266
+                      },
+                      "tagName": "annotation",
+                      "namespace": "http://www.w3.org/1998/Math/MathML",
+                      "attributes": [
+                        {
+                          "type": "Attribute",
+                          "span": {
+                            "start": 1193,
+                            "end": 1221
+                          },
+                          "namespace": null,
+                          "prefix": null,
+                          "name": "encoding",
+                          "rawName": "encoding",
+                          "value": "application/x-tex",
+                          "rawValue": "\"application/x-tex\""
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "Text",
+                          "span": {
+                            "start": 1222,
+                            "end": 1253
+                          },
+                          "data": "\n            x^{2} + y\n        ",
+                          "raw": "\n            x^{2} + y\n        "
+                        }
+                      ],
+                      "content": null,
+                      "isSelfClosing": false
+                    },
+                    {
+                      "type": "Text",
+                      "span": {
+                        "start": 1266,
+                        "end": 1272
+                      },
+                      "data": "\n\n    ",
+                      "raw": "\n\n    "
+                    }
+                  ],
+                  "content": null,
+                  "isSelfClosing": false
+                },
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 1284,
+                    "end": 1285
+                  },
+                  "data": "\n",
+                  "raw": "\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 1292,
+                "end": 1310
+              },
+              "data": "\n\n\n\n",
+              "raw": "\n\n\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

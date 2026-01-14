@@ -1,0 +1,187 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 237,
+    "end": 333
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 237,
+        "end": 278
+      },
+      "expression": {
+        "type": "AssignmentExpression",
+        "span": {
+          "start": 237,
+          "end": 278
+        },
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 237,
+            "end": 252
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 237,
+              "end": 244
+            },
+            "ctxt": 0,
+            "value": "exports",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 245,
+              "end": 252
+            },
+            "value": "default"
+          }
+        },
+        "right": {
+          "type": "ObjectExpression",
+          "span": {
+            "start": 255,
+            "end": 278
+          },
+          "properties": [
+            {
+              "type": "MethodProperty",
+              "key": {
+                "type": "Identifier",
+                "span": {
+                  "start": 257,
+                  "end": 260
+                },
+                "value": "bar"
+              },
+              "params": [],
+              "decorators": [],
+              "span": {
+                "start": 257,
+                "end": 276
+              },
+              "ctxt": 0,
+              "body": {
+                "type": "BlockStatement",
+                "span": {
+                  "start": 263,
+                  "end": 276
+                },
+                "ctxt": 0,
+                "stmts": [
+                  {
+                    "type": "ReturnStatement",
+                    "span": {
+                      "start": 265,
+                      "end": 274
+                    },
+                    "argument": {
+                      "type": "NumericLiteral",
+                      "span": {
+                        "start": 272,
+                        "end": 273
+                      },
+                      "value": 0.0,
+                      "raw": "0"
+                    }
+                  }
+                ]
+              },
+              "generator": false,
+              "async": false,
+              "typeParameters": null,
+              "returnType": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 300,
+        "end": 322
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "span": {
+            "start": 307,
+            "end": 310
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 307,
+              "end": 310
+            },
+            "ctxt": 0,
+            "value": "foo",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 316,
+          "end": 321
+        },
+        "value": "foo",
+        "raw": "\"foo\""
+      },
+      "typeOnly": false,
+      "with": null,
+      "phase": "evaluation"
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 323,
+        "end": 333
+      },
+      "expression": {
+        "type": "CallExpression",
+        "span": {
+          "start": 323,
+          "end": 332
+        },
+        "ctxt": 0,
+        "callee": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 323,
+            "end": 330
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 323,
+              "end": 326
+            },
+            "ctxt": 0,
+            "value": "foo",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 327,
+              "end": 330
+            },
+            "value": "bar"
+          }
+        },
+        "arguments": [],
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,56 @@
+[
+    JsDoc {
+        span: 54..96,
+        description: Text {
+            span: 54..83,
+            value: "A module representing a coat.",
+        },
+        tags: [
+            TagItem {
+                span: 54..61,
+                tag_name: Text {
+                    span: 54..61,
+                    value: "exports",
+                },
+                tag: Exports(
+                    ExportsTag {
+                        span: 54..61,
+                        module_name: Text {
+                            span: 54..61,
+                            value: "my/coat",
+                        },
+                    },
+                ),
+            },
+            TagItem {
+                span: 54..62,
+                tag_name: Text {
+                    span: 54..62,
+                    value: "requires",
+                },
+                tag: Requires(
+                    RequiresTag {
+                        span: 54..62,
+                        name_path: NamePath {
+                            span: 54..96,
+                            components: [
+                                Text {
+                                    span: 54..56,
+                                    value: "my",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 251..251,
+        description: Text {
+            span: 251..262,
+            value: "document me",
+        },
+        tags: [],
+    },
+]

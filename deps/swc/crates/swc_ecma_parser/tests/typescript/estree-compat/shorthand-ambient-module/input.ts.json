@@ -1,0 +1,30 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 33
+  },
+  "body": [
+    {
+      "type": "TsModuleDeclaration",
+      "span": {
+        "start": 1,
+        "end": 33
+      },
+      "declare": true,
+      "global": false,
+      "namespace": false,
+      "id": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 16,
+          "end": 32
+        },
+        "value": "hot-new-module",
+        "raw": "\"hot-new-module\""
+      },
+      "body": null
+    }
+  ],
+  "interpreter": null
+}

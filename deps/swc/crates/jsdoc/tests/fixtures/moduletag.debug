@@ -1,0 +1,62 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..7,
+                tag_name: Text {
+                    span: 1..7,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7,
+                        name: Text {
+                            span: 0..0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..10,
+                            value: "bookshelf",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 31..31,
+        description: Text {
+            span: 31..31,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 31..36,
+                tag_name: Text {
+                    span: 31..36,
+                    value: "class",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 31..36,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 83..83,
+        description: Text {
+            span: 83..94,
+            value: "document me",
+        },
+        tags: [],
+    },
+]

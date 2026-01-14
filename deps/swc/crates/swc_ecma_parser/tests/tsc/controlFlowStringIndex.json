@@ -1,0 +1,393 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 18,
+    "end": 270
+  },
+  "body": [
+    {
+      "type": "TsTypeAliasDeclaration",
+      "span": {
+        "start": 18,
+        "end": 92
+      },
+      "declare": false,
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 23,
+          "end": 24
+        },
+        "ctxt": 0,
+        "value": "A",
+        "optional": false
+      },
+      "typeParams": null,
+      "typeAnnotation": {
+        "type": "TsTypeLiteral",
+        "span": {
+          "start": 27,
+          "end": 91
+        },
+        "members": [
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 33,
+              "end": 54
+            },
+            "readonly": false,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 33,
+                "end": 38
+              },
+              "ctxt": 0,
+              "value": "other",
+              "optional": false
+            },
+            "computed": false,
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 38,
+                "end": 53
+              },
+              "typeAnnotation": {
+                "type": "TsUnionType",
+                "span": {
+                  "start": 40,
+                  "end": 53
+                },
+                "types": [
+                  {
+                    "type": "TsKeywordType",
+                    "span": {
+                      "start": 40,
+                      "end": 46
+                    },
+                    "kind": "number"
+                  },
+                  {
+                    "type": "TsKeywordType",
+                    "span": {
+                      "start": 49,
+                      "end": 53
+                    },
+                    "kind": "null"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "TsIndexSignature",
+            "params": [
+              {
+                "type": "Identifier",
+                "span": {
+                  "start": 60,
+                  "end": 73
+                },
+                "ctxt": 0,
+                "value": "index",
+                "optional": false,
+                "typeAnnotation": {
+                  "type": "TsTypeAnnotation",
+                  "span": {
+                    "start": 65,
+                    "end": 73
+                  },
+                  "typeAnnotation": {
+                    "type": "TsKeywordType",
+                    "span": {
+                      "start": 67,
+                      "end": 73
+                    },
+                    "kind": "string"
+                  }
+                }
+              }
+            ],
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 74,
+                "end": 89
+              },
+              "typeAnnotation": {
+                "type": "TsUnionType",
+                "span": {
+                  "start": 76,
+                  "end": 89
+                },
+                "types": [
+                  {
+                    "type": "TsKeywordType",
+                    "span": {
+                      "start": 76,
+                      "end": 82
+                    },
+                    "kind": "number"
+                  },
+                  {
+                    "type": "TsKeywordType",
+                    "span": {
+                      "start": 85,
+                      "end": 89
+                    },
+                    "kind": "null"
+                  }
+                ]
+              }
+            },
+            "readonly": false,
+            "static": false,
+            "span": {
+              "start": 59,
+              "end": 89
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 93,
+        "end": 116
+      },
+      "ctxt": 0,
+      "kind": "const",
+      "declare": true,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 107,
+            "end": 115
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 107,
+              "end": 112
+            },
+            "ctxt": 0,
+            "value": "value",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 112,
+                "end": 115
+              },
+              "typeAnnotation": {
+                "type": "TsTypeReference",
+                "span": {
+                  "start": 114,
+                  "end": 115
+                },
+                "typeName": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 114,
+                    "end": 115
+                  },
+                  "ctxt": 0,
+                  "value": "A",
+                  "optional": false
+                },
+                "typeParams": null
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    },
+    {
+      "type": "IfStatement",
+      "span": {
+        "start": 117,
+        "end": 270
+      },
+      "test": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 121,
+          "end": 139
+        },
+        "operator": "!==",
+        "left": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 121,
+            "end": 130
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 121,
+              "end": 126
+            },
+            "ctxt": 0,
+            "value": "value",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 127,
+              "end": 130
+            },
+            "value": "foo"
+          }
+        },
+        "right": {
+          "type": "NullLiteral",
+          "span": {
+            "start": 135,
+            "end": 139
+          }
+        }
+      },
+      "consequent": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 141,
+          "end": 270
+        },
+        "ctxt": 0,
+        "stmts": [
+          {
+            "type": "ExpressionStatement",
+            "span": {
+              "start": 147,
+              "end": 172
+            },
+            "expression": {
+              "type": "CallExpression",
+              "span": {
+                "start": 147,
+                "end": 172
+              },
+              "ctxt": 0,
+              "callee": {
+                "type": "MemberExpression",
+                "span": {
+                  "start": 147,
+                  "end": 170
+                },
+                "object": {
+                  "type": "MemberExpression",
+                  "span": {
+                    "start": 147,
+                    "end": 156
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 147,
+                      "end": 152
+                    },
+                    "ctxt": 0,
+                    "value": "value",
+                    "optional": false
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 153,
+                      "end": 156
+                    },
+                    "value": "foo"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 157,
+                    "end": 170
+                  },
+                  "value": "toExponential"
+                }
+              },
+              "arguments": [],
+              "typeArguments": null
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "span": {
+              "start": 177,
+              "end": 188
+            },
+            "expression": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 177,
+                "end": 188
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 177,
+                  "end": 182
+                },
+                "ctxt": 0,
+                "value": "value",
+                "optional": false
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 183,
+                  "end": 188
+                },
+                "value": "other"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "span": {
+              "start": 226,
+              "end": 235
+            },
+            "expression": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 226,
+                "end": 235
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 226,
+                  "end": 231
+                },
+                "ctxt": 0,
+                "value": "value",
+                "optional": false
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 232,
+                  "end": 235
+                },
+                "value": "bar"
+              }
+            }
+          }
+        ]
+      },
+      "alternate": null
+    }
+  ],
+  "interpreter": null
+}

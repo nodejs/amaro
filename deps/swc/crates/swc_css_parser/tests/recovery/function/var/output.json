@@ -1,0 +1,355 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 86,
+    "ctxt": 0
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 85,
+        "ctxt": 0
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 7,
+          "ctxt": 0
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 7,
+              "ctxt": 0
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 7,
+                  "ctxt": 0
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 7,
+                      "ctxt": 0
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 7,
+                        "ctxt": 0
+                      },
+                      "value": "style",
+                      "raw": "style"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 8,
+          "end": 85,
+          "ctxt": 0
+        },
+        "name": "{",
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 11,
+              "end": 28,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 11,
+                "end": 17,
+                "ctxt": 0
+              },
+              "value": "border",
+              "raw": "border"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 19,
+                  "end": 28,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 19,
+                    "end": 22,
+                    "ctxt": 0
+                  },
+                  "value": "var",
+                  "raw": "var"
+                },
+                "value": [
+                  {
+                    "type": "HexColor",
+                    "span": {
+                      "start": 23,
+                      "end": 27,
+                      "ctxt": 0
+                    },
+                    "value": "fff",
+                    "raw": "fff"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 31,
+              "end": 61,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 31,
+                "end": 37,
+                "ctxt": 0
+              },
+              "value": "border",
+              "raw": "border"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 39,
+                  "end": 61,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 39,
+                    "end": 42,
+                    "ctxt": 0
+                  },
+                  "value": "var",
+                  "raw": "var"
+                },
+                "value": [
+                  {
+                    "type": "Function",
+                    "span": {
+                      "start": 43,
+                      "end": 60,
+                      "ctxt": 0
+                    },
+                    "name": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 43,
+                        "end": 47,
+                        "ctxt": 0
+                      },
+                      "value": "calc",
+                      "raw": "calc"
+                    },
+                    "value": [
+                      {
+                        "type": "CalcSum",
+                        "span": {
+                          "start": 48,
+                          "end": 59,
+                          "ctxt": 0
+                        },
+                        "expressions": [
+                          {
+                            "type": "CalcProduct",
+                            "span": {
+                              "start": 48,
+                              "end": 52,
+                              "ctxt": 0
+                            },
+                            "expressions": [
+                              {
+                                "type": "Length",
+                                "span": {
+                                  "start": 48,
+                                  "end": 52,
+                                  "ctxt": 0
+                                },
+                                "value": {
+                                  "type": "Number",
+                                  "span": {
+                                    "start": 48,
+                                    "end": 50,
+                                    "ctxt": 0
+                                  },
+                                  "value": 10.0,
+                                  "raw": "10"
+                                },
+                                "unit": {
+                                  "type": "Ident",
+                                  "span": {
+                                    "start": 50,
+                                    "end": 52,
+                                    "ctxt": 0
+                                  },
+                                  "value": "px",
+                                  "raw": "px"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "CalcOperator",
+                            "span": {
+                              "start": 53,
+                              "end": 54,
+                              "ctxt": 0
+                            },
+                            "value": "+"
+                          },
+                          {
+                            "type": "CalcProduct",
+                            "span": {
+                              "start": 55,
+                              "end": 59,
+                              "ctxt": 0
+                            },
+                            "expressions": [
+                              {
+                                "type": "Length",
+                                "span": {
+                                  "start": 55,
+                                  "end": 59,
+                                  "ctxt": 0
+                                },
+                                "value": {
+                                  "type": "Number",
+                                  "span": {
+                                    "start": 55,
+                                    "end": 57,
+                                    "ctxt": 0
+                                  },
+                                  "value": 10.0,
+                                  "raw": "10"
+                                },
+                                "unit": {
+                                  "type": "Ident",
+                                  "span": {
+                                    "start": 57,
+                                    "end": 59,
+                                    "ctxt": 0
+                                  },
+                                  "value": "px",
+                                  "raw": "px"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 64,
+              "end": 82,
+              "ctxt": 0
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 64,
+                "end": 70,
+                "ctxt": 0
+              },
+              "value": "border",
+              "raw": "border"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 72,
+                  "end": 82,
+                  "ctxt": 0
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 72,
+                    "end": 75,
+                    "ctxt": 0
+                  },
+                  "value": "var",
+                  "raw": "var"
+                },
+                "value": [
+                  {
+                    "type": "Length",
+                    "span": {
+                      "start": 76,
+                      "end": 81,
+                      "ctxt": 0
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 76,
+                        "end": 78,
+                        "ctxt": 0
+                      },
+                      "value": 90.0,
+                      "raw": "90"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 78,
+                        "end": 81,
+                        "ctxt": 0
+                      },
+                      "value": "rem",
+                      "raw": "rem"
+                    }
+                  }
+                ]
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

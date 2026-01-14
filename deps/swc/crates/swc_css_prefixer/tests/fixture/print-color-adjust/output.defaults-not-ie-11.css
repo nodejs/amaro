@@ -1,0 +1,8 @@
+.a {
+  -webkit-print-color-adjust: economy;
+  print-color-adjust: economy;
+}
+.b {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

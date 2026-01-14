@@ -1,0 +1,12 @@
+.bible-quote {
+  direction: rtl;
+  unicode-bidi: isolate-override;
+}
+.bible-quote {
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+.bible-quote {
+  direction: rtl;
+  unicode-bidi: isolate;
+}

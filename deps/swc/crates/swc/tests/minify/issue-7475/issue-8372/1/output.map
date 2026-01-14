@@ -1,0 +1,15 @@
+{
+  "mappings": "AAEAA,MAAAA,EAAQC,CAAG,AAFD,IAAA,MAAA,EAAS,QAAA,GAAA,CAAA",
+  "names": [
+    "console",
+    "log",
+    "aób"
+  ],
+  "sources": [
+    "input-preprocess.js"
+  ],
+  "sourcesContent": [
+    "const a = {aób: 'ó'}\n\nconsole.log(a)"
+  ],
+  "version": 3
+}

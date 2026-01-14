@@ -1,0 +1,1 @@
+//// [symbolType19.ts]

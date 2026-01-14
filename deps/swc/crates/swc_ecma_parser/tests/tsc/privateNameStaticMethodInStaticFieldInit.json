@@ -1,0 +1,228 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 21,
+    "end": 115
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 27,
+          "end": 28
+        },
+        "ctxt": 0,
+        "value": "C",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 21,
+        "end": 96
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 35,
+            "end": 58
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 42,
+              "end": 43
+            },
+            "value": "s"
+          },
+          "value": {
+            "type": "CallExpression",
+            "span": {
+              "start": 46,
+              "end": 57
+            },
+            "ctxt": 0,
+            "callee": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 46,
+                "end": 55
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 46,
+                  "end": 47
+                },
+                "ctxt": 0,
+                "value": "C",
+                "optional": false
+              },
+              "property": {
+                "type": "PrivateName",
+                "span": {
+                  "start": 48,
+                  "end": 55
+                },
+                "value": "method"
+              }
+            },
+            "arguments": [],
+            "typeArguments": null
+          },
+          "typeAnnotation": null,
+          "isStatic": true,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 63,
+            "end": 94
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 70,
+              "end": 77
+            },
+            "value": "method"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 63,
+              "end": 94
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 80,
+                "end": 94
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 82,
+                    "end": 92
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 89,
+                      "end": 91
+                    },
+                    "value": 42.0,
+                    "raw": "42"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": true,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 98,
+        "end": 115
+      },
+      "expression": {
+        "type": "CallExpression",
+        "span": {
+          "start": 98,
+          "end": 114
+        },
+        "ctxt": 0,
+        "callee": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 98,
+            "end": 109
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 98,
+              "end": 105
+            },
+            "ctxt": 0,
+            "value": "console",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 106,
+              "end": 109
+            },
+            "value": "log"
+          }
+        },
+        "arguments": [
+          {
+            "spread": null,
+            "expression": {
+              "type": "MemberExpression",
+              "span": {
+                "start": 110,
+                "end": 113
+              },
+              "object": {
+                "type": "Identifier",
+                "span": {
+                  "start": 110,
+                  "end": 111
+                },
+                "ctxt": 0,
+                "value": "C",
+                "optional": false
+              },
+              "property": {
+                "type": "Identifier",
+                "span": {
+                  "start": 112,
+                  "end": 113
+                },
+                "value": "s"
+              }
+            }
+          }
+        ],
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

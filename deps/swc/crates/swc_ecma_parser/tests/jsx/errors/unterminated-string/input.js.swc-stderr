@@ -1,0 +1,9 @@
+  x Unexpected token `<eof>`. Expected jsx identifier
+   ,-[$DIR/tests/jsx/errors/unterminated-string/input.js:1:12]
+ 1 | <foo bar="
+   `----
+  x Unterminated string constant
+   ,-[$DIR/tests/jsx/errors/unterminated-string/input.js:1:1]
+ 1 | <foo bar="
+   :          ^^
+   `----

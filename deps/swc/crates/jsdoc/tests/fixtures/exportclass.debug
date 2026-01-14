@@ -1,0 +1,39 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..14,
+            value: "Foo module\n *",
+        },
+        tags: [
+            TagItem {
+                span: 1..7,
+                tag_name: Text {
+                    span: 1..7,
+                    value: "module",
+                },
+                tag: Module(
+                    ModuleTag {
+                        span: 1..7,
+                        name: Text {
+                            span: 0..0,
+                            value: "",
+                        },
+                        ty: Text {
+                            span: 1..4,
+                            value: "foo",
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 39..39,
+        description: Text {
+            span: 39..56,
+            value: "Class description",
+        },
+        tags: [],
+    },
+]
