@@ -1,0 +1,544 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 583
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!DOCTYPE html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 0,
+        "end": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 16,
+            "end": 583
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Element",
+              "span": {
+                "start": 22,
+                "end": 583
+              },
+              "tagName": "math",
+              "namespace": "http://www.w3.org/1998/Math/MathML",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 28,
+                    "end": 40
+                  },
+                  "tagName": "altglyph",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 40,
+                    "end": 55
+                  },
+                  "tagName": "altglyphdef",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 55,
+                    "end": 71
+                  },
+                  "tagName": "altglyphitem",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 71,
+                    "end": 87
+                  },
+                  "tagName": "animatecolor",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 87,
+                    "end": 104
+                  },
+                  "tagName": "animatemotion",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 104,
+                    "end": 124
+                  },
+                  "tagName": "animatetransform",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 124,
+                    "end": 136
+                  },
+                  "tagName": "clippath",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 136,
+                    "end": 147
+                  },
+                  "tagName": "feblend",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 147,
+                    "end": 164
+                  },
+                  "tagName": "fecolormatrix",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 164,
+                    "end": 187
+                  },
+                  "tagName": "fecomponenttransfer",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 187,
+                    "end": 202
+                  },
+                  "tagName": "fecomposite",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 202,
+                    "end": 222
+                  },
+                  "tagName": "feconvolvematrix",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 222,
+                    "end": 243
+                  },
+                  "tagName": "fediffuselighting",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 243,
+                    "end": 264
+                  },
+                  "tagName": "fedisplacementmap",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 264,
+                    "end": 282
+                  },
+                  "tagName": "fedistantlight",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 282,
+                    "end": 293
+                  },
+                  "tagName": "feflood",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 293,
+                    "end": 304
+                  },
+                  "tagName": "fefunca",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 304,
+                    "end": 315
+                  },
+                  "tagName": "fefuncb",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 315,
+                    "end": 326
+                  },
+                  "tagName": "fefuncg",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 326,
+                    "end": 337
+                  },
+                  "tagName": "fefuncr",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 337,
+                    "end": 355
+                  },
+                  "tagName": "fegaussianblur",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 355,
+                    "end": 366
+                  },
+                  "tagName": "feimage",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 366,
+                    "end": 377
+                  },
+                  "tagName": "femerge",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 377,
+                    "end": 392
+                  },
+                  "tagName": "femergenode",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 392,
+                    "end": 408
+                  },
+                  "tagName": "femorphology",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 408,
+                    "end": 420
+                  },
+                  "tagName": "feoffset",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 420,
+                    "end": 436
+                  },
+                  "tagName": "fepointlight",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 436,
+                    "end": 458
+                  },
+                  "tagName": "fespecularlighting",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 458,
+                    "end": 473
+                  },
+                  "tagName": "fespotlight",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 473,
+                    "end": 483
+                  },
+                  "tagName": "fetile",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 483,
+                    "end": 499
+                  },
+                  "tagName": "feturbulence",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 499,
+                    "end": 516
+                  },
+                  "tagName": "foreignobject",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 516,
+                    "end": 528
+                  },
+                  "tagName": "glyphref",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 528,
+                    "end": 546
+                  },
+                  "tagName": "lineargradient",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 546,
+                    "end": 564
+                  },
+                  "tagName": "radialgradient",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                },
+                {
+                  "type": "Element",
+                  "span": {
+                    "start": 564,
+                    "end": 576
+                  },
+                  "tagName": "textpath",
+                  "namespace": "http://www.w3.org/1998/Math/MathML",
+                  "attributes": [],
+                  "children": [],
+                  "content": null,
+                  "isSelfClosing": true
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

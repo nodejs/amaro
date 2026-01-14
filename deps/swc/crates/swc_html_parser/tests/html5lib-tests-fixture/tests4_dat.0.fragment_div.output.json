@@ -1,0 +1,18 @@
+{
+  "type": "DocumentFragment",
+  "span": {
+    "start": 1,
+    "end": 19
+  },
+  "children": [
+    {
+      "type": "Text",
+      "span": {
+        "start": 1,
+        "end": 19
+      },
+      "data": "direct div content",
+      "raw": "direct div content"
+    }
+  ]
+}

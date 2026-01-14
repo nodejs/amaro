@@ -1,0 +1,60 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 26
+  },
+  "body": [
+    {
+      "type": "TsInterfaceDeclaration",
+      "span": {
+        "start": 1,
+        "end": 26
+      },
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 11,
+          "end": 12
+        },
+        "ctxt": 0,
+        "value": "I",
+        "optional": false
+      },
+      "declare": false,
+      "typeParams": null,
+      "extends": [],
+      "body": {
+        "type": "TsInterfaceBody",
+        "span": {
+          "start": 13,
+          "end": 26
+        },
+        "body": [
+          {
+            "type": "TsMethodSignature",
+            "span": {
+              "start": 17,
+              "end": 24
+            },
+            "key": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 17,
+                "end": 20
+              },
+              "value": "F",
+              "raw": "\"F\""
+            },
+            "computed": false,
+            "optional": true,
+            "params": [],
+            "typeAnn": null,
+            "typeParams": null
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,89 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 2,
+    "end": 24
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 2,
+        "end": 24
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 6,
+            "end": 24
+          },
+          "id": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 6,
+              "end": 12
+            },
+            "properties": [
+              {
+                "type": "AssignmentPatternProperty",
+                "span": {
+                  "start": 8,
+                  "end": 10
+                },
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 8,
+                    "end": 10
+                  },
+                  "ctxt": 0,
+                  "value": "as",
+                  "optional": false,
+                  "typeAnnotation": null
+                },
+                "value": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 15,
+              "end": 24
+            },
+            "properties": [
+              {
+                "type": "KeyValueProperty",
+                "key": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 17,
+                    "end": 19
+                  },
+                  "value": "as"
+                },
+                "value": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 21,
+                    "end": 22
+                  },
+                  "value": 1.0,
+                  "raw": "1"
+                }
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

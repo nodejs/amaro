@@ -1,0 +1,1 @@
+//// [typeGuardsInFunction.ts]

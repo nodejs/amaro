@@ -1,0 +1,614 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 252
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 206
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 4
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 4
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 4
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 1,
+                    "end": 4
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 1,
+                      "end": 4
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 1,
+                        "end": 4
+                      },
+                      "value": "div",
+                      "raw": "div"
+                    }
+                  }
+                },
+                "subclassSelectors": []
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 5,
+          "end": 206
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 5,
+            "end": 6
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 11,
+              "end": 20
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 11,
+                "end": 16
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 18,
+                  "end": 20
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 18,
+                    "end": 19
+                  },
+                  "value": 0.0,
+                  "raw": "0"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 26,
+              "end": 37
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 26,
+                "end": 31
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 33,
+                  "end": 37
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 33,
+                    "end": 36
+                  },
+                  "value": 0.1,
+                  "raw": "0.1"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 43,
+              "end": 54
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 43,
+                "end": 48
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 50,
+                  "end": 54
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 50,
+                    "end": 53
+                  },
+                  "value": 100.0,
+                  "raw": "100"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 60,
+              "end": 73
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 60,
+                "end": 65
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 67,
+                  "end": 73
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 67,
+                    "end": 72
+                  },
+                  "value": 100.5,
+                  "raw": "100.5"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 79,
+              "end": 95
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 79,
+                "end": 84
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 86,
+                  "end": 95
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 86,
+                    "end": 94
+                  },
+                  "value": 100.1,
+                  "raw": "100.1000"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 101,
+              "end": 112
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 101,
+                "end": 106
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 108,
+                  "end": 112
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 108,
+                    "end": 111
+                  },
+                  "value": 1.0,
+                  "raw": "1e0"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 118,
+              "end": 129
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 118,
+                "end": 123
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 125,
+                  "end": 129
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 125,
+                    "end": 128
+                  },
+                  "value": 10.0,
+                  "raw": "1e1"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 135,
+              "end": 146
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 135,
+                "end": 140
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 142,
+                  "end": 146
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 142,
+                    "end": 145
+                  },
+                  "value": 100.0,
+                  "raw": "1e2"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 152,
+              "end": 165
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 152,
+                "end": 157
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 159,
+                  "end": 165
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 159,
+                    "end": 164
+                  },
+                  "value": 1.0,
+                  "raw": "10e-1"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 171,
+              "end": 184
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 171,
+                "end": 176
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 178,
+                  "end": 184
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 178,
+                    "end": 183
+                  },
+                  "value": 0.0001,
+                  "raw": "10e-5"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 190,
+              "end": 203
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 190,
+                "end": 195
+              },
+              "value": "width",
+              "raw": "width"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 197,
+                  "end": 203
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 197,
+                    "end": 202
+                  },
+                  "value": 1000.0,
+                  "raw": "10e+2"
+                }
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 208,
+        "end": 251
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 208,
+          "end": 211
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 208,
+              "end": 211
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 208,
+                  "end": 211
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 208,
+                    "end": 211
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 208,
+                      "end": 211
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 208,
+                        "end": 211
+                      },
+                      "value": "div",
+                      "raw": "div"
+                    }
+                  }
+                },
+                "subclassSelectors": []
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 212,
+          "end": 251
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 212,
+            "end": 213
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 218,
+              "end": 229
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 218,
+                "end": 224
+              },
+              "value": "margin",
+              "raw": "margin"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 226,
+                  "end": 229
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 226,
+                    "end": 228
+                  },
+                  "value": -5.0,
+                  "raw": "-5"
+                }
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 235,
+              "end": 248
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 235,
+                "end": 241
+              },
+              "value": "margin",
+              "raw": "margin"
+            },
+            "value": [
+              {
+                "type": "Percentage",
+                "span": {
+                  "start": 243,
+                  "end": 248
+                },
+                "value": {
+                  "type": "Number",
+                  "span": {
+                    "start": 243,
+                    "end": 247
+                  },
+                  "value": -5.5,
+                  "raw": "-5.5"
+                }
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

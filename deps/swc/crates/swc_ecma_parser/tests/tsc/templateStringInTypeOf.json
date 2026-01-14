@@ -1,0 +1,89 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 33
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 33
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 32
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6
+            },
+            "ctxt": 0,
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 9,
+              "end": 32
+            },
+            "operator": "typeof",
+            "argument": {
+              "type": "TemplateLiteral",
+              "span": {
+                "start": 16,
+                "end": 32
+              },
+              "expressions": [
+                {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 23,
+                    "end": 26
+                  },
+                  "value": 123.0,
+                  "raw": "123"
+                }
+              ],
+              "quasis": [
+                {
+                  "type": "TemplateElement",
+                  "span": {
+                    "start": 17,
+                    "end": 20
+                  },
+                  "tail": false,
+                  "cooked": "abc",
+                  "raw": "abc"
+                },
+                {
+                  "type": "TemplateElement",
+                  "span": {
+                    "start": 28,
+                    "end": 31
+                  },
+                  "tail": true,
+                  "cooked": "def",
+                  "raw": "def"
+                }
+              ]
+            }
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

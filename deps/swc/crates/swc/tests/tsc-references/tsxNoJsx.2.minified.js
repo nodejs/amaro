@@ -1,0 +1,1 @@
+//// [tsxNoJsx.tsx]

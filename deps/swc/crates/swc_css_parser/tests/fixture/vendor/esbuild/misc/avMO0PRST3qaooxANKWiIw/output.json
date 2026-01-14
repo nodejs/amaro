@@ -1,0 +1,134 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 22
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 22
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 6
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 6
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 6
+                },
+                "nestingSelector": null,
+                "typeSelector": null,
+                "subclassSelectors": [
+                  {
+                    "type": "ClassSelector",
+                    "span": {
+                      "start": 1,
+                      "end": 6
+                    },
+                    "text": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 2,
+                        "end": 6
+                      },
+                      "value": "decl",
+                      "raw": "decl"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 7,
+          "end": 22
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 7,
+            "end": 8
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 9,
+              "end": 13
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 9,
+                "end": 10
+              },
+              "value": "a",
+              "raw": "a"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 12,
+                  "end": 13
+                },
+                "value": "b",
+                "raw": "b"
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 15,
+              "end": 19
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 15,
+                "end": 16
+              },
+              "value": "c",
+              "raw": "c"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 18,
+                  "end": 19
+                },
+                "value": "d",
+                "raw": "d"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

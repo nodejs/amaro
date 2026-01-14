@@ -1,0 +1,3 @@
+class C {
+}
+function F() {}

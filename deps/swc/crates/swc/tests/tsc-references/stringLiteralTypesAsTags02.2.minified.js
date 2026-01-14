@@ -1,0 +1,1 @@
+//// [stringLiteralTypesAsTags02.ts]

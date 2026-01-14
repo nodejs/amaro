@@ -1,0 +1,138 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 51
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 51
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 50
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6
+            },
+            "ctxt": 0,
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "init": {
+            "type": "TemplateLiteral",
+            "span": {
+              "start": 9,
+              "end": 50
+            },
+            "expressions": [
+              {
+                "type": "BinaryExpression",
+                "span": {
+                  "start": 16,
+                  "end": 44
+                },
+                "operator": "in",
+                "left": {
+                  "type": "StringLiteral",
+                  "span": {
+                    "start": 16,
+                    "end": 20
+                  },
+                  "value": "hi",
+                  "raw": "\"hi\""
+                },
+                "right": {
+                  "type": "ObjectExpression",
+                  "span": {
+                    "start": 24,
+                    "end": 44
+                  },
+                  "properties": [
+                    {
+                      "type": "KeyValueProperty",
+                      "key": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 26,
+                          "end": 28
+                        },
+                        "value": "hi"
+                      },
+                      "value": {
+                        "type": "NumericLiteral",
+                        "span": {
+                          "start": 30,
+                          "end": 32
+                        },
+                        "value": 10.0,
+                        "raw": "10"
+                      }
+                    },
+                    {
+                      "type": "KeyValueProperty",
+                      "key": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 34,
+                          "end": 39
+                        },
+                        "value": "hello"
+                      },
+                      "value": {
+                        "type": "NumericLiteral",
+                        "span": {
+                          "start": 41,
+                          "end": 43
+                        },
+                        "value": 20.0,
+                        "raw": "20"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "quasis": [
+              {
+                "type": "TemplateElement",
+                "span": {
+                  "start": 10,
+                  "end": 13
+                },
+                "tail": false,
+                "cooked": "abc",
+                "raw": "abc"
+              },
+              {
+                "type": "TemplateElement",
+                "span": {
+                  "start": 46,
+                  "end": 49
+                },
+                "tail": true,
+                "cooked": "def",
+                "raw": "def"
+              }
+            ]
+          },
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}
