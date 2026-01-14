@@ -16,5 +16,5 @@
 		"strict": true,
 		"target": "ES2022"
 	},
-	"exclude": ["test/fixtures/**/*", "dist"]
+	"exclude": ["test/fixtures/**/*", "dist", "deps"]
 }
