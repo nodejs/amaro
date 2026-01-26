@@ -1,0 +1,7 @@
+  x Expected ":"
+   ,-[$DIR/tests/recovery/style-blocks-contents/invalid-nested-1/input.css:4:1]
+ 3 | 
+ 4 |     input {
+   :           ^
+ 5 |         margin: 1em;
+   `----

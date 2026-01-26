@@ -1,0 +1,487 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 382
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype\nhtml>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 0,
+        "end": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 17,
+                "end": 22
+              },
+              "data": "Text\n",
+              "raw": "Text\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 22,
+                "end": 37
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 27,
+                    "end": 31
+                  },
+                  "data": "Text",
+                  "raw": "Text"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 37,
+                "end": 38
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 38,
+                "end": 59
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 43,
+                    "end": 53
+                  },
+                  "data": "\n    Text\n",
+                  "raw": "\n    Text\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 59,
+                "end": 60
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 60,
+                "end": 92
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 65,
+                    "end": 86
+                  },
+                  "data": "\n    Text\n\n\n    Text\n",
+                  "raw": "\n    Text\n\n\n    Text\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 92,
+                "end": 93
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 93,
+                "end": 119
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 98,
+                    "end": 113
+                  },
+                  "data": "Text\n\n\n    Text",
+                  "raw": "Text\n\n\n    Text"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 119,
+                "end": 120
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 120,
+                "end": 147
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 125,
+                    "end": 136
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "test",
+                  "rawName": "test",
+                  "value": "test",
+                  "rawValue": "\"test\""
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 138,
+                    "end": 140
+                  },
+                  "data": "\n\n",
+                  "raw": "\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 147,
+                "end": 148
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 148,
+                "end": 179
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 153,
+                    "end": 168
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "data-q",
+                  "rawName": "data-q",
+                  "value": "test",
+                  "rawValue": "\"test\""
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 170,
+                    "end": 172
+                  },
+                  "data": "\n\n",
+                  "raw": "\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 179,
+                "end": 180
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 180,
+                "end": 211
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 185,
+                    "end": 200
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "data-q",
+                  "rawName": "data-q",
+                  "value": "test",
+                  "rawValue": "'test'"
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 202,
+                    "end": 204
+                  },
+                  "data": "\n\n",
+                  "raw": "\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 211,
+                "end": 212
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 212,
+                "end": 241
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 217,
+                    "end": 230
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "data-q",
+                  "rawName": "data-q",
+                  "value": "test",
+                  "rawValue": "test"
+                }
+              ],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 232,
+                    "end": 234
+                  },
+                  "data": "\n\n",
+                  "raw": "\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 241,
+                "end": 242
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 242,
+                "end": 305
+              },
+              "tagName": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 249,
+                    "end": 297
+                  },
+                  "data": "\n\n.color {\n    color: red;\n    <!-- Test -->\n}\n\n",
+                  "raw": "\n\n.color {\n    color: red;\n    <!-- Test -->\n}\n\n"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 305,
+                "end": 306
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 306,
+                "end": 341
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 311,
+                    "end": 334
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "test",
+                  "rawName": "test",
+                  "value": "test\n\ntest\n\ntest",
+                  "rawValue": "\"test\n\ntest\n\ntest\""
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 341,
+                "end": 342
+              },
+              "data": "\n",
+              "raw": "\n"
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 342,
+                "end": 381
+              },
+              "tagName": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 347,
+                    "end": 374
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "test",
+                  "rawName": "test",
+                  "value": "\n\ntest\n\ntest\n\ntest\n\n",
+                  "rawValue": "\"\n\ntest\n\ntest\n\ntest\n\n\""
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 381,
+                "end": 382
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

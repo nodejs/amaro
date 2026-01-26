@@ -1,0 +1,185 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 173
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 17,
+        "end": 173
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [
+        {
+          "type": "Attribute",
+          "span": {
+            "start": 23,
+            "end": 32
+          },
+          "namespace": null,
+          "prefix": null,
+          "name": "lang",
+          "rawName": "lang",
+          "value": "en",
+          "rawValue": "\"en\""
+        }
+      ],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 34,
+            "end": 145
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 40,
+                "end": 45
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 45,
+                "end": 109
+              },
+              "tagName": "meta",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 51,
+                    "end": 76
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "http-equiv",
+                  "rawName": "http-equiv",
+                  "value": "Content-Type",
+                  "rawValue": "\"Content-Type\""
+                },
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 77,
+                    "end": 108
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "content",
+                  "rawName": "content",
+                  "value": "charset=\"windows-1251",
+                  "rawValue": "'charset=\"windows-1251'"
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 109,
+                "end": 114
+              },
+              "data": "\n    ",
+              "raw": "\n    "
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 114,
+                "end": 137
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 121,
+                    "end": 129
+                  },
+                  "data": "Document",
+                  "raw": "Document"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Text",
+              "span": {
+                "start": 137,
+                "end": 138
+              },
+              "data": "\n",
+              "raw": "\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Text",
+          "span": {
+            "start": 145,
+            "end": 146
+          },
+          "data": "\n",
+          "raw": "\n"
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 146,
+            "end": 166
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Text",
+              "span": {
+                "start": 152,
+                "end": 166
+              },
+              "data": "\ntest\n\n",
+              "raw": "\ntest\n\n"
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

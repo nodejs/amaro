@@ -1,0 +1,3 @@
+if (foo()) {
+    require("./common");
+}

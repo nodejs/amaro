@@ -1,0 +1,222 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 76
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 75
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 8
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ListOfComponentValues",
+        "span": {
+          "start": 8,
+          "end": 74
+        },
+        "children": [
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 8,
+              "end": 9
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 9,
+              "end": 26
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 9,
+                "end": 12
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 13,
+                  "end": 25
+                },
+                "token": {
+                  "String": {
+                    "value": "./test.css",
+                    "raw": "\"./test.css\""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 26,
+              "end": 27
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 27,
+              "end": 43
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 27,
+                "end": 34
+              },
+              "value": "unknown",
+              "raw": "unknown"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 35,
+                  "end": 42
+                },
+                "token": {
+                  "Ident": {
+                    "value": "default",
+                    "raw": "default"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 43,
+              "end": 44
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 44,
+              "end": 66
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 44,
+                "end": 51
+              },
+              "value": "unknown",
+              "raw": "unknown"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 52,
+                  "end": 59
+                },
+                "token": {
+                  "Ident": {
+                    "value": "display",
+                    "raw": "display"
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 59,
+                  "end": 60
+                },
+                "token": "Colon"
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 60,
+                  "end": 61
+                },
+                "token": {
+                  "WhiteSpace": {
+                    "value": " "
+                  }
+                }
+              },
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 61,
+                  "end": 65
+                },
+                "token": {
+                  "Ident": {
+                    "value": "flex",
+                    "raw": "flex"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 66,
+              "end": 67
+            },
+            "token": {
+              "WhiteSpace": {
+                "value": " "
+              }
+            }
+          },
+          {
+            "type": "PreservedToken",
+            "span": {
+              "start": 67,
+              "end": 74
+            },
+            "token": {
+              "Ident": {
+                "value": "unknown",
+                "raw": "unknown"
+              }
+            }
+          }
+        ]
+      },
+      "block": null
+    }
+  ]
+}

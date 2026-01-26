@@ -1,0 +1,1 @@
+//// [stringEnumLiteralTypes3.ts]

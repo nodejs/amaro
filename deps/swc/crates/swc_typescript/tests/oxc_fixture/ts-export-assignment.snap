@@ -1,0 +1,7 @@
+```==================== .D.TS ====================
+
+declare const Res = 0;
+declare const _default_1: () => typeof Res;
+/** comment should be a leading comment of the function Foo */ export = _default_1
+
+

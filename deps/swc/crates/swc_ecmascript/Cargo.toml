@@ -1,0 +1,55 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Ecmascript"
+documentation = "https://rustdoc.swc.rs/swc_ecmascript/"
+edition       = { workspace = true }
+license       = { workspace = true }
+name          = "swc_ecmascript"
+repository    = { workspace = true }
+version       = "51.0.0"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+bench = false
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(swc_ast_unknown)'] }
+
+[features]
+codegen    = ["swc_ecma_codegen"]
+concurrent = ["swc_ecma_minifier/concurrent"]
+default    = ["typescript-parser"]
+minifier   = ["swc_ecma_minifier"]
+parser     = ["swc_ecma_parser"]
+preset_env = ["swc_ecma_preset_env"]
+quote      = ["swc_ecma_quote"]
+rkyv-impl  = ["swc_ecma_ast/rkyv-impl"]
+transforms = ["swc_ecma_transforms"]
+utils      = ["swc_ecma_utils"]
+visit      = ["swc_ecma_visit"]
+
+typescript-parser = ["swc_ecma_parser/typescript"]
+
+compat       = ["swc_ecma_transforms/compat"]
+module       = ["swc_ecma_transforms/module"]
+optimization = ["swc_ecma_transforms/optimization"]
+proposal     = ["swc_ecma_transforms/proposal"]
+react        = ["swc_ecma_transforms/react"]
+typescript   = ["typescript-parser", "swc_ecma_transforms/typescript"]
+
+[dependencies]
+swc_ecma_ast        = { version = "20.0.0", path = "../swc_ecma_ast" }
+swc_ecma_codegen    = { version = "22.0.0", path = "../swc_ecma_codegen", optional = true }
+swc_ecma_minifier   = { version = "43.0.1", path = "../swc_ecma_minifier", optional = true }
+swc_ecma_parser     = { version = "33.0.0", path = "../swc_ecma_parser", optional = true, default-features = false }
+swc_ecma_preset_env = { version = "46.0.0", path = "../swc_ecma_preset_env", optional = true }
+swc_ecma_quote      = { version = "33.0.0", path = "../swc_ecma_quote", optional = true }
+swc_ecma_transforms = { version = "45.0.0", path = "../swc_ecma_transforms", optional = true }
+swc_ecma_utils      = { version = "26.0.0", path = "../swc_ecma_utils", optional = true }
+swc_ecma_visit      = { version = "20.0.0", path = "../swc_ecma_visit", optional = true }
+
+[dev-dependencies]
+par-core = { workspace = true, features = ["chili"] }

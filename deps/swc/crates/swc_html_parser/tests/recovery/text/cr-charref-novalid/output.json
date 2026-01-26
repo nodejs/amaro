@@ -1,0 +1,136 @@
+{
+  "type": "Document",
+  "span": {
+    "start": 1,
+    "end": 95
+  },
+  "mode": "no-quirks",
+  "children": [
+    {
+      "type": "DocumentType",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "name": "html",
+      "publicId": null,
+      "systemId": null,
+      "raw": "<!doctype html>"
+    },
+    {
+      "type": "Element",
+      "span": {
+        "start": 0,
+        "end": 0
+      },
+      "tagName": "html",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "attributes": [],
+      "children": [
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "head",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Element",
+              "span": {
+                "start": 16,
+                "end": 36
+              },
+              "tagName": "meta",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [
+                {
+                  "type": "Attribute",
+                  "span": {
+                    "start": 22,
+                    "end": 35
+                  },
+                  "namespace": null,
+                  "prefix": null,
+                  "name": "charset",
+                  "rawName": "charset",
+                  "value": "utf-8",
+                  "rawValue": "utf-8"
+                }
+              ],
+              "children": [],
+              "content": null,
+              "isSelfClosing": false
+            },
+            {
+              "type": "Element",
+              "span": {
+                "start": 36,
+                "end": 61
+              },
+              "tagName": "title",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 43,
+                    "end": 53
+                  },
+                  "data": "&#x0d;",
+                  "raw": "&amp;#x0d;"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        },
+        {
+          "type": "Element",
+          "span": {
+            "start": 0,
+            "end": 0
+          },
+          "tagName": "body",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "attributes": [],
+          "children": [
+            {
+              "type": "Element",
+              "span": {
+                "start": 61,
+                "end": 95
+              },
+              "tagName": "p",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "attributes": [],
+              "children": [
+                {
+                  "type": "Text",
+                  "span": {
+                    "start": 64,
+                    "end": 95
+                  },
+                  "data": "There should be an error.\r",
+                  "raw": "There should be an error.&#x0d;"
+                }
+              ],
+              "content": null,
+              "isSelfClosing": false
+            }
+          ],
+          "content": null,
+          "isSelfClosing": false
+        }
+      ],
+      "content": null,
+      "isSelfClosing": false
+    }
+  ]
+}

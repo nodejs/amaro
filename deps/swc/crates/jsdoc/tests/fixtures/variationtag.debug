@@ -1,0 +1,111 @@
+[
+    JsDoc {
+        span: 1..1,
+        description: Text {
+            span: 1..1,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 1..12,
+                tag_name: Text {
+                    span: 1..12,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 1..12,
+                        ty: None,
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 53..53,
+        description: Text {
+            span: 53..53,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 53..64,
+                tag_name: Text {
+                    span: 53..64,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 53..64,
+                        ty: Some(
+                            Text {
+                                span: 53..67,
+                                value: "* @variation 2",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 121..121,
+        description: Text {
+            span: 121..121,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 121..132,
+                tag_name: Text {
+                    span: 121..132,
+                    value: "constructor",
+                },
+                tag: Class(
+                    ClassTag {
+                        span: 121..132,
+                        ty: Some(
+                            Text {
+                                span: 121..137,
+                                value: "* @variation (3)",
+                            },
+                        ),
+                        name: None,
+                    },
+                ),
+            },
+        ],
+    },
+    JsDoc {
+        span: 192..196,
+        description: Text {
+            span: 192..192,
+            value: "",
+        },
+        tags: [
+            TagItem {
+                span: 192..200,
+                tag_name: Text {
+                    span: 192..200,
+                    value: "memberof",
+                },
+                tag: MemberOf(
+                    MemberOfTag {
+                        span: 192..200,
+                        parent_name_path: NamePath {
+                            span: 192..196,
+                            components: [
+                                Text {
+                                    span: 192..202,
+                                    value: "someObject",
+                                },
+                            ],
+                        },
+                    },
+                ),
+            },
+        ],
+    },
+]

@@ -1,0 +1,143 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 102
+  },
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 1,
+        "end": 49
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "span": {
+            "start": 8,
+            "end": 11
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 8,
+              "end": 11
+            },
+            "ctxt": 0,
+            "value": "foo",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 17,
+          "end": 27
+        },
+        "value": "foo.json",
+        "raw": "\"foo.json\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 35,
+          "end": 49
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 37,
+                "end": 40
+              },
+              "value": "for"
+            },
+            "value": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 42,
+                "end": 47
+              },
+              "value": "for",
+              "raw": "\"for\""
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "span": {
+        "start": 50,
+        "end": 102
+      },
+      "specifiers": [
+        {
+          "type": "ExportSpecifier",
+          "span": {
+            "start": 59,
+            "end": 62
+          },
+          "orig": {
+            "type": "Identifier",
+            "span": {
+              "start": 59,
+              "end": 62
+            },
+            "ctxt": 0,
+            "value": "foo",
+            "optional": false
+          },
+          "exported": null,
+          "isTypeOnly": false
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 70,
+          "end": 80
+        },
+        "value": "foo.json",
+        "raw": "\"foo.json\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 88,
+          "end": 102
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 90,
+                "end": 93
+              },
+              "value": "for"
+            },
+            "value": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 95,
+                "end": 100
+              },
+              "value": "for",
+              "raw": "\"for\""
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "interpreter": null
+}

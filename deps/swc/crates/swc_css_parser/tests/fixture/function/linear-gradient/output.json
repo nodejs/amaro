@@ -1,0 +1,1402 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 749
+  },
+  "rules": [
+    {
+      "type": "QualifiedRule",
+      "span": {
+        "start": 1,
+        "end": 749
+      },
+      "prelude": {
+        "type": "SelectorList",
+        "span": {
+          "start": 1,
+          "end": 2
+        },
+        "children": [
+          {
+            "type": "ComplexSelector",
+            "span": {
+              "start": 1,
+              "end": 2
+            },
+            "children": [
+              {
+                "type": "CompoundSelector",
+                "span": {
+                  "start": 1,
+                  "end": 2
+                },
+                "nestingSelector": null,
+                "typeSelector": {
+                  "type": "TagNameSelector",
+                  "span": {
+                    "start": 1,
+                    "end": 2
+                  },
+                  "name": {
+                    "type": "WqName",
+                    "span": {
+                      "start": 1,
+                      "end": 2
+                    },
+                    "prefix": null,
+                    "value": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 1,
+                        "end": 2
+                      },
+                      "value": "a",
+                      "raw": "a"
+                    }
+                  }
+                },
+                "subclassSelectors": []
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 3,
+          "end": 749
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 3,
+            "end": 4
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 9,
+              "end": 49
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 9,
+                "end": 19
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 21,
+                  "end": 49
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 21,
+                    "end": 36
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 37,
+                      "end": 42
+                    },
+                    "value": "white",
+                    "raw": "white"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 42,
+                      "end": 43
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 44,
+                      "end": 48
+                    },
+                    "value": "gray",
+                    "raw": "gray"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 55,
+              "end": 96
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 55,
+                "end": 65
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 67,
+                  "end": 96
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 67,
+                    "end": 82
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 83,
+                      "end": 89
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 89,
+                      "end": 90
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 91,
+                      "end": 95
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 102,
+              "end": 154
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 102,
+                "end": 112
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 114,
+                  "end": 154
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 114,
+                    "end": 129
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 130,
+                      "end": 132
+                    },
+                    "value": "to",
+                    "raw": "to"
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 133,
+                      "end": 139
+                    },
+                    "value": "bottom",
+                    "raw": "bottom"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 139,
+                      "end": 140
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 141,
+                      "end": 147
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 147,
+                      "end": 148
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 149,
+                      "end": 153
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 160,
+              "end": 209
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 160,
+                "end": 170
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 172,
+                  "end": 209
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 172,
+                    "end": 187
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 188,
+                      "end": 194
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 188,
+                        "end": 191
+                      },
+                      "value": 180.0,
+                      "raw": "180"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 191,
+                        "end": 194
+                      },
+                      "value": "deg",
+                      "raw": "deg"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 194,
+                      "end": 195
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 196,
+                      "end": 202
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 202,
+                      "end": 203
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 204,
+                      "end": 208
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 215,
+              "end": 264
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 215,
+                "end": 225
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 227,
+                  "end": 264
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 227,
+                    "end": 242
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 243,
+                      "end": 245
+                    },
+                    "value": "to",
+                    "raw": "to"
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 246,
+                      "end": 249
+                    },
+                    "value": "top",
+                    "raw": "top"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 249,
+                      "end": 250
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 251,
+                      "end": 255
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 255,
+                      "end": 256
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 257,
+                      "end": 263
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 270,
+              "end": 330
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 270,
+                "end": 280
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 282,
+                  "end": 330
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 282,
+                    "end": 297
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 298,
+                      "end": 300
+                    },
+                    "value": "to",
+                    "raw": "to"
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 301,
+                      "end": 307
+                    },
+                    "value": "bottom",
+                    "raw": "bottom"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 307,
+                      "end": 308
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 309,
+                      "end": 315
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 316,
+                      "end": 318
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 316,
+                        "end": 317
+                      },
+                      "value": 0.0,
+                      "raw": "0"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 318,
+                      "end": 319
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 320,
+                      "end": 324
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 325,
+                      "end": 329
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 325,
+                        "end": 328
+                      },
+                      "value": 100.0,
+                      "raw": "100"
+                    }
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 336,
+              "end": 385
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 336,
+                "end": 346
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 348,
+                  "end": 385
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 348,
+                    "end": 363
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 364,
+                      "end": 370
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 364,
+                        "end": 367
+                      },
+                      "value": 135.0,
+                      "raw": "135"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 367,
+                        "end": 370
+                      },
+                      "value": "deg",
+                      "raw": "deg"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 370,
+                      "end": 371
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 372,
+                      "end": 378
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 378,
+                      "end": 379
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 380,
+                      "end": 384
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 391,
+              "end": 440
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 391,
+                "end": 401
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 403,
+                  "end": 440
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 403,
+                    "end": 418
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 419,
+                      "end": 425
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 419,
+                        "end": 422
+                      },
+                      "value": -45.0,
+                      "raw": "-45"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 422,
+                        "end": 425
+                      },
+                      "value": "deg",
+                      "raw": "deg"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 425,
+                      "end": 426
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 427,
+                      "end": 431
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 431,
+                      "end": 432
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 433,
+                      "end": 439
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 446,
+              "end": 497
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 446,
+                "end": 456
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 458,
+                  "end": 497
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 458,
+                    "end": 473
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 474,
+                      "end": 480
+                    },
+                    "value": "yellow",
+                    "raw": "yellow"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 480,
+                      "end": 481
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 482,
+                      "end": 486
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 487,
+                      "end": 490
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 487,
+                        "end": 489
+                      },
+                      "value": 20.0,
+                      "raw": "20"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 490,
+                      "end": 491
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "HexColor",
+                    "span": {
+                      "start": 492,
+                      "end": 496
+                    },
+                    "value": "0f0",
+                    "raw": "0f0"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 503,
+              "end": 562
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 503,
+                "end": 513
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 515,
+                  "end": 562
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 515,
+                    "end": 530
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 531,
+                      "end": 533
+                    },
+                    "value": "to",
+                    "raw": "to"
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 534,
+                      "end": 537
+                    },
+                    "value": "top",
+                    "raw": "top"
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 538,
+                      "end": 543
+                    },
+                    "value": "right",
+                    "raw": "right"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 543,
+                      "end": 544
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 545,
+                      "end": 548
+                    },
+                    "value": "red",
+                    "raw": "red"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 548,
+                      "end": 549
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 550,
+                      "end": 555
+                    },
+                    "value": "white",
+                    "raw": "white"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 555,
+                      "end": 556
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 557,
+                      "end": 561
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 568,
+              "end": 623
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 568,
+                "end": 578
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 580,
+                  "end": 623
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 580,
+                    "end": 595
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 596,
+                      "end": 600
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 596,
+                        "end": 597
+                      },
+                      "value": 0.0,
+                      "raw": "0"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 597,
+                        "end": 600
+                      },
+                      "value": "deg",
+                      "raw": "deg"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 600,
+                      "end": 601
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 602,
+                      "end": 606
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 606,
+                      "end": 607
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 608,
+                      "end": 613
+                    },
+                    "value": "green",
+                    "raw": "green"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 614,
+                      "end": 617
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 614,
+                        "end": 616
+                      },
+                      "value": 40.0,
+                      "raw": "40"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 617,
+                      "end": 618
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 619,
+                      "end": 622
+                    },
+                    "value": "red",
+                    "raw": "red"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 629,
+              "end": 680
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 629,
+                "end": 639
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 641,
+                  "end": 680
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 641,
+                    "end": 656
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 657,
+                      "end": 664
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 657,
+                        "end": 660
+                      },
+                      "value": 0.25,
+                      "raw": ".25"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 660,
+                        "end": 664
+                      },
+                      "value": "turn",
+                      "raw": "turn"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 664,
+                      "end": 665
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 666,
+                      "end": 669
+                    },
+                    "value": "red",
+                    "raw": "red"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 670,
+                      "end": 673
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 670,
+                        "end": 672
+                      },
+                      "value": 10.0,
+                      "raw": "10"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 673,
+                      "end": 674
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 675,
+                      "end": 679
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  }
+                ]
+              }
+            ],
+            "important": null
+          },
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 686,
+              "end": 746
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 686,
+                "end": 696
+              },
+              "value": "background",
+              "raw": "background"
+            },
+            "value": [
+              {
+                "type": "Function",
+                "span": {
+                  "start": 698,
+                  "end": 746
+                },
+                "name": {
+                  "type": "Ident",
+                  "span": {
+                    "start": 698,
+                    "end": 713
+                  },
+                  "value": "linear-gradient",
+                  "raw": "linear-gradient"
+                },
+                "value": [
+                  {
+                    "type": "Angle",
+                    "span": {
+                      "start": 714,
+                      "end": 719
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 714,
+                        "end": 716
+                      },
+                      "value": 45.0,
+                      "raw": "45"
+                    },
+                    "unit": {
+                      "type": "Ident",
+                      "span": {
+                        "start": 716,
+                        "end": 719
+                      },
+                      "value": "deg",
+                      "raw": "deg"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 719,
+                      "end": 720
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 721,
+                      "end": 724
+                    },
+                    "value": "red",
+                    "raw": "red"
+                  },
+                  {
+                    "type": "Integer",
+                    "span": {
+                      "start": 725,
+                      "end": 726
+                    },
+                    "value": 0,
+                    "raw": "0"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 727,
+                      "end": 730
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 727,
+                        "end": 729
+                      },
+                      "value": 50.0,
+                      "raw": "50"
+                    }
+                  },
+                  {
+                    "type": "Delimiter",
+                    "span": {
+                      "start": 730,
+                      "end": 731
+                    },
+                    "value": ","
+                  },
+                  {
+                    "type": "Ident",
+                    "span": {
+                      "start": 732,
+                      "end": 736
+                    },
+                    "value": "blue",
+                    "raw": "blue"
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 737,
+                      "end": 740
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 737,
+                        "end": 739
+                      },
+                      "value": 50.0,
+                      "raw": "50"
+                    }
+                  },
+                  {
+                    "type": "Percentage",
+                    "span": {
+                      "start": 741,
+                      "end": 745
+                    },
+                    "value": {
+                      "type": "Number",
+                      "span": {
+                        "start": 741,
+                        "end": 744
+                      },
+                      "value": 100.0,
+                      "raw": "100"
+                    }
+                  }
+                ]
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

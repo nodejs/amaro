@@ -1,0 +1,1 @@
+//// [propertyAssignmentUseParentType3.ts]

@@ -1,0 +1,34 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 19
+  },
+  "body": [
+    {
+      "type": "WithStatement",
+      "span": {
+        "start": 1,
+        "end": 19
+      },
+      "object": {
+        "type": "NumericLiteral",
+        "span": {
+          "start": 7,
+          "end": 8
+        },
+        "value": 1.0,
+        "raw": "1"
+      },
+      "body": {
+        "type": "ReturnStatement",
+        "span": {
+          "start": 12,
+          "end": 19
+        },
+        "argument": null
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,105 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 33
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 1,
+        "end": 33
+      },
+      "ctxt": 0,
+      "kind": "let",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 5,
+            "end": 32
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 5,
+              "end": 6
+            },
+            "ctxt": 0,
+            "value": "x",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 6,
+                "end": 32
+              },
+              "typeAnnotation": {
+                "type": "TsTupleType",
+                "span": {
+                  "start": 8,
+                  "end": 32
+                },
+                "elemTypes": [
+                  {
+                    "type": "TsTupleElement",
+                    "span": {
+                      "start": 9,
+                      "end": 15
+                    },
+                    "label": null,
+                    "ty": {
+                      "type": "TsKeywordType",
+                      "span": {
+                        "start": 9,
+                        "end": 15
+                      },
+                      "kind": "number"
+                    }
+                  },
+                  {
+                    "type": "TsTupleElement",
+                    "span": {
+                      "start": 17,
+                      "end": 23
+                    },
+                    "label": null,
+                    "ty": {
+                      "type": "TsKeywordType",
+                      "span": {
+                        "start": 17,
+                        "end": 23
+                      },
+                      "kind": "number"
+                    }
+                  },
+                  {
+                    "type": "TsTupleElement",
+                    "span": {
+                      "start": 25,
+                      "end": 31
+                    },
+                    "label": null,
+                    "ty": {
+                      "type": "TsKeywordType",
+                      "span": {
+                        "start": 25,
+                        "end": 31
+                      },
+                      "kind": "number"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    }
+  ],
+  "interpreter": null
+}

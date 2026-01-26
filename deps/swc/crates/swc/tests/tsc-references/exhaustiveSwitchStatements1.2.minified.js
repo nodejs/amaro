@@ -1,0 +1,2 @@
+//// [exhaustiveSwitchStatements1.ts]
+var E, MyEnum, Level, Animal, E1 = ((E = E1 || {})[E.A = 0] = "A", E[E.B = 1] = "B", E), MyEnum1 = ((MyEnum = MyEnum1 || {})[MyEnum.A = 0] = "A", MyEnum[MyEnum.B = 1] = "B", MyEnum), Level1 = ((Level = Level1 || {})[Level.One = 0] = "One", Level[Level.Two = 1] = "Two", Level), Animal1 = ((Animal = Animal1 || {})[Animal.DOG = 0] = "DOG", Animal[Animal.CAT = 1] = "CAT", Animal);

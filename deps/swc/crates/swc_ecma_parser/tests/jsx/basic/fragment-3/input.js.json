@@ -1,0 +1,177 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 51
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 51
+      },
+      "expression": {
+        "type": "JSXFragment",
+        "span": {
+          "start": 1,
+          "end": 51
+        },
+        "opening": {
+          "type": "JSXOpeningFragment",
+          "span": {
+            "start": 1,
+            "end": 4
+          }
+        },
+        "children": [
+          {
+            "type": "JSXText",
+            "span": {
+              "start": 4,
+              "end": 7
+            },
+            "value": "\n  ",
+            "raw": "\n  "
+          },
+          {
+            "type": "JSXElement",
+            "span": {
+              "start": 7,
+              "end": 30
+            },
+            "opening": {
+              "type": "JSXOpeningElement",
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 8,
+                  "end": 12
+                },
+                "ctxt": 0,
+                "value": "span",
+                "optional": false
+              },
+              "span": {
+                "start": 7,
+                "end": 13
+              },
+              "attributes": [],
+              "selfClosing": false,
+              "typeArguments": null
+            },
+            "children": [
+              {
+                "type": "JSXText",
+                "span": {
+                  "start": 13,
+                  "end": 23
+                },
+                "value": "\n    hi\n  ",
+                "raw": "\n    hi\n  "
+              }
+            ],
+            "closing": {
+              "type": "JSXClosingElement",
+              "span": {
+                "start": 23,
+                "end": 30
+              },
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 25,
+                  "end": 29
+                },
+                "ctxt": 0,
+                "value": "span",
+                "optional": false
+              }
+            }
+          },
+          {
+            "type": "JSXText",
+            "span": {
+              "start": 30,
+              "end": 33
+            },
+            "value": "\n  ",
+            "raw": "\n  "
+          },
+          {
+            "type": "JSXElement",
+            "span": {
+              "start": 33,
+              "end": 47
+            },
+            "opening": {
+              "type": "JSXOpeningElement",
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 34,
+                  "end": 37
+                },
+                "ctxt": 0,
+                "value": "div",
+                "optional": false
+              },
+              "span": {
+                "start": 33,
+                "end": 38
+              },
+              "attributes": [],
+              "selfClosing": false,
+              "typeArguments": null
+            },
+            "children": [
+              {
+                "type": "JSXText",
+                "span": {
+                  "start": 38,
+                  "end": 41
+                },
+                "value": "bye",
+                "raw": "bye"
+              }
+            ],
+            "closing": {
+              "type": "JSXClosingElement",
+              "span": {
+                "start": 41,
+                "end": 47
+              },
+              "name": {
+                "type": "Identifier",
+                "span": {
+                  "start": 43,
+                  "end": 46
+                },
+                "ctxt": 0,
+                "value": "div",
+                "optional": false
+              }
+            }
+          },
+          {
+            "type": "JSXText",
+            "span": {
+              "start": 47,
+              "end": 48
+            },
+            "value": "\n",
+            "raw": "\n"
+          }
+        ],
+        "closing": {
+          "type": "JSXClosingFragment",
+          "span": {
+            "start": 48,
+            "end": 51
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}
