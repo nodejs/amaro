@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.1.6](https://github.com/nodejs/amaro/compare/v1.1.5...v1.1.6) (2026-01-27)
+
+
+### Bug Fixes
+
+* broken swc update workflow ([5c3028b](https://github.com/nodejs/amaro/commit/5c3028b29b26b285cb57c78aa492a3edefa2a047))
+* typo in warning ([efe98d6](https://github.com/nodejs/amaro/commit/efe98d64ff6988b085ab2dd5742cbb80d658a62a))
+
+
+### Core
+
+* yield to warnings printer ([25e2f9c](https://github.com/nodejs/amaro/commit/25e2f9c36796e7222ed05fc753d77f2e322f661e))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.14.0 ([e40c997](https://github.com/nodejs/amaro/commit/e40c9973e72080e8e21a67f81935e9f82bf1517b))
+* **deps:** bump actions/checkout from 5.0.0 to 6.0.0 ([a5b13c1](https://github.com/nodejs/amaro/commit/a5b13c175405df5c4d0d179b933ff3adb3882f59))
+* **deps:** bump actions/checkout from 6.0.0 to 6.0.1 ([6d3b709](https://github.com/nodejs/amaro/commit/6d3b709d0df47484e0f3d77ce03ffdf3f8e2ac9f))
+* **deps:** bump actions/checkout from 6.0.1 to 6.0.2 ([839639a](https://github.com/nodejs/amaro/commit/839639ad82ee38470d5d0031a5efa6dc42db365b))
+* **deps:** bump actions/setup-node from 6.0.0 to 6.1.0 ([b04daa0](https://github.com/nodejs/amaro/commit/b04daa0c0a52d1ebdf6da6c6a0a0ddce7edc0784))
+* **deps:** bump actions/setup-node from 6.1.0 to 6.2.0 ([fdea1dc](https://github.com/nodejs/amaro/commit/fdea1dc6983399b61c156d690deb77cf35c7f29a))
+* **deps:** bump actions/upload-artifact from 5.0.0 to 6.0.0 ([dfae692](https://github.com/nodejs/amaro/commit/dfae692c15ebb4cbc5ec8e91f9170110b8328f57))
+* **deps:** bump biomejs/setup-biome from 2.6.0 to 2.7.0 ([3f29692](https://github.com/nodejs/amaro/commit/3f296925de55b50ca2b84aa0f3f60667a0e5c633))
+* **deps:** bump docker/setup-buildx-action from 3.11.1 to 3.12.0 ([74c731d](https://github.com/nodejs/amaro/commit/74c731d448986be7ff53e93580eaf051365c75d9))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.13 to 2.0.14 ([aca22a0](https://github.com/nodejs/amaro/commit/aca22a0ccd961ab683cd68f24d906f0c5e17cd5e))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.14 to 2.0.15 ([252e36d](https://github.com/nodejs/amaro/commit/252e36d5fda97b66cd71e342ff5f8fbb7f442d7e))
+* **deps:** bump github/codeql-action from 4.31.0 to 4.31.2 ([9b58426](https://github.com/nodejs/amaro/commit/9b58426d45df80d42499c1b2ad3b59140ce8b532))
+* **deps:** bump github/codeql-action from 4.31.10 to 4.31.11 ([5df8406](https://github.com/nodejs/amaro/commit/5df840626d20fc38332dc12852736033a5a812bc))
+* **deps:** bump github/codeql-action from 4.31.2 to 4.31.4 ([f2db15a](https://github.com/nodejs/amaro/commit/f2db15a0a3a0b44b175a901cdfe2f579f6c8aedc))
+* **deps:** bump github/codeql-action from 4.31.4 to 4.31.5 ([312206a](https://github.com/nodejs/amaro/commit/312206ace4a3e3b46a331e23269cf0c8661ad5fb))
+* **deps:** bump github/codeql-action from 4.31.5 to 4.31.7 ([f660bd1](https://github.com/nodejs/amaro/commit/f660bd1aad9989be9ec364a82e8ff0b6d5c36e92))
+* **deps:** bump github/codeql-action from 4.31.7 to 4.31.9 ([e3ef06e](https://github.com/nodejs/amaro/commit/e3ef06e2c5681c43cdcb88b01f9590aa8a0c9eee))
+* **deps:** bump step-security/harden-runner from 2.13.1 to 2.13.2 ([bae37cc](https://github.com/nodejs/amaro/commit/bae37cc663c4e2efe040c23e5c98ab4e5c4af65a))
+* **deps:** bump step-security/harden-runner from 2.13.2 to 2.13.3 ([f888a3a](https://github.com/nodejs/amaro/commit/f888a3a91a5da952a338dbe7d803647610ab40fe))
+* **deps:** bump step-security/harden-runner from 2.13.3 to 2.14.0 ([9a9f8a9](https://github.com/nodejs/amaro/commit/9a9f8a9125810c7ae33bde904d12fef99a6c6d69))
+* ignore deps folder ([8577127](https://github.com/nodejs/amaro/commit/8577127b21544156dd893fce3e372e4feb0c07da))
+* include crates ([bda0581](https://github.com/nodejs/amaro/commit/bda0581c1f23061e15e4af7837c108816df9140a))
+* update documentation to reflect changes in --experimental-strip-types ([29c8323](https://github.com/nodejs/amaro/commit/29c832334f41941b293264329c89ba005a541214))
+* update swc to v1.14.0 ([b7dbf1a](https://github.com/nodejs/amaro/commit/b7dbf1a8ef59995b707529ad423fcb9076dc2bd2))
+* update ubuntu image and use nvmrc ([896bd90](https://github.com/nodejs/amaro/commit/896bd901b4feeb236b8950ec68ac2a6de1e89400))
+
 ## [1.1.5](https://github.com/nodejs/amaro/compare/v1.1.4...v1.1.5) (2025-10-27)
 
 
