@@ -15,11 +15,9 @@ export async function load(
 	const { format } = context;
 	if (format?.endsWith("-typescript")) {
 		try {
-			// Use format 'module' so it returns the source as-is, without stripping the types.
-			// Format 'commonjs' would not return the source for historical reasons.
 			const { source } = await nextLoad(url, {
 				...context,
-				format: "module",
+				format,
 			});
 
 			// biome-ignore lint/style/noNonNullAssertion: If module exists, it will have a source

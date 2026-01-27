@@ -99,3 +99,99 @@ test("should throw syntax error for invalid typescript", async (t) => {
 	match(result.stderr, /await isn't allowed in non-async function/);
 	strictEqual(result.code, 1);
 });
+
+test("should work with commonjs typescript files using strip", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("commonjs.ts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from CommonJS TypeScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with commonjs typescript files using transform", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-transform.mjs",
+		fixturesPath("commonjs.ts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from CommonJS TypeScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with .cts files using strip", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("commonjs.cts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from CommonJS TypeScript \(\.cts\)!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with .cts files using transform", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-transform.mjs",
+		fixturesPath("commonjs.cts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from CommonJS TypeScript \(\.cts\)!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with esm typescript files using strip", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("esm/esm.ts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from ESM TypeScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with esm typescript files using transform", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-transform.mjs",
+		fixturesPath("esm/esm.ts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from ESM TypeScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with .mts files using strip", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-strip.mjs",
+		fixturesPath("esm.mts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from ESM TypeScript!/);
+	strictEqual(result.code, 0);
+});
+
+test("should work with .mts files using transform", async () => {
+	const result = await spawnPromisified(process.execPath, [
+		"--no-warnings",
+		"--import=./dist/register-transform.mjs",
+		fixturesPath("esm.mts"),
+	]);
+
+	strictEqual(result.stderr, "");
+	match(result.stdout, /Hello from ESM TypeScript!/);
+	strictEqual(result.code, 0);
+});
