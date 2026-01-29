@@ -1,0 +1,4520 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 18,
+    "end": 2478
+  },
+  "body": [
+    {
+      "type": "TsInterfaceDeclaration",
+      "span": {
+        "start": 18,
+        "end": 661
+      },
+      "id": {
+        "type": "Identifier",
+        "span": {
+          "start": 28,
+          "end": 33
+        },
+        "ctxt": 0,
+        "value": "Props",
+        "optional": false
+      },
+      "declare": false,
+      "typeParams": null,
+      "extends": [],
+      "body": {
+        "type": "TsInterfaceBody",
+        "span": {
+          "start": 34,
+          "end": 661
+        },
+        "body": [
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 40,
+              "end": 59
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 49,
+                "end": 50
+              },
+              "ctxt": 0,
+              "value": "a",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 51,
+                "end": 59
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 53,
+                  "end": 59
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 64,
+              "end": 83
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 73,
+                "end": 74
+              },
+              "ctxt": 0,
+              "value": "b",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 75,
+                "end": 83
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 77,
+                  "end": 83
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 88,
+              "end": 107
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 97,
+                "end": 98
+              },
+              "ctxt": 0,
+              "value": "c",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 99,
+                "end": 107
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 101,
+                  "end": 107
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 112,
+              "end": 131
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 121,
+                "end": 122
+              },
+              "ctxt": 0,
+              "value": "d",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 123,
+                "end": 131
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 125,
+                  "end": 131
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 136,
+              "end": 155
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 145,
+                "end": 146
+              },
+              "ctxt": 0,
+              "value": "e",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 147,
+                "end": 155
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 149,
+                  "end": 155
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 160,
+              "end": 179
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 169,
+                "end": 170
+              },
+              "ctxt": 0,
+              "value": "f",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 171,
+                "end": 179
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 173,
+                  "end": 179
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 184,
+              "end": 203
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 193,
+                "end": 194
+              },
+              "ctxt": 0,
+              "value": "g",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 195,
+                "end": 203
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 197,
+                  "end": 203
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 208,
+              "end": 227
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 217,
+                "end": 218
+              },
+              "ctxt": 0,
+              "value": "h",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 219,
+                "end": 227
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 221,
+                  "end": 227
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 232,
+              "end": 251
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 241,
+                "end": 242
+              },
+              "ctxt": 0,
+              "value": "i",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 243,
+                "end": 251
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 245,
+                  "end": 251
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 256,
+              "end": 275
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 265,
+                "end": 266
+              },
+              "ctxt": 0,
+              "value": "j",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 267,
+                "end": 275
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 269,
+                  "end": 275
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 280,
+              "end": 299
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 289,
+                "end": 290
+              },
+              "ctxt": 0,
+              "value": "k",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 291,
+                "end": 299
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 293,
+                  "end": 299
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 304,
+              "end": 323
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 313,
+                "end": 314
+              },
+              "ctxt": 0,
+              "value": "l",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 315,
+                "end": 323
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 317,
+                  "end": 323
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 328,
+              "end": 347
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 337,
+                "end": 338
+              },
+              "ctxt": 0,
+              "value": "m",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 339,
+                "end": 347
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 341,
+                  "end": 347
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 352,
+              "end": 371
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 361,
+                "end": 362
+              },
+              "ctxt": 0,
+              "value": "n",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 363,
+                "end": 371
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 365,
+                  "end": 371
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 376,
+              "end": 395
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 385,
+                "end": 386
+              },
+              "ctxt": 0,
+              "value": "o",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 387,
+                "end": 395
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 389,
+                  "end": 395
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 400,
+              "end": 419
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 409,
+                "end": 410
+              },
+              "ctxt": 0,
+              "value": "p",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 411,
+                "end": 419
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 413,
+                  "end": 419
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 424,
+              "end": 443
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 433,
+                "end": 434
+              },
+              "ctxt": 0,
+              "value": "q",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 435,
+                "end": 443
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 437,
+                  "end": 443
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 448,
+              "end": 467
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 457,
+                "end": 458
+              },
+              "ctxt": 0,
+              "value": "r",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 459,
+                "end": 467
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 461,
+                  "end": 467
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 472,
+              "end": 491
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 481,
+                "end": 482
+              },
+              "ctxt": 0,
+              "value": "s",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 483,
+                "end": 491
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 485,
+                  "end": 491
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 496,
+              "end": 515
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 505,
+                "end": 506
+              },
+              "ctxt": 0,
+              "value": "t",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 507,
+                "end": 515
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 509,
+                  "end": 515
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 520,
+              "end": 539
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 529,
+                "end": 530
+              },
+              "ctxt": 0,
+              "value": "u",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 531,
+                "end": 539
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 533,
+                  "end": 539
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 544,
+              "end": 563
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 553,
+                "end": 554
+              },
+              "ctxt": 0,
+              "value": "v",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 555,
+                "end": 563
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 557,
+                  "end": 563
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 568,
+              "end": 587
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 577,
+                "end": 578
+              },
+              "ctxt": 0,
+              "value": "w",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 579,
+                "end": 587
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 581,
+                  "end": 587
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 592,
+              "end": 611
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 601,
+                "end": 602
+              },
+              "ctxt": 0,
+              "value": "x",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 603,
+                "end": 611
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 605,
+                  "end": 611
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 616,
+              "end": 635
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 625,
+                "end": 626
+              },
+              "ctxt": 0,
+              "value": "y",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 627,
+                "end": 635
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 629,
+                  "end": 635
+                },
+                "kind": "string"
+              }
+            }
+          },
+          {
+            "type": "TsPropertySignature",
+            "span": {
+              "start": 640,
+              "end": 659
+            },
+            "readonly": true,
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 649,
+                "end": 650
+              },
+              "ctxt": 0,
+              "value": "z",
+              "optional": false
+            },
+            "computed": false,
+            "optional": true,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 651,
+                "end": 659
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 653,
+                  "end": 659
+                },
+                "kind": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 672,
+          "end": 687
+        },
+        "ctxt": 0,
+        "value": "parseWithSpread",
+        "optional": false
+      },
+      "declare": false,
+      "params": [
+        {
+          "type": "Parameter",
+          "span": {
+            "start": 688,
+            "end": 718
+          },
+          "decorators": [],
+          "pat": {
+            "type": "Identifier",
+            "span": {
+              "start": 688,
+              "end": 694
+            },
+            "ctxt": 0,
+            "value": "config",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 694,
+                "end": 718
+              },
+              "typeAnnotation": {
+                "type": "TsTypeReference",
+                "span": {
+                  "start": 696,
+                  "end": 718
+                },
+                "typeName": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 696,
+                    "end": 702
+                  },
+                  "ctxt": 0,
+                  "value": "Record",
+                  "optional": false
+                },
+                "typeParams": {
+                  "type": "TsTypeParameterInstantiation",
+                  "span": {
+                    "start": 702,
+                    "end": 718
+                  },
+                  "params": [
+                    {
+                      "type": "TsKeywordType",
+                      "span": {
+                        "start": 703,
+                        "end": 709
+                      },
+                      "kind": "string"
+                    },
+                    {
+                      "type": "TsKeywordType",
+                      "span": {
+                        "start": 711,
+                        "end": 717
+                      },
+                      "kind": "number"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ],
+      "decorators": [],
+      "span": {
+        "start": 663,
+        "end": 2438
+      },
+      "ctxt": 0,
+      "body": {
+        "type": "BlockStatement",
+        "span": {
+          "start": 727,
+          "end": 2438
+        },
+        "ctxt": 0,
+        "stmts": [
+          {
+            "type": "ReturnStatement",
+            "span": {
+              "start": 733,
+              "end": 2436
+            },
+            "argument": {
+              "type": "ObjectExpression",
+              "span": {
+                "start": 740,
+                "end": 2436
+              },
+              "properties": [
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 750,
+                    "end": 753
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 753,
+                      "end": 805
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 753,
+                        "end": 775
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 753,
+                          "end": 761
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 753,
+                            "end": 759
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 760,
+                            "end": 761
+                          },
+                          "value": "a"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 766,
+                          "end": 775
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 779,
+                        "end": 805
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 781,
+                              "end": 782
+                            },
+                            "value": "a"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 784,
+                              "end": 803
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 784,
+                                "end": 801
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 784,
+                                  "end": 792
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 784,
+                                    "end": 790
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 791,
+                                    "end": 792
+                                  },
+                                  "value": "a"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 793,
+                                  "end": 801
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 815,
+                    "end": 818
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 818,
+                      "end": 870
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 818,
+                        "end": 840
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 818,
+                          "end": 826
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 818,
+                            "end": 824
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 825,
+                            "end": 826
+                          },
+                          "value": "b"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 831,
+                          "end": 840
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 844,
+                        "end": 870
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 846,
+                              "end": 847
+                            },
+                            "value": "b"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 849,
+                              "end": 868
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 849,
+                                "end": 866
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 849,
+                                  "end": 857
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 849,
+                                    "end": 855
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 856,
+                                    "end": 857
+                                  },
+                                  "value": "b"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 858,
+                                  "end": 866
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 880,
+                    "end": 883
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 883,
+                      "end": 935
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 883,
+                        "end": 905
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 883,
+                          "end": 891
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 883,
+                            "end": 889
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 890,
+                            "end": 891
+                          },
+                          "value": "c"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 896,
+                          "end": 905
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 909,
+                        "end": 935
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 911,
+                              "end": 912
+                            },
+                            "value": "c"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 914,
+                              "end": 933
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 914,
+                                "end": 931
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 914,
+                                  "end": 922
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 914,
+                                    "end": 920
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 921,
+                                    "end": 922
+                                  },
+                                  "value": "c"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 923,
+                                  "end": 931
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 945,
+                    "end": 948
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 948,
+                      "end": 1000
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 948,
+                        "end": 970
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 948,
+                          "end": 956
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 948,
+                            "end": 954
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 955,
+                            "end": 956
+                          },
+                          "value": "d"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 961,
+                          "end": 970
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 974,
+                        "end": 1000
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 976,
+                              "end": 977
+                            },
+                            "value": "d"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 979,
+                              "end": 998
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 979,
+                                "end": 996
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 979,
+                                  "end": 987
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 979,
+                                    "end": 985
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 986,
+                                    "end": 987
+                                  },
+                                  "value": "d"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 988,
+                                  "end": 996
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1010,
+                    "end": 1013
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1013,
+                      "end": 1065
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1013,
+                        "end": 1035
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1013,
+                          "end": 1021
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1013,
+                            "end": 1019
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1020,
+                            "end": 1021
+                          },
+                          "value": "e"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1026,
+                          "end": 1035
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1039,
+                        "end": 1065
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1041,
+                              "end": 1042
+                            },
+                            "value": "e"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1044,
+                              "end": 1063
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1044,
+                                "end": 1061
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1044,
+                                  "end": 1052
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1044,
+                                    "end": 1050
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1051,
+                                    "end": 1052
+                                  },
+                                  "value": "e"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1053,
+                                  "end": 1061
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1075,
+                    "end": 1078
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1078,
+                      "end": 1130
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1078,
+                        "end": 1100
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1078,
+                          "end": 1086
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1078,
+                            "end": 1084
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1085,
+                            "end": 1086
+                          },
+                          "value": "f"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1091,
+                          "end": 1100
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1104,
+                        "end": 1130
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1106,
+                              "end": 1107
+                            },
+                            "value": "f"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1109,
+                              "end": 1128
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1109,
+                                "end": 1126
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1109,
+                                  "end": 1117
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1109,
+                                    "end": 1115
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1116,
+                                    "end": 1117
+                                  },
+                                  "value": "f"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1118,
+                                  "end": 1126
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1140,
+                    "end": 1143
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1143,
+                      "end": 1195
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1143,
+                        "end": 1165
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1143,
+                          "end": 1151
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1143,
+                            "end": 1149
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1150,
+                            "end": 1151
+                          },
+                          "value": "g"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1156,
+                          "end": 1165
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1169,
+                        "end": 1195
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1171,
+                              "end": 1172
+                            },
+                            "value": "g"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1174,
+                              "end": 1193
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1174,
+                                "end": 1191
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1174,
+                                  "end": 1182
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1174,
+                                    "end": 1180
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1181,
+                                    "end": 1182
+                                  },
+                                  "value": "g"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1183,
+                                  "end": 1191
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1205,
+                    "end": 1208
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1208,
+                      "end": 1260
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1208,
+                        "end": 1230
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1208,
+                          "end": 1216
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1208,
+                            "end": 1214
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1215,
+                            "end": 1216
+                          },
+                          "value": "h"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1221,
+                          "end": 1230
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1234,
+                        "end": 1260
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1236,
+                              "end": 1237
+                            },
+                            "value": "h"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1239,
+                              "end": 1258
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1239,
+                                "end": 1256
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1239,
+                                  "end": 1247
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1239,
+                                    "end": 1245
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1246,
+                                    "end": 1247
+                                  },
+                                  "value": "h"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1248,
+                                  "end": 1256
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1270,
+                    "end": 1273
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1273,
+                      "end": 1325
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1273,
+                        "end": 1295
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1273,
+                          "end": 1281
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1273,
+                            "end": 1279
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1280,
+                            "end": 1281
+                          },
+                          "value": "i"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1286,
+                          "end": 1295
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1299,
+                        "end": 1325
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1301,
+                              "end": 1302
+                            },
+                            "value": "i"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1304,
+                              "end": 1323
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1304,
+                                "end": 1321
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1304,
+                                  "end": 1312
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1304,
+                                    "end": 1310
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1311,
+                                    "end": 1312
+                                  },
+                                  "value": "i"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1313,
+                                  "end": 1321
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1335,
+                    "end": 1338
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1338,
+                      "end": 1390
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1338,
+                        "end": 1360
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1338,
+                          "end": 1346
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1338,
+                            "end": 1344
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1345,
+                            "end": 1346
+                          },
+                          "value": "j"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1351,
+                          "end": 1360
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1364,
+                        "end": 1390
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1366,
+                              "end": 1367
+                            },
+                            "value": "j"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1369,
+                              "end": 1388
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1369,
+                                "end": 1386
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1369,
+                                  "end": 1377
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1369,
+                                    "end": 1375
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1376,
+                                    "end": 1377
+                                  },
+                                  "value": "j"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1378,
+                                  "end": 1386
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1400,
+                    "end": 1403
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1403,
+                      "end": 1455
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1403,
+                        "end": 1425
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1403,
+                          "end": 1411
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1403,
+                            "end": 1409
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1410,
+                            "end": 1411
+                          },
+                          "value": "k"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1416,
+                          "end": 1425
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1429,
+                        "end": 1455
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1431,
+                              "end": 1432
+                            },
+                            "value": "k"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1434,
+                              "end": 1453
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1434,
+                                "end": 1451
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1434,
+                                  "end": 1442
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1434,
+                                    "end": 1440
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1441,
+                                    "end": 1442
+                                  },
+                                  "value": "k"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1443,
+                                  "end": 1451
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1465,
+                    "end": 1468
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1468,
+                      "end": 1520
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1468,
+                        "end": 1490
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1468,
+                          "end": 1476
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1468,
+                            "end": 1474
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1475,
+                            "end": 1476
+                          },
+                          "value": "l"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1481,
+                          "end": 1490
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1494,
+                        "end": 1520
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1496,
+                              "end": 1497
+                            },
+                            "value": "l"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1499,
+                              "end": 1518
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1499,
+                                "end": 1516
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1499,
+                                  "end": 1507
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1499,
+                                    "end": 1505
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1506,
+                                    "end": 1507
+                                  },
+                                  "value": "l"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1508,
+                                  "end": 1516
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1530,
+                    "end": 1533
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1533,
+                      "end": 1585
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1533,
+                        "end": 1555
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1533,
+                          "end": 1541
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1533,
+                            "end": 1539
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1540,
+                            "end": 1541
+                          },
+                          "value": "m"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1546,
+                          "end": 1555
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1559,
+                        "end": 1585
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1561,
+                              "end": 1562
+                            },
+                            "value": "m"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1564,
+                              "end": 1583
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1564,
+                                "end": 1581
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1564,
+                                  "end": 1572
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1564,
+                                    "end": 1570
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1571,
+                                    "end": 1572
+                                  },
+                                  "value": "m"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1573,
+                                  "end": 1581
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1595,
+                    "end": 1598
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1598,
+                      "end": 1650
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1598,
+                        "end": 1620
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1598,
+                          "end": 1606
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1598,
+                            "end": 1604
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1605,
+                            "end": 1606
+                          },
+                          "value": "n"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1611,
+                          "end": 1620
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1624,
+                        "end": 1650
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1626,
+                              "end": 1627
+                            },
+                            "value": "n"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1629,
+                              "end": 1648
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1629,
+                                "end": 1646
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1629,
+                                  "end": 1637
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1629,
+                                    "end": 1635
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1636,
+                                    "end": 1637
+                                  },
+                                  "value": "n"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1638,
+                                  "end": 1646
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1660,
+                    "end": 1663
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1663,
+                      "end": 1715
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1663,
+                        "end": 1685
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1663,
+                          "end": 1671
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1663,
+                            "end": 1669
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1670,
+                            "end": 1671
+                          },
+                          "value": "o"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1676,
+                          "end": 1685
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1689,
+                        "end": 1715
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1691,
+                              "end": 1692
+                            },
+                            "value": "o"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1694,
+                              "end": 1713
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1694,
+                                "end": 1711
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1694,
+                                  "end": 1702
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1694,
+                                    "end": 1700
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1701,
+                                    "end": 1702
+                                  },
+                                  "value": "o"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1703,
+                                  "end": 1711
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1725,
+                    "end": 1728
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1728,
+                      "end": 1780
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1728,
+                        "end": 1750
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1728,
+                          "end": 1736
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1728,
+                            "end": 1734
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1735,
+                            "end": 1736
+                          },
+                          "value": "p"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1741,
+                          "end": 1750
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1754,
+                        "end": 1780
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1756,
+                              "end": 1757
+                            },
+                            "value": "p"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1759,
+                              "end": 1778
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1759,
+                                "end": 1776
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1759,
+                                  "end": 1767
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1759,
+                                    "end": 1765
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1766,
+                                    "end": 1767
+                                  },
+                                  "value": "p"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1768,
+                                  "end": 1776
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1790,
+                    "end": 1793
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1793,
+                      "end": 1845
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1793,
+                        "end": 1815
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1793,
+                          "end": 1801
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1793,
+                            "end": 1799
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1800,
+                            "end": 1801
+                          },
+                          "value": "q"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1806,
+                          "end": 1815
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1819,
+                        "end": 1845
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1821,
+                              "end": 1822
+                            },
+                            "value": "q"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1824,
+                              "end": 1843
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1824,
+                                "end": 1841
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1824,
+                                  "end": 1832
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1824,
+                                    "end": 1830
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1831,
+                                    "end": 1832
+                                  },
+                                  "value": "q"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1833,
+                                  "end": 1841
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1855,
+                    "end": 1858
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1858,
+                      "end": 1910
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1858,
+                        "end": 1880
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1858,
+                          "end": 1866
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1858,
+                            "end": 1864
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1865,
+                            "end": 1866
+                          },
+                          "value": "r"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1871,
+                          "end": 1880
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1884,
+                        "end": 1910
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1886,
+                              "end": 1887
+                            },
+                            "value": "r"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1889,
+                              "end": 1908
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1889,
+                                "end": 1906
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1889,
+                                  "end": 1897
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1889,
+                                    "end": 1895
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1896,
+                                    "end": 1897
+                                  },
+                                  "value": "r"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1898,
+                                  "end": 1906
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1920,
+                    "end": 1923
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1923,
+                      "end": 1975
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1923,
+                        "end": 1945
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1923,
+                          "end": 1931
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1923,
+                            "end": 1929
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1930,
+                            "end": 1931
+                          },
+                          "value": "s"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 1936,
+                          "end": 1945
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 1949,
+                        "end": 1975
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 1951,
+                              "end": 1952
+                            },
+                            "value": "s"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 1954,
+                              "end": 1973
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 1954,
+                                "end": 1971
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 1954,
+                                  "end": 1962
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1954,
+                                    "end": 1960
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 1961,
+                                    "end": 1962
+                                  },
+                                  "value": "s"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 1963,
+                                  "end": 1971
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 1985,
+                    "end": 1988
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 1988,
+                      "end": 2040
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 1988,
+                        "end": 2010
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 1988,
+                          "end": 1996
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1988,
+                            "end": 1994
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 1995,
+                            "end": 1996
+                          },
+                          "value": "t"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2001,
+                          "end": 2010
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2014,
+                        "end": 2040
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2016,
+                              "end": 2017
+                            },
+                            "value": "t"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2019,
+                              "end": 2038
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2019,
+                                "end": 2036
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2019,
+                                  "end": 2027
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2019,
+                                    "end": 2025
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2026,
+                                    "end": 2027
+                                  },
+                                  "value": "t"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2028,
+                                  "end": 2036
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2050,
+                    "end": 2053
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2053,
+                      "end": 2105
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2053,
+                        "end": 2075
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2053,
+                          "end": 2061
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2053,
+                            "end": 2059
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2060,
+                            "end": 2061
+                          },
+                          "value": "u"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2066,
+                          "end": 2075
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2079,
+                        "end": 2105
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2081,
+                              "end": 2082
+                            },
+                            "value": "u"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2084,
+                              "end": 2103
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2084,
+                                "end": 2101
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2084,
+                                  "end": 2092
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2084,
+                                    "end": 2090
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2091,
+                                    "end": 2092
+                                  },
+                                  "value": "u"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2093,
+                                  "end": 2101
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2115,
+                    "end": 2118
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2118,
+                      "end": 2170
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2118,
+                        "end": 2140
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2118,
+                          "end": 2126
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2118,
+                            "end": 2124
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2125,
+                            "end": 2126
+                          },
+                          "value": "v"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2131,
+                          "end": 2140
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2144,
+                        "end": 2170
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2146,
+                              "end": 2147
+                            },
+                            "value": "v"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2149,
+                              "end": 2168
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2149,
+                                "end": 2166
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2149,
+                                  "end": 2157
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2149,
+                                    "end": 2155
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2156,
+                                    "end": 2157
+                                  },
+                                  "value": "v"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2158,
+                                  "end": 2166
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2180,
+                    "end": 2183
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2183,
+                      "end": 2235
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2183,
+                        "end": 2205
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2183,
+                          "end": 2191
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2183,
+                            "end": 2189
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2190,
+                            "end": 2191
+                          },
+                          "value": "w"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2196,
+                          "end": 2205
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2209,
+                        "end": 2235
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2211,
+                              "end": 2212
+                            },
+                            "value": "w"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2214,
+                              "end": 2233
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2214,
+                                "end": 2231
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2214,
+                                  "end": 2222
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2214,
+                                    "end": 2220
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2221,
+                                    "end": 2222
+                                  },
+                                  "value": "w"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2223,
+                                  "end": 2231
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2245,
+                    "end": 2248
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2248,
+                      "end": 2300
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2248,
+                        "end": 2270
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2248,
+                          "end": 2256
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2248,
+                            "end": 2254
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2255,
+                            "end": 2256
+                          },
+                          "value": "x"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2261,
+                          "end": 2270
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2274,
+                        "end": 2300
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2276,
+                              "end": 2277
+                            },
+                            "value": "x"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2279,
+                              "end": 2298
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2279,
+                                "end": 2296
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2279,
+                                  "end": 2287
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2279,
+                                    "end": 2285
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2286,
+                                    "end": 2287
+                                  },
+                                  "value": "x"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2288,
+                                  "end": 2296
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2310,
+                    "end": 2313
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2313,
+                      "end": 2365
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2313,
+                        "end": 2335
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2313,
+                          "end": 2321
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2313,
+                            "end": 2319
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2320,
+                            "end": 2321
+                          },
+                          "value": "y"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2326,
+                          "end": 2335
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2339,
+                        "end": 2365
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2341,
+                              "end": 2342
+                            },
+                            "value": "y"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2344,
+                              "end": 2363
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2344,
+                                "end": 2361
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2344,
+                                  "end": 2352
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2344,
+                                    "end": 2350
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2351,
+                                    "end": 2352
+                                  },
+                                  "value": "y"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2353,
+                                  "end": 2361
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "SpreadElement",
+                  "spread": {
+                    "start": 2375,
+                    "end": 2378
+                  },
+                  "arguments": {
+                    "type": "BinaryExpression",
+                    "span": {
+                      "start": 2378,
+                      "end": 2430
+                    },
+                    "operator": "&&",
+                    "left": {
+                      "type": "BinaryExpression",
+                      "span": {
+                        "start": 2378,
+                        "end": 2400
+                      },
+                      "operator": "!==",
+                      "left": {
+                        "type": "MemberExpression",
+                        "span": {
+                          "start": 2378,
+                          "end": 2386
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2378,
+                            "end": 2384
+                          },
+                          "ctxt": 0,
+                          "value": "config",
+                          "optional": false
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "span": {
+                            "start": 2385,
+                            "end": 2386
+                          },
+                          "value": "z"
+                        }
+                      },
+                      "right": {
+                        "type": "Identifier",
+                        "span": {
+                          "start": 2391,
+                          "end": 2400
+                        },
+                        "ctxt": 0,
+                        "value": "undefined",
+                        "optional": false
+                      }
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "span": {
+                        "start": 2404,
+                        "end": 2430
+                      },
+                      "properties": [
+                        {
+                          "type": "KeyValueProperty",
+                          "key": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 2406,
+                              "end": 2407
+                            },
+                            "value": "z"
+                          },
+                          "value": {
+                            "type": "CallExpression",
+                            "span": {
+                              "start": 2409,
+                              "end": 2428
+                            },
+                            "ctxt": 0,
+                            "callee": {
+                              "type": "MemberExpression",
+                              "span": {
+                                "start": 2409,
+                                "end": 2426
+                              },
+                              "object": {
+                                "type": "MemberExpression",
+                                "span": {
+                                  "start": 2409,
+                                  "end": 2417
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2409,
+                                    "end": 2415
+                                  },
+                                  "ctxt": 0,
+                                  "value": "config",
+                                  "optional": false
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "span": {
+                                    "start": 2416,
+                                    "end": 2417
+                                  },
+                                  "value": "z"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "span": {
+                                  "start": 2418,
+                                  "end": 2426
+                                },
+                                "value": "toString"
+                              }
+                            },
+                            "arguments": [],
+                            "typeArguments": null
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "async": false,
+      "typeParameters": null,
+      "returnType": {
+        "type": "TsTypeAnnotation",
+        "span": {
+          "start": 719,
+          "end": 726
+        },
+        "typeAnnotation": {
+          "type": "TsTypeReference",
+          "span": {
+            "start": 721,
+            "end": 726
+          },
+          "typeName": {
+            "type": "Identifier",
+            "span": {
+              "start": 721,
+              "end": 726
+            },
+            "ctxt": 0,
+            "value": "Props",
+            "optional": false
+          },
+          "typeParams": null
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 2440,
+        "end": 2478
+      },
+      "expression": {
+        "type": "CallExpression",
+        "span": {
+          "start": 2440,
+          "end": 2478
+        },
+        "ctxt": 0,
+        "callee": {
+          "type": "Identifier",
+          "span": {
+            "start": 2440,
+            "end": 2455
+          },
+          "ctxt": 0,
+          "value": "parseWithSpread",
+          "optional": false
+        },
+        "arguments": [
+          {
+            "spread": null,
+            "expression": {
+              "type": "ObjectExpression",
+              "span": {
+                "start": 2456,
+                "end": 2477
+              },
+              "properties": [
+                {
+                  "type": "KeyValueProperty",
+                  "key": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 2458,
+                      "end": 2459
+                    },
+                    "value": "a"
+                  },
+                  "value": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 2461,
+                      "end": 2462
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                },
+                {
+                  "type": "KeyValueProperty",
+                  "key": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 2464,
+                      "end": 2465
+                    },
+                    "value": "b"
+                  },
+                  "value": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 2467,
+                      "end": 2468
+                    },
+                    "value": 2.0,
+                    "raw": "2"
+                  }
+                },
+                {
+                  "type": "KeyValueProperty",
+                  "key": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 2470,
+                      "end": 2471
+                    },
+                    "value": "z"
+                  },
+                  "value": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 2473,
+                      "end": 2475
+                    },
+                    "value": 26.0,
+                    "raw": "26"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "typeArguments": null
+      }
+    }
+  ],
+  "interpreter": null
+}

@@ -1,0 +1,1 @@
+//// [taggedTemplateStringsWithTagNamedDeclareES6.ts]

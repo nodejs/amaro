@@ -1,0 +1,242 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 21,
+    "end": 139
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 27,
+          "end": 28
+        },
+        "ctxt": 0,
+        "value": "C",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 21,
+        "end": 139
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 35,
+            "end": 43
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 35,
+              "end": 43
+            },
+            "value": "accessor"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 48,
+            "end": 49
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 48,
+              "end": 49
+            },
+            "value": "a"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 55,
+            "end": 70
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 62,
+              "end": 70
+            },
+            "value": "accessor"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": true,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 75,
+            "end": 76
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 75,
+              "end": 76
+            },
+            "value": "b"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 82,
+            "end": 101
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 93,
+              "end": 101
+            },
+            "value": "accessor"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": true,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 106,
+            "end": 107
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 106,
+              "end": 107
+            },
+            "value": "c"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        },
+        {
+          "type": "AutoAccessor",
+          "span": {
+            "start": 113,
+            "end": 130
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 122,
+              "end": 130
+            },
+            "value": "accessor"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOverride": false,
+          "definite": false
+        },
+        {
+          "type": "ClassProperty",
+          "span": {
+            "start": 135,
+            "end": 137
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 135,
+              "end": 136
+            },
+            "value": "d"
+          },
+          "value": null,
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "declare": false,
+          "definite": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    }
+  ],
+  "interpreter": null
+}

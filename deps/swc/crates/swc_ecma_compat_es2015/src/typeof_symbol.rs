@@ -1,0 +1,65 @@
+use serde::Deserialize;
+use swc_ecma_ast::Pass;
+
+pub fn typeof_symbol(c: Config) -> impl Pass {
+    if c.loose {
+        None
+    } else {
+        let mut options = swc_ecma_transformer::Options::default();
+        options.env.es2015.typeof_symbol = true;
+        Some(options.into_pass())
+    }
+}
+
+#[derive(Debug, Clone, Copy, Default, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Config {
+    pub loose: bool,
+}
+
+#[cfg(test)]
+mod tests {
+    use swc_ecma_parser::Syntax;
+    use swc_ecma_transforms_testing::test;
+
+    use super::*;
+
+    test!(
+        Syntax::default(),
+        |_| typeof_symbol(Config::default()),
+        dont_touch_non_symbol_comparison,
+        "typeof window !== 'undefined'"
+    );
+
+    test!(
+        Syntax::default(),
+        |_| typeof_symbol(Config::default()),
+        dont_touch_non_symbol_comparison_02,
+        "'undefined' !== typeof window"
+    );
+
+    test!(
+        Syntax::default(),
+        |_| typeof_symbol(Config::default()),
+        issue_1843_1,
+        "
+        function isUndef(type) {
+            return type === 'undefined';
+        }
+
+        var isWeb = !isUndef(typeof window) && 'onload' in window;
+        exports.isWeb = isWeb;
+        var isNode = !isUndef(typeof process) && !!(process.versions && process.versions.node);
+        exports.isNode = isNode;
+        var isWeex = !isUndef(typeof WXEnvironment) && WXEnvironment.platform !== 'Web';
+        exports.isWeex = isWeex;
+        "
+    );
+
+    test!(
+        Syntax::default(),
+        |_| typeof_symbol(Config { loose: true }),
+        dont_touch_in_loose_mode,
+        "typeof sym;"
+    );
+}

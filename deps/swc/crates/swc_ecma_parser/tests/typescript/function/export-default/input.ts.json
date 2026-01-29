@@ -1,0 +1,81 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 1,
+    "end": 43
+  },
+  "body": [
+    {
+      "type": "ExportDefaultDeclaration",
+      "span": {
+        "start": 1,
+        "end": 43
+      },
+      "decl": {
+        "type": "FunctionExpression",
+        "identifier": null,
+        "params": [
+          {
+            "type": "Parameter",
+            "span": {
+              "start": 25,
+              "end": 35
+            },
+            "decorators": [],
+            "pat": {
+              "type": "Identifier",
+              "span": {
+                "start": 25,
+                "end": 26
+              },
+              "ctxt": 0,
+              "value": "x",
+              "optional": true,
+              "typeAnnotation": {
+                "type": "TsTypeAnnotation",
+                "span": {
+                  "start": 27,
+                  "end": 35
+                },
+                "typeAnnotation": {
+                  "type": "TsKeywordType",
+                  "span": {
+                    "start": 29,
+                    "end": 35
+                  },
+                  "kind": "number"
+                }
+              }
+            }
+          }
+        ],
+        "decorators": [],
+        "span": {
+          "start": 16,
+          "end": 43
+        },
+        "ctxt": 0,
+        "body": null,
+        "generator": false,
+        "async": false,
+        "typeParameters": null,
+        "returnType": {
+          "type": "TsTypeAnnotation",
+          "span": {
+            "start": 36,
+            "end": 42
+          },
+          "typeAnnotation": {
+            "type": "TsKeywordType",
+            "span": {
+              "start": 38,
+              "end": 42
+            },
+            "kind": "void"
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

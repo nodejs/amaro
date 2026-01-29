@@ -1,0 +1,1 @@
+//// [emitClassDeclarationWithThisKeywordInES6.ts]

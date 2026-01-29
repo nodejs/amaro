@@ -1,0 +1,99 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 46
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 45
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 8
+        },
+        "value": "import",
+        "raw": "import"
+      },
+      "prelude": {
+        "type": "ImportPrelude",
+        "span": {
+          "start": 9,
+          "end": 44
+        },
+        "href": {
+          "type": "Url",
+          "span": {
+            "start": 9,
+            "end": 26
+          },
+          "name": {
+            "type": "Ident",
+            "span": {
+              "start": 9,
+              "end": 12
+            },
+            "value": "url",
+            "raw": "url"
+          },
+          "value": {
+            "type": "String",
+            "span": {
+              "start": 13,
+              "end": 25
+            },
+            "value": "./test.css",
+            "raw": "\"./test.css\""
+          },
+          "modifiers": []
+        },
+        "layerName": null,
+        "importConditions": {
+          "type": "ImportCondition",
+          "span": {
+            "start": 27,
+            "end": 44
+          },
+          "supports": {
+            "type": "Function",
+            "span": {
+              "start": 27,
+              "end": 44
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 27,
+                "end": 35
+              },
+              "value": "supports",
+              "raw": "supports"
+            },
+            "value": [
+              {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 36,
+                  "end": 43
+                },
+                "token": {
+                  "Ident": {
+                    "value": "unknown",
+                    "raw": "unknown"
+                  }
+                }
+              }
+            ]
+          },
+          "media": null
+        }
+      },
+      "block": null
+    }
+  ]
+}

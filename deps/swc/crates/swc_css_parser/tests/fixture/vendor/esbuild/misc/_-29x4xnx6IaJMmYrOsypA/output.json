@@ -1,0 +1,42 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 11
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 11
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 9
+        },
+        "value": "unknown",
+        "raw": "unknown"
+      },
+      "prelude": null,
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 9,
+          "end": 11
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 9,
+            "end": 10
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    }
+  ]
+}

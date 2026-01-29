@@ -1,0 +1,25 @@
+[package]
+authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+description   = "Common logic for targetting vairous browsers"
+documentation = "https://rustdoc.swc.rs/preset_env_base/"
+edition       = { workspace = true }
+license       = { workspace = true }
+name          = "preset_env_base"
+repository    = { workspace = true }
+version       = "7.0.0"
+
+[lib]
+bench = false
+
+[dependencies]
+anyhow          = { workspace = true }
+browserslist-rs = { workspace = true }
+dashmap         = { workspace = true }
+once_cell       = { workspace = true }
+rustc-hash      = { workspace = true }
+semver          = { workspace = true, features = ["serde"] }
+serde           = { workspace = true, features = ["derive"] }
+st-map          = { workspace = true }
+tracing         = { workspace = true }
+
+from_variant = { version = "3.0.0", path = "../from_variant" }

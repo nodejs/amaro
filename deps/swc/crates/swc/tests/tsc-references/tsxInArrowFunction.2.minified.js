@@ -1,0 +1,1 @@
+//// [tsxInArrowFunction.tsx]

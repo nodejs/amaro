@@ -1,0 +1,1 @@
+//// [typeTagOnPropertyAssignment.js]

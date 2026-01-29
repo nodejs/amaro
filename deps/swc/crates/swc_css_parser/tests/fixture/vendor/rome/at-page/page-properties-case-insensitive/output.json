@@ -1,0 +1,71 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 27
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 26
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 6
+        },
+        "value": "page",
+        "raw": "page"
+      },
+      "prelude": null,
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 7,
+          "end": 26
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 7,
+            "end": 8
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "Declaration",
+            "span": {
+              "start": 10,
+              "end": 23
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 10,
+                "end": 17
+              },
+              "value": "DISPLAY",
+              "raw": "DISPLAY"
+            },
+            "value": [
+              {
+                "type": "Ident",
+                "span": {
+                  "start": 19,
+                  "end": 23
+                },
+                "value": "none",
+                "raw": "none"
+              }
+            ],
+            "important": null
+          }
+        ]
+      }
+    }
+  ]
+}

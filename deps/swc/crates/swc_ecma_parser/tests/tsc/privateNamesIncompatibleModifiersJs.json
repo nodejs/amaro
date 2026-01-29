@@ -1,0 +1,685 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 142,
+    "end": 841
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 148,
+          "end": 149
+        },
+        "ctxt": 0,
+        "value": "A",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 142,
+        "end": 841
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "PrivateProperty",
+          "span": {
+            "start": 187,
+            "end": 194
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 187,
+              "end": 189
+            },
+            "value": "a"
+          },
+          "value": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 192,
+              "end": 193
+            },
+            "value": 1.0,
+            "raw": "1"
+          },
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "definite": false
+        },
+        {
+          "type": "PrivateProperty",
+          "span": {
+            "start": 232,
+            "end": 239
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 232,
+              "end": 234
+            },
+            "value": "b"
+          },
+          "value": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 237,
+              "end": 238
+            },
+            "value": 1.0,
+            "raw": "1"
+          },
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "definite": false
+        },
+        {
+          "type": "PrivateProperty",
+          "span": {
+            "start": 279,
+            "end": 286
+          },
+          "ctxt": 0,
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 279,
+              "end": 281
+            },
+            "value": "c"
+          },
+          "value": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 284,
+              "end": 285
+            },
+            "value": 1.0,
+            "raw": "1"
+          },
+          "typeAnnotation": null,
+          "isStatic": false,
+          "decorators": [],
+          "accessibility": null,
+          "isOptional": false,
+          "isOverride": false,
+          "readonly": false,
+          "definite": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 323,
+            "end": 347
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 323,
+              "end": 331
+            },
+            "value": "aMethod"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 323,
+              "end": 347
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 334,
+                "end": 347
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 336,
+                    "end": 345
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 343,
+                      "end": 344
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 385,
+            "end": 409
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 385,
+              "end": 393
+            },
+            "value": "bMethod"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 385,
+              "end": 409
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 396,
+                "end": 409
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 398,
+                    "end": 407
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 405,
+                      "end": 406
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 449,
+            "end": 473
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 449,
+              "end": 457
+            },
+            "value": "cMethod"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 449,
+              "end": 473
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 460,
+                "end": 473
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 462,
+                    "end": 471
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 469,
+                      "end": 470
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 510,
+            "end": 536
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 514,
+              "end": 520
+            },
+            "value": "aProp"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 510,
+              "end": 536
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 523,
+                "end": 536
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 525,
+                    "end": 534
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 532,
+                      "end": 533
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "getter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 572,
+            "end": 593
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 576,
+              "end": 582
+            },
+            "value": "aProp"
+          },
+          "function": {
+            "params": [
+              {
+                "type": "Parameter",
+                "span": {
+                  "start": 583,
+                  "end": 588
+                },
+                "decorators": [],
+                "pat": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 583,
+                    "end": 588
+                  },
+                  "ctxt": 0,
+                  "value": "value",
+                  "optional": false,
+                  "typeAnnotation": null
+                }
+              }
+            ],
+            "decorators": [],
+            "span": {
+              "start": 572,
+              "end": 593
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 590,
+                "end": 593
+              },
+              "ctxt": 0,
+              "stmts": []
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "setter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 631,
+            "end": 657
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 635,
+              "end": 641
+            },
+            "value": "bProp"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 631,
+              "end": 657
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 644,
+                "end": 657
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 646,
+                    "end": 655
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 653,
+                      "end": 654
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "getter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 694,
+            "end": 715
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 698,
+              "end": 704
+            },
+            "value": "bProp"
+          },
+          "function": {
+            "params": [
+              {
+                "type": "Parameter",
+                "span": {
+                  "start": 705,
+                  "end": 710
+                },
+                "decorators": [],
+                "pat": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 705,
+                    "end": 710
+                  },
+                  "ctxt": 0,
+                  "value": "value",
+                  "optional": false,
+                  "typeAnnotation": null
+                }
+              }
+            ],
+            "decorators": [],
+            "span": {
+              "start": 694,
+              "end": 715
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 712,
+                "end": 715
+              },
+              "ctxt": 0,
+              "stmts": []
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "setter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 753,
+            "end": 779
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 757,
+              "end": 763
+            },
+            "value": "cProp"
+          },
+          "function": {
+            "params": [],
+            "decorators": [],
+            "span": {
+              "start": 753,
+              "end": 779
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 766,
+                "end": 779
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 768,
+                    "end": 777
+                  },
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 775,
+                      "end": 776
+                    },
+                    "value": 1.0,
+                    "raw": "1"
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "getter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        },
+        {
+          "type": "PrivateMethod",
+          "span": {
+            "start": 818,
+            "end": 839
+          },
+          "key": {
+            "type": "PrivateName",
+            "span": {
+              "start": 822,
+              "end": 828
+            },
+            "value": "cProp"
+          },
+          "function": {
+            "params": [
+              {
+                "type": "Parameter",
+                "span": {
+                  "start": 829,
+                  "end": 834
+                },
+                "decorators": [],
+                "pat": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 829,
+                    "end": 834
+                  },
+                  "ctxt": 0,
+                  "value": "value",
+                  "optional": false,
+                  "typeAnnotation": null
+                }
+              }
+            ],
+            "decorators": [],
+            "span": {
+              "start": 818,
+              "end": 839
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 836,
+                "end": 839
+              },
+              "ctxt": 0,
+              "stmts": []
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": null,
+            "returnType": null
+          },
+          "kind": "setter",
+          "isStatic": false,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    }
+  ],
+  "interpreter": null
+}

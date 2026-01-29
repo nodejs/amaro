@@ -1,0 +1,1018 @@
+{
+  "type": "Stylesheet",
+  "span": {
+    "start": 1,
+    "end": 621
+  },
+  "rules": [
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 1,
+        "end": 83
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 2,
+          "end": 10
+        },
+        "value": "document",
+        "raw": "document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 11,
+          "end": 43
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 11,
+              "end": 42
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 11,
+                "end": 14
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "String",
+              "span": {
+                "start": 15,
+                "end": 41
+              },
+              "value": "https://www.example.com/",
+              "raw": "\"https://www.example.com/\""
+            },
+            "modifiers": []
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 43,
+          "end": 83
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 43,
+            "end": 44
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "QualifiedRule",
+            "span": {
+              "start": 49,
+              "end": 81
+            },
+            "prelude": {
+              "type": "SelectorList",
+              "span": {
+                "start": 49,
+                "end": 51
+              },
+              "children": [
+                {
+                  "type": "ComplexSelector",
+                  "span": {
+                    "start": 49,
+                    "end": 51
+                  },
+                  "children": [
+                    {
+                      "type": "CompoundSelector",
+                      "span": {
+                        "start": 49,
+                        "end": 51
+                      },
+                      "nestingSelector": null,
+                      "typeSelector": {
+                        "type": "TagNameSelector",
+                        "span": {
+                          "start": 49,
+                          "end": 51
+                        },
+                        "name": {
+                          "type": "WqName",
+                          "span": {
+                            "start": 49,
+                            "end": 51
+                          },
+                          "prefix": null,
+                          "value": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 49,
+                              "end": 51
+                            },
+                            "value": "h1",
+                            "raw": "h1"
+                          }
+                        }
+                      },
+                      "subclassSelectors": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 52,
+                "end": 81
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 52,
+                  "end": 53
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 62,
+                    "end": 74
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 62,
+                      "end": 67
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 69,
+                        "end": 74
+                      },
+                      "value": "green",
+                      "raw": "green"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 85,
+        "end": 300
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 86,
+          "end": 94
+        },
+        "value": "document",
+        "raw": "document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 95,
+          "end": 229
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 95,
+              "end": 120
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 95,
+                "end": 98
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "String",
+              "span": {
+                "start": 99,
+                "end": 119
+              },
+              "value": "http://www.w3.org/",
+              "raw": "\"http://www.w3.org/\""
+            },
+            "modifiers": []
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 122,
+              "end": 160
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 122,
+                "end": 132
+              },
+              "value": "url-prefix",
+              "raw": "url-prefix"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 133,
+                  "end": 159
+                },
+                "value": "http://www.w3.org/Style/",
+                "raw": "\"http://www.w3.org/Style/\""
+              }
+            ]
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 162,
+              "end": 183
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 162,
+                "end": 168
+              },
+              "value": "domain",
+              "raw": "domain"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 169,
+                  "end": 182
+                },
+                "value": "mozilla.org",
+                "raw": "\"mozilla.org\""
+              }
+            ]
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 185,
+              "end": 208
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 185,
+                "end": 199
+              },
+              "value": "media-document",
+              "raw": "media-document"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 200,
+                  "end": 207
+                },
+                "value": "video",
+                "raw": "\"video\""
+              }
+            ]
+          },
+          {
+            "type": "Function",
+            "span": {
+              "start": 210,
+              "end": 228
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 210,
+                "end": 216
+              },
+              "value": "regexp",
+              "raw": "regexp"
+            },
+            "value": [
+              {
+                "type": "String",
+                "span": {
+                  "start": 217,
+                  "end": 227
+                },
+                "value": "https:.*",
+                "raw": "\"https:.*\""
+              }
+            ]
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 229,
+          "end": 300
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 229,
+            "end": 230
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "QualifiedRule",
+            "span": {
+              "start": 235,
+              "end": 298
+            },
+            "prelude": {
+              "type": "SelectorList",
+              "span": {
+                "start": 235,
+                "end": 239
+              },
+              "children": [
+                {
+                  "type": "ComplexSelector",
+                  "span": {
+                    "start": 235,
+                    "end": 239
+                  },
+                  "children": [
+                    {
+                      "type": "CompoundSelector",
+                      "span": {
+                        "start": 235,
+                        "end": 239
+                      },
+                      "nestingSelector": null,
+                      "typeSelector": {
+                        "type": "TagNameSelector",
+                        "span": {
+                          "start": 235,
+                          "end": 239
+                        },
+                        "name": {
+                          "type": "WqName",
+                          "span": {
+                            "start": 235,
+                            "end": 239
+                          },
+                          "prefix": null,
+                          "value": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 235,
+                              "end": 239
+                            },
+                            "value": "body",
+                            "raw": "body"
+                          }
+                        }
+                      },
+                      "subclassSelectors": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 240,
+                "end": 298
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 240,
+                  "end": 241
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 250,
+                    "end": 263
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 250,
+                      "end": 255
+                    },
+                    "value": "color",
+                    "raw": "color"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 257,
+                        "end": 263
+                      },
+                      "value": "purple",
+                      "raw": "purple"
+                    }
+                  ],
+                  "important": null
+                },
+                {
+                  "type": "Declaration",
+                  "span": {
+                    "start": 273,
+                    "end": 291
+                  },
+                  "name": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 273,
+                      "end": 283
+                    },
+                    "value": "background",
+                    "raw": "background"
+                  },
+                  "value": [
+                    {
+                      "type": "Ident",
+                      "span": {
+                        "start": 285,
+                        "end": 291
+                      },
+                      "value": "yellow",
+                      "raw": "yellow"
+                    }
+                  ],
+                  "important": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 302,
+        "end": 344
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 303,
+          "end": 311
+        },
+        "value": "document",
+        "raw": "document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 312,
+          "end": 342
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 312,
+              "end": 341
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 312,
+                "end": 315
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "UrlValueRaw",
+              "span": {
+                "start": 316,
+                "end": 340
+              },
+              "value": "https://www.example.com/",
+              "raw": "https://www.example.com/"
+            },
+            "modifiers": null
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 342,
+          "end": 344
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 342,
+            "end": 343
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 345,
+        "end": 394
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 346,
+          "end": 359
+        },
+        "value": "-moz-document",
+        "raw": "-moz-document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 360,
+          "end": 392
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 360,
+              "end": 391
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 360,
+                "end": 363
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "String",
+              "span": {
+                "start": 364,
+                "end": 390
+              },
+              "value": "https://www.example.com/",
+              "raw": "\"https://www.example.com/\""
+            },
+            "modifiers": []
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 392,
+          "end": 394
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 392,
+            "end": 393
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 395,
+        "end": 464
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 396,
+          "end": 409
+        },
+        "value": "-moz-document",
+        "raw": "-moz-document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 433,
+          "end": 462
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 433,
+              "end": 453
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 433,
+                "end": 436
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "String",
+              "span": {
+                "start": 437,
+                "end": 452
+              },
+              "value": "example.com/{",
+              "raw": "\"example.com/{\""
+            },
+            "modifiers": []
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 462,
+          "end": 464
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 462,
+            "end": 463
+          },
+          "token": "LBrace"
+        },
+        "value": []
+      }
+    },
+    {
+      "type": "AtRule",
+      "span": {
+        "start": 466,
+        "end": 620
+      },
+      "name": {
+        "type": "Ident",
+        "span": {
+          "start": 467,
+          "end": 475
+        },
+        "value": "document",
+        "raw": "document"
+      },
+      "prelude": {
+        "type": "DocumentPrelude",
+        "span": {
+          "start": 476,
+          "end": 508
+        },
+        "matchingFunctions": [
+          {
+            "type": "Url",
+            "span": {
+              "start": 476,
+              "end": 507
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 476,
+                "end": 479
+              },
+              "value": "url",
+              "raw": "url"
+            },
+            "value": {
+              "type": "String",
+              "span": {
+                "start": 480,
+                "end": 506
+              },
+              "value": "https://www.example.com/",
+              "raw": "\"https://www.example.com/\""
+            },
+            "modifiers": []
+          }
+        ]
+      },
+      "block": {
+        "type": "SimpleBlock",
+        "span": {
+          "start": 508,
+          "end": 620
+        },
+        "name": {
+          "type": "PreservedToken",
+          "span": {
+            "start": 508,
+            "end": 509
+          },
+          "token": "LBrace"
+        },
+        "value": [
+          {
+            "type": "AtRule",
+            "span": {
+              "start": 514,
+              "end": 618
+            },
+            "name": {
+              "type": "Ident",
+              "span": {
+                "start": 515,
+                "end": 520
+              },
+              "value": "media",
+              "raw": "media"
+            },
+            "prelude": {
+              "type": "MediaQueryList",
+              "span": {
+                "start": 521,
+                "end": 550
+              },
+              "queries": [
+                {
+                  "type": "MediaQuery",
+                  "span": {
+                    "start": 521,
+                    "end": 550
+                  },
+                  "modifier": null,
+                  "mediaType": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 521,
+                      "end": 527
+                    },
+                    "value": "screen",
+                    "raw": "screen"
+                  },
+                  "keyword": {
+                    "type": "Ident",
+                    "span": {
+                      "start": 528,
+                      "end": 531
+                    },
+                    "value": "and",
+                    "raw": "and"
+                  },
+                  "condition": {
+                    "type": "MediaConditionWithoutOr",
+                    "span": {
+                      "start": 532,
+                      "end": 550
+                    },
+                    "conditions": [
+                      {
+                        "type": "MediaFeaturePlain",
+                        "span": {
+                          "start": 532,
+                          "end": 550
+                        },
+                        "name": {
+                          "type": "Ident",
+                          "span": {
+                            "start": 533,
+                            "end": 542
+                          },
+                          "value": "min-width",
+                          "raw": "min-width"
+                        },
+                        "value": {
+                          "type": "Length",
+                          "span": {
+                            "start": 544,
+                            "end": 549
+                          },
+                          "value": {
+                            "type": "Number",
+                            "span": {
+                              "start": 544,
+                              "end": 547
+                            },
+                            "value": 900.0,
+                            "raw": "900"
+                          },
+                          "unit": {
+                            "type": "Ident",
+                            "span": {
+                              "start": 547,
+                              "end": 549
+                            },
+                            "value": "px",
+                            "raw": "px"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "block": {
+              "type": "SimpleBlock",
+              "span": {
+                "start": 551,
+                "end": 618
+              },
+              "name": {
+                "type": "PreservedToken",
+                "span": {
+                  "start": 551,
+                  "end": 552
+                },
+                "token": "LBrace"
+              },
+              "value": [
+                {
+                  "type": "QualifiedRule",
+                  "span": {
+                    "start": 561,
+                    "end": 612
+                  },
+                  "prelude": {
+                    "type": "SelectorList",
+                    "span": {
+                      "start": 561,
+                      "end": 568
+                    },
+                    "children": [
+                      {
+                        "type": "ComplexSelector",
+                        "span": {
+                          "start": 561,
+                          "end": 568
+                        },
+                        "children": [
+                          {
+                            "type": "CompoundSelector",
+                            "span": {
+                              "start": 561,
+                              "end": 568
+                            },
+                            "nestingSelector": null,
+                            "typeSelector": {
+                              "type": "TagNameSelector",
+                              "span": {
+                                "start": 561,
+                                "end": 568
+                              },
+                              "name": {
+                                "type": "WqName",
+                                "span": {
+                                  "start": 561,
+                                  "end": 568
+                                },
+                                "prefix": null,
+                                "value": {
+                                  "type": "Ident",
+                                  "span": {
+                                    "start": 561,
+                                    "end": 568
+                                  },
+                                  "value": "article",
+                                  "raw": "article"
+                                }
+                              }
+                            },
+                            "subclassSelectors": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "block": {
+                    "type": "SimpleBlock",
+                    "span": {
+                      "start": 569,
+                      "end": 612
+                    },
+                    "name": {
+                      "type": "PreservedToken",
+                      "span": {
+                        "start": 569,
+                        "end": 570
+                      },
+                      "token": "LBrace"
+                    },
+                    "value": [
+                      {
+                        "type": "Declaration",
+                        "span": {
+                          "start": 583,
+                          "end": 601
+                        },
+                        "name": {
+                          "type": "Ident",
+                          "span": {
+                            "start": 583,
+                            "end": 590
+                          },
+                          "value": "padding",
+                          "raw": "padding"
+                        },
+                        "value": [
+                          {
+                            "type": "Length",
+                            "span": {
+                              "start": 592,
+                              "end": 596
+                            },
+                            "value": {
+                              "type": "Number",
+                              "span": {
+                                "start": 592,
+                                "end": 593
+                              },
+                              "value": 1.0,
+                              "raw": "1"
+                            },
+                            "unit": {
+                              "type": "Ident",
+                              "span": {
+                                "start": 593,
+                                "end": 596
+                              },
+                              "value": "rem",
+                              "raw": "rem"
+                            }
+                          },
+                          {
+                            "type": "Length",
+                            "span": {
+                              "start": 597,
+                              "end": 601
+                            },
+                            "value": {
+                              "type": "Number",
+                              "span": {
+                                "start": 597,
+                                "end": 598
+                              },
+                              "value": 3.0,
+                              "raw": "3"
+                            },
+                            "unit": {
+                              "type": "Ident",
+                              "span": {
+                                "start": 598,
+                                "end": 601
+                              },
+                              "value": "rem",
+                              "raw": "rem"
+                            }
+                          }
+                        ],
+                        "important": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

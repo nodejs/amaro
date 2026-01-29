@@ -1,0 +1,494 @@
+{
+  "type": "Module",
+  "span": {
+    "start": 44,
+    "end": 415
+  },
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 44,
+        "end": 98
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 51,
+            "end": 62
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 56,
+              "end": 62
+            },
+            "ctxt": 0,
+            "value": "thing1",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 68,
+          "end": 79
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 85,
+          "end": 97
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 87,
+                "end": 92
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "NumericLiteral",
+              "span": {
+                "start": 94,
+                "end": 95
+              },
+              "value": 0.0,
+              "raw": "0"
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 99,
+        "end": 155
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 106,
+            "end": 117
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 111,
+              "end": 117
+            },
+            "ctxt": 0,
+            "value": "thing2",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 123,
+          "end": 134
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 140,
+          "end": 154
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 142,
+                "end": 147
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "TemplateLiteral",
+              "span": {
+                "start": 149,
+                "end": 152
+              },
+              "expressions": [],
+              "quasis": [
+                {
+                  "type": "TemplateElement",
+                  "span": {
+                    "start": 150,
+                    "end": 151
+                  },
+                  "tail": true,
+                  "cooked": "a",
+                  "raw": "a"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 156,
+        "end": 213
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 163,
+            "end": 174
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 168,
+              "end": 174
+            },
+            "ctxt": 0,
+            "value": "thing3",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 180,
+          "end": 191
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 197,
+          "end": 212
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 199,
+                "end": 204
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "RegExpLiteral",
+              "span": {
+                "start": 206,
+                "end": 210
+              },
+              "pattern": "a",
+              "flags": "g"
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 214,
+        "end": 272
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 221,
+            "end": 232
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 226,
+              "end": 232
+            },
+            "ctxt": 0,
+            "value": "thing4",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 238,
+          "end": 249
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 255,
+          "end": 271
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 257,
+                "end": 262
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "ArrayExpression",
+              "span": {
+                "start": 264,
+                "end": 269
+              },
+              "elements": [
+                {
+                  "spread": null,
+                  "expression": {
+                    "type": "StringLiteral",
+                    "span": {
+                      "start": 265,
+                      "end": 268
+                    },
+                    "value": "a",
+                    "raw": "\"a\""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 273,
+        "end": 334
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 280,
+            "end": 291
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 285,
+              "end": 291
+            },
+            "ctxt": 0,
+            "value": "thing5",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 297,
+          "end": 308
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 314,
+          "end": 333
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 316,
+                "end": 321
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "ObjectExpression",
+              "span": {
+                "start": 323,
+                "end": 331
+              },
+              "properties": [
+                {
+                  "type": "KeyValueProperty",
+                  "key": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 325,
+                      "end": 326
+                    },
+                    "value": "a"
+                  },
+                  "value": {
+                    "type": "NumericLiteral",
+                    "span": {
+                      "start": 328,
+                      "end": 329
+                    },
+                    "value": 0.0,
+                    "raw": "0"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    },
+    {
+      "type": "ImportDeclaration",
+      "span": {
+        "start": 335,
+        "end": 415
+      },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "span": {
+            "start": 342,
+            "end": 353
+          },
+          "local": {
+            "type": "Identifier",
+            "span": {
+              "start": 347,
+              "end": 353
+            },
+            "ctxt": 0,
+            "value": "thing6",
+            "optional": false
+          }
+        }
+      ],
+      "source": {
+        "type": "StringLiteral",
+        "span": {
+          "start": 359,
+          "end": 370
+        },
+        "value": "./mod.mjs",
+        "raw": "\"./mod.mjs\""
+      },
+      "typeOnly": false,
+      "with": {
+        "type": "ObjectExpression",
+        "span": {
+          "start": 376,
+          "end": 414
+        },
+        "properties": [
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 378,
+                "end": 382
+              },
+              "value": "type"
+            },
+            "value": {
+              "type": "StringLiteral",
+              "span": {
+                "start": 384,
+                "end": 390
+              },
+              "value": "json",
+              "raw": "\"json\""
+            }
+          },
+          {
+            "type": "KeyValueProperty",
+            "key": {
+              "type": "Identifier",
+              "span": {
+                "start": 392,
+                "end": 397
+              },
+              "value": "field"
+            },
+            "value": {
+              "type": "CallExpression",
+              "span": {
+                "start": 399,
+                "end": 412
+              },
+              "ctxt": 0,
+              "callee": {
+                "type": "MemberExpression",
+                "span": {
+                  "start": 399,
+                  "end": 410
+                },
+                "object": {
+                  "type": "NumericLiteral",
+                  "span": {
+                    "start": 399,
+                    "end": 401
+                  },
+                  "value": 0.0,
+                  "raw": "0."
+                },
+                "property": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 402,
+                    "end": 410
+                  },
+                  "value": "toString"
+                }
+              },
+              "arguments": [],
+              "typeArguments": null
+            }
+          }
+        ]
+      },
+      "phase": "evaluation"
+    }
+  ],
+  "interpreter": null
+}

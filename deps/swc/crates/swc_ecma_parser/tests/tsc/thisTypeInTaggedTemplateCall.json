@@ -1,0 +1,385 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 21,
+    "end": 172
+  },
+  "body": [
+    {
+      "type": "ClassDeclaration",
+      "identifier": {
+        "type": "Identifier",
+        "span": {
+          "start": 27,
+          "end": 30
+        },
+        "ctxt": 0,
+        "value": "Foo",
+        "optional": false
+      },
+      "declare": false,
+      "span": {
+        "start": 21,
+        "end": 143
+      },
+      "ctxt": 0,
+      "decorators": [],
+      "body": [
+        {
+          "type": "ClassMethod",
+          "span": {
+            "start": 37,
+            "end": 141
+          },
+          "key": {
+            "type": "Identifier",
+            "span": {
+              "start": 44,
+              "end": 45
+            },
+            "value": "m"
+          },
+          "function": {
+            "params": [
+              {
+                "type": "Parameter",
+                "span": {
+                  "start": 49,
+                  "end": 66
+                },
+                "decorators": [],
+                "pat": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 49,
+                    "end": 53
+                  },
+                  "ctxt": 0,
+                  "value": "this",
+                  "optional": false,
+                  "typeAnnotation": {
+                    "type": "TsTypeAnnotation",
+                    "span": {
+                      "start": 53,
+                      "end": 66
+                    },
+                    "typeAnnotation": {
+                      "type": "TsConstructorType",
+                      "span": {
+                        "start": 55,
+                        "end": 66
+                      },
+                      "params": [],
+                      "typeParams": null,
+                      "typeAnnotation": {
+                        "type": "TsTypeAnnotation",
+                        "span": {
+                          "start": 62,
+                          "end": 66
+                        },
+                        "typeAnnotation": {
+                          "type": "TsTypeReference",
+                          "span": {
+                            "start": 65,
+                            "end": 66
+                          },
+                          "typeName": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 65,
+                              "end": 66
+                            },
+                            "ctxt": 0,
+                            "value": "T",
+                            "optional": false
+                          },
+                          "typeParams": null
+                        }
+                      },
+                      "isAbstract": false
+                    }
+                  }
+                }
+              },
+              {
+                "type": "Parameter",
+                "span": {
+                  "start": 68,
+                  "end": 106
+                },
+                "decorators": [],
+                "pat": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 68,
+                    "end": 75
+                  },
+                  "ctxt": 0,
+                  "value": "strings",
+                  "optional": false,
+                  "typeAnnotation": {
+                    "type": "TsTypeAnnotation",
+                    "span": {
+                      "start": 75,
+                      "end": 106
+                    },
+                    "typeAnnotation": {
+                      "type": "TsUnionType",
+                      "span": {
+                        "start": 77,
+                        "end": 106
+                      },
+                      "types": [
+                        {
+                          "type": "TsTypeReference",
+                          "span": {
+                            "start": 77,
+                            "end": 97
+                          },
+                          "typeName": {
+                            "type": "Identifier",
+                            "span": {
+                              "start": 77,
+                              "end": 97
+                            },
+                            "ctxt": 0,
+                            "value": "TemplateStringsArray",
+                            "optional": false
+                          },
+                          "typeParams": null
+                        },
+                        {
+                          "type": "TsKeywordType",
+                          "span": {
+                            "start": 100,
+                            "end": 106
+                          },
+                          "kind": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ],
+            "decorators": [],
+            "span": {
+              "start": 37,
+              "end": 141
+            },
+            "ctxt": 0,
+            "body": {
+              "type": "BlockStatement",
+              "span": {
+                "start": 108,
+                "end": 141
+              },
+              "ctxt": 0,
+              "stmts": [
+                {
+                  "type": "ReturnStatement",
+                  "span": {
+                    "start": 118,
+                    "end": 135
+                  },
+                  "argument": {
+                    "type": "NewExpression",
+                    "span": {
+                      "start": 125,
+                      "end": 135
+                    },
+                    "ctxt": 0,
+                    "callee": {
+                      "type": "ThisExpression",
+                      "span": {
+                        "start": 129,
+                        "end": 133
+                      }
+                    },
+                    "arguments": [],
+                    "typeArguments": null
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "async": false,
+            "typeParameters": {
+              "type": "TsTypeParameterDeclaration",
+              "span": {
+                "start": 45,
+                "end": 48
+              },
+              "parameters": [
+                {
+                  "type": "TsTypeParameter",
+                  "span": {
+                    "start": 46,
+                    "end": 47
+                  },
+                  "name": {
+                    "type": "Identifier",
+                    "span": {
+                      "start": 46,
+                      "end": 47
+                    },
+                    "ctxt": 0,
+                    "value": "T",
+                    "optional": false
+                  },
+                  "in": false,
+                  "out": false,
+                  "const": false,
+                  "constraint": null,
+                  "default": null
+                }
+              ]
+            },
+            "returnType": null
+          },
+          "kind": "method",
+          "isStatic": true,
+          "accessibility": null,
+          "isAbstract": false,
+          "isOptional": false,
+          "isOverride": false
+        }
+      ],
+      "superClass": null,
+      "isAbstract": false,
+      "typeParams": null,
+      "superTypeParams": null,
+      "implements": []
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 145,
+        "end": 157
+      },
+      "expression": {
+        "type": "TaggedTemplateExpression",
+        "span": {
+          "start": 145,
+          "end": 156
+        },
+        "ctxt": 0,
+        "tag": {
+          "type": "MemberExpression",
+          "span": {
+            "start": 145,
+            "end": 150
+          },
+          "object": {
+            "type": "Identifier",
+            "span": {
+              "start": 145,
+              "end": 148
+            },
+            "ctxt": 0,
+            "value": "Foo",
+            "optional": false
+          },
+          "property": {
+            "type": "Identifier",
+            "span": {
+              "start": 149,
+              "end": 150
+            },
+            "value": "m"
+          }
+        },
+        "typeParameters": null,
+        "template": {
+          "type": "TemplateLiteral",
+          "span": {
+            "start": 150,
+            "end": 156
+          },
+          "expressions": [],
+          "quasis": [
+            {
+              "type": "TemplateElement",
+              "span": {
+                "start": 151,
+                "end": 155
+              },
+              "tail": true,
+              "cooked": "test",
+              "raw": "test"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 158,
+        "end": 172
+      },
+      "expression": {
+        "type": "TaggedTemplateExpression",
+        "span": {
+          "start": 158,
+          "end": 171
+        },
+        "ctxt": 0,
+        "tag": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 158,
+            "end": 165
+          },
+          "expression": {
+            "type": "MemberExpression",
+            "span": {
+              "start": 159,
+              "end": 164
+            },
+            "object": {
+              "type": "Identifier",
+              "span": {
+                "start": 159,
+                "end": 162
+              },
+              "ctxt": 0,
+              "value": "Foo",
+              "optional": false
+            },
+            "property": {
+              "type": "Identifier",
+              "span": {
+                "start": 163,
+                "end": 164
+              },
+              "value": "m"
+            }
+          }
+        },
+        "typeParameters": null,
+        "template": {
+          "type": "TemplateLiteral",
+          "span": {
+            "start": 165,
+            "end": 171
+          },
+          "expressions": [],
+          "quasis": [
+            {
+              "type": "TemplateElement",
+              "span": {
+                "start": 166,
+                "end": 170
+              },
+              "tail": true,
+              "cooked": "test",
+              "raw": "test"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

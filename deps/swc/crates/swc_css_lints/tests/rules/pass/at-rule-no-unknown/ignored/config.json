@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "at-rule-no-unknown": [
+            "error",
+            { "ignoreAtRules": ["custom", "/^my-/"] }
+        ]
+    }
+}

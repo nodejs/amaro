@@ -1,0 +1,1990 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 17,
+    "end": 663
+  },
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "span": {
+        "start": 17,
+        "end": 31
+      },
+      "ctxt": 0,
+      "kind": "var",
+      "declare": false,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "span": {
+            "start": 21,
+            "end": 30
+          },
+          "id": {
+            "type": "Identifier",
+            "span": {
+              "start": 21,
+              "end": 25
+            },
+            "ctxt": 0,
+            "value": "temp",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "TsTypeAnnotation",
+              "span": {
+                "start": 25,
+                "end": 30
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 27,
+                  "end": 30
+                },
+                "kind": "any"
+              }
+            }
+          },
+          "init": null,
+          "definite": false
+        }
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 33,
+        "end": 53
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 33,
+          "end": 52
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 33,
+            "end": 47
+          },
+          "expression": {
+            "type": "TsTypeAssertion",
+            "span": {
+              "start": 34,
+              "end": 46
+            },
+            "expression": {
+              "type": "Identifier",
+              "span": {
+                "start": 42,
+                "end": 46
+              },
+              "ctxt": 0,
+              "value": "temp",
+              "optional": false
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 35,
+                "end": 41
+              },
+              "kind": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 51,
+            "end": 52
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 54,
+        "end": 76
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 54,
+          "end": 75
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 54,
+            "end": 70
+          },
+          "expression": {
+            "type": "TsTypeAssertion",
+            "span": {
+              "start": 55,
+              "end": 69
+            },
+            "expression": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 63,
+                "end": 69
+              },
+              "operator": "--",
+              "prefix": true,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 65,
+                  "end": 69
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 56,
+                "end": 62
+              },
+              "kind": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 74,
+            "end": 75
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 77,
+        "end": 99
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 77,
+          "end": 98
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 77,
+            "end": 93
+          },
+          "expression": {
+            "type": "TsTypeAssertion",
+            "span": {
+              "start": 78,
+              "end": 92
+            },
+            "expression": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 86,
+                "end": 92
+              },
+              "operator": "++",
+              "prefix": true,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 88,
+                  "end": 92
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 79,
+                "end": 85
+              },
+              "kind": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 97,
+            "end": 98
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 100,
+        "end": 122
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 100,
+          "end": 121
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 100,
+            "end": 116
+          },
+          "expression": {
+            "type": "TsTypeAssertion",
+            "span": {
+              "start": 101,
+              "end": 115
+            },
+            "expression": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 109,
+                "end": 115
+              },
+              "operator": "--",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 109,
+                  "end": 113
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 102,
+                "end": 108
+              },
+              "kind": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 120,
+            "end": 121
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 123,
+        "end": 145
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 123,
+          "end": 144
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 123,
+            "end": 139
+          },
+          "expression": {
+            "type": "TsTypeAssertion",
+            "span": {
+              "start": 124,
+              "end": 138
+            },
+            "expression": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 132,
+                "end": 138
+              },
+              "operator": "++",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 132,
+                  "end": 136
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            },
+            "typeAnnotation": {
+              "type": "TsKeywordType",
+              "span": {
+                "start": 125,
+                "end": 131
+              },
+              "kind": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 143,
+            "end": 144
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 147,
+        "end": 174
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 147,
+          "end": 173
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 147,
+            "end": 148
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 152,
+            "end": 173
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 152,
+              "end": 168
+            },
+            "expression": {
+              "type": "TsTypeAssertion",
+              "span": {
+                "start": 153,
+                "end": 167
+              },
+              "expression": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 161,
+                  "end": 167
+                },
+                "operator": "--",
+                "prefix": true,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 163,
+                    "end": 167
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 154,
+                  "end": 160
+                },
+                "kind": "number"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 172,
+              "end": 173
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 175,
+        "end": 202
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 175,
+          "end": 201
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 175,
+            "end": 176
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 180,
+            "end": 201
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 180,
+              "end": 196
+            },
+            "expression": {
+              "type": "TsTypeAssertion",
+              "span": {
+                "start": 181,
+                "end": 195
+              },
+              "expression": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 189,
+                  "end": 195
+                },
+                "operator": "++",
+                "prefix": true,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 191,
+                    "end": 195
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 182,
+                  "end": 188
+                },
+                "kind": "number"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 200,
+              "end": 201
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 203,
+        "end": 230
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 203,
+          "end": 229
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 203,
+            "end": 204
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 208,
+            "end": 229
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 208,
+              "end": 224
+            },
+            "expression": {
+              "type": "TsTypeAssertion",
+              "span": {
+                "start": 209,
+                "end": 223
+              },
+              "expression": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 217,
+                  "end": 223
+                },
+                "operator": "--",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 217,
+                    "end": 221
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 210,
+                  "end": 216
+                },
+                "kind": "number"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 228,
+              "end": 229
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 231,
+        "end": 258
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 231,
+          "end": 257
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 231,
+            "end": 232
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 236,
+            "end": 257
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 236,
+              "end": 252
+            },
+            "expression": {
+              "type": "TsTypeAssertion",
+              "span": {
+                "start": 237,
+                "end": 251
+              },
+              "expression": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 245,
+                  "end": 251
+                },
+                "operator": "++",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 245,
+                    "end": 249
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              },
+              "typeAnnotation": {
+                "type": "TsKeywordType",
+                "span": {
+                  "start": 238,
+                  "end": 244
+                },
+                "kind": "number"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 256,
+              "end": 257
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 260,
+        "end": 279
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 260,
+          "end": 278
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 260,
+            "end": 273
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 261,
+              "end": 272
+            },
+            "operator": "void",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 266,
+                "end": 272
+              },
+              "operator": "--",
+              "prefix": true,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 268,
+                  "end": 272
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 277,
+            "end": 278
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 280,
+        "end": 299
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 280,
+          "end": 298
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 280,
+            "end": 293
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 281,
+              "end": 292
+            },
+            "operator": "void",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 286,
+                "end": 292
+              },
+              "operator": "--",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 286,
+                  "end": 290
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 297,
+            "end": 298
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 300,
+        "end": 314
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 300,
+          "end": 313
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 300,
+            "end": 308
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 301,
+              "end": 307
+            },
+            "operator": "void",
+            "argument": {
+              "type": "NumericLiteral",
+              "span": {
+                "start": 306,
+                "end": 307
+              },
+              "value": 3.0,
+              "raw": "3"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 312,
+            "end": 313
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 315,
+        "end": 334
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 315,
+          "end": 333
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 315,
+            "end": 328
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 316,
+              "end": 327
+            },
+            "operator": "void",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 321,
+                "end": 327
+              },
+              "operator": "++",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 321,
+                  "end": 325
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 332,
+            "end": 333
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 335,
+        "end": 354
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 335,
+          "end": 353
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 335,
+            "end": 348
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 336,
+              "end": 347
+            },
+            "operator": "void",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 341,
+                "end": 347
+              },
+              "operator": "--",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 341,
+                  "end": 345
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 352,
+            "end": 353
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 357,
+        "end": 381
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 357,
+          "end": 380
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 357,
+            "end": 358
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 362,
+            "end": 380
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 362,
+              "end": 375
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 363,
+                "end": 374
+              },
+              "operator": "void",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 368,
+                  "end": 374
+                },
+                "operator": "--",
+                "prefix": true,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 370,
+                    "end": 374
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 379,
+              "end": 380
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 382,
+        "end": 406
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 382,
+          "end": 405
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 382,
+            "end": 383
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 387,
+            "end": 405
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 387,
+              "end": 400
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 388,
+                "end": 399
+              },
+              "operator": "void",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 393,
+                  "end": 399
+                },
+                "operator": "--",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 393,
+                    "end": 397
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 404,
+              "end": 405
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 407,
+        "end": 426
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 407,
+          "end": 425
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 407,
+            "end": 408
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 412,
+            "end": 425
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 412,
+              "end": 420
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 413,
+                "end": 419
+              },
+              "operator": "void",
+              "argument": {
+                "type": "NumericLiteral",
+                "span": {
+                  "start": 418,
+                  "end": 419
+                },
+                "value": 3.0,
+                "raw": "3"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 424,
+              "end": 425
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 427,
+        "end": 451
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 427,
+          "end": 450
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 427,
+            "end": 428
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 432,
+            "end": 450
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 432,
+              "end": 445
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 433,
+                "end": 444
+              },
+              "operator": "void",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 438,
+                  "end": 444
+                },
+                "operator": "++",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 438,
+                    "end": 442
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 449,
+              "end": 450
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 452,
+        "end": 476
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 452,
+          "end": 475
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 452,
+            "end": 453
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 457,
+            "end": 475
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 457,
+              "end": 470
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 458,
+                "end": 469
+              },
+              "operator": "void",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 463,
+                  "end": 469
+                },
+                "operator": "--",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 463,
+                    "end": 467
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 474,
+              "end": 475
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 478,
+        "end": 494
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 478,
+          "end": 493
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 478,
+            "end": 488
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 479,
+              "end": 487
+            },
+            "operator": "~",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 481,
+                "end": 487
+              },
+              "operator": "--",
+              "prefix": true,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 483,
+                  "end": 487
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 492,
+            "end": 493
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 495,
+        "end": 511
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 495,
+          "end": 510
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 495,
+            "end": 505
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 496,
+              "end": 504
+            },
+            "operator": "~",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 498,
+                "end": 504
+              },
+              "operator": "--",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 498,
+                  "end": 502
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 509,
+            "end": 510
+          },
+          "value": 3.0,
+          "raw": "3"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 512,
+        "end": 523
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 512,
+          "end": 522
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 512,
+            "end": 517
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 513,
+              "end": 516
+            },
+            "operator": "~",
+            "argument": {
+              "type": "NumericLiteral",
+              "span": {
+                "start": 515,
+                "end": 516
+              },
+              "value": 3.0,
+              "raw": "3"
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 521,
+            "end": 522
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 524,
+        "end": 540
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 524,
+          "end": 539
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 524,
+            "end": 534
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 525,
+              "end": 533
+            },
+            "operator": "~",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 527,
+                "end": 533
+              },
+              "operator": "++",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 527,
+                  "end": 531
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 538,
+            "end": 539
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 541,
+        "end": 557
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 541,
+          "end": 556
+        },
+        "operator": "**",
+        "left": {
+          "type": "ParenthesisExpression",
+          "span": {
+            "start": 541,
+            "end": 551
+          },
+          "expression": {
+            "type": "UnaryExpression",
+            "span": {
+              "start": 542,
+              "end": 550
+            },
+            "operator": "~",
+            "argument": {
+              "type": "UpdateExpression",
+              "span": {
+                "start": 544,
+                "end": 550
+              },
+              "operator": "--",
+              "prefix": false,
+              "argument": {
+                "type": "Identifier",
+                "span": {
+                  "start": 544,
+                  "end": 548
+                },
+                "ctxt": 0,
+                "value": "temp",
+                "optional": false
+              }
+            }
+          }
+        },
+        "right": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 555,
+            "end": 556
+          },
+          "value": 4.0,
+          "raw": "4"
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 559,
+        "end": 580
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 559,
+          "end": 579
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 559,
+            "end": 560
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 564,
+            "end": 579
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 564,
+              "end": 574
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 565,
+                "end": 573
+              },
+              "operator": "~",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 567,
+                  "end": 573
+                },
+                "operator": "--",
+                "prefix": true,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 569,
+                    "end": 573
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 578,
+              "end": 579
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 581,
+        "end": 602
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 581,
+          "end": 601
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 581,
+            "end": 582
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 586,
+            "end": 601
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 586,
+              "end": 596
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 587,
+                "end": 595
+              },
+              "operator": "~",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 589,
+                  "end": 595
+                },
+                "operator": "--",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 589,
+                    "end": 593
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 600,
+              "end": 601
+            },
+            "value": 3.0,
+            "raw": "3"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 603,
+        "end": 619
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 603,
+          "end": 618
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 603,
+            "end": 604
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 608,
+            "end": 618
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 608,
+              "end": 613
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 609,
+                "end": 612
+              },
+              "operator": "~",
+              "argument": {
+                "type": "NumericLiteral",
+                "span": {
+                  "start": 611,
+                  "end": 612
+                },
+                "value": 3.0,
+                "raw": "3"
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 617,
+              "end": 618
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 620,
+        "end": 641
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 620,
+          "end": 640
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 620,
+            "end": 621
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 625,
+            "end": 640
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 625,
+              "end": 635
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 626,
+                "end": 634
+              },
+              "operator": "~",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 628,
+                  "end": 634
+                },
+                "operator": "++",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 628,
+                    "end": 632
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 639,
+              "end": 640
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 642,
+        "end": 663
+      },
+      "expression": {
+        "type": "BinaryExpression",
+        "span": {
+          "start": 642,
+          "end": 662
+        },
+        "operator": "**",
+        "left": {
+          "type": "NumericLiteral",
+          "span": {
+            "start": 642,
+            "end": 643
+          },
+          "value": 1.0,
+          "raw": "1"
+        },
+        "right": {
+          "type": "BinaryExpression",
+          "span": {
+            "start": 647,
+            "end": 662
+          },
+          "operator": "**",
+          "left": {
+            "type": "ParenthesisExpression",
+            "span": {
+              "start": 647,
+              "end": 657
+            },
+            "expression": {
+              "type": "UnaryExpression",
+              "span": {
+                "start": 648,
+                "end": 656
+              },
+              "operator": "~",
+              "argument": {
+                "type": "UpdateExpression",
+                "span": {
+                  "start": 650,
+                  "end": 656
+                },
+                "operator": "--",
+                "prefix": false,
+                "argument": {
+                  "type": "Identifier",
+                  "span": {
+                    "start": 650,
+                    "end": 654
+                  },
+                  "ctxt": 0,
+                  "value": "temp",
+                  "optional": false
+                }
+              }
+            }
+          },
+          "right": {
+            "type": "NumericLiteral",
+            "span": {
+              "start": 661,
+              "end": 662
+            },
+            "value": 4.0,
+            "raw": "4"
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}

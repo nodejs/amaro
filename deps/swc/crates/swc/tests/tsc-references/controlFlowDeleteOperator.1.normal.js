@@ -1,0 +1,19 @@
+//// [controlFlowDeleteOperator.ts]
+function f() {
+    var x = {
+        b: 1
+    };
+    x.a;
+    x.b;
+    x.a = 1;
+    x.b = 1;
+    x.a;
+    x.b;
+    delete x.a;
+    delete x.b;
+    x.a;
+    x.b;
+    x;
+    delete x; // No effect
+    x;
+}

@@ -1,0 +1,272 @@
+{
+  "type": "Script",
+  "span": {
+    "start": 1,
+    "end": 68
+  },
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 1,
+        "end": 16
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 1,
+          "end": 15
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "span": {
+            "start": 2,
+            "end": 14
+          },
+          "operator": "=",
+          "left": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 2,
+              "end": 9
+            },
+            "properties": [
+              {
+                "type": "RestElement",
+                "span": {
+                  "start": 3,
+                  "end": 8
+                },
+                "rest": {
+                  "start": 3,
+                  "end": 6
+                },
+                "argument": {
+                  "type": "ObjectPattern",
+                  "span": {
+                    "start": 6,
+                    "end": 8
+                  },
+                  "properties": [],
+                  "optional": false,
+                  "typeAnnotation": null
+                },
+                "typeAnnotation": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "right": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 12,
+              "end": 14
+            },
+            "properties": []
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 17,
+        "end": 34
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 17,
+          "end": 33
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "span": {
+            "start": 18,
+            "end": 32
+          },
+          "operator": "=",
+          "left": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 18,
+              "end": 27
+            },
+            "properties": [
+              {
+                "type": "RestElement",
+                "span": {
+                  "start": 19,
+                  "end": 26
+                },
+                "rest": {
+                  "start": 19,
+                  "end": 22
+                },
+                "argument": {
+                  "type": "ParenthesisExpression",
+                  "span": {
+                    "start": 22,
+                    "end": 26
+                  },
+                  "expression": {
+                    "type": "ObjectExpression",
+                    "span": {
+                      "start": 23,
+                      "end": 25
+                    },
+                    "properties": []
+                  }
+                },
+                "typeAnnotation": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "right": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 30,
+              "end": 32
+            },
+            "properties": []
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 35,
+        "end": 50
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 35,
+          "end": 49
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "span": {
+            "start": 36,
+            "end": 48
+          },
+          "operator": "=",
+          "left": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 36,
+              "end": 43
+            },
+            "properties": [
+              {
+                "type": "RestElement",
+                "span": {
+                  "start": 37,
+                  "end": 42
+                },
+                "rest": {
+                  "start": 37,
+                  "end": 40
+                },
+                "argument": {
+                  "type": "ArrayPattern",
+                  "span": {
+                    "start": 40,
+                    "end": 42
+                  },
+                  "elements": [],
+                  "optional": false,
+                  "typeAnnotation": null
+                },
+                "typeAnnotation": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "right": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 46,
+              "end": 48
+            },
+            "properties": []
+          }
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "span": {
+        "start": 51,
+        "end": 68
+      },
+      "expression": {
+        "type": "ParenthesisExpression",
+        "span": {
+          "start": 51,
+          "end": 67
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "span": {
+            "start": 52,
+            "end": 66
+          },
+          "operator": "=",
+          "left": {
+            "type": "ObjectPattern",
+            "span": {
+              "start": 52,
+              "end": 61
+            },
+            "properties": [
+              {
+                "type": "RestElement",
+                "span": {
+                  "start": 53,
+                  "end": 60
+                },
+                "rest": {
+                  "start": 53,
+                  "end": 56
+                },
+                "argument": {
+                  "type": "ParenthesisExpression",
+                  "span": {
+                    "start": 56,
+                    "end": 60
+                  },
+                  "expression": {
+                    "type": "ArrayExpression",
+                    "span": {
+                      "start": 57,
+                      "end": 59
+                    },
+                    "elements": []
+                  }
+                },
+                "typeAnnotation": null
+              }
+            ],
+            "optional": false,
+            "typeAnnotation": null
+          },
+          "right": {
+            "type": "ObjectExpression",
+            "span": {
+              "start": 64,
+              "end": 66
+            },
+            "properties": []
+          }
+        }
+      }
+    }
+  ],
+  "interpreter": null
+}
