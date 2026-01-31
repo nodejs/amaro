@@ -1,6 +1,7 @@
 name: "CodeQL config"
 
 paths-ignore:
-  - 'deps/swc/crates/**/tests/**'
-  - 'deps/swc/bindings/**/tests/**'
-  - 'deps/swc/bindings/**/__tests__/**'
+  - 'deps/**'
+  - 'test/**'
+  - '**/*.test.js'
+  - '**/*.test.ts'
