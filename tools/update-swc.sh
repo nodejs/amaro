@@ -71,23 +71,14 @@ mv crates "$DEPS_FOLDER/crates"
 mv tools "$DEPS_FOLDER/tools"
 
 # Remove all unused folders (using -depth to process bottom-up)
-find "$DEPS_FOLDER" -depth -type d -name "examples" -exec rm -rf {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -depth -type d -name "__tests__" -exec rm -rf {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -depth -type d -name "tests" -exec rm -rf {} + 2>/dev/null || true
-find "$DEPS_FOLDER" -depth -type d -name "benches" -exec rm -rf {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -depth -type d -name "fixture" -exec rm -rf {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -depth -type d -name "fixtures" -exec rm -rf {} + 2>/dev/null || true
 
 # Remove test files
 find "$DEPS_FOLDER" -type f -name "*test*.rs" -exec rm -f {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -type f -name "*spec*.rs" -exec rm -f {} + 2>/dev/null || true
-
-# Remove testing crates (not needed for builds)
-rm -rf "$DEPS_FOLDER/crates/testing" 2>/dev/null || true
-rm -rf "$DEPS_FOLDER/crates/testing_macros" 2>/dev/null || true
-rm -rf "$DEPS_FOLDER/crates/swc_ecma_testing" 2>/dev/null || true
-rm -rf "$DEPS_FOLDER/crates/swc_ecma_transforms_testing" 2>/dev/null || true
-rm -rf "$DEPS_FOLDER/crates/swc_plugin_backend_tests" 2>/dev/null || true
 
 echo "All done!"
 echo ""
