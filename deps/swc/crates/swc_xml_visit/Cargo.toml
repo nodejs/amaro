@@ -1,0 +1,32 @@
+[package]
+authors = [
+  "강동윤 <kdy1997.dev@gmail.com>",
+  "Alexander Akait <sheo13666q@gmail.com>",
+]
+description = "Visitor for xml"
+documentation = "https://rustdoc.swc.rs/swc_xml_visit/"
+edition = "2021"
+license = { workspace = true }
+name = "swc_xml_visit"
+repository = "https://github.com/swc-project/swc.git"
+version = "18.0.0"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+bench = false
+
+[features]
+default    = ["serde"]
+path       = []
+serde-impl = ["serde"]
+
+[dependencies]
+serde = { workspace = true, optional = true, features = ["derive"] }
+
+swc_atoms   = { version = "9.0.0", path = "../swc_atoms" }
+swc_common  = { version = "18.0.1", path = "../swc_common" }
+swc_visit   = { version = "2.0.1", path = "../swc_visit" }
+swc_xml_ast = { version = "18.0.0", path = "../swc_xml_ast" }

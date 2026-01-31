@@ -1,0 +1,30 @@
+[package]
+authors = [
+  "강동윤 <kdy1997.dev@gmail.com>",
+  "Daniel Woznicki <daniel.woznicki@gmail.com>",
+]
+description = "ESTree AST node definitions"
+documentation = "https://rustdoc.swc.rs/swc_estree_ast/"
+edition = "2021"
+license = { workspace = true }
+name = "swc_estree_ast"
+repository = "https://github.com/swc-project/swc.git"
+version = "18.0.0"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[lib]
+bench = false
+
+[features]
+default    = ["serde-impl"]
+serde-impl = ["serde"]
+
+[dependencies]
+serde      = { workspace = true, features = ["derive"], optional = true }
+serde_json = { workspace = true }
+
+better_scoped_tls = { version = "1.0.1", path = "../better_scoped_tls" }
+swc_atoms         = { version = "9.0.0", path = "../swc_atoms" }
+swc_common        = { version = "18.0.1", path = "../swc_common" }
