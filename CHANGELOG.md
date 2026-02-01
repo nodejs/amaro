@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.7](https://github.com/nodejs/amaro/compare/v1.1.6...v1.1.7) (2026-02-01)
+
+
+### Bug Fixes
+
+* keep some testing deps ([d7324ec](https://github.com/nodejs/amaro/commit/d7324ec424453a42d9de6cfd192e27df1ec8497e))
+* use detected format ([cf1e097](https://github.com/nodejs/amaro/commit/cf1e0975490823b1cf772c65c100ee82b55502c3))
+
+
+### Core
+
+* ignore codeql swc test folder ([b2a1704](https://github.com/nodejs/amaro/commit/b2a170499b7c3b112f592e44dd324b0bcdf43e1b))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.11 ([717883b](https://github.com/nodejs/amaro/commit/717883b050ab908fe7648cfdcc70d15266c12677))
+* **deps:** update deny.toml to support swc v1.15.11 ([ef34018](https://github.com/nodejs/amaro/commit/ef3401856ae1011880164655d3234b574e8bccb9))
+* remove test file from swc ([f305fd7](https://github.com/nodejs/amaro/commit/f305fd745d75bc8d1e3a955076662f7827d6f8f0))
+* update swc to v1.15.11 ([10f1d19](https://github.com/nodejs/amaro/commit/10f1d197686ae59db83d9e60be227ee835660130))
+
 ## [1.1.6](https://github.com/nodejs/amaro/compare/v1.1.5...v1.1.6) (2026-01-27)
 
 
