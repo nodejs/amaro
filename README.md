@@ -49,7 +49,11 @@ node --experimental-transform-types --import="amaro/transform" file.ts
 
 #### Type stripping in dependencies
 
-Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a `node_modules` path.
+When used as a loader, Amaro attempts to handle TypeScript files inside folders under a `node_modules` path.
+However, recent Node.js versions disallow type stripping for files under `node_modules` and throw
+`ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING`. This behavior is enforced by Node.js and changed after
+`--experimental-strip-types` was unflagged. As a result, type stripping in dependencies may not work on
+current Node.js versions when using Amaro as a loader.
 
 ### Monorepo usage
 
