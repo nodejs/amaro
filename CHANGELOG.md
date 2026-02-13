@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.8](https://github.com/nodejs/amaro/compare/v1.1.7...v1.1.8) (2026-02-13)
+
+
+### Core
+
+* document module.register bootstrap usage ([54e41ae](https://github.com/nodejs/amaro/commit/54e41ae4e7acaf9dd4b4d4a42fad07daa3ad3144))
+
+
+### Miscellaneous
+
+* **deps:** bump github/codeql-action from 4.31.11 to 4.32.0 ([6eaf6e2](https://github.com/nodejs/amaro/commit/6eaf6e246b395918f318f8706a71c55f677d8f2f))
+* **deps:** bump step-security/harden-runner from 2.14.0 to 2.14.1 ([59f14b8](https://github.com/nodejs/amaro/commit/59f14b8fe7b30fa42e1f347b8de25828e1f669b7))
+* **deps:** bump step-security/harden-runner from 2.14.1 to 2.14.2 ([c996ca6](https://github.com/nodejs/amaro/commit/c996ca65f4b060cb6667bb5fc4cd1c9f9bf613d4))
+
 ## [1.1.7](https://github.com/nodejs/amaro/compare/v1.1.6...v1.1.7) (2026-02-01)
 
 
