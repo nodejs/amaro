@@ -69,7 +69,8 @@ For transform mode, swap `amaro/strip` with `amaro/transform` and run Node with 
 
 #### Type stripping in dependencies
 
-Contrary to the Node.js [TypeScript support](https://nodejs.org/docs/latest/api/typescript.html#type-stripping-in-dependencies), when used as a loader, Amaro handles TypeScript files inside folders under a `node_modules` path.
+When used as a loader, Amaro still relies on Node.js module loading. For this reason when trying to execute files under `node_modules` it throws
+`ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING`. As a result, type stripping in dependencies does not work.
 
 ### Monorepo usage
 
