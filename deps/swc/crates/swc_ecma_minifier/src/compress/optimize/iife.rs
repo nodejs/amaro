@@ -3,7 +3,10 @@ use std::{collections::HashMap, mem::swap};
 use rustc_hash::FxHashMap;
 use swc_common::{util::take::Take, Span, Spanned, SyntaxContext, DUMMY_SP};
 use swc_ecma_ast::*;
-use swc_ecma_utils::{contains_arguments, contains_this_expr, find_pat_ids, ExprFactory};
+use swc_ecma_transforms_base::rename::contains_eval;
+use swc_ecma_utils::{
+    contains_arguments, contains_ident_ref, contains_this_expr, find_pat_ids, ExprExt, ExprFactory,
+};
 use swc_ecma_visit::{noop_visit_type, Visit, VisitMutWith, VisitWith};
 
 use super::{util::NormalMultiReplacer, BitCtx, Optimizer};
@@ -184,9 +187,23 @@ impl Optimizer<'_> {
             }
         }
 
+        let has_named_fn = matches!(&*callee, Expr::Fn(FnExpr { ident: Some(_), .. }));
+
         let params = find_params(callee);
         if let Some(mut params) = params {
             let mut vars = HashMap::default();
+            let param_idents: Vec<Option<Ident>> = params
+                .iter()
+                .map(|param| match &**param {
+                    Pat::Ident(id) => Some(id.id.clone()),
+                    Pat::Assign(assign) => match &*assign.left {
+                        Pat::Ident(id) => Some(id.id.clone()),
+                        _ => None,
+                    },
+                    _ => None,
+                })
+                .collect();
+
             // We check for parameter and argument
             for (idx, param) in params.iter_mut().enumerate() {
                 match &mut **param {
@@ -236,6 +253,83 @@ impl Optimizer<'_> {
 
                             vars.insert(param.take().to_id(), Expr::undefined(span));
                         }
+                    }
+
+                    Pat::Assign(assign_pat) => {
+                        let Pat::Ident(param_id) = &mut *assign_pat.left else {
+                            continue;
+                        };
+
+                        if param_id.sym == "arguments" {
+                            continue;
+                        }
+
+                        let Some(usage) = self.data.vars.get(&param_id.to_id()) else {
+                            continue;
+                        };
+                        if usage.flags.contains(VarUsageInfoFlags::REASSIGNED)
+                            || usage.ref_count != 0
+                        {
+                            continue;
+                        }
+
+                        // Removing default parameters can change `.length` for named functions.
+                        if has_named_fn {
+                            continue;
+                        }
+
+                        if let Some(arg) = e.args.get_mut(idx).map(|v| &mut v.expr) {
+                            match &**arg {
+                                Expr::Lit(Lit::Regex(..)) => continue,
+                                Expr::Lit(Lit::Str(s)) if s.value.len() > 3 => continue,
+                                Expr::Lit(..) => {}
+                                _ => continue,
+                            }
+
+                            if self.can_be_inlined_for_iife(arg) {
+                                trace_op!(
+                                    "iife: Trying to inline default param argument ({}{:?})",
+                                    param_id.id.sym,
+                                    param_id.id.ctxt
+                                );
+                                vars.insert(param_id.to_id(), arg.take());
+                                param.take();
+                            } else {
+                                trace_op!(
+                                    "iife: Trying to inline default param argument ({}{:?}) (not \
+                                     inlinable)",
+                                    param_id.id.sym,
+                                    param_id.id.ctxt
+                                );
+                            }
+                            continue;
+                        }
+
+                        if assign_pat.right.may_have_side_effects(self.ctx.expr_ctx) {
+                            continue;
+                        }
+
+                        // `b = a` depends on parameter evaluation order. We only inline
+                        // defaults that are independent of earlier parameters.
+                        let references_earlier_param =
+                            param_idents.iter().take(idx).any(|earlier_param| {
+                                let Some(earlier_param) = earlier_param else {
+                                    return true;
+                                };
+
+                                contains_ident_ref(&*assign_pat.right, earlier_param)
+                            });
+                        if references_earlier_param {
+                            continue;
+                        }
+
+                        trace_op!(
+                            "iife: Trying to inline default param value ({}{:?})",
+                            param_id.id.sym,
+                            param_id.id.ctxt
+                        );
+                        vars.insert(param_id.to_id(), Box::new((*assign_pat.right).clone()));
+                        param.take();
                     }
 
                     Pat::Rest(rest_pat) => {
@@ -344,21 +438,6 @@ impl Optimizer<'_> {
             _ => panic!("unable to access unknown nodes"),
         };
 
-        if let Expr::Fn(FnExpr {
-            ident: Some(ident), ..
-        }) = callee
-        {
-            if self
-                .data
-                .vars
-                .get(&ident.to_id())
-                .filter(|usage| usage.flags.contains(VarUsageInfoFlags::USED_RECURSIVELY))
-                .is_some()
-            {
-                return;
-            }
-        }
-
         if let Expr::Fn(FnExpr { function, .. }) = callee {
             if let Some(body) = function.body.as_ref() {
                 if contains_arguments(body) {
@@ -367,9 +446,14 @@ impl Optimizer<'_> {
             }
         }
 
+        if contains_eval(callee, false) {
+            return;
+        }
+
         let mut removed = Vec::new();
         let params = find_params(callee);
-        if let Some(mut params) = params {
+
+        let params = if let Some(mut params) = params {
             // We check for parameter and argument
             for (idx, param) in params.iter_mut().enumerate() {
                 if let Pat::Ident(param) = &mut **param {
@@ -381,13 +465,10 @@ impl Optimizer<'_> {
                 }
             }
 
-            if removed.is_empty() {
-                log_abort!("`removed` is empty");
-                return;
-            }
+            params
         } else {
             return;
-        }
+        };
 
         for idx in removed {
             if let Some(arg) = e.args.get_mut(idx) {
@@ -411,6 +492,20 @@ impl Optimizer<'_> {
                 }
             } else {
                 break;
+            }
+        }
+
+        if e.args.len() > params.len() && !params.iter().any(|p| p.is_rest()) {
+            for i in (params.len()..e.args.len()).rev() {
+                if let Some(arg) = e.args.get_mut(i) {
+                    let new = self.ignore_return_value(&mut arg.expr);
+
+                    if let Some(new) = new {
+                        arg.expr = Box::new(new);
+                    } else {
+                        e.args.remove(i);
+                    }
+                }
             }
         }
     }
