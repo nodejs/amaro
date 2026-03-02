@@ -1824,13 +1824,10 @@ fn jsx_text_to_str_with_entity_mask(t: &str, entity_mask: &[bool]) -> Atom {
     let chars: Vec<char> = t.chars().collect();
     let has_line_terminator = chars.iter().any(|&c| is_line_terminator(c));
 
-    let has_trimmable_leading = chars
-        .first()
-        .is_some_and(|&c| is_white_space_single_line(c) && !entity_mask.first().unwrap_or(&false));
-
-    // For single-line text, we keep trailing whitespace (matching original
-    // behavior)
-    if !t.is_empty() && !has_line_terminator && !has_trimmable_leading {
+    // For single-line text, we keep all whitespace (matching original behavior)
+    // The original jsx_text_to_str_impl preserves leading/trailing whitespace on
+    // single-line text
+    if !t.is_empty() && !has_line_terminator {
         return t.into();
     }
 
@@ -1838,6 +1835,8 @@ fn jsx_text_to_str_with_entity_mask(t: &str, entity_mask: &[bool]) -> Atom {
     let mut only_line: Option<String> = None;
     let mut line_start: Option<usize> = Some(0);
     let mut line_end: Option<usize> = None;
+    // The first line preserves leading whitespace; subsequent lines trim it.
+    let mut is_first_line = true;
 
     for (char_idx, c) in chars.iter().enumerate() {
         let is_from_entity = *entity_mask.get(char_idx).unwrap_or(&false);
@@ -1846,9 +1845,11 @@ fn jsx_text_to_str_with_entity_mask(t: &str, entity_mask: &[bool]) -> Atom {
             // Process current line - trim both leading AND trailing (intermediate
             // line)
             if let (Some(start), Some(end)) = (line_start, line_end) {
-                let line_text = extract_line_content(&chars, start, end, entity_mask, true, true);
+                let line_text =
+                    extract_line_content(&chars, start, end, entity_mask, !is_first_line, true);
                 add_line_of_jsx_text_owned(line_text, &mut acc, &mut only_line);
             }
+            is_first_line = false;
             line_start = None;
             line_end = None;
         } else if !is_white_space_single_line(*c) || is_from_entity {
@@ -1860,11 +1861,17 @@ fn jsx_text_to_str_with_entity_mask(t: &str, entity_mask: &[bool]) -> Atom {
         }
     }
 
-    // Handle final line - only trim leading, keep trailing (matching original
-    // behavior)
+    // Handle final line. Leading whitespace is preserved only if this is still
+    // the first line (single-line input).
     if let Some(start) = line_start {
-        // For final line, take from first non-whitespace (or entity) to end of string
-        let line_text = extract_line_content(&chars, start, chars.len(), entity_mask, true, false);
+        let line_text = extract_line_content(
+            &chars,
+            start,
+            chars.len(),
+            entity_mask,
+            !is_first_line,
+            false,
+        );
         add_line_of_jsx_text_owned(line_text, &mut acc, &mut only_line);
     }
 
