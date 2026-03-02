@@ -116,8 +116,9 @@ impl<I: Tokens> Parser<I> {
                         // For `<T,>`: decl.span.hi - param.span.hi > 1 (`,` and `>`)
                         let has_trailing_comma =
                             type_parameters.span.hi.0 - single_param.span.hi.0 > 1;
-                        let dominated_by_jsx =
-                            single_param.constraint.is_none() && !has_trailing_comma;
+                        let dominated_by_jsx = single_param.constraint.is_none()
+                            && single_param.default.is_none()
+                            && !has_trailing_comma;
 
                         if dominated_by_jsx {
                             return Ok(None);
@@ -2521,9 +2522,10 @@ impl<I: Tokens> Parser<I> {
                         return Ok(id.into());
                     }
 
+                    let token = p.input().cur();
                     let ident = p.parse_binding_ident(false)?;
                     if p.input().syntax().typescript()
-                        && ident.sym == "as"
+                        && token == Token::As
                         && !p.input().is(Token::Arrow)
                     {
                         // async as type

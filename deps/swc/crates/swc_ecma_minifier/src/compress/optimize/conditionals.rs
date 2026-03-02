@@ -112,6 +112,14 @@ impl Optimizer<'_> {
             return;
         }
 
+        // we must inline first to avoid https://github.com/swc-project/swc/issues/11517
+        stmts
+            .iter_mut()
+            .filter_map(|s| s.as_stmt_mut().and_then(|s| s.as_mut_if_stmt()))
+            .for_each(|s| {
+                self.changed |= self.vars.inline_with_multi_replacer(s);
+            });
+
         let has_work =
             stmts
                 .windows(2)
@@ -142,7 +150,6 @@ impl Optimizer<'_> {
 
                             match &mut cur {
                                 Some(cur_if) => {
-                                    // If cons is same, we merge conditions.
                                     if SyntaxContext::within_ignored_ctxt(|| {
                                         cur_if.cons.eq_ignore_span(&stmt.cons)
                                     }) {
