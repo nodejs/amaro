@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.8](https://github.com/nodejs/amaro/compare/v1.1.7...v1.1.8) (2026-03-07)
+
+
+### Core
+
+* document module.register bootstrap usage ([54e41ae](https://github.com/nodejs/amaro/commit/54e41ae4e7acaf9dd4b4d4a42fad07daa3ad3144))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.18 ([d1b7913](https://github.com/nodejs/amaro/commit/d1b7913e6637e8e59e6701f1d6bbc16f21c11e53))
+* **deps:** bump actions/upload-artifact from 6.0.0 to 7.0.0 ([ae100d5](https://github.com/nodejs/amaro/commit/ae100d5b05e6f5eb1b13772dec2d6789455e5797))
+* **deps:** bump github/codeql-action from 4.31.11 to 4.32.0 ([6eaf6e2](https://github.com/nodejs/amaro/commit/6eaf6e246b395918f318f8706a71c55f677d8f2f))
+* **deps:** bump github/codeql-action from 4.32.0 to 4.32.4 ([fe485f3](https://github.com/nodejs/amaro/commit/fe485f344ae2070fa49a7fbf4e8a447fcf7c96f1))
+* **deps:** bump step-security/harden-runner from 2.14.0 to 2.14.1 ([59f14b8](https://github.com/nodejs/amaro/commit/59f14b8fe7b30fa42e1f347b8de25828e1f669b7))
+* **deps:** bump step-security/harden-runner from 2.14.1 to 2.14.2 ([c996ca6](https://github.com/nodejs/amaro/commit/c996ca65f4b060cb6667bb5fc4cd1c9f9bf613d4))
+* **deps:** bump step-security/harden-runner from 2.14.2 to 2.15.0 ([7b02116](https://github.com/nodejs/amaro/commit/7b02116191f313226e33e94cf7dc9926dbbc7e49))
+* update swc to v1.15.18 ([f5f0229](https://github.com/nodejs/amaro/commit/f5f02290c24feac3ca214e43577b04907e151694))
+
 ## [1.1.7](https://github.com/nodejs/amaro/compare/v1.1.6...v1.1.7) (2026-02-01)
 
 
