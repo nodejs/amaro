@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.9](https://github.com/nodejs/amaro/compare/v1.1.8...v1.1.9) (2026-03-10)
+
+
+### Miscellaneous
+
+* **deps:** bump actions/setup-node from 6.2.0 to 6.3.0 ([b4b9d53](https://github.com/nodejs/amaro/commit/b4b9d53753e61ecfd288f732a70c442e70447381))
+* **deps:** bump docker/setup-buildx-action from 3.12.0 to 4.0.0 ([f39649c](https://github.com/nodejs/amaro/commit/f39649c298d3d59e083ed69fba7f8f58162ac8b1))
+* **deps:** bump step-security/harden-runner from 2.15.0 to 2.15.1 ([1037205](https://github.com/nodejs/amaro/commit/1037205427fcebd54aecf942688e6c0aff742273))
+
 ## [1.1.8](https://github.com/nodejs/amaro/compare/v1.1.7...v1.1.8) (2026-03-07)
 
 
