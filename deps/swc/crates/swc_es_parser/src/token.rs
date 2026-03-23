@@ -72,6 +72,19 @@ pub enum TokenValue {
     Str(Atom),
     /// Numeric literal value.
     Num(f64),
+    /// BigInt literal value.
+    BigInt(Atom),
+}
+
+/// Additional token metadata used during parsing.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub struct TokenFlags {
+    /// `true` if the token text contained an escape sequence.
+    pub escaped: bool,
+    /// `true` if the token contained a legacy octal escape.
+    pub contains_legacy_octal_escape: bool,
+    /// `true` if the token contained an invalid escape.
+    pub contains_invalid_escape: bool,
 }
 
 /// Token kind.
@@ -89,13 +102,17 @@ pub enum TokenKind {
     Comma,
     Dot,
     DotDotDot,
+    At,
+    Hash,
     Colon,
     Question,
+    QuestionDot,
     BackQuote,
 
     Plus,
     Minus,
     Star,
+    StarStar,
     Slash,
     Percent,
     Bang,
@@ -112,6 +129,7 @@ pub enum TokenKind {
     PlusEq,
     MinusEq,
     StarEq,
+    StarStarEq,
     SlashEq,
     PercentEq,
     AmpEq,
@@ -124,6 +142,12 @@ pub enum TokenKind {
     NotEqEq,
     LtEq,
     GtEq,
+    LtLt,
+    LtLtEq,
+    GtGt,
+    GtGtEq,
+    GtGtGt,
+    GtGtGtEq,
     AndAnd,
     OrOr,
     AndAndEq,
@@ -134,7 +158,9 @@ pub enum TokenKind {
 
     Ident,
     Str,
+    Template,
     Num,
+    BigInt,
     Keyword(Keyword),
 }
 
@@ -149,6 +175,8 @@ pub struct Token {
     pub had_line_break_before: bool,
     /// Optional token payload.
     pub value: Option<TokenValue>,
+    /// Additional metadata for semantic validation.
+    pub flags: TokenFlags,
 }
 
 impl Token {
@@ -159,6 +187,7 @@ impl Token {
             span,
             had_line_break_before,
             value: None,
+            flags: TokenFlags::default(),
         }
     }
 }

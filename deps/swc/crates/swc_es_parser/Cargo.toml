@@ -19,6 +19,8 @@ typescript = []
 [dependencies]
 bitflags   = { workspace = true }
 serde      = { workspace = true, features = ["derive"] }
+seq-macro  = { workspace = true }
+unicode-id-start = { workspace = true }
 
 swc_atoms  = { version = "9.0.0", path = "../swc_atoms" }
 swc_common = { version = "19.0.0", path = "../swc_common" }
@@ -27,11 +29,17 @@ swc_es_ast = { version = "0.1.0", path = "../swc_es_ast" }
 [dev-dependencies]
 codspeed-criterion-compat = { workspace = true }
 swc_es_ast = { version = "0.1.0", path = "../swc_es_ast", features = ["serde-impl"] }
+swc_es_visit = { version = "0.1.0", path = "../swc_es_visit" }
 testing = { version = "20.0.0", path = "../testing" }
 walkdir = { workspace = true }
+serde_json = { workspace = true }
 
-swc_malloc = { version = "1.2.4", path = "../swc_malloc" }
+swc_malloc = { version = "1.2.5", path = "../swc_malloc" }
 
 [[bench]]
 harness = false
 name    = "parser"
+
+[[bench]]
+harness = false
+name    = "lexer"

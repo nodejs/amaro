@@ -7,7 +7,7 @@ include       = ["Cargo.toml", "src/**/*.rs", "examples/**/*.rs"]
 license       = { workspace = true }
 name          = "swc_ecma_parser"
 repository    = { workspace = true }
-version       = "35.0.0"
+version       = "36.0.0"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -23,6 +23,7 @@ unexpected_cfgs = { level = "warn", check-cfg = ['cfg(swc_ast_unknown)'] }
 # Used for debugging
 debug         = ["tracing-spans"]
 default       = ["typescript", "stacker"]
+flow          = ["typescript"]
 tracing-spans = []
 typescript    = []
 unstable      = []
@@ -59,7 +60,7 @@ swc_ecma_ast = { version = "21.0.0", path = "../swc_ecma_ast", features = [
   "encoding-impl",
 ] }
 swc_ecma_visit = { version = "21.0.0", path = "../swc_ecma_visit" }
-swc_malloc = { version = "1.2.4", path = "../swc_malloc" }
+swc_malloc = { version = "1.2.5", path = "../swc_malloc" }
 testing = { version = "20.0.0", path = "../testing" }
 
 [[example]]

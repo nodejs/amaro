@@ -11,5 +11,8 @@ bitflags::bitflags! {
         const IN_GENERATOR = 1 << 6;
         const IN_TYPE = 1 << 7;
         const TOP_LEVEL = 1 << 8;
+        const IN_FOR_HEAD = 1 << 9;
+        const IN_DECLARE = 1 << 10;
+        const ALLOW_DIRECT_SUPER = 1 << 11;
     }
 }
