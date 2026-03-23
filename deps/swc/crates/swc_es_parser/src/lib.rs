@@ -27,11 +27,9 @@ pub fn parse_file_as_program(
     comments: Option<&dyn Comments>,
     recovered_errors: &mut Vec<Error>,
 ) -> PResult<ParsedProgram> {
-    let lexer = Lexer::new(syntax, SourceFileInput::from(fm), comments);
-    let mut parser = Parser::new_from(lexer);
-    let result = parser.parse_program();
-    recovered_errors.extend(parser.take_errors());
-    result
+    with_file_parser(fm, syntax, comments, recovered_errors, |parser| {
+        parser.parse_program()
+    })
 }
 
 /// Parses a file as module.
@@ -41,11 +39,9 @@ pub fn parse_file_as_module(
     comments: Option<&dyn Comments>,
     recovered_errors: &mut Vec<Error>,
 ) -> PResult<ParsedProgram> {
-    let lexer = Lexer::new(syntax, SourceFileInput::from(fm), comments);
-    let mut parser = Parser::new_from(lexer);
-    let result = parser.parse_module();
-    recovered_errors.extend(parser.take_errors());
-    result
+    with_file_parser(fm, syntax, comments, recovered_errors, |parser| {
+        parser.parse_module()
+    })
 }
 
 /// Parses a file as script.
@@ -55,9 +51,21 @@ pub fn parse_file_as_script(
     comments: Option<&dyn Comments>,
     recovered_errors: &mut Vec<Error>,
 ) -> PResult<ParsedProgram> {
+    with_file_parser(fm, syntax, comments, recovered_errors, |parser| {
+        parser.parse_script()
+    })
+}
+
+fn with_file_parser<T>(
+    fm: &SourceFile,
+    syntax: Syntax,
+    comments: Option<&dyn Comments>,
+    recovered_errors: &mut Vec<Error>,
+    op: impl for<'aa> FnOnce(&mut Parser<'aa>) -> PResult<T>,
+) -> PResult<T> {
     let lexer = Lexer::new(syntax, SourceFileInput::from(fm), comments);
     let mut parser = Parser::new_from(lexer);
-    let result = parser.parse_script();
-    recovered_errors.extend(parser.take_errors());
+    let result = op(&mut parser);
+    recovered_errors.append(&mut parser.take_errors());
     result
 }

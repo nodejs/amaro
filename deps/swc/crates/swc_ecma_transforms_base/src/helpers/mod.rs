@@ -379,6 +379,7 @@ define_helpers!(Helpers {
         set_prototype_of,
         is_native_function
     ),
+    wrap_reg_exp: (inherits, set_prototype_of),
     write_only_error: (),
 
     class_private_field_destructure: (
@@ -414,6 +415,7 @@ define_helpers!(Helpers {
     ts_rewrite_relative_import_extension: (),
 
     apply_decs_2203_r: (),
+    apply_decs_2311: (),
     identity: (),
     dispose: (),
     using: (),
