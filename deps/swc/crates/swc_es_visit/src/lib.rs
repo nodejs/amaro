@@ -289,6 +289,40 @@ where
             }
             visitor.visit_stmt(store, for_stmt.body);
         }
+        Stmt::DoWhile(do_while) => {
+            visitor.visit_stmt(store, do_while.body);
+            visitor.visit_expr(store, do_while.test);
+        }
+        Stmt::Switch(switch_stmt) => {
+            visitor.visit_expr(store, switch_stmt.discriminant);
+            for case in &switch_stmt.cases {
+                if let Some(test) = case.test {
+                    visitor.visit_expr(store, test);
+                }
+                for stmt in &case.cons {
+                    visitor.visit_stmt(store, *stmt);
+                }
+            }
+        }
+        Stmt::Try(try_stmt) => {
+            visitor.visit_stmt(store, try_stmt.block);
+            if let Some(handler) = &try_stmt.handler {
+                if let Some(param) = handler.param {
+                    visitor.visit_pat(store, param);
+                }
+                visitor.visit_stmt(store, handler.body);
+            }
+            if let Some(finalizer) = try_stmt.finalizer {
+                visitor.visit_stmt(store, finalizer);
+            }
+        }
+        Stmt::Throw(throw_stmt) => visitor.visit_expr(store, throw_stmt.arg),
+        Stmt::With(with_stmt) => {
+            visitor.visit_expr(store, with_stmt.obj);
+            visitor.visit_stmt(store, with_stmt.body);
+        }
+        Stmt::Break(_) | Stmt::Continue(_) | Stmt::Debugger(_) => {}
+        Stmt::Labeled(labeled) => visitor.visit_stmt(store, labeled.body),
         Stmt::Decl(decl) => visitor.visit_decl(store, *decl),
         Stmt::ModuleDecl(module_decl) => visitor.visit_module_decl(store, *module_decl),
     }
@@ -322,6 +356,24 @@ where
             }
         }
         Decl::TsTypeAlias(alias) => visitor.visit_ts_type(store, alias.ty),
+        Decl::Class(class_decl) => visitor.visit_class(store, class_decl.class),
+        Decl::TsInterface(interface_decl) => {
+            for member in &interface_decl.body {
+                walk_ts_type_member(visitor, store, member);
+            }
+        }
+        Decl::TsEnum(enum_decl) => {
+            for member in &enum_decl.members {
+                if let Some(init) = member.init {
+                    visitor.visit_expr(store, init);
+                }
+            }
+        }
+        Decl::TsModule(module_decl) => {
+            if let Some(body) = &module_decl.body {
+                walk_ts_namespace_body(visitor, store, body);
+            }
+        }
     }
 }
 
@@ -343,6 +395,26 @@ where
                 visitor.visit_pat(store, *elem);
             }
         }
+        Pat::Object(object_pat) => {
+            for prop in &object_pat.props {
+                match prop {
+                    swc_es_ast::ObjectPatProp::KeyValue(key_value) => {
+                        if let swc_es_ast::PropName::Computed(expr) = &key_value.key {
+                            visitor.visit_expr(store, *expr);
+                        }
+                        visitor.visit_pat(store, key_value.value);
+                    }
+                    swc_es_ast::ObjectPatProp::Assign(assign) => {
+                        if let Some(value) = assign.value {
+                            visitor.visit_expr(store, value);
+                        }
+                    }
+                    swc_es_ast::ObjectPatProp::Rest(rest) => {
+                        visitor.visit_pat(store, rest.arg);
+                    }
+                }
+            }
+        }
         Pat::Rest(rest) => visitor.visit_pat(store, rest.arg),
         Pat::Assign(assign) => {
             visitor.visit_pat(store, assign.left);
@@ -362,13 +434,20 @@ where
     visitor.visit_expr_node(store, node);
 
     match node {
-        Expr::Ident(_) | Expr::Lit(_) => {}
+        Expr::Ident(_) | Expr::Lit(_) | Expr::MetaProp(_) => {}
         Expr::Function(function) => visitor.visit_function(store, *function),
         Expr::Class(class) => visitor.visit_class(store, *class),
         Expr::JSXElement(jsx_element) => visitor.visit_jsx_element(store, *jsx_element),
         Expr::TsAs(ts_as) => {
             visitor.visit_expr(store, ts_as.expr);
             visitor.visit_ts_type(store, ts_as.ty);
+        }
+        Expr::TsNonNull(ts_non_null) => {
+            visitor.visit_expr(store, ts_non_null.expr);
+        }
+        Expr::TsSatisfies(ts_satisfies) => {
+            visitor.visit_expr(store, ts_satisfies.expr);
+            visitor.visit_ts_type(store, ts_satisfies.ty);
         }
         Expr::Array(array) => {
             for elem in array.elems.iter().flatten() {
@@ -400,10 +479,60 @@ where
         }
         Expr::Member(member) => {
             visitor.visit_expr(store, member.obj);
-            if let swc_es_ast::MemberProp::Computed(prop) = &member.prop {
-                visitor.visit_expr(store, *prop);
+            match &member.prop {
+                swc_es_ast::MemberProp::Computed(prop) => visitor.visit_expr(store, *prop),
+                swc_es_ast::MemberProp::Ident(_) | swc_es_ast::MemberProp::Private(_) => {}
             }
         }
+        Expr::Cond(cond) => {
+            visitor.visit_expr(store, cond.test);
+            visitor.visit_expr(store, cond.cons);
+            visitor.visit_expr(store, cond.alt);
+        }
+        Expr::Seq(seq) => {
+            for expr in &seq.exprs {
+                visitor.visit_expr(store, *expr);
+            }
+        }
+        Expr::New(new_expr) => {
+            visitor.visit_expr(store, new_expr.callee);
+            for arg in &new_expr.args {
+                visitor.visit_expr(store, arg.expr);
+            }
+        }
+        Expr::Update(update) => visitor.visit_expr(store, update.arg),
+        Expr::Await(await_expr) => visitor.visit_expr(store, await_expr.arg),
+        Expr::Arrow(arrow) => {
+            for param in &arrow.params {
+                visitor.visit_pat(store, *param);
+            }
+            match &arrow.body {
+                swc_es_ast::ArrowBody::Expr(expr) => visitor.visit_expr(store, *expr),
+                swc_es_ast::ArrowBody::Block(stmts) => {
+                    for stmt in stmts {
+                        visitor.visit_stmt(store, *stmt);
+                    }
+                }
+            }
+        }
+        Expr::Template(template) => {
+            for expr in &template.exprs {
+                visitor.visit_expr(store, *expr);
+            }
+        }
+        Expr::Yield(yield_expr) => {
+            if let Some(arg) = yield_expr.arg {
+                visitor.visit_expr(store, arg);
+            }
+        }
+        Expr::TaggedTemplate(tagged) => {
+            visitor.visit_expr(store, tagged.tag);
+            for expr in &tagged.template.exprs {
+                visitor.visit_expr(store, *expr);
+            }
+        }
+        Expr::OptChain(chain) => visitor.visit_expr(store, chain.base),
+        Expr::Paren(paren) => visitor.visit_expr(store, paren.expr),
     }
 }
 
@@ -418,7 +547,14 @@ where
     visitor.visit_module_decl_node(store, node);
 
     match node {
-        ModuleDecl::Import(_) => {}
+        ModuleDecl::Import(import_decl) => {
+            for attr in &import_decl.with {
+                match &attr.key {
+                    swc_es_ast::ImportAttributeName::Ident(_) => {}
+                    swc_es_ast::ImportAttributeName::Str(_) => {}
+                }
+            }
+        }
         ModuleDecl::ExportNamed(named) => {
             if let Some(decl) = named.decl {
                 visitor.visit_decl(store, decl);
@@ -427,6 +563,8 @@ where
         ModuleDecl::ExportDefaultExpr(default_expr) => {
             visitor.visit_expr(store, default_expr.expr);
         }
+        ModuleDecl::ExportDefaultDecl(default_decl) => visitor.visit_decl(store, default_decl.decl),
+        ModuleDecl::ExportAll(_) => {}
         ModuleDecl::ExportDecl(export_decl) => visitor.visit_decl(store, export_decl.decl),
     }
 }
@@ -442,6 +580,9 @@ where
     visitor.visit_function_node(store, node);
 
     for param in &node.params {
+        for decorator in &param.decorators {
+            visitor.visit_expr(store, decorator.expr);
+        }
         visitor.visit_pat(store, param.pat);
     }
     for stmt in &node.body {
@@ -458,6 +599,10 @@ where
         return;
     };
     visitor.visit_class_node(store, node);
+
+    for decorator in &node.decorators {
+        visitor.visit_expr(store, decorator.expr);
+    }
 
     if let Some(super_class) = node.super_class {
         visitor.visit_expr(store, super_class);
@@ -478,10 +623,29 @@ where
     visitor.visit_class_member_node(store, node);
 
     match node {
-        ClassMember::Method(method) => visitor.visit_function(store, method.function),
+        ClassMember::Method(method) => {
+            for decorator in &method.decorators {
+                visitor.visit_expr(store, decorator.expr);
+            }
+            if let swc_es_ast::PropName::Computed(expr) = &method.key {
+                visitor.visit_expr(store, *expr);
+            }
+            visitor.visit_function(store, method.function);
+        }
         ClassMember::Prop(prop) => {
+            for decorator in &prop.decorators {
+                visitor.visit_expr(store, decorator.expr);
+            }
+            if let swc_es_ast::PropName::Computed(expr) = &prop.key {
+                visitor.visit_expr(store, *expr);
+            }
             if let Some(value) = prop.value {
                 visitor.visit_expr(store, value);
+            }
+        }
+        ClassMember::StaticBlock(block) => {
+            for stmt in &block.body {
+                visitor.visit_stmt(store, *stmt);
             }
         }
     }
@@ -517,7 +681,12 @@ where
     visitor.visit_ts_type_node(store, node);
 
     match node {
-        TsType::Keyword(_) | TsType::Lit(_) | TsType::TypeLit(_) => {}
+        TsType::Keyword(_) | TsType::Lit(_) => {}
+        TsType::TypeLit(type_lit) => {
+            for member in &type_lit.members {
+                walk_ts_type_member(visitor, store, member);
+            }
+        }
         TsType::TypeRef(reference) => {
             for arg in &reference.type_args {
                 visitor.visit_ts_type(store, *arg);
@@ -548,5 +717,66 @@ where
             }
             visitor.visit_ts_type(store, function.return_type);
         }
+        TsType::Conditional(conditional) => {
+            visitor.visit_ts_type(store, conditional.check_type);
+            visitor.visit_ts_type(store, conditional.extends_type);
+            visitor.visit_ts_type(store, conditional.true_type);
+            visitor.visit_ts_type(store, conditional.false_type);
+        }
+        TsType::IndexedAccess(indexed) => {
+            visitor.visit_ts_type(store, indexed.obj_type);
+            visitor.visit_ts_type(store, indexed.index_type);
+        }
+        TsType::TypeOperator(operator) => visitor.visit_ts_type(store, operator.ty),
+        TsType::Infer(_) => {}
+        TsType::Import(import_type) => {
+            for arg in &import_type.type_args {
+                visitor.visit_ts_type(store, *arg);
+            }
+        }
+        TsType::TypeQuery(type_query) => {
+            for arg in &type_query.type_args {
+                visitor.visit_ts_type(store, *arg);
+            }
+        }
+        TsType::Mapped(mapped) => {
+            visitor.visit_ts_type(store, mapped.constraint);
+            if let Some(ty) = mapped.ty {
+                visitor.visit_ts_type(store, ty);
+            }
+        }
+    }
+}
+
+fn walk_ts_namespace_body<V>(visitor: &mut V, store: &AstStore, body: &swc_es_ast::TsNamespaceBody)
+where
+    V: Visit + ?Sized,
+{
+    match body {
+        swc_es_ast::TsNamespaceBody::ModuleBlock(stmts) => {
+            for stmt in stmts {
+                visitor.visit_stmt(store, *stmt);
+            }
+        }
+        swc_es_ast::TsNamespaceBody::Namespace(namespace_decl) => {
+            walk_ts_namespace_body(visitor, store, &namespace_decl.body);
+        }
+    }
+}
+
+fn walk_ts_type_member<V>(visitor: &mut V, store: &AstStore, member: &swc_es_ast::TsTypeMember)
+where
+    V: Visit + ?Sized,
+{
+    if let Some(swc_es_ast::PropName::Computed(expr)) = &member.name {
+        visitor.visit_expr(store, *expr);
+    }
+    for param in &member.params {
+        if let Some(ty) = param.ty {
+            visitor.visit_ts_type(store, ty);
+        }
+    }
+    if let Some(ty) = member.ty {
+        visitor.visit_ts_type(store, ty);
     }
 }

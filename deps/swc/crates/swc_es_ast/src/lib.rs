@@ -13,36 +13,54 @@ pub extern crate cbor4ii;
 pub use swc_arena::Id;
 
 pub use crate::{
-    class::{Class, ClassMember, ClassMethod, ClassProp, MethodKind},
-    decl::{Decl, FnDecl, TsTypeAliasDecl, VarDecl, VarDeclKind, VarDeclarator},
+    class::{Class, ClassMember, ClassMethod, ClassProp, ClassStaticBlock, MethodKind},
+    decl::{
+        ClassDecl, Decl, FnDecl, TsEnumDecl, TsEnumMember, TsEnumMemberName, TsInterfaceDecl,
+        TsTypeAliasDecl, VarDecl, VarDeclKind, VarDeclarator,
+    },
+    decorator::Decorator,
     expr::{
-        ArrayExpr, AssignExpr, AssignOp, BinaryExpr, BinaryOp, CallExpr, Expr, ExprOrSpread,
-        MemberExpr, MemberProp, ObjectExpr, UnaryExpr, UnaryOp,
+        ArrayExpr, ArrowBody, ArrowExpr, AssignExpr, AssignOp, AwaitExpr, BinaryExpr, BinaryOp,
+        CallExpr, CondExpr, Expr, ExprOrSpread, MemberExpr, MemberProp, MetaPropExpr, MetaPropKind,
+        NewExpr, ObjectExpr, OptChainExpr, ParenExpr, SeqExpr, TaggedTemplateExpr, TemplateExpr,
+        UnaryExpr, UnaryOp, UpdateExpr, YieldExpr,
     },
     function::{Function, Param},
     ident::{BindingIdent, Ident},
     jsx::{JSXAttr, JSXElement, JSXElementChild, JSXElementName, JSXOpeningElement},
-    lit::{BoolLit, Lit, NullLit, NumberLit, StrLit},
+    lit::{BigIntLit, BoolLit, Lit, NullLit, NumberLit, RegexLit, StrLit},
     module_decl::{
-        ExportDecl, ExportDefaultExprDecl, ExportNamedDecl, ExportSpecifier, ImportDecl, ModuleDecl,
+        ExportAllDecl, ExportDecl, ExportDefaultDecl, ExportDefaultExprDecl, ExportNamedDecl,
+        ExportSpecifier, ImportAttribute, ImportAttributeName, ImportDecl, ImportDefaultSpecifier,
+        ImportNamedSpecifier, ImportNamespaceSpecifier, ImportSpecifier, ModuleDecl,
     },
     operator::UpdateOp,
-    pat::{ArrayPat, AssignPat, Pat, RestPat},
+    pat::{
+        ArrayPat, AssignPat, ObjectPat, ObjectPatAssign, ObjectPatKeyValue, ObjectPatProp, Pat,
+        RestPat,
+    },
     program::{Program, ProgramKind},
     prop::{KeyValueProp, PropName},
     stmt::{
-        BlockStmt, EmptyStmt, ExprStmt, ForBinding, ForClassicHead, ForHead, ForInHead, ForInit,
-        ForOfHead, ForStmt, IfStmt, ReturnStmt, Stmt, WhileStmt,
+        BlockStmt, BreakStmt, CatchClause, ContinueStmt, DebuggerStmt, DoWhileStmt, EmptyStmt,
+        ExprStmt, ForBinding, ForClassicHead, ForHead, ForInHead, ForInit, ForOfHead, ForStmt,
+        IfStmt, LabeledStmt, ReturnStmt, Stmt, SwitchCase, SwitchStmt, ThrowStmt, TryStmt,
+        WhileStmt, WithStmt,
     },
     store::AstStore,
     typescript::{
-        TsArrayType, TsAsExpr, TsFnParam, TsFnType, TsIntersectionType, TsKeywordType, TsLitType,
-        TsParenthesizedType, TsTupleType, TsType, TsTypeAnn, TsTypeLit, TsTypeRef, TsUnionType,
+        TsArrayType, TsAsExpr, TsConditionalType, TsFnParam, TsFnType, TsImportType,
+        TsIndexedAccessType, TsInferType, TsIntersectionType, TsKeywordType, TsLitType,
+        TsMappedType, TsModuleDecl, TsModuleName, TsNamespaceBody, TsNamespaceDecl, TsNonNullExpr,
+        TsParenthesizedType, TsSatisfiesExpr, TsTupleType, TsType, TsTypeAnn, TsTypeLit,
+        TsTypeMember, TsTypeMemberKind, TsTypeOperatorOp, TsTypeOperatorType, TsTypeQuery,
+        TsTypeRef, TsUnionType,
     },
 };
 
 mod class;
 mod decl;
+mod decorator;
 mod expr;
 mod function;
 mod ident;
