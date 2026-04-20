@@ -22,7 +22,7 @@ use crate::{
     retain::{should_retain_module_item, should_retain_stmt},
     semantic::SemanticInfo,
     shared::enum_member_id_atom,
-    ts_enum::{TsEnumRecordKey, TsEnumRecordValue},
+    ts_enum::{EnumValueComputer, TsEnumRecordKey, TsEnumRecordValue},
     utils::{assign_value_to_this_private_prop, assign_value_to_this_prop, Factory},
 };
 
@@ -558,6 +558,13 @@ impl VisitMut for Transform {
         node.is_abstract = false;
         node.is_optional = false;
         node.visit_mut_children_with(self);
+        self.normalize_flow_static_constructor_key(
+            &mut node.key,
+            node.is_static,
+            node.function.is_async,
+            node.function.is_generator,
+            matches!(node.kind, MethodKind::Getter | MethodKind::Setter),
+        );
     }
 
     fn visit_mut_class_prop(&mut self, node: &mut ClassProp) {
@@ -673,6 +680,47 @@ enum FoldedDecl {
 }
 
 impl Transform {
+    fn normalize_flow_static_constructor_key(
+        &self,
+        key: &mut PropName,
+        is_static: bool,
+        is_async: bool,
+        is_generator: bool,
+        is_accessor: bool,
+    ) {
+        if !self.flow_syntax
+            || !is_static
+            || !(is_async || is_generator || is_accessor)
+            || !Self::is_constructor_key(key)
+        {
+            return;
+        }
+
+        let span = key.span();
+        *key = PropName::Computed(ComputedPropName {
+            span,
+            expr: Box::new(
+                Lit::Str(Str {
+                    span,
+                    value: "constructor".into(),
+                    raw: None,
+                })
+                .into(),
+            ),
+        });
+    }
+
+    fn is_constructor_key(key: &PropName) -> bool {
+        match key {
+            PropName::Ident(ident) => ident.sym == "constructor",
+            PropName::Str(string) => string
+                .value
+                .as_str()
+                .is_some_and(|value| value == "constructor"),
+            _ => false,
+        }
+    }
+
     fn strip_module_items_with_semantic(&self, items: &mut Vec<ModuleItem>) {
         items.retain_mut(|module_item| match module_item {
             ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
@@ -1052,6 +1100,20 @@ impl Transform {
             && !is_export
             && !self.semantic.exported_binding.contains_key(&id.to_id());
 
+        let member_names = self
+            .semantic
+            .enum_record
+            .keys()
+            .filter(|k| k.enum_id == id.to_id())
+            .map(|k| k.member_name.clone())
+            .collect();
+
+        let enum_computer = EnumValueComputer {
+            enum_id: &id.to_id(),
+            unresolved_ctxt: self.unresolved_ctxt,
+            record: &self.semantic.enum_record,
+        };
+
         let member_list: Vec<_> = members
             .into_iter()
             .map(|m| {
@@ -1063,7 +1125,27 @@ impl Transform {
                     member_name: name.clone(),
                 };
 
-                let value = self.semantic.enum_record.get(&key).unwrap().clone();
+                let mut value = self.semantic.enum_record.get(&key).unwrap().clone();
+
+                if matches!(value, TsEnumRecordValue::Opaque(..)) {
+                    if let Some(init) = m.init {
+                        // Recompute from the original initializer so enum member
+                        // references can be rewritten to runtime property
+                        // accesses. Implicit Flow enum members do not have an
+                        // initializer, so keep the semantic value as-is.
+                        let mut recomputed = enum_computer.compute(init);
+                        if let TsEnumRecordValue::Opaque(expr) = &mut recomputed {
+                            expr.visit_mut_with(&mut RefRewriter {
+                                query: EnumMemberRefQuery {
+                                    enum_id: &id.to_id(),
+                                    member_names: &member_names,
+                                    unresolved_ctxt: self.unresolved_ctxt,
+                                },
+                            });
+                        }
+                        value = recomputed;
+                    }
+                }
 
                 EnumMemberItem { span, name, value }
             })
@@ -1814,6 +1896,46 @@ impl QueryRef for ExportQuery {
                 }
                 .into()
             })
+    }
+}
+
+struct EnumMemberRefQuery<'a> {
+    enum_id: &'a Id,
+    member_names: &'a FxHashSet<Atom>,
+    unresolved_ctxt: SyntaxContext,
+}
+
+impl QueryRef for EnumMemberRefQuery<'_> {
+    fn query_ref(&self, ident: &Ident) -> Option<Box<Expr>> {
+        if ident.ctxt == self.unresolved_ctxt && self.member_names.contains(&ident.sym) {
+            Some(
+                self.enum_id
+                    .clone()
+                    .make_member(ident.clone().into())
+                    .into(),
+            )
+        } else {
+            None
+        }
+    }
+
+    fn query_lhs(&self, ident: &Ident) -> Option<Box<Expr>> {
+        self.query_ref(ident)
+    }
+
+    fn query_jsx(&self, ident: &Ident) -> Option<JSXElementName> {
+        if ident.ctxt == self.unresolved_ctxt && self.member_names.contains(&ident.sym) {
+            Some(
+                JSXMemberExpr {
+                    span: DUMMY_SP,
+                    obj: JSXObject::Ident(self.enum_id.clone().into()),
+                    prop: ident.clone().into(),
+                }
+                .into(),
+            )
+        } else {
+            None
+        }
     }
 }
 
