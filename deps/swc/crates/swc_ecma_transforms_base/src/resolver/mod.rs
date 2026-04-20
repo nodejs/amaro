@@ -1258,11 +1258,31 @@ impl VisitMut for Resolver<'_> {
         self.modify(&mut decl.id, DeclKind::Lexical);
 
         self.with_child(ScopeKind::Block, |child| {
+            // Predeclare enum members in a child scope marked with `unresolved_mark`.
+            // Enum initializers may reference other members, including quoted names whose
+            // text is a valid identifier:
+            //
+            // ```TypeScript
+            //   enum E {
+            //       A = "A",
+            //       "B" = "B",
+            //       C = (() => { console.log(A, B); })(),
+            //   }
+            // ```
+            //
+            // This keeps references like `A`, `B`, and `b = a` in the unresolved
+            // context instead of resolving them to the enum's lexical scope, so the
+            // TypeScript enum transform can rewrite them later using
+            // `semantic.enum_record`.
+            child.current.mark = self.config.unresolved_mark;
             // add the enum member names as declared symbols for this scope
             // Ex. `enum Foo { a, b = a }`
             let member_names = decl.members.iter().filter_map(|m| match &m.id {
                 TsEnumMemberId::Ident(id) => Some((id.sym.clone(), DeclKind::Lexical)),
-                TsEnumMemberId::Str(_) => None,
+                TsEnumMemberId::Str(s) => s
+                    .value
+                    .as_atom()
+                    .map(|atom| (atom.clone(), DeclKind::Lexical)),
                 #[cfg(swc_ast_unknown)]
                 _ => None,
             });
@@ -1723,13 +1743,11 @@ impl VisitMut for Hoister<'_, '_> {
                     self.resolver.in_type = old_in_type;
                 }
 
-                Decl::TsEnum(e) => {
-                    if !self.in_block {
-                        let old_in_type = self.resolver.in_type;
-                        self.resolver.in_type = false;
-                        self.resolver.modify(&mut e.id, DeclKind::Lexical);
-                        self.resolver.in_type = old_in_type;
-                    }
+                Decl::TsEnum(e) if !self.in_block => {
+                    let old_in_type = self.resolver.in_type;
+                    self.resolver.in_type = false;
+                    self.resolver.modify(&mut e.id, DeclKind::Lexical);
+                    self.resolver.in_type = old_in_type;
                 }
 
                 Decl::TsModule(v)
@@ -1740,15 +1758,13 @@ impl VisitMut for Hoister<'_, '_> {
                             id: TsModuleName::Ident(_),
                             ..
                         },
-                    ) =>
+                    ) && !self.in_block =>
                 {
-                    if !self.in_block {
-                        let old_in_type = self.resolver.in_type;
-                        self.resolver.in_type = false;
-                        let id = v.id.as_mut_ident().unwrap();
-                        self.resolver.modify(id, DeclKind::Lexical);
-                        self.resolver.in_type = old_in_type;
-                    }
+                    let old_in_type = self.resolver.in_type;
+                    self.resolver.in_type = false;
+                    let id = v.id.as_mut_ident().unwrap();
+                    self.resolver.modify(id, DeclKind::Lexical);
+                    self.resolver.in_type = old_in_type;
                 }
                 _ => {}
             }
