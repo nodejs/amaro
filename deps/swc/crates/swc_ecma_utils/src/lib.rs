@@ -874,14 +874,13 @@ pub fn class_has_side_effect(expr_ctx: ExprCtx, c: &Class) -> bool {
                     }
                 }
             }
-            ClassMember::StaticBlock(s) => {
+            ClassMember::StaticBlock(s)
                 if s.body
                     .stmts
                     .iter()
-                    .any(|stmt| stmt.may_have_side_effects(expr_ctx))
-                {
-                    return true;
-                }
+                    .any(|stmt| stmt.may_have_side_effects(expr_ctx)) =>
+            {
+                return true;
             }
             _ => {}
         }
@@ -3758,6 +3757,24 @@ fn may_have_side_effects(expr: &Expr, ctx: ExprCtx) -> bool {
         Expr::Invalid(..) => true,
         #[cfg(swc_ast_unknown)]
         _ => true,
+    }
+}
+
+/// Creates a PropName for a shorthand property, handling the special case of
+/// `__proto__`. When the property name is `__proto__`, it must be converted to
+/// a computed property to preserve JavaScript semantics.
+pub fn prop_name_from_ident(ident: Ident) -> PropName {
+    if ident.sym == "__proto__" {
+        PropName::Computed(ComputedPropName {
+            span: ident.span,
+            expr: Box::new(Expr::Lit(Lit::Str(Str {
+                span: ident.span,
+                value: ident.sym.clone().into(),
+                raw: None,
+            }))),
+        })
+    } else {
+        ident.into()
     }
 }
 

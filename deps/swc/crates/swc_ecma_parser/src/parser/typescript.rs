@@ -2328,7 +2328,12 @@ impl<I: Tokens> Parser<I> {
     fn is_ts_unambiguously_start_of_fn_type(&mut self) -> PResult<bool> {
         debug_assert!(self.input().syntax().typescript());
 
+        let disallow_flow_anon_fn_type =
+            self.is_flow_syntax() && self.ctx().contains(Context::DisallowFlowAnonFnType);
+
         self.assert_and_bump(Token::LParen);
+        let starts_with_parenthesized_object_or_array =
+            matches!(self.input().cur(), Token::LBrace | Token::LBracket);
 
         let cur = self.input().cur();
         if cur == Token::RParen || cur == Token::DotDotDot {
@@ -2355,10 +2360,13 @@ impl<I: Tokens> Parser<I> {
                 // ( xxx ,
                 // ( xxx ?
                 // ( xxx =
+                if disallow_flow_anon_fn_type && starts_with_parenthesized_object_or_array {
+                    return Ok(false);
+                }
                 return Ok(true);
             }
             if self.input_mut().eat(Token::RParen) && self.input().cur() == Token::Arrow {
-                if self.is_flow_syntax() && self.ctx().contains(Context::DisallowFlowAnonFnType) {
+                if disallow_flow_anon_fn_type {
                     // In arrow return type context, `(T) => U` should bind to
                     // the outer arrow unless the function type is parenthesized.
                     return Ok(false);
@@ -2367,6 +2375,30 @@ impl<I: Tokens> Parser<I> {
                 return Ok(true);
             }
         }
+
+        if self.is_flow_syntax()
+            && self
+                .try_parse_ts(|p| p.try_parse_flow_anon_signature_param(0))
+                .is_some()
+        {
+            if self.input().is(Token::Comma) {
+                if disallow_flow_anon_fn_type && starts_with_parenthesized_object_or_array {
+                    return Ok(false);
+                }
+                return Ok(true);
+            }
+
+            if self.input_mut().eat(Token::RParen) && self.input().cur() == Token::Arrow {
+                if disallow_flow_anon_fn_type {
+                    // In arrow return type context, `(T) => U` should bind to
+                    // the outer arrow unless the function type is parenthesized.
+                    return Ok(false);
+                }
+
+                return Ok(true);
+            }
+        }
+
         Ok(false)
     }
 
@@ -2447,6 +2479,47 @@ impl<I: Tokens> Parser<I> {
 
         let ty = self.try_parse_ts_type_ann()?;
         let type_ann = ty;
+
+        self.parse_ts_type_member_semicolon()?;
+
+        Ok(Some(TsIndexSignature {
+            span: self.span(index_signature_start),
+            readonly,
+            is_static,
+            params,
+            type_ann,
+        }))
+    }
+
+    /// Flow supports unnamed object indexers like `[keyof T]: V`.
+    fn try_parse_flow_anon_index_signature(
+        &mut self,
+        index_signature_start: BytePos,
+        readonly: bool,
+        is_static: bool,
+    ) -> PResult<Option<TsIndexSignature>> {
+        if !self.input().syntax().flow()
+            || !self.ctx().contains(Context::InType)
+            || self.input().cur() != Token::LBracket
+        {
+            return Ok(None);
+        }
+
+        // Flow internal slots use a double-bracket form like `[[foo]]`.
+        // Those members are parsed by the regular property/method path, so the
+        // anonymous indexer fast-path must not consume them.
+        if peek!(self).is_some_and(|peek| peek == Token::LBracket) {
+            return Ok(None);
+        }
+
+        expect!(self, Token::LBracket);
+
+        let key_start = self.cur_pos();
+        let key_type = self.parse_ts_type()?;
+        expect!(self, Token::RBracket);
+
+        let params = vec![self.make_flow_anon_fn_param(key_start, 0, None, key_type)];
+        let type_ann = Some(self.parse_ts_type_or_type_predicate_ann(Token::Colon)?);
 
         self.parse_ts_type_member_semicolon()?;
 
@@ -3799,6 +3872,11 @@ impl<I: Tokens> Parser<I> {
             return Ok(idx.into());
         }
 
+        let flow_anon_idx = self.try_parse_flow_anon_index_signature(start, readonly, false)?;
+        if let Some(idx) = flow_anon_idx {
+            return Ok(idx.into());
+        }
+
         if let Some(v) = self.try_parse_ts(|p| {
             let start = p.input().cur_pos();
 
@@ -4884,6 +4962,7 @@ impl<I: Tokens> Parser<I> {
     /// tsParseExpressionStatement.
     ///
     /// `tsParseDeclaration`
+    #[allow(clippy::collapsible_match)]
     fn parse_ts_decl(
         &mut self,
         start: BytePos,

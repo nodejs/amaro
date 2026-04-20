@@ -49,6 +49,12 @@ export interface JsMinifyOptions {
 
   sourceMap?: boolean
 
+  /**
+   * Serializable subset of terser-webpack-plugin's `extractComments`.
+   * `true` behaves like `'some'`.
+   */
+  extractComments?: boolean | "some" | "all" | { regex: string }
+
   outputPath?: string
 
   inlineSourcesContent?: boolean
@@ -709,7 +715,7 @@ export type JscTarget =
   | "es2022"
   | "esnext";
 
-export type ParserConfig = TsParserConfig | EsParserConfig;
+export type ParserConfig = TsParserConfig | EsParserConfig | FlowParserConfig;
 export interface TsParserConfig {
   syntax: "typescript";
   /**
@@ -724,6 +730,38 @@ export interface TsParserConfig {
    * Defaults to `false`
    */
   dynamicImport?: boolean;
+}
+
+export interface FlowParserConfig {
+  syntax: "flow";
+  /**
+   * Defaults to `false`.
+   */
+  jsx?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  all?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  requireDirective?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  enums?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  decorators?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  components?: boolean;
+  /**
+   * Defaults to `false`.
+   */
+  patternMatching?: boolean;
 }
 
 export interface EsParserConfig {
@@ -1166,6 +1204,10 @@ export interface Output {
    * Sourcemap (**not** base64 encoded)
    */
   map?: string;
+  /**
+   * Extracted comments collected during minification.
+   */
+  extractedComments?: string[];
 }
 
 export interface MatchPattern { }

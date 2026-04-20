@@ -10,8 +10,8 @@ use swc_ecma_ast::*;
 use swc_ecma_transforms_base::rename::contains_eval;
 use swc_ecma_transforms_optimization::debug_assert_valid;
 use swc_ecma_utils::{
-    prepend_stmts, ExprCtx, ExprExt, ExprFactory, IdentUsageFinder, IsEmpty, ModuleItemLike,
-    StmtLike, Type, Value,
+    prepend_stmts, prop_name_from_ident, ExprCtx, ExprExt, ExprFactory, IdentUsageFinder, IsEmpty,
+    ModuleItemLike, StmtLike, Type, Value,
 };
 use swc_ecma_visit::{noop_visit_mut_type, VisitMut, VisitMutWith, VisitWith};
 #[cfg(feature = "debug")]
@@ -739,7 +739,7 @@ impl Optimizer<'_> {
 
                 match new_r {
                     Some(r) => {
-                        *right = Box::new(r);
+                        **right = r;
                     }
                     None => return self.ignore_return_value(left),
                 }
@@ -1165,7 +1165,7 @@ impl Optimizer<'_> {
             {
                 let processed_arg = self.ignore_return_value(arg)?;
 
-                *arg = Box::new(processed_arg);
+                **arg = processed_arg;
 
                 log_abort!("ignore_return_value: Preserving negated iife");
                 return Some(e.take());
@@ -1535,11 +1535,11 @@ impl VisitMut for Optimizer<'_> {
                         }
                         .into(),
                     );
-                    n.body = Box::new(BlockStmtOrExpr::BlockStmt(BlockStmt {
+                    *n.body = BlockStmtOrExpr::BlockStmt(BlockStmt {
                         span: DUMMY_SP,
                         stmts,
                         ..Default::default()
-                    }));
+                    });
                 }
                 #[cfg(swc_ast_unknown)]
                 _ => panic!("unable to access unknown nodes"),
@@ -2489,6 +2489,18 @@ impl VisitMut for Optimizer<'_> {
         n.retain(|p| !p.pat.is_invalid());
     }
 
+    fn visit_mut_prop(&mut self, n: &mut Prop) {
+        n.visit_mut_children_with(self);
+
+        if let Prop::Shorthand(i) = n {
+            if let Some(expr) = self.inline_ident(i) {
+                let key = prop_name_from_ident(i.take());
+                *n = Prop::KeyValue(KeyValueProp { key, value: expr });
+                self.changed = true;
+            }
+        }
+    }
+
     #[cfg_attr(feature = "debug", tracing::instrument(level = "debug", skip_all))]
     fn visit_mut_return_stmt(&mut self, n: &mut ReturnStmt) {
         n.visit_mut_children_with(self);
@@ -2905,11 +2917,11 @@ impl VisitMut for Optimizer<'_> {
                 _ => {
                     let arg = self.ignore_return_value(&mut n.arg);
 
-                    n.arg = Box::new(arg.unwrap_or_else(|| {
+                    *n.arg = arg.unwrap_or_else(|| {
                         report_change!("Ignoring arg of `void`");
 
                         make_number(DUMMY_SP, 0.0)
-                    }));
+                    });
                 }
             }
         }
