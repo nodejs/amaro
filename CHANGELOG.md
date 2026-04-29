@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.1.9](https://github.com/nodejs/amaro/compare/v1.1.8...v1.1.9) (2026-04-29)
+
+
+### Core
+
+* remove mention of node_modules ([2b4249f](https://github.com/nodejs/amaro/commit/2b4249fb0b29e5dc556de232089e492de1093763))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.21 ([dfd333f](https://github.com/nodejs/amaro/commit/dfd333f371462984937bb3543ed84b86a5e41f66))
+* build wasm from swc v1.15.24 ([6eba3b9](https://github.com/nodejs/amaro/commit/6eba3b952074b7531b05e7dd5bb5bf4da784193e))
+* build wasm from swc v1.15.30 ([10f015a](https://github.com/nodejs/amaro/commit/10f015aee3d0992bc283c31943f43df970eae4cb))
+* **deps:** bump actions/setup-node from 6.2.0 to 6.3.0 ([b4b9d53](https://github.com/nodejs/amaro/commit/b4b9d53753e61ecfd288f732a70c442e70447381))
+* **deps:** bump actions/setup-node from 6.3.0 to 6.4.0 ([a5b009a](https://github.com/nodejs/amaro/commit/a5b009a0773bffc79d26241d4f1e2c239e54f839))
+* **deps:** bump actions/upload-artifact from 7.0.0 to 7.0.1 ([3a1b232](https://github.com/nodejs/amaro/commit/3a1b232e3e904a40272f12c7d2a70d12f23788d3))
+* **deps:** bump biomejs/setup-biome from 2.7.0 to 2.7.1 ([db5c7ad](https://github.com/nodejs/amaro/commit/db5c7ad43e3b49dab8ddfcc3a39c1236e45d2c69))
+* **deps:** bump docker/setup-buildx-action from 3.12.0 to 4.0.0 ([f39649c](https://github.com/nodejs/amaro/commit/f39649c298d3d59e083ed69fba7f8f58162ac8b1))
+* **deps:** bump github/codeql-action from 4.32.6 to 4.34.1 ([bbc38d5](https://github.com/nodejs/amaro/commit/bbc38d5f6c354ae2f3c40ea08c4ceeb74da41116))
+* **deps:** bump github/codeql-action from 4.34.1 to 4.35.1 ([f169d7d](https://github.com/nodejs/amaro/commit/f169d7d909f5608ea5e6a276672e5fb52807f989))
+* **deps:** bump github/codeql-action from 4.35.1 to 4.35.2 ([8906d16](https://github.com/nodejs/amaro/commit/8906d1672b40f39dfa357c5e673b518e85786b1d))
+* **deps:** bump googleapis/release-please-action from 4.4.0 to 4.4.1 ([97e8bb7](https://github.com/nodejs/amaro/commit/97e8bb726f9217c6099324757dd55468a2315408))
+* **deps:** bump step-security/harden-runner from 2.15.0 to 2.15.1 ([1037205](https://github.com/nodejs/amaro/commit/1037205427fcebd54aecf942688e6c0aff742273))
+* **deps:** bump step-security/harden-runner from 2.15.1 to 2.16.0 ([169e82e](https://github.com/nodejs/amaro/commit/169e82e4093ff49882f4afedf756649a47a10e5d))
+* **deps:** bump step-security/harden-runner from 2.16.0 to 2.16.1 ([9c2d95f](https://github.com/nodejs/amaro/commit/9c2d95f0e1b825239b6e5ce59c7a140ae44a506f))
+* **deps:** bump step-security/harden-runner from 2.16.1 to 2.17.0 ([797d9c2](https://github.com/nodejs/amaro/commit/797d9c238fd615e4f4a881777aac305d81ef12aa))
+* **deps:** bump step-security/harden-runner from 2.17.0 to 2.18.0 ([b88f27a](https://github.com/nodejs/amaro/commit/b88f27ae0c8e41338e79e9d108db396e3f8800f4))
+* update swc to v1.15.21 ([3a1702b](https://github.com/nodejs/amaro/commit/3a1702bfedaeddd9e9787cf4b5b652bc6e944d48))
+* update swc to v1.15.24 ([402f99e](https://github.com/nodejs/amaro/commit/402f99e17a58924970decacdc9738e08e07958e6))
+* update swc to v1.15.30 ([f0645e2](https://github.com/nodejs/amaro/commit/f0645e2590742d472ebab7af5e53edab4c635120))
+
 ## [1.1.8](https://github.com/nodejs/amaro/compare/v1.1.7...v1.1.8) (2026-03-07)
 
 
