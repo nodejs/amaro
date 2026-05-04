@@ -3948,6 +3948,19 @@ impl<I: Tokens> Parser<I> {
         debug_assert!(self.input().syntax().typescript());
 
         expect!(self, Token::LBrace);
+        if self.input().syntax().flow()
+            && self.input().is(Token::LogicalOr)
+            && peek!(self).is_some_and(|peek| peek == Token::RBrace)
+        {
+            // The lexer tokenizes Flow's compact empty exact object delimiter
+            // pair `{||}` as a JavaScript logical-or token. Treat it as the
+            // opening and closing exact-object pipes only in object type
+            // parsing, so ordinary expression tokenization stays unchanged.
+            self.bump();
+            expect!(self, Token::RBrace);
+            return Ok(Vec::new());
+        }
+
         let exact = self.input().syntax().flow() && self.input_mut().eat(Token::Pipe);
         let parse_members = |p: &mut Self| -> PResult<Vec<TsTypeElement>> {
             if exact {
@@ -5146,7 +5159,10 @@ impl<I: Tokens> Parser<I> {
                 // In TSX mode, type parameters that could be mistaken for JSX
                 // (single param without constraint and no trailing comma) are not
                 // allowed.
-                if p.input().syntax().jsx() && type_params.params.len() == 1 {
+                if p.input().syntax().jsx()
+                    && !p.input().syntax().flow()
+                    && type_params.params.len() == 1
+                {
                     let single_param = &type_params.params[0];
                     let has_trailing_comma = type_params.span.hi.0 - single_param.span.hi.0 > 1;
                     let dominated_by_jsx = single_param.constraint.is_none()

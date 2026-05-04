@@ -263,7 +263,7 @@ impl Options {
         &self,
         cm: &Arc<SourceMap>,
         base: &FileName,
-        parse: impl FnOnce(Syntax, EsVersion, IsModule) -> Result<Program, Error>,
+        parse: impl FnOnce(Syntax, EsVersion, IsModule) -> Result<(Program, bool), Error>,
         output_path: Option<&Path>,
         source_root: Option<String>,
         source_file_name: Option<String>,
@@ -306,10 +306,12 @@ impl Options {
             lints,
             preserve_all_comments,
             rewrite_relative_import_extensions,
+            preserve_symlinks,
             ..
         } = cfg.jsc;
         let loose = loose.into_bool();
         let preserve_all_comments = preserve_all_comments.into_bool();
+        let preserve_symlinks = preserve_symlinks.into_bool();
         let keep_class_names = keep_class_names.into_bool();
         let external_helpers = external_helpers.into_bool();
 
@@ -332,7 +334,7 @@ impl Options {
 
         let syntax = syntax.unwrap_or_default();
 
-        let mut program = parse(syntax, es_version, is_module)?;
+        let (mut program, flow_strip_script_like_module) = parse(syntax, es_version, is_module)?;
 
         let mut transform = transform.into_inner().unwrap_or_default();
 
@@ -352,7 +354,7 @@ impl Options {
             syntax.typescript(),
         ));
 
-        let default_top_level = program.is_module();
+        let default_top_level = program.is_module() && !flow_strip_script_like_module;
 
         js_minify = js_minify.map(|mut c| {
             let compress = c
@@ -590,7 +592,13 @@ impl Options {
         };
 
         let paths = paths.into_iter().collect();
-        let resolver = ModuleConfig::get_resolver(&base_url, paths, base, cfg.module.as_ref());
+        let resolver = ModuleConfig::get_resolver(
+            &base_url,
+            paths,
+            base,
+            cfg.module.as_ref(),
+            preserve_symlinks,
+        );
 
         let target = es_version;
         let inject_helpers = !self.skip_helper_injection;
@@ -981,6 +989,7 @@ impl Options {
                 .into_bool(),
             emit_source_map_scopes: experimental.emit_source_map_scopes.into_bool(),
             codegen_inline_script,
+            flow_strip_script_like_module,
             emit_isolated_dts: experimental.emit_isolated_dts.into_bool(),
             unresolved_mark,
             #[cfg(feature = "module")]
@@ -1296,6 +1305,7 @@ pub struct BuiltInput<P: Pass> {
     pub emit_assert_for_import_attributes: bool,
     pub emit_source_map_scopes: bool,
     pub codegen_inline_script: bool,
+    pub flow_strip_script_like_module: bool,
 
     pub emit_isolated_dts: bool,
     pub unresolved_mark: Mark,
@@ -1333,6 +1343,7 @@ where
             emit_assert_for_import_attributes: self.emit_assert_for_import_attributes,
             emit_source_map_scopes: self.emit_source_map_scopes,
             codegen_inline_script: self.codegen_inline_script,
+            flow_strip_script_like_module: self.flow_strip_script_like_module,
             emit_isolated_dts: self.emit_isolated_dts,
             unresolved_mark: self.unresolved_mark,
             #[cfg(feature = "module")]
@@ -1391,6 +1402,17 @@ pub struct JscConfig {
     /// https://www.typescriptlang.org/tsconfig/#rewriteRelativeImportExtensions
     #[serde(default)]
     pub rewrite_relative_import_extensions: BoolConfig<false>,
+
+    /// When `true`, symlinked paths are preserved in generated module
+    /// specifiers instead of being canonicalized to their real paths.
+    ///
+    /// This is the config-level analogue of Node's `--preserve-symlinks`.
+    /// Enable it when your project relies on symlinked source files (for
+    /// example, a monorepo that symlinks shared sources into each package)
+    /// and you want relative imports inside those files to continue to
+    /// resolve against their symlinked location rather than the real path.
+    #[serde(default)]
+    pub preserve_symlinks: BoolConfig<false>,
 }
 
 #[derive(Debug, Default, Clone, Serialize, Deserialize, Merge)]
@@ -1604,6 +1626,7 @@ impl ModuleConfig {
         paths: CompiledPaths,
         base: &FileName,
         config: Option<&ModuleConfig>,
+        preserve_symlinks: bool,
     ) -> Option<(FileName, Arc<dyn ImportResolver>)> {
         let skip_resolver = base_url.as_os_str().is_empty() && paths.is_empty();
 
@@ -1612,7 +1635,7 @@ impl ModuleConfig {
         }
 
         let base = match base {
-            FileName::Real(v) if !skip_resolver => {
+            FileName::Real(v) if !skip_resolver && !preserve_symlinks => {
                 FileName::Real(v.canonicalize().unwrap_or_else(|_| v.to_path_buf()))
             }
             _ => base.clone(),
@@ -1620,13 +1643,20 @@ impl ModuleConfig {
 
         let base_url = base_url.to_path_buf();
         let resolver = match config {
-            None => build_resolver(base_url, paths, false, &util::Config::default_js_ext()),
+            None => build_resolver(
+                base_url,
+                paths,
+                false,
+                &util::Config::default_js_ext(),
+                preserve_symlinks,
+            ),
             Some(ModuleConfig::Es6(config)) | Some(ModuleConfig::NodeNext(config)) => {
                 build_resolver(
                     base_url,
                     paths,
                     config.config.resolve_fully,
                     &config.config.out_file_extension,
+                    preserve_symlinks,
                 )
             }
             Some(ModuleConfig::CommonJs(config)) => build_resolver(
@@ -1634,24 +1664,28 @@ impl ModuleConfig {
                 paths,
                 config.resolve_fully,
                 &config.out_file_extension,
+                preserve_symlinks,
             ),
             Some(ModuleConfig::Umd(config)) => build_resolver(
                 base_url,
                 paths,
                 config.config.resolve_fully,
                 &config.config.out_file_extension,
+                preserve_symlinks,
             ),
             Some(ModuleConfig::Amd(config)) => build_resolver(
                 base_url,
                 paths,
                 config.config.resolve_fully,
                 &config.config.out_file_extension,
+                preserve_symlinks,
             ),
             Some(ModuleConfig::SystemJs(config)) => build_resolver(
                 base_url,
                 paths,
                 config.config.resolve_fully,
                 &config.config.out_file_extension,
+                preserve_symlinks,
             ),
         };
 
@@ -1680,6 +1714,7 @@ impl ModuleConfig {
         _paths: CompiledPaths,
         _base: &FileName,
         _config: Option<&ModuleConfig>,
+        _preserve_symlinks: bool,
     ) -> Option<(FileName, Arc<dyn swc_ecma_loader::resolve::Resolve>)> {
         None
     }
@@ -1997,9 +2032,10 @@ fn build_resolver(
     paths: CompiledPaths,
     resolve_fully: bool,
     file_extension: &str,
+    preserve_symlinks: bool,
 ) -> SwcImportResolver {
     static CACHE: Lazy<
-        DashMap<(PathBuf, CompiledPaths, bool, String), SwcImportResolver, FxBuildHasher>,
+        DashMap<(PathBuf, CompiledPaths, bool, String, bool), SwcImportResolver, FxBuildHasher>,
     > = Lazy::new(Default::default);
 
     // On Windows, we need to normalize path as UNC path.
@@ -2021,6 +2057,7 @@ fn build_resolver(
         paths.clone(),
         resolve_fully,
         file_extension.to_owned(),
+        preserve_symlinks,
     )) {
         return cached.clone();
     }
@@ -2037,19 +2074,27 @@ fn build_resolver(
         let r = TsConfigResolver::new(r, base_url.clone(), paths.clone());
         let r = CachingResolver::new(256, r);
 
-        let r = NodeImportResolver::with_config(
-            r,
-            modules::path::Config {
-                base_dir: Some(base_url.clone()),
-                resolve_fully,
-                file_extension: file_extension.to_owned(),
-            },
-        );
+        let cfg = modules::path::Config {
+            base_dir: Some(base_url.clone()),
+            resolve_fully,
+            file_extension: file_extension.to_owned(),
+        };
+        let r = if preserve_symlinks {
+            NodeImportResolver::with_config_preserving_symlinks(r, cfg)
+        } else {
+            NodeImportResolver::with_config(r, cfg)
+        };
         Arc::new(r)
     };
 
     CACHE.insert(
-        (base_url, paths, resolve_fully, file_extension.to_owned()),
+        (
+            base_url,
+            paths,
+            resolve_fully,
+            file_extension.to_owned(),
+            preserve_symlinks,
+        ),
         r.clone(),
     );
 
