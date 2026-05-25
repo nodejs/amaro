@@ -535,32 +535,6 @@ impl Optimizer<'_> {
 
         match decl {
             Decl::Class(ClassDecl { ident, class, .. }) => {
-                if ident.sym == "arguments" {
-                    return;
-                }
-
-                // Fix https://github.com/swc-project/swc/issues/5588
-                let may_have_side_effect = class.body.iter().any(|m| match m {
-                    ClassMember::ClassProp(ClassProp {
-                        is_static: true,
-                        value: Some(_),
-                        ..
-                    })
-                    | ClassMember::PrivateProp(PrivateProp {
-                        is_static: true,
-                        value: Some(_),
-                        ..
-                    }) => true,
-                    ClassMember::StaticBlock(StaticBlock {
-                        body: BlockStmt { stmts, .. },
-                        ..
-                    }) if !stmts.is_empty() => true,
-                    _ => false,
-                });
-                if may_have_side_effect {
-                    return;
-                }
-
                 // If it is not used, drop it.
                 if self
                     .data
@@ -569,7 +543,8 @@ impl Optimizer<'_> {
                     .map(|v| v.usage_count == 0 && v.property_mutation_count == 0)
                     .unwrap_or(false)
                 {
-                    let Some(side_effects) = extract_class_side_effect(self.ctx.expr_ctx, class)
+                    let Some(side_effects) =
+                        extract_class_side_effect(self.ctx.expr_ctx, Some(ident), class)
                     else {
                         return;
                     };
@@ -952,6 +927,13 @@ impl Optimizer<'_> {
         if usage.flags.contains(VarUsageInfoFlags::HAS_PROPERTY_ACCESS)
             && usage.accessed_props.is_empty()
         {
+            return None;
+        }
+
+        let accessed_props_count: u32 = usage.accessed_props.values().sum();
+        // Direct uses, such as default-parameter aliases, can read properties
+        // through another binding, so keep the full object in that case.
+        if accessed_props_count < usage.ref_count {
             return None;
         }
 

@@ -443,7 +443,7 @@ where
         tracing::instrument(level = "debug", skip_all)
     )]
     fn visit_binding_ident(&mut self, n: &BindingIdent) {
-        self.visit_pat_id(&Ident::from(n));
+        self.visit_pat_id(n);
     }
 
     #[cfg_attr(
@@ -607,7 +607,12 @@ where
     fn visit_class_decl(&mut self, n: &ClassDecl) {
         self.declare_decl(&n.ident, Some(Value::Unknown), None, false);
 
+        let id = n.ident.to_id();
+        self.used_recursively
+            .insert(id.clone(), RecursiveUsage::FnOrClass);
         n.visit_children_with(self);
+
+        self.used_recursively.remove(&id);
     }
 
     #[cfg_attr(
@@ -615,10 +620,16 @@ where
         tracing::instrument(level = "debug", skip_all)
     )]
     fn visit_class_expr(&mut self, n: &ClassExpr) {
-        n.visit_children_with(self);
-
         if let Some(id) = &n.ident {
             self.declare_decl(id, Some(Value::Unknown), None, false);
+
+            let id = id.to_id();
+            self.used_recursively
+                .insert(id.clone(), RecursiveUsage::FnOrClass);
+            n.visit_children_with(self);
+            self.used_recursively.remove(&id);
+        } else {
+            n.visit_children_with(self);
         }
     }
 
@@ -794,8 +805,6 @@ where
             ..self.ctx
         };
 
-        e.visit_children_with(&mut *self.with_ctx(ctx));
-
         if let Expr::Ident(i) = e {
             #[cfg(feature = "tracing-spans")]
             {
@@ -808,7 +817,10 @@ where
             }
 
             self.with_ctx(ctx).report_usage(i);
+            return;
         }
+
+        e.visit_children_with(&mut *self.with_ctx(ctx));
     }
 
     #[cfg_attr(
@@ -1221,7 +1233,7 @@ where
     fn visit_pat(&mut self, n: &Pat) {
         match n {
             Pat::Ident(i) => {
-                i.visit_with(self);
+                self.visit_pat_id(i);
             }
             _ => {
                 let ctx = self
@@ -1464,7 +1476,13 @@ where
         n.visit_children_with(&mut *self.with_ctx(ctx));
 
         for decl in &n.decls {
-            if let (Pat::Ident(var), Some(init)) = (&decl.name, decl.init.as_deref()) {
+            let init = if let Some(init) = decl.init.as_deref() {
+                init
+            } else {
+                continue;
+            };
+
+            if let Pat::Ident(var) = &decl.name {
                 let mut v = None;
                 for id in collect_infects_from(
                     init,
@@ -1512,6 +1530,14 @@ where
                         .data
                         .var_or_default(var.id.to_id())
                         .store_param_count(Value::Unknown),
+                }
+            } else {
+                // Destructuring pulls values from an external object or iterable, so the
+                // callable arity of each binding is not known from this declaration.
+                for id in find_pat_ids(&decl.name) {
+                    self.data
+                        .var_or_default(id)
+                        .store_param_count(Value::Unknown);
                 }
             }
         }
