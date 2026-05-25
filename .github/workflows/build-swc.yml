@@ -6,6 +6,9 @@ on:
       - 'tools/*'
       - 'deps/*'
 
+permissions:
+  contents: read
+
 jobs:
   build-swc:
     runs-on: ubuntu-latest
