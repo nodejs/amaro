@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.10](https://github.com/nodejs/amaro/compare/v1.1.9...v1.1.10) (2026-05-26)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.33 ([626debc](https://github.com/nodejs/amaro/commit/626debcc64470085b575b6b621440a3d83b39d9d))
+* build wasm from swc v1.15.40 ([04c080d](https://github.com/nodejs/amaro/commit/04c080d855dbde3321d0864cb2dc456a28eab4e2))
+* declare workflow-level contents: read on ci and build-swc ([a147e52](https://github.com/nodejs/amaro/commit/a147e52e0555a8502fb52d4b59df50497957b738))
+* **deps:** bump docker/setup-buildx-action from 4.0.0 to 4.1.0 ([e51115b](https://github.com/nodejs/amaro/commit/e51115be6822ade8f1450b72820ebefc008bb8de))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.15 to 2.0.19 ([80a7332](https://github.com/nodejs/amaro/commit/80a733262798eff1fc3034ab1479d95cf4487203))
+* **deps:** bump github/codeql-action from 4.35.2 to 4.35.4 ([7f1ee48](https://github.com/nodejs/amaro/commit/7f1ee486f5fddb4f83db51f53373d9ed027a8cd7))
+* **deps:** bump github/codeql-action from 4.35.4 to 4.36.0 ([5eb6bc7](https://github.com/nodejs/amaro/commit/5eb6bc74f3dcbaf063eefd87cdb616957859528b))
+* **deps:** bump googleapis/release-please-action from 4.4.1 to 5.0.0 ([5b35ea8](https://github.com/nodejs/amaro/commit/5b35ea8cb891696154679685627e9c5bc2479749))
+* **deps:** bump step-security/harden-runner from 2.18.0 to 2.19.1 ([5d24781](https://github.com/nodejs/amaro/commit/5d24781db3cef38f101fb9489e408cc3427d50d4))
+* **deps:** bump step-security/harden-runner from 2.19.1 to 2.19.4 ([271d785](https://github.com/nodejs/amaro/commit/271d785fc6e323864f95f9e92d1f0e8b683936d2))
+* update swc to v1.15.33 ([0b909f8](https://github.com/nodejs/amaro/commit/0b909f8d9d91883db700db270eb530f7fb092244))
+* update swc to v1.15.40 ([f5a64f3](https://github.com/nodejs/amaro/commit/f5a64f3e2110ba8e1e16eda745f30d443f96e425))
+
 ## [1.1.9](https://github.com/nodejs/amaro/compare/v1.1.8...v1.1.9) (2026-04-29)
 
 
