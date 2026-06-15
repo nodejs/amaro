@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.11](https://github.com/nodejs/amaro/compare/v1.1.10...v1.1.11) (2026-06-15)
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.41 ([54d4e1f](https://github.com/nodejs/amaro/commit/54d4e1fd31e3d6efa5ca3ba9b4631ab2cdd70c0b))
+* **deps:** bump actions/checkout from 6.0.2 to 6.0.3 ([4eb698d](https://github.com/nodejs/amaro/commit/4eb698d516dd4e15b5c073e7ac56da977387e3ce))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.19 to 2.0.20 ([2ea3d54](https://github.com/nodejs/amaro/commit/2ea3d54b229fa991f78f4e8063961c06cd992eb5))
+* **deps:** bump github/codeql-action from 4.36.0 to 4.36.2 ([2e02cb1](https://github.com/nodejs/amaro/commit/2e02cb1633e4cd0605307aeb4f60f21cf68f25d2))
+* update swc to v1.15.41 ([b5c4244](https://github.com/nodejs/amaro/commit/b5c4244ffb02a99f74bf1fbfb8a2f84b11f67943))
+
 ## [1.1.10](https://github.com/nodejs/amaro/compare/v1.1.9...v1.1.10) (2026-05-26)
 
 
