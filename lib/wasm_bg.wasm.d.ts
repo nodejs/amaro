@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
+export const parse: (a: number, b: number) => number;
+export const parseSync: (a: number, b: number, c: number) => void;
 export const transform: (a: number, b: number) => number;
 export const transformSync: (a: number, b: number, c: number) => void;
 export const __wbindgen_export_0: (a: number) => void;
