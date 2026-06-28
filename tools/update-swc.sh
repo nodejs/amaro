@@ -80,6 +80,15 @@ find "$DEPS_FOLDER" -depth -type d -name "fixtures" -exec rm -rf {} + 2>/dev/nul
 find "$DEPS_FOLDER" -type f -name "*test*.rs" -exec rm -f {} + 2>/dev/null || true
 find "$DEPS_FOLDER" -type f -name "*spec*.rs" -exec rm -f {} + 2>/dev/null || true
 
+PATCHES_DIR="$ROOT/tools/patches"
+if [ -d "$PATCHES_DIR" ]; then
+  for patch in "$PATCHES_DIR"/*.patch; do
+    [ -e "$patch" ] || continue
+    echo "Applying patch: $patch"
+    git -C "$ROOT" apply "$patch"
+  done
+fi
+
 echo "All done!"
 echo ""
 echo "Please git add swc and commit the new version:"

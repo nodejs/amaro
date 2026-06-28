@@ -548,6 +548,8 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen",
  "swc_common",
+ "swc_ecma_ast",
+ "swc_ecma_parser",
  "swc_error_reporters",
  "swc_ts_fast_strip",
  "tracing",
