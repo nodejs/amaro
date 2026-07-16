@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.11](https://github.com/nodejs/amaro/compare/v1.1.10...v1.1.11) (2026-07-16)
+
+
+### Bug Fixes
+
+* **ci:** resolve security audit failures ([a5f2d83](https://github.com/nodejs/amaro/commit/a5f2d83842caa3cacefebf0fa9785068c107b1d8))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.15.41 ([54d4e1f](https://github.com/nodejs/amaro/commit/54d4e1fd31e3d6efa5ca3ba9b4631ab2cdd70c0b))
+* build wasm from swc v1.15.43 ([48deee9](https://github.com/nodejs/amaro/commit/48deee9fd87ddda088036a32400ae91c16f2a43a))
+* **ci:** ignore anyhow advisory ([a9c4bd3](https://github.com/nodejs/amaro/commit/a9c4bd35651533294146dcfa90f931e30b2d0bfe))
+* **ci:** ignore crossbeam-epoch advisory ([b2b1679](https://github.com/nodejs/amaro/commit/b2b167970eac700fc5e3a49a7bb8fae906218812))
+* **deps:** bump actions/checkout from 6.0.2 to 6.0.3 ([4eb698d](https://github.com/nodejs/amaro/commit/4eb698d516dd4e15b5c073e7ac56da977387e3ce))
+* **deps:** bump actions/checkout from 6.0.3 to 7.0.0 ([7b5616c](https://github.com/nodejs/amaro/commit/7b5616c32c5cf6c9685b82ddbf792bfdee5e3e8e))
+* **deps:** bump docker/setup-buildx-action from 4.1.0 to 4.2.0 ([ee3759a](https://github.com/nodejs/amaro/commit/ee3759af4c6edc8315f931e8ea1e3c46b7e984cd))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.19 to 2.0.20 ([2ea3d54](https://github.com/nodejs/amaro/commit/2ea3d54b229fa991f78f4e8063961c06cd992eb5))
+* **deps:** bump github/codeql-action from 4.36.0 to 4.36.2 ([2e02cb1](https://github.com/nodejs/amaro/commit/2e02cb1633e4cd0605307aeb4f60f21cf68f25d2))
+* **deps:** bump github/codeql-action/analyze from 4.36.2 to 4.37.0 ([e15371f](https://github.com/nodejs/amaro/commit/e15371f87fb4b54315fc386939b3d86e6f92f088))
+* **deps:** bump github/codeql-action/upload-sarif ([b63d300](https://github.com/nodejs/amaro/commit/b63d3009fcf1fc41108bd9080e5203ff01083043))
+* update swc to v1.15.41 ([b5c4244](https://github.com/nodejs/amaro/commit/b5c4244ffb02a99f74bf1fbfb8a2f84b11f67943))
+* update swc to v1.15.43 ([e642d3d](https://github.com/nodejs/amaro/commit/e642d3d61e9422302831e6e8c2916744fa2a48d5))
+
 ## [1.1.10](https://github.com/nodejs/amaro/compare/v1.1.9...v1.1.10) (2026-05-26)
 
 
