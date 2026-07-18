@@ -1,9 +1,9 @@
 {
-  "name": "@swc/wasm-typescript",
+  "name": "@swc/nodejs-support-wasm",
   "collaborators": [
     "강동윤 <kdy1997.dev@gmail.com>"
   ],
-  "description": "wasm module for swc",
+  "description": "SWC WebAssembly helpers for Node.js",
   "version": "1.15.43",
   "license": "Apache-2.0",
   "repository": {

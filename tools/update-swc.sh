@@ -5,17 +5,17 @@ set -ex
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 
-# Read the version from Cargo.toml of the binding_typescript_wasm
-CURRENT_VERSION=$(grep '^version' "$ROOT/deps/swc/bindings/binding_typescript_wasm/Cargo.toml" | awk -F\" '{print $2}')
+# Read the version from Cargo.toml of the binding_nodejs_support_wasm
+CURRENT_VERSION=$(grep '^version' "$ROOT/deps/swc/bindings/binding_nodejs_support_wasm/Cargo.toml" | awk -F\" '{print $2}')
 
 # Print the version
 echo "The version installed version is: $CURRENT_VERSION"
 
-NEW_VERSION=$(npm view @swc/wasm-typescript version)
+NEW_VERSION=$(npm view @swc/nodejs-support-wasm version)
 
 echo "Comparing $CURRENT_VERSION with $NEW_VERSION"
 if [ "$NEW_VERSION" = "$CURRENT_VERSION" ]; then
-    echo "Skipped because @swc/wasm-typescript is on the latest version."
+    echo "Skipped because @swc/nodejs-support-wasm is on the latest version."
     exit 0
 fi
 
