@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - uses: EmbarkStudios/cargo-deny-action@bb137d7af7e4fb67e5f82a49c4fce4fad40782fe # v2.0.20
         with:
-          manifest-path: "deps/swc/bindings/binding_typescript_wasm/Cargo.toml"
+          manifest-path: "deps/swc/bindings/binding_nodejs_support_wasm/Cargo.toml"
 
   typescript-audit:
     runs-on: ubuntu-latest

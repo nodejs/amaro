@@ -3,4 +3,4 @@
 node_modules
 dist
 package-lock.json
-deps/swc/bindings/target/
+deps/swc/target/

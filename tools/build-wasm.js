@@ -70,7 +70,7 @@ execSync(
      export HOME=/home/node/home && \
      export PATH=/home/node/home/.cargo/bin:$PATH && \
      rustc --version && \
-     cd deps/swc/bindings/binding_typescript_wasm && \
+     cd deps/swc/bindings/binding_nodejs_support_wasm && \
      cargo install --locked wasm-pack wasm-bindgen-cli@0.2.100 && \
      ./scripts/build.sh -- --config ../../../../tools/config.toml && \
      cp -r pkg/* ../../../../lib`,
