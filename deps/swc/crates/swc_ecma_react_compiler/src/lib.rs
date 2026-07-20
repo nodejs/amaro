@@ -20,7 +20,7 @@ use apply_renames::{apply_renames, build_rename_plan};
 use convert_ast::convert_program;
 use convert_ast_reverse::convert_program_to_swc;
 use diagnostics::{compile_result_to_diagnostics, DiagnosticMessage};
-use prefilter::{has_react_like_functions, has_resource_management_declarations};
+use prefilter::has_resource_management_declarations;
 use react_compiler::entrypoint::compile_result::LoggerEvent;
 // Re-exported so integrations needn't depend on the upstream `react_compiler` crate.
 pub use react_compiler::entrypoint::plugin_options::{
@@ -28,7 +28,7 @@ pub use react_compiler::entrypoint::plugin_options::{
 };
 use react_compiler_hir::environment_config::EnvironmentConfig;
 pub use source_type::SourceType;
-use swc_common::comments::SingleThreadedComments;
+use swc_common::{comments::SingleThreadedComments, sync::Lrc, FileName};
 use swc_ecma_ast::Program;
 
 use crate::{convert_ast::ConvertResult, convert_scope::SemanticBuilder};
@@ -84,16 +84,6 @@ pub fn transform(
     comments: Option<&SingleThreadedComments>,
     options: PluginOptions,
 ) -> TransformResult {
-    if !matches!(options.compilation_mode.as_str(), "all" | "annotation")
-        && !has_react_like_functions(program)
-    {
-        return TransformResult {
-            program: None,
-            diagnostics: vec![],
-            events: vec![],
-        };
-    }
-
     if has_resource_management_declarations(program) {
         return TransformResult {
             program: None,
@@ -146,13 +136,13 @@ pub(crate) fn transform_source(
     syntax: swc_ecma_parser::Syntax,
     options: PluginOptions,
 ) -> TransformResult {
-    match parse_source_for_tests(source_text, syntax) {
+    match parse_source(source_text, syntax) {
         Ok((program, comments, source_type)) => {
             transform(&program, source_type, source_text, Some(&comments), options)
         }
         Err(diagnostic) => TransformResult {
             program: None,
-            diagnostics: vec![diagnostic],
+            diagnostics: vec![*diagnostic],
             events: vec![],
         },
     }
@@ -179,33 +169,30 @@ pub fn lint(
     }
 }
 
-/// Convenience wrapper: parses source text, then lints.
-#[cfg(test)]
-pub(crate) fn lint_source(
+/// Parses source text, then lints it. This is the entry point for callers
+/// (e.g. the `@swc/react-compiler` napi binding) that have not already
+/// parsed their source into a [`Program`].
+pub fn lint_source(
     source_text: &str,
     syntax: swc_ecma_parser::Syntax,
     options: PluginOptions,
 ) -> LintResult {
-    match parse_source_for_tests(source_text, syntax) {
+    match parse_source(source_text, syntax) {
         Ok((program, comments, source_type)) => {
             lint(&program, source_type, source_text, Some(&comments), options)
         }
         Err(diagnostic) => LintResult {
-            diagnostics: vec![diagnostic],
+            diagnostics: vec![*diagnostic],
         },
     }
 }
 
-#[cfg(test)]
-fn parse_source_for_tests(
+fn parse_source(
     source_text: &str,
     syntax: swc_ecma_parser::Syntax,
-) -> Result<(Program, SingleThreadedComments, SourceType), DiagnosticMessage> {
-    let cm = std::sync::Arc::new(swc_common::SourceMap::default());
-    let fm = cm.new_source_file(
-        std::sync::Arc::new(swc_common::FileName::Anon),
-        source_text.to_string(),
-    );
+) -> Result<(Program, SingleThreadedComments, SourceType), Box<DiagnosticMessage>> {
+    let cm = Lrc::new(swc_common::SourceMap::default());
+    let fm = cm.new_source_file(Lrc::new(FileName::Anon), source_text.to_string());
     let comments = SingleThreadedComments::default();
     let mut errors = Vec::new();
     let is_typescript = syntax.typescript();
@@ -220,10 +207,16 @@ fn parse_source_for_tests(
             let source_type = SourceType::from_program(&program).with_typescript(is_typescript);
             Ok((program, comments, source_type))
         }
-        Err(error) => Err(DiagnosticMessage {
+        Err(error) => Err(Box::new(DiagnosticMessage {
             severity: diagnostics::Severity::Error,
             message: format!("[ReactCompiler] Parse error: {error:?}"),
             span: None,
-        }),
+            rule_id: None,
+            category: None,
+            reason: Some("Parse error".into()),
+            description: None,
+            loc: None,
+            details: Vec::new(),
+        })),
     }
 }

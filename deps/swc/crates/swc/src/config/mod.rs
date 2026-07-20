@@ -603,9 +603,9 @@ impl Options {
             Some(ModuleConfig::Es6(..)) => TsImportExportAssignConfig::EsNext,
             Some(ModuleConfig::CommonJs(..))
             | Some(ModuleConfig::Amd(..))
-            | Some(ModuleConfig::Umd(..)) => TsImportExportAssignConfig::Preserve,
+            | Some(ModuleConfig::Umd(..))
+            | Some(ModuleConfig::SystemJs(..)) => TsImportExportAssignConfig::Preserve,
             Some(ModuleConfig::NodeNext(..)) => TsImportExportAssignConfig::NodeNext,
-            // TODO: should Preserve for SystemJS
             _ => TsImportExportAssignConfig::Classic,
         };
 
@@ -652,7 +652,7 @@ impl Options {
         } else {
             Some(hygiene::Config {
                 keep_class_names,
-                ..Default::default()
+                ..hygiene::Config::hygiene_default()
             })
         };
         let env = cfg.env.map(Into::into);
@@ -702,6 +702,8 @@ impl Options {
             .map(|v| v.mangle.is_obj() || v.mangle.is_true())
             .unwrap_or(false);
 
+        let jsx_preserve = transform.react.runtime == Some(react::Runtime::Preserve);
+
         #[cfg(feature = "module")]
         let rewrite_import_pass: Box<dyn Pass> = {
             let swc_import_rewriter: Box<dyn Pass> = match resolver.clone() {
@@ -715,7 +717,7 @@ impl Options {
             };
 
             let typescript_import_rewriter = Optional::new(
-                modules::rewriter::typescript_import_rewriter(),
+                modules::rewriter::typescript_import_rewriter(jsx_preserve),
                 rewrite_relative_import_extensions.into_bool(),
             );
 
@@ -791,7 +793,9 @@ impl Options {
             Optional::new(
                 hygiene_with_config(swc_ecma_transforms_base::hygiene::Config {
                     top_level_mark,
-                    ..hygiene_config.clone().unwrap_or_default()
+                    ..hygiene_config
+                        .clone()
+                        .unwrap_or_else(hygiene::Config::hygiene_default)
                 }),
                 hygiene_config.is_some() && !is_mangler_enabled,
             ),
@@ -878,8 +882,7 @@ impl Options {
         {
             plugin_transforms.unwrap()
         } else {
-            let jsx_enabled =
-                syntax.jsx() && transform.react.runtime != Some(react::Runtime::Preserve);
+            let jsx_enabled = syntax.jsx() && !jsx_preserve;
 
             let decorator_pass: Box<dyn Pass> =
                 match transform.decorator_version.unwrap_or_default() {
@@ -1727,8 +1730,8 @@ impl ModuleConfig {
             Some(ModuleConfig::SystemJs(config)) => build_resolver(
                 base_url,
                 paths,
-                config.config.resolve_fully,
-                &config.config.out_file_extension,
+                config.resolve_fully,
+                &config.out_file_extension,
                 preserve_symlinks,
             ),
         };

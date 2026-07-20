@@ -15,12 +15,6 @@ repository = "https://github.com/swc-project/swc.git"
 
 
 [workspace.dependencies]
-# bytecheck version should be in sync with rkyv version. Do not bump individually.
-bytecheck = "0.8.0"
-rancor    = "0.1.0"
-rkyv      = "0.8.16"
-
-
 Inflector                 = "0.11.4"
 allocator-api2            = "0.2.18"
 ansi_term                 = "0.12.1"
@@ -114,7 +108,6 @@ sha2                      = "0.10.8"
 shrink-to-fit             = "0.2.1"
 siphasher                 = "0.3.9"
 smallvec                  = "1.8.0"
-smartstring               = "1.0.1"
 smol_str                  = "0.2.0"
 st-map                    = "0.2.0"
 string_cache              = "0.8.7"
@@ -131,7 +124,6 @@ triomphe                  = "0.1.13"
 unicode-id-start          = "1.2.0"
 unicode-width             = "0.2.1"
 url                       = "2.5.4"
-vergen                    = { version = "9.0.0", default-features = false }
 walkdir                   = "2.4.0"
 wasi-common               = { version = "38", default-features = false }
 wasm-bindgen              = "0.2.100"
