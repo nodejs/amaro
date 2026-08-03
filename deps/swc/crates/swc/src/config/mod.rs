@@ -603,9 +603,9 @@ impl Options {
             Some(ModuleConfig::Es6(..)) => TsImportExportAssignConfig::EsNext,
             Some(ModuleConfig::CommonJs(..))
             | Some(ModuleConfig::Amd(..))
-            | Some(ModuleConfig::Umd(..)) => TsImportExportAssignConfig::Preserve,
+            | Some(ModuleConfig::Umd(..))
+            | Some(ModuleConfig::SystemJs(..)) => TsImportExportAssignConfig::Preserve,
             Some(ModuleConfig::NodeNext(..)) => TsImportExportAssignConfig::NodeNext,
-            // TODO: should Preserve for SystemJS
             _ => TsImportExportAssignConfig::Classic,
         };
 
@@ -652,7 +652,7 @@ impl Options {
         } else {
             Some(hygiene::Config {
                 keep_class_names,
-                ..Default::default()
+                ..hygiene::Config::hygiene_default()
             })
         };
         let env = cfg.env.map(Into::into);
@@ -702,6 +702,8 @@ impl Options {
             .map(|v| v.mangle.is_obj() || v.mangle.is_true())
             .unwrap_or(false);
 
+        let jsx_preserve = transform.react.runtime == Some(react::Runtime::Preserve);
+
         #[cfg(feature = "module")]
         let rewrite_import_pass: Box<dyn Pass> = {
             let swc_import_rewriter: Box<dyn Pass> = match resolver.clone() {
@@ -715,7 +717,7 @@ impl Options {
             };
 
             let typescript_import_rewriter = Optional::new(
-                modules::rewriter::typescript_import_rewriter(),
+                modules::rewriter::typescript_import_rewriter(jsx_preserve),
                 rewrite_relative_import_extensions.into_bool(),
             );
 
@@ -791,7 +793,9 @@ impl Options {
             Optional::new(
                 hygiene_with_config(swc_ecma_transforms_base::hygiene::Config {
                     top_level_mark,
-                    ..hygiene_config.clone().unwrap_or_default()
+                    ..hygiene_config
+                        .clone()
+                        .unwrap_or_else(hygiene::Config::hygiene_default)
                 }),
                 hygiene_config.is_some() && !is_mangler_enabled,
             ),
@@ -878,8 +882,7 @@ impl Options {
         {
             plugin_transforms.unwrap()
         } else {
-            let jsx_enabled =
-                syntax.jsx() && transform.react.runtime != Some(react::Runtime::Preserve);
+            let jsx_enabled = syntax.jsx() && !jsx_preserve;
 
             let decorator_pass: Box<dyn Pass> =
                 match transform.decorator_version.unwrap_or_default() {
@@ -1727,8 +1730,8 @@ impl ModuleConfig {
             Some(ModuleConfig::SystemJs(config)) => build_resolver(
                 base_url,
                 paths,
-                config.config.resolve_fully,
-                &config.config.out_file_extension,
+                config.resolve_fully,
+                &config.out_file_extension,
                 preserve_symlinks,
             ),
         };
@@ -1813,8 +1816,8 @@ pub struct TransformConfig {
 /// Public `.swcrc` configuration for React Compiler.
 ///
 /// This intentionally mirrors only a curated subset of upstream
-/// `PluginOptions`; the deep `environment` configuration is kept internal for
-/// the first SWC integration.
+/// `PluginOptions`. The nested `environment` object likewise exposes only a
+/// curated subset of the compiler's environment configuration.
 #[derive(Debug, Default, Clone, Serialize, Deserialize, Merge)]
 #[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ReactCompilerConfig {
@@ -1856,6 +1859,9 @@ pub struct ReactCompilerConfig {
 
     #[serde(default)]
     pub dynamic_gating: Option<ReactCompilerDynamicGatingConfig>,
+
+    #[serde(default)]
+    pub environment: Option<ReactCompilerEnvironmentConfig>,
 }
 
 #[cfg(feature = "react-compiler")]
@@ -1906,6 +1912,9 @@ impl ReactCompilerConfig {
         }
         if let Some(dynamic_gating) = self.dynamic_gating {
             options.dynamic_gating = Some(dynamic_gating.into());
+        }
+        if let Some(environment) = self.environment {
+            environment.apply_to(&mut options);
         }
 
         options
@@ -2027,6 +2036,38 @@ impl From<ReactCompilerDynamicGatingConfig> for swc_ecma_react_compiler::Dynamic
     fn from(config: ReactCompilerDynamicGatingConfig) -> Self {
         Self {
             source: config.source,
+        }
+    }
+}
+
+/// Curated subset of the React Compiler `environment` options exposed through
+/// the SWC config, mirroring Babel's `reactCompiler.environment` object.
+///
+/// Only fields wired end-to-end into the compiler are exposed here. A field
+/// left unset (`None`) leaves the compiler default untouched, so a partial
+/// object such as `{ "enableFunctionOutlining": false }` overrides only that
+/// setting.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
+pub struct ReactCompilerEnvironmentConfig {
+    /// Extract anonymous functions that do not close over local variables into
+    /// top-level helper functions. Maps to the compiler's
+    /// `environment.enable_function_outlining` (default `true`).
+    #[serde(default)]
+    pub enable_function_outlining: Option<bool>,
+}
+
+#[cfg(feature = "react-compiler")]
+impl ReactCompilerEnvironmentConfig {
+    /// Apply the set (`Some`) overrides onto the compiler options' environment,
+    /// leaving unset fields at their existing (default) values.
+    ///
+    /// This mutates the public `environment` field in place rather than naming
+    /// the upstream `EnvironmentConfig` type, so the config layer does not
+    /// require that type to be re-exported.
+    fn apply_to(self, options: &mut swc_ecma_react_compiler::PluginOptions) {
+        if let Some(enable_function_outlining) = self.enable_function_outlining {
+            options.environment.enable_function_outlining = enable_function_outlining;
         }
     }
 }
