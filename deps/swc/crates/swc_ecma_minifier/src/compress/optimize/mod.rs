@@ -79,7 +79,8 @@ pub(super) fn optimizer<'a>(
             in_strict: options.module,
             remaining_depth: 6,
         },
-        scope: SyntaxContext::default(),
+        scope: marks.top_level_ctxt,
+        var_scope: marks.top_level_ctxt,
         bit_ctx: BitCtx::default(),
     };
 
@@ -110,6 +111,9 @@ struct Ctx {
 
     /// Current scope.
     scope: SyntaxContext,
+
+    /// fn or top level scope
+    var_scope: SyntaxContext,
 
     bit_ctx: BitCtx,
 }
@@ -373,10 +377,6 @@ impl Optimizer<'_> {
     }
 
     fn may_add_ident(&self) -> bool {
-        if self.ctx.in_top_level() && self.data.top.contains(ScopeData::HAS_EVAL_CALL) {
-            return false;
-        }
-
         // in class field
         if self.ctx.bit_ctx.contains(BitCtx::InClass)
             && !self
@@ -393,7 +393,7 @@ impl Optimizer<'_> {
 
         if self
             .data
-            .get_scope(self.ctx.scope)
+            .get_scope(self.ctx.var_scope)
             .unwrap()
             .contains(ScopeData::HAS_EVAL_CALL)
         {
@@ -816,8 +816,8 @@ impl Optimizer<'_> {
                     .map(|body| body.stmts.is_empty())
                     .unwrap_or(false),
                 Expr::Arrow(f) => match &*f.body {
-                    BlockStmtOrExpr::BlockStmt(body) => body.stmts.is_empty(),
-                    BlockStmtOrExpr::Expr(_) => false,
+                    ArrowFunctionBody::FunctionBody(body) => body.stmts.is_empty(),
+                    ArrowFunctionBody::Expr(_) => false,
                     #[cfg(swc_ast_unknown)]
                     _ => panic!("unable to access unknown nodes"),
                 },
@@ -1478,6 +1478,20 @@ impl Optimizer<'_> {
         }
     }
 
+    fn function_like_ctx(&self, scope: SyntaxContext) -> Ctx {
+        Ctx {
+            bit_ctx: self
+                .ctx
+                .bit_ctx
+                .with(BitCtx::InFnLike, true)
+                .with(BitCtx::TopLevel, false)
+                .with(BitCtx::InParam, false),
+            scope,
+            var_scope: scope,
+            ..self.ctx.clone()
+        }
+    }
+
     fn visit_with_prepend<N>(&mut self, n: &mut N)
     where
         N: VisitMutWith<Self>,
@@ -1511,25 +1525,17 @@ impl VisitMut for Optimizer<'_> {
         }
 
         {
-            let ctx = Ctx {
-                bit_ctx: self
-                    .ctx
-                    .bit_ctx
-                    .with(BitCtx::InFnLike, true)
-                    .with(BitCtx::TopLevel, false),
-                scope: n.ctxt,
-                ..self.ctx.clone()
-            };
+            let ctx = self.function_like_ctx(n.ctxt);
             n.body.visit_mut_with(&mut *self.with_ctx(ctx));
         }
 
         if !self.prepend_stmts.is_empty() {
             let mut stmts = self.prepend_stmts.take().take_stmts();
             match &mut *n.body {
-                BlockStmtOrExpr::BlockStmt(v) => {
+                ArrowFunctionBody::FunctionBody(v) => {
                     prepend_stmts(&mut v.stmts, stmts.into_iter());
                 }
-                BlockStmtOrExpr::Expr(v) => {
+                ArrowFunctionBody::Expr(v) => {
                     self.changed = true;
                     report_change!("Converting a body of an arrow expression to BlockStmt");
 
@@ -1540,10 +1546,9 @@ impl VisitMut for Optimizer<'_> {
                         }
                         .into(),
                     );
-                    *n.body = BlockStmtOrExpr::BlockStmt(BlockStmt {
+                    *n.body = ArrowFunctionBody::FunctionBody(FunctionBody {
                         span: DUMMY_SP,
                         stmts,
-                        ..Default::default()
                     });
                 }
                 #[cfg(swc_ast_unknown)]
@@ -1553,7 +1558,7 @@ impl VisitMut for Optimizer<'_> {
 
         self.prepend_stmts = prepend;
 
-        if let BlockStmtOrExpr::BlockStmt(body) = &mut *n.body {
+        if let ArrowFunctionBody::FunctionBody(body) = &mut *n.body {
             drop_invalid_stmts(&mut body.stmts);
         }
     }
@@ -1640,15 +1645,15 @@ impl VisitMut for Optimizer<'_> {
         n.visit_mut_children_with(&mut *self.with_ctx(ctx));
     }
 
-    fn visit_mut_block_stmt_or_expr(&mut self, n: &mut BlockStmtOrExpr) {
+    fn visit_mut_arrow_function_body(&mut self, n: &mut ArrowFunctionBody) {
         n.visit_mut_children_with(self);
 
         match n {
-            BlockStmtOrExpr::BlockStmt(n) => {
+            ArrowFunctionBody::FunctionBody(n) => {
                 self.merge_if_returns(&mut n.stmts, false, true);
                 self.drop_else_token(&mut n.stmts);
             }
-            BlockStmtOrExpr::Expr(_) => {}
+            ArrowFunctionBody::Expr(_) => {}
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         }
@@ -1809,10 +1814,39 @@ impl VisitMut for Optimizer<'_> {
                 private_method.visit_mut_with(&mut *self.with_ctx(ctx));
             }
 
+            ClassMember::StaticBlock(s) => {
+                let ctx = Ctx {
+                    bit_ctx: self
+                        .ctx
+                        .bit_ctx
+                        .with(BitCtx::TopLevel, false)
+                        .with(BitCtx::InBlock, true)
+                        .with(BitCtx::InParam, false),
+                    scope: s.body.ctxt,
+                    var_scope: s.body.ctxt,
+                    ..self.ctx.clone()
+                };
+                n.visit_mut_children_with(&mut *self.with_ctx(ctx));
+            }
+
             _ => {
                 n.visit_mut_children_with(&mut *self.with_ctx(ctx));
             }
         }
+    }
+
+    #[cfg_attr(
+        all(debug_assertions, feature = "debug"),
+        tracing::instrument(level = "debug", skip_all)
+    )]
+    fn visit_mut_constructor(&mut self, n: &mut Constructor) {
+        n.key.visit_mut_with(self);
+
+        let ctx = self.function_like_ctx(n.ctxt);
+        let optimizer = &mut *self.with_ctx(ctx);
+
+        n.params.visit_mut_with(optimizer);
+        n.body.visit_mut_with(optimizer);
     }
 
     #[cfg_attr(
@@ -2329,15 +2363,7 @@ impl VisitMut for Optimizer<'_> {
         let old_in_asm = self.ctx.bit_ctx.contains(BitCtx::InAsm);
 
         {
-            let ctx = Ctx {
-                bit_ctx: self
-                    .ctx
-                    .bit_ctx
-                    .with(BitCtx::InFnLike, true)
-                    .with(BitCtx::TopLevel, false),
-                scope: n.ctxt,
-                ..self.ctx.clone()
-            };
+            let ctx = self.function_like_ctx(n.ctxt);
             let optimizer = &mut *self.with_ctx(ctx);
 
             n.params.visit_mut_with(optimizer);
@@ -2539,6 +2565,8 @@ impl VisitMut for Optimizer<'_> {
                 .with(BitCtx::IsLhsOfAssign, false);
             n.args.visit_mut_with(&mut *self.with_ctx(ctx));
         }
+
+        self.ignore_unused_args_of_new(n);
 
         // Try to replace global object with alias (after other transformations)
         if self
@@ -2982,7 +3010,12 @@ impl VisitMut for Optimizer<'_> {
     fn visit_mut_switch_stmt(&mut self, n: &mut SwitchStmt) {
         n.discriminant.visit_mut_with(self);
 
-        n.cases.visit_mut_with(self);
+        let ctx = Ctx {
+            bit_ctx: self.ctx.bit_ctx.with(BitCtx::InBlock, true),
+            scope: n.body_ctxt,
+            ..self.ctx
+        };
+        n.cases.visit_mut_with(&mut *self.with_ctx(ctx));
     }
 
     /// We don't optimize [Tpl] contained in [TaggedTpl].
