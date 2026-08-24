@@ -87,23 +87,6 @@ impl Visit for ThisVisitor {
     /// Don't recurse into fn
     fn visit_function(&mut self, _: &Function) {}
 
-    /// Don't recurse into fn
-    fn visit_getter_prop(&mut self, n: &GetterProp) {
-        n.key.visit_with(self);
-    }
-
-    /// Don't recurse into fn
-    fn visit_method_prop(&mut self, n: &MethodProp) {
-        n.key.visit_with(self);
-        n.function.visit_with(self);
-    }
-
-    /// Don't recurse into fn
-    fn visit_setter_prop(&mut self, n: &SetterProp) {
-        n.key.visit_with(self);
-        n.param.visit_with(self);
-    }
-
     fn visit_this_expr(&mut self, _: &ThisExpr) {
         self.found = true;
     }
@@ -403,6 +386,11 @@ impl IsEmpty for BlockStmt {
         self.stmts.is_empty()
     }
 }
+impl IsEmpty for FunctionBody {
+    fn is_empty(&self) -> bool {
+        self.stmts.is_empty()
+    }
+}
 impl IsEmpty for CatchClause {
     fn is_empty(&self) -> bool {
         self.body.stmts.is_empty()
@@ -499,6 +487,7 @@ pub trait StmtExt {
             allow_break: bool,
             allow_throw: bool,
         ) -> Result<bool, ()> {
+            // println!("2222 {in_switch} {allow_break} {:#?}", stmt);
             Ok(match stmt {
                 Stmt::Break(_) => {
                     if in_switch {
@@ -542,7 +531,16 @@ pub trait StmtExt {
                     let mut has_default = false;
                     let mut has_non_empty_terminates = false;
 
-                    for case in &s.cases {
+                    // last case empty or no case at all
+                    if s.cases
+                        .last()
+                        .map(|case| case.cons.is_empty())
+                        .unwrap_or(true)
+                    {
+                        return Ok(false);
+                    }
+
+                    for case in s.cases.iter().rev() {
                         if case.test.is_none() {
                             has_default = true
                         }
@@ -676,8 +674,6 @@ impl Visit for Hoister {
 
     fn visit_function(&mut self, _: &Function) {}
 
-    fn visit_getter_prop(&mut self, _: &GetterProp) {}
-
     fn visit_pat(&mut self, p: &Pat) {
         p.visit_children_with(self);
 
@@ -685,8 +681,6 @@ impl Visit for Hoister {
             self.vars.push(i.clone().into())
         }
     }
-
-    fn visit_setter_prop(&mut self, _: &SetterProp) {}
 
     fn visit_var_decl(&mut self, v: &VarDecl) {
         if v.kind != VarDeclKind::Var {
@@ -1172,7 +1166,9 @@ impl Visit for LiteralVisitor {
     }
 
     fn visit_number(&mut self, node: &Number) {
-        if !self.allow_non_json_value && node.value.is_infinite() {
+        // JSON number syntax can express infinities as overflowed values such
+        // as `2e308`, but it has no representation that parses to `NaN`.
+        if !self.allow_non_json_value && node.value.is_nan() {
             self.is_lit = false;
         }
     }
@@ -1514,7 +1510,8 @@ pub fn default_constructor_with_span(has_super: bool, super_call_span: Span) -> 
         } else {
             Vec::new()
         },
-        body: Some(BlockStmt {
+        body: Some(FunctionBody {
+            span: DUMMY_SP,
             stmts: if has_super {
                 vec![CallExpr {
                     span: super_call_span,
@@ -1529,7 +1526,6 @@ pub fn default_constructor_with_span(has_super: bool, super_call_span: Span) -> 
             } else {
                 Vec::new()
             },
-            ..Default::default()
         }),
         ..Default::default()
     }
@@ -2051,7 +2047,7 @@ pub fn prop_name_eq(p: &PropName, key: &str) -> bool {
     match p {
         PropName::Ident(i) => i.sym == *key,
         PropName::Str(s) => s.value == *key,
-        PropName::Num(n) => n.value.to_string() == *key,
+        PropName::Num(n) => n.value.to_js_string() == *key,
         PropName::BigInt(_) => false,
         PropName::Computed(e) => match &*e.expr {
             Expr::Lit(Lit::Str(Str { value, .. })) => *value == *key,
@@ -2298,6 +2294,10 @@ impl Visit for TopLevelAwait {
                 key: PropName::Computed(computed),
                 ..
             }) => computed.visit_children_with(self),
+            ClassMember::AutoAccessor(AutoAccessor {
+                key: Key::Public(PropName::Computed(computed)),
+                ..
+            }) => computed.visit_children_with(self),
             _ => (),
         };
     }
@@ -2306,9 +2306,16 @@ impl Visit for TopLevelAwait {
         match prop {
             Prop::KeyValue(KeyValueProp {
                 key: PropName::Computed(computed),
+                value,
                 ..
-            })
-            | Prop::Getter(GetterProp {
+            }) => {
+                computed.visit_children_with(self);
+                value.visit_with(self);
+            }
+            Prop::KeyValue(KeyValueProp { value, .. }) | Prop::Assign(AssignProp { value, .. }) => {
+                value.visit_with(self);
+            }
+            Prop::Getter(GetterProp {
                 key: PropName::Computed(computed),
                 ..
             })
@@ -2740,8 +2747,10 @@ fn is_array_lit(expr: &Expr) -> bool {
 }
 
 fn is_nan(expr: &Expr) -> bool {
-    // NaN is special
-    expr.is_ident_ref_to("NaN")
+    match expr {
+        Expr::Lit(Lit::Num(number)) => number.value.is_nan(),
+        _ => expr.is_ident_ref_to("NaN"),
+    }
 }
 
 fn is_undefined(expr: &Expr, ctx: ExprCtx) -> bool {
@@ -2779,18 +2788,24 @@ fn as_pure_bool(expr: &Expr, ctx: ExprCtx) -> BoolValue {
     }
 }
 
+/// Returns whether a number is truthy according to ECMAScript semantics.
+#[inline]
+fn is_truthy_number(value: f64) -> bool {
+    !matches!(value.classify(), FpCategory::Nan | FpCategory::Zero)
+}
+
 fn cast_to_bool(expr: &Expr, ctx: ExprCtx) -> (Purity, BoolValue) {
     let Some(ctx) = ctx.consume_depth() else {
         return (MayBeImpure, Unknown);
     };
 
     if let Expr::Ident(i) = expr {
-        if &*i.sym == "NaN" {
-            return (Pure, Known(false));
-        }
-
         if i.ctxt != ctx.unresolved_ctxt {
             return (Pure, Unknown);
+        }
+
+        if &*i.sym == "NaN" {
+            return (Pure, Known(false));
         }
 
         if &*i.sym == "undefined" {
@@ -2848,7 +2863,7 @@ fn cast_to_bool(expr: &Expr, ctx: ExprCtx) -> (Purity, BoolValue) {
         }) => {
             let v = arg.as_pure_number(ctx);
             match v {
-                Known(n) => Known(!matches!(n.classify(), FpCategory::Nan | FpCategory::Zero)),
+                Known(n) => Known(is_truthy_number(-n)),
                 Unknown => return (MayBeImpure, Unknown),
             }
         }
@@ -2875,13 +2890,7 @@ fn cast_to_bool(expr: &Expr, ctx: ExprCtx) -> (Purity, BoolValue) {
             return (
                 lp + rp,
                 match (ln, rn) {
-                    (Known(ln), Known(rn)) => {
-                        if ln == rn {
-                            Known(false)
-                        } else {
-                            Known(true)
-                        }
-                    }
+                    (Known(ln), Known(rn)) => Known(is_truthy_number(ln - rn)),
                     _ => Unknown,
                 },
             );
@@ -2898,17 +2907,7 @@ fn cast_to_bool(expr: &Expr, ctx: ExprCtx) -> (Purity, BoolValue) {
 
             match (lv, rv) {
                 (Known(lv), Known(rv)) => {
-                    // NaN is false
-                    if lv == 0.0 && rv == 0.0 {
-                        return (Pure, Known(false));
-                    }
-                    // Infinity is true.
-                    if rv == 0.0 {
-                        return (Pure, Known(true));
-                    }
-                    let v = lv / rv;
-
-                    return (Pure, Known(v != 0.0));
+                    return (Pure, Known(is_truthy_number(lv / rv)));
                 }
                 _ => Unknown,
             }
@@ -3017,9 +3016,7 @@ fn cast_to_bool(expr: &Expr, ctx: ExprCtx) -> (Purity, BoolValue) {
             return (
                 Pure,
                 Known(match *lit {
-                    Lit::Num(Number { value: n, .. }) => {
-                        !matches!(n.classify(), FpCategory::Nan | FpCategory::Zero)
-                    }
+                    Lit::Num(Number { value: n, .. }) => is_truthy_number(n),
                     Lit::BigInt(ref v) => v
                         .value
                         .to_string()
@@ -3818,12 +3815,43 @@ pub fn prop_name_from_ident(ident: Ident) -> PropName {
     }
 }
 
+pub fn prop_name_from_str(span: Span, s: &str) -> PropName {
+    if s == "__proto__" {
+        PropName::Computed(ComputedPropName {
+            span: DUMMY_SP,
+            expr: Box::new(Expr::Lit(Lit::Str(Str {
+                span,
+                value: s.into(),
+                raw: None,
+            }))),
+        })
+    } else if is_valid_prop_ident(s) {
+        PropName::Ident(IdentName {
+            span,
+            sym: s.into(),
+        })
+    } else {
+        PropName::Str(quote_str!(span, s))
+    }
+}
+
 #[cfg(test)]
 mod tests {
-    use swc_common::{input::StringInput, BytePos};
+    use swc_common::{input::StringInput, BytePos, DUMMY_SP};
     use swc_ecma_parser::{Parser, Syntax};
 
     use super::*;
+
+    #[test]
+    fn number_literal_nan_is_recognized() {
+        let expr = Expr::Lit(Lit::Num(Number {
+            span: DUMMY_SP,
+            value: f64::NAN,
+            raw: None,
+        }));
+
+        assert!(expr.is_nan());
+    }
 
     #[test]
     fn test_collect_decls() {
@@ -3891,9 +3919,81 @@ mod tests {
     }
 
     #[test]
+    fn top_level_await_object_property() {
+        assert!(has_top_level_await("const obj = { value: await test };"));
+        assert!(has_top_level_await("const obj = { [await key]: value };"));
+        assert!(!has_top_level_await(
+            "const obj = { async method() { await test; } };"
+        ));
+    }
+
+    #[test]
+    fn top_level_await_class() {
+        assert!(has_top_level_await("class C extends (await base) {}"));
+        assert!(has_top_level_await("class C { [await key]() {} }"));
+        assert!(!has_top_level_await(
+            "class C { async method() { await test; } }"
+        ));
+    }
+
+    #[test]
+    fn nested_await_is_not_top_level_await() {
+        assert!(!has_top_level_await("const f = async () => await test;"));
+    }
+
+    #[test]
     fn top_level_export_await() {
         assert!(has_top_level_await("export const foo = await 1;"));
         assert!(has_top_level_await("export default await 1;"));
+    }
+
+    #[test]
+    fn switch_default_before_empty_case_does_not_terminate() {
+        assert!(!stmt_in_function_terminates(
+            r#"
+switch (foo) {
+    default:
+        return 1;
+    case "0":
+}
+"#
+        ));
+    }
+
+    #[test]
+    fn switch_empty_case_before_default_terminates() {
+        assert!(stmt_in_function_terminates(
+            r#"
+switch (foo) {
+    case "0":
+    default:
+        return 1;
+}
+"#
+        ));
+    }
+
+    #[test]
+    fn switch_non_terminating_case_falls_through_to_terminating_case() {
+        assert!(!stmt_in_function_terminates(
+            r#"
+switch (foo) {
+    case "0":
+        foo();
+    default:
+        return 1;
+}
+"#
+        ));
+    }
+
+    fn stmt_in_function_terminates(text: &str) -> bool {
+        let module = parse_module(&format!("function f() {{ {text} }}"));
+        let ModuleItem::Stmt(Stmt::Decl(Decl::Fn(f))) = &module.body[0] else {
+            unreachable!("expected a function declaration")
+        };
+        let body = f.function.body.as_ref().unwrap();
+        body.stmts[0].terminates()
     }
 }
 

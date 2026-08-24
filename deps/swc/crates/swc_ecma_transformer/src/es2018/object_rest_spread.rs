@@ -5,7 +5,9 @@ use swc_common::{util::take::Take, Spanned, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_hooks::VisitMutHook;
 use swc_ecma_transforms_base::{assumptions::Assumptions, helper, helper_expr};
-use swc_ecma_utils::{alias_if_required, private_ident, quote_ident, ExprFactory};
+use swc_ecma_utils::{
+    alias_if_required, number::ToJsString, private_ident, quote_ident, ExprFactory,
+};
 
 use crate::TraverseCtx;
 
@@ -302,10 +304,10 @@ impl VisitMutHook<TraverseCtx> for ObjectRestSpreadPass {
             if !stmts.is_empty() {
                 // Insert into body
                 match &mut *arrow.body {
-                    BlockStmtOrExpr::BlockStmt(block) => {
+                    ArrowFunctionBody::FunctionBody(block) => {
                         prepend_stmts_to_front(&mut block.stmts, stmts);
                     }
-                    BlockStmtOrExpr::Expr(expr) => {
+                    ArrowFunctionBody::Expr(expr) => {
                         let mut body_stmts = stmts;
                         body_stmts.push(
                             ReturnStmt {
@@ -314,9 +316,9 @@ impl VisitMutHook<TraverseCtx> for ObjectRestSpreadPass {
                             }
                             .into(),
                         );
-                        *arrow.body = BlockStmtOrExpr::BlockStmt(BlockStmt {
+                        *arrow.body = ArrowFunctionBody::FunctionBody(FunctionBody {
+                            span: DUMMY_SP,
                             stmts: body_stmts,
-                            ..Default::default()
                         });
                     }
                     #[cfg(swc_ast_unknown)]
@@ -1053,7 +1055,7 @@ fn make_rest_call(config: Config, source: Ident, excluded: Vec<PropName>) -> Exp
                 PropName::Str(s) => Expr::Lit(Lit::Str(s)),
                 PropName::Num(n) => Expr::Lit(Lit::Str(Str {
                     span: n.span,
-                    value: n.value.to_string().into(),
+                    value: n.value.to_js_string().into(),
                     raw: None,
                 })),
                 PropName::Computed(c) if impure_count == 1 && !is_lit_str(&c.expr) => CallExpr {

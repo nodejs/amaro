@@ -38,7 +38,7 @@ pub fn dce(
         changed: false,
         pass: 0,
         in_fn: false,
-        in_block_stmt: false,
+        in_non_top_level_lexical_scope: false,
         var_decl_kind: None,
         data: Default::default(),
     })
@@ -84,7 +84,7 @@ struct TreeShaker {
     pass: u16,
 
     in_fn: bool,
-    in_block_stmt: bool,
+    in_non_top_level_lexical_scope: bool,
     var_decl_kind: Option<VarDeclKind>,
 
     data: Data,
@@ -310,11 +310,27 @@ struct VarInfo {
 struct Analyzer<'a> {
     #[allow(dead_code)]
     config: &'a Config,
+    expr_ctx: ExprCtx,
     in_var_decl: bool,
     scope: Scope<'a>,
     data: &'a mut Data,
     cur_class_id: Option<Id>,
     cur_fn_id: Option<Id>,
+    /// Lexical class bindings already declared earlier in the current scope.
+    /// Used to tell a backward (TDZ-safe) superclass reference, which may
+    /// participate in a removable declaration cycle, from a forward one, which
+    /// must be preserved.
+    initialized_classes: FxHashSet<Id>,
+    /// Subset of the above whose declaration carries decorators. A decorated
+    /// class is kept observable by its decorator independently of the cycle, so
+    /// a subclass extending it must not collapse the cycle.
+    /// Lexical class bindings, among those already initialized, whose
+    /// declaration is NOT definition-time trivial (see `class_def_is_trivial`):
+    /// it evaluates decorators, computed keys, or static initializers when
+    /// defined. A subclass must not collapse its `extends` cycle with such a
+    /// superclass, since the superclass's eager evaluation may depend on the
+    /// cycle being intact.
+    nontrivial_classes: FxHashSet<Id>,
 }
 
 #[derive(Debug, Default)]
@@ -370,6 +386,9 @@ impl Analyzer<'_> {
                 data: self.data,
                 cur_fn_id: self.cur_fn_id.clone(),
                 cur_class_id: self.cur_class_id.clone(),
+                // A new scope starts a fresh lexical-initialization context.
+                initialized_classes: Default::default(),
+                nontrivial_classes: Default::default(),
                 ..*self
             };
 
@@ -448,6 +467,103 @@ impl Analyzer<'_> {
     }
 }
 
+/// A class declaration is "definition-time trivial" when evaluating it (running
+/// its declaration) does nothing observable beyond resolving its `extends`
+/// clause and any computed member keys (whose identifier references are pinned
+/// separately by the analyzer). The eager evaluations this guards against are
+/// decorators (on the class or any member) and `static` member initializers
+/// (`static x = …`, `static #x = …`, and `static {}` blocks). Method and
+/// constructor bodies and instance-field initializers run later (at
+/// call/instantiation time), so they are not definition-time evaluations.
+///
+/// Any eager evaluation may read another class still in its temporal dead zone
+/// and throw. Restricting the backward-reference optimization to trivial
+/// classes (on both sides of the `extends` edge) means a removable cycle can
+/// only be collapsed when neither class evaluates anything at definition time
+/// except the heritage reference itself — which the caller separately checks is
+/// a safe backward reference. This closes the whole family of definition-time
+/// TDZ hazards structurally instead of enumerating each one. The `extends`
+/// expression is intentionally not inspected here; it is handled by the caller.
+fn class_def_is_trivial(class: &Class) -> bool {
+    if !class.decorators.is_empty() {
+        return false;
+    }
+    class.body.iter().all(|member| match member {
+        ClassMember::Constructor(_) | ClassMember::TsIndexSignature(_) | ClassMember::Empty(_) => {
+            true
+        }
+        ClassMember::Method(m) => m.function.decorators.is_empty(),
+        ClassMember::PrivateMethod(m) => m.function.decorators.is_empty(),
+        ClassMember::ClassProp(p) => p.decorators.is_empty() && !(p.is_static && p.value.is_some()),
+        ClassMember::PrivateProp(p) => {
+            p.decorators.is_empty() && !(p.is_static && p.value.is_some())
+        }
+        ClassMember::AutoAccessor(a) => {
+            a.decorators.is_empty() && !(a.is_static && a.value.is_some())
+        }
+        ClassMember::StaticBlock(_) => false,
+        #[cfg(swc_ast_unknown)]
+        _ => panic!("unable to access unknown nodes"),
+    })
+}
+
+/// Returns true when the class definition has no observable side effects, i.e.
+/// it is safe to drop when unused. Kept in sync with the `Decl::Class` arm of
+/// `visit_mut_decl`'s drop predicate, which calls this.
+fn class_def_is_side_effect_free(class: &Class, expr_ctx: ExprCtx) -> bool {
+    class
+        .super_class
+        .as_deref()
+        .map_or(true, |e| !e.may_have_side_effects(expr_ctx))
+        && class.body.iter().all(|m| match m {
+            ClassMember::Method(m) => !matches!(m.key, PropName::Computed(..)),
+            ClassMember::ClassProp(m) => {
+                !matches!(m.key, PropName::Computed(..))
+                    && !m
+                        .value
+                        .as_deref()
+                        .is_some_and(|e| e.may_have_side_effects(expr_ctx))
+            }
+            ClassMember::AutoAccessor(m) => {
+                !matches!(m.key, Key::Public(PropName::Computed(..)))
+                    && !m
+                        .value
+                        .as_deref()
+                        .is_some_and(|e| e.may_have_side_effects(expr_ctx))
+            }
+            ClassMember::PrivateProp(m) => !m
+                .value
+                .as_deref()
+                .is_some_and(|e| e.may_have_side_effects(expr_ctx)),
+            ClassMember::StaticBlock(_) => false,
+            ClassMember::TsIndexSignature(_)
+            | ClassMember::Empty(_)
+            | ClassMember::Constructor(_)
+            | ClassMember::PrivateMethod(_) => true,
+            #[cfg(swc_ast_unknown)]
+            _ => panic!("unable to access unknown nodes"),
+        })
+}
+
+/// Returns true if references in an initializer can be attributed to the
+/// initialized binding instead of being treated as eager top-level references.
+fn can_attribute_initializer_refs_to_binding(expr: &Expr, expr_ctx: ExprCtx) -> bool {
+    match expr {
+        Expr::Fn(_) | Expr::Arrow(_) => true,
+        Expr::Class(c) => {
+            // Class heritage is evaluated while defining the class and can throw
+            // even when evaluating the heritage expression itself is pure. The
+            // remaining checks reject decorators, computed keys, and static
+            // initialization, leaving only dependencies evaluated after the class
+            // value is used (for example, method and constructor bodies).
+            c.class.super_class.is_none()
+                && class_def_is_trivial(&c.class)
+                && class_def_is_side_effect_free(&c.class, expr_ctx)
+        }
+        _ => false,
+    }
+}
+
 impl Visit for Analyzer<'_> {
     noop_visit_type!();
 
@@ -468,12 +584,53 @@ impl Visit for Analyzer<'_> {
     }
 
     fn visit_class_decl(&mut self, n: &ClassDecl) {
-        if let Some(super_class) = &n.class.super_class {
-            super_class.visit_with(self);
+        // A superclass that is a backward reference to an already-initialized
+        // class can be attributed as a normal dependency edge, letting an
+        // unreachable `extends` cycle collapse. A forward reference, a
+        // non-identifier expression, or anything else is treated as a top-level
+        // reference (the original behavior): it pins the referent as an entry
+        // and preserves any cycle it belongs to. This keeps TDZ-observable
+        // cycles such as `class A extends B {} class B extends A {}` (which
+        // throws at runtime) from being eliminated.
+        // The backward-reference optimization (attributing the `extends` edge to
+        // the subclass so an unreachable cycle can collapse) is only applied when
+        // it is provably safe. It requires the superclass to be an identifier
+        // already initialized earlier in this scope, AND:
+        //   - the subclass carries no decorators, and the superclass is not decorated
+        //     either — a decorator runs at definition time and keeps a class observable
+        //     independently of the cycle, so collapsing it could drop a sibling the
+        //     decorator still needs;
+        //   - neither class is in `top_retain`, which keeps it externally reachable.
+        // Anything else falls back to the original behavior (the heritage
+        // reference pins the referent as an entry, preserving the cycle).
+        // Preserving an unused cycle is always safe; dropping a live one is the bug.
+        let super_id = n.class.super_class.as_deref().and_then(|sc| match sc {
+            Expr::Ident(i) => Some(i.to_id()),
+            _ => None,
+        });
+        let super_is_initialized_class_ref = class_def_is_trivial(&n.class)
+            && !self.config.top_retain.contains(&n.ident.sym)
+            && super_id.as_ref().is_some_and(|id| {
+                self.initialized_classes.contains(id)
+                    && !self.nontrivial_classes.contains(id)
+                    && !self.config.top_retain.contains(&id.0)
+            });
+
+        if !super_is_initialized_class_ref {
+            if let Some(super_class) = &n.class.super_class {
+                super_class.visit_with(self);
+            }
         }
 
         self.with_ast_path(vec![n.ident.to_id()], |v| {
             let old = v.cur_class_id.take();
+
+            if super_is_initialized_class_ref {
+                if let Some(super_class) = &n.class.super_class {
+                    super_class.visit_with(v);
+                }
+            }
+
             v.cur_class_id = Some(n.ident.to_id());
             n.ident.visit_with(v);
             n.class.decorators.visit_with(v);
@@ -483,11 +640,37 @@ impl Visit for Analyzer<'_> {
             if !n.class.decorators.is_empty() {
                 v.add(n.ident.to_id(), false);
             }
-        })
+        });
+
+        // A class that is not definition-time trivial evaluates something when
+        // defined (decorators, computed keys, or static initializers) that may
+        // read another class still in its TDZ. It is recorded so a later
+        // subclass extending it will not collapse their cycle, and is itself
+        // pinned as an entry so any cycle it participates in is kept alive.
+        // Independently, a class whose definition has observable side effects
+        // cannot be dropped either.
+        let is_trivial = class_def_is_trivial(&n.class);
+        if !is_trivial {
+            self.nontrivial_classes.insert(n.ident.to_id());
+        }
+        if !is_trivial || !class_def_is_side_effect_free(&n.class, self.expr_ctx) {
+            let idx = self.data.node(&n.ident.to_id());
+            self.data.entries.insert(idx);
+        }
+
+        self.initialized_classes.insert(n.ident.to_id());
     }
 
     fn visit_class_expr(&mut self, n: &ClassExpr) {
-        n.visit_children_with(self);
+        if let Some(ident) = &n.ident {
+            // ClassDefinitionEvaluation creates a lexical binding for a named
+            // class expression that is visible only inside the class definition.
+            let old = self.cur_class_id.replace(ident.to_id());
+            n.visit_children_with(self);
+            self.cur_class_id = old;
+        } else {
+            n.visit_children_with(self);
+        }
 
         if !n.class.decorators.is_empty() {
             if let Some(i) = &n.ident {
@@ -613,7 +796,17 @@ impl Visit for Analyzer<'_> {
     }
 
     fn visit_fn_expr(&mut self, n: &FnExpr) {
-        n.visit_children_with(self);
+        if let Some(ident) = &n.ident {
+            // `InstantiateOrdinaryFunctionExpression` creates a binding for a named
+            // function expression in an environment local to the function. It is
+            // therefore a self-reference, not a reference to an outer declaration
+            // with the same symbol.
+            let old = self.cur_fn_id.replace(ident.to_id());
+            n.visit_children_with(self);
+            self.cur_fn_id = old;
+        } else {
+            n.visit_children_with(self);
+        }
 
         if !n.function.decorators.is_empty() {
             if let Some(i) = &n.ident {
@@ -649,7 +842,19 @@ impl Visit for Analyzer<'_> {
         n.name.visit_with(self);
 
         self.in_var_decl = false;
-        n.init.visit_with(self);
+        match (&n.name, n.init.as_deref()) {
+            // When a function or a side-effect-free class directly initializes a
+            // variable, its deferred references are dependencies of that variable
+            // rather than top-level entries. Keep this limited to direct values:
+            // attributing an arbitrary initializer to the binding could hide its
+            // eager side effects or TDZ errors.
+            (Pat::Ident(binding), Some(init))
+                if can_attribute_initializer_refs_to_binding(init, self.expr_ctx) =>
+            {
+                self.with_ast_path(vec![binding.to_id()], |v| n.init.visit_with(v));
+            }
+            _ => n.init.visit_with(self),
+        }
 
         self.in_var_decl = old;
     }
@@ -699,7 +904,7 @@ impl TreeShaker {
                 if !self.in_fn {
                     return false;
                 }
-            } else if !self.in_block_stmt {
+            } else if !self.in_non_top_level_lexical_scope {
                 return false;
             }
         }
@@ -720,7 +925,7 @@ impl TreeShaker {
                 if !self.in_fn {
                     return false;
                 }
-            } else if !self.in_block_stmt {
+            } else if !self.in_non_top_level_lexical_scope {
                 return false;
             }
 
@@ -777,6 +982,48 @@ impl TreeShaker {
     }
 }
 
+/// Top-level declared identifiers, without descending into function bodies.
+fn push_decl_binding_ids(decl: &Decl, out: &mut Vec<Id>) {
+    match decl {
+        Decl::Class(c) => out.push(c.ident.to_id()),
+        Decl::Fn(f) => out.push(f.ident.to_id()),
+        Decl::Var(v) => {
+            for d in &v.decls {
+                out.extend(find_pat_ids::<_, Id>(&d.name));
+            }
+        }
+        _ => {}
+    }
+}
+
+/// Collects `var` bindings that hoist to the enclosing top-level (module or
+/// script) scope: `var`s anywhere except inside a nested function scope. Used
+/// alongside the immediate top-level declarations so a `var` hoisted out of a
+/// top-level block (e.g. `if (c) { var x }`) stays visible to a root `eval`.
+#[derive(Default)]
+struct RootHoistedVars {
+    ids: Vec<Id>,
+}
+
+impl Visit for RootHoistedVars {
+    noop_visit_type!();
+
+    // Nested function scopes don't hoist their `var`s to the root.
+    fn visit_function(&mut self, _: &Function) {}
+
+    fn visit_arrow_expr(&mut self, _: &ArrowExpr) {}
+
+    fn visit_constructor(&mut self, _: &Constructor) {}
+
+    fn visit_var_decl(&mut self, n: &VarDecl) {
+        if n.kind == VarDeclKind::Var {
+            for d in &n.decls {
+                self.ids.extend(find_pat_ids::<_, Id>(&d.name));
+            }
+        }
+    }
+}
+
 impl VisitMut for TreeShaker {
     noop_visit_mut_type!();
 
@@ -799,13 +1046,20 @@ impl VisitMut for TreeShaker {
     }
 
     fn visit_mut_block_stmt(&mut self, n: &mut BlockStmt) {
-        let old_in_block_stmt = self.in_block_stmt;
-        self.in_block_stmt = true;
+        let old_in_non_top_level_lexical_scope = self.in_non_top_level_lexical_scope;
+        self.in_non_top_level_lexical_scope = true;
         n.visit_mut_children_with(self);
-        self.in_block_stmt = old_in_block_stmt;
+        self.in_non_top_level_lexical_scope = old_in_non_top_level_lexical_scope;
     }
 
-    fn visit_mut_block_stmt_or_expr(&mut self, n: &mut BlockStmtOrExpr) {
+    fn visit_mut_function_body(&mut self, n: &mut FunctionBody) {
+        let old_in_non_top_level_lexical_scope = self.in_non_top_level_lexical_scope;
+        self.in_non_top_level_lexical_scope = true;
+        n.visit_mut_children_with(self);
+        self.in_non_top_level_lexical_scope = old_in_non_top_level_lexical_scope;
+    }
+
+    fn visit_mut_arrow_function_body(&mut self, n: &mut ArrowFunctionBody) {
         let old_in_fn = self.in_fn;
         self.in_fn = true;
         n.visit_mut_children_with(self);
@@ -831,41 +1085,7 @@ impl VisitMut for TreeShaker {
             }
             Decl::Class(c)
                 if self.can_drop_binding(c.ident.to_id(), false)
-                    && c.class
-                        .super_class
-                        .as_deref()
-                        .map_or(true, |e| !e.may_have_side_effects(self.expr_ctx))
-                    && c.class.body.iter().all(|m| match m {
-                        ClassMember::Method(m) => !matches!(m.key, PropName::Computed(..)),
-                        ClassMember::ClassProp(m) => {
-                            !matches!(m.key, PropName::Computed(..))
-                                && !m
-                                    .value
-                                    .as_deref()
-                                    .is_some_and(|e| e.may_have_side_effects(self.expr_ctx))
-                        }
-                        ClassMember::AutoAccessor(m) => {
-                            !matches!(m.key, Key::Public(PropName::Computed(..)))
-                                && !m
-                                    .value
-                                    .as_deref()
-                                    .is_some_and(|e| e.may_have_side_effects(self.expr_ctx))
-                        }
-
-                        ClassMember::PrivateProp(m) => !m
-                            .value
-                            .as_deref()
-                            .is_some_and(|e| e.may_have_side_effects(self.expr_ctx)),
-
-                        ClassMember::StaticBlock(_) => false,
-
-                        ClassMember::TsIndexSignature(_)
-                        | ClassMember::Empty(_)
-                        | ClassMember::Constructor(_)
-                        | ClassMember::PrivateMethod(_) => true,
-                        #[cfg(swc_ast_unknown)]
-                        _ => panic!("unable to access unknown nodes"),
-                    }) =>
+                    && class_def_is_side_effect_free(&c.class, self.expr_ctx) =>
             {
                 #[cfg(debug_assertions)]
                 debug!("Dropping class `{}` as it's not used", c.ident);
@@ -1032,13 +1252,62 @@ impl VisitMut for TreeShaker {
             {
                 let mut analyzer = Analyzer {
                     config: &self.config,
+                    expr_ctx: self.expr_ctx,
                     in_var_decl: false,
                     scope: Default::default(),
                     data: &mut data,
                     cur_class_id: Default::default(),
                     cur_fn_id: Default::default(),
+                    initialized_classes: Default::default(),
+                    nontrivial_classes: Default::default(),
                 };
                 m.visit_with(&mut analyzer);
+
+                if analyzer.scope.found_direct_eval {
+                    // A direct `eval` reaching the root can resolve any
+                    // top-level binding by name. Pin the module's top-level
+                    // declarations as graph entries so DCE can't drop them.
+                    // Unlike `collect_decls`, we do NOT descend into function
+                    // bodies: a top-level `eval` cannot observe bindings nested
+                    // inside another scope.
+                    let mut ids = Vec::new();
+                    for item in &m.body {
+                        match item {
+                            ModuleItem::Stmt(Stmt::Decl(d)) => push_decl_binding_ids(d, &mut ids),
+                            ModuleItem::ModuleDecl(ModuleDecl::ExportDecl(e)) => {
+                                push_decl_binding_ids(&e.decl, &mut ids)
+                            }
+                            ModuleItem::ModuleDecl(ModuleDecl::Import(i)) => {
+                                for spec in &i.specifiers {
+                                    ids.push(match spec {
+                                        ImportSpecifier::Named(s) => s.local.to_id(),
+                                        ImportSpecifier::Default(s) => s.local.to_id(),
+                                        ImportSpecifier::Namespace(s) => s.local.to_id(),
+                                        #[cfg(swc_ast_unknown)]
+                                        _ => continue,
+                                    });
+                                }
+                            }
+                            _ => {}
+                        }
+                    }
+
+                    // Also pin `var`s hoisted out of nested top-level statements
+                    // (e.g. `if (c) { var x }`), visible to a root `eval`.
+                    let mut hoisted = RootHoistedVars::default();
+                    m.visit_with(&mut hoisted);
+                    ids.extend(hoisted.ids);
+
+                    for id in ids {
+                        // Pin as a graph entry so `subtract_cycles` never
+                        // subtracts it (survives Repeat passes), and bump usage
+                        // so a lone binding — which has no in-graph references —
+                        // isn't dropped by `can_drop_binding`.
+                        let ix = analyzer.data.node(&id);
+                        analyzer.data.entries.insert(ix);
+                        analyzer.data.used_names.entry(id).or_default().usage += 1;
+                    }
+                }
             }
             data.subtract_cycles();
             self.data = data;
@@ -1098,13 +1367,47 @@ impl VisitMut for TreeShaker {
             {
                 let mut analyzer = Analyzer {
                     config: &self.config,
+                    expr_ctx: self.expr_ctx,
                     in_var_decl: false,
                     scope: Default::default(),
                     data: &mut data,
                     cur_class_id: Default::default(),
                     cur_fn_id: Default::default(),
+                    initialized_classes: Default::default(),
+                    nontrivial_classes: Default::default(),
                 };
                 m.visit_with(&mut analyzer);
+
+                // A direct `eval` can reference any binding in its enclosing
+                // lexical scope chain, up to the top level. `found_direct_eval`
+                // is propagated to the root scope, but unlike function scopes
+                // (see `with_scope`), the root never consumed it, so top-level
+                // declarations reachable by a direct `eval` were dropped.
+                // Preserve them here.
+                if analyzer.scope.found_direct_eval {
+                    let mut ids = Vec::new();
+                    for stmt in &m.body {
+                        if let Stmt::Decl(d) = stmt {
+                            push_decl_binding_ids(d, &mut ids);
+                        }
+                    }
+
+                    // Also pin `var`s hoisted out of nested top-level statements
+                    // (e.g. `if (c) { var x }`), visible to a root `eval`.
+                    let mut hoisted = RootHoistedVars::default();
+                    m.visit_with(&mut hoisted);
+                    ids.extend(hoisted.ids);
+
+                    for id in ids {
+                        // Pin as a graph entry so `subtract_cycles` never
+                        // subtracts it (survives Repeat passes), and bump usage
+                        // so a lone binding — which has no in-graph references —
+                        // isn't dropped by `can_drop_binding`.
+                        let ix = analyzer.data.node(&id);
+                        analyzer.data.entries.insert(ix);
+                        analyzer.data.used_names.entry(id).or_default().usage += 1;
+                    }
+                }
             }
             data.subtract_cycles();
             self.data = data;
