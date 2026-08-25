@@ -49,6 +49,7 @@
 	},
 	"files": [
 		"dist",
+		"lib/wasm.js",
 		"lib/**/*.d.ts",
 		"LICENSE.md"
 	],

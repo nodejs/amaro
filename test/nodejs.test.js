@@ -5,7 +5,7 @@ const {
 	isRecoverableError,
 	isValidSyntax,
 	transformModuleSyntax,
-} = require("../dist/index.js");
+} = require("../dist/nodejs.js");
 
 test("should transform module syntax for the Node.js REPL", () => {
 	const result = transformModuleSyntax(
