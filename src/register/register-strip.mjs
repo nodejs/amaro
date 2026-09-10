@@ -1,3 +1,8 @@
-import { register } from "node:module";
+import * as module from "node:module";
 
-register("./strip-loader.js", import.meta.url);
+if (typeof module.registerHooks === "function") {
+	const { loadSync } = await import("./strip-loader.mjs");
+	module.registerHooks({ load: loadSync });
+} else {
+	module.register("./strip-loader.mjs", import.meta.url);
+}
