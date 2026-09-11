@@ -45,7 +45,7 @@ exports[`should perform transformation with error 1`] = `
 `;
 
 exports[`should perform transformation with error 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL;AACA,MAAM,IAAI,MAAM\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;qBACK;qBACA;WAFL;EAAA;AAIL,SAHU;AAIV,MAAM,IAAI,MAAM\\"}"
 `;
 
 exports[`should perform transformation with source maps 1`] = `
@@ -53,7 +53,7 @@ exports[`should perform transformation with source maps 1`] = `
 `;
 
 exports[`should perform transformation with source maps 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"foo.ts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;qBACK;qBACA;WAFL;EAAA;AAKL,SAJU\\"}"
 `;
 
 exports[`should perform transformation with source maps no filename 1`] = `
@@ -61,7 +61,7 @@ exports[`should perform transformation with source maps no filename 1`] = `
 `;
 
 exports[`should perform transformation with source maps no filename 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAIL\\",\\"ignoreList\\":[0]}"
+"{\\"version\\":3,\\"sources\\":[\\"<anon>\\"],\\"sourcesContent\\":[\\"\\\\n    enum Foo {\\\\n        Bar = 7,\\\\n        Baz = 2,\\\\n    }\\\\n    output = Foo.Bar\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;qBACK;qBACA;WAFL;EAAA;AAIL,SAHU\\",\\"ignoreList\\":[0]}"
 `;
 
 exports[`should perform transformation with source maps with uncommon chars 1`] = `
@@ -69,7 +69,7 @@ exports[`should perform transformation with source maps with uncommon chars 1`] 
 `;
 
 exports[`should perform transformation with source maps with uncommon chars 2`] = `
-"{\\"version\\":3,\\"sources\\":[\\"dir%20with $unusual\\\\\\"chars?'åß∂ƒ©∆¬…\`.cts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;;;WAAA;EAAA;AAKL\\"}"
+"{\\"version\\":3,\\"sources\\":[\\"dir%20with $unusual\\\\\\"chars?'åß∂ƒ©∆¬…\`.cts\\"],\\"names\\":[],\\"mappings\\":\\"AACI,IAAA,AAAK,6BAAA;qBACK;qBACA;WAFL;EAAA;AAKL,SAJU\\"}"
 `;
 
 exports[`should perform transformation without source maps 1`] = `
