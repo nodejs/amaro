@@ -78,7 +78,15 @@ find "$DEPS_FOLDER" -depth -type d -name "fixtures" -exec rm -rf {} + 2>/dev/nul
 
 # Remove test files
 find "$DEPS_FOLDER" -type f -name "*test*.rs" -exec rm -f {} + 2>/dev/null || true
-find "$DEPS_FOLDER" -type f -name "*spec*.rs" -exec rm -f {} + 2>/dev/null || true
+
+# Remove explicit `[[test]]` targets from Cargo manifests
+find "$DEPS_FOLDER" -type f -name "Cargo.toml" | while read -r MANIFEST; do
+  awk '
+    /^\[\[test\]\]/ { skip = 1; next }
+    /^\[/ { skip = 0 }
+    !skip { print }
+  ' "$MANIFEST" > "$MANIFEST.tmp" && mv "$MANIFEST.tmp" "$MANIFEST"
+done
 
 echo "All done!"
 echo ""
