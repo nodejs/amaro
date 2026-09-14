@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.2.0](https://github.com/nodejs/amaro/compare/v1.1.11...v1.2.0) (2026-09-14)
+
+
+### Features
+
+* use `binding_nodejs_support_wasm` ([30fa9bd](https://github.com/nodejs/amaro/commit/30fa9bddeffbec38209ad7e82cd4b63bf2a3a3a2))
+
+
+### Miscellaneous
+
+* **deps:** bump actions/checkout from 7.0.0 to 7.0.1 ([6e8fc1c](https://github.com/nodejs/amaro/commit/6e8fc1cb3cc42b25e8c48fcadd14455ed7c5d134))
+* **deps:** bump actions/setup-node from 6.4.0 to 7.0.0 ([1154f5c](https://github.com/nodejs/amaro/commit/1154f5c0e11e6279c6334035b895df2d3750dfe9))
+* **deps:** bump docker/setup-buildx-action from 4.2.0 to 4.3.0 ([3b0ceb1](https://github.com/nodejs/amaro/commit/3b0ceb1ae7208763181b1f5924dcd5b0971983e3))
+* **deps:** bump EmbarkStudios/cargo-deny-action from 2.0.20 to 2.1.1 ([fdf6b1e](https://github.com/nodejs/amaro/commit/fdf6b1ed5c84fd7921ec754f91967e0a4a123532))
+* **deps:** bump github/codeql-action/upload-sarif ([a6ab544](https://github.com/nodejs/amaro/commit/a6ab5446e0c57eca1819a8afa1b002a42531a034))
+* **deps:** bump ossf/scorecard-action from 2.4.3 to 2.4.4 ([59996dd](https://github.com/nodejs/amaro/commit/59996dd4a0db438ba4dda8f332d5a84b2ae6a90e))
+* **deps:** bump step-security/harden-runner from 2.19.4 to 2.20.0 ([9c74ea0](https://github.com/nodejs/amaro/commit/9c74ea093bcfdf96e9b4098e35f102bdc6272bdc))
+* **deps:** bump step-security/harden-runner from 2.20.0 to 2.21.0 ([9e9f25b](https://github.com/nodejs/amaro/commit/9e9f25b061fbfa35b4442abb4877fbe3b7596e81))
+* **deps:** bump step-security/harden-runner from 2.21.0 to 2.21.1 ([2769444](https://github.com/nodejs/amaro/commit/27694442b862587c459155373560dc89e5094fa9))
+* update swc ([91232f4](https://github.com/nodejs/amaro/commit/91232f4097e428f8982d1fc96676f74a809ddf41))
+
 ## [1.1.11](https://github.com/nodejs/amaro/compare/v1.1.10...v1.1.11) (2026-07-16)
 
 
