@@ -2,9 +2,8 @@ const { spawnPromisified, fixturesPath } = require("./util/util.js");
 const { test } = require("node:test");
 const { match, doesNotMatch, strictEqual } = require("node:assert");
 
-test("should work as a loader", async () => {
+test("should work as a loader without warnings", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--no-warnings",
 		"--import=./dist/register-strip.mjs",
 		fixturesPath("hello.ts"),
 	]);
@@ -29,7 +28,7 @@ test("should not work with enums", async (t) => {
 
 test("should work with enums", async () => {
 	const result = await spawnPromisified(process.execPath, [
-		"--no-warnings",
+		"--enable-source-maps",
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("enum.ts"),
 	]);
@@ -47,6 +46,7 @@ test("should warn and inaccurate stracktrace", async () => {
 
 	strictEqual(result.stdout, "");
 	match(result.stderr, /Source maps are disabled/);
+	doesNotMatch(result.stderr, /DEP0205/);
 	match(result.stderr, /stacktrace.ts:7:11/); // inaccurate
 	strictEqual(result.code, 1);
 });
