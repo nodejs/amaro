@@ -12,6 +12,8 @@ them.
 - `getFirstExpression`: locates the source expression for a V8 error column
 - `isValidSyntax`: checks whether input parses
 - `isRecoverableError`: decides whether the REPL should wait for more input
+- `tokenize`: emits compact `{ kind, start, end }` tokens for REPL syntax highlighting
+- `findTopLevelAwaits`: reports module-scope `await` locations for ESM diagnostics
 
 ## Building
 
