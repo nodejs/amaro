@@ -66,6 +66,14 @@ if (mode !== "--in-container") {
 	process.exit(0);
 }
 
+// wasm-bindgen-cli must match the wasm-bindgen crate in Cargo.lock exactly.
+const wasmBindgenVersion = fs
+	.readFileSync(resolve(ROOT, "crates/amaro/Cargo.lock"), "utf8")
+	.match(/name = "wasm-bindgen"\nversion = "([^"]+)"/)?.[1];
+if (!wasmBindgenVersion) {
+	throw new Error("Could not find wasm-bindgen in crates/amaro/Cargo.lock");
+}
+
 execSync(
 	`cp -r /home/node/.rustup /home/node/home/.rustup && \
      export HOME=/home/node/home && \
