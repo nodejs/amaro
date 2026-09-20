@@ -39,8 +39,9 @@ if (mode !== "--in-container") {
 		args.push(`${process.getuid()}:${process.getegid()}`);
 	}
 	args.push("--mount");
-	args.push(`type=bind,source=${ROOT}/deps,target=/home/node/build/deps`);
+	args.push(`type=bind,source=${ROOT}/crates,target=/home/node/build/crates`);
 	if (mode !== "--dry-run") {
+		fs.mkdirSync(path.join(ROOT, "lib"), { recursive: true });
 		args.push("--mount");
 		args.push(`type=bind,source=${ROOT}/lib,target=/home/node/build/lib`);
 	} else {
@@ -70,10 +71,11 @@ execSync(
      export HOME=/home/node/home && \
      export PATH=/home/node/home/.cargo/bin:$PATH && \
      rustc --version && \
-     cd deps/swc/bindings/binding_nodejs_support_wasm && \
-     cargo install --locked wasm-pack wasm-bindgen-cli@0.2.100 && \
-     ./scripts/build.sh -- --config ../../../../tools/config.toml && \
-     cp -r pkg/* ../../../../lib`,
+     cd crates/amaro && \
+     cargo install --locked wasm-pack wasm-bindgen-cli@${wasmBindgenVersion} && \
+     wasm-pack build --out-name wasm --release --target nodejs -- --locked --config ../../tools/config.toml && \
+     node ../../tools/patch-wasm.mjs pkg && \
+     cp -r pkg/* ../../lib`,
 	{
 		stdio: "inherit",
 	},

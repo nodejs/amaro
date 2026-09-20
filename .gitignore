@@ -3,4 +3,7 @@
 node_modules
 dist
 package-lock.json
-deps/swc/target/
+# Build output of `npm run build:wasm`
+lib
+crates/amaro/target/
+crates/amaro/pkg/
