@@ -4,6 +4,7 @@ version     = "1.2.0"
 description = "Node.js TypeScript and REPL helpers built on SWC, compiled to WebAssembly"
 license     = "Apache-2.0"
 repository  = "https://github.com/nodejs/amaro.git"
+readme      = "../../README.md"
 edition     = "2021"
 publish     = false
 
