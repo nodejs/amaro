@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1](https://github.com/nodejs/amaro/compare/v1.2.0...v1.2.1) (2026-09-21)
+
+
+### Miscellaneous
+
+* bundle ([264781f](https://github.com/nodejs/amaro/commit/264781f1c67c9d0ef185cfdf187a829252836ef7))
+* bundle ([6222515](https://github.com/nodejs/amaro/commit/62225158ebb56148da3641166d5b22de07c4a3b1))
+* **deps:** bump docker/setup-buildx-action from 4.3.0 to 4.4.1 ([d709707](https://github.com/nodejs/amaro/commit/d7097072a3f429a433e5269467f0ff4847a81a79))
+* **deps:** bump github/codeql-action/upload-sarif ([f9b830e](https://github.com/nodejs/amaro/commit/f9b830e39757d2f1023e0b1f1257d8d415535f2a))
+
 ## [1.2.0](https://github.com/nodejs/amaro/compare/v1.1.11...v1.2.0) (2026-09-14)
 
 
