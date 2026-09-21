@@ -1,1 +1,2 @@
-export { transformSync } from "./transform.js";
+// Public API of the `amaro` package (`exports["."]`).
+export { transformSync } from "./index.js";
