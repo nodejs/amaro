@@ -28,7 +28,7 @@ await build({
 	],
 });
 
-// Everything else is a thin wrapper that requires `./index.js`.
+// Everything else is a thin wrapper that requires `./internal.js`.
 await build({
 	...common,
 	entryPoints: [
