@@ -10,6 +10,7 @@ use super::{util::NormalMultiReplacer, BitCtx, Optimizer};
 #[cfg(feature = "debug")]
 use crate::debug::dump;
 use crate::{
+    compress::optimize::util::may_inline_arrow,
     program_data::{ProgramData, ScopeData, VarUsageInfo, VarUsageInfoFlags},
     util::{idents_captured_by, make_number},
 };
@@ -348,6 +349,9 @@ impl Optimizer<'_> {
                                     }
 
                                     match &*arg.expr {
+                                        // RegExp literals allocate on each evaluation; moving one
+                                        // into a returned closure changes its identity.
+                                        Expr::Lit(Lit::Regex(..)) => true,
                                         Expr::Lit(Lit::Str(s)) if s.value.len() > 3 => true,
                                         Expr::Lit(..) => false,
                                         _ => true,
@@ -474,12 +478,15 @@ impl Optimizer<'_> {
             return;
         };
 
-        for idx in removed {
-            if let Some(arg) = e.args.get_mut(idx) {
-                if arg.spread.is_some() {
-                    break;
-                }
+        let first_spread = e.args.iter().position(|arg| arg.spread.is_some());
 
+        for idx in removed {
+            // Arguments at and after a dynamic spread no longer map to parameters by index.
+            if matches!(first_spread, Some(first_spread) if idx >= first_spread) {
+                break;
+            }
+
+            if let Some(arg) = e.args.get_mut(idx) {
                 // Optimize
                 let new = self.ignore_return_value(&mut arg.expr);
 
@@ -863,7 +870,8 @@ impl Optimizer<'_> {
             Expr::Lit(
                 Lit::Num(..) | Lit::Str(..) | Lit::Bool(..) | Lit::Null(..) | Lit::BigInt(..),
             ) => true,
-            Expr::Fn(..) | Expr::Arrow(..) if usage.can_inline_fn_once() => true,
+            Expr::Fn(..) if usage.can_inline_fn_once() => true,
+            Expr::Arrow(a) if usage.can_inline_fn_once() && may_inline_arrow(a) => true,
             _ => false,
         }
     }
@@ -1676,7 +1684,9 @@ impl Optimizer<'_> {
             // For arrow functions with simple parameters, inline them
             if arrow.params.len() == call.args.len() {
                 let can_inline = arrow.params.iter().zip(&call.args).all(|(param, arg)| {
-                    param.is_ident() && self.is_simple_expr_for_seq_optimization(&arg.expr)
+                    param.is_ident()
+                        && self.is_simple_expr_for_seq_optimization(&arg.expr)
+                        && !arg.expr.may_have_side_effects(self.ctx.expr_ctx)
                 });
 
                 if can_inline {

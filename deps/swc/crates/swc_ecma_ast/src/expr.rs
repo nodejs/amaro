@@ -1634,7 +1634,7 @@ pub enum SimpleAssignTarget {
     #[tag("TsInstantiation")]
     TsInstantiation(TsInstantiation),
 
-    #[tag("Invaliid")]
+    #[tag("Invalid")]
     Invalid(Invalid),
 }
 
@@ -1864,6 +1864,7 @@ test_de!(
             "end": 2,
             "ctxt": 0
           },
+          "ctxt": 0,
           "value": "a",
           "optional": false
         },
