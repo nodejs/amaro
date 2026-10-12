@@ -66,6 +66,9 @@ static DOUBLE_QUOTE_STRING_END_TABLE: SafeByteMatchTable =
 static SINGLE_QUOTE_STRING_END_TABLE: SafeByteMatchTable =
     safe_byte_match_table!(|b| matches!(b, b'\'' | b'\n' | b'\\' | b'\r'));
 
+static TEMPLATE_END_TABLE: SafeByteMatchTable =
+    safe_byte_match_table!(|b| matches!(b, b'`' | b'$' | b'\\' | b'\n' | b'\r'));
+
 static NOT_ASCII_ID_CONTINUE_TABLE: SafeByteMatchTable =
     safe_byte_match_table!(|b| !(b.is_ascii_alphanumeric() || b == b'_' || b == b'$'));
 
@@ -426,17 +429,6 @@ impl Lexer<'_> {
         let start = self.cur_pos();
         self.bump(1); // first `<` or `>`
 
-        if self.syntax.typescript()
-            && self.ctx.contains(Context::InType)
-            && !self.ctx.contains(Context::ShouldNotLexLtOrGtAsType)
-        {
-            if C == b'<' {
-                return Ok(Token::Lt);
-            } else if C == b'>' {
-                return Ok(Token::Gt);
-            }
-        }
-
         // XML style comment. `<!--`
         if C == b'<'
             && self.is(b'!')
@@ -530,7 +522,15 @@ impl Lexer<'_> {
             }};
         }
 
-        while let Some(c) = self.cur() {
+        loop {
+            let c = byte_search! {
+                lexer: self,
+                table: TEMPLATE_END_TABLE,
+                handle_eof: {
+                    return self.error(start, SyntaxError::UnterminatedTpl);
+                },
+            };
+
             if c == b'`' {
                 consume_cooked!();
                 let cooked = cooked.map(|cooked| self.atoms.wtf8_atom(&*cooked));
@@ -571,41 +571,30 @@ impl Lexer<'_> {
                 }
 
                 cooked_slice_start = self.cur_pos();
-            } else if c.is_line_terminator() {
+            } else if c == b'$' {
+                // A `$` not followed by `{` remains in the cooked slice.
+                self.bump(1);
+            } else {
+                debug_assert!(
+                    matches!(c, b'\n' | b'\r'),
+                    "template byte search must stop at CR or LF after handling delimiters and \
+                     escapes"
+                );
                 consume_cooked!();
 
-                // For line terminators, we need the full char (can be multi-byte UTF-8)
-                let c_char = if c <= 0x7f {
-                    c as char
-                } else {
-                    self.cur_as_char().unwrap()
-                };
-
-                let c = if c == b'\r' && self.peek() == Some(b'\n') {
+                // Normalize CR and CRLF to LF in the cooked value.
+                if c == b'\r' && self.peek() == Some(b'\n') {
                     self.bump(1); // '\r'
-                    '\n'
-                } else {
-                    match c_char {
-                        '\n' => '\n',
-                        '\r' => '\n',
-                        '\u{2028}' => '\u{2028}',
-                        '\u{2029}' => '\u{2029}',
-                        _ => unreachable!(),
-                    }
-                };
+                }
 
-                self.bump(c_char.len_utf8());
+                self.bump(1);
 
                 if let Ok(ref mut cooked) = cooked {
-                    cooked.push_char(c);
+                    cooked.push_char('\n');
                 }
                 cooked_slice_start = self.cur_pos();
-            } else {
-                self.bump(1);
             }
         }
-
-        self.error(start, SyntaxError::UnterminatedTpl)?
     }
 }
 
@@ -1948,16 +1937,21 @@ impl<'a> Lexer<'a> {
         self.bump(1); // '/'
 
         // Spec says "It is a Syntax Error if IdentifierPart contains a Unicode escape
-        // sequence." TODO: check for escape
-
-        // Need to use `read_word` because '\uXXXX' sequences are allowed
-        // here (don't ask).
-        // let flags_start = self.cur_pos();
+        // sequence."
+        // Need to use `read_word` because '\uXXXX' sequences are accepted by the
+        // scanner — we still reject them as an early error below.
+        // Use `cur_as_char` so non-ASCII IdentifierPart flags (e.g. `/a/π\u0067`)
+        // are scanned; `cur()` only yields the first UTF-8 byte and would miss them.
         let flags = {
-            match self.cur() {
-                Some(c) if c.is_ident_start() => self
-                    .read_word_as_str_with()
-                    .map(|(s, _)| Some(self.atom(s))),
+            match self.cur_as_char() {
+                Some(c) if c == '\\' || c.is_ident_part() => {
+                    let (s, has_escape) = self.read_word_as_str_with()?;
+                    if has_escape {
+                        let span = self.span(start);
+                        self.emit_error_span(span, SyntaxError::UnicodeEscapeInRegExpFlags);
+                    }
+                    Ok(Some(self.atom(s)))
+                }
                 _ => Ok(None),
             }
         }?;
@@ -1993,50 +1987,14 @@ impl<'a> Lexer<'a> {
     /// This method is optimized for texts without escape sequences.
     fn read_word_as_str_with(&mut self) -> LexResult<(Cow<'a, str>, bool)> {
         debug_assert!(self.cur().is_some());
-        let slice_start = self.cur_pos();
 
-        // Fast path: try to scan ASCII identifier using byte_search
         if let Some(c) = self.input().cur_as_ascii() {
             if Ident::is_valid_ascii_start(c) {
-                // Use byte_search to quickly scan to end of ASCII identifier
-                let next_byte = byte_search! {
-                    lexer: self,
-                    table: NOT_ASCII_ID_CONTINUE_TABLE,
-                    start_at: 1,
-                    handle_eof: {
-                        // Reached EOF, entire remainder is identifier
-                        let s = unsafe {
-                            // Safety: slice_start and end are valid position because we got them from
-                            // `self.input`
-                            self.input_slice_str(slice_start, self.cur_pos())
-                        };
-
-                        return Ok((Cow::Borrowed(s), false));
-                    },
-                };
-
-                // Check if we hit end of identifier or need to fall back to slow path
-                if !next_byte.is_ascii() {
-                    // Hit Unicode character, fall back to slow path from current position
-                    return self.read_word_as_str_with_slow_path(slice_start);
-                } else if next_byte == b'\\' {
-                    // Hit escape sequence, fall back to slow path from current position
-                    return self.read_word_as_str_with_slow_path(slice_start);
-                } else {
-                    // Hit end of identifier (non-continue ASCII char)
-                    let s = unsafe {
-                        // Safety: slice_start and end are valid position because we got them from
-                        // `self.input`
-                        self.input_slice_str(slice_start, self.cur_pos())
-                    };
-
-                    return Ok((Cow::Borrowed(s), false));
-                }
+                return self.read_ascii_word_as_str();
             }
         }
 
-        // Fall back to slow path for non-ASCII start or complex cases
-        self.read_word_as_str_with_slow_path(slice_start)
+        self.read_word_as_str_with_slow_path(self.cur_pos())
     }
 
     /// Slow path for identifier parsing that handles Unicode and escapes
@@ -2048,7 +2006,8 @@ impl<'a> Lexer<'a> {
         let mut first = true;
         let mut has_escape = false;
 
-        let mut buf = String::with_capacity(16);
+        // Unescaped Unicode identifiers can borrow the source just like ASCII ones.
+        let mut buf = String::new();
         loop {
             if let Some(c) = self.input().cur_as_ascii() {
                 if Ident::is_valid_ascii_continue(c) {
@@ -2063,6 +2022,9 @@ impl<'a> Lexer<'a> {
                 // unicode escape
                 if c == b'\\' {
                     first = false;
+                    if !has_escape {
+                        buf.reserve(16);
+                    }
                     has_escape = true;
                     let start = self.cur_pos();
                     self.bump(1); // `\`
@@ -2464,36 +2426,25 @@ impl<'a> Lexer<'a> {
     fn read_keyword_with(&mut self, convert: fn(&str) -> Option<Token>) -> LexResult<Token> {
         debug_assert!(self.cur().is_some());
 
-        let start = self.cur_pos();
-        let (s, has_escape) = self.read_keyword_as_str_with()?;
+        let (s, has_escape) = self.read_ascii_word_as_str()?;
         if let Some(word) = convert(s.as_ref()) {
-            // Note: ctx is store in lexer because of this error.
-            // 'await' and 'yield' may have semantic of reserved word, which means lexer
-            // should know context or parser should handle this error. Our approach to this
-            // problem is former one.
-            if has_escape && word.is_reserved(self.ctx()) {
-                self.error(
-                    start,
-                    SyntaxError::EscapeInReservedWord { word: Atom::new(s) },
-                )
-            } else {
-                Ok(word)
-            }
+            // Keep escaped keyword spellings until the parser knows whether this
+            // is a keyword or an IdentifierName (for example, a property name).
+            let value = has_escape.then(|| TokenValue::Word(self.atom(s)));
+            self.set_token_value(value);
+            Ok(word)
         } else {
             let atom = self.atom(s);
             Ok(Token::unknown_ident(atom, self))
         }
     }
 
-    /// This is a performant version of [Lexer::read_word_as_str_with] for
-    /// reading keywords. We should make sure the first byte is a valid
-    /// ASCII.
-    fn read_keyword_as_str_with(&mut self) -> LexResult<(Cow<'a, str>, bool)> {
+    /// Reads a word whose first byte is known to be an ASCII identifier start.
+    /// Unicode and escapes after the ASCII prefix use the shared slow path.
+    #[inline(always)]
+    fn read_ascii_word_as_str(&mut self) -> LexResult<(Cow<'a, str>, bool)> {
         let slice_start = self.cur_pos();
 
-        // Fast path: try to scan ASCII identifier using byte_search
-        // Performance optimization: check if first char disqualifies as keyword
-        // Use byte_search to quickly scan to end of ASCII identifier
         let next_byte = byte_search! {
             lexer: self,
             table: NOT_ASCII_ID_CONTINUE_TABLE,
