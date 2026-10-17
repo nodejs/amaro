@@ -17,14 +17,22 @@ const DEFAULT_OPTIONS = {
 	},
 } as Options;
 
+const STRIP_ONLY_DEFAULT_OPTIONS = {
+	mode: DEFAULT_OPTIONS.mode,
+	deprecatedTsModuleAsError: DEFAULT_OPTIONS.deprecatedTsModuleAsError,
+} as Options;
+
 export function transformSync(
 	source: string,
 	options?: Options,
 ): TransformOutput {
 	// Ensure that the source code is a string
 	const input = `${source ?? ""}`;
+	const mode = options?.mode ?? DEFAULT_OPTIONS.mode;
+	// `transform` is only read in "transform" mode; leaving it out in
+	// "strip-only" mode saves deserializing it on every call.
 	return swc.transformSync(input, {
-		...DEFAULT_OPTIONS,
+		...(mode === "strip-only" ? STRIP_ONLY_DEFAULT_OPTIONS : DEFAULT_OPTIONS),
 		...options,
 	});
 }
