@@ -8,19 +8,20 @@ import swc from "../lib/wasm.js";
 const DEFAULT_OPTIONS = {
 	mode: "strip-only",
 	deprecatedTsModuleAsError: true,
-	// default transform will only work when mode is "transform"
+} satisfies Options;
+
+// swc only reads `transform` in "transform" mode, so these defaults are kept
+// out of strip-only calls to avoid deserializing them on every call.
+const DEFAULT_TRANSFORM_OPTIONS = {
+	mode: "transform",
+	deprecatedTsModuleAsError: true,
 	transform: {
 		verbatimModuleSyntax: true,
 		nativeClassProperties: true,
 		noEmptyExport: true,
 		importNotUsedAsValues: "preserve",
 	},
-} as Options;
-
-const STRIP_ONLY_DEFAULT_OPTIONS = {
-	mode: DEFAULT_OPTIONS.mode,
-	deprecatedTsModuleAsError: DEFAULT_OPTIONS.deprecatedTsModuleAsError,
-} as Options;
+} satisfies Options;
 
 export function transformSync(
 	source: string,
@@ -28,13 +29,9 @@ export function transformSync(
 ): TransformOutput {
 	// Ensure that the source code is a string
 	const input = `${source ?? ""}`;
-	const mode = options?.mode ?? DEFAULT_OPTIONS.mode;
-	// `transform` is only read in "transform" mode; leaving it out in
-	// "strip-only" mode saves deserializing it on every call.
-	return swc.transformSync(input, {
-		...(mode === "strip-only" ? STRIP_ONLY_DEFAULT_OPTIONS : DEFAULT_OPTIONS),
-		...options,
-	});
+	const defaults =
+		options?.mode === "transform" ? DEFAULT_TRANSFORM_OPTIONS : DEFAULT_OPTIONS;
+	return swc.transformSync(input, { ...defaults, ...options });
 }
 
 export function transformModuleSyntax(
