@@ -1,0 +1,46 @@
+[package]
+name        = "amaro"
+version     = "1.2.0"
+description = "Node.js TypeScript and REPL helpers built on SWC, compiled to WebAssembly"
+license     = "Apache-2.0"
+repository  = "https://github.com/nodejs/amaro.git"
+readme      = "../../README.md"
+edition     = "2021"
+publish     = false
+
+[lib]
+bench      = false
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow             = "1.0.98"
+js-sys             = "0.3.77"
+miette             = "7.6.0"
+owo-colors         = "4.2.1"
+serde              = { version = "1.0.225", features = ["derive"] }
+serde-wasm-bindgen = "0.6.5"
+serde_json         = "1.0.140"
+tracing            = { version = "0.1.41", features = ["max_level_off"] }
+unicode-width      = "0.2.1"
+# tools/build-wasm.js installs the matching wasm-bindgen-cli from Cargo.lock.
+wasm-bindgen         = { version = "0.2.100", features = ["enable-interning"] }
+wasm-bindgen-futures = "0.4.50"
+
+# SWC crates. Pinned exactly because they only build together in the
+# combinations SWC publishes; Dependabot bumps them as one group.
+swc_common          = { version = "=26.0.0" }
+swc_ecma_ast        = { version = "=29.0.0" }
+swc_ecma_parser     = { version = "=45.1.1", features = ["unstable"] }
+swc_ecma_visit      = { version = "=29.0.0" }
+swc_error_reporters = { version = "=28.0.0" }
+swc_ts_fast_strip   = { version = "=58.0.0", features = ["wasm-bindgen"] }
+
+[profile.release]
+lto           = "fat"
+opt-level     = "z"
+strip         = "symbols"
+codegen-units = 1
+panic         = "abort"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
