@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.2.2](https://github.com/nodejs/amaro/compare/v1.2.1...v1.2.2) (2026-10-20)
+
+
+### Core
+
+* skip unused transform options in strip-only mode ([4ac51d6](https://github.com/nodejs/amaro/commit/4ac51d64cffac6da99e6183fe8d6e767bb707798))
+* use separate default options per mode ([2ae5622](https://github.com/nodejs/amaro/commit/2ae562294b662c52e522d257d4003931463219d6))
+
+
+### Miscellaneous
+
+* build wasm from swc v1.16.18 ([656552c](https://github.com/nodejs/amaro/commit/656552c6558c4e6c1760df47b694f1f74c2ae837))
+* **deps:** bump actions/download-artifact from 8.0.1 to 8.0.2 ([b45e32e](https://github.com/nodejs/amaro/commit/b45e32eef7a55e5f78705cc0c10bf0f9c44410d6))
+* **deps:** bump actions/setup-node from 7.0.0 to 7.1.0 ([3e566c7](https://github.com/nodejs/amaro/commit/3e566c713c8f50aea8187f84765bdd83107ca920))
+* **deps:** bump actions/upload-artifact from 7.0.1 to 7.0.2 ([1d80992](https://github.com/nodejs/amaro/commit/1d80992750f6d15d5bf225a10b4afc695c6678c1))
+* **deps:** bump actions/upload-artifact from 7.0.1 to 7.0.2 ([d758f69](https://github.com/nodejs/amaro/commit/d758f69e520e127bb8abb3efbd907b249d913378))
+* **deps:** bump github/codeql-action/upload-sarif ([a80ad33](https://github.com/nodejs/amaro/commit/a80ad33c388f9a3c3720c412a6dc4e9c5864be13))
+* **deps:** bump github/codeql-action/upload-sarif ([95280ab](https://github.com/nodejs/amaro/commit/95280abb207b4181546efe51f5c13034f0dbe26b))
+* **deps:** bump ossf/scorecard-action from 2.4.4 to 2.5.0 ([2f33f83](https://github.com/nodejs/amaro/commit/2f33f83cb9416d65145366b1392df287f322d09c))
+* **deps:** bump serde_json ([755a09e](https://github.com/nodejs/amaro/commit/755a09e01d57acebd3391e0058270f7d77fad880))
+* **deps:** bump step-security/harden-runner from 2.21.1 to 2.22.1 ([9b0ccf1](https://github.com/nodejs/amaro/commit/9b0ccf1e808f84b5c9c088a9e4831962905dee24))
+* **deps:** bump the swc group in /crates/amaro with 3 updates ([49c6da0](https://github.com/nodejs/amaro/commit/49c6da0c8b3225266ac91427a54c363ad66feb72))
+* self-maintain Node.js features ([1d7e012](https://github.com/nodejs/amaro/commit/1d7e0126f3e601103d93586a6f872144f2789dad))
+* update swc to v1.16.18 ([4caa87c](https://github.com/nodejs/amaro/commit/4caa87cda978f25211499266fcc99e637c582ebc))
+
 ## [1.2.1](https://github.com/nodejs/amaro/compare/v1.2.0...v1.2.1) (2026-09-21)
 
 
