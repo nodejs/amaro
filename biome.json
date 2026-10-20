@@ -16,7 +16,7 @@
 		"ignore": [
 			"package.json",
 			"dist/**",
-			"deps/**",
+			"crates/**",
 			"lib/**",
 			"node_modules/**",
 			"test/snapshot/**",

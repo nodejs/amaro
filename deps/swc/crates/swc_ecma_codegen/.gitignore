@@ -1,5 +1,0 @@
-/output.js
-*.map
-
-# Keep expected source-map snapshots for the template escape fixtures.
-!tests/fixture/template-unicode-escapes/**/output*.map

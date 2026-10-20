@@ -38,6 +38,8 @@ jobs:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
+      - name: Build WASM
+        run: node ./tools/build-wasm.js
       - run: npm run build
       - name: Create NPM release
         run: npm publish --provenance --access public
