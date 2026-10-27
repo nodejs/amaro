@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/nodejs/amaro/compare/v1.2.2...v1.3.0) (2026-10-27)
+
+
+### Features
+
+* use module.registerHooks for amaro/strip and amaro/transform ([b6bf196](https://github.com/nodejs/amaro/commit/b6bf196ae1e954da44a0f35532cd30b2e0969202))
+
+
+### Miscellaneous
+
+* **deps:** bump actions/checkout from 7.0.0 to 7.0.1 ([6a70c42](https://github.com/nodejs/amaro/commit/6a70c423b013e75faa538e8a3b7d190ea3e25eaf))
+* **deps:** bump github/codeql-action/upload-sarif ([362dfb5](https://github.com/nodejs/amaro/commit/362dfb548f33fff7c36671c1b3394d6d9e618fd0))
+* **deps:** bump step-security/harden-runner from 2.22.1 to 2.22.2 ([14a4b50](https://github.com/nodejs/amaro/commit/14a4b50ebea07402c4e6eb77b5b822fa5d71c6ee))
+* remove RELEASE_PLEASE_GITHUB_TOKEN ([c1e27f5](https://github.com/nodejs/amaro/commit/c1e27f501b3f98fdf25ee3c8285470ed8ba78509))
+
 ## [1.2.2](https://github.com/nodejs/amaro/compare/v1.2.1...v1.2.2) (2026-10-20)
 
 
