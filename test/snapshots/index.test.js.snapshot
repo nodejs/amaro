@@ -1,25 +1,25 @@
 exports[`erasable namespaces and modules should be supported 1`] = `
-"                  "
+";                 "
 `;
 
 exports[`erasable namespaces and modules should be supported 2`] = `
-"                    \\n    \\t\\t                \\n\\n    \\t\\t                           \\n\\n   \\t\\t\\t                     \\n\\n\\t\\t\\t                        \\n\\t\\t\\t\\t                  \\n\\t\\t\\t \\n\\t\\t "
+";                   \\n    \\t\\t                \\n\\n    \\t\\t                           \\n\\n   \\t\\t\\t                     \\n\\n\\t\\t\\t                        \\n\\t\\t\\t\\t                  \\n\\t\\t\\t \\n\\t\\t "
 `;
 
 exports[`erasable namespaces and modules should be supported 3`] = `
-"                             \\n    \\t\\t                         \\n\\t\\t "
+";                            \\n    \\t\\t                         \\n\\t\\t "
 `;
 
 exports[`erasable namespaces and modules should be supported 4`] = `
-"                                        "
+";                                       "
 `;
 
 exports[`should handle User type and isAdult function 1`] = `
-"\\n                 \\n                   \\n                  \\n      \\n\\n    function isAdult(user      )          {\\n      return user.age >= 18;\\n    }\\n  "
+"\\n    ;            \\n                   \\n                  \\n      \\n\\n    function isAdult(user      )          {\\n      return user.age >= 18;\\n    }\\n  "
 `;
 
 exports[`should handle advanced type-level constructs 1`] = `
-"\\n\\t\\t                                \\n\\n\\t\\t                                                                     \\n\\n\\t\\t                        \\n\\n\\t\\t                                          \\n\\t\\t                        \\n\\n\\t\\t                     \\n\\t"
+"\\n\\t\\t;                               \\n\\n\\t\\t                                                                     \\n\\n\\t\\t                        \\n\\n\\t\\t                                          \\n\\t\\t                        \\n\\n\\t\\t                     \\n\\t"
 `;
 
 exports[`should handle class modifiers 1`] = `
@@ -51,7 +51,7 @@ exports[`should perform type stripping on nested generics 1`] = `
 `;
 
 exports[`should preserve import/export type declarations 1`] = `
-"\\n\\t\\t                                        \\n\\t\\t                         \\n\\t"
+"\\n\\t\\t;                                       \\n\\t\\t                         \\n\\t"
 `;
 
 exports[`should strip 'satisfies' expressions 1`] = `
@@ -79,11 +79,11 @@ exports[`should strip type annotations from generics 1`] = `
 `;
 
 exports[`should strip type annotations from interfaces 1`] = `
-"\\n                           \\n                                      \\n     \\n  "
+"\\n    ;                      \\n                                      \\n     \\n  "
 `;
 
 exports[`should strip type annotations from type aliases 1`] = `
-"\\n                                  \\n  "
+"\\n    ;                             \\n  "
 `;
 
 exports[`should strip type annotations from type assertions 1`] = `
