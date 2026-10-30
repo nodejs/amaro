@@ -39,11 +39,10 @@ pub fn operate(
 
     Ok(TransformOutput {
         code: output.code.into_owned(),
-        map: None,
     })
 }
 
-pub(super) fn validate(
+fn validate(
     input: &str,
     options: &Options,
     strip_options: StripOptions,
@@ -91,7 +90,7 @@ pub(super) fn validate(
     }
 }
 
-pub(super) fn report(
+fn report(
     cm: &Lrc<SourceMap>,
     handler: &Handler,
     input: &str,
@@ -175,7 +174,6 @@ mod tests {
             result.code.encode_utf16().count(),
             source.encode_utf16().count()
         );
-        assert!(result.map.is_none());
     }
 
     #[test]

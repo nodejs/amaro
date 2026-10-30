@@ -4,6 +4,19 @@ const path = require("node:path");
 const assert = require("node:assert");
 const vm = require("node:vm");
 
+test("should reject the removed transform mode", () => {
+	assert.throws(
+		() => transformSync("const value: number = 1;", { mode: "transform" }),
+		/unknown variant.*transform/,
+	);
+});
+
+test("should not export the removed transform loader", () => {
+	assert.throws(() => require.resolve("amaro/transform"), {
+		code: "ERR_PACKAGE_PATH_NOT_EXPORTED",
+	});
+});
+
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
 	return path.join(

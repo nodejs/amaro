@@ -39,9 +39,6 @@ swc_error_reporters = { version = "=28.0.0" }
 swc_next_allocator   = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
 swc_next_ecma_ast    = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
 swc_next_ecma_parser = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_ecma_transformer = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_ecma_semantic = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_ecma_codegen = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
 swc_next_type_strip  = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
 
 [profile.release]

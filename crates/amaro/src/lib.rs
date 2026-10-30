@@ -23,7 +23,6 @@ mod error_reporter;
 mod nodejs;
 mod options;
 mod strip;
-mod transform;
 
 /// TypeScript declarations for the WebAssembly module, emitted into `wasm.d.ts`.
 #[wasm_bindgen(typescript_custom_section)]
@@ -152,7 +151,6 @@ fn operate(input: String, options: Options) -> Result<TransformOutput, Vec<JsonD
 
     try_with_json_handler(cm.clone(), |handler| match options.mode {
         Mode::StripOnly => strip::operate(&cm, handler, input, options),
-        Mode::Transform => transform::operate(&cm, handler, input, options),
     })
 }
 
