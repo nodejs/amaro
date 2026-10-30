@@ -35,11 +35,11 @@ swc_ecma_parser     = { version = "=46.1.2", features = ["unstable"] }
 swc_ecma_visit      = { version = "=29.0.0" }
 swc_error_reporters = { version = "=28.0.0" }
 
-# Pin SWC Next's experimental Rust API to a tested revision.
-swc_next_allocator   = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_ecma_ast    = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_ecma_parser = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
-swc_next_type_strip  = { git = "https://github.com/swc-project/swc-next", rev = "2be98eee84461163d9068612f691c649ba18bd36" }
+# Pin SWC Next's experimental Rust API to a tested crates.io release.
+swc_next_allocator   = { version = "=0.4.1" }
+swc_next_ecma_ast    = { version = "=0.4.1" }
+swc_next_ecma_parser = { version = "=0.4.1" }
+swc_next_type_strip  = { version = "=0.4.1" }
 
 [profile.release]
 lto           = "fat"

@@ -1,6 +1,6 @@
 # Amaro
 
-Amaro is a Node.js wrapper around the [SWC Next](https://github.com/swc-project/swc-next) TypeScript type stripper. Its Rust core in `crates/amaro` is compiled to WebAssembly. Type stripping uses SWC Next at a pinned Git revision. Node.js REPL helpers and diagnostic formatting still use the published [SWC](https://swc.rs) crates.
+Amaro is a Node.js wrapper around the [SWC Next](https://github.com/swc-project/swc-next) TypeScript type stripper. Its Rust core in `crates/amaro` is compiled to WebAssembly. Type stripping uses pinned SWC Next releases from crates.io. Node.js REPL helpers and diagnostic formatting still use the published [SWC](https://swc.rs) crates.
 Diagnostics retain Amaro's error codes and location fields, but their messages and highlighted ranges come from SWC Next.
 It's used as an internal in Node.js for [Type Stripping](https://nodejs.org/api/typescript.html#type-stripping) but can also be used as a standalone package.
 
