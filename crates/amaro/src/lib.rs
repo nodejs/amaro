@@ -8,6 +8,7 @@ use anyhow::Error;
 use error_reporter::SwcReportHandler;
 use js_sys::Uint8Array;
 use miette::{GraphicalTheme, LabeledSpan, ThemeCharacters, ThemeStyles};
+use options::{Mode, Options, TransformOutput};
 use serde::Serialize;
 use swc_common::{
     errors::{DiagnosticBuilder, DiagnosticId, Emitter, Handler, HANDLER},
@@ -15,12 +16,14 @@ use swc_common::{
     SourceMap, Span, GLOBALS,
 };
 use swc_error_reporters::{convert_span, to_pretty_source_code};
-use swc_ts_fast_strip::{Options, TransformOutput};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::{future_to_promise, js_sys::Promise};
 
 mod error_reporter;
 mod nodejs;
+mod options;
+mod strip;
+mod transform;
 
 /// TypeScript declarations for the WebAssembly module, emitted into `wasm.d.ts`.
 #[wasm_bindgen(typescript_custom_section)]
@@ -147,8 +150,9 @@ fn coerce_input(input: JsValue) -> Result<String, JsValue> {
 fn operate(input: String, options: Options) -> Result<TransformOutput, Vec<JsonDiagnostic>> {
     let cm = Lrc::new(SourceMap::default());
 
-    try_with_json_handler(cm.clone(), |handler| {
-        swc_ts_fast_strip::operate(&cm, handler, input, options).map_err(anyhow::Error::new)
+    try_with_json_handler(cm.clone(), |handler| match options.mode {
+        Mode::StripOnly => strip::operate(&cm, handler, input, options),
+        Mode::Transform => transform::operate(&cm, handler, input, options),
     })
 }
 

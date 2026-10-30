@@ -3,6 +3,7 @@ const { transformSync } = require("../dist/index.js");
 const path = require("node:path");
 const assert = require("node:assert");
 const vm = require("node:vm");
+const { SourceMap } = require("node:module");
 
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
@@ -366,4 +367,99 @@ test("should handle short-circuit assignments (&&=, ||=, ??=)", (t) => {
 		sourceMap: true,
 	});
 	t.assert.snapshot(code);
+});
+
+test("should lower parameter properties after super and preserve initialization order", () => {
+	const source = `
+		const events: string[] = [];
+		class Base { constructor() { events.push("base"); } }
+		class Derived extends Base {
+			field = events.push("field");
+			constructor(public value: number) {
+				super();
+				events.push(String(this.value));
+			}
+		}
+		new Derived(7);
+		output = events.join(",");`;
+	const { code } = transformSync(source, { mode: "transform" });
+	assert.strictEqual(vm.runInNewContext(code), "base,field,7");
+});
+
+test("should lower CommonJS import and export assignments", () => {
+	const source =
+		'import path = require("node:path"); export = path.basename("/a/b");';
+	const { code } = transformSync(source, { mode: "transform" });
+	const context = { require, module: { exports: undefined } };
+	vm.runInNewContext(code, context);
+	assert.strictEqual(context.module.exports, "b");
+	assert.doesNotMatch(code, /import\.sync/);
+});
+
+test("should keep source module markers according to noEmptyExport", () => {
+	const source = "export type Value = number;";
+	assert.doesNotMatch(
+		transformSync(source, { mode: "transform" }).code,
+		/export/,
+	);
+	const { code } = transformSync(source, {
+		mode: "transform",
+		transform: { noEmptyExport: false },
+	});
+	assert.match(code, /export\s*\{\s*\}/);
+	assert.match(
+		transformSync("export {};", { mode: "transform" }).code,
+		/export\s*\{\s*\}/,
+	);
+});
+
+test("should forward verbatimModuleSyntax to SWC Next", () => {
+	const source = 'import { value } from "dependency"; output = 1;';
+	assert.match(transformSync(source, { mode: "transform" }).code, /import/);
+	const { code } = transformSync(source, {
+		mode: "transform",
+		transform: { verbatimModuleSyntax: false, noEmptyExport: true },
+	});
+	assert.doesNotMatch(code, /import|export/);
+	assert.strictEqual(vm.runInNewContext(code), 1);
+});
+
+test("should reject unsupported transform options", () => {
+	const check = (transform) =>
+		assert.throws(
+			() =>
+				transformSync("const value: number = 1;", {
+					mode: "transform",
+					transform,
+				}),
+			{ code: "UnsupportedSyntax", message: /Unsupported transform option/ },
+		);
+	check({ nativeClassProperties: false });
+	check({ importExportAssignConfig: "NodeNext" });
+	check({ tsEnumIsMutable: true });
+	check({ importNotUsedAsValues: "preserve" });
+	check({ jsx: { transform: "react-jsx" } });
+});
+
+test("should map generated locations to UTF-16 columns in the original source", () => {
+	const source =
+		'enum Value { A = 7 }\n"😀"; throw new Error(String(Value.A));';
+	const filename = "dir with spaces/한글.ts";
+	const { code, map } = transformSync(source, {
+		mode: "transform",
+		sourceMap: true,
+		filename,
+	});
+	const payload = JSON.parse(map);
+	assert.deepStrictEqual(payload.sources, [filename]);
+	assert.deepStrictEqual(payload.sourcesContent, [source]);
+	const lines = code.split("\n");
+	const line = lines.findIndex((line) => line.includes("new Error"));
+	const column = lines[line].indexOf("new Error");
+	const entry = new SourceMap(payload).findEntry(line, column);
+	assert.strictEqual(entry.originalLine, 1);
+	assert.strictEqual(
+		entry.originalColumn,
+		source.split("\n")[1].indexOf("new Error"),
+	);
 });

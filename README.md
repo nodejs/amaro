@@ -1,6 +1,7 @@
 # Amaro
 
-Amaro is a Node.js wrapper around the [SWC](https://swc.rs) TypeScript parser and type stripper. Its Rust core in `crates/amaro` depends on the published SWC crates and is compiled to WebAssembly.
+Amaro is a Node.js wrapper around the [SWC Next](https://github.com/swc-project/swc-next) TypeScript type stripper and transformer. Its Rust core in `crates/amaro` is compiled to WebAssembly. Both `strip-only` and `transform` modes use SWC Next at a pinned Git revision. Node.js REPL helpers and diagnostic formatting still use the published [SWC](https://swc.rs) crates.
+Diagnostics retain Amaro's error codes and location fields, but their messages and highlighted ranges come from SWC Next.
 It's used as an internal in Node.js for [Type Stripping](https://nodejs.org/api/typescript.html#type-stripping) but can also be used as a standalone package.
 
 > Amaro means "bitter" in Italian. It's a reference to [Mount Amaro](https://en.wikipedia.org/wiki/Monte_Amaro_(Abruzzo)) on whose slopes this package was conceived.
@@ -60,6 +61,17 @@ node --enable-source-maps --import="amaro/transform" file.ts
 
 > Note that the `amaro/transform` loader should be used with `--enable-source-maps`
 > to preserve accurate source-mapped stack traces.
+
+The SWC Next transformer supports enums, namespaces, constructor parameter
+properties, and source maps. It preserves decorators and resource declarations
+for the runtime. Generated code and source maps differ from SWC's output.
+
+`verbatimModuleSyntax` and `noEmptyExport` are supported. `nativeClassProperties`
+defaults to `true`; setting it to `false` is unsupported. Only `Classic` is
+supported for `importExportAssignConfig`, which emits `require(...)` and
+`module.exports`. `tsEnumIsMutable: true` and `importNotUsedAsValues: "preserve"`
+require `verbatimModuleSyntax: true`. Unsupported option combinations throw an
+`UnsupportedSyntax` diagnostic.
 
 #### Programmatic registration with `module.registerHooks()`
 

@@ -23,7 +23,10 @@ test("should not work with enums", async (t) => {
 
 	strictEqual(result.stdout, "");
 	match(result.stderr, /UnsupportedSyntaxError/);
-	match(result.stderr, /TypeScript enum is not supported in strip-only mode/);
+	match(
+		result.stderr,
+		/This syntax is not allowed when `erasableSyntaxOnly` is enabled/,
+	);
 	strictEqual(result.code, 1);
 });
 
@@ -39,7 +42,7 @@ test("should work with enums", async () => {
 	strictEqual(result.code, 0);
 });
 
-test("should warn and inaccurate stracktrace", async () => {
+test("should warn when source maps are disabled", async () => {
 	const result = await spawnPromisified(process.execPath, [
 		"--import=./dist/register-transform.mjs",
 		fixturesPath("stacktrace.ts"),
@@ -47,7 +50,7 @@ test("should warn and inaccurate stracktrace", async () => {
 
 	strictEqual(result.stdout, "");
 	match(result.stderr, /Source maps are disabled/);
-	match(result.stderr, /stacktrace.ts:7:11/); // inaccurate
+	match(result.stderr, /stacktrace.ts:\d+:\d+/);
 	strictEqual(result.code, 1);
 });
 
@@ -96,7 +99,10 @@ test("should throw syntax error for invalid typescript", async (t) => {
 	]);
 	strictEqual(result.stdout, "");
 	match(result.stderr, /SyntaxError/);
-	match(result.stderr, /await isn't allowed in non-async function/);
+	match(
+		result.stderr,
+		/Await expressions are only allowed within async functions/,
+	);
 	strictEqual(result.code, 1);
 });
 
