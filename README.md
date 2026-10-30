@@ -1,11 +1,12 @@
 # Amaro
 
-Amaro is a Node.js wrapper around the [SWC](https://swc.rs) TypeScript parser and type stripper. Its Rust core in `crates/amaro` depends on the published SWC crates and is compiled to WebAssembly.
+Amaro is a Node.js wrapper around the [SWC Next](https://github.com/swc-project/swc-next) TypeScript type stripper. Its Rust core in `crates/amaro` is compiled to WebAssembly. Type stripping uses pinned SWC Next releases from crates.io. Node.js REPL helpers and diagnostic formatting still use the published [SWC](https://swc.rs) crates.
+Diagnostics retain Amaro's error codes and location fields, but their messages and highlighted ranges come from SWC Next.
 It's used as an internal in Node.js for [Type Stripping](https://nodejs.org/api/typescript.html#type-stripping) but can also be used as a standalone package.
 
 > Amaro means "bitter" in Italian. It's a reference to [Mount Amaro](https://en.wikipedia.org/wiki/Monte_Amaro_(Abruzzo)) on whose slopes this package was conceived.
 
-This package provides a stable API for the TypeScript parser and allows users to upgrade to the latest version of TypeScript transpiler independently from the one used internally in Node.js.
+This package provides a stable API for the TypeScript parser and allows users to upgrade to the latest version of the TypeScript type stripper independently from the one used internally in Node.js.
 
 ## Building from source
 
@@ -52,18 +53,13 @@ node --import="amaro/strip" file.ts
 
 > In node v22.18.0 and later you can omit the `--experimental-strip-types` flag, as it is enabled by default.
 
-Enabling TypeScript feature transformation:
-
-```bash
-node --enable-source-maps --import="amaro/transform" file.ts
-```
-
-> Note that the `amaro/transform` loader should be used with `--enable-source-maps`
-> to preserve accurate source-mapped stack traces.
+Amaro supports only `strip-only`. Syntax that requires runtime code generation,
+such as enums and constructor parameter properties, is rejected. The former
+`transform` mode and `amaro/transform` loader are no longer available.
 
 #### Programmatic registration with `module.registerHooks()`
 
-Amaro's `strip` and `transform` entry points use `module.registerHooks()` to register synchronous hooks on Node.js versions that provide it, and fall back to `module.register()` on older versions. If you want TypeScript to "just work" in an existing codebase without passing `--import` every time, create a small bootstrap file that imports Amaro before loading your TS entrypoint.
+Amaro's `strip` entry point uses `module.registerHooks()` to register synchronous hooks on Node.js versions that provide it, and falls back to `module.register()` on older versions. If you want TypeScript to "just work" in an existing codebase without passing `--import` every time, create a small bootstrap file that imports Amaro before loading your TS entrypoint.
 
 ```mjs
 // bootstrap.mjs
@@ -76,8 +72,6 @@ Then start your app through the bootstrap file:
 ```bash
 node --watch ./bootstrap.mjs
 ```
-
-For transform mode, swap `amaro/strip` with `amaro/transform` and run Node with `--enable-source-maps`.
 
 ### Monorepo usage
 

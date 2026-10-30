@@ -31,12 +31,7 @@ await build({
 // Everything else is a thin wrapper that requires `./internal.js`.
 await build({
 	...common,
-	entryPoints: [
-		"src/index.ts",
-		"src/errors.ts",
-		"src/strip-loader.ts",
-		"src/transform-loader.ts",
-	],
+	entryPoints: ["src/index.ts", "src/errors.ts", "src/strip-loader.ts"],
 	bundle: false,
 	outdir: "dist",
 	outbase: "src",

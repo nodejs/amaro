@@ -1,7 +1,7 @@
 [package]
 name        = "amaro"
 version     = "1.2.0"
-description = "Node.js TypeScript and REPL helpers built on SWC, compiled to WebAssembly"
+description = "Node.js TypeScript stripping built on SWC Next, compiled to WebAssembly"
 license     = "Apache-2.0"
 repository  = "https://github.com/nodejs/amaro.git"
 readme      = "../../README.md"
@@ -26,14 +26,20 @@ unicode-width      = "0.2.1"
 wasm-bindgen         = { version = "0.2.100", features = ["enable-interning"] }
 wasm-bindgen-futures = "0.4.50"
 
-# SWC crates. Pinned exactly because they only build together in the
+# SWC compatibility crates for REPL helpers and diagnostics.
+# Pinned exactly because they only build together in the
 # combinations SWC publishes; Dependabot bumps them as one group.
 swc_common          = { version = "=26.0.0" }
 swc_ecma_ast        = { version = "=29.0.2" }
 swc_ecma_parser     = { version = "=46.1.2", features = ["unstable"] }
 swc_ecma_visit      = { version = "=29.0.0" }
 swc_error_reporters = { version = "=28.0.0" }
-swc_ts_fast_strip   = { version = "=59.0.2", features = ["wasm-bindgen"] }
+
+# Pin SWC Next's experimental Rust API to a tested crates.io release.
+swc_next_allocator   = { version = "=0.4.1" }
+swc_next_ecma_ast    = { version = "=0.4.1" }
+swc_next_ecma_parser = { version = "=0.4.1" }
+swc_next_type_strip  = { version = "=0.4.1" }
 
 [profile.release]
 lto           = "fat"
