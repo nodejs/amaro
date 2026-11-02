@@ -143,161 +143,188 @@ fn report(
 ///
 /// `stripped` is the successful `strip_types` output for `input`. It is used
 /// only when `strip_types` reported no diagnostics. `strip_types` erases
-/// every `module` declaration as a whole statement, so a declaration keyword
-/// cannot survive unchanged in that output. A candidate that is still
-/// `module` in the output is in a comment, a string, or an expression.
+/// every `module` declaration as a whole statement, so only a `module` word
+/// that was erased can be a declaration keyword.
 fn needs_deprecated_module_check(input: &str, stripped: &str, has_diagnostics: bool) -> bool {
-    let mut candidates = deprecated_module_candidates(input).peekable();
-    if candidates.peek().is_none() {
-        return false;
-    }
+    let bytes = input.as_bytes();
+    let is_candidate = |start| is_deprecated_module_candidate(bytes, start);
     if has_diagnostics {
-        return true;
+        return input
+            .match_indices("module")
+            .any(|(start, _)| is_candidate(start));
     }
-
-    let mut offsets = Utf16OffsetMapper::new(input, stripped);
-    candidates.any(|start| match offsets.map(start) {
-        Some(start) => !stripped[start..].starts_with("module"),
-        None => true,
-    })
+    find_erased_module_word(bytes, stripped.as_bytes(), is_candidate)
 }
 
-/// Returns the byte offsets of every `module` word that may start an
+/// Calls `is_candidate` with the byte offset of each `module` word in `input`
+/// that `output` erases or replaces, until it returns `true`.
+///
+/// `strip_types` keeps every UTF-16 offset. An ASCII character becomes one
+/// output byte. A non-ASCII character is either kept or replaced by one ASCII
+/// byte per UTF-16 unit. Identical words are skipped eight bytes at a time.
+/// Returns `true` if `is_candidate` returns `true` or if the texts do not
+/// correspond as expected.
+fn find_erased_module_word(
+    input: &[u8],
+    output: &[u8],
+    mut is_candidate: impl FnMut(usize) -> bool,
+) -> bool {
+    const M: u64 = 0x6d6d_6d6d_6d6d_6d6d;
+
+    let (mut i, mut j) = (0, 0);
+    loop {
+        if i + 8 <= input.len() && j + 8 <= output.len() {
+            let (a, b) = (word(input, i), word(output, j));
+            if a == b {
+                i += 8;
+                j += 8;
+                while i + 32 <= input.len() && j + 32 <= output.len() {
+                    let diff = (word(input, i) ^ word(output, j))
+                        | (word(input, i + 8) ^ word(output, j + 8))
+                        | (word(input, i + 16) ^ word(output, j + 16))
+                        | (word(input, i + 24) ^ word(output, j + 24));
+                    if diff != 0 {
+                        break;
+                    }
+                    i += 32;
+                    j += 32;
+                }
+                continue;
+            }
+            if (a | b) & HIGH_BITS == 0 {
+                // ASCII bytes correspond one to one. Check each changed `m`.
+                let mut m = zero_bytes(a ^ M) & !zero_bytes(a ^ b);
+                while m != 0 {
+                    let start = i + m.trailing_zeros() as usize / 8;
+                    m &= m - 1;
+                    if input[start..].starts_with(b"module") && is_candidate(start) {
+                        return true;
+                    }
+                }
+                i += 8;
+                j += 8;
+                continue;
+            }
+        }
+
+        let Some(&c) = input.get(i) else {
+            return j != output.len();
+        };
+        let Some(&d) = output.get(j) else {
+            return true;
+        };
+        if c < 0x80 {
+            if c == b'm' && d != b'm' && input[i..].starts_with(b"module") && is_candidate(i) {
+                return true;
+            }
+            i += 1;
+            j += 1;
+        } else {
+            let len = match c {
+                0xf0.. => 4,
+                0xe0.. => 3,
+                _ => 2,
+            };
+            let end = (i + len).min(input.len());
+            j += if output[j..].starts_with(&input[i..end]) {
+                end - i
+            } else {
+                1 + usize::from(c >= 0xf0)
+            };
+            i = end;
+        }
+    }
+}
+
+const HIGH_BITS: u64 = 0x8080_8080_8080_8080;
+
+/// Sets the high bit of each zero byte in `x`.
+#[inline(always)]
+fn zero_bytes(x: u64) -> u64 {
+    const LOW_BITS: u64 = !HIGH_BITS;
+    // Only zero bytes keep the high bit clear after this addition.
+    !(((x & LOW_BITS) + LOW_BITS) | x) & HIGH_BITS
+}
+
+#[inline(always)]
+fn word(bytes: &[u8], at: usize) -> u64 {
+    u64::from_le_bytes(bytes[at..at + 8].try_into().unwrap())
+}
+
+/// Returns whether the `module` word at `start` may start an
 /// identifier-named `module` declaration.
 ///
 /// A declaration needs a name after `module`. Common non-declaration uses
 /// such as `module.exports`, `"node:module"`, and `declare module "pkg"` are
-/// followed by punctuation or a quote and are skipped. Prose in comments or
-/// strings and non-ASCII neighbors are conservatively kept as candidates.
-fn deprecated_module_candidates(input: &str) -> impl Iterator<Item = usize> + '_ {
-    const KEYWORD: &str = "module";
-    let bytes = input.as_bytes();
-    let is_ident_part = |b: u8| b.is_ascii_alphanumeric() || b == b'_' || b == b'$';
+/// followed by punctuation or a quote and are skipped. A declaration also
+/// starts a statement, so prose such as `its module graph` is skipped. Other
+/// prose and non-ASCII neighbors are conservatively kept as candidates.
+fn is_deprecated_module_candidate(bytes: &[u8], start: usize) -> bool {
+    const KEYWORD: &[u8] = b"module";
+    debug_assert!(bytes[start..].starts_with(KEYWORD));
 
-    input.match_indices(KEYWORD).filter_map(move |(start, _)| {
-        if start > 0 && is_ident_part(bytes[start - 1]) {
-            return None;
-        }
+    if start > 0 && is_ident_part(bytes[start - 1]) {
+        return false;
+    }
+    let mut i = start + KEYWORD.len();
+    if bytes.get(i).is_some_and(|&b| is_ident_part(b)) {
+        return false;
+    }
+    if !may_start_statement(bytes, start) {
+        return false;
+    }
 
-        let mut i = start + KEYWORD.len();
-        if bytes.get(i).is_some_and(|&b| is_ident_part(b)) {
-            return None;
-        }
-
-        // Skip whitespace and comments between `module` and the next token.
-        loop {
-            match bytes.get(i..) {
-                Some([b' ' | b'\t' | b'\n' | b'\r' | b'\x0b' | b'\x0c', ..]) => i += 1,
-                Some([b'/', b'*', ..]) => {
-                    i = input[i + 2..]
-                        .find("*/")
-                        .map_or(bytes.len(), |end| i + 2 + end + 2);
-                }
-                Some([b'/', b'/', ..]) => {
-                    i = input[i + 2..]
-                        .find(['\n', '\r'])
-                        .map_or(bytes.len(), |end| i + 2 + end);
-                }
-                _ => break,
+    // Skip whitespace and comments between `module` and the next token.
+    loop {
+        match bytes.get(i..) {
+            Some([b' ' | b'\t' | b'\n' | b'\r' | b'\x0b' | b'\x0c', ..]) => i += 1,
+            Some([b'/', b'*', rest @ ..]) => {
+                i = rest
+                    .windows(2)
+                    .position(|w| w == b"*/")
+                    .map_or(bytes.len(), |end| i + 2 + end + 2);
             }
+            Some([b'/', b'/', rest @ ..]) => {
+                i = rest
+                    .iter()
+                    .position(|&b| matches!(b, b'\n' | b'\r'))
+                    .map_or(bytes.len(), |end| i + 2 + end);
+            }
+            _ => break,
         }
+    }
 
-        let next = *bytes.get(i)?;
-        (next.is_ascii_alphabetic() || matches!(next, b'_' | b'$' | b'\\') || next >= 0x80)
-            .then_some(start)
+    bytes.get(i).is_some_and(|&next| {
+        next.is_ascii_alphabetic() || matches!(next, b'_' | b'$' | b'\\') || next >= 0x80
     })
 }
 
-/// Maps ascending byte offsets in the input to byte offsets in the stripped
-/// output. `strip_types` preserves UTF-16 offsets, but byte offsets move
-/// when erased text contains non-ASCII characters.
-struct Utf16OffsetMapper<'a> {
-    input: &'a str,
-    output: &'a str,
-    input_pos: usize,
-    output_pos: usize,
+fn is_ident_part(b: u8) -> bool {
+    b.is_ascii_alphanumeric() || b == b'_' || b == b'$'
 }
 
-impl<'a> Utf16OffsetMapper<'a> {
-    fn new(input: &'a str, output: &'a str) -> Self {
-        Self {
-            input,
-            output,
-            input_pos: 0,
-            output_pos: 0,
-        }
+/// Returns whether a `module` word at `start` can begin a statement.
+///
+/// A statement cannot directly follow a word on the same line, except a
+/// keyword that introduces a statement or declaration. Any other preceding
+/// character, a line break, or a word that may contain an escape or a
+/// non-ASCII character keeps the candidate.
+fn may_start_statement(bytes: &[u8], start: usize) -> bool {
+    let mut end = start;
+    while end > 0 && matches!(bytes[end - 1], b' ' | b'\t') {
+        end -= 1;
     }
-
-    /// Returns `None` if the offset has no matching character boundary in
-    /// the output.
-    fn map(&mut self, input_offset: usize) -> Option<usize> {
-        let segment = self.input.as_bytes().get(self.input_pos..input_offset)?;
-        let units = utf16_len(segment);
-        self.input_pos = input_offset;
-
-        let output = self.output.as_bytes();
-        let mut pos = self.output_pos;
-        let mut seen = 0;
-        // Skip whole chunks first; the byte walk below finds the boundary.
-        for chunk in output[pos..].chunks(64) {
-            let chunk_units = utf16_len(chunk);
-            if seen + chunk_units >= units {
-                break;
-            }
-            seen += chunk_units;
-            pos += chunk.len();
-        }
-        while let Some(&b) = output.get(pos) {
-            if is_utf8_lead(b) {
-                if seen == units {
-                    break;
-                }
-                seen += utf16_units(b);
-                if seen > units {
-                    return None;
-                }
-            }
-            pos += 1;
-        }
-        if seen != units {
-            return None;
-        }
-
-        self.output_pos = pos;
-        Some(pos)
+    let mut word_start = end;
+    while word_start > 0 && is_ident_part(bytes[word_start - 1]) {
+        word_start -= 1;
     }
-}
-
-/// Returns the UTF-16 length of UTF-8 `bytes`, counting a character in the
-/// chunk where its first byte is.
-fn utf16_len(bytes: &[u8]) -> usize {
-    const HIGH_BITS: u64 = 0x8080_8080_8080_8080;
-    let (words, rest) = bytes.as_chunks::<8>();
-    let mut units = 0;
-    for word in words {
-        let w = u64::from_le_bytes(*word);
-        if w & HIGH_BITS == 0 {
-            units += 8;
-            continue;
-        }
-        // Continuation bytes are `10xxxxxx`; four-byte leads are `11110xxx`
-        // and need a surrogate pair.
-        let continuation = w & !(w << 1) & HIGH_BITS;
-        let four_byte_lead = w & (w << 1) & (w << 2) & (w << 3) & HIGH_BITS;
-        units += 8 - continuation.count_ones() as usize + four_byte_lead.count_ones() as usize;
+    if word_start == end || (word_start > 0 && matches!(bytes[word_start - 1], b'\\' | 0x80..)) {
+        return true;
     }
-    units + rest.iter().map(|&b| utf16_units(b)).sum::<usize>()
-}
-
-/// Returns whether `b` starts a UTF-8 encoded character.
-fn is_utf8_lead(b: u8) -> bool {
-    (b as i8) >= -0x40
-}
-
-/// Returns the UTF-16 length of the character that starts with `b`, or 0 for
-/// a continuation byte.
-fn utf16_units(b: u8) -> usize {
-    usize::from(is_utf8_lead(b)) + usize::from(b >= 0xf0)
+    matches!(
+        &bytes[word_start..end],
+        b"export" | b"declare" | b"default" | b"else" | b"do"
+    )
 }
 
 struct DeprecatedModules<'ast> {
@@ -397,6 +424,12 @@ mod tests {
         .is_ok());
     }
 
+    fn has_candidate(source: &str) -> bool {
+        source
+            .match_indices("module")
+            .any(|(start, _)| is_deprecated_module_candidate(source.as_bytes(), start))
+    }
+
     #[test]
     fn detects_possible_deprecated_modules() {
         for source in [
@@ -414,13 +447,18 @@ mod tests {
             "module _Foo {}",
             "module $Foo {}",
             "module.exports = 1; module Foo {}",
+            "const a = 1\nmodule Foo {}",
+            "export declare module Foo {}",
+            "if (a) {} else module Foo {}",
+            "do module Foo {} while (a)",
+            "/* c */ module Foo {}",
+            "naïve module Foo",
+            "\\u0061 module Foo",
             // Prose can trigger the parse; the parser makes the final decision.
-            "// this module handles requests",
+            "// module handles requests",
+            " * module graph",
         ] {
-            assert!(
-                deprecated_module_candidates(source).next().is_some(),
-                "{source:?}"
-            );
+            assert!(has_candidate(source), "{source:?}");
         }
 
         for source in [
@@ -442,11 +480,13 @@ mod tests {
             "fn(module, other)",
             "module: Foo",
             "import.meta.module = 1",
+            "// this module handles requests",
+            "/** its module dependency graph */",
+            "namespace module {}",
+            "const a = 1; type module = string",
+            "x\tmodule Foo",
         ] {
-            assert!(
-                deprecated_module_candidates(source).next().is_none(),
-                "{source:?}"
-            );
+            assert!(!has_candidate(source), "{source:?}");
         }
     }
 
@@ -470,6 +510,9 @@ mod tests {
             "const value: '😀' = 1; // module handles this",
             "interface A { x: '😀' }\nconst s = `module ${1} x`; // module y",
             "module.exports = value;",
+            // A word before `module` rules out a declaration, even when an
+            // erased statement erases the comment.
+            "interface A {\n  /** its module dependency */\n  x: number\n}",
         ] {
             assert!(!needs_check(source), "{source:?}");
         }
@@ -488,34 +531,51 @@ mod tests {
     }
 
     #[test]
-    fn maps_offsets_across_erased_non_ascii_text() {
-        let input = "a😀éb€c\nmodule x";
-        let output = "a   b c\nmodule x";
-        let mut mapper = Utf16OffsetMapper::new(input, output);
-        for (from, to) in [
-            (0, 0),
-            (1, 1),
-            (5, 3),
-            (7, 4),
-            (8, 5),
-            (11, 6),
-            (12, 7),
-            (13, 8),
+    fn finds_erased_module_words() {
+        let filler = "const pad = 1;".repeat(5);
+        for source in [
+            String::new(),
+            "module Foo { export type A = 1 }".into(),
+            "const value: '😀é€' = 1;\nmodule Foo { export type A = 1 }".into(),
+            "interface A { x: '😀'; /* module y */ }\nconst s = 'module'; // module z".into(),
+            format!("{filler}type T = 'é';{filler}\nmodule A {{}}{filler}// module x\n"),
+            format!("{filler}let v: '𝕏' = 1; module.exports = v;{filler}declare module B {{}}"),
+            format!("{filler}interface I {{ /** its module é graph */ x: 1 }}{filler}"),
+            "let mmodule = module;\n".repeat(9),
         ] {
-            assert_eq!(mapper.map(from), Some(to), "{from}");
-        }
-        assert_eq!(mapper.map(input.len()), Some(output.len()));
-
-        for text in ["", "abc", "a😀éb€c\n", &"x😀é€".repeat(20)] {
-            assert_eq!(
-                utf16_len(text.as_bytes()),
-                text.encode_utf16().count(),
-                "{text:?}"
+            let output = strip_types(
+                &source,
+                StripOptions {
+                    source_type: SourceType::Unambiguous,
+                    lang: Lang::Ts,
+                },
             );
+            assert!(output.diagnostics.is_empty(), "{source:?}");
+            let output_units: Vec<u16> = output.code.encode_utf16().collect();
+            let module_units: Vec<u16> = "module".encode_utf16().collect();
+            let expected: Vec<usize> = source
+                .match_indices("module")
+                .map(|(start, _)| start)
+                .filter(|&start| {
+                    let at = source[..start].encode_utf16().count();
+                    !output_units[at..].starts_with(&module_units)
+                })
+                .collect();
+
+            let mut found = Vec::new();
+            let stopped =
+                find_erased_module_word(source.as_bytes(), output.code.as_bytes(), |start| {
+                    found.push(start);
+                    false
+                });
+            assert!(!stopped, "{source:?}");
+            assert_eq!(found, expected, "{source:?}");
         }
 
-        // Offsets inside a surrogate pair have no output boundary.
-        assert_eq!(Utf16OffsetMapper::new("ab", "😀").map(1), None);
+        // Texts that do not correspond keep the check.
+        assert!(find_erased_module_word(b"ab", "😀".as_bytes(), |_| false));
+        assert!(find_erased_module_word(b"abc", b"ab", |_| false));
+        assert!(find_erased_module_word(b"ab", b"abc", |_| false));
     }
 
     #[test]
@@ -543,6 +603,8 @@ mod tests {
             "const value: '😀' = 1;\nmodule Foo { export type A = 1 }",
             "const value: '😀' = 1; // module x\nmodule Foo { export type A = 1 }",
             "module Foo { export const value = 1 }",
+            "const a = 1\nmodule Foo { export type A = 1 }",
+            "export declare module Foo { export type A = 1 }",
         ] {
             assert_eq!(
                 code(source).as_deref(),
@@ -555,6 +617,7 @@ mod tests {
             "declare module \"foo\" { export type A = 1 }",
             "module.exports = 1; const m = require(\"node:module\");",
             "// this module handles requests\nconst value: number = 1;",
+            "namespace module { export type A = 1 }",
         ] {
             assert_eq!(code(source), None, "{source:?}");
         }
