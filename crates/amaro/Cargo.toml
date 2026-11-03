@@ -28,12 +28,12 @@ wasm-bindgen-futures = "0.4.50"
 
 # SWC crates. Pinned exactly because they only build together in the
 # combinations SWC publishes; Dependabot bumps them as one group.
-swc_common          = { version = "=26.0.0" }
-swc_ecma_ast        = { version = "=29.0.2" }
-swc_ecma_parser     = { version = "=46.1.2", features = ["unstable"] }
-swc_ecma_visit      = { version = "=29.0.0" }
-swc_error_reporters = { version = "=28.0.0" }
-swc_ts_fast_strip   = { version = "=59.0.2", features = ["wasm-bindgen"] }
+swc_common          = { version = "=27.0.0" }
+swc_ecma_ast        = { version = "=30.0.0" }
+swc_ecma_parser     = { version = "=47.0.0", features = ["unstable"] }
+swc_ecma_visit      = { version = "=30.0.0" }
+swc_error_reporters = { version = "=29.0.0" }
+swc_ts_fast_strip   = { version = "=60.0.0", features = ["wasm-bindgen"] }
 
 [profile.release]
 lto           = "fat"
