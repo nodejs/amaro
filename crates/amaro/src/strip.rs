@@ -11,14 +11,50 @@ use swc_next_ecma_ast::{
     Ast, GetSpan, TsModuleDeclaration, TsModuleDeclarationKind, Visit, VisitWith,
 };
 use swc_next_ecma_parser::{NoTokenParserConfig, Parser};
-use swc_next_type_strip::{strip_types, Lang, Options as StripOptions, SourceType};
+use swc_next_type_strip::{strip_types, Diagnostic, Lang, Options as StripOptions, SourceType};
+
+const BOM: char = '\u{feff}';
+
+/// Amaro error code of a diagnostic.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+enum ErrorCode {
+    InvalidSyntax,
+    UnsupportedSyntax,
+}
+
+impl ErrorCode {
+    fn as_str(self) -> &'static str {
+        match self {
+            Self::InvalidSyntax => "InvalidSyntax",
+            Self::UnsupportedSyntax => "UnsupportedSyntax",
+        }
+    }
+
+    /// Classifies a `strip_types` diagnostic. Only the `erasableSyntaxOnly`
+    /// diagnostic reports valid TypeScript that needs code generation.
+    fn of_strip_diagnostic(diagnostic: &Diagnostic<'_>) -> Self {
+        if diagnostic.message.contains("erasableSyntaxOnly") {
+            Self::UnsupportedSyntax
+        } else {
+            Self::InvalidSyntax
+        }
+    }
+}
 
 pub fn operate(
     cm: &Lrc<SourceMap>,
     handler: &Handler,
-    input: String,
+    mut input: String,
     options: Options,
 ) -> anyhow::Result<TransformOutput> {
+    // `SourceMap::new_source_file` removes a leading BOM, so diagnostic
+    // offsets are only valid for text without it. A BOM before a hashbang
+    // also makes the output invalid JavaScript. `swc_ts_fast_strip` removed
+    // it from the output too.
+    if input.starts_with(BOM) {
+        input.drain(..BOM.len_utf8());
+    }
+
     let strip_options = StripOptions {
         source_type: match options.module {
             Some(true) => SourceType::Module,
@@ -32,7 +68,11 @@ pub fn operate(
         },
     };
     let output = strip_types(&input, strip_options);
-    let mut diagnostics = output.diagnostics;
+    let mut diagnostics: Vec<_> = output
+        .diagnostics
+        .into_iter()
+        .map(|diagnostic| (ErrorCode::of_strip_diagnostic(&diagnostic), diagnostic))
+        .collect();
 
     validate(
         &input,
@@ -53,29 +93,29 @@ fn validate(
     stripped: &str,
     options: &Options,
     strip_options: StripOptions,
-    diagnostics: &mut Vec<swc_next_type_strip::Diagnostic<'static>>,
+    diagnostics: &mut Vec<(ErrorCode, Diagnostic<'static>)>,
 ) {
     // Keep Amaro's restriction on the deprecated identifier-named `module`
     // declaration. String-named ambient modules remain supported.
     let reject_deprecated_modules = options.deprecated_ts_module_as_error.unwrap_or_default()
         && needs_deprecated_module_check(input, stripped, !diagnostics.is_empty());
+    // SWC Next accepts import and export declarations in scripts, so check
+    // them here.
     if reject_deprecated_modules || options.module == Some(false) {
         let allocator = Allocator::default();
-        let parsed = Parser::init(
-            &allocator,
-            &input,
-            strip_options.into(),
-            NoTokenParserConfig,
-        )
-        .parse();
+        let parsed =
+            Parser::init(&allocator, input, strip_options.into(), NoTokenParserConfig).parse();
         if parsed.diagnostics.is_empty() {
             if options.module == Some(false) {
                 for statement in parsed.ast.root_program().body(&parsed.ast).iter() {
                     let statement = parsed.ast.get_node_in_sub_range(statement);
                     if statement.is_module_indicator(&parsed.ast) {
-                        diagnostics.push(swc_next_type_strip::Diagnostic::error(
-                            "Import and export declarations are not allowed in scripts",
-                            statement.span(&parsed.ast),
+                        diagnostics.push((
+                            ErrorCode::InvalidSyntax,
+                            Diagnostic::error(
+                                "Import and export declarations are not allowed in scripts",
+                                statement.span(&parsed.ast),
+                            ),
                         ));
                     }
                 }
@@ -87,9 +127,12 @@ fn validate(
                 };
                 parsed.ast.root_program().visit_with(&mut collector);
                 for span in collector.spans {
-                    diagnostics.push(swc_next_type_strip::Diagnostic::error(
-                        "`module` keyword is not supported. Use `namespace` instead.",
-                        span,
+                    diagnostics.push((
+                        ErrorCode::UnsupportedSyntax,
+                        Diagnostic::error(
+                            "`module` keyword is not supported. Use `namespace` instead.",
+                            span,
+                        ),
                     ));
                 }
             }
@@ -102,40 +145,42 @@ fn report(
     handler: &Handler,
     input: &str,
     options: &Options,
-    diagnostics: Vec<swc_next_type_strip::Diagnostic<'_>>,
+    mut diagnostics: Vec<(ErrorCode, Diagnostic<'_>)>,
 ) -> anyhow::Result<()> {
-    if !diagnostics.is_empty() {
-        let filename = options
-            .filename
-            .clone()
-            .map_or(FileName::Anon, |name| FileName::Real(name.into()));
-        let file = cm.new_source_file(filename.into(), input.to_owned());
-        for diagnostic in diagnostics {
-            let unsupported = diagnostic.message.contains("erasableSyntaxOnly")
-                || diagnostic.message.starts_with("`module` keyword")
-                || diagnostic
-                    .message
-                    .starts_with("Unsupported transform option");
-            let span = Span::new(
-                BytePos(file.start_pos.0 + diagnostic.span.start),
-                BytePos(file.start_pos.0 + diagnostic.span.end),
-            );
-            handler
-                .struct_span_err(span, diagnostic.message.as_ref())
-                .code(DiagnosticId::Error(
-                    if unsupported {
-                        "UnsupportedSyntax"
-                    } else {
-                        "InvalidSyntax"
-                    }
-                    .into(),
-                ))
-                .emit();
-        }
-        anyhow::bail!("TypeScript processing failed");
+    if diagnostics.is_empty() {
+        return Ok(());
     }
 
-    Ok(())
+    // Callers report the first diagnostic, so keep source order across the
+    // `strip_types` diagnostics and the ones added by `validate`.
+    diagnostics.sort_by_key(|(_, diagnostic)| (diagnostic.span.start, diagnostic.span.end));
+
+    let filename = options
+        .filename
+        .clone()
+        .map_or(FileName::Anon, |name| FileName::Real(name.into()));
+    let file = cm.new_source_file(filename.into(), input.to_owned());
+    debug_assert_eq!(file.src.len(), input.len());
+    // Snippet rendering slices the source and panics, which aborts in
+    // WebAssembly, if a span does not fall on character boundaries.
+    let position = |offset: u32, round_up: bool| {
+        let offset = (offset as usize).min(input.len());
+        let offset = if round_up {
+            input.ceil_char_boundary(offset)
+        } else {
+            input.floor_char_boundary(offset)
+        };
+        BytePos(file.start_pos.0 + offset as u32)
+    };
+    for (code, diagnostic) in diagnostics {
+        let lo = position(diagnostic.span.start, false);
+        let hi = position(diagnostic.span.end, true).max(lo);
+        handler
+            .struct_span_err(Span::new(lo, hi), diagnostic.message.as_ref())
+            .code(DiagnosticId::Error(code.as_str().into()))
+            .emit();
+    }
+    anyhow::bail!("TypeScript processing failed")
 }
 
 /// Returns `false` only when `input` cannot contain an identifier-named
@@ -380,6 +425,69 @@ mod tests {
 
         let errors = strip("const value;", Options::default()).err().unwrap();
         assert_eq!(errors[0].code.as_deref(), Some("InvalidSyntax"));
+    }
+
+    #[test]
+    fn removes_a_leading_bom() {
+        let result = strip("\u{feff}const value: number = 1;", Options::default())
+            .unwrap_or_else(|_| panic!("strip failed"));
+        assert_eq!(result.code, "const value         = 1;");
+
+        // A BOM before a hashbang is not valid JavaScript.
+        let result = strip(
+            "\u{feff}#!/usr/bin/env node\nconst value: number = 1;",
+            Options::default(),
+        )
+        .unwrap_or_else(|_| panic!("strip failed"));
+        assert_eq!(result.code, "#!/usr/bin/env node\nconst value         = 1;");
+
+        // Diagnostics use positions in the text after the BOM.
+        let errors = strip("\u{feff}enum Value { A }", Options::default())
+            .err()
+            .unwrap();
+        assert_eq!(errors[0].code.as_deref(), Some("UnsupportedSyntax"));
+        assert_eq!(errors[0].start_column, Some(0));
+
+        // An offset shifted by the BOM must not split a character.
+        let source = "const value = '\u{1d4b3}' }";
+        let errors = strip(&format!("\u{feff}{source}"), Options::default())
+            .err()
+            .unwrap();
+        let expected = strip(source, Options::default()).err().unwrap();
+        assert_eq!(errors[0].code.as_deref(), Some("InvalidSyntax"));
+        assert_eq!(errors[0].start_line, expected[0].start_line);
+        assert_eq!(errors[0].start_column, expected[0].start_column);
+        assert_eq!(errors[0].end_column, expected[0].end_column);
+    }
+
+    #[test]
+    fn reports_the_first_error_in_source_order() {
+        let options = Options {
+            deprecated_ts_module_as_error: Some(true),
+            ..Default::default()
+        };
+        let errors = strip(
+            "module Types { export type A = 1 }\nenum Value { A }",
+            options,
+        )
+        .err()
+        .unwrap();
+        assert_eq!(errors.len(), 2);
+        assert_eq!(errors[0].start_line, Some(1));
+        assert!(errors[0].message.starts_with("`module` keyword"));
+        assert_eq!(errors[1].start_line, Some(2));
+
+        let options = Options {
+            module: Some(false),
+            ..Default::default()
+        };
+        let errors = strip("import value from 'value';\nenum Value { A }", options)
+            .err()
+            .unwrap();
+        assert_eq!(errors.len(), 2);
+        assert_eq!(errors[0].code.as_deref(), Some("InvalidSyntax"));
+        assert_eq!(errors[0].start_line, Some(1));
+        assert_eq!(errors[1].code.as_deref(), Some("UnsupportedSyntax"));
     }
 
     #[test]
