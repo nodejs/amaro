@@ -23,7 +23,9 @@ allow = [
     "Unicode-3.0"
 ]
 confidence-threshold = 0.8
-exceptions = []
+exceptions = [
+    { name = "foldhash", allow = ["Zlib"] }
+]
 
 [licenses.private]
 ignore = false
