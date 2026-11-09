@@ -966,9 +966,9 @@ dependencies = [
 
 [[package]]
 name = "swc_next_allocator"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e36ff07d640899f4bcd2361666d40beb128e5fb659e746c0a73bf9bcae7a0e3"
+checksum = "55f1a23ca12e39672cc7b5a88878629c4ea4a33eeab8870a722e6a83dfd688c7"
 dependencies = [
  "allocator-api2",
  "bumpalo",
@@ -979,9 +979,9 @@ dependencies = [
 
 [[package]]
 name = "swc_next_ast_macros"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c6c387714f59c7990b1ff7862bb4e3a221936b91ba036b28e74f6254c646aef6"
+checksum = "141cd43e3678dcc7f70416bf4cb5124b55665f802d01a93e1ec990dbd48114b5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -990,9 +990,9 @@ dependencies = [
 
 [[package]]
 name = "swc_next_ecma_ast"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54b7ac90abb85f3c9a69950527835ffb02fb4cdfda53e63ee0c70be9937b4e21"
+checksum = "2d63f86b7e9bb61f1cd4cb8be535d3b0d5f7268fdd151091e5ab4d724fcfedc5"
 dependencies = [
  "cow-utils",
  "num-bigint 0.5.1",
@@ -1003,9 +1003,9 @@ dependencies = [
 
 [[package]]
 name = "swc_next_ecma_parser"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7574c4a7c58a685f75bdd4b250260ebb2e436812a6f0eb6d5212a9f35e059830"
+checksum = "8686faddeda01c144b7369492081f9b9a7de4d79b381e7591aa6c5f47f8f685c"
 dependencies = [
  "bitflags",
  "indexmap",
@@ -1019,15 +1019,15 @@ dependencies = [
 
 [[package]]
 name = "swc_next_simd"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d08016b2aee6f27884457d17018468ec473df17332c34d08478db71c977e8492"
+checksum = "6f2761d6e3e8012601d8cb60110f81587cbeec6642c2806d441244ef65afa578"
 
 [[package]]
 name = "swc_next_type_strip"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b30b5a2f8a8f2ebf0fd3e7e5e571a7eb7f2b47dd0c935fb7ea9a730f164b1c0c"
+checksum = "7be24208ddc7109b0a7853b4485dcc7cecbce40bc8ceb3d4c6bd04f6f26f9a19"
 dependencies = [
  "swc_next_allocator",
  "swc_next_ecma_ast",

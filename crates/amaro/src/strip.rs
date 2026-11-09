@@ -106,15 +106,17 @@ fn validate(
         let parsed =
             Parser::init(&allocator, input, strip_options.into(), NoTokenParserConfig).parse();
         if parsed.diagnostics.is_empty() {
+            // SAFETY: All handles come from this AST, which is never mutated.
+            let ast = unsafe { parsed.ast.ast() };
             if options.module == Some(false) {
-                for statement in parsed.ast.root_program().body(&parsed.ast).iter() {
-                    let statement = parsed.ast.get_node_in_sub_range(statement);
-                    if statement.is_module_indicator(&parsed.ast) {
+                for statement in ast.root_program().body(ast).iter() {
+                    let statement = ast.get_node_in_sub_range(statement);
+                    if statement.is_module_indicator(ast) {
                         diagnostics.push((
                             ErrorCode::InvalidSyntax,
                             Diagnostic::error(
                                 "Import and export declarations are not allowed in scripts",
-                                statement.span(&parsed.ast),
+                                statement.span(ast),
                             ),
                         ));
                     }
@@ -122,10 +124,10 @@ fn validate(
             }
             if reject_deprecated_modules {
                 let mut collector = DeprecatedModules {
-                    ast: &parsed.ast,
+                    ast,
                     spans: Vec::new(),
                 };
-                parsed.ast.root_program().visit_with(&mut collector);
+                ast.root_program().visit_with(&mut collector);
                 for span in collector.spans {
                     diagnostics.push((
                         ErrorCode::UnsupportedSyntax,
