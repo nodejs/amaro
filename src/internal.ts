@@ -15,28 +15,13 @@ const DEFAULT_OPTIONS = {
 	deprecatedTsModuleAsError: true,
 } satisfies Options;
 
-// swc only reads `transform` in "transform" mode, so these defaults are kept
-// out of strip-only calls to avoid deserializing them on every call.
-const DEFAULT_TRANSFORM_OPTIONS = {
-	mode: "transform",
-	deprecatedTsModuleAsError: true,
-	transform: {
-		verbatimModuleSyntax: true,
-		nativeClassProperties: true,
-		noEmptyExport: true,
-		importNotUsedAsValues: "preserve",
-	},
-} satisfies Options;
-
 export function transformSync(
 	source: string,
 	options?: Options,
 ): TransformOutput {
 	// Ensure that the source code is a string
 	const input = `${source ?? ""}`;
-	const defaults =
-		options?.mode === "transform" ? DEFAULT_TRANSFORM_OPTIONS : DEFAULT_OPTIONS;
-	return swc.transformSync(input, { ...defaults, ...options });
+	return swc.transformSync(input, { ...DEFAULT_OPTIONS, ...options });
 }
 
 export function transformModuleSyntax(

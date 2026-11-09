@@ -1,8 +1,5 @@
-enum Foo {
-	A = "Hello, TypeScript!",
-}
+const message: string = "Hello, TypeScript!";
 
-// Allow warnings about source maps to be shown for testing purposes.
 setImmediate(() => {
-  throw new Error(Foo.A);
+  throw new Error(message);
 });
