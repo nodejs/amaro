@@ -44,8 +44,7 @@
 	},
 	"exports": {
 		".": "./dist/index.js",
-		"./strip": "./dist/register-strip.mjs",
-		"./transform": "./dist/register-transform.mjs"
+		"./strip": "./dist/register-strip.mjs"
 	},
 	"files": [
 		"dist",

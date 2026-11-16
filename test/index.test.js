@@ -4,6 +4,19 @@ const path = require("node:path");
 const assert = require("node:assert");
 const vm = require("node:vm");
 
+test("should reject the removed transform mode", () => {
+	assert.throws(
+		() => transformSync("const value: number = 1;", { mode: "transform" }),
+		/unknown variant.*transform/,
+	);
+});
+
+test("should not export the removed transform loader", () => {
+	assert.throws(() => require.resolve("amaro/transform"), {
+		code: "ERR_PACKAGE_PATH_NOT_EXPORTED",
+	});
+});
+
 // Set the path for the snapshots directory
 snapshot.setResolveSnapshotPath((testPath) => {
 	return path.join(
@@ -254,6 +267,19 @@ test("should throw on non erasable namespace/module", (t) => {
          namespace C { export import x = A.x; }`,
 		"declare module    D { export let x = 1 }",
 		"module F { export type x = number }",
+	];
+
+	for (const input of tests) {
+		assert.throws(() => transformSync(input), { code: "UnsupportedSyntax" });
+	}
+});
+
+test("should throw on type-only import-equals declarations", (t) => {
+	// TypeScript's `erasableSyntaxOnly` rejects these too.
+	const tests = [
+		"import type fs = require('node:fs');",
+		"export import type fs = require('node:fs');",
+		"import type A = N.B;",
 	];
 
 	for (const input of tests) {
