@@ -8,7 +8,7 @@ use swc_common::{
 };
 use swc_next_allocator::Allocator;
 use swc_next_ecma_ast::{
-    Ast, GetSpan, TsModuleDeclaration, TsModuleDeclarationKind, Visit, VisitWith,
+    Ast, Decorator, GetSpan, TsModuleDeclaration, TsModuleDeclarationKind, Visit, VisitWith,
 };
 use swc_next_ecma_parser::{NoTokenParserConfig, Parser};
 use swc_next_type_strip::{strip_types, Diagnostic, Lang, Options as StripOptions, SourceType};
@@ -99,9 +99,11 @@ fn validate(
     // declaration. String-named ambient modules remain supported.
     let reject_deprecated_modules = options.deprecated_ts_module_as_error.unwrap_or_default()
         && needs_deprecated_module_check(input, stripped, !diagnostics.is_empty());
+    // SWC Next always parses decorators, so honor `parser.decorators` here.
+    let reject_decorators = !options.parser.decorators && input.contains('@');
     // SWC Next accepts import and export declarations in scripts, so check
     // them here.
-    if reject_deprecated_modules || options.module == Some(false) {
+    if reject_deprecated_modules || reject_decorators || options.module == Some(false) {
         let allocator = Allocator::default();
         let parsed =
             Parser::init(&allocator, input, strip_options.into(), NoTokenParserConfig).parse();
@@ -134,6 +136,22 @@ fn validate(
                         Diagnostic::error(
                             "`module` keyword is not supported. Use `namespace` instead.",
                             span,
+                        ),
+                    ));
+                }
+            }
+            if reject_decorators {
+                let mut collector = Decorators {
+                    ast,
+                    starts: Vec::new(),
+                };
+                ast.root_program().visit_with(&mut collector);
+                for start in collector.starts {
+                    diagnostics.push((
+                        ErrorCode::InvalidSyntax,
+                        Diagnostic::error(
+                            "Unexpected token '@'",
+                            swc_next_type_strip::Span::new(start, start + 1),
                         ),
                     ));
                 }
@@ -402,6 +420,23 @@ impl<'ast> Visit<'ast> for DeprecatedModules<'ast> {
     }
 }
 
+/// Collects the start of each decorator.
+struct Decorators<'ast> {
+    ast: &'ast Ast<'ast>,
+    starts: Vec<u32>,
+}
+
+impl<'ast> Visit<'ast> for Decorators<'ast> {
+    fn ast(&self) -> &Ast<'ast> {
+        self.ast
+    }
+
+    fn visit_decorator(&mut self, node: Decorator) {
+        self.starts.push(node.span(self.ast).start);
+        node.visit_children_with(self);
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -536,6 +571,26 @@ mod tests {
             ..Default::default()
         };
         assert!(strip("export const value: number = 1;", options).is_ok());
+    }
+
+    #[test]
+    fn honors_the_decorators_option() {
+        let source = "class A { @dec method() {} }\n@dec class B {}";
+        assert!(strip(source, Options::default()).is_ok());
+
+        let options = Options {
+            parser: swc_ecma_parser::TsSyntax {
+                decorators: false,
+                ..Default::default()
+            },
+            ..Default::default()
+        };
+        let errors = strip(source, options).err().unwrap();
+        assert_eq!(errors.len(), 2);
+        assert_eq!(errors[0].code.as_deref(), Some("InvalidSyntax"));
+        assert_eq!(errors[0].start_line, Some(1));
+        assert_eq!(errors[0].start_column, Some(10));
+        assert_eq!(errors[1].start_line, Some(2));
     }
 
     #[test]

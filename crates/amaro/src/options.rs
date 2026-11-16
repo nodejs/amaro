@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use swc_ecma_parser::TsSyntax;
 use wasm_bindgen::prelude::*;
 
-#[derive(Default, Deserialize)]
+#[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
     pub module: Option<bool>,
@@ -13,6 +13,19 @@ pub struct Options {
     #[serde(default)]
     pub mode: Mode,
     pub deprecated_ts_module_as_error: Option<bool>,
+}
+
+// Matches the serde defaults, so Rust callers get what JavaScript gets.
+impl Default for Options {
+    fn default() -> Self {
+        Self {
+            module: None,
+            filename: None,
+            parser: default_parser(),
+            mode: Mode::default(),
+            deprecated_ts_module_as_error: None,
+        }
+    }
 }
 
 fn default_parser() -> TsSyntax {
