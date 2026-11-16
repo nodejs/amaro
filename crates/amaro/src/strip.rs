@@ -162,15 +162,18 @@ fn report(
         .clone()
         .map_or(FileName::Anon, |name| FileName::Real(name.into()));
     let file = cm.new_source_file(filename.into(), input.to_owned());
-    debug_assert_eq!(file.src.len(), input.len());
+    // `new_source_file` removes one more BOM if `input` starts with a second
+    // one, so map the offsets into the text that it keeps.
+    let src: &str = &file.src;
+    let removed = input.len() - src.len();
     // Snippet rendering slices the source and panics, which aborts in
     // WebAssembly, if a span does not fall on character boundaries.
     let position = |offset: u32, round_up: bool| {
-        let offset = (offset as usize).min(input.len());
+        let offset = (offset as usize).saturating_sub(removed).min(src.len());
         let offset = if round_up {
-            input.ceil_char_boundary(offset)
+            src.ceil_char_boundary(offset)
         } else {
-            input.floor_char_boundary(offset)
+            src.floor_char_boundary(offset)
         };
         BytePos(file.start_pos.0 + offset as u32)
     };
@@ -460,6 +463,20 @@ mod tests {
         assert_eq!(errors[0].start_line, expected[0].start_line);
         assert_eq!(errors[0].start_column, expected[0].start_column);
         assert_eq!(errors[0].end_column, expected[0].end_column);
+
+        // `SourceMap` removes a second BOM, which must not shift positions.
+        for source in ["enum Value { A }", "let value: number = ;"] {
+            let errors = strip(&format!("\u{feff}\u{feff}{source}"), Options::default())
+                .err()
+                .unwrap();
+            let expected = strip(source, Options::default()).err().unwrap();
+            assert_eq!(errors[0].code, expected[0].code, "{source:?}");
+            assert_eq!(
+                errors[0].start_column, expected[0].start_column,
+                "{source:?}"
+            );
+            assert_eq!(errors[0].end_column, expected[0].end_column, "{source:?}");
+        }
     }
 
     #[test]
