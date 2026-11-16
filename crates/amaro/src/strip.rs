@@ -180,8 +180,13 @@ fn report(
     for (code, diagnostic) in diagnostics {
         let lo = position(diagnostic.span.start, false);
         let hi = position(diagnostic.span.end, true).max(lo);
+        // `strip_types` prefixes its own messages with the JavaScript error
+        // type, but parser messages have no prefix. Amaro's JavaScript errors
+        // add the type already.
+        let message = diagnostic.message.as_ref();
+        let message = message.strip_prefix("SyntaxError: ").unwrap_or(message);
         handler
-            .struct_span_err(Span::new(lo, hi), diagnostic.message.as_ref())
+            .struct_span_err(Span::new(lo, hi), message)
             .code(DiagnosticId::Error(code.as_str().into()))
             .emit();
     }
@@ -427,6 +432,11 @@ mod tests {
         let errors = strip("enum Value { A }", Options::default()).err().unwrap();
         assert_eq!(errors[0].code.as_deref(), Some("UnsupportedSyntax"));
         assert_eq!(errors[0].start_line, Some(1));
+        assert!(
+            errors[0].message.starts_with("This syntax is not allowed"),
+            "{}",
+            errors[0].message
+        );
 
         let errors = strip("const value;", Options::default()).err().unwrap();
         assert_eq!(errors[0].code.as_deref(), Some("InvalidSyntax"));
