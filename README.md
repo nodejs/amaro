@@ -56,6 +56,10 @@ node --import="amaro/strip" file.ts
 Amaro supports only `strip-only`. Syntax that requires runtime code generation,
 such as enums and constructor parameter properties, is rejected. The former
 `transform` mode and `amaro/transform` loader are no longer available.
+Amaro also rejects every `import =` declaration, including type-only ones such
+as `import type fs = require("node:fs")`, as TypeScript's
+[`erasableSyntaxOnly`](https://www.typescriptlang.org/tsconfig/#erasableSyntaxOnly)
+option does.
 
 #### Programmatic registration with `module.registerHooks()`
 

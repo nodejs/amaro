@@ -274,6 +274,19 @@ test("should throw on non erasable namespace/module", (t) => {
 	}
 });
 
+test("should throw on type-only import-equals declarations", (t) => {
+	// TypeScript's `erasableSyntaxOnly` rejects these too.
+	const tests = [
+		"import type fs = require('node:fs');",
+		"export import type fs = require('node:fs');",
+		"import type A = N.B;",
+	];
+
+	for (const input of tests) {
+		assert.throws(() => transformSync(input), { code: "UnsupportedSyntax" });
+	}
+});
+
 test("should perform type stripping on nested generics", (t) => {
 	const { code } = transformSync(
 		"const promiseWrapper = new Wrapper<<T>(x: T) => Promise<T>>(Promise.resolve.bind(Promise));",
