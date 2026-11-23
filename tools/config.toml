@@ -1,3 +1,21 @@
 # Override swc's config for alpine linux build image.
 [target.aarch64-unknown-linux-musl]
 linker = "aarch64-alpine-linux-musl-gcc"
+
+# Growing a WebAssembly memory detaches its ArrayBuffer, which invalidates
+# V8's ArrayBufferDetaching protector, and that slows typed-array code in that
+# V8 isolate for the rest of its life (nodejs/node#67632). Up to Node.js 26,
+# any detach of a buffer that was read invalidates it. In 27, only a detach of a
+# buffer with a DataView or with two views does, and the bindings hold both.
+#
+# The allocator uses the initial memory before it grows the memory. With
+# 16 MiB of it, most sources don't grow the memory. The size limit depends on
+# the source and on the transform options: sources of up to 256 KB didn't grow
+# it in any mode, and some of 320 KB did.
+#
+# 16 MiB is also the least memory that the module loads with: V8 refuses to
+# instantiate it under a lower `--wasm-max-mem-pages` than 256.
+#
+# test/wasm-memory.test.js checks that the build has applied this.
+[target.wasm32-unknown-unknown]
+rustflags = ["-C", "link-arg=--initial-memory=16777216"]
